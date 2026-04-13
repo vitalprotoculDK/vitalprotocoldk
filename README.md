@@ -1,2 +1,0 @@
-# vitalprotocoldk
-vitalprotocolDK web sitesi
