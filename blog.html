@@ -83,9 +83,21 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
   }
 })();
 </script>
-<style>.blog-lang-section{display:none}.blog-lang-section[data-lang="tr"]{display:block}</style>
+
 </head>
 <body>
+<style>
+.blog-lang-section { display: none !important; }
+.blog-lang-section[data-lang="tr"] { display: block !important; }
+</style>
+<script>
+(function(){
+  var l = localStorage.getItem('vpLang') || 'tr';
+  document.querySelectorAll('.blog-lang-section').forEach(function(el){
+    el.style.cssText = el.getAttribute('data-lang') === l ? 'display:block!important' : 'display:none!important';
+  });
+})();
+</script>
 <nav class="vpdk-nav-global">
   <a class="vpdk-nav-logo" href="/index.html">vital<span>protocol</span>DK</a>
   <div class="vpdk-nav-center">
