@@ -4,54 +4,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vital Protocol DK</title>
-<style>
-/* Instagram float fix */
-.ig-float svg { width:24px !important; height:24px !important; }
-.ig-float { 
-  position:fixed; bottom:80px; right:16px; z-index:9998;
-  width:44px; height:44px; background:#fff; border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  box-shadow:0 2px 12px rgba(0,0,0,.15);
-  text-decoration:none;
-}
-/* Remove extra whitespace */
-body { margin:0; padding:0; }
-</style>
-</head>
-<body>
-<!-- GLOBAL NAV -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+
 <style>
 .vpdk-nav-global{width:100%;background:rgba(252,252,250,0.98);border-bottom:1px solid #d6ddd7;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:9999;backdrop-filter:blur(12px);font-family:'DM Sans',sans-serif;box-sizing:border-box}
 .vpdk-nav-global *{box-sizing:border-box}
 .vpdk-nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:#2e3d30;letter-spacing:.02em;text-decoration:none;flex-shrink:0}
 .vpdk-nav-logo span{color:#b8963e;font-style:italic}
 .vpdk-nav-center{display:flex;align-items:center;gap:4px;position:absolute;left:50%;transform:translateX(-50%)}
-.vpdk-nav-link{padding:6px 14px;font-size:13px;font-weight:400;color:#2e3d30;text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap}
-.vpdk-nav-link:hover{background:#f0ede6;color:#1a2419}
+.vpdk-nav-link{padding:6px 14px;font-size:13px;color:#2e3d30;text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap}
+.vpdk-nav-link:hover{background:#f0ede6}
 .vpdk-nav-dropdown{position:relative}
-.vpdk-nav-dropdown-btn{padding:6px 14px;font-size:13px;font-weight:400;color:#2e3d30;background:none;border:none;cursor:pointer;border-radius:6px;transition:all .2s;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;white-space:nowrap}
-.vpdk-nav-dropdown-btn:hover{background:#f0ede6;color:#1a2419}
-.vpdk-nav-dropdown-btn svg{width:12px;height:12px;transition:transform .2s}
-.vpdk-nav-dropdown:hover .vpdk-nav-dropdown-btn svg{transform:rotate(180deg)}
+.vpdk-nav-dropdown-btn{padding:6px 14px;font-size:13px;color:#2e3d30;background:none;border:none;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;white-space:nowrap}
+.vpdk-nav-dropdown-btn:hover{background:#f0ede6}
 .vpdk-nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:8px;min-width:180px;box-shadow:0 8px 32px rgba(0,0,0,.1);z-index:9999}
 .vpdk-nav-dropdown:hover .vpdk-nav-dropdown-menu{display:block}
-.vpdk-nav-dropdown-item{display:block;padding:9px 14px;font-size:13px;color:#2e3d30;text-decoration:none;border-radius:8px;transition:all .2s;font-weight:400}
+.vpdk-nav-dropdown-item{display:block;padding:9px 14px;font-size:13px;color:#2e3d30;text-decoration:none;border-radius:8px;transition:all .2s}
 .vpdk-nav-dropdown-item:hover{background:#f0ede6;color:#b8963e}
 .vpdk-nav-right{display:flex;gap:6px;align-items:center}
 .vpdk-nav-lang{padding:4px 12px;font-size:11px;font-weight:500;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7c6d;transition:all .2s;font-family:'DM Sans',sans-serif}
 .vpdk-nav-lang.active{background:#2e3d30;color:#fcfcfa;border-color:#2e3d30}
 .vpdk-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
 .vpdk-hamburger span{width:22px;height:2px;background:#2e3d30;border-radius:2px;display:block}
-.vpdk-mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;background:#fff;border-bottom:1px solid #d6ddd7;padding:16px;z-index:9998;box-shadow:0 8px 24px rgba(0,0,0,.08);max-height:calc(100vh - 56px);overflow-y:auto}
+.vpdk-mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid #d6ddd7;padding:16px;z-index:9998;box-shadow:0 8px 24px rgba(0,0,0,.08);max-height:80vh;overflow-y:auto}
 .vpdk-mobile-menu.open{display:block}
 .vpdk-mobile-link{display:block;padding:11px 16px;font-size:14px;color:#2e3d30;text-decoration:none;border-radius:8px;font-family:'DM Sans',sans-serif}
 .vpdk-mobile-link:hover{background:#f0ede6}
 .vpdk-mobile-section{font-size:11px;letter-spacing:.1em;color:#b8963e;font-weight:600;text-transform:uppercase;padding:10px 16px 4px}
 .vpdk-mobile-sub{padding-left:16px}
-@media(max-width:900px){.vpdk-nav-center{display:none}.vpdk-nav-global{padding:0 16px;height:56px}.vpdk-hamburger{display:flex}}
+/* WhatsApp ve Instagram fix */
+#vp-wa-widget svg{width:30px!important;height:30px!important}
+.wa-button svg{width:26px!important;height:26px!important}
+.ig-float{position:fixed!important;bottom:80px!important;right:16px!important;z-index:9998!important;width:44px!important;height:44px!important;background:#fff!important;border-radius:50%!important;display:flex!important;align-items:center!important;justify-content:center!important;box-shadow:0 2px 12px rgba(0,0,0,.15)!important;text-decoration:none!important}
+.ig-float svg{width:24px!important;height:24px!important;fill:#e1306c!important}
+@media(max-width:900px){
+  .vpdk-nav-center{display:none!important}
+  .vpdk-nav-global{padding:0 16px!important;height:56px!important}
+  .vpdk-hamburger{display:flex!important}
+  .vpdk-mobile-menu{top:56px!important}
+}
 </style>
-
+</head>
+<body>
 <nav class="vpdk-nav-global">
   <a class="vpdk-nav-logo" href="/index.html">vital<span>protocol</span>DK</a>
   <div class="vpdk-nav-center">
@@ -60,7 +54,7 @@ body { margin:0; padding:0; }
     <div class="vpdk-nav-dropdown">
       <button class="vpdk-nav-dropdown-btn">
         <span data-nav="protocols">Protokoller</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:12px;height:12px"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="vpdk-nav-dropdown-menu">
         <a href="/hl5.html" class="vpdk-nav-dropdown-item">HL5</a>
@@ -104,63 +98,6 @@ body { margin:0; padding:0; }
   <a href="/faq.html" class="vpdk-mobile-link" data-mnav="faq">SSS</a>
   <a href="/iletisim.html" class="vpdk-mobile-link" data-mnav="contact">İletişim</a>
 </div>
-<script>
-(function(){
-  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Protokoller",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Protocols",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Protocolos",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
-  
-  function applyNavLang(l){
-    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){
-      b.classList.toggle("active", b.textContent.trim().toUpperCase()===l.toUpperCase());
-    });
-    var lbl=lb[l]||lb.tr;
-    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lbl[k]});
-  }
-  
-  function applyPageLang(l){
-    // Hide all lang sections, show active one
-    var prefixes = ['su','hl5','f','or','nr','ed','ig','rs','os','hk','sss','il','qz','hk'];
-    // Generic: hide all .XX-lang divs, show .XX-lang[id$="-"+l]
-    document.querySelectorAll('[class$="-lang"],[class*="-lang "]').forEach(function(el){
-      if(el.classList.contains('vpdk-nav-lang')) return;
-      el.style.display='none';
-    });
-    document.querySelectorAll('[id$="-'+l+'"]').forEach(function(el){
-      if(el.id && el.id.match(/-(?:tr|en|es)$/)){
-        el.style.display='block';
-      }
-    });
-    // Also trigger page-specific lang functions
-    if(typeof setLang==="function") setLang(l);
-    // For pages with button-based switching, find active lang btn and simulate
-    var btns = document.querySelectorAll('.hl5-lang-btn,.su-lang-btn,.f-lang-btn,.or-lang-btn,.nr-lang-btn,.ed-lang-btn,.ig-lang-btn,.rs-lang-btn,.os-lang-btn,.hk-lang-btn,.sss-lang-btn,.il-lang-btn,.qz-lang-btn');
-    btns.forEach(function(btn){
-      if(btn.textContent.trim().toLowerCase()===l){
-        btn.click();
-      }
-    });
-  }
-
-  window.vpNavLang = function(l, btn){
-    localStorage.setItem('vpLang', l);
-    applyNavLang(l);
-    applyPageLang(l);
-  };
-
-  document.addEventListener("DOMContentLoaded", function(){
-    var saved = localStorage.getItem('vpLang') || 'tr';
-    applyNavLang(saved);
-    applyPageLang(saved);
-    // Highlight active page
-    var path = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.vpdk-nav-link,.vpdk-nav-dropdown-item,.vpdk-mobile-link').forEach(function(el){
-      var h=(el.getAttribute('href')||'').split('/').pop();
-      if(h && h===path){el.style.color='#b8963e';el.style.fontWeight='500';}
-    });
-  });
-})();
-</script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
 .edge-container{font-family:'Plus Jakarta Sans',sans-serif;color:#1a1a1a;line-height:1.6;margin:0;padding:0;background:#fff}
@@ -458,6 +395,44 @@ function edgeLang(lang, btn) {
   document.getElementById('edge-' + lang).style.display = 'block';
   btn.classList.add('active');
 }
+</script>
+
+<script>
+(function(){
+  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Protokoller",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Protocols",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Protocolos",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
+  function applyNav(l){
+    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){b.classList.toggle("active",b.textContent.trim().toLowerCase()===l)});
+    var lbl=lb[l]||lb.tr;
+    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
+    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lbl[k]});
+    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lbl[k]});
+  }
+  function applyPage(l){
+    if(typeof setLang==="function"){setLang(l);return;}
+    var allLangDivs=document.querySelectorAll('[class$="-lang"],[class*="-lang active"]');
+    document.querySelectorAll('[id$="-tr"],[id$="-en"],[id$="-es"]').forEach(function(el){
+      var show=el.id.endsWith('-'+l);
+      el.style.display=show?'block':'none';
+    });
+    var btns=document.querySelectorAll('button[onclick*="Lang"]');
+    btns.forEach(function(btn){if(btn.textContent.trim().toLowerCase()===l)btn.click();});
+  }
+  window.vpNavLang=function(l,btn){
+    localStorage.setItem('vpLang',l);
+    applyNav(l);
+    applyPage(l);
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    var saved=localStorage.getItem('vpLang')||'tr';
+    applyNav(saved);
+    setTimeout(function(){applyPage(saved);},50);
+    var path=window.location.pathname.split('/').pop()||'index.html';
+    document.querySelectorAll('.vpdk-nav-link,.vpdk-nav-dropdown-item,.vpdk-mobile-link').forEach(function(el){
+      var h=(el.getAttribute('href')||'').split('/').pop();
+      if(h&&h===path){el.style.color='#b8963e';el.style.fontWeight='500';}
+    });
+  });
+})();
 </script>
 </body>
 </html>
