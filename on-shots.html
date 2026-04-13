@@ -83,7 +83,63 @@
   <a href="/faq.html" class="vpdk-mobile-link" data-mnav="faq">SSS</a>
   <a href="/iletisim.html" class="vpdk-mobile-link" data-mnav="contact">İletişim</a>
 </div>
+<script>
+(function(){
+  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Protokoller",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Protocols",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Protocolos",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
+  
+  function applyNavLang(l){
+    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){
+      b.classList.toggle("active", b.textContent.trim().toUpperCase()===l.toUpperCase());
+    });
+    var lbl=lb[l]||lb.tr;
+    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
+    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lbl[k]});
+    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lbl[k]});
+  }
+  
+  function applyPageLang(l){
+    // Hide all lang sections, show active one
+    var prefixes = ['su','hl5','f','or','nr','ed','ig','rs','os','hk','sss','il','qz','hk'];
+    // Generic: hide all .XX-lang divs, show .XX-lang[id$="-"+l]
+    document.querySelectorAll('[class$="-lang"],[class*="-lang "]').forEach(function(el){
+      if(el.classList.contains('vpdk-nav-lang')) return;
+      el.style.display='none';
+    });
+    document.querySelectorAll('[id$="-'+l+'"]').forEach(function(el){
+      if(el.id && el.id.match(/-(?:tr|en|es)$/)){
+        el.style.display='block';
+      }
+    });
+    // Also trigger page-specific lang functions
+    if(typeof setLang==="function") setLang(l);
+    // For pages with button-based switching, find active lang btn and simulate
+    var btns = document.querySelectorAll('.hl5-lang-btn,.su-lang-btn,.f-lang-btn,.or-lang-btn,.nr-lang-btn,.ed-lang-btn,.ig-lang-btn,.rs-lang-btn,.os-lang-btn,.hk-lang-btn,.sss-lang-btn,.il-lang-btn,.qz-lang-btn');
+    btns.forEach(function(btn){
+      if(btn.textContent.trim().toLowerCase()===l){
+        btn.click();
+      }
+    });
+  }
 
+  window.vpNavLang = function(l, btn){
+    localStorage.setItem('vpLang', l);
+    applyNavLang(l);
+    applyPageLang(l);
+  };
+
+  document.addEventListener("DOMContentLoaded", function(){
+    var saved = localStorage.getItem('vpLang') || 'tr';
+    applyNavLang(saved);
+    applyPageLang(saved);
+    // Highlight active page
+    var path = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.vpdk-nav-link,.vpdk-nav-dropdown-item,.vpdk-mobile-link').forEach(function(el){
+      var h=(el.getAttribute('href')||'').split('/').pop();
+      if(h && h===path){el.style.color='#b8963e';el.style.fontWeight='500';}
+    });
+  });
+})();
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
 .on-container{font-family:'Plus Jakarta Sans',sans-serif;color:#1a1a1a;line-height:1.6;margin:0;padding:0;background:#fff}
@@ -133,11 +189,7 @@
 <div class="on-container">
 
 <!-- DİL ÇUBUĞU -->
-<div class="on-lang-bar">
-  <button class="on-lang-btn active" onclick="onLang('tr',this)">TR</button>
-  <button class="on-lang-btn" onclick="onLang('en',this)">EN</button>
-  <button class="on-lang-btn" onclick="onLang('es',this)">ES</button>
-</div>
+
 
 <!-- ══════════ TÜRKÇE ══════════ -->
 <div class="on-lang active" id="on-tr">
@@ -385,27 +437,4 @@ function onLang(lang, btn) {
   document.getElementById('on-' + lang).style.display = 'block';
   btn.classList.add('active');
 }
-</script>
-
-<script>
-(function(){
-  var saved = localStorage.getItem('vpLang') || 'tr';
-  function applyLang(l){
-    var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Protokoller",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Protocols",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Protocolos",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
-    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){
-      b.classList.toggle("active", b.textContent.trim().toLowerCase()===l);
-    });
-    var lbl=lb[l];
-    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lb[l][k]});
-    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lb[l][k]});
-    if(typeof setLang==="function")setLang(l);
-    if(typeof hl5Lang==="function"){var btn=document.querySelector(".hl5-lang-btn");if(btn)hl5Lang(l,btn);}
-  }
-  window.vpNavLang = function(l, btn){
-    localStorage.setItem('vpLang', l);
-    applyLang(l);
-  };
-  document.addEventListener("DOMContentLoaded", function(){ applyLang(saved); });
-})();
 </script>
