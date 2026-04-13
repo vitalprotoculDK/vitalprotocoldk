@@ -1816,5 +1816,22 @@ document.getElementById('wlEN').onclick = function(){ waSetLang('EN'); };
 document.getElementById('wlES').onclick = function(){ waSetLang('ES'); };
 </script>
 
+
+<script>
+// Fix WhatsApp widget on mobile - direct link instead of popup
+(function(){
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if(isMobile) {
+    var btn = document.getElementById('waBtn');
+    if(btn) {
+      btn.onclick = function(e) {
+        e.preventDefault();
+        window.open('https://wa.me/905054549582?text=Merhaba%2C%20bilgi%20almak%20istiyorum.', '_blank');
+      };
+    }
+  }
+})();
+</script>
+
 </body>
 </html>
