@@ -1,0 +1,259 @@
+<style>
+*{box-sizing:border-box}
+#waWidget{
+  position:fixed;
+  bottom:20px;
+  right:16px;
+  z-index:99999;
+  font-family:'DM Sans',Arial,sans-serif;
+}
+
+/* ANA BUTON */
+#waBtn{
+  width:54px;height:54px;
+  border-radius:50%;
+  background:#25d366;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  box-shadow:0 4px 16px rgba(37,211,102,.5);
+  position:relative;
+  margin-left:auto;
+}
+#waBtn svg{width:30px;height:30px;fill:#fff;display:block}
+#waDot{
+  position:absolute;top:-1px;right:-1px;
+  width:14px;height:14px;
+  background:#ef4444;border-radius:50%;
+  border:2px solid #fff;
+}
+
+/* TOOLTIP */
+#waTip{
+  position:absolute;
+  bottom:50%;
+  right:62px;
+  transform:translateY(50%);
+  background:#fff;
+  color:#1a1a1a;
+  padding:6px 12px;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:600;
+  white-space:nowrap;
+  box-shadow:0 2px 12px rgba(0,0,0,.12);
+  border:1px solid #eee;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .2s;
+}
+#waWidget:hover #waTip{opacity:1}
+
+/* PENCERE */
+#waPanel{
+  display:none;
+  position:fixed;
+  bottom:84px;
+  right:16px;
+  width:290px;
+  max-width:calc(100vw - 32px);
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 8px 32px rgba(0,0,0,.18);
+  border:1px solid rgba(0,0,0,.06);
+  z-index:99999;
+}
+
+/* HEADER */
+#waHead{
+  background:#075e54;
+  padding:16px;
+  color:#fff;
+}
+#waLangRow{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:14px;
+}
+#waLangs{display:flex;gap:5px}
+.waL{
+  font-size:10px;font-weight:700;
+  padding:2px 9px;border-radius:5px;
+  border:1px solid rgba(255,255,255,.35);
+  background:transparent;color:#fff;
+  cursor:pointer;text-decoration:none;
+  display:inline-block;
+}
+.waL.on{background:#fff;color:#075e54}
+#waX{
+  color:#fff;text-decoration:none;
+  font-size:18px;line-height:1;
+  width:24px;height:24px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  background:rgba(0,0,0,.15);
+}
+#waProf{display:flex;align-items:center;gap:10px}
+#waAv{
+  width:44px;height:44px;border-radius:50%;
+  background:#1a7a6e;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:15px;color:#fff;
+  flex-shrink:0;position:relative;
+}
+#waAv::after{
+  content:'';
+  position:absolute;bottom:1px;right:1px;
+  width:11px;height:11px;
+  background:#4ade80;border-radius:50%;
+  border:2px solid #075e54;
+}
+#waName{font-weight:700;font-size:13px;margin-bottom:2px}
+#waStat{font-size:11px;opacity:.75}
+
+/* MESAJ */
+#waMsgArea{
+  padding:14px;
+  background:#e5ddd5;
+}
+#waMsgBox{
+  background:#fff;
+  padding:10px 12px;
+  border-radius:10px;border-top-left-radius:2px;
+  display:inline-block;
+  max-width:95%;
+  box-shadow:0 1px 2px rgba(0,0,0,.1);
+  position:relative;
+}
+#waMsgBox::before{
+  content:'';
+  position:absolute;top:0;left:-7px;
+  border-top:8px solid #fff;
+  border-left:8px solid transparent;
+}
+#waMsg{font-size:13px;color:#111;line-height:1.5}
+#waTime{font-size:10px;color:#999;text-align:right;margin-top:3px}
+
+/* BUTON */
+#waAct{padding:12px;background:#fff;border-top:1px solid #f0f0f0}
+#waGo{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  width:100%;
+  background:#25d366;color:#fff;
+  border-radius:10px;padding:12px;
+  font-size:13px;font-weight:700;
+  cursor:pointer;text-decoration:none;
+}
+#waGo:hover{background:#1fb558}
+#waGo svg{width:14px;height:14px;flex-shrink:0}
+
+/* MOBİL */
+@media(max-width:480px){
+  #waWidget{bottom:16px;right:12px}
+  #waPanel{
+    width:calc(100vw - 24px);
+    right:12px;
+    bottom:78px;
+    left:12px;
+    max-width:none;
+  }
+  #waBtn{width:50px;height:50px}
+  #waBtn svg{width:26px;height:26px}
+  #waTip{display:none}
+}
+</style>
+
+<div id="waWidget">
+  <div id="waPanel">
+    <div id="waHead">
+      <div id="waLangRow">
+        <div id="waLangs">
+          <a href="javascript:void(0)" class="waL on" id="wlTR">TR</a>
+          <a href="javascript:void(0)" class="waL" id="wlEN">EN</a>
+          <a href="javascript:void(0)" class="waL" id="wlES">ES</a>
+        </div>
+        <a href="javascript:void(0)" id="waX">✕</a>
+      </div>
+      <div id="waProf">
+        <div id="waAv">DK</div>
+        <div>
+          <div id="waName">Vital Protocol Danışmanı</div>
+          <div id="waStat">🟢 Çevrimiçi</div>
+        </div>
+      </div>
+    </div>
+    <div id="waMsgArea">
+      <div id="waMsgBox">
+        <div id="waMsg">Merhaba! Size nasıl yardımcı olabilirim?</div>
+        <div id="waTime"></div>
+      </div>
+    </div>
+    <div id="waAct">
+      <a href="javascript:void(0)" id="waGo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <span id="waGoTxt">WhatsApp'ta Mesaj Gönder</span>
+      </a>
+    </div>
+  </div>
+
+  <div id="waTip">Sorunuz mu var?</div>
+
+  <div id="waBtn">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <span id="waDot"></span>
+  </div>
+</div>
+
+<script>
+var waIsOpen = false;
+var waLang = 'TR';
+var waPhone = '905054549582';
+var waData = {
+  TR: ['Vital Protocol Danışmanı','🟢 Çevrimiçi','Merhaba! Size nasıl yardımcı olabilirim?','WhatsApp\'ta Mesaj Gönder','Sorunuz mu var?','Merhaba, bilgi almak istiyorum.'],
+  EN: ['Vital Protocol Advisor','🟢 Online','Hello! How can I help you today?','Send Message on WhatsApp','Have a question?','Hello, I would like to get information.'],
+  ES: ['Asesor de Vital Protocol','🟢 En línea','¡Hola! ¿Cómo puedo ayudarte?','Enviar mensaje por WhatsApp','¿Tienes una pregunta?','Hola, me gustaría recibir información.']
+};
+
+function waGetTime(){
+  var d = new Date();
+  return ('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2);
+}
+
+function waSetLang(l){
+  waLang = l;
+  var d = waData[l];
+  document.getElementById('waName').textContent = d[0];
+  document.getElementById('waStat').textContent = d[1];
+  document.getElementById('waMsg').textContent = d[2];
+  document.getElementById('waGoTxt').textContent = d[3];
+  document.getElementById('waTip').textContent = d[4];
+  ['TR','EN','ES'].forEach(function(k){
+    var el = document.getElementById('wl'+k);
+    if(el) el.className = 'waL' + (k===l?' on':'');
+  });
+}
+
+function waToggle(){
+  waIsOpen = !waIsOpen;
+  document.getElementById('waPanel').style.display = waIsOpen ? 'block' : 'none';
+  if(waIsOpen) document.getElementById('waTime').textContent = waGetTime();
+}
+
+function waClose(){
+  waIsOpen = false;
+  document.getElementById('waPanel').style.display = 'none';
+}
+
+function waOpenChat(){
+  var msg = encodeURIComponent(waData[waLang][5]);
+  window.open('https://wa.me/'+waPhone+'?text='+msg, '_blank');
+}
+
+document.getElementById('waBtn').onclick = waToggle;
+document.getElementById('waX').onclick = waClose;
+document.getElementById('waGo').onclick = waOpenChat;
+document.getElementById('wlTR').onclick = function(){ waSetLang('TR'); };
+document.getElementById('wlEN').onclick = function(){ waSetLang('EN'); };
+document.getElementById('wlES').onclick = function(){ waSetLang('ES'); };
+</script>
