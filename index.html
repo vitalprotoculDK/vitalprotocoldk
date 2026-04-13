@@ -75,6 +75,7 @@
       </div>
     </div>
     <a href="/hakkimda.html" class="vpdk-nav-link" data-nav="mission">Misyon</a>
+    <a href="https://vitalprotocol.myikas.com/blog" target="_blank" class="vpdk-nav-link" data-nav="blog">Blog</a>
     <a href="/faq.html" class="vpdk-nav-link" data-nav="faq">SSS</a>
     <a href="/iletisim.html" class="vpdk-nav-link" data-nav="contact">İletişim</a>
   </div>
@@ -102,6 +103,7 @@
     <a href="/on-shots.html" class="vpdk-mobile-link">ON-SHOTS</a>
   </div>
   <a href="/hakkimda.html" class="vpdk-mobile-link" data-mnav="mission">Misyon</a>
+  <a href="https://vitalprotocol.myikas.com/blog" target="_blank" class="vpdk-mobile-link" data-mnav="blog">Blog</a>
   <a href="/faq.html" class="vpdk-mobile-link" data-mnav="faq">SSS</a>
   <a href="/iletisim.html" class="vpdk-mobile-link" data-mnav="contact">İletişim</a>
 </div>
@@ -1519,7 +1521,7 @@ document.addEventListener('click', function(e){
 
 <script>
 (function(){
-  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Protokoller",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Protocols",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Protocolos",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
+  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Protokoller",blog:"Blog",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Protocols",blog:"Insights",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Protocolos",blog:"Perspectivas",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
   function applyNav(l){
     document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){b.classList.toggle("active",b.textContent.trim().toLowerCase()===l)});
     var lbl=lb[l]||lb.tr;
