@@ -652,5 +652,24 @@ window.addEventListener('hashchange',function(){
   });
 })();
 </script>
+
+<script>
+// Hook nav lang to quiz's own lang switcher
+document.addEventListener('DOMContentLoaded', function(){
+  var saved = localStorage.getItem('vpLang') || 'tr';
+  // Call quiz's switchLang if it exists
+  if(typeof switchLang === 'function') {
+    switchLang(saved);
+  }
+});
+// Override vpNavLang to also trigger quiz lang
+var _vpNavLangOrig = window.vpNavLang;
+window.vpNavLang = function(l, btn) {
+  if(_vpNavLangOrig) _vpNavLangOrig(l, btn);
+  if(typeof switchLang === 'function') switchLang(l);
+  localStorage.setItem('vpLang', l);
+};
+</script>
+
 </body>
 </html>
