@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beyne Pıhtı Atmadan Önce Vücut Hangi Sinyalleri Verir? | Vital Protocol DK</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
-
 <style>
 .vpdk-nav-global{width:100%;background:rgba(252,252,250,0.98);border-bottom:1px solid #d6ddd7;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:9999;backdrop-filter:blur(12px);font-family:'DM Sans',sans-serif;box-sizing:border-box}
 .vpdk-nav-global *{box-sizing:border-box}
@@ -44,13 +43,15 @@
   .vpdk-mobile-menu{top:56px!important}
 }
 
+*{box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
 .blog-hero{background:#1a2419;padding:80px 24px 60px;text-align:center}
-.blog-hero-img{width:100%;max-width:420px;border-radius:16px;margin:0 auto 32px;display:block;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.blog-hero-img{width:100%;max-width:460px;border-radius:16px;margin:0 auto 32px;display:block;box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .blog-category{font-size:11px;letter-spacing:.14em;color:#b8963e;text-transform:uppercase;font-weight:600;margin-bottom:16px;display:block}
 .blog-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,52px);font-weight:300;color:#fcfcfa;line-height:1.15;margin-bottom:8px}
 .blog-hero h2{font-family:'Cormorant Garamond',serif;font-size:clamp(16px,2.5vw,24px);font-weight:300;color:#d4ae5e;font-style:italic;margin-bottom:24px}
 .blog-meta{font-size:13px;color:rgba(252,252,250,.5);display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
-.blog-body{max-width:780px;margin:0 auto;padding:60px 24px 100px;font-family:'DM Sans',sans-serif;color:#1e2b1f;line-height:1.85;font-size:17px}
+.blog-body{max-width:780px;margin:0 auto;padding:60px 24px 100px;color:#1e2b1f;line-height:1.85;font-size:17px}
 .blog-body p{margin-bottom:24px}
 .blog-body h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,34px);font-weight:500;color:#1a2419;margin:48px 0 20px;line-height:1.2}
 .blog-body h3{font-size:16px;font-weight:600;color:#2e3d30;margin:28px 0 10px}
@@ -62,57 +63,20 @@
 .blog-checklist-item:last-child{border-bottom:none}
 .blog-checklist-item::before{content:'✓';color:#b8963e;font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px}
 .blog-warning{background:#fff8f0;border:1px solid #f0c060;border-radius:12px;padding:20px 24px;margin:28px 0;font-size:15px;line-height:1.7}
-.blog-warning strong{color:#b8600a}
 .blog-signals{display:grid;gap:16px;margin:28px 0}
 .blog-signal{background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start}
 .blog-signal-badge{background:#2e3d30;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0}
 .blog-signal-badge.alert{background:#c0392b}
 .blog-signal-badge.warn{background:#e67e22}
 .blog-back{display:inline-flex;align-items:center;gap:8px;color:#b8963e;text-decoration:none;font-size:14px;font-weight:500;margin-bottom:40px}
-footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-family:'DM Sans',sans-serif}
+footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:#2e3d30}
 .footer-logo span{color:#b8963e;font-style:italic}
 .footer-note{font-size:13px;color:#6b7c6d;max-width:540px;line-height:1.7;text-align:right}
-@media(max-width:768px){
-  .blog-body{padding:40px 20px 60px;font-size:16px}
-  .blog-hero{padding:60px 20px 40px}
-  footer{padding:28px 20px;flex-direction:column;text-align:center}
-  .footer-note{text-align:center}
-  .blog-highlight{font-size:17px;padding:24px}
-}
+@media(max-width:768px){.blog-body{padding:40px 20px 60px;font-size:16px}.blog-hero{padding:60px 20px 40px}.blog-highlight{font-size:17px;padding:24px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
 </style>
-<script>
-// Apply lang immediately before DOMContentLoaded to prevent flash
-(function(){
-  var saved = localStorage.getItem('vpLang') || 'tr';
-  document.addEventListener('DOMContentLoaded', function(){
-    document.querySelectorAll('.blog-lang-section').forEach(function(el){
-      el.style.display = el.getAttribute('data-lang') === saved ? 'block' : 'none';
-    });
-  });
-  // Also apply immediately if DOM already ready
-  if(document.readyState !== 'loading'){
-    document.querySelectorAll('.blog-lang-section').forEach(function(el){
-      el.style.display = el.getAttribute('data-lang') === saved ? 'block' : 'none';
-    });
-  }
-})();
-</script>
-
 </head>
 <body>
-<style>
-.blog-lang-section { display: none !important; }
-.blog-lang-section[data-lang="tr"] { display: block !important; }
-</style>
-<script>
-(function(){
-  var l = localStorage.getItem('vpLang') || 'tr';
-  document.querySelectorAll('.blog-lang-section').forEach(function(el){
-    el.style.cssText = el.getAttribute('data-lang') === l ? 'display:block!important' : 'display:none!important';
-  });
-})();
-</script>
 <nav class="vpdk-nav-global">
   <a class="vpdk-nav-logo" href="/index.html">vital<span>protocol</span>DK</a>
   <div class="vpdk-nav-center">
@@ -135,7 +99,7 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
       </div>
     </div>
     <a href="/hakkimda.html" class="vpdk-nav-link" data-nav="mission">Misyon</a>
-    <a href="https://vitalprotocol.myikas.com/blog" target="_blank" class="vpdk-nav-link" data-nav="blog">Blog</a>
+    <a href="/blog.html" target="_blank" class="vpdk-nav-link" data-nav="blog">Blog</a>
     <a href="/faq.html" class="vpdk-nav-link" data-nav="faq">SSS</a>
     <a href="/iletisim.html" class="vpdk-nav-link" data-nav="contact">İletişim</a>
   </div>
@@ -152,38 +116,739 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
   <a href="/index.html" class="vpdk-mobile-link" data-mnav="home">Anasayfa</a>
   <a href="/saglik-ucgeni.html" class="vpdk-mobile-link" data-mnav="health">Sağlık Üçgeni</a>
   <div class="vpdk-mobile-section" data-mnavs="protocols">Protokoller</div>
-<script>
-(function(){
-  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Protokoller",blog:"Blog",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Protocols",blog:"Insights",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Protocolos",blog:"Perspectivas",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
-  function applyNav(l){
-    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){b.classList.toggle("active",b.textContent.trim().toLowerCase()===l)});
-    var lbl=lb[l]||lb.tr;
-    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lbl[k]});
-  }
-  window.vpNavLang=function(l,btn){
-    localStorage.setItem('vpLang',l);
-    applyNav(l);
-    // Also switch blog page lang sections
-    document.querySelectorAll('.blog-lang-section').forEach(function(el){
-      el.style.display = el.getAttribute('data-lang')===l ? 'block' : 'none';
-    });
-  };
-  document.addEventListener("DOMContentLoaded",function(){
-    var saved=localStorage.getItem('vpLang')||'tr';
-    applyNav(saved);
-    document.querySelectorAll('.blog-lang-section').forEach(function(el){
-      el.style.display = el.getAttribute('data-lang')===saved ? 'block' : 'none';
-    });
-  });
-})();
-</script>
+  <div class="vpdk-mobile-sub">
+    <a href="/hl5.html" class="vpdk-mobile-link">HL5</a>
+    <a href="/fit20.html" class="vpdk-mobile-link">FIT20</a>
+    <a href="/origin.html" class="vpdk-mobile-link">ORIGIN</a>
+    <a href="/nrgi.html" class="vpdk-mobile-link">NRGI</a>
+    <a href="/edge.html" class="vpdk-mobile-link">EDGE</a>
+    <a href="/ignt.html" class="vpdk-mobile-link">IGNT</a>
+    <a href="/r-stour.html" class="vpdk-mobile-link">R-STOUR</a>
+    <a href="/on-shots.html" class="vpdk-mobile-link">ON-SHOTS</a>
+  </div>
+  <a href="/hakkimda.html" class="vpdk-mobile-link" data-mnav="mission">Misyon</a>
+  <a href="/blog.html" target="_blank" class="vpdk-mobile-link" data-mnav="blog">Blog</a>
+  <a href="/faq.html" class="vpdk-mobile-link" data-mnav="faq">SSS</a>
+  <a href="/iletisim.html" class="vpdk-mobile-link" data-mnav="contact">İletişim</a>
+</div>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{overflow-x:hidden;width:100%}
 
-<!-- TR -->
-<div class="blog-lang-section" data-lang="tr">
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --forest:#2e3d30;
+  --forest-light:#3d5240;
+  --forest-deep:#1a2419;
+  --cream:#fcfcfa;
+  --cream-warm:#f5f2ec;
+  --cream-section:#f0ede6;
+  --gold:#b8963e;
+  --gold-light:#d4ae5e;
+  --gold-pale:#f0e4c4;
+  --muted:#6b7c6d;
+  --border:#d6ddd7;
+  --text:#1e2b1f;
+}
+html{scroll-behavior:smooth}
+.lang-section{display:none}
+.lang-section.active{display:block}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;width:100%;max-width:100%}
+
+
+
+/* ══════════════════════════════════
+   1. HERO
+══════════════════════════════════ */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:0;
+  background:var(--cream);
+}
+.hero-left{
+  padding:80px 60px 80px 48px;
+  display:flex;flex-direction:column;justify-content:center;
+  box-sizing:border-box;min-width:0;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12px;letter-spacing:.12em;color:var(--gold);
+  text-transform:uppercase;margin-bottom:32px;
+}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+.hero-h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(48px,5vw,72px);
+  font-weight:300;line-height:1.08;
+  color:var(--forest-deep);margin-bottom:28px;
+}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-h1 strong{font-weight:600}
+.hero-quote{
+  border-left:3px solid var(--gold);
+  padding:20px 28px;
+  background:white;
+  border-radius:0 10px 10px 0;
+  margin-bottom:40px;
+  max-width:520px;
+}
+.hero-quote p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-style:italic;
+  color:var(--forest);line-height:1.65;
+}
+.hero-tagline{
+  font-size:20px;color:var(--muted);line-height:1.8;
+  max-width:480px;font-weight:300;
+}
+.hero-tagline b{color:var(--forest);font-weight:500}
+
+.hero-right{
+  height:75vh;max-height:560px;position:relative;overflow:hidden;
+  background:var(--forest-deep);
+  border-radius:20px;
+  margin:84px 40px 40px 0;
+  align-self:center;
+}
+.hero-img-wrap{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;
+  justify-content:flex-end;
+  padding:40px;
+  background:linear-gradient(to top, rgba(26,36,25,0.92) 0%, rgba(26,36,25,0.3) 50%, transparent 100%);
+}
+.hero-img-card-label{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:500;color:var(--cream);
+  margin-bottom:6px;letter-spacing:.04em;
+}
+.hero-img-card-sub{
+  font-size:12px;letter-spacing:.1em;color:var(--gold-light);
+  text-transform:uppercase;
+}
+/* placeholder for image area */
+.hero-img-bg{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,#2e3d30 0%,#1a2419 40%,#3d2a10 100%);
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-img-placeholder{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;color:rgba(252,252,250,0.3);
+  letter-spacing:.08em;text-align:center;line-height:2;
+}
+
+/* ══════════════════════════════════
+   2. YASAM PROTOKOLU
+══════════════════════════════════ */
+.yasam-section{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;min-height:auto;
+  align-items:center;
+  padding:20px 0;
+
+  width:100%;
+}
+.yasam-photo{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#2e3d30,#1a2419);
+  min-height:420px;
+  max-height:500px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:32px;
+  border-radius:20px;
+  margin:40px 0 40px 48px;
+  align-self:center;
+  box-sizing:border-box;
+  min-width:0;
+}
+.yasam-photo-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(26,36,25,.88) 0%,rgba(26,36,25,.2) 70%,transparent 100%);
+}
+.yasam-photo-content{position:relative;z-index:2}
+.yasam-photo-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:500;color:var(--cream);
+  margin-bottom:6px;
+}
+.yasam-photo-sub{
+  font-size:12px;letter-spacing:.1em;color:var(--gold-light);
+  text-transform:uppercase;
+}
+.yasam-content{
+  padding:60px 40px;
+  display:flex;flex-direction:column;justify-content:center;
+  box-sizing:border-box;
+  min-width:0;
+  overflow-x:hidden;
+}
+.section-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12px;letter-spacing:.12em;color:var(--gold);
+  text-transform:uppercase;margin-bottom:20px;
+}
+.section-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.section-h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(34px,3.5vw,52px);
+  font-weight:300;line-height:1.12;
+  color:var(--forest-deep);margin-bottom:8px;
+}
+.section-h2 em{font-style:italic;color:var(--gold)}
+.section-h2 strong{font-weight:600;display:block}
+.yasam-quote{
+  border-left:3px solid var(--gold);
+  padding:18px 24px;
+  background:var(--cream-warm);
+  border-radius:0 8px 8px 0;
+  margin:28px 0;
+}
+.yasam-quote p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:23px;font-style:italic;
+  color:var(--forest);line-height:1.65;
+}
+.yasam-dark-card{
+  background:var(--forest);
+  border-radius:16px;
+  padding:32px;
+  color:var(--cream);
+}
+.yasam-dark-card p{
+  font-size:19px;line-height:1.9;
+  color:rgba(252,252,250,.8);
+  margin-bottom:12px;
+}
+.yasam-dark-card p:last-child{margin-bottom:0}
+.yasam-dark-card b{color:var(--cream);font-weight:500}
+
+/* ══════════════════════════════════
+   3. HER BEDEN
+══════════════════════════════════ */
+.herbeden-section{
+  background:#f0ede8;
+  padding:100px 48px;
+  text-align:center;
+  overflow-x:hidden;
+  box-sizing:border-box;
+
+  position:relative;
+}
+.herbeden-section .section-eyebrow{justify-content:center}
+.herbeden-section .section-eyebrow::before{display:none}
+.herbeden-section .section-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold)}
+.herbeden-h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(32px,4vw,54px);
+  font-weight:300;line-height:1.15;
+  color:var(--forest-deep);margin-bottom:16px;
+}
+.herbeden-h2 em{font-style:normal;color:var(--gold)}
+.herbeden-sub{
+  font-size:20px;color:var(--muted);
+  max-width:620px;margin:0 auto 56px;line-height:1.75;font-weight:300;
+}
+.herbeden-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:24px;max-width:860px;margin:0 auto;
+}
+.hb-card{
+  background:white;border-radius:20px;
+  padding:40px 32px;
+  border:2px solid var(--gold);
+  text-align:center;transition:all .25s;
+  box-shadow:0 4px 24px rgba(184,150,62,.12);
+}
+.hb-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(184,150,62,.22)}
+.hb-card.active-card{
+  border:2px solid var(--gold);
+  box-shadow:0 4px 24px rgba(184,150,62,.18);
+}
+.hb-icon{font-size:44px;margin-bottom:20px;display:block}
+.hb-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:400;
+  color:var(--forest-deep);margin-bottom:16px;
+  line-height:1.2;
+}
+.hb-text{
+  font-size:18px;color:var(--muted);
+  line-height:1.75;text-transform:none;
+}
+
+/* ══════════════════════════════════
+   4. NOBEL / NITRO
+══════════════════════════════════ */
+.nitro-section{
+  padding:100px 48px;
+  overflow-x:hidden;
+  box-sizing:border-box;
+  width:100%;
+
+  position:relative;
+}
+.nitro-inner-wrap{max-width:1100px;margin:0 auto}
+.nitro-header{text-align:center;margin-bottom:56px}
+.nitro-header .section-eyebrow{justify-content:center}
+.nitro-header .section-eyebrow::before{display:none}
+.nitro-header .section-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold)}
+.nitro-h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(32px,4vw,52px);font-weight:300;
+  color:var(--forest-deep);line-height:1.15;margin-bottom:10px;
+}
+.nitro-h2 em{font-style:italic;color:var(--gold)}
+.nitro-sub{font-size:15px;color:var(--muted);line-height:1.7;letter-spacing:.02em}
+.nitro-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.nitro-card-light{
+  background:white;border:1px solid var(--border);
+  border-radius:20px;padding:40px;
+}
+.nitro-badge{
+  display:inline-block;
+  font-size:11px;letter-spacing:.1em;color:var(--gold);
+  text-transform:uppercase;margin-bottom:16px;
+  padding:5px 12px;background:var(--gold-pale);
+  border-radius:20px;font-weight:500;
+}
+.nitro-card-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;font-weight:400;
+  color:var(--forest-deep);margin-bottom:18px;line-height:1.2;
+}
+.nitro-card-text{
+  font-size:20px;color:var(--muted);line-height:1.85;font-weight:300;
+}
+.nitro-card-dark{
+  background:var(--forest);border-radius:20px;padding:40px;
+  color:var(--cream);
+}
+.nitro-card-dark .nitro-card-title{color:var(--cream)}
+.nitro-tag{
+  font-size:22px;letter-spacing:.02em;color:var(--gold-light);
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  margin-bottom:16px;display:block;
+}
+.nitro-card-dark .nitro-card-text{color:rgba(252,252,250,.75)}
+.nitro-checks{margin-top:24px;display:flex;flex-direction:column;gap:10px}
+.nitro-check{
+  display:flex;align-items:center;gap:10px;
+  font-size:17px;color:var(--gold-light);letter-spacing:.03em;font-weight:500;
+}
+.nitro-check::before{
+  content:'✓';color:var(--gold);font-size:14px;font-weight:600;
+}
+.nitro-cta{text-align:center;margin-top:48px}
+.nitro-btn{
+  display:inline-block;
+  padding:16px 44px;
+  background:var(--forest);color:var(--cream);
+  font-size:14px;font-weight:500;letter-spacing:.06em;
+  text-decoration:none;border-radius:40px;
+  border:none;cursor:pointer;
+  font-family:'DM Sans',sans-serif;transition:all .2s;
+  text-transform:uppercase;
+}
+.nitro-btn:hover{background:var(--forest-light);transform:translateY(-2px)}
+
+/* ══════════════════════════════════
+   5. UCLU SINERJI
+══════════════════════════════════ */
+.sinerji-section{
+  background:white;
+  padding:100px 48px;
+  overflow-x:hidden;
+  box-sizing:border-box;
+  width:100%;
+
+  position:relative;
+}
+.sinerji-inner{max-width:1100px;margin:0 auto}
+.sinerji-header{text-align:center;margin-bottom:16px}
+.sinerji-eyebrow{
+  font-size:14px;letter-spacing:.12em;color:var(--gold);
+  text-transform:uppercase;margin-bottom:18px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.sinerji-eyebrow::before,.sinerji-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold)}
+.sinerji-h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(30px,3.5vw,50px);font-weight:300;
+  color:var(--forest-deep);line-height:1.2;margin-bottom:14px;
+}
+.sinerji-h2 em{font-style:italic;color:var(--gold-light)}
+.sinerji-sub{
+  font-size:19px;color:var(--muted);
+  max-width:680px;margin:0 auto 60px;line-height:1.75;font-weight:300;
+}
+.sinerji-grid{
+  display:grid;
+  grid-template-columns:1fr 1.1fr 1fr;
+  gap:20px;
+  align-items:center;
+}
+.sinerji-col{
+  background:var(--cream-warm);
+  border-radius:24px;
+  padding:32px;
+  border:1px solid var(--border);
+}
+.sinerji-col.center-col{
+  background:var(--forest);
+  border:none;
+  border-radius:28px;
+  padding:32px;
+  box-shadow:0 20px 60px rgba(46,61,48,.22);
+  transform:translateY(-12px);
+}
+.sinerji-time{
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;letter-spacing:.1em;color:var(--gold);font-weight:600;
+  text-transform:uppercase;margin-bottom:16px;
+}
+.sinerji-col.center-col .sinerji-time{color:var(--gold-light)}
+.sinerji-time-icon{font-size:18px}
+.sinerji-product{
+  font-family:'Cormorant Garamond',serif;
+  font-size:38px;font-weight:500;
+  color:var(--forest-deep);margin-bottom:14px;
+  letter-spacing:.01em;line-height:1.1;
+}
+.sinerji-col.center-col .sinerji-product{color:var(--cream)}
+.sinerji-desc{
+  font-size:17px;color:var(--muted);
+  line-height:1.8;font-weight:300;margin-bottom:20px;
+}
+.sinerji-col.center-col .sinerji-desc{color:rgba(252,252,250,.7)}
+.sinerji-tags{display:flex;flex-direction:column;gap:8px}
+.sinerji-tag{
+  font-size:15px;
+  color:var(--muted);font-weight:400;
+  padding:8px 0;
+  border-bottom:1px solid rgba(0,0,0,.07);
+  display:flex;align-items:center;gap:8px;
+}
+.sinerji-tag::before{content:'•';color:var(--gold);font-weight:700}
+.sinerji-tag:last-child{border-bottom:none}
+.sinerji-col.center-col .sinerji-tag{
+  color:rgba(252,252,250,.65);
+  border-bottom-color:rgba(255,255,255,.1);
+}
+.sinerji-col.center-col .sinerji-tag::before{color:var(--gold-light)}
+.sinerji-equation{
+  text-align:center;margin-top:56px;
+  padding-top:48px;border-top:1px solid rgba(252,252,250,.1);
+}
+.sinerji-eq-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,3vw,44px);font-weight:300;
+  color:var(--forest-deep);letter-spacing:.04em;
+}
+.sinerji-eq-text span{color:var(--gold)}
+.sinerji-eq-sub{
+  font-size:18px;color:var(--muted);
+  margin-top:12px;line-height:1.7;
+}
+
+/* ══════════════════════════════════
+   FOOTER
+══════════════════════════════════ */
+footer{
+  padding:40px 48px;
+  border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:16px;
+}
+.footer-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;color:var(--forest);
+}
+.footer-logo span{color:var(--gold);font-style:italic}
+.footer-note{
+  font-size:14px;color:var(--muted);
+  max-width:540px;line-height:1.7;text-align:right;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:0 20px}
+  .quiz-section{padding:60px 20px}
+  .quiz-card{padding:24px 18px}
+  .quiz-options{grid-template-columns:1fr}
+  .quiz-opt{font-size:14px}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:100px 24px 48px}
+  .hero-right{height:360px}
+  .yasam-section{grid-template-columns:1fr;width:100%;max-width:100%}
+  .yasam-photo{min-height:300px;border-radius:0;margin:0}
+  .yasam-content{padding:24px 12px}
+  .yasam-quote p{font-size:18px}
+  .yasam-dark-card{padding:24px 20px}
+  .yasam-dark-card p{font-size:16px}
+  .herbeden-section{padding:60px 20px;box-sizing:border-box}
+  .herbeden-grid{grid-template-columns:1fr 1fr;gap:16px}
+  .nitro-section{padding:60px 24px}
+  .nitro-grid{grid-template-columns:1fr}
+  .sinerji-section{padding:60px 24px}
+  .sinerji-grid{grid-template-columns:1fr}
+  .sinerji-grid::before{display:none}
+  .sinerji-col,.sinerji-col.center-col{
+    padding:32px 24px;
+    border-bottom:1px solid rgba(184,150,62,.15);
+  }
+  footer{padding:32px 24px;flex-direction:column;text-align:center}
+  .footer-note{text-align:center}
+}
+@media(max-width:600px){
+  .herbeden-grid{grid-template-columns:1fr}
+  .quiz-section{padding:48px 12px}
+  .quiz-card{padding:20px 14px;border-radius:14px}
+  .quiz-options{grid-template-columns:1fr}
+  .quiz-opt{font-size:13px;padding:12px 14px}
+  .quiz-next{padding:12px 24px;font-size:13px}
+  .quiz-sub{font-size:14px}
+  .nitro-section{padding:60px 20px}
+  .nitro-grid{grid-template-columns:1fr}
+  .sinerji-section{padding:60px 20px}
+  .social-section{padding:60px 20px
+  position:relative;
+}
+  .herbeden-section{padding:60px 20px}
+  .yasam-content{padding:24px 12px}
+  .yasam-quote p{font-size:16px}
+  .yasam-dark-card p{font-size:15px}
+  .yasam-dark-card{padding:20px 16px}
+}
+
+
+/* ── QUIZ CTA SECTION ── */
+.quiz-section{
+  padding:100px 32px;
+  background:var(--forest-deep);
+  overflow-x:hidden;
+  box-sizing:border-box;
+  width:100%;
+}
+.quiz-inner{
+  max-width:760px;margin:0 auto;
+  width:100%;box-sizing:border-box;
+}
+.quiz-eyebrow{
+  font-size:12px;letter-spacing:.12em;color:var(--gold);
+  text-transform:uppercase;margin-bottom:20px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.quiz-eyebrow::before,.quiz-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold)}
+.quiz-cta-wrap{text-align:center}
+.quiz-h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(32px,4vw,54px);font-weight:300;
+  color:var(--cream);line-height:1.15;margin-bottom:16px;
+}
+.quiz-h2 em{font-style:italic;color:var(--gold-light)}
+.quiz-sub{
+  font-size:17px;color:rgba(252,252,250,.6);
+  max-width:580px;margin:0 auto 40px;
+  font-weight:300;line-height:1.7;
+}
+.quiz-cta-features{
+  display:flex;align-items:center;justify-content:center;
+  gap:28px;margin-bottom:40px;flex-wrap:wrap;
+}
+.quiz-feat{
+  font-size:13px;color:rgba(252,252,250,.5);
+  letter-spacing:.04em;font-weight:400;
+}
+.quiz-cta-btn{
+  display:inline-block;
+  background:var(--gold);
+  color:var(--forest-deep);
+  padding:20px 56px;
+  border-radius:0;
+  text-decoration:none;
+  font-weight:700;
+  font-size:15px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  transition:all .3s;
+  box-shadow:0 12px 32px rgba(0,0,0,0.2);
+}
+.quiz-cta-btn:hover{
+  background:#fcfcfa;
+  transform:translateY(-2px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.25);
+}
+@media(max-width:600px){
+  .quiz-section{padding:64px 20px}
+  .quiz-cta-features{gap:16px}
+  .quiz-cta-btn{padding:17px 40px;font-size:14px}
+}
+
+/* ── SOSYAL KANIT ── */
+.social-section{
+  padding:100px 48px;
+  background:var(--cream-warm);
+  overflow-x:hidden;
+  box-sizing:border-box;
+}
+.social-inner{max-width:1100px;margin:0 auto}
+.social-header{text-align:center;margin-bottom:56px}
+.social-eyebrow{
+  font-size:12px;letter-spacing:.12em;color:var(--gold);
+  text-transform:uppercase;margin-bottom:16px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.social-eyebrow::before,.social-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold)}
+.social-h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,3.5vw,46px);font-weight:300;
+  color:var(--forest-deep);line-height:1.2;
+}
+.social-h2 em{font-style:italic;color:var(--gold)}
+.reviews-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:24px;
+
+  overflow-x:hidden;
+}
+.review-card{
+  background:white;border-radius:20px;
+  padding:32px;border:1px solid var(--border);
+  display:flex;flex-direction:column;gap:16px;
+  transition:transform .2s;
+}
+.review-card:hover{transform:translateY(-4px)}
+.review-stars{color:var(--gold);font-size:18px;letter-spacing:2px}
+.review-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:19px;font-style:italic;
+  color:var(--forest);line-height:1.7;flex:1;
+}
+.review-author{
+  display:flex;align-items:center;gap:12px;
+  padding-top:16px;border-top:1px solid var(--border);
+}
+.review-avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--forest);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;font-weight:500;color:var(--cream);
+  flex-shrink:0;
+}
+.review-name{font-size:15px;font-weight:500;color:var(--forest-deep)}
+.review-meta{font-size:13px;color:var(--muted)}
+
+@media(max-width:768px){
+  .reviews-grid{grid-template-columns:1fr}
+  .social-section{padding:60px 24px}
+  
+  
+  .email-input,
+}
+/* ── İÇ NAV ── */
+.vpdk-nav{
+  width:100%;
+  background:rgba(252,252,250,0.98);
+  border-bottom:1px solid #d6ddd7;
+  padding:0 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:64px;
+  position:relative;
+  backdrop-filter:blur(12px);
+}
+.vpdk-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:500;color:#2e3d30;letter-spacing:.02em;
+  text-decoration:none;
+}
+.vpdk-logo span{color:#b8963e;font-style:italic}
+
+.vpdk-right{display:flex;gap:6px;align-items:center}
+.vpdk-lang{
+  padding:4px 12px;font-size:11px;font-weight:500;
+  letter-spacing:.06em;border-radius:20px;cursor:pointer;
+  border:1px solid #d6ddd7;background:transparent;
+  color:#6b7c6d;transition:all .2s;font-family:'DM Sans',sans-serif;
+}
+.vpdk-lang.active{background:#2e3d30;color:#fcfcfa;border-color:#2e3d30;}
+@media(max-width:768px){
+  .vpdk-nav{padding:0 16px;height:56px;}
+}
+
+/* ═══ MOBİL TAM FIX ═══ */
+@media(max-width:768px){
+  *{max-width:100%!important;box-sizing:border-box!important}
+  html,body{overflow-x:hidden!important;width:100%!important}
+  img,svg,video{width:100%!important;height:auto!important}
+  p,h1,h2,h3,h4,h5,h6,span,li,a,blockquote,div{
+    overflow-wrap:break-word!important;
+    word-break:break-word!important;
+  }
+  .hero{grid-template-columns:1fr!important;width:100%!important}
+  .hero-left{padding:70px 18px 36px!important;width:100%!important}
+  .hero-right{height:300px!important;width:100%!important}
+  .hero-quote p{font-size:15px!important}
+  .yasam-section{grid-template-columns:1fr!important;width:100%!important}
+  .yasam-photo{margin:0!important;border-radius:0!important;width:100%!important;min-height:260px!important}
+  .yasam-content{padding:28px 18px!important;width:100%!important}
+  .yasam-quote{padding:12px 14px!important}
+  .yasam-quote p{font-size:17px!important}
+  .yasam-dark-card{padding:18px 14px!important}
+  .yasam-dark-card p{font-size:15px!important}
+  .herbeden-section{padding:48px 16px!important;width:100%!important}
+  .herbeden-grid{grid-template-columns:1fr!important;gap:14px!important}
+  .herbeden-card{padding:28px 18px!important;width:100%!important}
+  .nitro-section{padding:48px 16px!important;width:100%!important}
+  .nitro-grid{grid-template-columns:1fr!important}
+  .nitro-card-light,.nitro-card-dark{padding:24px 18px!important;width:100%!important}
+  .sinerji-section{padding:48px 16px!important;width:100%!important}
+  .sinerji-grid{grid-template-columns:1fr!important}
+  .sinerji-grid::before{display:none!important}
+  .sinerji-col,.sinerji-col.center-col{padding:22px 18px!important;width:100%!important}
+  .sinerji-inner{width:100%!important;padding:0!important}
+  .sinerji-equation{padding-top:32px!important;margin-top:32px!important}
+  .sinerji-eq-text{font-size:clamp(16px,4vw,28px)!important}
+  .sinerji-eq-sub{font-size:14px!important}
+  .quiz-section{padding:48px 14px!important;width:100%!important}
+  .quiz-inner{width:100%!important;padding:0!important}
+  .quiz-card{padding:20px 14px!important;width:100%!important;border-radius:14px!important}
+  .quiz-options{grid-template-columns:1fr!important}
+  .quiz-opt{font-size:13px!important;padding:12px 14px!important;width:100%!important}
+  .quiz-sub{font-size:14px!important}
+  .social-section{padding:48px 16px!important;width:100%!important}
+  .reviews-grid{grid-template-columns:1fr!important}
+  .review-card{padding:22px 16px!important;width:100%!important}
+  footer{padding:28px 16px!important;flex-direction:column!important;text-align:center!important;width:100%!important}
+  .footer-note{text-align:center!important;font-size:11px!important;width:100%!important}
+}
+</style>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('.lang-section').forEach(function(s){ s.style.display='none'; });
+  var target = document.getElementById('lang-' + lang);
+  if(target) target.style.display = 'block';
+  document.querySelectorAll('.vpdk-lang').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.vpdk-lang').forEach(function(b){
+    if(b.textContent.trim() === lang.toUpperCase()) b.classList.add('active');
+  });
+}
+// Event delegation - data-setlang butonları
+document.addEventListener('click', function(e){
+  var t = e.target;
+  while(t && t !== document.body){
+    var lang = t.getAttribute('data-setlang');
+    if(lang){ setLang(lang); return; }
+    t = t.parentElement;
+  }
+});
+</script>
 <div class="blog-hero">
-  <img src="/blog-img-beyin.png" alt="Beyne Pıhtı Atmadan Önce Vücut Hangi Sinyalleri Verir?" class="blog-hero-img">
+  <img src="/beyin.png" alt="Beyne Pıhtı Atmadan Önce Vücut Hangi Sinyalleri Verir?" class="blog-hero-img">
   <span class="blog-category">✦ Beyin Sağlığı</span>
   <h1>Beyne Pıhtı Atmadan Önce Vücut Hangi Sinyalleri Verir?</h1>
   <h2>İnme aniden gelmiyor — vücudunuz saatler öncesinden sizi uyarıyor</h2>
@@ -191,96 +856,29 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
 </div>
 <div class="blog-body">
 <a href="/blog.html" class="blog-back">← Blog'a Dön</a>
-<div class="blog-warning"><strong>⚠️ Önemli Bilgi:</strong> Bu içerik bilgilendirme amaçlıdır ve tıbbi tanı yerine geçmez. Şüpheli belirtiler durumunda acilen sağlık kuruluşuna başvurun.</div>
+<div class="blog-warning"><strong>⚠️ Önemli:</strong> Bu içerik bilgilendirme amaçlıdır ve tıbbi tanı yerine geçmez. Şüpheli belirtiler durumunda acilen sağlık kuruluşuna başvurun.</div>
 <p>Dünya genelinde her yıl 15 milyon kişi inme geçiriyor. Bu vakaların büyük çoğunluğunda, hastalar önceki belirtileri "yorgunluk" ya da "stres" olarak geçiştirmiş. Oysa bu belirtiler aslında birer SOS sinyaliydi.</p>
 <h2>Erken Uyarı İşaretleri</h2>
 <div class="blog-signals">
-  <div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Ani, şiddetli baş ağrısı</strong> — Daha önce hiç yaşanmamış türde, "kafaya çekiç vurmuş gibi" bir ağrı. Neden olmaksızın, aniden başlar.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Tek ya da iki gözde ani görme bozukluğu</strong> — Bulanıklık, çift görme veya bir gözde geçici körlük. Dakikalar içinde geçebilir, bu sizi yanıltmasın.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Konuşmada güçlük veya anlayamama</strong> — Sözcükleri bulmakta zorlanmak, saçma konuşmak ya da karşınızdakini anlamakta zorlanma.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge warn">DİKKAT</div><div><strong>Yüz, kol veya bacakta uyuşma/güçsüzlük</strong> — Genellikle vücudun tek tarafını etkiler.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge warn">DİKKAT</div><div><strong>Denge kaybı ve koordinasyon bozukluğu</strong> — Aniden başlayan sersemlik, yürürken sendeleyin.</div></div>
-</div>
-<h2>FAST Testi</h2>
-<div class="blog-checklist">
-  <h3>Belirtileri fark ettiğinizde 112'yi arayın</h3>
-  <div class="blog-checklist-item"><strong>F — Face (Yüz):</strong> Gülümsemesini isteyin. Yüzün bir tarafı aşağı mı sarkıyor?</div>
-  <div class="blog-checklist-item"><strong>A — Arms (Kollar):</strong> İki kolunu kaldırmasını isteyin. Bir kol aşağı mı düşüyor?</div>
-  <div class="blog-checklist-item"><strong>S — Speech (Konuşma):</strong> Basit bir cümle söylemesini isteyin. Anlaşılmaz mı?</div>
-  <div class="blog-checklist-item"><strong>T — Time (Zaman):</strong> Bunlardan biri varsa, anında 112'yi arayın!</div>
+  <div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Ani, şiddetli baş ağrısı</strong> — "Kafaya çekiç vurmuş gibi" bir ağrı. Neden olmaksızın, aniden başlar.</div></div>
+  <div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Ani görme bozukluğu</strong> — Bulanıklık, çift görme veya bir gözde geçici körlük.</div></div>
+  <div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Konuşmada güçlük</strong> — Sözcükleri bulmakta zorlanmak veya karşınızdakini anlayamamak.</div></div>
+  <div class="blog-signal"><div class="blog-signal-badge warn">DİKKAT</div><div><strong>Yüz, kol veya bacakta uyuşma</strong> — Genellikle vücudun tek tarafını etkiler.</div></div>
+  <div class="blog-signal"><div class="blog-signal-badge warn">DİKKAT</div><div><strong>Denge kaybı</strong> — Aniden başlayan sersemlik veya yürürken sendeleme.</div></div>
 </div>
 <div class="blog-highlight">%80 inme vakası önlenebilir niteliktedir. Erken fark etmek, tedaviyi mümkün kılar.</div>
+<h2>FAST Testi — 112'yi Aramak İçin</h2>
+<div class="blog-checklist">
+  <h3>Belirtileri fark ettiğinizde vakit kaybetmeyin</h3>
+  <div class="blog-checklist-item"><strong>F — Face (Yüz):</strong> Gülümsemesini isteyin. Bir tarafı sarkıyor mu?</div>
+  <div class="blog-checklist-item"><strong>A — Arms (Kollar):</strong> İki kolunu kaldırmasını isteyin. Bir kol düşüyor mu?</div>
+  <div class="blog-checklist-item"><strong>S — Speech (Konuşma):</strong> Basit bir cümle söylemesini isteyin. Anlaşılmaz mı?</div>
+  <div class="blog-checklist-item"><strong>T — Time (Zaman):</strong> Bunlardan biri varsa, hemen 112'yi arayın!</div>
+</div>
 <p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Danışmanı · vitalprotocolDK</p>
 </div>
 <footer>
   <div class="footer-logo">vital<span>protocol</span>DK</div>
-  <div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez. — Deniz KAT · Wellness Danışmanı</div>
+  <div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.</div>
 </footer>
-</div>
-
-<!-- EN -->
-<div class="blog-lang-section" data-lang="en" style="display:none">
-<div class="blog-hero">
-  <img src="/blog-img-beyin.png" alt="What Signals Does the Body Give Before a Brain Clot?" class="blog-hero-img">
-  <span class="blog-category">✦ Brain Health</span>
-  <h1>What Signals Does the Body Give Before a Brain Clot?</h1>
-  <h2>A stroke doesn't come suddenly — your body warns you hours before</h2>
-  <div class="blog-meta"><span>⏱ ~5 min read</span><span>✦ Deniz KAT</span></div>
-</div>
-<div class="blog-body">
-<a href="/blog.html" class="blog-back">← Back to Blog</a>
-<div class="blog-warning"><strong>⚠️ Important:</strong> This content is for informational purposes only and does not replace medical diagnosis. In case of suspicious symptoms, seek medical attention immediately.</div>
-<p>Every year, 15 million people worldwide have a stroke. In the vast majority of these cases, patients had dismissed previous symptoms as "fatigue" or "stress." Yet these symptoms were actually SOS signals.</p>
-<h2>Early Warning Signs</h2>
-<div class="blog-signals">
-  <div class="blog-signal"><div class="blog-signal-badge alert">URGENT</div><div><strong>Sudden, severe headache</strong> — A type never experienced before, like "a hammer hitting the head." Starts suddenly, without cause.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge alert">URGENT</div><div><strong>Sudden vision problems in one or both eyes</strong> — Blurriness, double vision, or temporary blindness. It may pass in minutes — don't be misled.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge alert">URGENT</div><div><strong>Difficulty speaking or understanding</strong> — Struggling to find words, speaking nonsensically, or difficulty understanding others.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge warn">CAUTION</div><div><strong>Numbness/weakness in face, arm, or leg</strong> — Usually affects one side of the body.</div></div>
-</div>
-<h2>The FAST Test</h2>
-<div class="blog-checklist">
-  <h3>When you notice symptoms, call emergency services</h3>
-  <div class="blog-checklist-item"><strong>F — Face:</strong> Ask them to smile. Is one side drooping?</div>
-  <div class="blog-checklist-item"><strong>A — Arms:</strong> Ask them to raise both arms. Does one drift down?</div>
-  <div class="blog-checklist-item"><strong>S — Speech:</strong> Ask them to repeat a simple sentence. Is it slurred or strange?</div>
-  <div class="blog-checklist-item"><strong>T — Time:</strong> If any of these are present, call emergency services immediately!</div>
-</div>
-<div class="blog-highlight">80% of strokes are preventable. Early detection makes treatment possible.</div>
-<p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Consultant · vitalprotocolDK</p>
-</div>
-<footer>
-  <div class="footer-logo">vital<span>protocol</span>DK</div>
-  <div class="footer-note"><strong>Transparency Note:</strong> This page is for informational purposes only. Supplements do not replace a balanced diet. — Deniz KAT · Wellness Consultant</div>
-</footer>
-</div>
-
-<!-- ES -->
-<div class="blog-lang-section" data-lang="es" style="display:none">
-<div class="blog-hero">
-  <img src="/blog-img-beyin.png" alt="¿Qué Señales da el Cuerpo Antes de un Coágulo Cerebral?" class="blog-hero-img">
-  <span class="blog-category">✦ Salud Cerebral</span>
-  <h1>¿Qué Señales da el Cuerpo Antes de un Coágulo Cerebral?</h1>
-  <h2>Un ictus no llega de repente — tu cuerpo te avisa horas antes</h2>
-  <div class="blog-meta"><span>⏱ ~5 min de lectura</span><span>✦ Deniz KAT</span></div>
-</div>
-<div class="blog-body">
-<a href="/blog.html" class="blog-back">← Volver al Blog</a>
-<div class="blog-warning"><strong>⚠️ Importante:</strong> Este contenido es solo informativo y no reemplaza el diagnóstico médico. Ante síntomas sospechosos, acuda a un centro de salud de inmediato.</div>
-<p>Cada año, 15 millones de personas en todo el mundo sufren un ictus. En la gran mayoría de estos casos, los pacientes habían descartado síntomas previos como "cansancio" o "estrés." Sin embargo, estos síntomas eran en realidad señales de SOS.</p>
-<h2>Señales de Advertencia Tempranas</h2>
-<div class="blog-signals">
-  <div class="blog-signal"><div class="blog-signal-badge alert">URGENTE</div><div><strong>Dolor de cabeza repentino y severo</strong> — Un tipo nunca antes experimentado, como "un martillo golpeando la cabeza."</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge alert">URGENTE</div><div><strong>Problemas visuales repentinos</strong> — Visión borrosa, visión doble o ceguera temporal. Puede pasar en minutos, no se deje engañar.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge alert">URGENTE</div><div><strong>Dificultad para hablar o entender</strong> — Dificultad para encontrar palabras, hablar sin sentido.</div></div>
-</div>
-<div class="blog-highlight">El 80% de los ictus son prevenibles. La detección temprana hace posible el tratamiento.</div>
-<p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Consultor de Bienestar · vitalprotocolDK</p>
-</div>
-<footer>
-  <div class="footer-logo">vital<span>protocol</span>DK</div>
-  <div class="footer-note"><strong>Nota de Transparencia:</strong> Esta página es solo informativa. Los suplementos no reemplazan una dieta equilibrada. — Deniz KAT · Consultor de Bienestar</div>
-</footer>
-</div>
-
 </body></html>
