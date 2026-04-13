@@ -243,6 +243,24 @@ footer {
   .footer-note { text-align: center; }
 }
 </style>
+<script>
+// Apply lang immediately before DOMContentLoaded to prevent flash
+(function(){
+  var saved = localStorage.getItem('vpLang') || 'tr';
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.blog-lang-section').forEach(function(el){
+      el.style.display = el.getAttribute('data-lang') === saved ? 'block' : 'none';
+    });
+  });
+  // Also apply immediately if DOM already ready
+  if(document.readyState !== 'loading'){
+    document.querySelectorAll('.blog-lang-section').forEach(function(el){
+      el.style.display = el.getAttribute('data-lang') === saved ? 'block' : 'none';
+    });
+  }
+})();
+</script>
+<style>.blog-lang-section{display:none}.blog-lang-section[data-lang="tr"]{display:block}</style>
 </head>
 <body>
 <!DOCTYPE html>
