@@ -1,0 +1,447 @@
+<!-- GLOBAL NAV -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+.vpdk-nav-global{width:100%;background:rgba(252,252,250,0.98);border-bottom:1px solid #d6ddd7;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:9999;backdrop-filter:blur(12px);font-family:'DM Sans',sans-serif;box-sizing:border-box}
+.vpdk-nav-global *{box-sizing:border-box}
+.vpdk-nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:#2e3d30;letter-spacing:.02em;text-decoration:none;flex-shrink:0}
+.vpdk-nav-logo span{color:#b8963e;font-style:italic}
+.vpdk-nav-center{display:flex;align-items:center;gap:4px;position:absolute;left:50%;transform:translateX(-50%)}
+.vpdk-nav-link{padding:6px 14px;font-size:13px;font-weight:400;color:#2e3d30;text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap}
+.vpdk-nav-link:hover{background:#f0ede6;color:#1a2419}
+.vpdk-nav-dropdown{position:relative}
+.vpdk-nav-dropdown-btn{padding:6px 14px;font-size:13px;font-weight:400;color:#2e3d30;background:none;border:none;cursor:pointer;border-radius:6px;transition:all .2s;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;white-space:nowrap}
+.vpdk-nav-dropdown-btn:hover{background:#f0ede6;color:#1a2419}
+.vpdk-nav-dropdown-btn svg{width:12px;height:12px;transition:transform .2s}
+.vpdk-nav-dropdown:hover .vpdk-nav-dropdown-btn svg{transform:rotate(180deg)}
+.vpdk-nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:8px;min-width:180px;box-shadow:0 8px 32px rgba(0,0,0,.1);z-index:9999}
+.vpdk-nav-dropdown:hover .vpdk-nav-dropdown-menu{display:block}
+.vpdk-nav-dropdown-item{display:block;padding:9px 14px;font-size:13px;color:#2e3d30;text-decoration:none;border-radius:8px;transition:all .2s;font-weight:400}
+.vpdk-nav-dropdown-item:hover{background:#f0ede6;color:#b8963e}
+.vpdk-nav-right{display:flex;gap:6px;align-items:center}
+.vpdk-nav-lang{padding:4px 12px;font-size:11px;font-weight:500;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7c6d;transition:all .2s;font-family:'DM Sans',sans-serif}
+.vpdk-nav-lang.active{background:#2e3d30;color:#fcfcfa;border-color:#2e3d30}
+.vpdk-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.vpdk-hamburger span{width:22px;height:2px;background:#2e3d30;border-radius:2px;display:block}
+.vpdk-mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;background:#fff;border-bottom:1px solid #d6ddd7;padding:16px;z-index:9998;box-shadow:0 8px 24px rgba(0,0,0,.08);max-height:calc(100vh - 56px);overflow-y:auto}
+.vpdk-mobile-menu.open{display:block}
+.vpdk-mobile-link{display:block;padding:11px 16px;font-size:14px;color:#2e3d30;text-decoration:none;border-radius:8px;font-family:'DM Sans',sans-serif}
+.vpdk-mobile-link:hover{background:#f0ede6}
+.vpdk-mobile-section{font-size:11px;letter-spacing:.1em;color:#b8963e;font-weight:600;text-transform:uppercase;padding:10px 16px 4px}
+.vpdk-mobile-sub{padding-left:16px}
+@media(max-width:900px){.vpdk-nav-center{display:none}.vpdk-nav-global{padding:0 16px;height:56px}.vpdk-hamburger{display:flex}}
+</style>
+
+<nav class="vpdk-nav-global">
+  <a class="vpdk-nav-logo" href="/index.html">vital<span>protocol</span>DK</a>
+  <div class="vpdk-nav-center">
+    <a href="/index.html" class="vpdk-nav-link" data-nav="home">Anasayfa</a>
+    <a href="/saglik-ucgeni.html" class="vpdk-nav-link" data-nav="health">Sağlık Üçgeni</a>
+    <div class="vpdk-nav-dropdown">
+      <button class="vpdk-nav-dropdown-btn">
+        <span data-nav="protocols">Protokoller</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="vpdk-nav-dropdown-menu">
+        <a href="/hl5.html" class="vpdk-nav-dropdown-item">HL5</a>
+        <a href="/fit20.html" class="vpdk-nav-dropdown-item">FIT20</a>
+        <a href="/origin.html" class="vpdk-nav-dropdown-item">ORIGIN</a>
+        <a href="/nrgi.html" class="vpdk-nav-dropdown-item">NRGI</a>
+        <a href="/edge.html" class="vpdk-nav-dropdown-item">EDGE</a>
+        <a href="/ignt.html" class="vpdk-nav-dropdown-item">IGNT</a>
+        <a href="/r-stour.html" class="vpdk-nav-dropdown-item">R-STOUR</a>
+        <a href="/on-shots.html" class="vpdk-nav-dropdown-item">ON-SHOTS</a>
+      </div>
+    </div>
+    <a href="/hakkimda.html" class="vpdk-nav-link" data-nav="mission">Misyon</a>
+    <a href="/faq.html" class="vpdk-nav-link" data-nav="faq">SSS</a>
+    <a href="/iletisim.html" class="vpdk-nav-link" data-nav="contact">İletişim</a>
+  </div>
+  <div class="vpdk-nav-right">
+    <button class="vpdk-nav-lang active" onclick="vpNavLang('tr',this)">TR</button>
+    <button class="vpdk-nav-lang" onclick="vpNavLang('en',this)">EN</button>
+    <button class="vpdk-nav-lang" onclick="vpNavLang('es',this)">ES</button>
+    <button class="vpdk-hamburger" onclick="document.getElementById('vpdk-mob').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="vpdk-mobile-menu" id="vpdk-mob">
+  <a href="/index.html" class="vpdk-mobile-link" data-mnav="home">Anasayfa</a>
+  <a href="/saglik-ucgeni.html" class="vpdk-mobile-link" data-mnav="health">Sağlık Üçgeni</a>
+  <div class="vpdk-mobile-section" data-mnavs="protocols">Protokoller</div>
+  <div class="vpdk-mobile-sub">
+    <a href="/hl5.html" class="vpdk-mobile-link">HL5</a>
+    <a href="/fit20.html" class="vpdk-mobile-link">FIT20</a>
+    <a href="/origin.html" class="vpdk-mobile-link">ORIGIN</a>
+    <a href="/nrgi.html" class="vpdk-mobile-link">NRGI</a>
+    <a href="/edge.html" class="vpdk-mobile-link">EDGE</a>
+    <a href="/ignt.html" class="vpdk-mobile-link">IGNT</a>
+    <a href="/r-stour.html" class="vpdk-mobile-link">R-STOUR</a>
+    <a href="/on-shots.html" class="vpdk-mobile-link">ON-SHOTS</a>
+  </div>
+  <a href="/hakkimda.html" class="vpdk-mobile-link" data-mnav="mission">Misyon</a>
+  <a href="/faq.html" class="vpdk-mobile-link" data-mnav="faq">SSS</a>
+  <a href="/iletisim.html" class="vpdk-mobile-link" data-mnav="contact">İletişim</a>
+</div>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+#fit20-root{all:initial;display:block;font-family:'Plus Jakarta Sans',-apple-system,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased}
+#fit20-root *{box-sizing:border-box;font-family:inherit}
+.f-wrap{max-width:1100px;margin:0 auto;padding:40px 24px}
+
+/* DİL ÇUBUĞU */
+.f-lang-bar{display:flex;justify-content:flex-end;gap:8px;padding:0 0 24px 0}
+.f-lang-btn{padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7280;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
+.f-lang-btn.active{background:#2e3d30;color:#fff;border-color:#2e3d30}
+
+/* DİL BÖLÜMLERI */
+.f-lang{display:none}
+.f-lang.active{display:block}
+
+/* HERO */
+.f-hero{background:linear-gradient(135deg,#2e3d30 0%,#1a1a1a 100%);border-radius:32px;padding:64px 56px;margin-bottom:48px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.f-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:100px;padding:6px 16px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ddd;margin-bottom:28px}
+.f-dot{width:8px;height:8px;border-radius:50%;background:#d4af37;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.f-h1{font-size:clamp(32px,4vw,56px);font-weight:800;line-height:0.95;letter-spacing:-1.5px;color:#fff;margin-bottom:24px}
+.f-h1 span{color:#d4af37}
+.f-sub{font-size:17px;color:#9ca3af;line-height:1.65;max-width:480px;margin-bottom:36px;font-weight:300}
+.f-btn{display:inline-block;background:#d4af37;color:#1a1a1a;font-weight:800;padding:18px 40px;border-radius:100px;font-size:15px;text-decoration:none;letter-spacing:.5px;transition:all .3s}
+.f-btn:hover{background:#c49b2a;transform:translateY(-3px)}
+.f-card-mock{background:white;border-radius:28px;overflow:hidden;width:220px;box-shadow:0 24px 48px rgba(0,0,0,0.35);transform:rotate(-5deg);transition:transform .5s}
+.f-card-mock:hover{transform:rotate(0deg)}
+.f-card-top{background:#d4af37;padding:18px;text-align:center;font-size:15px;font-weight:900;color:#2e3d30;text-transform:uppercase;letter-spacing:1px}
+.f-card-body{padding:24px;color:#2e3d30}
+.f-card-num{font-size:42px;font-weight:900;line-height:1;margin-bottom:4px}
+.f-card-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#00000088;margin-bottom:16px}
+.f-card-sub{font-size:16px;font-weight:700;margin-bottom:4px}
+.f-card-sub2{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#00000055}
+
+/* KARTLAR */
+.f-section{margin-bottom:56px}
+.f-center{text-align:center;margin-bottom:40px}
+.f-h2{font-size:clamp(26px,3vw,38px);font-weight:800;color:#2e3d30;letter-spacing:-1px;margin-bottom:12px}
+.f-desc{color:#6b7280;font-size:16px;max-width:560px;margin:0 auto}
+.f-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.f-feat{background:#fff;border:1px solid #f0f0f0;border-radius:28px;padding:32px;transition:all .3s}
+.f-feat:hover{transform:translateY(-5px);border-color:#d4af37;box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+.f-feat:last-child{border-bottom:4px solid #d4af37}
+.f-icon{width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:24px}
+.f-feat-h{font-size:19px;font-weight:700;color:#2e3d30;margin-bottom:12px}
+.f-feat-p{font-size:14px;color:#6b7280;line-height:1.75}
+
+/* KULLANIM */
+.f-usage{background:#f9fafb;border-radius:32px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:56px}
+.f-gold-line{width:64px;height:5px;background:#d4af37;border-radius:10px;margin:16px 0 28px}
+.f-step{display:flex;align-items:flex-start;gap:14px;padding:16px;background:#fff;border-radius:18px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.f-step-2{border-left:4px solid #2e3d30;border-radius:0 18px 18px 0}
+.f-step-num{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff;flex-shrink:0}
+.f-step-text{font-size:14px;color:#4b5563;font-weight:500;line-height:1.6;padding-top:4px}
+.f-hint{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#9ca3af;margin-top:24px}
+.f-quote-card{background:#fff;border-radius:28px;padding:36px;border:1px solid #f0f0f0}
+.f-quote{font-size:19px;font-style:italic;color:#2e3d30;line-height:1.65;font-weight:300}
+.f-quote-footer{margin-top:24px;padding-top:24px;border-top:1px solid #f0f0f0;display:flex;align-items:center;gap:14px}
+.f-avatar{width:44px;height:44px;border-radius:50%;background:#d4af37;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#1a1a1a;flex-shrink:0}
+.f-qa-name{font-size:14px;font-weight:700;color:#2e3d30}
+.f-qa-title{font-size:10px;color:#9ca3af;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-style:italic}
+.f-footer{text-align:center;padding:32px 0 0;border-top:1px solid #f0f0f0;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#9ca3af}
+
+@media(max-width:900px){
+  .f-hero{grid-template-columns:1fr;padding:40px 28px;gap:32px}
+  .f-card-mock{width:180px;margin:0 auto}
+  .f-grid{grid-template-columns:1fr}
+  .f-usage{grid-template-columns:1fr;padding:32px 24px;gap:32px}
+}
+</style>
+
+<div id="fit20-root">
+<div class="f-wrap">
+
+  <!-- DİL ÇUBUĞU -->
+  <div class="f-lang-bar">
+    <button class="f-lang-btn active" onclick="fitLang('tr',this)">TR</button>
+    <button class="f-lang-btn" onclick="fitLang('en',this)">EN</button>
+    <button class="f-lang-btn" onclick="fitLang('es',this)">ES</button>
+  </div>
+
+  <!-- ══════════ TÜRKÇE ══════════ -->
+  <div class="f-lang active" id="fit-tr">
+
+    <section class="f-hero">
+      <div>
+        <div class="f-badge"><div class="f-dot"></div>Performans &amp; Onarım</div>
+        <h1 class="f-h1">Fit20: Kaslarınıza<br><span>Hak Ettiği</span><br>Değeri Verin.</h1>
+        <p class="f-sub">Sadece spor yapanlar için değil; gün boyu ayakta kalan, enerjisi tükenen ve kas yorgunluğu çeken her beden için tasarlandı.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center">
+          <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="f-btn">HEMEN İNCELE</a>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:#fff;letter-spacing:1px;text-transform:uppercase">Doğal Vanilya</div>
+            <div style="font-size:10px;color:#6b7280;text-transform:uppercase;letter-spacing:.5px">Yumuşak İçim · Sıfır Şeker</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="f-card-mock">
+          <div class="f-card-top">PROTEIN +</div>
+          <div class="f-card-body">
+            <div class="f-card-num">20g</div>
+            <div class="f-card-label">Whey Protein</div>
+            <div class="f-card-sub">Magnezyum</div>
+            <div class="f-card-sub2">Kas Fonksiyonu</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="f-section">
+      <div class="f-center">
+        <h2 class="f-h2">İçeride Neler Var?</h2>
+        <p class="f-desc">Vücudumuzun yapı taşlarını, en saf haliyle bir araya getirdik.</p>
+      </div>
+      <div class="f-grid">
+        <div class="f-feat">
+          <div class="f-icon" style="background:#fff7ed">🥛</div>
+          <div class="f-feat-h">Whey Protein İzolatı</div>
+          <p class="f-feat-p">Kas kütlesinin korunmasına ve artışına katkıda bulunur. Vücudun günlük protein ihtiyacını en hızlı emilen formda karşılar.</p>
+        </div>
+        <div class="f-feat">
+          <div class="f-icon" style="background:#f5f3ff">💎</div>
+          <div class="f-feat-h">Hidrolize Kolajen</div>
+          <p class="f-feat-p">Eklem ve bağ dokusu sağlığı için kritik öneme sahip olan kolajen, kas onarımını destekleyen bir güç birliğine dönüşür.</p>
+        </div>
+        <div class="f-feat">
+          <div class="f-icon" style="background:#f0fdf4">⚡</div>
+          <div class="f-feat-h">Magnezyum &amp; Krom</div>
+          <p class="f-feat-p">Yorgunluğun azalmasına katkıda bulunur. Kas fonksiyonlarını düzenler ve kan şekerini dengeleyerek ani acıkma krizlerini önler.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="f-usage">
+      <div>
+        <h2 class="f-h2">Nasıl Kullanılır?</h2>
+        <div class="f-gold-line"></div>
+        <div class="f-step">
+          <div class="f-step-num" style="background:#d4af37">1</div>
+          <p class="f-step-text">Bir saşe (33.3g) Fit20'yi 250-300 ml su veya favori içeceğinle karıştır.</p>
+        </div>
+        <div class="f-step f-step-2">
+          <div class="f-step-num" style="background:#2e3d30">2</div>
+          <p class="f-step-text">Hafifçe çalkala. Doğal vanilya aromasının keyfini çıkar.</p>
+        </div>
+        <p class="f-hint">Günde 1 kez tüketilmesi tavsiye edilir.</p>
+      </div>
+      <div class="f-quote-card">
+        <p class="f-quote">"Vücudunuza iyi bakmanız için maraton koşmanıza gerek yok; ona sadece doğru yakıtı vermeniz yeterli."</p>
+        <div class="f-quote-footer">
+          <div class="f-avatar">VP</div>
+          <div>
+            <div class="f-qa-name">Vital Protocol DK</div>
+            <div class="f-qa-title">İçerik Küratörü Notu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="f-footer">© 2025 Vital Protocol DK // Akılcı Beslenme Rehberi</div>
+  </div>
+
+  <!-- ══════════ ENGLISH ══════════ -->
+  <div class="f-lang" id="fit-en">
+
+    <section class="f-hero">
+      <div>
+        <div class="f-badge"><div class="f-dot"></div>Performance &amp; Recovery</div>
+        <h1 class="f-h1">Fit20: Give Your<br><span>Muscles</span><br>What They Deserve.</h1>
+        <p class="f-sub">Not just for athletes — designed for every body that stays on its feet all day, runs out of energy, and feels muscle fatigue.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center">
+          <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="f-btn">EXPLORE NOW</a>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:#fff;letter-spacing:1px;text-transform:uppercase">Natural Vanilla</div>
+            <div style="font-size:10px;color:#6b7280;text-transform:uppercase;letter-spacing:.5px">Smooth Taste · Zero Sugar</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="f-card-mock">
+          <div class="f-card-top">PROTEIN +</div>
+          <div class="f-card-body">
+            <div class="f-card-num">20g</div>
+            <div class="f-card-label">Whey Protein</div>
+            <div class="f-card-sub">Magnesium</div>
+            <div class="f-card-sub2">Muscle Function</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="f-section">
+      <div class="f-center">
+        <h2 class="f-h2">What's Inside?</h2>
+        <p class="f-desc">We've brought together your body's building blocks in their purest form.</p>
+      </div>
+      <div class="f-grid">
+        <div class="f-feat">
+          <div class="f-icon" style="background:#fff7ed">🥛</div>
+          <div class="f-feat-h">Whey Protein Isolate</div>
+          <p class="f-feat-p">Contributes to the maintenance and growth of muscle mass. Meets the body's daily protein needs in the fastest-absorbing form.</p>
+        </div>
+        <div class="f-feat">
+          <div class="f-icon" style="background:#f5f3ff">💎</div>
+          <div class="f-feat-h">Hydrolysed Collagen</div>
+          <p class="f-feat-p">Collagen, critical for joint and connective tissue health, becomes a powerful partner in supporting muscle recovery with the Fit20 formula.</p>
+        </div>
+        <div class="f-feat">
+          <div class="f-icon" style="background:#f0fdf4">⚡</div>
+          <div class="f-feat-h">Magnesium &amp; Chromium</div>
+          <p class="f-feat-p">Contributes to reducing fatigue and tiredness. Regulates muscle function and balances blood sugar to prevent sudden hunger cravings.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="f-usage">
+      <div>
+        <h2 class="f-h2">How to Use?</h2>
+        <div class="f-gold-line"></div>
+        <div class="f-step">
+          <div class="f-step-num" style="background:#d4af37">1</div>
+          <p class="f-step-text">Mix one sachet (33.3g) of Fit20 with 250-300 ml of water or your favourite drink.</p>
+        </div>
+        <div class="f-step f-step-2">
+          <div class="f-step-num" style="background:#2e3d30">2</div>
+          <p class="f-step-text">Shake gently. Enjoy the natural vanilla flavour.</p>
+        </div>
+        <p class="f-hint">Recommended intake: once daily.</p>
+      </div>
+      <div class="f-quote-card">
+        <p class="f-quote">"You don't need to run a marathon to take care of your body — you just need to give it the right fuel."</p>
+        <div class="f-quote-footer">
+          <div class="f-avatar">VP</div>
+          <div>
+            <div class="f-qa-name">Vital Protocol DK</div>
+            <div class="f-qa-title">Content Curator's Note</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="f-footer">© 2025 Vital Protocol DK // Mindful Nutrition Guide</div>
+  </div>
+
+  <!-- ══════════ ESPAÑOL ══════════ -->
+  <div class="f-lang" id="fit-es">
+
+    <section class="f-hero">
+      <div>
+        <div class="f-badge"><div class="f-dot"></div>Rendimiento &amp; Recuperación</div>
+        <h1 class="f-h1">Fit20: Dale a tus<br><span>Músculos</span><br>lo que Merecen.</h1>
+        <p class="f-sub">No solo para deportistas — diseñado para cada cuerpo que permanece de pie todo el día, se queda sin energía y siente fatiga muscular.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center">
+          <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="f-btn">VER AHORA</a>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:#fff;letter-spacing:1px;text-transform:uppercase">Vainilla Natural</div>
+            <div style="font-size:10px;color:#6b7280;text-transform:uppercase;letter-spacing:.5px">Sabor Suave · Sin Azúcar</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="f-card-mock">
+          <div class="f-card-top">PROTEIN +</div>
+          <div class="f-card-body">
+            <div class="f-card-num">20g</div>
+            <div class="f-card-label">Whey Protein</div>
+            <div class="f-card-sub">Magnesio</div>
+            <div class="f-card-sub2">Función Muscular</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="f-section">
+      <div class="f-center">
+        <h2 class="f-h2">¿Qué Hay Dentro?</h2>
+        <p class="f-desc">Hemos reunido los componentes básicos de tu cuerpo en su forma más pura.</p>
+      </div>
+      <div class="f-grid">
+        <div class="f-feat">
+          <div class="f-icon" style="background:#fff7ed">🥛</div>
+          <div class="f-feat-h">Aislado de Proteína Whey</div>
+          <p class="f-feat-p">Contribuye al mantenimiento y aumento de la masa muscular. Cubre las necesidades diarias de proteína del cuerpo en la forma de absorción más rápida.</p>
+        </div>
+        <div class="f-feat">
+          <div class="f-icon" style="background:#f5f3ff">💎</div>
+          <div class="f-feat-h">Colágeno Hidrolizado</div>
+          <p class="f-feat-p">El colágeno, crítico para la salud articular y del tejido conectivo, se convierte en un aliado poderoso para apoyar la recuperación muscular.</p>
+        </div>
+        <div class="f-feat">
+          <div class="f-icon" style="background:#f0fdf4">⚡</div>
+          <div class="f-feat-h">Magnesio &amp; Cromo</div>
+          <p class="f-feat-p">Contribuye a reducir el cansancio y la fatiga. Regula las funciones musculares y equilibra el azúcar en sangre para prevenir los antojos repentinos.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="f-usage">
+      <div>
+        <h2 class="f-h2">¿Cómo se Usa?</h2>
+        <div class="f-gold-line"></div>
+        <div class="f-step">
+          <div class="f-step-num" style="background:#d4af37">1</div>
+          <p class="f-step-text">Mezcla un sobre (33.3g) de Fit20 con 250-300 ml de agua o tu bebida favorita.</p>
+        </div>
+        <div class="f-step f-step-2">
+          <div class="f-step-num" style="background:#2e3d30">2</div>
+          <p class="f-step-text">Agita suavemente. Disfruta del sabor natural a vainilla.</p>
+        </div>
+        <p class="f-hint">Se recomienda consumir una vez al día.</p>
+      </div>
+      <div class="f-quote-card">
+        <p class="f-quote">"No necesitas correr un maratón para cuidar tu cuerpo — solo necesitas darle el combustible correcto."</p>
+        <div class="f-quote-footer">
+          <div class="f-avatar">VP</div>
+          <div>
+            <div class="f-qa-name">Vital Protocol DK</div>
+            <div class="f-qa-title">Nota del Curador de Contenido</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="f-footer">© 2025 Vital Protocol DK // Guía de Nutrición Consciente</div>
+  </div>
+
+</div>
+</div>
+
+<script>
+function fitLang(lang, btn) {
+  document.querySelectorAll('.f-lang').forEach(function(el){ el.style.display='none'; });
+  document.querySelectorAll('.f-lang-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('fit-' + lang).style.display = 'block';
+  btn.classList.add('active');
+}
+</script>
+
+<script>
+(function(){
+  var saved = localStorage.getItem('vpLang') || 'tr';
+  function applyLang(l){
+    var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Protokoller",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Protocols",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Protocolos",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
+    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){
+      b.classList.toggle("active", b.textContent.trim().toLowerCase()===l);
+    });
+    var lbl=lb[l];
+    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
+    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lb[l][k]});
+    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lb[l][k]});
+    if(typeof setLang==="function")setLang(l);
+    if(typeof hl5Lang==="function"){var btn=document.querySelector(".hl5-lang-btn");if(btn)hl5Lang(l,btn);}
+  }
+  window.vpNavLang = function(l, btn){
+    localStorage.setItem('vpLang', l);
+    applyLang(l);
+  };
+  document.addEventListener("DOMContentLoaded", function(){ applyLang(saved); });
+})();
+</script>

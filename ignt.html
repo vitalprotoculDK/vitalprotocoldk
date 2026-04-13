@@ -1,0 +1,405 @@
+<!-- GLOBAL NAV -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+.vpdk-nav-global{width:100%;background:rgba(252,252,250,0.98);border-bottom:1px solid #d6ddd7;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:9999;backdrop-filter:blur(12px);font-family:'DM Sans',sans-serif;box-sizing:border-box}
+.vpdk-nav-global *{box-sizing:border-box}
+.vpdk-nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:#2e3d30;letter-spacing:.02em;text-decoration:none;flex-shrink:0}
+.vpdk-nav-logo span{color:#b8963e;font-style:italic}
+.vpdk-nav-center{display:flex;align-items:center;gap:4px;position:absolute;left:50%;transform:translateX(-50%)}
+.vpdk-nav-link{padding:6px 14px;font-size:13px;font-weight:400;color:#2e3d30;text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap}
+.vpdk-nav-link:hover{background:#f0ede6;color:#1a2419}
+.vpdk-nav-dropdown{position:relative}
+.vpdk-nav-dropdown-btn{padding:6px 14px;font-size:13px;font-weight:400;color:#2e3d30;background:none;border:none;cursor:pointer;border-radius:6px;transition:all .2s;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;white-space:nowrap}
+.vpdk-nav-dropdown-btn:hover{background:#f0ede6;color:#1a2419}
+.vpdk-nav-dropdown-btn svg{width:12px;height:12px;transition:transform .2s}
+.vpdk-nav-dropdown:hover .vpdk-nav-dropdown-btn svg{transform:rotate(180deg)}
+.vpdk-nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:8px;min-width:180px;box-shadow:0 8px 32px rgba(0,0,0,.1);z-index:9999}
+.vpdk-nav-dropdown:hover .vpdk-nav-dropdown-menu{display:block}
+.vpdk-nav-dropdown-item{display:block;padding:9px 14px;font-size:13px;color:#2e3d30;text-decoration:none;border-radius:8px;transition:all .2s;font-weight:400}
+.vpdk-nav-dropdown-item:hover{background:#f0ede6;color:#b8963e}
+.vpdk-nav-right{display:flex;gap:6px;align-items:center}
+.vpdk-nav-lang{padding:4px 12px;font-size:11px;font-weight:500;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7c6d;transition:all .2s;font-family:'DM Sans',sans-serif}
+.vpdk-nav-lang.active{background:#2e3d30;color:#fcfcfa;border-color:#2e3d30}
+.vpdk-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.vpdk-hamburger span{width:22px;height:2px;background:#2e3d30;border-radius:2px;display:block}
+.vpdk-mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;background:#fff;border-bottom:1px solid #d6ddd7;padding:16px;z-index:9998;box-shadow:0 8px 24px rgba(0,0,0,.08);max-height:calc(100vh - 56px);overflow-y:auto}
+.vpdk-mobile-menu.open{display:block}
+.vpdk-mobile-link{display:block;padding:11px 16px;font-size:14px;color:#2e3d30;text-decoration:none;border-radius:8px;font-family:'DM Sans',sans-serif}
+.vpdk-mobile-link:hover{background:#f0ede6}
+.vpdk-mobile-section{font-size:11px;letter-spacing:.1em;color:#b8963e;font-weight:600;text-transform:uppercase;padding:10px 16px 4px}
+.vpdk-mobile-sub{padding-left:16px}
+@media(max-width:900px){.vpdk-nav-center{display:none}.vpdk-nav-global{padding:0 16px;height:56px}.vpdk-hamburger{display:flex}}
+</style>
+
+<nav class="vpdk-nav-global">
+  <a class="vpdk-nav-logo" href="/index.html">vital<span>protocol</span>DK</a>
+  <div class="vpdk-nav-center">
+    <a href="/index.html" class="vpdk-nav-link" data-nav="home">Anasayfa</a>
+    <a href="/saglik-ucgeni.html" class="vpdk-nav-link" data-nav="health">Sağlık Üçgeni</a>
+    <div class="vpdk-nav-dropdown">
+      <button class="vpdk-nav-dropdown-btn">
+        <span data-nav="protocols">Protokoller</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="vpdk-nav-dropdown-menu">
+        <a href="/hl5.html" class="vpdk-nav-dropdown-item">HL5</a>
+        <a href="/fit20.html" class="vpdk-nav-dropdown-item">FIT20</a>
+        <a href="/origin.html" class="vpdk-nav-dropdown-item">ORIGIN</a>
+        <a href="/nrgi.html" class="vpdk-nav-dropdown-item">NRGI</a>
+        <a href="/edge.html" class="vpdk-nav-dropdown-item">EDGE</a>
+        <a href="/ignt.html" class="vpdk-nav-dropdown-item">IGNT</a>
+        <a href="/r-stour.html" class="vpdk-nav-dropdown-item">R-STOUR</a>
+        <a href="/on-shots.html" class="vpdk-nav-dropdown-item">ON-SHOTS</a>
+      </div>
+    </div>
+    <a href="/hakkimda.html" class="vpdk-nav-link" data-nav="mission">Misyon</a>
+    <a href="/faq.html" class="vpdk-nav-link" data-nav="faq">SSS</a>
+    <a href="/iletisim.html" class="vpdk-nav-link" data-nav="contact">İletişim</a>
+  </div>
+  <div class="vpdk-nav-right">
+    <button class="vpdk-nav-lang active" onclick="vpNavLang('tr',this)">TR</button>
+    <button class="vpdk-nav-lang" onclick="vpNavLang('en',this)">EN</button>
+    <button class="vpdk-nav-lang" onclick="vpNavLang('es',this)">ES</button>
+    <button class="vpdk-hamburger" onclick="document.getElementById('vpdk-mob').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="vpdk-mobile-menu" id="vpdk-mob">
+  <a href="/index.html" class="vpdk-mobile-link" data-mnav="home">Anasayfa</a>
+  <a href="/saglik-ucgeni.html" class="vpdk-mobile-link" data-mnav="health">Sağlık Üçgeni</a>
+  <div class="vpdk-mobile-section" data-mnavs="protocols">Protokoller</div>
+  <div class="vpdk-mobile-sub">
+    <a href="/hl5.html" class="vpdk-mobile-link">HL5</a>
+    <a href="/fit20.html" class="vpdk-mobile-link">FIT20</a>
+    <a href="/origin.html" class="vpdk-mobile-link">ORIGIN</a>
+    <a href="/nrgi.html" class="vpdk-mobile-link">NRGI</a>
+    <a href="/edge.html" class="vpdk-mobile-link">EDGE</a>
+    <a href="/ignt.html" class="vpdk-mobile-link">IGNT</a>
+    <a href="/r-stour.html" class="vpdk-mobile-link">R-STOUR</a>
+    <a href="/on-shots.html" class="vpdk-mobile-link">ON-SHOTS</a>
+  </div>
+  <a href="/hakkimda.html" class="vpdk-mobile-link" data-mnav="mission">Misyon</a>
+  <a href="/faq.html" class="vpdk-mobile-link" data-mnav="faq">SSS</a>
+  <a href="/iletisim.html" class="vpdk-mobile-link" data-mnav="contact">İletişim</a>
+</div>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+.ig-container{font-family:'Plus Jakarta Sans',sans-serif;color:#1a1a1a;line-height:1.6;margin:0;padding:0;background:#fff}
+
+/* DİL ÇUBUĞU */
+.ig-lang-bar{display:flex;justify-content:flex-end;gap:8px;padding:16px 20px}
+.ig-lang-btn{padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7280;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
+.ig-lang-btn.active{background:#2e3d30;color:#fff;border-color:#2e3d30}
+.ig-lang{display:none}
+.ig-lang.active{display:block}
+
+.ig-hero{background:linear-gradient(135deg,#0f172a 0%,#2e3d30 100%);color:#fff;padding:90px 20px;text-align:center}
+.ig-badge{color:#d4af37;font-weight:700;letter-spacing:3px;font-size:11px;text-transform:uppercase;border:1px solid rgba(212,175,55,0.3);padding:4px 12px;border-radius:4px;display:inline-block;margin-bottom:20px}
+.ig-hero h1{font-size:clamp(32px,5vw,52px);font-weight:800;margin:20px 0;line-height:1.1;letter-spacing:-1.5px}
+.ig-hero p{max-width:750px;margin:0 auto;color:#cbd5e1;font-size:19px;font-weight:300}
+.ig-tags{margin:35px 0}
+.ig-tag{display:inline-block;border:1px solid rgba(255,255,255,0.15);padding:8px 20px;border-radius:2px;font-size:11px;margin:5px;background:rgba(255,255,255,0.05);font-weight:700;letter-spacing:1.5px;color:#fff}
+.ig-btn{display:inline-block;background:#d4af37;color:#000;padding:20px 60px;border-radius:0;text-decoration:none;font-weight:800;margin-top:30px;transition:.4s;text-transform:uppercase;letter-spacing:1px;box-shadow:0 15px 30px rgba(0,0,0,0.2)}
+.ig-btn:hover{background:#fff;transform:scale(1.03)}
+.ig-btn-dark{display:inline-block;background:#000;color:#fff;padding:22px 65px;text-decoration:none;font-weight:800;letter-spacing:2px;border-radius:0;transition:.3s}
+.ig-btn-dark:hover{background:#2e3d30}
+
+.ig-profiles{background:#fcfdfc;padding:100px 20px}
+.profile-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+.profile-card{background:#fff;padding:45px;border:1px solid #eee;text-align:center;transition:all .4s ease}
+.profile-card:hover{border-color:#d4af37;box-shadow:0 30px 60px rgba(0,0,0,0.05)}
+.card-icon{font-size:40px;margin-bottom:20px;display:block}
+.card-title{font-size:20px;font-weight:800;margin-bottom:15px;color:#111}
+.card-desc{font-size:15px;color:#636e72}
+
+.ig-tech-panel{max-width:1100px;margin:100px auto;padding:0 20px}
+.tech-container{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center;background:#fff;padding:60px;border-radius:10px;border:1px solid #f0f0f0}
+.tech-item{margin-bottom:25px;padding-left:20px;border-left:3px solid #d4af37}
+.tech-item strong{display:block;font-size:17px;margin-bottom:5px;color:#2e3d30}
+.tech-item p{font-size:14px;color:#666;margin:0}
+
+.footer-cta{text-align:center;padding:120px 20px;background:#f9f9f9}
+.footer-cta h2{font-size:34px;font-weight:800;margin-bottom:25px;color:#111;letter-spacing:-1px}
+.footer-note{margin-top:35px;font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:2px;font-weight:700}
+
+@media(max-width:850px){
+  .tech-container{grid-template-columns:1fr;padding:40px 20px}
+  .ig-hero h1{font-size:32px}
+}
+</style>
+
+<div class="ig-container">
+
+<!-- DİL ÇUBUĞU -->
+<div class="ig-lang-bar">
+  <button class="ig-lang-btn active" onclick="igLang('tr',this)">TR</button>
+  <button class="ig-lang-btn" onclick="igLang('en',this)">EN</button>
+  <button class="ig-lang-btn" onclick="igLang('es',this)">ES</button>
+</div>
+
+<!-- ══════════ TÜRKÇE ══════════ -->
+<div class="ig-lang active" id="ig-tr">
+  <div class="ig-hero">
+    <span class="ig-badge">Hormonal Denge &amp; Maskülen Enerji</span>
+    <h1>IGNT: Kendi Işığını<br>Yeniden Yakma Zamanı.</h1>
+    <p>Modern yaşamın stresi ve hormonal dalgalanmalar karşısında direncinizi artırın. Erkek fizyolojisi için özel seçilmiş kadim bitkiler ve modern bilimin tescilli birleşimi.</p>
+    <div class="ig-tags">
+      <span class="ig-tag">ERKEKLERE ÖZEL (HIM)</span>
+      <span class="ig-tag">ADAPTOJENİK DESTEK</span>
+      <span class="ig-tag">HORMON İÇERMEZ</span>
+      <span class="ig-tag">VEGAN &amp; DOĞAL BAZLI</span>
+    </div>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn">SİSTEMİ KEŞFET</a>
+  </div>
+
+  <div class="ig-profiles">
+    <div style="text-align:center;max-width:850px;margin:0 auto 60px;">
+      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Daha Canlı, <span style="color:#d4af37">Daha Dengeli.</span></h2>
+      <p style="color:#636e72;font-size:18px;">IGNT, erkek biyolojik sisteminin ihtiyaç duyduğu mikro besinleri ve direnç artırıcı bileşenleri bir araya getiren özel bir protokoldür.</p>
+    </div>
+    <div class="profile-grid">
+      <div class="profile-card">
+        <span class="card-icon">💼</span>
+        <div class="card-title">Yüksek Stresli Kariyer</div>
+        <p class="card-desc">Yoğun iş temposunda vücudun strese uyum sağlama yeteneğini artırıp, zihinsel ve fiziksel tükenmişliğe karşı koruma sağlayan içerik mimarisi.</p>
+      </div>
+      <div class="profile-card">
+        <span class="card-icon">⚡</span>
+        <div class="card-title">Fiziksel Performans</div>
+        <p class="card-desc">Kordiseps ve Rodiola sinerjisi ile enerji seviyelerini optimize eden, fiziksel dayanıklılığı ve toparlanma hızını destekleyen güç.</p>
+      </div>
+      <div class="profile-card" style="border-bottom:4px solid #d4af37;">
+        <span class="card-icon">🛡️</span>
+        <div class="card-title">Bütünsel Erkek Sağlığı</div>
+        <p class="card-desc">Çinko ve magnezyum desteği ile normal DNA sentezine, protein üretimine ve sağlıklı bir hormonal dengenin korunmasına bilimsel katkı.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ig-tech-panel">
+    <div class="tech-container">
+      <div>
+        <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">Doğanın Gücü,<br><span style="color:#d4af37">Bilimin Süzgecinde.</span></h2>
+        <p style="font-size:16px;color:#444;margin-bottom:20px;">IGNT (HIM), yapay hormon takviyeleri yerine vücudun kendi doğal süreçlerini destekleyen, kadim kültürlerden gelen içerikleri modern standartlarda sunar.</p>
+        <div class="tech-item">
+          <strong>Rodiola Ekstresi (Altın Kök)</strong>
+          <p>Adaptogenik özellikleri sayesinde bilişsel performansı ve zihinsel uyanıklığı destekler, stres kaynaklı yorgunluğu azaltmaya yardımcı olur.</p>
+        </div>
+        <div class="tech-item">
+          <strong>Kordiseps Mantarı (Himalaya Hazinesi)</strong>
+          <p>ATP üretimini destekleyerek hücresel enerji seviyelerini yükselten ve bağışıklık sistemini güçlendiren çok özel bir biyoaktif kaynak.</p>
+        </div>
+        <div class="tech-item">
+          <strong>Çinko &amp; Kırmızı Pancar</strong>
+          <p>Çinko ile normal testosteron seviyelerinin korunmasına ve metabolizmaya destek; Kırmızı Pancar ile dolaşım sistemine fito-besin katkısı.</p>
+        </div>
+      </div>
+      <div style="background:#2e3d30;color:#fff;padding:50px;border-radius:8px;">
+        <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:13px;letter-spacing:2px;">Öne Çıkan Destek Alanları</h4>
+        <ul style="padding-left:0;list-style:none;font-size:15px;margin-top:25px;">
+          <li style="margin-bottom:20px;">✓ <strong>Denge:</strong> Adaptojenler ile stres yönetim kapasitesi artışı.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Canlılık:</strong> Çinko ile normal protein sentezi ve hücre bölünmesi.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Dolaşım:</strong> Pancar kökü fito-besinleri ile sistem koruması.</li>
+          <li>✓ <strong>Doğallık:</strong> Şeker ilavesiz ve tamamen bitkisel bazlı formül.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-cta">
+    <h2>Daha Canlı, Daha Uyumlu Bir Yaşam</h2>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Hormonal denge bir lüks değil, yaşam kalitesinin temelidir. IGNT ile gürültüyü susturun, içsel gücünüzü serbest bırakın ve her güne taze bir başlangıç yapın."</p>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn-dark">RESMİ SİTEDEN TEMİN ET</a>
+    <p class="footer-note">60 Kapsül | Günde 2 Adet | Erkeklere Özel Formülasyon</p>
+  </div>
+</div>
+
+<!-- ══════════ ENGLISH ══════════ -->
+<div class="ig-lang" id="ig-en">
+  <div class="ig-hero">
+    <span class="ig-badge">Hormonal Balance &amp; Masculine Energy</span>
+    <h1>IGNT: Time to Reignite<br>Your Own Light.</h1>
+    <p>Increase your resilience against the stress of modern life and hormonal fluctuations. The patented combination of ancient botanicals specially selected for male physiology and modern science.</p>
+    <div class="ig-tags">
+      <span class="ig-tag">FOR MEN (HIM)</span>
+      <span class="ig-tag">ADAPTOGENIC SUPPORT</span>
+      <span class="ig-tag">HORMONE-FREE</span>
+      <span class="ig-tag">VEGAN &amp; NATURAL-BASED</span>
+    </div>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn">DISCOVER THE SYSTEM</a>
+  </div>
+
+  <div class="ig-profiles">
+    <div style="text-align:center;max-width:850px;margin:0 auto 60px;">
+      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">More Vibrant, <span style="color:#d4af37">More Balanced.</span></h2>
+      <p style="color:#636e72;font-size:18px;">IGNT is a dedicated protocol that brings together the micronutrients and resilience-boosting ingredients that the male biological system needs.</p>
+    </div>
+    <div class="profile-grid">
+      <div class="profile-card">
+        <span class="card-icon">💼</span>
+        <div class="card-title">High-Stress Careers</div>
+        <p class="card-desc">An ingredient architecture that increases the body's ability to adapt to stress in an intense work pace and provides protection against mental and physical burnout.</p>
+      </div>
+      <div class="profile-card">
+        <span class="card-icon">⚡</span>
+        <div class="card-title">Physical Performance</div>
+        <p class="card-desc">Power that optimises energy levels with Cordyceps and Rhodiola synergy, supporting physical endurance and recovery speed.</p>
+      </div>
+      <div class="profile-card" style="border-bottom:4px solid #d4af37;">
+        <span class="card-icon">🛡️</span>
+        <div class="card-title">Holistic Men's Health</div>
+        <p class="card-desc">Scientific contribution to normal DNA synthesis, protein production and the maintenance of a healthy hormonal balance with Zinc and Magnesium support.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ig-tech-panel">
+    <div class="tech-container">
+      <div>
+        <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">The Power of Nature<br><span style="color:#d4af37">Through the Filter of Science.</span></h2>
+        <p style="font-size:16px;color:#444;margin-bottom:20px;">IGNT (HIM) delivers ingredients from ancient cultures in modern standards, supporting the body's own natural processes instead of artificial hormone supplements.</p>
+        <div class="tech-item">
+          <strong>Rhodiola Extract (Golden Root)</strong>
+          <p>Thanks to its adaptogenic properties, it supports cognitive performance and mental alertness and helps reduce stress-related fatigue.</p>
+        </div>
+        <div class="tech-item">
+          <strong>Cordyceps Mushroom (Himalayan Treasure)</strong>
+          <p>A very special bioactive source that elevates cellular energy levels by supporting ATP production and strengthens the immune system.</p>
+        </div>
+        <div class="tech-item">
+          <strong>Zinc &amp; Red Beetroot</strong>
+          <p>Zinc supports the maintenance of normal testosterone levels and metabolism; Red Beetroot provides phytonutrient contribution to the circulatory system.</p>
+        </div>
+      </div>
+      <div style="background:#2e3d30;color:#fff;padding:50px;border-radius:8px;">
+        <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:13px;letter-spacing:2px;">Key Support Areas</h4>
+        <ul style="padding-left:0;list-style:none;font-size:15px;margin-top:25px;">
+          <li style="margin-bottom:20px;">✓ <strong>Balance:</strong> Increased stress management capacity with adaptogens.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Vitality:</strong> Normal protein synthesis and cell division with Zinc.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Circulation:</strong> System protection with beetroot phytonutrients.</li>
+          <li>✓ <strong>Natural:</strong> Sugar-free and completely plant-based formula.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-cta">
+    <h2>A More Vibrant, More Balanced Life</h2>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Hormonal balance is not a luxury — it is the foundation of quality of life. Silence the noise with IGNT, unleash your inner strength and make a fresh start every day."</p>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn-dark">GET IT FROM THE OFFICIAL SITE</a>
+    <p class="footer-note">60 Capsules | 2 Per Day | Formulation Exclusively for Men</p>
+  </div>
+</div>
+
+<!-- ══════════ ESPAÑOL ══════════ -->
+<div class="ig-lang" id="ig-es">
+  <div class="ig-hero">
+    <span class="ig-badge">Equilibrio Hormonal &amp; Energía Masculina</span>
+    <h1>IGNT: Es Hora de Volver<br>a Encender tu Propia Luz.</h1>
+    <p>Aumenta tu resistencia frente al estrés de la vida moderna y las fluctuaciones hormonales. La combinación patentada de plantas ancestrales especialmente seleccionadas para la fisiología masculina y la ciencia moderna.</p>
+    <div class="ig-tags">
+      <span class="ig-tag">PARA HOMBRES (HIM)</span>
+      <span class="ig-tag">SOPORTE ADAPTOGÉNICO</span>
+      <span class="ig-tag">SIN HORMONAS</span>
+      <span class="ig-tag">VEGANO &amp; BASE NATURAL</span>
+    </div>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn">DESCUBRIR EL SISTEMA</a>
+  </div>
+
+  <div class="ig-profiles">
+    <div style="text-align:center;max-width:850px;margin:0 auto 60px;">
+      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Más Vital, <span style="color:#d4af37">Más Equilibrado.</span></h2>
+      <p style="color:#636e72;font-size:18px;">IGNT es un protocolo dedicado que reúne los micronutrientes y los componentes potenciadores de la resiliencia que el sistema biológico masculino necesita.</p>
+    </div>
+    <div class="profile-grid">
+      <div class="profile-card">
+        <span class="card-icon">💼</span>
+        <div class="card-title">Carreras de Alto Estrés</div>
+        <p class="card-desc">Una arquitectura de ingredientes que aumenta la capacidad del cuerpo para adaptarse al estrés en un ritmo de trabajo intenso y protege contra el agotamiento mental y físico.</p>
+      </div>
+      <div class="profile-card">
+        <span class="card-icon">⚡</span>
+        <div class="card-title">Rendimiento Físico</div>
+        <p class="card-desc">Potencia que optimiza los niveles de energía con la sinergia de Cordyceps y Rhodiola, apoyando la resistencia física y la velocidad de recuperación.</p>
+      </div>
+      <div class="profile-card" style="border-bottom:4px solid #d4af37;">
+        <span class="card-icon">🛡️</span>
+        <div class="card-title">Salud Masculina Integral</div>
+        <p class="card-desc">Contribución científica a la síntesis normal de ADN, la producción de proteínas y el mantenimiento de un equilibrio hormonal saludable con soporte de Zinc y Magnesio.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ig-tech-panel">
+    <div class="tech-container">
+      <div>
+        <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">El Poder de la Naturaleza<br><span style="color:#d4af37">a través del Filtro de la Ciencia.</span></h2>
+        <p style="font-size:16px;color:#444;margin-bottom:20px;">IGNT (HIM) ofrece ingredientes de culturas ancestrales con estándares modernos, apoyando los propios procesos naturales del cuerpo en lugar de suplementos hormonales artificiales.</p>
+        <div class="tech-item">
+          <strong>Extracto de Rhodiola (Raíz Dorada)</strong>
+          <p>Gracias a sus propiedades adaptogénicas, apoya el rendimiento cognitivo y la alerta mental y ayuda a reducir la fatiga relacionada con el estrés.</p>
+        </div>
+        <div class="tech-item">
+          <strong>Hongo Cordyceps (Tesoro del Himalaya)</strong>
+          <p>Una fuente bioactiva muy especial que eleva los niveles de energía celular apoyando la producción de ATP y fortalece el sistema inmunológico.</p>
+        </div>
+        <div class="tech-item">
+          <strong>Zinc &amp; Remolacha Roja</strong>
+          <p>El Zinc apoya el mantenimiento de los niveles normales de testosterona y el metabolismo; la Remolacha Roja aporta fitoquímicos al sistema circulatorio.</p>
+        </div>
+      </div>
+      <div style="background:#2e3d30;color:#fff;padding:50px;border-radius:8px;">
+        <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:13px;letter-spacing:2px;">Áreas de Apoyo Destacadas</h4>
+        <ul style="padding-left:0;list-style:none;font-size:15px;margin-top:25px;">
+          <li style="margin-bottom:20px;">✓ <strong>Equilibrio:</strong> Mayor capacidad de gestión del estrés con adaptógenos.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Vitalidad:</strong> Síntesis normal de proteínas y división celular con Zinc.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Circulación:</strong> Protección del sistema con fitoquímicos de remolacha.</li>
+          <li>✓ <strong>Natural:</strong> Fórmula sin azúcar y completamente de base vegetal.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-cta">
+    <h2>Una Vida Más Vital, Más Equilibrada</h2>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"El equilibrio hormonal no es un lujo — es la base de la calidad de vida. Silencia el ruido con IGNT, libera tu fuerza interior y comienza cada día con energía renovada."</p>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn-dark">OBTENERLO EN EL SITIO OFICIAL</a>
+    <p class="footer-note">60 Cápsulas | 2 al Día | Formulación Exclusiva para Hombres</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+function igLang(lang, btn) {
+  document.querySelectorAll('.ig-lang').forEach(function(el){ el.style.display='none'; });
+  document.querySelectorAll('.ig-lang-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('ig-' + lang).style.display = 'block';
+  btn.classList.add('active');
+}
+</script>
+
+<script>
+(function(){
+  var saved = localStorage.getItem('vpLang') || 'tr';
+  function applyLang(l){
+    var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Protokoller",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Protocols",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Protocolos",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
+    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){
+      b.classList.toggle("active", b.textContent.trim().toLowerCase()===l);
+    });
+    var lbl=lb[l];
+    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
+    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lb[l][k]});
+    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lb[l][k]});
+    if(typeof setLang==="function")setLang(l);
+    if(typeof hl5Lang==="function"){var btn=document.querySelector(".hl5-lang-btn");if(btn)hl5Lang(l,btn);}
+  }
+  window.vpNavLang = function(l, btn){
+    localStorage.setItem('vpLang', l);
+    applyLang(l);
+  };
+  document.addEventListener("DOMContentLoaded", function(){ applyLang(saved); });
+})();
+</script>
