@@ -1156,7 +1156,7 @@ async function vSend(){
   document.getElementById('vera-quick').style.display='none';
   try{
     var ctx=vHist.slice(-6).map(function(m){return m.role+': '+m.content;}).join('\n');
-    var r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:600,messages:[{role:'user',content:vSys+'\n\nKullanıcı dili: '+vL+'\n\nGeçmiş:\n'+ctx}]})});
+    var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:[{role:'user',content:vSys+'\n\nKullanıcı dili: '+vL+'\n\nGeçmiş:\n'+ctx}]})});
     var data=await r.json();
     var reply=data.content&&data.content[0]?data.content[0].text:'...';
     vHist.push({role:'assistant',content:reply});
