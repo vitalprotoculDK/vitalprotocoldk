@@ -54,7 +54,7 @@ body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
 .blog-body{max-width:780px;margin:0 auto;padding:60px 24px 100px;color:#1e2b1f;line-height:1.85;font-size:17px}
 .blog-body p{margin-bottom:24px}
 .blog-body h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,34px);font-weight:500;color:#1a2419;margin:48px 0 20px;line-height:1.2}
-.blog-body h3{font-size:16px;font-weight:600;color:#2e3d30;margin:28px 0 10px}
+.blog-body h3{font-size:17px;font-weight:600;color:#2e3d30;margin:32px 0 12px}
 .blog-quote{font-style:italic;color:#4a5a4b;display:block;padding:20px 24px;border-left:3px solid #b8963e;background:#f5f2ec;border-radius:0 8px 8px 0;margin:28px 0;font-size:16px;line-height:1.7}
 .blog-highlight{background:#1a2419;color:#fcfcfa;border-radius:16px;padding:32px;margin:40px 0;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.7;text-align:center}
 .blog-checklist{background:#f0ede6;border-radius:16px;padding:32px;margin:40px 0}
@@ -68,12 +68,16 @@ body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
 .blog-signal-badge{background:#2e3d30;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0}
 .blog-signal-badge.alert{background:#c0392b}
 .blog-signal-badge.warn{background:#e67e22}
+.blog-stats{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin:32px 0}
+.blog-stat{text-align:center;background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:20px 28px}
+.blog-stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;color:#b8963e;display:block}
+.blog-stat-label{font-size:13px;color:#6b7c6d;margin-top:4px}
 .blog-back{display:inline-flex;align-items:center;gap:8px;color:#b8963e;text-decoration:none;font-size:14px;font-weight:500;margin-bottom:40px}
 footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:#2e3d30}
 .footer-logo span{color:#b8963e;font-style:italic}
 .footer-note{font-size:13px;color:#6b7c6d;max-width:540px;line-height:1.7;text-align:right}
-@media(max-width:768px){.blog-body{padding:40px 20px 60px;font-size:16px}.blog-hero{padding:60px 20px 40px}.blog-highlight{font-size:17px;padding:24px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
+@media(max-width:768px){.blog-body{padding:40px 20px 60px;font-size:16px}.blog-hero{padding:60px 20px 40px}.blog-highlight{font-size:17px;padding:24px}.blog-stats{gap:16px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
 </style>
 </head>
 <body>
@@ -856,25 +860,97 @@ document.addEventListener('click', function(e){
 </div>
 <div class="blog-body">
 <a href="/blog.html" class="blog-back">← Blog'a Dön</a>
-<div class="blog-warning"><strong>⚠️ Önemli:</strong> Bu içerik bilgilendirme amaçlıdır ve tıbbi tanı yerine geçmez. Şüpheli belirtiler durumunda acilen sağlık kuruluşuna başvurun.</div>
+<div class="blog-warning"><strong>⚠️ Önemli Bilgi:</strong> Bu içerik bilgilendirme amaçlıdır ve tıbbi tanı yerine geçmez. Şüpheli belirtiler durumunda acil olarak sağlık kuruluşuna başvurulmalıdır.</div>
+
+<p>İnme aniden gelmiyor. Vücudunuz saatler, hatta günler öncesinden sizi uyarıyor. Ama biz bu sinyalleri çoğunlukla görmezden geliyoruz.</p>
+
 <p>Dünya genelinde her yıl 15 milyon kişi inme geçiriyor. Bu vakaların büyük çoğunluğunda, hastalar önceki belirtileri "yorgunluk" ya da "stres" olarak geçiştirmiş. Oysa bu belirtiler aslında birer SOS sinyaliydi.</p>
+
+<p>İnme (felç) ya da TİA (geçici iskemik atak), beyne giden kan akışının kesilmesiyle oluşur. Pıhtı aniden oluşmaz — arka planda uzun süredir gelişen bir sürecin doruk noktasıdır.</p>
+
+<div class="blog-stats">
+  <div class="blog-stat"><span class="blog-stat-num">%80</span><div class="blog-stat-label">inme vakası önlenebilir niteliktedir</div></div>
+  <div class="blog-stat"><span class="blog-stat-num">1.9M</span><div class="blog-stat-label">nöron, inme sırasında her saniye ölür</div></div>
+  <div class="blog-stat"><span class="blog-stat-num">24 saat</span><div class="blog-stat-label">içinde TİA belirtileri kaybolur ama risk devam eder</div></div>
+</div>
+
 <h2>Erken Uyarı İşaretleri</h2>
+<p>Beyin pıhtısına giden yol, genellikle sessiz bir damar hasarıyla başlar. İltihap, oksidatif stres ve endotel disfonksiyonu bir araya gelince damar duvarı zayıflar, pıhtılaşma riski artar.</p>
+
 <div class="blog-signals">
-  <div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Ani, şiddetli baş ağrısı</strong> — "Kafaya çekiç vurmuş gibi" bir ağrı. Neden olmaksızın, aniden başlar.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Ani görme bozukluğu</strong> — Bulanıklık, çift görme veya bir gözde geçici körlük.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Konuşmada güçlük</strong> — Sözcükleri bulmakta zorlanmak veya karşınızdakini anlayamamak.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge warn">DİKKAT</div><div><strong>Yüz, kol veya bacakta uyuşma</strong> — Genellikle vücudun tek tarafını etkiler.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge warn">DİKKAT</div><div><strong>Denge kaybı</strong> — Aniden başlayan sersemlik veya yürürken sendeleme.</div></div>
+  <div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Ani, şiddetli baş ağrısı</strong> — Daha önce hiç yaşanmamış türde, "kafaya çekiç vurmuş gibi" bir ağrı. Neden olmaksızın, aniden başlar.</div></div>
+  <div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Tek ya da iki gözde ani görme bozukluğu</strong> — Bulanıklık, çift görme veya bir gözde geçici körlük. Dakikalar içinde geçebilir — bu sizi yanıltmasın.</div></div>
+  <div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Konuşmada güçlük veya anlayamama</strong> — Sözcükleri bulmakta zorlanmak, saçma konuşmak ya da karşınızdakini anlamak zorlaşabilir.</div></div>
+  <div class="blog-signal"><div class="blog-signal-badge warn">DİKKAT</div><div><strong>Yüz, kol veya bacakta uyuşma / güçsüzlük</strong> — Genellikle vücudun tek tarafını etkiler. Özellikle sabah uyandığınızda fark edilebilir.</div></div>
+  <div class="blog-signal"><div class="blog-signal-badge warn">DİKKAT</div><div><strong>Denge kaybı ve koordinasyon bozukluğu</strong> — Aniden başlayan sersemlik, yürürken sendeleme ya da denge kurmada zorlanma.</div></div>
+  <div class="blog-signal"><div class="blog-signal-badge warn">DİKKAT</div><div><strong>Açıklanamayan aşırı yorgunluk</strong> — Özellikle diğer belirtilerle birlikte görüldüğünde, sinir sisteminin aşırı yüklendiğinin işareti olabilir.</div></div>
 </div>
-<div class="blog-highlight">%80 inme vakası önlenebilir niteliktedir. Erken fark etmek, tedaviyi mümkün kılar.</div>
-<h2>FAST Testi — 112'yi Aramak İçin</h2>
+
+<h2>Bu Belirtiler Rastlantı Değil — Bir Sürecin Parçası</h2>
+<p>Modern tıp, inmeyi tek başına bir "damar olayı" olarak değil; kronik iltihap, oksidatif stres ve endotel disfonksiyonunun birleşimi olarak değerlendirmeye başlıyor.</p>
+
+<h3>🔬 Arka Planda Ne Oluyor?</h3>
 <div class="blog-checklist">
-  <h3>Belirtileri fark ettiğinizde vakit kaybetmeyin</h3>
-  <div class="blog-checklist-item"><strong>F — Face (Yüz):</strong> Gülümsemesini isteyin. Bir tarafı sarkıyor mu?</div>
-  <div class="blog-checklist-item"><strong>A — Arms (Kollar):</strong> İki kolunu kaldırmasını isteyin. Bir kol düşüyor mu?</div>
-  <div class="blog-checklist-item"><strong>S — Speech (Konuşma):</strong> Basit bir cümle söylemesini isteyin. Anlaşılmaz mı?</div>
-  <div class="blog-checklist-item"><strong>T — Time (Zaman):</strong> Bunlardan biri varsa, hemen 112'yi arayın!</div>
+  <h3>İnmeye Giden Süreç</h3>
+  <div class="blog-checklist-item"><strong>1. Kronik iltihap</strong> — Damar duvarını yıpratır, plak oluşumunu tetikler.</div>
+  <div class="blog-checklist-item"><strong>2. Oksidatif stres</strong> — Serbest radikaller damar hücrelerini hasar görür, kan akışı bozulur.</div>
+  <div class="blog-checklist-item"><strong>3. Endotelyal disfonksiyon</strong> — Damar duvarı esnekliğini kaybeder, pıhtılaşma riski yükselir.</div>
+  <div class="blog-checklist-item"><strong>4. Pıhtı oluşumu</strong> — Bu zemin üzerinde küçük bir tetikleyici bile büyük bir olay yaratabilir.</div>
 </div>
+
+<div class="blog-quote">"Beyin damarlarındaki hasar yıllarca sessiz sedasız ilerler. Belirtiler çıktığında artık kriz kapıya gelmiş demektir." — Nöroloji ve Damar Cerrahisi literatüründen derleme</div>
+
+<h2>Sizi Daha Fazla Risk Altına Alan Durumlar</h2>
+<div class="blog-checklist">
+  <h3>Risk Faktörleri</h3>
+  <div class="blog-checklist-item">Yüksek tansiyon — Damar duvarını sürekli zorlayan en büyük risk faktörü</div>
+  <div class="blog-checklist-item">Şeker hastalığı (Tip 2 diyabet) — Damar esnekliğini ciddi ölçüde azaltır</div>
+  <div class="blog-checklist-item">Kolesterol yüksekliği — Damar içi plak birikimini hızlandırır</div>
+  <div class="blog-checklist-item">Sigara kullanımı — Endotel hasarını doğrudan tetikler</div>
+  <div class="blog-checklist-item">Atriyal fibrilasyon — Düzensiz kalp ritmi pıhtı fırlatabilir</div>
+  <div class="blog-checklist-item">Obezite ve hareketsiz yaşam — Sistemik iltihabı besler</div>
+  <div class="blog-checklist-item">55 yaş üstü olmak — Risk her on yılda iki katına çıkıyor</div>
+  <div class="blog-checklist-item">Aile geçmişi — Genetik yatkınlık göz ardı edilemez</div>
+</div>
+
+<h2>FAST Testi: 112'yi Aramak İçin 4 Saniye</h2>
+<p>Belirtileri fark ettiğinizde vakit kaybetmeyin. Dünya genelinde kullanılan FAST testi, inme belirtilerini saniyeler içinde tanımanızı sağlar:</p>
+
+<div class="blog-checklist">
+  <h3>FAST Testi</h3>
+  <div class="blog-checklist-item"><strong>F — Face (Yüz):</strong> Gülümsemesini isteyin. Yüzün bir tarafı aşağı mı sarkıyor?</div>
+  <div class="blog-checklist-item"><strong>A — Arms (Kollar):</strong> İki kolunu kaldırmasını isteyin. Bir kol aşağı mı düşüyor?</div>
+  <div class="blog-checklist-item"><strong>S — Speech (Konuşma):</strong> Basit bir cümle söylemesini isteyin. Konuşması anlaşılmaz veya tuhaf mı?</div>
+  <div class="blog-checklist-item"><strong>T — Time (Zaman):</strong> Bunlardan biri varsa, anında 112'yi arayın. Her dakika önemli! 🚨</div>
+</div>
+
+<div class="blog-highlight">Şüpheleniyorsanız beklemek yok — 112'yi hemen arayın.</div>
+
+<h2>Önleme Yaklaşımı: Zihin, Beden ve Damar Dengesi</h2>
+<p>Beyin pıhtısı sadece "damarın tıkanması" değil; kronik stres, uyku bozukluğu, beslenme hataları ve hormon dengesizliğinin bir yansımasıdır.</p>
+
+<h3>🍽️ Beslenme ile Damar Koruması</h3>
+<p>Antioksidan açısından zengin beslenme, damar duvarındaki oksidatif hasarı frenler. Omega-3, yaban mersini, Morinda citrifolia gibi bileşenler; hem iltihabı hem de ADMA (damar hasarının önemli bir belirteci) düzeyini düşürmektedir.</p>
+
+<h3>😴 Uyku ve Kortizol Dengesi</h3>
+<p>Kronik uyku bozukluğu, kortizol yüksekliğini beraberinde getirir. Yüksek kortizol, endotel hücrelerini doğrudan hasara uğratır ve tansiyon dalgalanmalarını tetikler.</p>
+
+<h3>🏃 Hareket: En Ucuz Damar İlacı</h3>
+<p>Haftada 150 dakika orta yoğunlukta egzersiz, inme riskini %25-30 oranında azaltmaktadır. Hareket, endotel hücrelerinin nitrik oksit üretimini artırır ve damar esnekliğini korur.</p>
+
+<h2>Sonuç: Vücudunuz Size Yalan Söylemiyor</h2>
+<p>İnme ansızın gelmez. Pıhtı oluşmadan önce yıllarca süren bir süreç vardır — ve bu süreçte vücut sürekli sinyal gönderir.</p>
+
+<div class="blog-checklist">
+  <h3>Yapmanız Gereken Şey Basit</h3>
+  <div class="blog-checklist-item">Sinyalleri öğrenin ve tanıyın</div>
+  <div class="blog-checklist-item">Risk faktörlerinizi bilin</div>
+  <div class="blog-checklist-item">Uyarı belirtilerini asla ertelemeden değerlendirin</div>
+  <div class="blog-checklist-item">Beslenme, uyku ve hareket dengesini kurun</div>
+  <div class="blog-checklist-item">Düzenli kontrol yaptırın — özellikle 45 yaş üstü</div>
+</div>
+
+<p><strong>Erken fark etmek, tedaviyi mümkün kılar. Erken tedavi, hayat kurtarır.</strong></p>
 <p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Danışmanı · vitalprotocolDK</p>
 </div>
 <footer>
