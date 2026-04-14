@@ -16,8 +16,8 @@
 .vpdk-nav-global *{box-sizing:border-box}
 .vpdk-nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:#2e3d30;letter-spacing:.02em;text-decoration:none;flex-shrink:0}
 .vpdk-nav-logo span{color:#b8963e;font-style:italic}
-.vpdk-nav-center{display:flex;align-items:center;gap:4px;position:absolute;left:50%;transform:translateX(-50%)}
-.vpdk-nav-link{padding:6px 14px;font-size:15px;color:#2e3d30;text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap}
+.vpdk-nav-center{display:flex;align-items:center;gap:4px;position:absolute;left:50%;transform:translateX(-50%);min-width:0}
+.vpdk-nav-link{padding:6px 14px;font-size:15px;color:#2e3d30;text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap;position:relative}
 .vpdk-nav-link:hover{background:transparent}
 
 /* ── NAV HOVER DAİRE EFEKTİ ── */
@@ -61,13 +61,13 @@
 }
 
 .vpdk-nav-dropdown{position:relative}
-.vpdk-nav-dropdown-btn{padding:6px 14px;font-size:15px;color:#2e3d30;background:none;border:none;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;white-space:nowrap}
-.vpdk-nav-dropdown-btn:hover{background:#f0ede6}
+.vpdk-nav-dropdown-btn{padding:6px 14px;font-size:15px;color:#2e3d30;background:none;border:none;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;white-space:nowrap;position:relative}
+.vpdk-nav-dropdown-btn:hover{background:transparent}
 .vpdk-nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:8px;min-width:180px;box-shadow:0 8px 32px rgba(0,0,0,.1);z-index:9999}
 .vpdk-nav-dropdown:hover .vpdk-nav-dropdown-menu{display:block}
 .vpdk-nav-dropdown-item{display:block;padding:9px 14px;font-size:15px;color:#2e3d30;text-decoration:none;border-radius:8px;transition:all .2s}
 .vpdk-nav-dropdown-item:hover{background:#f0ede6;color:#b8963e}
-.vpdk-nav-right{display:flex;gap:6px;align-items:center}
+.vpdk-nav-right{display:flex;gap:6px;align-items:center;flex-shrink:0}
 .vpdk-nav-lang{padding:4px 12px;font-size:11px;font-weight:500;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7c6d;transition:all .2s;font-family:'DM Sans',sans-serif}
 .vpdk-nav-lang.active{background:#2e3d30;color:#fcfcfa;border-color:#2e3d30}
 .vpdk-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index:10000;position:relative}
@@ -88,6 +88,8 @@
   .vpdk-nav-global{padding:0 16px!important;height:56px!important}
   .vpdk-hamburger{display:flex!important}
   .vpdk-mobile-menu{top:56px!important}
+  .vpdk-nav-right{gap:4px!important}
+  .vpdk-nav-lang{padding:3px 8px!important;font-size:10px!important}
 }
 </style>
 
@@ -184,7 +186,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
    1. HERO
 ══════════════════════════════════ */
 .hero{
-  min-height:100vh;
+  min-height:auto;
   display:grid;grid-template-columns:1fr 1fr;
   align-items:center;gap:0;
   background:var(--cream);
@@ -1958,7 +1960,7 @@ var vT={
   en:{ph:'Type your question...',st:'vitalprotocolDK · Wellness Guide',disc:'⚠ Information is for general guidance only, not medical advice.',wel:"Hello! I\'m Vera 🌿\n\nI\'m the wellness guide at vitalprotocolDK. I\'m happy to help you with products, protocols or wellness questions!",q:['What is Nitro Plus?','Which protocol suits me?','Where can I buy products?','What is the Wellness Triangle?']},
   es:{ph:'Escribe tu pregunta...',st:'vitalprotocolDK · Guía de Bienestar',disc:'⚠ La información es orientativa y no reemplaza el consejo médico.',wel:'¡Hola! Soy Vera 🌿\n\nSoy la guía de bienestar de vitalprotocolDK. ¡Estoy aquí para ayudarte con productos, protocolos o preguntas de bienestar!',q:['¿Qué es Nitro Plus?','¿Qué protocolo me conviene?','¿Dónde puedo comprar?','¿Qué es el Triángulo de Bienestar?']}
 };
-var vSys='Sen Vera\'sın — vitalprotocolDK wellness rehberi. Deniz KAT adına çalışıyorsun. Samimi, sıcak ama profesyonel ol.\n\nÜRÜNLER: Nitro Plus (Nitrik Oksit, vasküler sağlık), Sunrise (22 süper gıda, B vitamini), Sunset (Omega-3, Astaksantin, gece onarımı), HL5 (Hidrolize Kolajen), FIT20 (fitness protokolü), ORIGIN (temel beslenme), NRGI (hücresel enerji, ATP), EDGE (zihinsel berraklık, dopamin), IGNT (hormonal denge), R-STOUR (sindirim, enzim+probiyotik), ON-SHOTS (anlık odak, adaptogen).\n\nSATIN ALMA: https://amare.com/tr-tr/g10/2180152\n\nSINIRLAR: Asla tıbbi tanı/tedavi önerme. Hamilelik/emzirme sorularında doktora yönlendir.\n\nDİL: Kullanıcı hangi dilde yazarsa o dilde cevap ver. Kısa ve net ol. Kullanıcı satın alma sorarsa linki tıklanabilir göster.';
+var vSys='Sen Vera\'sın — vitalprotocolDK wellness rehberi. Deniz KAT adına çalışıyorsun. Samimi, sıcak ama profesyonel ol.\n\nÜRÜNLER: Nitro Plus (Nitrik Oksit, vasküler sağlık), Sunrise (22 süper gıda, B vitamini), Sunset (Omega-3, Astaksantin, gece onarımı), HL5 (Hidrolize Kolajen), FIT20 (fitness protokolü), ORIGIN (temel beslenme), NRGI (hücresel enerji, ATP), EDGE (zihinsel berraklık, dopamin), IGNT (hormonal denge), R-STOUR (sindirim, enzim+probiyotik), ON-SHOTS (anlık odak, adaptogen).\n\nSINIRLAR: Asla tıbbi tanı/tedavi önerme. Hamilelik/emzirme sorularında doktora yönlendir. Asla URL veya link yazma — satın alma butonunu sistem otomatik ekler.\n\nDİL: Kullanıcı hangi dilde yazarsa o dilde cevap ver. Kısa ve net ol.';
 
 window.vSetLang=function(l){
   if(!vT[l])return;
@@ -1994,7 +1996,24 @@ function vAddMsg(role,text){
     b.textContent=text;
   } else {
     var html=text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    html=html.replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener" style="color:#b8963e;text-decoration:underline;word-break:break-all;">$1</a>');
+    var linkTexts={tr:'🛒 Buradan satın al →',en:'🛒 Buy here →',es:'🛒 Comprar aquí →'};
+    html=html.replace(/(https?:\/\/[^\s<]+)/g,function(url){
+      var lang=localStorage.getItem('vpLang')||'tr';
+      var txt=linkTexts[lang]||linkTexts.tr;
+      return '<a href="'+url+'" target="_blank" rel="noopener" style="display:inline-block;margin:6px 0;padding:8px 16px;background:#2e3d30;color:#d4ae5e;border-radius:20px;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.04em;">'+txt+'</a>';
+    });
+    // Satın alma kelimesi geçiyorsa otomatik buton ekle (URL olmasa da)
+    var buyWords={tr:['satın al','sipariş','nereden al','nasıl al','almak istiyorum','fiyat'],en:['buy','order','purchase','where to get','price'],es:['comprar','precio','dónde']};
+    var lang2=localStorage.getItem('vpLang')||'tr';
+    var hasBuyWord=false;
+    var wordsToCheck=(buyWords[lang2]||buyWords.tr).concat(buyWords.en);
+    wordsToCheck.forEach(function(w){if(text.toLowerCase().indexOf(w)>-1)hasBuyWord=true;});
+    var hasBuyBtn=html.indexOf('amare.com')>-1;
+    if(hasBuyWord&&!hasBuyBtn){
+      var lang3=localStorage.getItem('vpLang')||'tr';
+      var btnTxt=linkTexts[lang3]||linkTexts.tr;
+      html+='<br><a href="https://amare.com/tr-tr/g10/2180152" target="_blank" rel="noopener" style="display:inline-block;margin:8px 0;padding:8px 16px;background:#2e3d30;color:#d4ae5e;border-radius:20px;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.04em;">'+btnTxt+'</a>';
+    }
     html=html.replace(/\n/g,'<br>');
     b.innerHTML=html;
   }
