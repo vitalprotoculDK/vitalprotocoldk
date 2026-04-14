@@ -47,6 +47,30 @@
 <style>.ct-lang-bar{display:none!important}</style>
 </head>
 <body>
+<script>
+// Apply saved language to nav immediately
+(function(){
+  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Protokoller",blog:"Blog",mission:"Misyon",faq:"SSS",contact:"İletişim"},
+          en:{home:"Homepage",health:"Health Triangle",protocols:"Protocols",blog:"Insights",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},
+          es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Protocolos",blog:"Perspectivas",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
+  var saved = localStorage.getItem('vpLang')||'tr';
+  function applyNav(l){
+    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){
+      b.classList.toggle("active",b.textContent.trim().toLowerCase()===l);
+    });
+    var lbl=lb[l]||lb.tr;
+    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
+    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lbl[k]});
+    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lbl[k]});
+  }
+  // Apply immediately when DOM is ready
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',function(){applyNav(saved);});
+  } else {
+    applyNav(saved);
+  }
+})();
+</script>
 <nav class="vpdk-nav-global">
   <a class="vpdk-nav-logo" href="/index.html">vital<span>protocol</span>DK</a>
   <div class="vpdk-nav-center">
