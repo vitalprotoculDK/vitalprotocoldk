@@ -14,7 +14,7 @@
 .vpdk-nav-global *{box-sizing:border-box}
 .vpdk-nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:#2e3d30;letter-spacing:.02em;text-decoration:none;flex-shrink:0}
 .vpdk-nav-logo span{color:#b8963e;font-style:italic}
-.vpdk-nav-center{display:flex;align-items:center;gap:4px;position:absolute;left:50%;transform:translateX(-50%)}
+.vpdk-nav-center{display:flex;align-items:center;gap:4px;position:absolute;left:50%;transform:translateX(-50%);min-width:0}
 .vpdk-nav-link{padding:6px 14px;font-size:15px;color:#2e3d30;text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap}
 .vpdk-nav-link:hover{background:transparent}
 
@@ -60,12 +60,12 @@
 
 .vpdk-nav-dropdown{position:relative}
 .vpdk-nav-dropdown-btn{padding:6px 14px;font-size:15px;color:#2e3d30;background:none;border:none;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;white-space:nowrap}
-.vpdk-nav-dropdown-btn:hover{background:#f0ede6}
+.vpdk-nav-dropdown-btn:hover{background:transparent}
 .vpdk-nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:8px;min-width:180px;box-shadow:0 8px 32px rgba(0,0,0,.1);z-index:9999}
 .vpdk-nav-dropdown:hover .vpdk-nav-dropdown-menu{display:block}
 .vpdk-nav-dropdown-item{display:block;padding:9px 14px;font-size:15px;color:#2e3d30;text-decoration:none;border-radius:8px;transition:all .2s}
 .vpdk-nav-dropdown-item:hover{background:#f0ede6;color:#b8963e}
-.vpdk-nav-right{display:flex;gap:6px;align-items:center}
+.vpdk-nav-right{display:flex;gap:6px;align-items:center;flex-shrink:0}
 .vpdk-nav-lang{padding:4px 12px;font-size:11px;font-weight:500;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7c6d;transition:all .2s;font-family:'DM Sans',sans-serif}
 .vpdk-nav-lang.active{background:#2e3d30;color:#fcfcfa;border-color:#2e3d30}
 .vpdk-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index:10000}
@@ -247,7 +247,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
    1. HERO
 ══════════════════════════════════ */
 .hero{
-  min-height:100vh;
+  min-height:auto;
   display:grid;grid-template-columns:1fr 1fr;
   align-items:center;gap:0;
   background:var(--cream);
