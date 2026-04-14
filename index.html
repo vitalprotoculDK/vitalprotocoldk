@@ -1850,9 +1850,15 @@ document.getElementById('wlES').onclick = function(){ waSetLang('ES'); };
 
 
 
-<!-- VERA -->
 
+
+<!-- VERA -->
 <style>
+/* Mobilde Vera tamamen gizli */
+@media(max-width:768px){
+  #vera-widget{display:none!important}
+}
+
 #vera-widget{position:fixed;bottom:24px;left:24px;z-index:2147483647;font-family:'DM Sans',sans-serif}
 #vera-btn{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#2e3d30,#4a5e4c);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(46,61,48,.35);position:relative;z-index:2147483647}
 #vera-btn svg{width:26px;height:26px;fill:#fcfcfa;pointer-events:none}
@@ -1891,7 +1897,6 @@ document.getElementById('wlES').onclick = function(){ waSetLang('ES'); };
 #vera-inp:focus{border-color:#2e3d30}
 #vera-go{width:34px;height:34px;border-radius:50%;background:#2e3d30;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 #vera-go svg{width:14px;height:14px;fill:#fcfcfa;pointer-events:none}
-@media(max-width:480px){#vera-panel{width:calc(100vw - 32px)}}
 </style>
 
 <div id="vera-widget">
@@ -1922,101 +1927,175 @@ document.getElementById('wlES').onclick = function(){ waSetLang('ES'); };
 
 <script>
 (function(){
-var vL=localStorage.getItem('vpLang')||'tr';
-var vOpen=false;
-var vHist=[];
-var vT={
-  tr:{ph:'Sorunuzu yazın...',st:'vitalprotocolDK · Wellness Rehberi',disc:'⚠ Bu bilgiler genel rehberlik amaçlıdır, tıbbi reçete yerine geçmez.',wel:'Merhaba! Ben Vera 🌿\n\nvitalprotocolDK\'nin wellness rehberiyim. Ürünler, protokoller veya wellness hakkında sana yardımcı olmaktan mutluluk duyarım!',q:['Nitro Plus nedir?','Hangi protokol bana uyar?','Ürünleri nereden alırım?','Wellness Üçgeni nedir?']},
-  en:{ph:'Type your question...',st:'vitalprotocolDK · Wellness Guide',disc:'⚠ Information is for general guidance only, not medical advice.',wel:"Hello! I'm Vera 🌿\n\nI'm the wellness guide at vitalprotocolDK. I'm happy to help you with products, protocols or wellness questions!",q:['What is Nitro Plus?','Which protocol suits me?','Where can I buy products?','What is the Wellness Triangle?']},
-  es:{ph:'Escribe tu pregunta...',st:'vitalprotocolDK · Guía de Bienestar',disc:'⚠ La información es orientativa y no reemplaza el consejo médico.',wel:'¡Hola! Soy Vera 🌿\n\nSoy la guía de bienestar de vitalprotocolDK. ¡Estoy aquí para ayudarte con productos, protocolos o preguntas de bienestar!',q:['¿Qué es Nitro Plus?','¿Qué protocolo me conviene?','¿Dónde puedo comprar?','¿Qué es el Triángulo de Bienestar?']}
-};
-var vSys='Sen Vera\'sın — vitalprotocolDK wellness rehberi. Deniz KAT adına çalışıyorsun. Samimi, sıcak ama profesyonel ol. "özüne dönmek", "canlanmak", "sürdürülebilir enerji" gibi kavramlar kullan. Teknik jargondan kaçın.\n\nÜRÜNLER: Nitro Plus (Nitrik Oksit, vasküler sağlık), Sunrise (22 süper gıda, B vitamini), Sunset (Omega-3, Astaksantin, gece onarımı), HL5 (Hidrolize Kolajen), FIT20 (fitness protokolü), ORIGIN (temel beslenme), NRGI (hücresel enerji, ATP), EDGE (zihinsel berraklık, dopamin), IGNT (hormonal denge), R-STOUR (sindirim, enzim+probiyotik), ON-SHOTS (anlık odak, adaptogen).\n\nSATIN ALMA: https://amare.com/tr-tr/g10/2180152\n\nSINIRLAR: Asla tıbbi tanı/tedavi önerme. Hamilelik/emzirme sorularında doktora yönlendir. Her sağlık sorusunda: "Bu bilgiler genel rehberlik amaçlıdır, hekimine danışmanı öneririm." de.\n\nDİL: Kullanıcı hangi dilde yazarsa o dilde cevap ver. Kısa ve net ol.';
+var vL = localStorage.getItem('vpLang') || 'tr';
+var vOpen = false;
+var vHist = [];
+var vInited = false; // hangi dilde init edildiğini takip et
 
-function vSetLang(l){
-  vL=l;
-  document.querySelectorAll('.vlb').forEach(function(b){b.classList.toggle('va',b.getAttribute('data-l')===l)});
-  document.getElementById('vera-inp').placeholder=vT[l].ph;
-  document.getElementById('vera-st').textContent=vT[l].st;
-  document.getElementById('vera-disc').textContent=vT[l].disc;
+var vT = {
+  tr: {
+    ph: 'Sorunuzu yazın...',
+    st: 'vitalprotocolDK · Wellness Rehberi',
+    disc: '⚠ Bu bilgiler genel rehberlik amaçlıdır, tıbbi reçete yerine geçmez.',
+    wel: 'Merhaba! Ben Vera 🌿\n\nvitalprotocolDK\'nin wellness rehberiyim. Ürünler, protokoller veya wellness hakkında sana yardımcı olmaktan mutluluk duyarım!',
+    q: ['Nitro Plus nedir?','Hangi protokol bana uyar?','Ürünleri nereden alırım?','Wellness Üçgeni nedir?']
+  },
+  en: {
+    ph: 'Type your question...',
+    st: 'vitalprotocolDK · Wellness Guide',
+    disc: '⚠ Information is for general guidance only, not medical advice.',
+    wel: "Hello! I'm Vera 🌿\n\nI'm the wellness guide at vitalprotocolDK. I'm happy to help you with products, protocols or wellness questions!",
+    q: ['What is Nitro Plus?','Which protocol suits me?','Where can I buy products?','What is the Wellness Triangle?']
+  },
+  es: {
+    ph: 'Escribe tu pregunta...',
+    st: 'vitalprotocolDK · Guía de Bienestar',
+    disc: '⚠ La información es orientativa y no reemplaza el consejo médico.',
+    wel: '¡Hola! Soy Vera 🌿\n\nSoy la guía de bienestar de vitalprotocolDK. ¡Estoy aquí para ayudarte con productos, protocolos o preguntas de bienestar!',
+    q: ['¿Qué es Nitro Plus?','¿Qué protocolo me conviene?','¿Dónde puedo comprar?','¿Qué es el Triángulo de Bienestar?']
+  }
+};
+
+var vSys = 'Sen Vera\'sın — vitalprotocolDK wellness rehberi. Deniz KAT adına çalışıyorsun. Samimi, sıcak ama profesyonel ol. "özüne dönmek", "canlanmak", "sürdürülebilir enerji" gibi kavramlar kullan. Teknik jargondan kaçın.\n\nÜRÜNLER: Nitro Plus (Nitrik Oksit, vasküler sağlık), Sunrise (22 süper gıda, B vitamini), Sunset (Omega-3, Astaksantin, gece onarımı), HL5 (Hidrolize Kolajen), FIT20 (fitness protokolü), ORIGIN (temel beslenme), NRGI (hücresel enerji, ATP), EDGE (zihinsel berraklık, dopamin), IGNT (hormonal denge), R-STOUR (sindirim, enzim+probiyotik), ON-SHOTS (anlık odak, adaptogen).\n\nSATIN ALMA: https://amare.com/tr-tr/g10/2180152\n\nSINIRLAR: Asla tıbbi tanı/tedavi önerme. Hamilelik/emzirme sorularında doktora yönlendir. Her sağlık sorusunda: "Bu bilgiler genel rehberlik amaçlıdır, hekimine danışmanı öneririm." de.\n\nDİL: Kullanıcı hangi dilde yazarsa o dilde cevap ver. Kısa ve net ol.';
+
+// Dil butonlarını güncelle + UI metinlerini değiştir
+function vSetLang(l) {
+  vL = l;
+  document.querySelectorAll('.vlb').forEach(function(b) {
+    b.classList.toggle('va', b.getAttribute('data-l') === l);
+  });
+  document.getElementById('vera-inp').placeholder = vT[l].ph;
+  document.getElementById('vera-st').textContent = vT[l].st;
+  document.getElementById('vera-disc').textContent = vT[l].disc;
   vRenderQ(l);
 }
-function vRenderQ(l){
-  var q=document.getElementById('vera-quick');
-  q.innerHTML='';
-  vT[l].q.forEach(function(txt){
-    var b=document.createElement('button');
-    b.className='vqb';b.textContent=txt;
-    b.addEventListener('click',function(){document.getElementById('vera-inp').value=txt;vSend();});
+
+// Hızlı soru butonlarını dile göre çiz
+function vRenderQ(l) {
+  var q = document.getElementById('vera-quick');
+  q.innerHTML = '';
+  vT[l].q.forEach(function(txt) {
+    var b = document.createElement('button');
+    b.className = 'vqb';
+    b.textContent = txt;
+    b.addEventListener('click', function() {
+      document.getElementById('vera-inp').value = txt;
+      vSend();
+    });
     q.appendChild(b);
   });
 }
-function vAddMsg(role,text){
-  var msgs=document.getElementById('vera-msgs');
-  var d=document.createElement('div');
-  d.className='vm'+(role==='user'?' vu':'');
-  var av=document.createElement('div');av.className='vmav';av.textContent=role==='user'?'👤':'V';
-  var b=document.createElement('div');b.className='vmb';b.textContent=text;
-  d.appendChild(av);d.appendChild(b);
+
+function vAddMsg(role, text) {
+  var msgs = document.getElementById('vera-msgs');
+  var d = document.createElement('div');
+  d.className = 'vm' + (role === 'user' ? ' vu' : '');
+  var av = document.createElement('div');
+  av.className = 'vmav';
+  av.textContent = role === 'user' ? '👤' : 'V';
+  var b = document.createElement('div');
+  b.className = 'vmb';
+  b.textContent = text;
+  d.appendChild(av);
+  d.appendChild(b);
   msgs.appendChild(d);
-  msgs.scrollTop=msgs.scrollHeight;
+  msgs.scrollTop = msgs.scrollHeight;
 }
-function vInit(){
-  var sl=localStorage.getItem('vpLang')||'tr';
-  vSetLang(sl);
-  var msgs=document.getElementById('vera-msgs');
-  if(msgs.children.length===0) vAddMsg('vera',vT[sl].wel);
-}
-async function vSend(){
-  var inp=document.getElementById('vera-inp');
-  var txt=inp.value.trim();
-  if(!txt)return;
-  inp.value='';
-  vAddMsg('user',txt);
-  vHist.push({role:'user',content:txt});
-  document.getElementById('vera-typing').classList.add('vs');
-  document.getElementById('vera-quick').style.display='none';
-  try{
-    var ctx=vHist.slice(-6).map(function(m){return m.role+': '+m.content;}).join('\n');
-    var r=await fetch('/api/chat',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        messages:[{role:'user',content:vSys+'\n\nKullanıcı dili: '+vL+'\n\nGeçmiş:\n'+ctx}]
-      })
-    });
-    var data=await r.json();
-    var reply=data.content&&data.content[0]?data.content[0].text:'...';
-    vHist.push({role:'assistant',content:reply});
-    document.getElementById('vera-typing').classList.remove('vs');
-    vAddMsg('vera',reply);
-  }catch(e){
-    document.getElementById('vera-typing').classList.remove('vs');
-    vAddMsg('vera',{tr:'Bağlantı hatası, tekrar dene.',en:'Connection error, please try again.',es:'Error de conexión, inténtalo de nuevo.'}[vL]);
+
+// Panel açıldığında: doğru dili oku, karşılama mesajını o dilde göster
+function vInit() {
+  // Her açılışta güncel dili al (sayfa dil seçimiyle senkron)
+  var currentLang = localStorage.getItem('vpLang') || 'tr';
+  vSetLang(currentLang);
+
+  var msgs = document.getElementById('vera-msgs');
+  // Mesaj yoksa karşılama yaz; varsa sadece dil UI'ını güncelle
+  if (msgs.children.length === 0) {
+    vAddMsg('vera', vT[currentLang].wel);
   }
 }
 
-document.addEventListener('DOMContentLoaded',function(){
-  document.getElementById('vera-btn').addEventListener('click',function(e){
+// Dil butonu tıklanınca: mevcut karşılamayı sil, yeni dilde yeniden yaz
+function vChangeLang(l) {
+  localStorage.setItem('vpLang', l);
+  vL = l;
+  vSetLang(l);
+
+  // Eğer panel açıksa ve sadece karşılama mesajı varsa, onu güncelle
+  var msgs = document.getElementById('vera-msgs');
+  if (msgs.children.length === 1 && vHist.length === 0) {
+    msgs.innerHTML = '';
+    vAddMsg('vera', vT[l].wel);
+  }
+}
+
+async function vSend() {
+  var inp = document.getElementById('vera-inp');
+  var txt = inp.value.trim();
+  if (!txt) return;
+  inp.value = '';
+  vAddMsg('user', txt);
+  vHist.push({role: 'user', content: txt});
+  document.getElementById('vera-typing').classList.add('vs');
+  document.getElementById('vera-quick').style.display = 'none';
+  try {
+    var ctx = vHist.slice(-6).map(function(m) { return m.role + ': ' + m.content; }).join('\n');
+    var r = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        messages: [{role: 'user', content: vSys + '\n\nKullanıcı dili: ' + vL + '\n\nGeçmiş:\n' + ctx}]
+      })
+    });
+    var data = await r.json();
+    var reply = data.content && data.content[0] ? data.content[0].text : '...';
+    vHist.push({role: 'assistant', content: reply});
+    document.getElementById('vera-typing').classList.remove('vs');
+    vAddMsg('vera', reply);
+  } catch(e) {
+    document.getElementById('vera-typing').classList.remove('vs');
+    vAddMsg('vera', {tr:'Bağlantı hatası, tekrar dene.',en:'Connection error, please try again.',es:'Error de conexión, inténtalo de nuevo.'}[vL]);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Sayfa yüklenince aktif dili uygula
+  var initLang = localStorage.getItem('vpLang') || 'tr';
+  vSetLang(initLang);
+
+  document.getElementById('vera-btn').addEventListener('click', function(e) {
     e.stopPropagation();
-    vOpen=!vOpen;
-    var p=document.getElementById('vera-panel');
-    p.classList.toggle('vopen',vOpen);
-    if(vOpen) vInit();
+    vOpen = !vOpen;
+    var p = document.getElementById('vera-panel');
+    p.classList.toggle('vopen', vOpen);
+    if (vOpen) vInit();
   });
-  document.getElementById('vera-x').addEventListener('click',function(e){
+
+  document.getElementById('vera-x').addEventListener('click', function(e) {
     e.stopPropagation();
-    vOpen=false;
+    vOpen = false;
     document.getElementById('vera-panel').classList.remove('vopen');
   });
-  document.getElementById('vera-go').addEventListener('click',function(e){e.stopPropagation();vSend();});
-  document.getElementById('vera-inp').addEventListener('keydown',function(e){if(e.key==='Enter'){e.stopPropagation();vSend();}});
-  document.querySelectorAll('.vlb').forEach(function(b){
-    b.addEventListener('click',function(e){e.stopPropagation();vSetLang(b.getAttribute('data-l'));});
+
+  document.getElementById('vera-go').addEventListener('click', function(e) {
+    e.stopPropagation();
+    vSend();
+  });
+
+  document.getElementById('vera-inp').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.stopPropagation(); vSend(); }
+  });
+
+  // Dil butonları — hem Vera dilini hem localStorage'ı günceller
+  document.querySelectorAll('.vlb').forEach(function(b) {
+    b.addEventListener('click', function(e) {
+      e.stopPropagation();
+      vChangeLang(b.getAttribute('data-l'));
+    });
   });
 });
 })();
 </script>
-<!-- END VERA -->
 <!-- END VERA -->
 </body>
 </html>
