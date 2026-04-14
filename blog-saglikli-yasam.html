@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sağlıklı Yaşam Tarzı Nasıl Oluşturulur? | Vital Protocol DK</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
@@ -45,6 +42,8 @@
 
 *{box-sizing:border-box}
 body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
+.blog-lang{display:none}
+.blog-lang.active{display:block}
 .blog-hero{background:#1a2419;padding:80px 24px 60px;text-align:center}
 .blog-hero-img{width:100%;max-width:460px;border-radius:16px;margin:0 auto 32px;display:block;box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .blog-category{font-size:11px;letter-spacing:.14em;color:#b8963e;text-transform:uppercase;font-weight:600;margin-bottom:16px;display:block}
@@ -62,16 +61,50 @@ body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
 .blog-checklist-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(46,61,48,.1);font-size:15px;color:#2e3d30}
 .blog-checklist-item:last-child{border-bottom:none}
 .blog-checklist-item::before{content:'✓';color:#b8963e;font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px}
+.blog-redflags{background:#fff8f8;border:1px solid #fdd;border-radius:16px;padding:28px 32px;margin:32px 0}
+.blog-redflags h3{color:#c0392b;margin:0 0 16px;font-size:18px}
+.blog-redflag-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(192,57,43,.08);font-size:15px;line-height:1.6}
+.blog-redflag-item:last-child{border-bottom:none}
+.blog-redflag-item::before{content:'⚠';flex-shrink:0}
+.blog-greenflags{background:#f5fdf5;border:1px solid #c8e6c9;border-radius:16px;padding:28px 32px;margin:32px 0}
+.blog-greenflags h3{color:#2e7d32;margin:0 0 16px;font-size:18px}
+.blog-greenflag-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(46,125,50,.08);font-size:15px;line-height:1.6}
+.blog-greenflag-item:last-child{border-bottom:none}
+.blog-greenflag-item::before{content:'✓';color:#2e7d32;font-weight:700;flex-shrink:0}
+.blog-signals{display:grid;gap:16px;margin:28px 0}
+.blog-signal{background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start}
+.blog-signal-badge{background:#2e3d30;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.blog-signal-badge.alert{background:#c0392b}
+.blog-signal-badge.warn{background:#e67e22}
+.blog-stats{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin:32px 0}
+.blog-stat{text-align:center;background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:20px 24px}
+.blog-stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;color:#b8963e;display:block}
+.blog-stat-label{font-size:13px;color:#6b7c6d;margin-top:4px}
+.blog-warning{background:#fff8f0;border:1px solid #f0c060;border-radius:12px;padding:20px 24px;margin:28px 0;font-size:15px;line-height:1.7}
 .blog-back{display:inline-flex;align-items:center;gap:8px;color:#b8963e;text-decoration:none;font-size:14px;font-weight:500;margin-bottom:40px}
 footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:#2e3d30}
 .footer-logo span{color:#b8963e;font-style:italic}
 .footer-note{font-size:13px;color:#6b7c6d;max-width:540px;line-height:1.7;text-align:right}
-@media(max-width:768px){.blog-body{padding:40px 20px 60px;font-size:16px}.blog-hero{padding:60px 20px 40px}.blog-highlight{font-size:17px;padding:24px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
+@media(max-width:768px){.blog-body{padding:40px 20px 60px;font-size:16px}.blog-hero{padding:60px 20px 40px}.blog-highlight{font-size:17px;padding:24px}.blog-stats{gap:16px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
 </style>
-</head>
-<body>
-<nav class="vpdk-nav-global">
+<script>
+(function(){
+  function applyBlogLang(l){
+    document.querySelectorAll('.blog-lang').forEach(function(el){
+      el.classList.toggle('active', el.getAttribute('data-lang')===l);
+    });
+  }
+  var saved = localStorage.getItem('vpLang')||'tr';
+  document.addEventListener('DOMContentLoaded', function(){ applyBlogLang(saved); });
+  var _orig = window.vpNavLang;
+  window.vpNavLang = function(l,btn){
+    if(_orig) _orig(l,btn);
+    localStorage.setItem('vpLang',l);
+    applyBlogLang(l);
+  };
+})();
+</script></head><body><nav class="vpdk-nav-global">
   <a class="vpdk-nav-logo" href="/index.html">vital<span>protocol</span>DK</a>
   <div class="vpdk-nav-center">
     <a href="/index.html" class="vpdk-nav-link" data-nav="home">Anasayfa</a>
@@ -840,61 +873,70 @@ document.addEventListener('click', function(e){
     t = t.parentElement;
   }
 });
-</script>
-<div class="blog-hero">
-  <img src="/saglikli.png" alt="Sağlıklı Yaşam Tarzı Nasıl Oluşturulur?" class="blog-hero-img">
-  <span class="blog-category">✦ Yaşam Tarzı</span>
-  <h1>Sağlıklı Yaşam Tarzı Nasıl Oluşturulur?</h1>
-  <h2>Bütünsel Rehber</h2>
-  <div class="blog-meta"><span>⏱ ~6 dakika okuma</span><span>✦ Deniz KAT</span></div>
-</div>
-<div class="blog-body">
-<a href="/blog.html" class="blog-back">← Blog'a Dön</a>
+</script><div class="blog-lang active" data-lang="tr">
+<div class="blog-hero"><img src="/saglikli.png" alt="Sağlıklı Yaşam Tarzı Nasıl Oluşturulur?" class="blog-hero-img">
+<span class="blog-category">✦ Yaşam Tarzı</span><h1>Sağlıklı Yaşam Tarzı Nasıl Oluşturulur?</h1><h2>Bütünsel Rehber</h2>
+<div class="blog-meta"><span>⏱ ~6 dk okuma</span><span>✦ Deniz KAT</span></div></div>
+<div class="blog-body"><a href="/blog.html" class="blog-back">← Blog'a Dön</a>
 <p>Sağlıklı bir yaşam tarzı oluşturmak, sadece doğru yemek yemek değil — vücudun tüm sistemlerini bütünsel olarak desteklemektir. Sindirimden hormonal dengeye, yapısal sağlıktan hücresel onarıma kadar her katman önemlidir.</p>
-
 <h2>HL5: Hidrolize Kolajen ve Yapısal Restorasyon</h2>
-<p>Vücudun en bol bulunan proteini olan kolajen, dokuları bir arada tutan "yapıştırıcıdır". HL5, yaşla birlikte azalan bu kritik desteği en emilebilir formda sunar:</p>
-
-<h3>1. Maksimum Emilim İçin Hidrolize Peptitler</h3>
-<p>Sıradan kolajenlerin aksine HL5, hidrolize edilmiş (parçalanmış) kolajen peptitleri içerir. Bu sayede sindirim sisteminden hızla geçerek doğrudan eklemlere, kemiklere, saçlara ve cilde ulaşır. 5 gramlık yüksek kaliteli sığır kolajeni, vücudun yapısal bütünlüğünü içeriden dışarıya destekler.</p>
-
-<h3>2. Şeker İlavesiz ve Doğal İçerik Sinerjisi</h3>
-<p>Elma sirkesi ve Sicilya limonu özü gibi doğal bileşenlerle zenginleştirilmiştir. Sadece bir protein takviyesi değil, aynı zamanda metabolik sağlığı destekleyen bir yaşam tarzı rutinidir.</p>
-
+<p>Vücudun en bol bulunan proteini olan kolajen, dokuları bir arada tutan "yapıştırıcıdır". HL5, hidrolize edilmiş kolajen peptitleri içerir — sindirim sisteminden hızla geçerek doğrudan eklemlere, kemiklere, saçlara ve cilde ulaşır. Elma sirkesi ve Sicilya limonu özü gibi doğal bileşenlerle zenginleştirilmiştir.</p>
 <div class="blog-quote">"Vücudunuzu bir arada tutan bağı güçlendirin; hareket özgürlüğünüzü ve gençlik enerjinizi koruma altına alın."</div>
-
-<h2>Restore (R-STOUR): Sindirim Mühendisliği ve Mikrobiyata Dengesi</h2>
-<p>Besinleri almak kadar, onları verimli bir şekilde işlemek de hayati önem taşır. Restore, sindirim sistemini bir mühendis hassasiyetiyle yeniden düzenler:</p>
-
-<h3>1. 5 Temel Sindirim Enzimi ve Probiyotik Gücü</h3>
-<p>Amilaz, Proteaz, Laktaz, Lipaz ve Selülaz enzimlerini içeren bu özel formül, gıdaların en küçük yapı taşlarına kadar parçalanmasını sağlar. 5 farklı probiyotik bakteri suşu ile birleştiğinde, bağırsak florasını dengeleyerek bağışıklık sistemini en temelden güçlendirir.</p>
-
-<h3>2. Bitkisel Detoks ve Onarım Kompleksi</h3>
-<p>Ardıç, Karahindiba ve Rezene gibi 9 farklı bitki özüyle sindirim kanalındaki enflamasyonu yatıştırır ve doğal temizlik sürecini destekler.</p>
-
-<div class="blog-quote">"Sindirimi yorucu bir süreçten, enerji veren bir restorasyona dönüştürün. Vücudunuzun iç dengesini optimize edin."</div>
-
+<h2>R-STOUR: Sindirim Mühendisliği</h2>
+<p>Amilaz, Proteaz, Laktaz, Lipaz ve Selülaz enzimlerini içeren bu özel formül, gıdaların en küçük yapı taşlarına kadar parçalanmasını sağlar. 5 farklı probiyotik bakteri suşu ile birleştiğinde, bağırsak florasını dengeleyerek bağışıklık sistemini en temelden güçlendirir. Ardıç, Karahindiba ve Rezene gibi 9 farklı bitki özüyle sindirim kanalındaki enflamasyonu yatıştırır.</p>
+<div class="blog-quote">"Sindirimi yorucu bir süreçten, enerji veren bir restorasyona dönüştürün."</div>
 <h2>IGNT: Hormonal Denge ve Yaşam Enerjisi</h2>
-<p>Kadın ve erkek fizyolojisinin ihtiyaçları farklıdır. Ignite serisi, bu farkları gözeterek hormonal dengeyi ve canlılığı destekleyen bir "canlandırıcı" protokolüdür:</p>
-
-<h3>1. Cinsiyete Özel Adaptojenik Formüller</h3>
-<div class="blog-checklist">
-  <h3>Formüller</h3>
-  <div class="blog-checklist-item"><strong>Kadınlar için:</strong> Maca ve Melisa ile duygusal denge ve hormonal huzur hedeflenmiştir.</div>
-  <div class="blog-checklist-item"><strong>Erkekler için:</strong> Kordiseps mantarı ve Rodiola ile fiziksel güç ve dayanıklılık hedeflenmiştir.</div>
-  <div class="blog-checklist-item">Bu kadim bitkiler, modern bilimin süzgecinden geçerek hücresel enerjiyi (ATP) artırmak üzere bir araya getirilmiştir.</div>
-</div>
-
-<h3>2. Nitrik Oksit ve Kan Akışı Desteği</h3>
-<p>İçeriğindeki Kırmızı Pancar özü ile kan dolaşımını optimize ederek, enerjinin ve hayatiyetin tüm vücuda yayılmasını sağlar.</p>
-
-<div class="blog-quote">"Kendi doğanızla uyumlu bir enerji artışı yaşayın. İçinizdeki gücü ve tutkuyu bilimsel bir destekle yeniden ateşleyin."</div>
-
+<p>Kadın ve erkek fizyolojisinin ihtiyaçları farklıdır. IGNT bu farkları gözeterek hormonal dengeyi destekler:</p>
+<div class="blog-checklist"><h3>Cinsiyete Özel Formüller</h3>
+<div class="blog-checklist-item"><strong>Kadınlar için:</strong> Maca ve Melisa ile duygusal denge ve hormonal huzur.</div>
+<div class="blog-checklist-item"><strong>Erkekler için:</strong> Kordiseps mantarı ve Rodiola ile fiziksel güç ve dayanıklılık.</div>
+<div class="blog-checklist-item">Kırmızı Pancar özü ile kan dolaşımını optimize etme.</div></div>
+<div class="blog-quote">"Kendi doğanızla uyumlu bir enerji artışı yaşayın. İçinizdeki gücü bilimsel bir destekle yeniden ateşleyin."</div>
 <div class="blog-highlight">"Bütünsel Performans Döngüsü: Origin ile inşa edin, HL5 ile sağlamlaştırın, Restore ile arının ve Ignite ile parlayın."</div>
 <p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Danışmanı · vitalprotocolDK</p>
 </div>
-<footer>
-  <div class="footer-logo">vital<span>protocol</span>DK</div>
-  <div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.</div>
-</footer>
-</body></html>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.</div></footer>
+</div><div class="blog-lang" data-lang="en">
+<div class="blog-hero"><img src="/saglikli.png" alt="How to Build a Healthy Lifestyle?" class="blog-hero-img">
+<span class="blog-category">✦ Lifestyle</span><h1>How to Build a Healthy Lifestyle?</h1><h2>A Holistic Guide</h2>
+<div class="blog-meta"><span>⏱ ~6 min read</span><span>✦ Deniz KAT</span></div></div>
+<div class="blog-body"><a href="/blog.html" class="blog-back">← Back to Blog</a>
+<p>Building a healthy lifestyle is not just about eating right — it's about holistically supporting all the body's systems. Every layer matters, from digestion to hormonal balance, from structural health to cellular repair.</p>
+<h2>HL5: Hydrolyzed Collagen and Structural Restoration</h2>
+<p>Collagen, the most abundant protein in the body, is the "glue" that holds tissues together. HL5 contains hydrolyzed collagen peptides — passing quickly through the digestive system to reach joints, bones, hair, and skin directly. Enriched with natural components like apple cider vinegar and Sicilian lemon extract.</p>
+<div class="blog-quote">"Strengthen the bond that holds your body together; protect your freedom of movement and youthful energy."</div>
+<h2>R-STOUR: Digestive Engineering</h2>
+<p>This special formula containing Amylase, Protease, Lactase, Lipase, and Cellulase enzymes breaks food down to its smallest building blocks. Combined with 5 different probiotic bacterial strains, it balances gut flora and strengthens the immune system from the ground up. With 9 different plant extracts including Juniper, Dandelion, and Fennel, it soothes inflammation in the digestive tract.</p>
+<div class="blog-quote">"Transform digestion from an exhausting process into an energy-giving restoration."</div>
+<h2>IGNT: Hormonal Balance and Life Energy</h2>
+<p>The needs of male and female physiology are different. IGNT supports hormonal balance considering these differences:</p>
+<div class="blog-checklist"><h3>Gender-Specific Formulas</h3>
+<div class="blog-checklist-item"><strong>For women:</strong> Emotional balance and hormonal harmony with Maca and Melissa.</div>
+<div class="blog-checklist-item"><strong>For men:</strong> Physical strength and endurance with Cordyceps mushroom and Rhodiola.</div>
+<div class="blog-checklist-item">Optimizing blood circulation with Red Beet extract.</div></div>
+<div class="blog-highlight">"Holistic Performance Cycle: Build with Origin, Strengthen with HL5, Cleanse with Restore, and Shine with Ignite."</div>
+<p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Consultant · vitalprotocolDK</p>
+</div>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Transparency Note:</strong> This page is for informational purposes only. Supplements do not replace a balanced diet.</div></footer>
+</div><div class="blog-lang" data-lang="es">
+<div class="blog-hero"><img src="/saglikli.png" alt="¿Cómo Construir un Estilo de Vida Saludable?" class="blog-hero-img">
+<span class="blog-category">✦ Estilo de Vida</span><h1>¿Cómo Construir un Estilo de Vida Saludable?</h1><h2>Una Guía Integral</h2>
+<div class="blog-meta"><span>⏱ ~6 min de lectura</span><span>✦ Deniz KAT</span></div></div>
+<div class="blog-body"><a href="/blog.html" class="blog-back">← Volver al Blog</a>
+<p>Construir un estilo de vida saludable no es solo comer bien — es apoyar holísticamente todos los sistemas del cuerpo. Cada capa importa, desde la digestión hasta el equilibrio hormonal.</p>
+<h2>HL5: Colágeno Hidrolizado y Restauración Estructural</h2>
+<p>El colágeno, la proteína más abundante del cuerpo, es el "pegamento" que mantiene unidos los tejidos. HL5 contiene péptidos de colágeno hidrolizado — pasando rápidamente por el sistema digestivo para llegar directamente a articulaciones, huesos, cabello y piel. Enriquecido con vinagre de manzana y extracto de limón siciliano.</p>
+<div class="blog-quote">"Fortalece el vínculo que mantiene unido tu cuerpo; protege tu libertad de movimiento y energía juvenil."</div>
+<h2>R-STOUR: Ingeniería Digestiva</h2>
+<p>Esta fórmula especial con enzimas Amilasa, Proteasa, Lactasa, Lipasa y Celulasa descompone los alimentos hasta sus componentes más pequeños. Combinada con 5 cepas bacterianas probióticas, equilibra la flora intestinal. Con 9 extractos de plantas como Enebro, Diente de León y Hinojo, calma la inflamación digestiva.</p>
+<div class="blog-quote">"Transforma la digestión de un proceso agotador a una restauración que da energía."</div>
+<h2>IGNT: Equilibrio Hormonal y Energía Vital</h2>
+<div class="blog-checklist"><h3>Fórmulas por Género</h3>
+<div class="blog-checklist-item"><strong>Para mujeres:</strong> Equilibrio emocional y armonía hormonal con Maca y Melisa.</div>
+<div class="blog-checklist-item"><strong>Para hombres:</strong> Fuerza física y resistencia con Cordyceps y Rhodiola.</div>
+<div class="blog-checklist-item">Optimización de la circulación sanguínea con extracto de Remolacha Roja.</div></div>
+<div class="blog-highlight">"Ciclo de Rendimiento Integral: Construye con Origin, Fortalece con HL5, Limpia con Restore y Brilla con Ignite."</div>
+<p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Consultor de Bienestar · vitalprotocolDK</p>
+</div>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Nota de Transparencia:</strong> Esta página es solo informativa. Los suplementos no reemplazan una dieta equilibrada.</div></footer>
+</div></body></html>

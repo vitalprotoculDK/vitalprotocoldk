@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog | Vital Protocol DK</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
-<style>
-.vpdk-nav-global{width:100%;background:rgba(252,252,250,0.98);border-bottom:1px solid #d6ddd7;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:9999;backdrop-filter:blur(12px);font-family:'DM Sans',sans-serif;box-sizing:border-box}
+<style>.vpdk-nav-global{width:100%;background:rgba(252,252,250,0.98);border-bottom:1px solid #d6ddd7;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:9999;backdrop-filter:blur(12px);font-family:'DM Sans',sans-serif;box-sizing:border-box}
 .vpdk-nav-global *{box-sizing:border-box}
 .vpdk-nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:#2e3d30;letter-spacing:.02em;text-decoration:none;flex-shrink:0}
 .vpdk-nav-logo span{color:#b8963e;font-style:italic}
@@ -42,14 +41,14 @@
   .vpdk-hamburger{display:flex!important}
   .vpdk-mobile-menu{top:56px!important}
 }
-
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;background:#fafaf8}
-.blog-hero{background:#1a2419;padding:80px 24px 60px;text-align:center}
-.blog-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;color:#fcfcfa;margin-bottom:12px}
-.blog-hero h1 em{font-style:italic;color:#d4ae5e}
-.blog-hero p{font-size:17px;color:rgba(252,252,250,.6);max-width:560px;margin:0 auto;line-height:1.7}
-.blog-body{max-width:1100px;margin:0 auto;padding:60px 24px 100px}
+</style>
+<style>
+.blog-lang{display:none}.blog-lang.active{display:block}
+.blog-index-hero{background:#1a2419;padding:80px 24px 60px;text-align:center}
+.blog-index-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;color:#fcfcfa;margin-bottom:12px}
+.blog-index-hero h1 em{font-style:italic;color:#d4ae5e}
+.blog-index-hero p{font-size:17px;color:rgba(252,252,250,.6);max-width:560px;margin:0 auto;line-height:1.7}
+.blog-index-body{max-width:1100px;margin:0 auto;padding:60px 24px 100px}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .blog-card{text-decoration:none;color:inherit;background:#fff;border-radius:20px;overflow:hidden;border:1px solid #e0ddd8;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
 .blog-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.1)}
@@ -59,13 +58,30 @@ body{font-family:'DM Sans',sans-serif;background:#fafaf8}
 .blog-card-title{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500;color:#1a2419;line-height:1.3;margin-bottom:10px}
 .blog-card-desc{font-size:14px;color:#6b7c6d;line-height:1.7;flex:1;margin-bottom:14px}
 .blog-card-meta{font-size:12px;color:#b8963e;font-weight:500;border-top:1px solid #f0ede6;padding-top:12px}
-footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-family:'DM Sans',sans-serif}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:#2e3d30}
 .footer-logo span{color:#b8963e;font-style:italic}
 .footer-note{font-size:13px;color:#6b7c6d;max-width:540px;line-height:1.7;text-align:right}
 @media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.blog-grid{grid-template-columns:1fr}.blog-body{padding:40px 16px 60px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr}.blog-index-body{padding:40px 16px 60px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
 </style>
+<script>
+(function(){
+  function applyBlogLang(l){
+    document.querySelectorAll('.blog-lang').forEach(function(el){
+      el.classList.toggle('active', el.getAttribute('data-lang')===l);
+    });
+  }
+  var saved = localStorage.getItem('vpLang')||'tr';
+  document.addEventListener('DOMContentLoaded', function(){ applyBlogLang(saved); });
+  var _orig = window.vpNavLang;
+  window.vpNavLang = function(l,btn){
+    if(_orig) _orig(l,btn);
+    localStorage.setItem('vpLang',l);
+    applyBlogLang(l);
+  };
+})();
+</script>
 </head>
 <body>
 <nav class="vpdk-nav-global">
@@ -839,75 +855,169 @@ document.addEventListener('click', function(e){
 });
 </script>
 
-<div class="blog-hero">
-  <h1>Blog & <em>Perspektif</em></h1>
-  <p>Sağlık, beslenme ve wellness hakkında dürüst içerikler. Gürültüyü susturmak için.</p>
-</div>
-
-<div class="blog-body">
-  <div class="blog-grid">
-    
-    <a href="/blog-temiz-takviye.html" class="blog-card">
-      <div class="blog-card-img" style="background-image:url('/temiz.png')"></div>
-      <div class="blog-card-body">
-        <span class="blog-card-cat">✦ Bilinçli Tüketim</span>
-        <h2 class="blog-card-title">Temiz Takviye Nasıl Anlaşılır?</h2>
-        <p class="blog-card-desc">Etiketin arkasına bakma rehberi. Sertifikalar, içerik listesi ve bağımsız test hakkında bilmeniz gerekenler.</p>
-        <div class="blog-card-meta">⏱ ~8 dk · Deniz KAT →</div>
-      </div>
-    </a>
-    <a href="/blog-odaklanamiyorum.html" class="blog-card">
-      <div class="blog-card-img" style="background-image:url('/odak.png')"></div>
-      <div class="blog-card-body">
-        <span class="blog-card-cat">✦ Zihin & Enerji</span>
-        <h2 class="blog-card-title">Odaklanamıyorum: Zihinsel Yorgunluğun Gerçek Sebebi</h2>
-        <p class="blog-card-desc">Beyin sisi ve zihinsel yorgunluğun ardındaki gerçek neden.</p>
-        <div class="blog-card-meta">⏱ ~5 dk · Deniz KAT →</div>
-      </div>
-    </a>
-    <a href="/blog-beyne-pihti.html" class="blog-card">
-      <div class="blog-card-img" style="background-image:url('/beyin.png')"></div>
-      <div class="blog-card-body">
-        <span class="blog-card-cat">✦ Beyin Sağlığı</span>
-        <h2 class="blog-card-title">Beyne Pıhtı Atmadan Önce Vücut Hangi Sinyalleri Verir?</h2>
-        <p class="blog-card-desc">İnme aniden gelmiyor. Vücudunuz saatler öncesinden sizi uyarıyor.</p>
-        <div class="blog-card-meta">⏱ ~5 dk · Deniz KAT →</div>
-      </div>
-    </a>
-    <a href="/blog-butunsel-saglik.html" class="blog-card">
-      <div class="blog-card-img" style="background-image:url('/butunsel.png')"></div>
-      <div class="blog-card-body">
-        <span class="blog-card-cat">✦ Bütünsel Sağlık</span>
-        <h2 class="blog-card-title">Bütünsel Sağlık Nedir ve Neden Önemlidir?</h2>
-        <p class="blog-card-desc">Fiziksel, zihinsel ve hücresel sağlık arasındaki bağlantıyı keşfedin.</p>
-        <div class="blog-card-meta">⏱ ~6 dk · Deniz KAT →</div>
-      </div>
-    </a>
-    <a href="/blog-zihinsel-performans.html" class="blog-card">
-      <div class="blog-card-img" style="background-image:url('/zihinsel.png')"></div>
-      <div class="blog-card-body">
-        <span class="blog-card-cat">✦ Zihinsel Performans</span>
-        <h2 class="blog-card-title">Zihinsel Performans Nasıl Artırılır?</h2>
-        <p class="blog-card-desc">Odaklanma ve enerji sistemi. Beyin sisi ve hücresel enerji üretimi.</p>
-        <div class="blog-card-meta">⏱ ~6 dk · Deniz KAT →</div>
-      </div>
-    </a>
-    <a href="/blog-saglikli-yasam.html" class="blog-card">
-      <div class="blog-card-img" style="background-image:url('/saglikli.png')"></div>
-      <div class="blog-card-body">
-        <span class="blog-card-cat">✦ Yaşam Tarzı</span>
-        <h2 class="blog-card-title">Sağlıklı Yaşam Tarzı Nasıl Oluşturulur?</h2>
-        <p class="blog-card-desc">Sindirimden hormonal dengeye, kolajen desteğinden hücresel onarıma.</p>
-        <div class="blog-card-meta">⏱ ~6 dk · Deniz KAT →</div>
-      </div>
-    </a>
+<div class="blog-lang active" data-lang="tr">
+<div class="blog-index-hero"><h1>Blog & <em>Perspektif</em></h1>
+<p>Sağlık, beslenme ve wellness hakkında dürüst içerikler. Gürültüyü susturmak için.</p></div>
+<div class="blog-index-body"><div class="blog-grid"><a href="/blog-temiz-takviye.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/temiz.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Bilinçli Tüketim</span>
+    <h2 class="blog-card-title">Temiz Takviye Nasıl Anlaşılır?</h2>
+    <p class="blog-card-desc">Etiketin arkasına bakma rehberi.</p>
+    <div class="blog-card-meta">⏱ ~8 dk · Deniz KAT →</div>
   </div>
+</a><a href="/blog-odaklanamiyorum.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/odak.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Zihin & Enerji</span>
+    <h2 class="blog-card-title">Odaklanamıyorum: Zihinsel Yorgunluğun Gerçek Sebebi</h2>
+    <p class="blog-card-desc">Beyin sisi ve zihinsel yorgunluğun ardındaki gerçek.</p>
+    <div class="blog-card-meta">⏱ ~5 dk · Deniz KAT →</div>
+  </div>
+</a><a href="/blog-beyne-pihti.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/beyin.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Beyin Sağlığı</span>
+    <h2 class="blog-card-title">Beyne Pıhtı Atmadan Önce Vücut Hangi Sinyalleri Verir?</h2>
+    <p class="blog-card-desc">İnme aniden gelmiyor. Vücudunuz saatler öncesinden uyarıyor.</p>
+    <div class="blog-card-meta">⏱ ~5 dk · Deniz KAT →</div>
+  </div>
+</a><a href="/blog-butunsel-saglik.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/butunsel.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Bütünsel Sağlık</span>
+    <h2 class="blog-card-title">Bütünsel Sağlık Nedir ve Neden Önemlidir?</h2>
+    <p class="blog-card-desc">Fiziksel, zihinsel ve hücresel sağlık arasındaki bağlantı.</p>
+    <div class="blog-card-meta">⏱ ~6 dk · Deniz KAT →</div>
+  </div>
+</a><a href="/blog-zihinsel-performans.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/zihinsel.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Zihinsel Performans</span>
+    <h2 class="blog-card-title">Zihinsel Performans Nasıl Artırılır?</h2>
+    <p class="blog-card-desc">Odaklanma ve enerji sistemi. Beyin sisi ve hücresel enerji.</p>
+    <div class="blog-card-meta">⏱ ~6 dk · Deniz KAT →</div>
+  </div>
+</a><a href="/blog-saglikli-yasam.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/saglikli.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Yaşam Tarzı</span>
+    <h2 class="blog-card-title">Sağlıklı Yaşam Tarzı Nasıl Oluşturulur?</h2>
+    <p class="blog-card-desc">Sindirimden hormonal dengeye bütünsel rehber.</p>
+    <div class="blog-card-meta">⏱ ~6 dk · Deniz KAT →</div>
+  </div>
+</a></div></div>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note">Bilgilendirme amaçlıdır. — Deniz KAT · Wellness Danışmanı</div></footer>
 </div>
 
-<footer>
-  <div class="footer-logo">vital<span>protocol</span>DK</div>
-  <div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. — Deniz KAT · Wellness Danışmanı</div>
-</footer>
+<div class="blog-lang" data-lang="en">
+<div class="blog-index-hero"><h1>Insights & <em>Perspective</em></h1>
+<p>Honest content about health, nutrition and wellness. To silence the noise.</p></div>
+<div class="blog-index-body"><div class="blog-grid"><a href="/blog-temiz-takviye.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/temiz.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Conscious Consumption</span>
+    <h2 class="blog-card-title">How to Identify a Clean Supplement?</h2>
+    <p class="blog-card-desc">A guide to reading behind the label.</p>
+    <div class="blog-card-meta">⏱ ~8 min · Deniz KAT →</div>
+  </div>
+</a><a href="/blog-odaklanamiyorum.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/odak.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Mind & Energy</span>
+    <h2 class="blog-card-title">I Can't Focus: The Real Cause of Mental Fatigue</h2>
+    <p class="blog-card-desc">The truth behind brain fog and mental fatigue.</p>
+    <div class="blog-card-meta">⏱ ~5 min · Deniz KAT →</div>
+  </div>
+</a><a href="/blog-beyne-pihti.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/beyin.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Brain Health</span>
+    <h2 class="blog-card-title">What Signals Does the Body Give Before a Brain Clot?</h2>
+    <p class="blog-card-desc">A stroke doesn't come suddenly. Your body warns you hours before.</p>
+    <div class="blog-card-meta">⏱ ~5 min · Deniz KAT →</div>
+  </div>
+</a><a href="/blog-butunsel-saglik.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/butunsel.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Holistic Health</span>
+    <h2 class="blog-card-title">What Is Holistic Health and Why Does It Matter?</h2>
+    <p class="blog-card-desc">The connection between physical, mental and cellular health.</p>
+    <div class="blog-card-meta">⏱ ~6 min · Deniz KAT →</div>
+  </div>
+</a><a href="/blog-zihinsel-performans.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/zihinsel.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Mental Performance</span>
+    <h2 class="blog-card-title">How to Boost Mental Performance?</h2>
+    <p class="blog-card-desc">Focus and energy system. Brain fog and cellular energy.</p>
+    <div class="blog-card-meta">⏱ ~6 min · Deniz KAT →</div>
+  </div>
+</a><a href="/blog-saglikli-yasam.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/saglikli.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Lifestyle</span>
+    <h2 class="blog-card-title">How to Build a Healthy Lifestyle?</h2>
+    <p class="blog-card-desc">A holistic guide from digestion to hormonal balance.</p>
+    <div class="blog-card-meta">⏱ ~6 min · Deniz KAT →</div>
+  </div>
+</a></div></div>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note">For informational purposes only. — Deniz KAT · Wellness Consultant</div></footer>
+</div>
 
-</body>
-</html>
+<div class="blog-lang" data-lang="es">
+<div class="blog-index-hero"><h1>Perspectivas & <em>Reflexiones</em></h1>
+<p>Contenido honesto sobre salud, nutrición y bienestar. Para silenciar el ruido.</p></div>
+<div class="blog-index-body"><div class="blog-grid"><a href="/blog-temiz-takviye.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/temiz.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Consumo Consciente</span>
+    <h2 class="blog-card-title">¿Cómo Identificar un Suplemento Limpio?</h2>
+    <p class="blog-card-desc">Una guía para leer detrás de la etiqueta.</p>
+    <div class="blog-card-meta">⏱ ~8 min · Deniz KAT →</div>
+  </div>
+</a><a href="/blog-odaklanamiyorum.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/odak.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Mente & Energía</span>
+    <h2 class="blog-card-title">No Puedo Concentrarme: La Verdadera Causa del Agotamiento Mental</h2>
+    <p class="blog-card-desc">La verdad detrás de la niebla cerebral y el agotamiento mental.</p>
+    <div class="blog-card-meta">⏱ ~5 min · Deniz KAT →</div>
+  </div>
+</a><a href="/blog-beyne-pihti.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/beyin.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Salud Cerebral</span>
+    <h2 class="blog-card-title">¿Qué Señales da el Cuerpo Antes de un Coágulo Cerebral?</h2>
+    <p class="blog-card-desc">Un ictus no llega de repente. Tu cuerpo te avisa horas antes.</p>
+    <div class="blog-card-meta">⏱ ~5 min · Deniz KAT →</div>
+  </div>
+</a><a href="/blog-butunsel-saglik.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/butunsel.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Salud Integral</span>
+    <h2 class="blog-card-title">¿Qué Es la Salud Integral y Por Qué Importa?</h2>
+    <p class="blog-card-desc">La conexión entre salud física, mental y celular.</p>
+    <div class="blog-card-meta">⏱ ~6 min · Deniz KAT →</div>
+  </div>
+</a><a href="/blog-zihinsel-performans.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/zihinsel.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Rendimiento Mental</span>
+    <h2 class="blog-card-title">¿Cómo Aumentar el Rendimiento Mental?</h2>
+    <p class="blog-card-desc">Sistema de enfoque y energía. Niebla cerebral y energía celular.</p>
+    <div class="blog-card-meta">⏱ ~6 min · Deniz KAT →</div>
+  </div>
+</a><a href="/blog-saglikli-yasam.html" class="blog-card">
+  <div class="blog-card-img" style="background-image:url('/saglikli.png')"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat">✦ Estilo de Vida</span>
+    <h2 class="blog-card-title">¿Cómo Construir un Estilo de Vida Saludable?</h2>
+    <p class="blog-card-desc">Una guía integral desde la digestión hasta el equilibrio hormonal.</p>
+    <div class="blog-card-meta">⏱ ~6 min · Deniz KAT →</div>
+  </div>
+</a></div></div>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note">Solo informativa. — Deniz KAT · Consultor de Bienestar</div></footer>
+</div>
+
+</body></html>

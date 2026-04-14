@@ -45,6 +45,8 @@
 
 *{box-sizing:border-box}
 body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
+.blog-lang{display:none}
+.blog-lang.active{display:block}
 .blog-hero{background:#1a2419;padding:80px 24px 60px;text-align:center}
 .blog-hero-img{width:100%;max-width:460px;border-radius:16px;margin:0 auto 32px;display:block;box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .blog-category{font-size:11px;letter-spacing:.14em;color:#b8963e;text-transform:uppercase;font-weight:600;margin-bottom:16px;display:block}
@@ -62,16 +64,26 @@ body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
 .blog-checklist-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(46,61,48,.1);font-size:15px;color:#2e3d30}
 .blog-checklist-item:last-child{border-bottom:none}
 .blog-checklist-item::before{content:'✓';color:#b8963e;font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px}
-.blog-warning{background:#fff8f0;border:1px solid #f0c060;border-radius:12px;padding:20px 24px;margin:28px 0;font-size:15px;line-height:1.7}
+.blog-redflags{background:#fff8f8;border:1px solid #fdd;border-radius:16px;padding:28px 32px;margin:32px 0}
+.blog-redflags h3{color:#c0392b;margin:0 0 16px;font-size:18px}
+.blog-redflag-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(192,57,43,.08);font-size:15px;line-height:1.6}
+.blog-redflag-item:last-child{border-bottom:none}
+.blog-redflag-item::before{content:'⚠';flex-shrink:0}
+.blog-greenflags{background:#f5fdf5;border:1px solid #c8e6c9;border-radius:16px;padding:28px 32px;margin:32px 0}
+.blog-greenflags h3{color:#2e7d32;margin:0 0 16px;font-size:18px}
+.blog-greenflag-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(46,125,50,.08);font-size:15px;line-height:1.6}
+.blog-greenflag-item:last-child{border-bottom:none}
+.blog-greenflag-item::before{content:'✓';color:#2e7d32;font-weight:700;flex-shrink:0}
 .blog-signals{display:grid;gap:16px;margin:28px 0}
 .blog-signal{background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start}
 .blog-signal-badge{background:#2e3d30;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0}
 .blog-signal-badge.alert{background:#c0392b}
 .blog-signal-badge.warn{background:#e67e22}
-.blog-stats{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin:32px 0}
-.blog-stat{text-align:center;background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:20px 28px}
+.blog-stats{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin:32px 0}
+.blog-stat{text-align:center;background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:20px 24px}
 .blog-stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;color:#b8963e;display:block}
 .blog-stat-label{font-size:13px;color:#6b7c6d;margin-top:4px}
+.blog-warning{background:#fff8f0;border:1px solid #f0c060;border-radius:12px;padding:20px 24px;margin:28px 0;font-size:15px;line-height:1.7}
 .blog-back{display:inline-flex;align-items:center;gap:8px;color:#b8963e;text-decoration:none;font-size:14px;font-weight:500;margin-bottom:40px}
 footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:#2e3d30}
@@ -79,6 +91,23 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
 .footer-note{font-size:13px;color:#6b7c6d;max-width:540px;line-height:1.7;text-align:right}
 @media(max-width:768px){.blog-body{padding:40px 20px 60px;font-size:16px}.blog-hero{padding:60px 20px 40px}.blog-highlight{font-size:17px;padding:24px}.blog-stats{gap:16px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
 </style>
+<script>
+(function(){
+  function applyBlogLang(l){
+    document.querySelectorAll('.blog-lang').forEach(function(el){
+      el.classList.toggle('active', el.getAttribute('data-lang')===l);
+    });
+  }
+  var saved = localStorage.getItem('vpLang')||'tr';
+  document.addEventListener('DOMContentLoaded', function(){ applyBlogLang(saved); });
+  var _orig = window.vpNavLang;
+  window.vpNavLang = function(l,btn){
+    if(_orig) _orig(l,btn);
+    localStorage.setItem('vpLang',l);
+    applyBlogLang(l);
+  };
+})();
+</script>
 </head>
 <body>
 <nav class="vpdk-nav-global">
@@ -851,110 +880,115 @@ document.addEventListener('click', function(e){
   }
 });
 </script>
+<div class="blog-lang active" data-lang="tr">
 <div class="blog-hero">
   <img src="/beyin.png" alt="Beyne Pıhtı Atmadan Önce Vücut Hangi Sinyalleri Verir?" class="blog-hero-img">
   <span class="blog-category">✦ Beyin Sağlığı</span>
-  <h1>Beyne Pıhtı Atmadan Önce Vücut Hangi Sinyalleri Verir?</h1>
-  <h2>İnme aniden gelmiyor — vücudunuz saatler öncesinden sizi uyarıyor</h2>
-  <div class="blog-meta"><span>⏱ ~5 dakika okuma</span><span>✦ Deniz KAT</span></div>
+  <h1>Beyne Pıhtı Atmadan Önce Vücut Hangi Sinyalleri Verir?</h1><h2>İnme aniden gelmiyor — vücudunuz saatler öncesinden sizi uyarıyor</h2>
+  <div class="blog-meta"><span>⏱ ~5 dk okuma</span><span>✦ Deniz KAT</span></div>
 </div>
 <div class="blog-body">
 <a href="/blog.html" class="blog-back">← Blog'a Dön</a>
-<div class="blog-warning"><strong>⚠️ Önemli Bilgi:</strong> Bu içerik bilgilendirme amaçlıdır ve tıbbi tanı yerine geçmez. Şüpheli belirtiler durumunda acil olarak sağlık kuruluşuna başvurulmalıdır.</div>
-
+<div class="blog-warning"><strong>⚠️ Önemli:</strong> Bu içerik bilgilendirme amaçlıdır ve tıbbi tanı yerine geçmez. Şüpheli belirtiler durumunda acilen sağlık kuruluşuna başvurun.</div>
 <p>İnme aniden gelmiyor. Vücudunuz saatler, hatta günler öncesinden sizi uyarıyor. Ama biz bu sinyalleri çoğunlukla görmezden geliyoruz.</p>
-
-<p>Dünya genelinde her yıl 15 milyon kişi inme geçiriyor. Bu vakaların büyük çoğunluğunda, hastalar önceki belirtileri "yorgunluk" ya da "stres" olarak geçiştirmiş. Oysa bu belirtiler aslında birer SOS sinyaliydi.</p>
-
-<p>İnme (felç) ya da TİA (geçici iskemik atak), beyne giden kan akışının kesilmesiyle oluşur. Pıhtı aniden oluşmaz — arka planda uzun süredir gelişen bir sürecin doruk noktasıdır.</p>
-
+<p>Dünya genelinde her yıl 15 milyon kişi inme geçiriyor. Bu vakaların büyük çoğunluğunda, hastalar önceki belirtileri "yorgunluk" ya da "stres" olarak geçiştirmiş.</p>
 <div class="blog-stats">
-  <div class="blog-stat"><span class="blog-stat-num">%80</span><div class="blog-stat-label">inme vakası önlenebilir niteliktedir</div></div>
-  <div class="blog-stat"><span class="blog-stat-num">1.9M</span><div class="blog-stat-label">nöron, inme sırasında her saniye ölür</div></div>
-  <div class="blog-stat"><span class="blog-stat-num">24 saat</span><div class="blog-stat-label">içinde TİA belirtileri kaybolur ama risk devam eder</div></div>
-</div>
-
+<div class="blog-stat"><span class="blog-stat-num">%80</span><div class="blog-stat-label">inme vakası önlenebilir</div></div>
+<div class="blog-stat"><span class="blog-stat-num">1.9M</span><div class="blog-stat-label">nöron/saniye ölür</div></div>
+<div class="blog-stat"><span class="blog-stat-num">24 saat</span><div class="blog-stat-label">TİA risk devam eder</div></div></div>
 <h2>Erken Uyarı İşaretleri</h2>
-<p>Beyin pıhtısına giden yol, genellikle sessiz bir damar hasarıyla başlar. İltihap, oksidatif stres ve endotel disfonksiyonu bir araya gelince damar duvarı zayıflar, pıhtılaşma riski artar.</p>
-
 <div class="blog-signals">
-  <div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Ani, şiddetli baş ağrısı</strong> — Daha önce hiç yaşanmamış türde, "kafaya çekiç vurmuş gibi" bir ağrı. Neden olmaksızın, aniden başlar.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Tek ya da iki gözde ani görme bozukluğu</strong> — Bulanıklık, çift görme veya bir gözde geçici körlük. Dakikalar içinde geçebilir — bu sizi yanıltmasın.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Konuşmada güçlük veya anlayamama</strong> — Sözcükleri bulmakta zorlanmak, saçma konuşmak ya da karşınızdakini anlamak zorlaşabilir.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge warn">DİKKAT</div><div><strong>Yüz, kol veya bacakta uyuşma / güçsüzlük</strong> — Genellikle vücudun tek tarafını etkiler. Özellikle sabah uyandığınızda fark edilebilir.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge warn">DİKKAT</div><div><strong>Denge kaybı ve koordinasyon bozukluğu</strong> — Aniden başlayan sersemlik, yürürken sendeleme ya da denge kurmada zorlanma.</div></div>
-  <div class="blog-signal"><div class="blog-signal-badge warn">DİKKAT</div><div><strong>Açıklanamayan aşırı yorgunluk</strong> — Özellikle diğer belirtilerle birlikte görüldüğünde, sinir sisteminin aşırı yüklendiğinin işareti olabilir.</div></div>
-</div>
-
-<h2>Bu Belirtiler Rastlantı Değil — Bir Sürecin Parçası</h2>
-<p>Modern tıp, inmeyi tek başına bir "damar olayı" olarak değil; kronik iltihap, oksidatif stres ve endotel disfonksiyonunun birleşimi olarak değerlendirmeye başlıyor.</p>
-
-<h3>🔬 Arka Planda Ne Oluyor?</h3>
-<div class="blog-checklist">
-  <h3>İnmeye Giden Süreç</h3>
-  <div class="blog-checklist-item"><strong>1. Kronik iltihap</strong> — Damar duvarını yıpratır, plak oluşumunu tetikler.</div>
-  <div class="blog-checklist-item"><strong>2. Oksidatif stres</strong> — Serbest radikaller damar hücrelerini hasar görür, kan akışı bozulur.</div>
-  <div class="blog-checklist-item"><strong>3. Endotelyal disfonksiyon</strong> — Damar duvarı esnekliğini kaybeder, pıhtılaşma riski yükselir.</div>
-  <div class="blog-checklist-item"><strong>4. Pıhtı oluşumu</strong> — Bu zemin üzerinde küçük bir tetikleyici bile büyük bir olay yaratabilir.</div>
-</div>
-
-<div class="blog-quote">"Beyin damarlarındaki hasar yıllarca sessiz sedasız ilerler. Belirtiler çıktığında artık kriz kapıya gelmiş demektir." — Nöroloji ve Damar Cerrahisi literatüründen derleme</div>
-
-<h2>Sizi Daha Fazla Risk Altına Alan Durumlar</h2>
-<div class="blog-checklist">
-  <h3>Risk Faktörleri</h3>
-  <div class="blog-checklist-item">Yüksek tansiyon — Damar duvarını sürekli zorlayan en büyük risk faktörü</div>
-  <div class="blog-checklist-item">Şeker hastalığı (Tip 2 diyabet) — Damar esnekliğini ciddi ölçüde azaltır</div>
-  <div class="blog-checklist-item">Kolesterol yüksekliği — Damar içi plak birikimini hızlandırır</div>
-  <div class="blog-checklist-item">Sigara kullanımı — Endotel hasarını doğrudan tetikler</div>
-  <div class="blog-checklist-item">Atriyal fibrilasyon — Düzensiz kalp ritmi pıhtı fırlatabilir</div>
-  <div class="blog-checklist-item">Obezite ve hareketsiz yaşam — Sistemik iltihabı besler</div>
-  <div class="blog-checklist-item">55 yaş üstü olmak — Risk her on yılda iki katına çıkıyor</div>
-  <div class="blog-checklist-item">Aile geçmişi — Genetik yatkınlık göz ardı edilemez</div>
-</div>
-
-<h2>FAST Testi: 112'yi Aramak İçin 4 Saniye</h2>
-<p>Belirtileri fark ettiğinizde vakit kaybetmeyin. Dünya genelinde kullanılan FAST testi, inme belirtilerini saniyeler içinde tanımanızı sağlar:</p>
-
-<div class="blog-checklist">
-  <h3>FAST Testi</h3>
-  <div class="blog-checklist-item"><strong>F — Face (Yüz):</strong> Gülümsemesini isteyin. Yüzün bir tarafı aşağı mı sarkıyor?</div>
-  <div class="blog-checklist-item"><strong>A — Arms (Kollar):</strong> İki kolunu kaldırmasını isteyin. Bir kol aşağı mı düşüyor?</div>
-  <div class="blog-checklist-item"><strong>S — Speech (Konuşma):</strong> Basit bir cümle söylemesini isteyin. Konuşması anlaşılmaz veya tuhaf mı?</div>
-  <div class="blog-checklist-item"><strong>T — Time (Zaman):</strong> Bunlardan biri varsa, anında 112'yi arayın. Her dakika önemli! 🚨</div>
-</div>
-
-<div class="blog-highlight">Şüpheleniyorsanız beklemek yok — 112'yi hemen arayın.</div>
-
-<h2>Önleme Yaklaşımı: Zihin, Beden ve Damar Dengesi</h2>
-<p>Beyin pıhtısı sadece "damarın tıkanması" değil; kronik stres, uyku bozukluğu, beslenme hataları ve hormon dengesizliğinin bir yansımasıdır.</p>
-
-<h3>🍽️ Beslenme ile Damar Koruması</h3>
-<p>Antioksidan açısından zengin beslenme, damar duvarındaki oksidatif hasarı frenler. Omega-3, yaban mersini, Morinda citrifolia gibi bileşenler; hem iltihabı hem de ADMA (damar hasarının önemli bir belirteci) düzeyini düşürmektedir.</p>
-
-<h3>😴 Uyku ve Kortizol Dengesi</h3>
-<p>Kronik uyku bozukluğu, kortizol yüksekliğini beraberinde getirir. Yüksek kortizol, endotel hücrelerini doğrudan hasara uğratır ve tansiyon dalgalanmalarını tetikler.</p>
-
-<h3>🏃 Hareket: En Ucuz Damar İlacı</h3>
-<p>Haftada 150 dakika orta yoğunlukta egzersiz, inme riskini %25-30 oranında azaltmaktadır. Hareket, endotel hücrelerinin nitrik oksit üretimini artırır ve damar esnekliğini korur.</p>
-
-<h2>Sonuç: Vücudunuz Size Yalan Söylemiyor</h2>
-<p>İnme ansızın gelmez. Pıhtı oluşmadan önce yıllarca süren bir süreç vardır — ve bu süreçte vücut sürekli sinyal gönderir.</p>
-
-<div class="blog-checklist">
-  <h3>Yapmanız Gereken Şey Basit</h3>
-  <div class="blog-checklist-item">Sinyalleri öğrenin ve tanıyın</div>
-  <div class="blog-checklist-item">Risk faktörlerinizi bilin</div>
-  <div class="blog-checklist-item">Uyarı belirtilerini asla ertelemeden değerlendirin</div>
-  <div class="blog-checklist-item">Beslenme, uyku ve hareket dengesini kurun</div>
-  <div class="blog-checklist-item">Düzenli kontrol yaptırın — özellikle 45 yaş üstü</div>
-</div>
-
-<p><strong>Erken fark etmek, tedaviyi mümkün kılar. Erken tedavi, hayat kurtarır.</strong></p>
+<div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Ani, şiddetli baş ağrısı</strong> — "Kafaya çekiç vurmuş gibi" türde, neden olmaksızın başlar.</div></div>
+<div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Ani görme bozukluğu</strong> — Bulanıklık, çift görme veya geçici körlük.</div></div>
+<div class="blog-signal"><div class="blog-signal-badge alert">ACİL</div><div><strong>Konuşmada güçlük</strong> — Sözcükleri bulmakta zorlanmak veya anlayamamak.</div></div>
+<div class="blog-signal"><div class="blog-signal-badge warn">DİKKAT</div><div><strong>Yüz, kol veya bacakta uyuşma</strong> — Genellikle vücudun tek tarafını etkiler.</div></div>
+<div class="blog-signal"><div class="blog-signal-badge warn">DİKKAT</div><div><strong>Denge kaybı</strong> — Aniden başlayan sersemlik veya sendeleme.</div></div></div>
+<div class="blog-highlight">%80 inme vakası önlenebilir. Erken fark etmek, tedaviyi mümkün kılar.</div>
+<h2>FAST Testi</h2>
+<div class="blog-checklist"><h3>112'yi Aramak İçin</h3>
+<div class="blog-checklist-item"><strong>F — Yüz:</strong> Gülümsemesini isteyin. Bir tarafı sarkıyor mu?</div>
+<div class="blog-checklist-item"><strong>A — Kollar:</strong> İki kolunu kaldırmasını isteyin. Bir kol düşüyor mu?</div>
+<div class="blog-checklist-item"><strong>S — Konuşma:</strong> Basit bir cümle söylemesini isteyin. Anlaşılmaz mı?</div>
+<div class="blog-checklist-item"><strong>T — Zaman:</strong> Bunlardan biri varsa, anında 112'yi arayın! 🚨</div></div>
+<h2>Risk Faktörleri</h2>
+<div class="blog-checklist"><h3>Dikkat Edilmesi Gerekenler</h3>
+<div class="blog-checklist-item">Yüksek tansiyon</div>
+<div class="blog-checklist-item">Şeker hastalığı (Tip 2 diyabet)</div>
+<div class="blog-checklist-item">Kolesterol yüksekliği</div>
+<div class="blog-checklist-item">Sigara kullanımı</div>
+<div class="blog-checklist-item">Obezite ve hareketsiz yaşam</div>
+<div class="blog-checklist-item">55 yaş üstü olmak</div></div>
 <p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Danışmanı · vitalprotocolDK</p>
 </div>
-<footer>
-  <div class="footer-logo">vital<span>protocol</span>DK</div>
-  <div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.</div>
-</footer>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.</div></footer>
+</div><div class="blog-lang" data-lang="en">
+<div class="blog-hero">
+  <img src="/beyin.png" alt="What Signals Does the Body Give Before a Brain Clot?" class="blog-hero-img">
+  <span class="blog-category">✦ Brain Health</span>
+  <h1>What Signals Does the Body Give Before a Brain Clot?</h1><h2>A stroke doesn't come suddenly — your body warns you hours before</h2>
+  <div class="blog-meta"><span>⏱ ~5 min read</span><span>✦ Deniz KAT</span></div>
+</div>
+<div class="blog-body">
+<a href="/blog.html" class="blog-back">← Back to Blog</a>
+<div class="blog-warning"><strong>⚠️ Important:</strong> This content is for informational purposes only and does not replace medical diagnosis. Seek emergency care for suspicious symptoms.</div>
+<p>A stroke doesn't come suddenly. Your body warns you hours, even days before. But we usually ignore these signals.</p>
+<p>Every year, 15 million people worldwide have a stroke. In the vast majority of these cases, patients had dismissed previous symptoms as "fatigue" or "stress."</p>
+<div class="blog-stats">
+<div class="blog-stat"><span class="blog-stat-num">80%</span><div class="blog-stat-label">of strokes are preventable</div></div>
+<div class="blog-stat"><span class="blog-stat-num">1.9M</span><div class="blog-stat-label">neurons die per second</div></div>
+<div class="blog-stat"><span class="blog-stat-num">24 hrs</span><div class="blog-stat-label">TIA risk continues</div></div></div>
+<h2>Early Warning Signs</h2>
+<div class="blog-signals">
+<div class="blog-signal"><div class="blog-signal-badge alert">URGENT</div><div><strong>Sudden, severe headache</strong> — Like "a hammer hitting the head," starts suddenly without cause.</div></div>
+<div class="blog-signal"><div class="blog-signal-badge alert">URGENT</div><div><strong>Sudden vision problems</strong> — Blurriness, double vision, or temporary blindness.</div></div>
+<div class="blog-signal"><div class="blog-signal-badge alert">URGENT</div><div><strong>Difficulty speaking or understanding</strong> — Struggling to find words or understand others.</div></div>
+<div class="blog-signal"><div class="blog-signal-badge warn">CAUTION</div><div><strong>Numbness/weakness in face, arm or leg</strong> — Usually affects one side of the body.</div></div>
+<div class="blog-signal"><div class="blog-signal-badge warn">CAUTION</div><div><strong>Loss of balance</strong> — Sudden dizziness or stumbling.</div></div></div>
+<div class="blog-highlight">80% of strokes are preventable. Early detection makes treatment possible.</div>
+<h2>The FAST Test</h2>
+<div class="blog-checklist"><h3>Call Emergency Services Immediately</h3>
+<div class="blog-checklist-item"><strong>F — Face:</strong> Ask them to smile. Is one side drooping?</div>
+<div class="blog-checklist-item"><strong>A — Arms:</strong> Ask them to raise both arms. Does one drift down?</div>
+<div class="blog-checklist-item"><strong>S — Speech:</strong> Ask them to repeat a sentence. Is it slurred?</div>
+<div class="blog-checklist-item"><strong>T — Time:</strong> If any of these, call emergency services immediately! 🚨</div></div>
+<h2>Risk Factors</h2>
+<div class="blog-checklist"><h3>Pay Attention To</h3>
+<div class="blog-checklist-item">High blood pressure</div>
+<div class="blog-checklist-item">Type 2 diabetes</div>
+<div class="blog-checklist-item">High cholesterol</div>
+<div class="blog-checklist-item">Smoking</div>
+<div class="blog-checklist-item">Obesity and sedentary lifestyle</div>
+<div class="blog-checklist-item">Being over 55</div></div>
+<p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Consultant · vitalprotocolDK</p>
+</div>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Transparency Note:</strong> This page is for informational purposes only. Supplements do not replace a balanced diet.</div></footer>
+</div><div class="blog-lang" data-lang="es">
+<div class="blog-hero">
+  <img src="/beyin.png" alt="¿Qué Señales da el Cuerpo Antes de un Coágulo Cerebral?" class="blog-hero-img">
+  <span class="blog-category">✦ Salud Cerebral</span>
+  <h1>¿Qué Señales da el Cuerpo Antes de un Coágulo Cerebral?</h1><h2>Un ictus no llega de repente — tu cuerpo te avisa horas antes</h2>
+  <div class="blog-meta"><span>⏱ ~5 min de lectura</span><span>✦ Deniz KAT</span></div>
+</div>
+<div class="blog-body">
+<a href="/blog.html" class="blog-back">← Volver al Blog</a>
+<div class="blog-warning"><strong>⚠️ Importante:</strong> Este contenido es solo informativo y no reemplaza el diagnóstico médico. Busca atención de emergencia ante síntomas sospechosos.</div>
+<p>Un ictus no llega de repente. Tu cuerpo te advierte horas, incluso días antes. Pero generalmente ignoramos estas señales.</p>
+<p>Cada año, 15 millones de personas en todo el mundo sufren un ictus. En la gran mayoría de los casos, los pacientes habían descartado síntomas previos como "cansancio" o "estrés."</p>
+<h2>Señales de Advertencia Tempranas</h2>
+<div class="blog-signals">
+<div class="blog-signal"><div class="blog-signal-badge alert">URGENTE</div><div><strong>Dolor de cabeza repentino y severo</strong> — Como "un martillo golpeando la cabeza," comienza sin causa.</div></div>
+<div class="blog-signal"><div class="blog-signal-badge alert">URGENTE</div><div><strong>Problemas de visión repentinos</strong> — Visión borrosa, doble o ceguera temporal.</div></div>
+<div class="blog-signal"><div class="blog-signal-badge alert">URGENTE</div><div><strong>Dificultad para hablar o entender</strong> — Dificultad para encontrar palabras.</div></div>
+<div class="blog-signal"><div class="blog-signal-badge warn">ATENCIÓN</div><div><strong>Entumecimiento/debilidad en cara, brazo o pierna</strong> — Generalmente afecta un lado del cuerpo.</div></div></div>
+<div class="blog-highlight">El 80% de los ictus son prevenibles. La detección temprana hace posible el tratamiento.</div>
+<h2>El Test FAST</h2>
+<div class="blog-checklist"><h3>Llama a Emergencias Inmediatamente</h3>
+<div class="blog-checklist-item"><strong>F — Cara:</strong> Pídele que sonría. ¿Un lado cae?</div>
+<div class="blog-checklist-item"><strong>A — Brazos:</strong> Pídele que levante ambos. ¿Uno cae?</div>
+<div class="blog-checklist-item"><strong>S — Habla:</strong> Pídele que repita una frase. ¿Es confusa?</div>
+<div class="blog-checklist-item"><strong>T — Tiempo:</strong> Si alguno de estos, ¡llama a emergencias! 🚨</div></div>
+<p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Consultor de Bienestar · vitalprotocolDK</p>
+</div>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Nota de Transparencia:</strong> Esta página es solo informativa. Los suplementos no reemplazan una dieta equilibrada.</div></footer>
+</div>
 </body></html>

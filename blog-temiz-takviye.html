@@ -45,6 +45,8 @@
 
 *{box-sizing:border-box}
 body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
+.blog-lang{display:none}
+.blog-lang.active{display:block}
 .blog-hero{background:#1a2419;padding:80px 24px 60px;text-align:center}
 .blog-hero-img{width:100%;max-width:460px;border-radius:16px;margin:0 auto 32px;display:block;box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .blog-category{font-size:11px;letter-spacing:.14em;color:#b8963e;text-transform:uppercase;font-weight:600;margin-bottom:16px;display:block}
@@ -72,13 +74,40 @@ body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
 .blog-greenflag-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(46,125,50,.08);font-size:15px;line-height:1.6}
 .blog-greenflag-item:last-child{border-bottom:none}
 .blog-greenflag-item::before{content:'✓';color:#2e7d32;font-weight:700;flex-shrink:0}
+.blog-signals{display:grid;gap:16px;margin:28px 0}
+.blog-signal{background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start}
+.blog-signal-badge{background:#2e3d30;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.blog-signal-badge.alert{background:#c0392b}
+.blog-signal-badge.warn{background:#e67e22}
+.blog-stats{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin:32px 0}
+.blog-stat{text-align:center;background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:20px 24px}
+.blog-stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;color:#b8963e;display:block}
+.blog-stat-label{font-size:13px;color:#6b7c6d;margin-top:4px}
+.blog-warning{background:#fff8f0;border:1px solid #f0c060;border-radius:12px;padding:20px 24px;margin:28px 0;font-size:15px;line-height:1.7}
 .blog-back{display:inline-flex;align-items:center;gap:8px;color:#b8963e;text-decoration:none;font-size:14px;font-weight:500;margin-bottom:40px}
 footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:#2e3d30}
 .footer-logo span{color:#b8963e;font-style:italic}
 .footer-note{font-size:13px;color:#6b7c6d;max-width:540px;line-height:1.7;text-align:right}
-@media(max-width:768px){.blog-body{padding:40px 20px 60px;font-size:16px}.blog-hero{padding:60px 20px 40px}.blog-highlight{font-size:17px;padding:24px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
+@media(max-width:768px){.blog-body{padding:40px 20px 60px;font-size:16px}.blog-hero{padding:60px 20px 40px}.blog-highlight{font-size:17px;padding:24px}.blog-stats{gap:16px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
 </style>
+<script>
+(function(){
+  function applyBlogLang(l){
+    document.querySelectorAll('.blog-lang').forEach(function(el){
+      el.classList.toggle('active', el.getAttribute('data-lang')===l);
+    });
+  }
+  var saved = localStorage.getItem('vpLang')||'tr';
+  document.addEventListener('DOMContentLoaded', function(){ applyBlogLang(saved); });
+  var _orig = window.vpNavLang;
+  window.vpNavLang = function(l,btn){
+    if(_orig) _orig(l,btn);
+    localStorage.setItem('vpLang',l);
+    applyBlogLang(l);
+  };
+})();
+</script>
 </head>
 <body>
 <nav class="vpdk-nav-global">
@@ -851,108 +880,148 @@ document.addEventListener('click', function(e){
   }
 });
 </script>
+<div class="blog-lang active" data-lang="tr">
 <div class="blog-hero">
-  <img src="/temiz.png" alt="Temiz Takviye" class="blog-hero-img">
+  <img src="/temiz.png" alt="Temiz Takviye Nasıl Anlaşılır?" class="blog-hero-img">
   <span class="blog-category">✦ Bilinçli Tüketim</span>
-  <h1>Temiz takviye nasıl anlaşılır?</h1>
-  <h2>Etiketin arkasına bakma rehberi</h2>
-  <div class="blog-meta"><span>⏱ ~8 dakika okuma</span><span>✦ Deniz KAT</span></div>
+  <h1>Temiz Takviye Nasıl Anlaşılır?</h1><h2>Etiketin arkasına bakma rehberi</h2>
+  <div class="blog-meta"><span>⏱ ~8 dk okuma</span><span>✦ Deniz KAT</span></div>
 </div>
 <div class="blog-body">
 <a href="/blog.html" class="blog-back">← Blog'a Dön</a>
-
 <p>Bir takviyeyi eline aldığında gördüklerin çoğu, sana söylenmek istenenler. Ama gerçek bilgi çoğunlukla etikette değil, etiketin tam arkasında — ya da hiç olmayan bir belgede — gizlidir.</p>
-
 <p>Eczanede, markette ya da online bir takviye satın alırken kafanızdan geçenleri tahmin edebiliyorum: "Bu kaliteli mi? İçindekiler gerçekten temiz mi? Yoksa sadece ambalaj mı güzel?"</p>
-
 <p>Bu sorular çok haklı. Çünkü Türkiye'de binlerce takviye ürünü piyasada. Ve pek çoğunun ambalajı birbirine çok benziyor. Fiyatlar farklı, vaatler benzer, ama içerikler arasındaki uçurum ciddi olabiliyor.</p>
-
 <div class="blog-quote">Bir ürünün "doğal" veya "bitkisel" yazması, temiz olduğu anlamına gelmiyor. Bunlar pazarlama kelimeleri — yasal bir standardı yok.</div>
-
-<p>Bu yazıda size bir kısayol değil, gerçek bir bakış açısı kazandırmak istiyorum. Hem yeni başlayanlar hem de yıllardır takviye kullananlar için — çünkü ikinci gruptakiler bazen daha fazla yanılıyor, alışkanlık körleştiriyor.</p>
-
 <h2>1. Sertifikalar: Gerçekten ne anlama gelirler?</h2>
-<p>Ambalajda sertifika logoları görüyorsunuz. Peki bunların ne ifade ettiğini biliyor musunuz? Hepsinin ağırlığı eşit değil.</p>
-
-<div class="blog-greenflags">
-  <h3>Güçlü Güvence</h3>
-  <div class="blog-greenflag-item"><div><strong>GMP Sertifikası</strong> — İyi Üretim Uygulamaları. Ürünün hammaddeden son ambalaja kadar her aşamasının denetlendiğini gösterir. Türkiye'de Sağlık Bakanlığı veya TÜRKAK onaylı kuruluşlarca verilir. En temel filtre bu.</div></div>
-  <div class="blog-greenflag-item"><div><strong>NSF / USP</strong> — Amerikan kaynaklı bağımsız denetim kuruluşları. Etiket iddiasının ürünün içeriğiyle örtüştüğünü bağımsız laboratuvarda doğrular. Özellikle ithal ürünlerde arayın.</div></div>
-</div>
-
-<div class="blog-redflags">
-  <h3>Sorgulanmalı</h3>
-  <div class="blog-redflag-item"><div><strong>ISO 22000</strong> — Gıda güvenliği yönetim sistemi. Üretim sürecinin güvenli yönetildiğini gösterir — ama ürün içeriğini bağımsız olarak doğrulamaz.</div></div>
-  <div class="blog-redflag-item"><div><strong>"Onaylı" / "Sertifikalı" ibaresi</strong> — Hangi kuruluş tarafından, ne için onaylandığı belirtilmemişse bu ibare pazarlama amacıyla kullanılıyor olabilir.</div></div>
-</div>
-
-<div class="blog-highlight">Türkiye'de her takviye ürününün Tarım ve Orman Bakanlığı'na kayıtlı olması gerekiyor. Bu kayıt "güvenli" demek değil, "kayıt altında" demek. İkisi farklı şeyler.</div>
-
+<div class="blog-greenflags"><h3>Güçlü Güvence</h3>
+<div class="blog-greenflag-item"><div><strong>GMP Sertifikası</strong> — İyi Üretim Uygulamaları. Ürünün hammaddeden son ambalaja kadar her aşamasının denetlendiğini gösterir. En temel filtre bu.</div></div>
+<div class="blog-greenflag-item"><div><strong>NSF / USP</strong> — Amerikan kaynaklı bağımsız denetim kuruluşları. Etiket iddiasının ürünün içeriğiyle örtüştüğünü bağımsız laboratuvarda doğrular.</div></div></div>
+<div class="blog-redflags"><h3>Sorgulanmalı</h3>
+<div class="blog-redflag-item"><div><strong>ISO 22000</strong> — Üretim sürecinin güvenli yönetildiğini gösterir ama ürün içeriğini doğrulamaz.</div></div>
+<div class="blog-redflag-item"><div><strong>"Onaylı" / "Sertifikalı" ibaresi</strong> — Hangi kuruluş tarafından onaylandığı belirtilmemişse pazarlama amaçlı olabilir.</div></div></div>
+<div class="blog-highlight">Türkiye'de kayıt olmak "güvenli" demek değil, "kayıt altında" demek. İkisi farklı şeyler.</div>
 <h2>2. İçerik listesini okuma sanatı</h2>
-<p>Etiketteki içerik listesi, en az fiyat kadar önemli. Ama çoğumuz oraya bakmıyoruz — ya çok küçük yazılmış, ya da terimleri anlamıyoruz.</p>
-<p>İçerik listesi büyükten küçüğe doğru yazılır. Yani listenin başında olanlar miktarca en fazla bulunanlardır. Buradan başlayın.</p>
-
-<div class="blog-redflags">
-  <h3>Kırmızı Bayraklar</h3>
-  <div class="blog-redflag-item"><div><strong>Magnezyum stearat, silikon dioksit, titanyum dioksit</strong> — Yaygın dolgu maddeleri. Küçük miktarlarda zararsız kabul edilse de kaliteli üreticiler bunlardan kaçınma eğiliminde. Listede çok fazla varsa sorgulanmalı.</div></div>
-  <div class="blog-redflag-item"><div><strong>Yapay renklendiriciler (FD&amp;C, E102, E124 vb.)</strong> — Bir takviyelere renk vermek için yapay boya kullanılmasının hiçbir işlevsel gerekçesi yoktur. Saf pazarlama amaçlıdır.</div></div>
-  <div class="blog-redflag-item"><div><strong>Yapay tatlandırıcılar (aspartam, sükraloz)</strong> — Özellikle çiğneme tabletleri ve toklarda sık karşılaşılır. Çocuklar ve duyarlı bireyler için dikkatli olunmalı.</div></div>
-  <div class="blog-redflag-item"><div><strong>Çok sayıda "diğer içerikler"</strong> — Aktif madde az, dolgu maddesi çok demek. Bu ürünlerde hissettiğiniz etki beklediğinizden düşük olabilir.</div></div>
-  <div class="blog-redflag-item"><div><strong>Form belirtilmeyen mineraller</strong> — "Magnezyum" yazan ürünle "Magnezyum Bisglisinat" yazan ürün aynı değildir. Form, emilim oranını doğrudan etkiler.</div></div>
-</div>
-
-<div class="blog-greenflags">
-  <h3>Yeşil İşaretler</h3>
-  <div class="blog-greenflag-item"><div><strong>Aktif maddenin formu açıkça yazılmış</strong> — Magnezyum bisglisinat, D3 vitamini (kolekalsiferol), K2 vitamini (MK-7) gibi. Form bilinci, o üreticinin ne kadar ciddi olduğunu gösterir.</div></div>
-  <div class="blog-greenflag-item"><div><strong>Kısa içerik listesi</strong> — Temiz ürünlerin içerik listesi genellikle kısadır. "Az malzeme, doğru malzeme" iyi bir işaret.</div></div>
-  <div class="blog-greenflag-item"><div><strong>Bitkisel kapsül veya HPMC</strong> — Jelatin yerine bitkisel kapsül kullanımı hem daha temiz hem de daha geniş kitlelere uygun.</div></div>
-</div>
-
+<p>İçerik listesi büyükten küçüğe doğru yazılır. Listenin başında olanlar miktarca en fazla bulunanlardır.</p>
+<div class="blog-redflags"><h3>Kırmızı Bayraklar</h3>
+<div class="blog-redflag-item"><div><strong>Magnezyum stearat, silikon dioksit, titanyum dioksit</strong> — Yaygın dolgu maddeleri.</div></div>
+<div class="blog-redflag-item"><div><strong>Yapay renklendiriciler (FD&amp;C, E102, E124)</strong> — Takviyede boya kullanılmasının işlevsel gerekçesi yoktur.</div></div>
+<div class="blog-redflag-item"><div><strong>Yapay tatlandırıcılar (aspartam, sükraloz)</strong> — Duyarlı bireyler için dikkatli olunmalı.</div></div>
+<div class="blog-redflag-item"><div><strong>Form belirtilmeyen mineraller</strong> — "Magnezyum" ile "Magnezyum Bisglisinat" aynı değildir.</div></div></div>
+<div class="blog-greenflags"><h3>Yeşil İşaretler</h3>
+<div class="blog-greenflag-item"><div><strong>Aktif maddenin formu açıkça yazılmış</strong> — Magnezyum bisglisinat, D3 vitamini (kolekalsiferol) gibi.</div></div>
+<div class="blog-greenflag-item"><div><strong>Kısa içerik listesi</strong> — "Az malzeme, doğru malzeme" iyi bir işaret.</div></div>
+<div class="blog-greenflag-item"><div><strong>Bitkisel kapsül veya HPMC</strong> — Üreticinin detaylara önem verdiğini gösterir.</div></div></div>
 <h2>3. Dozaj: Yazan ile gerçek arasındaki fark</h2>
-<p>Etiketin ön yüzü size "500 mg" der. Ama bu 500 mg'ın neyi ifade ettiğini kontrol ettiniz mi?</p>
-
-<div class="blog-quote">Bazı ürünler bitkisel ekstrakt miktarını yazarken, aktif bileşenin miktarını yazmaz. Örneğin "Zerdeçal 500 mg" ile "Zerdeçal Ekstrakt %95 Curcumin 500 mg" arasında dağlar kadar fark vardır.</div>
-
-<p>Aktif bileşen ne kadar? Standartlaştırılmış mı? Emilimi artıran bir taşıyıcı var mı (BioPerine, lipozom teknolojisi vb.)? Bunları sorup araştırmak sizin hakkınız — ve bu soruları yanıtlayamayan bir satıcıdan uzak durmak da.</p>
-
+<div class="blog-quote">"Zerdeçal 500 mg" ile "Zerdeçal Ekstrakt %95 Curcumin 500 mg" arasında dağlar kadar fark vardır.</div>
 <h2>4. Bağımsız test: En güçlü güvence</h2>
-<p>Bir üretici kendi ürününü her zaman güvenli ilan edebilir. Ama bağımsız bir laboratuvar test edip onayladıysa, bu çok farklı bir şey.</p>
-
-<div class="blog-checklist">
-  <h3>Neye Bakacaksınız?</h3>
-  <div class="blog-checklist-item">COA (Certificate of Analysis) — analiz sertifikası. İsteyebilirsiniz, şeffaf markalar genellikle paylaşır.</div>
-  <div class="blog-checklist-item">NSF Certified for Sport / USP Verified logoları — web sitelerinden doğrulanabilir.</div>
-  <div class="blog-checklist-item">Heavy metal panel — ağır metal testi. Özellikle bitkisel ve balık yağı ürünlerinde kritik.</div>
-  <div class="blog-checklist-item">Lot numarası ve üretim tarihi — izlenebilirlik kaliteli üreticinin vazgeçilmezidir.</div>
-</div>
-
-<h2>5. Fiyat yanıltıcı olabilir — ama düşük fiyat bir işarettir</h2>
-<p>Pahalı her zaman iyi değildir. Ama bir ürün rakiplerinden çok daha ucuzsa kendinize şunu sorun: bu fark nereden geliyor?</p>
-<p>Cevap genellikle şu üç yerden biri: ucuz hammadde formu, yüksek dolgu maddesi oranı ya da test edilmemiş ürün. Kaliteli hammadde, bağımsız test ve GMP sertifikasyon — bunların hepsi maliyete yansır.</p>
-
+<div class="blog-checklist"><h3>Neye Bakacaksınız?</h3>
+<div class="blog-checklist-item">COA (Certificate of Analysis) — şeffaf markalar genellikle paylaşır.</div>
+<div class="blog-checklist-item">NSF Certified for Sport / USP Verified logoları</div>
+<div class="blog-checklist-item">Heavy metal panel — bitkisel ve balık yağı ürünlerinde kritik.</div>
+<div class="blog-checklist-item">Lot numarası ve üretim tarihi</div></div>
+<h2>5. Fiyat yanıltıcı olabilir</h2>
 <div class="blog-highlight">En pahalı takviye, işe yaramayan ürün için ödenenden her zaman ucuzdur.</div>
-
-<h2>Yıllardır kullananlara özel not</h2>
-<p>Uzun süredir aynı ürünü kullanıyorsanız ve "alışkın" olduğunuzu düşünüyorsanız, bu yazıdaki kontrol listesini bir kez o ürüne de uygulayın.</p>
-<p>Bir şeye alışmak, onun iyi olduğu anlamına gelmiyor. Bazen etki hissedilmiyor çünkü ürün gerçekten yetersiz kalıyor — ama biz bunu başka sebeplere bağlıyoruz. Yorgunluğa, yaşa, strese...</p>
-
-<div class="blog-checklist">
-  <h3>Kontrol Listesi — Elinizde Tutun</h3>
-  <div class="blog-checklist-item">GMP belgesi var mı? (Hangi kurum vermiş?)</div>
-  <div class="blog-checklist-item">İçerik listesi kısa ve anlaşılır mı?</div>
-  <div class="blog-checklist-item">Aktif maddenin formu yazılmış mı?</div>
-  <div class="blog-checklist-item">Yapay renklendirici, tatlandırıcı var mı?</div>
-  <div class="blog-checklist-item">Bağımsız test / COA paylaşılıyor mu?</div>
-  <div class="blog-checklist-item">Lot numarası ve üretim tarihi var mı?</div>
-  <div class="blog-checklist-item">Fiyat farkı mantıkla açıklanabilir mi?</div>
-</div>
-
+<div class="blog-checklist"><h3>Kontrol Listesi</h3>
+<div class="blog-checklist-item">GMP belgesi var mı?</div>
+<div class="blog-checklist-item">İçerik listesi kısa ve anlaşılır mı?</div>
+<div class="blog-checklist-item">Aktif maddenin formu yazılmış mı?</div>
+<div class="blog-checklist-item">Yapay renklendirici, tatlandırıcı var mı?</div>
+<div class="blog-checklist-item">Bağımsız test / COA paylaşılıyor mu?</div>
+<div class="blog-checklist-item">Lot numarası ve üretim tarihi var mı?</div></div>
 <p>Bedeninize her gün bir şey veriyorsunuz. Bu kararı biraz daha bilinçli vermek için harcanan zaman, en iyi yatırımlardan biri.</p>
-
 <p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Danışmanı · vitalprotocolDK</p>
 </div>
-<footer>
-  <div class="footer-logo">vital<span>protocol</span>DK</div>
-  <div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.</div>
-</footer>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.</div></footer>
+</div><div class="blog-lang" data-lang="en">
+<div class="blog-hero">
+  <img src="/temiz.png" alt="How to Identify a Clean Supplement?" class="blog-hero-img">
+  <span class="blog-category">✦ Conscious Consumption</span>
+  <h1>How to Identify a Clean Supplement?</h1><h2>A guide to reading behind the label</h2>
+  <div class="blog-meta"><span>⏱ ~8 min read</span><span>✦ Deniz KAT</span></div>
+</div>
+<div class="blog-body">
+<a href="/blog.html" class="blog-back">← Back to Blog</a>
+<p>Most of what you see when you pick up a supplement is what they want you to see. But the real information is usually not on the label — it's hidden behind it, or in a document that doesn't exist at all.</p>
+<p>I can guess what goes through your mind when buying a supplement: "Is this quality? Are the ingredients really clean? Or is it just nice packaging?"</p>
+<div class="blog-quote">A product saying "natural" or "herbal" doesn't mean it's clean. These are marketing words — there's no legal standard.</div>
+<h2>1. Certifications: What Do They Really Mean?</h2>
+<div class="blog-greenflags"><h3>Strong Assurance</h3>
+<div class="blog-greenflag-item"><div><strong>GMP Certificate</strong> — Good Manufacturing Practices. Shows every stage from raw material to final packaging is audited. The most fundamental filter.</div></div>
+<div class="blog-greenflag-item"><div><strong>NSF / USP</strong> — Independent US-based audit organizations. Verifies label claims match product content in independent laboratories.</div></div></div>
+<div class="blog-redflags"><h3>Should Be Questioned</h3>
+<div class="blog-redflag-item"><div><strong>ISO 22000</strong> — Shows production is safely managed but doesn't independently verify product content.</div></div>
+<div class="blog-redflag-item"><div><strong>"Approved" / "Certified" labels</strong> — If the certifying body isn't specified, it may be for marketing purposes only.</div></div></div>
+<div class="blog-highlight">Registration doesn't mean "safe" — it means "registered." These are two different things.</div>
+<h2>2. The Art of Reading Ingredient Lists</h2>
+<p>Ingredient lists are written largest to smallest. Those at the top are present in the greatest amounts — start there.</p>
+<div class="blog-redflags"><h3>Red Flags</h3>
+<div class="blog-redflag-item"><div><strong>Magnesium stearate, silicon dioxide, titanium dioxide</strong> — Common fillers and flow agents.</div></div>
+<div class="blog-redflag-item"><div><strong>Artificial colorings (FD&amp;C, E102, E124)</strong> — There's no functional reason to add artificial dye to a supplement.</div></div>
+<div class="blog-redflag-item"><div><strong>Artificial sweeteners (aspartame, sucralose)</strong> — Use caution for sensitive individuals.</div></div>
+<div class="blog-redflag-item"><div><strong>Minerals without specified form</strong> — "Magnesium" and "Magnesium Bisglycinate" are not the same.</div></div></div>
+<div class="blog-greenflags"><h3>Green Flags</h3>
+<div class="blog-greenflag-item"><div><strong>Active ingredient form clearly stated</strong> — Like magnesium bisglycinate, vitamin D3 (cholecalciferol).</div></div>
+<div class="blog-greenflag-item"><div><strong>Short ingredient list</strong> — "Less ingredients, right ingredients" is a good sign.</div></div>
+<div class="blog-greenflag-item"><div><strong>Vegetable capsule or HPMC</strong> — Shows the manufacturer pays attention to details.</div></div></div>
+<h2>3. Dosage: The Gap Between Label and Reality</h2>
+<div class="blog-quote">"Turmeric 500mg" and "Turmeric Extract 95% Curcumin 500mg" are worlds apart.</div>
+<h2>4. Independent Testing: The Strongest Guarantee</h2>
+<div class="blog-checklist"><h3>What to Look For</h3>
+<div class="blog-checklist-item">COA (Certificate of Analysis) — transparent brands usually share these.</div>
+<div class="blog-checklist-item">NSF Certified for Sport / USP Verified logos</div>
+<div class="blog-checklist-item">Heavy metal panel — critical for herbal and fish oil products.</div>
+<div class="blog-checklist-item">Lot number and production date</div></div>
+<div class="blog-highlight">The most expensive supplement is always cheaper than paying for one that doesn't work.</div>
+<div class="blog-checklist"><h3>Checklist</h3>
+<div class="blog-checklist-item">Is there a GMP certificate?</div>
+<div class="blog-checklist-item">Is the ingredient list short and clear?</div>
+<div class="blog-checklist-item">Is the active ingredient form specified?</div>
+<div class="blog-checklist-item">Are there artificial colorings or sweeteners?</div>
+<div class="blog-checklist-item">Is independent testing / COA shared?</div>
+<div class="blog-checklist-item">Is there a lot number and production date?</div></div>
+<p>You give your body something every day. The time spent making this decision more consciously is one of the best investments you can make.</p>
+<p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Consultant · vitalprotocolDK</p>
+</div>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Transparency Note:</strong> This page is for informational purposes only. Supplements do not replace a balanced diet.</div></footer>
+</div><div class="blog-lang" data-lang="es">
+<div class="blog-hero">
+  <img src="/temiz.png" alt="¿Cómo Identificar un Suplemento Limpio?" class="blog-hero-img">
+  <span class="blog-category">✦ Consumo Consciente</span>
+  <h1>¿Cómo Identificar un Suplemento Limpio?</h1><h2>Una guía para leer detrás de la etiqueta</h2>
+  <div class="blog-meta"><span>⏱ ~8 min de lectura</span><span>✦ Deniz KAT</span></div>
+</div>
+<div class="blog-body">
+<a href="/blog.html" class="blog-back">← Volver al Blog</a>
+<p>La mayoría de lo que ves cuando tomas un suplemento es lo que quieren que veas. Pero la información real no está en la etiqueta — está detrás de ella, o en un documento que no existe.</p>
+<div class="blog-quote">Que un producto diga "natural" o "herbal" no significa que sea limpio. Son palabras de marketing — no tienen un estándar legal.</div>
+<h2>1. Certificaciones: ¿Qué Significan Realmente?</h2>
+<div class="blog-greenflags"><h3>Garantía Sólida</h3>
+<div class="blog-greenflag-item"><div><strong>Certificado GMP</strong> — Buenas Prácticas de Manufactura. Muestra que cada etapa desde la materia prima hasta el empaque final es auditada.</div></div>
+<div class="blog-greenflag-item"><div><strong>NSF / USP</strong> — Organizaciones de auditoría independientes de EE.UU. Verifica que las afirmaciones de la etiqueta coincidan con el contenido del producto.</div></div></div>
+<div class="blog-redflags"><h3>Debe Cuestionarse</h3>
+<div class="blog-redflag-item"><div><strong>ISO 22000</strong> — Muestra que la producción se gestiona de forma segura, pero no verifica independientemente el contenido del producto.</div></div>
+<div class="blog-redflag-item"><div><strong>Etiquetas "Aprobado" / "Certificado"</strong> — Si no se especifica el organismo certificador, puede ser solo para marketing.</div></div></div>
+<div class="blog-highlight">El registro no significa "seguro" — significa "registrado." Son dos cosas diferentes.</div>
+<h2>2. El Arte de Leer las Listas de Ingredientes</h2>
+<div class="blog-redflags"><h3>Señales de Alerta</h3>
+<div class="blog-redflag-item"><div><strong>Estearato de magnesio, dióxido de silicio, dióxido de titanio</strong> — Rellenos y agentes de flujo comunes.</div></div>
+<div class="blog-redflag-item"><div><strong>Colorantes artificiales (FD&amp;C, E102, E124)</strong> — No hay razón funcional para añadir colorante artificial a un suplemento.</div></div>
+<div class="blog-redflag-item"><div><strong>Minerales sin forma especificada</strong> — "Magnesio" y "Bisglicinato de Magnesio" no son lo mismo.</div></div></div>
+<div class="blog-greenflags"><h3>Señales Positivas</h3>
+<div class="blog-greenflag-item"><div><strong>Forma del ingrediente activo claramente indicada</strong> — Como bisglicinato de magnesio, vitamina D3 (colecalciferol).</div></div>
+<div class="blog-greenflag-item"><div><strong>Lista de ingredientes corta</strong> — "Menos ingredientes, ingredientes correctos" es una buena señal.</div></div></div>
+<div class="blog-highlight">El suplemento más caro siempre es más barato que pagar por uno que no funciona.</div>
+<div class="blog-checklist"><h3>Lista de Verificación</h3>
+<div class="blog-checklist-item">¿Hay certificado GMP?</div>
+<div class="blog-checklist-item">¿La lista de ingredientes es corta y clara?</div>
+<div class="blog-checklist-item">¿Se especifica la forma del ingrediente activo?</div>
+<div class="blog-checklist-item">¿Hay colorantes o edulcorantes artificiales?</div>
+<div class="blog-checklist-item">¿Se comparte el certificado de análisis COA?</div>
+<div class="blog-checklist-item">¿Hay número de lote y fecha de producción?</div></div>
+<p>Le das algo a tu cuerpo todos los días. El tiempo invertido en tomar esta decisión de forma más consciente es una de las mejores inversiones que puedes hacer.</p>
+<p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Consultor de Bienestar · vitalprotocolDK</p>
+</div>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Nota de Transparencia:</strong> Esta página es solo informativa. Los suplementos no reemplazan una dieta equilibrada.</div></footer>
+</div>
 </body></html>

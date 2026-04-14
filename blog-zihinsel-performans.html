@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zihinsel Performans Nasıl Artırılır? | Vital Protocol DK</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
@@ -45,6 +42,8 @@
 
 *{box-sizing:border-box}
 body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
+.blog-lang{display:none}
+.blog-lang.active{display:block}
 .blog-hero{background:#1a2419;padding:80px 24px 60px;text-align:center}
 .blog-hero-img{width:100%;max-width:460px;border-radius:16px;margin:0 auto 32px;display:block;box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .blog-category{font-size:11px;letter-spacing:.14em;color:#b8963e;text-transform:uppercase;font-weight:600;margin-bottom:16px;display:block}
@@ -62,16 +61,50 @@ body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
 .blog-checklist-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(46,61,48,.1);font-size:15px;color:#2e3d30}
 .blog-checklist-item:last-child{border-bottom:none}
 .blog-checklist-item::before{content:'✓';color:#b8963e;font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px}
+.blog-redflags{background:#fff8f8;border:1px solid #fdd;border-radius:16px;padding:28px 32px;margin:32px 0}
+.blog-redflags h3{color:#c0392b;margin:0 0 16px;font-size:18px}
+.blog-redflag-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(192,57,43,.08);font-size:15px;line-height:1.6}
+.blog-redflag-item:last-child{border-bottom:none}
+.blog-redflag-item::before{content:'⚠';flex-shrink:0}
+.blog-greenflags{background:#f5fdf5;border:1px solid #c8e6c9;border-radius:16px;padding:28px 32px;margin:32px 0}
+.blog-greenflags h3{color:#2e7d32;margin:0 0 16px;font-size:18px}
+.blog-greenflag-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(46,125,50,.08);font-size:15px;line-height:1.6}
+.blog-greenflag-item:last-child{border-bottom:none}
+.blog-greenflag-item::before{content:'✓';color:#2e7d32;font-weight:700;flex-shrink:0}
+.blog-signals{display:grid;gap:16px;margin:28px 0}
+.blog-signal{background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start}
+.blog-signal-badge{background:#2e3d30;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.blog-signal-badge.alert{background:#c0392b}
+.blog-signal-badge.warn{background:#e67e22}
+.blog-stats{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin:32px 0}
+.blog-stat{text-align:center;background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:20px 24px}
+.blog-stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;color:#b8963e;display:block}
+.blog-stat-label{font-size:13px;color:#6b7c6d;margin-top:4px}
+.blog-warning{background:#fff8f0;border:1px solid #f0c060;border-radius:12px;padding:20px 24px;margin:28px 0;font-size:15px;line-height:1.7}
 .blog-back{display:inline-flex;align-items:center;gap:8px;color:#b8963e;text-decoration:none;font-size:14px;font-weight:500;margin-bottom:40px}
 footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:#2e3d30}
 .footer-logo span{color:#b8963e;font-style:italic}
 .footer-note{font-size:13px;color:#6b7c6d;max-width:540px;line-height:1.7;text-align:right}
-@media(max-width:768px){.blog-body{padding:40px 20px 60px;font-size:16px}.blog-hero{padding:60px 20px 40px}.blog-highlight{font-size:17px;padding:24px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
+@media(max-width:768px){.blog-body{padding:40px 20px 60px;font-size:16px}.blog-hero{padding:60px 20px 40px}.blog-highlight{font-size:17px;padding:24px}.blog-stats{gap:16px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
 </style>
-</head>
-<body>
-<nav class="vpdk-nav-global">
+<script>
+(function(){
+  function applyBlogLang(l){
+    document.querySelectorAll('.blog-lang').forEach(function(el){
+      el.classList.toggle('active', el.getAttribute('data-lang')===l);
+    });
+  }
+  var saved = localStorage.getItem('vpLang')||'tr';
+  document.addEventListener('DOMContentLoaded', function(){ applyBlogLang(saved); });
+  var _orig = window.vpNavLang;
+  window.vpNavLang = function(l,btn){
+    if(_orig) _orig(l,btn);
+    localStorage.setItem('vpLang',l);
+    applyBlogLang(l);
+  };
+})();
+</script></head><body><nav class="vpdk-nav-global">
   <a class="vpdk-nav-logo" href="/index.html">vital<span>protocol</span>DK</a>
   <div class="vpdk-nav-center">
     <a href="/index.html" class="vpdk-nav-link" data-nav="home">Anasayfa</a>
@@ -840,72 +873,73 @@ document.addEventListener('click', function(e){
     t = t.parentElement;
   }
 });
-</script>
-<div class="blog-hero">
-  <img src="/zihinsel.png" alt="Zihinsel Performans Nasıl Artırılır?" class="blog-hero-img">
-  <span class="blog-category">✦ Zihinsel Performans</span>
-  <h1>Zihinsel Performans Nasıl Artırılır?</h1>
-  <h2>Odaklanma ve Enerji Sistemi</h2>
-  <div class="blog-meta"><span>⏱ ~6 dakika okuma</span><span>✦ Deniz KAT</span></div>
-</div>
-<div class="blog-body">
-<a href="/blog.html" class="blog-back">← Blog'a Dön</a>
-<p>Modern dünya sadece vücudumuzu değil, en çok zihnimizi yoruyor. Beyin buğusu, odaklanma güçlüğü ve gün ortasında tükenen motivasyon bir kader değil, biyokimyasal bir dengesizliktir. Zihinsel Bütünlük protokolü, nörotransmitter dengenizi optimize ederek sizi 'en iyi versiyonunuza' taşımak için tasarlandı.</p>
-
-<h2>EDGE: Motivasyon ve Mental Akış (Flow State)</h2>
-<p>"Sadece enerji değil, bir 'zihinsel berraklık' devrimi. Mango Yaprağı Ekstresi, Mangostana ve Palmiye Meyvesi'nin dünyada ilk kez bir araya geldiği bu sinerji, dopamin seviyelerinizi doğal yollarla destekler. Kahve çarpıntısı olmadan; sakin, odaklanmış ve yüksek motivasyonlu bir zihin yapısı sunar."</p>
-
-<p>Zihnin sadece çalışması yetmez; onun bir "akış" (flow) halinde olması gerekir. EDGE, yapay uyarıcılar kullanmadan beynin doğal ödül ve motivasyon mekanizmalarını aktive eder.</p>
-
-<h3>1. Dopamin ve Nörotransmitter Sinerjisi</h3>
-<p>Mango Yaprağı Ekstresi, Mangostana ve Palmiye Meyvesi'nin dünyada ilk kez bir araya geldiği bu özel formül, zihinsel dayanıklılığı artırır. Bu bileşenler, beyindeki "iyi hissetme" ve "başarma" sinyallerini (Dopamin) doğal yollarla destekleyerek gün boyu süren bir mental berraklık sağlar.</p>
-
-<h3>2. B5 Vitamini ve Bilişsel Çeviklik</h3>
-<p>İçeriğindeki B5 vitamini (Pantotenik Asit), zihinsel performansın ve enerji metabolizmasının anahtarıdır. Kahvenin yarattığı ani iniş çıkışlar yerine, dengeli ve uzun süreli bir odaklanma sunar.</p>
-
-<div class="blog-quote">"Zihninizin kontrolünü elinize alın; sadece odaklanmakla kalmayın, yaptığınız işten keyif alan o 'akış' haline geçin."</div>
-
-<h2>NRGI: Hücresel Enerji ve Hareket</h2>
-<p>"Vücudunuza dışarıdan yapay bir enerji yüklemek yerine, hücrelerinizin kendi enerji üretim mekanizmasını (ATP) optimize eder. İnülin ve Glisin içeriğiyle, fiziksel performansınızı artırırken zihinsel dayanıklılığınızı en üst seviyeye çıkarır."</p>
-
-<p>Gerçek enerji, dışarıdan alınan bir "şok" değil, hücrenin içindeki mitokondrinin ürettiği bir güçtür. NRGI, vücudun öz enerjisini serbest bırakmak için tasarlanmıştır:</p>
-
-<h3>1. ATP Üretimi ve C Vitamini Desteği</h3>
-<p>NRGI, vücudun temel enerji birimi olan ATP üretimini destekleyen içeriklerle doludur. C vitamini ile birleşen bu formül, yorgunluk ve bitkinliğin azalmasına katkıda bulunurken, hücreleri oksidatif stresten korur. Bu, geçici bir zindelik değil, sürdürülebilir bir fiziksel kapasite artışıdır.</p>
-
-<h3>2. İnülin ve Glisin Dengesi</h3>
-<p>Hücresel düzeyde metabolizmayı destekleyen bu bileşenler, fiziksel performansı zihinsel dirençle birleştirir. Vücudun yakıt sistemini optimize ederek, günün her saatinde hareket etmeye hazır bir biyokimya yaratır.</p>
-
-<div class="blog-quote">"Vücudunuzun kendi enerji santrallerini uyandırın; dışarıdan bir desteğe ihtiyaç duymadan, kendi doğal gücünüzle harekete geçin."</div>
-
-<h2>ON SHOTS: Anlık Odak ve Keskinlik</h2>
-<p>"Bacopa Monnieri ve Ashwagandha gibi 'adaptojen' bitkilerle desteklenmiş bu formül, beynin stresle başa çıkma kapasitesini artırır. Önemli bir toplantı, zorlu bir sınav, uzun yol araç kullanımı veya yüksek dikkat gerektiren anlarda zihninizi saniyeler içinde 'açık' konuma getirir."</p>
-
-<p>Bazen saniyeler içinde zihinsel bir "açma-kapama" düğmesine ihtiyaç duyarsınız. ON SHOTS, beynin en zorlu anlarda bile keskin ve odaklı kalmasını sağlayan hızlı bir müdahale protokolüdür.</p>
-
-<h3>1. Adaptojenik Güç ve Nöro-Koruma</h3>
-<p>Bacopa Monnieri ve Ashwagandha gibi binlerce yıllık kadim bitkiler, modern bilimin süzgecinden geçerek bu şişeye girdi. Bu adaptojenler, beynin stresle başa çıkma kapasitesini artırırken, B vitaminleri (B1, B2, B3, B6, B12) ile sinir sistemini destekler.</p>
-
-<h3>2. Guarana ve Anlık Bilişsel Aktivasyon</h3>
-<p>Doğal guarana özünden gelen kontrollü kafein ve zengin bitki ekstreleri, kan-beyin bariyerini hızlıca aşarak zihinsel uyanıklığı en üst seviyeye taşır.</p>
-
-<div class="blog-quote">"Zihninizin en parlak olduğu anı seçin. Karar vermeniz, odaklanmanız veya yaratmanız gereken o kritik saniyede, beyninizin tüm potansiyelini devreye sokun."</div>
-
-<h2>Zihinsel Bütünlük Kimler İçin Tasarlandı?</h2>
-<div class="blog-checklist">
-  <h3>Hedef Kitle</h3>
-  <div class="blog-checklist-item"><strong>Yüksek Performanslı Profesyoneller:</strong> Gün boyu karar verme mekanizması yoğun çalışanlar.</div>
-  <div class="blog-checklist-item"><strong>Beyin Sisi Yaşayanlar:</strong> Unutkanlık, odaklanma kaybı ve mental yorgunluk hissedenler.</div>
-  <div class="blog-checklist-item"><strong>Duygusal Denge Arayanlar:</strong> Stres altında sakin kalmak ve mood (ruh hali) stabilitesini korumak isteyenler.</div>
-</div>
-
-<div class="blog-highlight">Bu üçlü, zihinsel bütünlüğün üç farklı katmanıdır: EDGE ile motivasyonu bulun, NRGI ile gücü sürdürün ve ON SHOTS ile zirveye odaklanın.</div>
-
-<p>Zihinsel performansı desteklemek için geliştirilen EDGE-NRGI-ON SHOTS, odak ve enerji seviyesini artırmaya yardımcı olur.</p>
+</script><div class="blog-lang active" data-lang="tr">
+<div class="blog-hero"><img src="/zihinsel.png" alt="Zihinsel Performans Nasıl Artırılır?" class="blog-hero-img">
+<span class="blog-category">✦ Zihinsel Performans</span><h1>Zihinsel Performans Nasıl Artırılır?</h1><h2>Odaklanma ve Enerji Sistemi</h2>
+<div class="blog-meta"><span>⏱ ~6 dk okuma</span><span>✦ Deniz KAT</span></div></div>
+<div class="blog-body"><a href="/blog.html" class="blog-back">← Blog'a Dön</a>
+<p>Modern dünya sadece vücudumuzu değil, en çok zihnimizi yoruyor. Beyin buğusu, odaklanma güçlüğü ve gün ortasında tükenen motivasyon bir kader değil, biyokimyasal bir dengesizliktir.</p>
+<h2>EDGE: Motivasyon ve Mental Akış</h2>
+<p>Mango Yaprağı Ekstresi, Mangostana ve Palmiye Meyvesi'nin dünyada ilk kez bir araya geldiği bu sinerji, dopamin seviyelerinizi doğal yollarla destekler.</p>
+<div class="blog-quote">"Kahve çarpıntısı olmadan; sakin, odaklanmış ve yüksek motivasyonlu bir zihin yapısı sunar."</div>
+<p>B5 vitamini (Pantotenik Asit), zihinsel performansın ve enerji metabolizmasının anahtarıdır. Kahvenin yarattığı ani iniş çıkışlar yerine, dengeli ve uzun süreli bir odaklanma sunar.</p>
+<h2>NRGI: Hücresel Enerji</h2>
+<p>Vücudunuza dışarıdan yapay bir enerji yüklemek yerine, hücrelerinizin kendi ATP üretim mekanizmasını optimize eder. C vitamini ile birleşen bu formül, yorgunluk ve bitkinliğin azalmasına katkıda bulunurken, hücreleri oksidatif stresten korur.</p>
+<div class="blog-highlight">Gerçek enerji, dışarıdan alınan bir "şok" değil, hücrenin içindeki mitokondrinin ürettiği bir güçtür.</div>
+<h2>ON SHOTS: Anlık Odak</h2>
+<p>Bacopa Monnieri ve Ashwagandha gibi "adaptojen" bitkilerle desteklenmiş bu formül, beynin stresle başa çıkma kapasitesini artırır. Önemli bir toplantı, zorlu bir sınav veya yüksek dikkat gerektiren anlarda zihninizi saniyeler içinde "açık" konuma getirir.</p>
+<div class="blog-quote">"Zihninizin en parlak olduğu anı seçin — o kritik saniyede beyninizin tüm potansiyelini devreye sokun."</div>
+<div class="blog-checklist"><h3>Kimler İçin Tasarlandı?</h3>
+<div class="blog-checklist-item"><strong>Yüksek Performanslı Profesyoneller:</strong> Gün boyu karar verme mekanizması yoğun çalışanlar.</div>
+<div class="blog-checklist-item"><strong>Beyin Sisi Yaşayanlar:</strong> Unutkanlık, odaklanma kaybı ve mental yorgunluk hissedenler.</div>
+<div class="blog-checklist-item"><strong>Duygusal Denge Arayanlar:</strong> Stres altında sakin kalmak isteyenler.</div></div>
+<div class="blog-highlight">EDGE ile motivasyonu bulun, NRGI ile gücü sürdürün, ON SHOTS ile zirveye odaklanın.</div>
 <p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Danışmanı · vitalprotocolDK</p>
 </div>
-<footer>
-  <div class="footer-logo">vital<span>protocol</span>DK</div>
-  <div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.</div>
-</footer>
-</body></html>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.</div></footer>
+</div><div class="blog-lang" data-lang="en">
+<div class="blog-hero"><img src="/zihinsel.png" alt="How to Boost Mental Performance?" class="blog-hero-img">
+<span class="blog-category">✦ Mental Performance</span><h1>How to Boost Mental Performance?</h1><h2>Focus and Energy System</h2>
+<div class="blog-meta"><span>⏱ ~6 min read</span><span>✦ Deniz KAT</span></div></div>
+<div class="blog-body"><a href="/blog.html" class="blog-back">← Back to Blog</a>
+<p>The modern world tires our minds more than our bodies. Brain fog, difficulty concentrating, and motivation that fades mid-day are not destiny — they're biochemical imbalances.</p>
+<h2>EDGE: Motivation and Mental Flow</h2>
+<p>The world's first combination of Mango Leaf Extract, Mangosteen, and Palm Fruit naturally supports your dopamine levels.</p>
+<div class="blog-quote">"Calm, focused, and highly motivated mental state — without the coffee jitters."</div>
+<p>Vitamin B5 (Pantothenic Acid) is the key to mental performance and energy metabolism. It provides balanced, long-lasting focus instead of the sudden ups and downs caused by coffee.</p>
+<h2>NRGI: Cellular Energy</h2>
+<p>Rather than loading artificial energy from outside, it optimizes your cells' own ATP production mechanism. Combined with vitamin C, this formula contributes to reducing fatigue while protecting cells from oxidative stress.</p>
+<div class="blog-highlight">Real energy is not a "shock" from outside, but the power produced by the mitochondria within the cell.</div>
+<h2>ON SHOTS: Instant Focus</h2>
+<p>Supported by adaptogenic herbs like Bacopa Monnieri and Ashwagandha, this formula increases the brain's capacity to cope with stress — putting your mind in "on" mode within seconds when you need it most.</p>
+<div class="blog-checklist"><h3>Who Is It Designed For?</h3>
+<div class="blog-checklist-item"><strong>High-Performance Professionals:</strong> Those with intensive decision-making throughout the day.</div>
+<div class="blog-checklist-item"><strong>Brain Fog Sufferers:</strong> Those experiencing forgetfulness, loss of focus, and mental fatigue.</div>
+<div class="blog-checklist-item"><strong>Emotional Balance Seekers:</strong> Those who want to stay calm under stress.</div></div>
+<div class="blog-highlight">Find motivation with EDGE, sustain power with NRGI, and focus at the peak with ON SHOTS.</div>
+<p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Consultant · vitalprotocolDK</p>
+</div>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Transparency Note:</strong> This page is for informational purposes only. Supplements do not replace a balanced diet.</div></footer>
+</div><div class="blog-lang" data-lang="es">
+<div class="blog-hero"><img src="/zihinsel.png" alt="¿Cómo Aumentar el Rendimiento Mental?" class="blog-hero-img">
+<span class="blog-category">✦ Rendimiento Mental</span><h1>¿Cómo Aumentar el Rendimiento Mental?</h1><h2>Sistema de Enfoque y Energía</h2>
+<div class="blog-meta"><span>⏱ ~6 min de lectura</span><span>✦ Deniz KAT</span></div></div>
+<div class="blog-body"><a href="/blog.html" class="blog-back">← Volver al Blog</a>
+<p>El mundo moderno cansa nuestra mente más que nuestro cuerpo. La niebla cerebral, la dificultad de concentración y la motivación que se agota a mitad del día no son un destino — son un desequilibrio bioquímico.</p>
+<h2>EDGE: Motivación y Flujo Mental</h2>
+<p>La primera combinación mundial de Extracto de Hoja de Mango, Mangostán y Fruta de Palma apoya naturalmente tus niveles de dopamina.</p>
+<div class="blog-quote">"Estado mental calmado, enfocado y altamente motivado — sin los nervios del café."</div>
+<h2>NRGI: Energía Celular</h2>
+<p>En lugar de cargar energía artificial desde afuera, optimiza el mecanismo de producción de ATP de tus propias células. Combinado con vitamina C, contribuye a reducir la fatiga mientras protege las células del estrés oxidativo.</p>
+<div class="blog-highlight">La energía real no es un "choque" del exterior, sino el poder producido por las mitocondrias dentro de la célula.</div>
+<h2>ON SHOTS: Enfoque Instantáneo</h2>
+<p>Apoyada por hierbas adaptogénicas como Bacopa Monnieri y Ashwagandha, esta fórmula aumenta la capacidad del cerebro para manejar el estrés — poniendo tu mente en modo "encendido" en segundos.</p>
+<div class="blog-checklist"><h3>¿Para Quién Está Diseñado?</h3>
+<div class="blog-checklist-item"><strong>Profesionales de Alto Rendimiento:</strong> Quienes toman decisiones intensivas todo el día.</div>
+<div class="blog-checklist-item"><strong>Personas con Niebla Cerebral:</strong> Quienes experimentan olvidos, pérdida de enfoque y fatiga mental.</div>
+<div class="blog-checklist-item"><strong>Buscadores de Equilibrio Emocional:</strong> Quienes quieren permanecer tranquilos bajo estrés.</div></div>
+<div class="blog-highlight">Encuentra motivación con EDGE, sostén el poder con NRGI y enfócate en la cima con ON SHOTS.</div>
+<p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Consultor de Bienestar · vitalprotocolDK</p>
+</div>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Nota de Transparencia:</strong> Esta página es solo informativa. Los suplementos no reemplazan una dieta equilibrada.</div></footer>
+</div></body></html>

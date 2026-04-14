@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bütünsel Sağlık Nedir ve Neden Önemlidir? | Vital Protocol DK</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
@@ -45,6 +42,8 @@
 
 *{box-sizing:border-box}
 body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
+.blog-lang{display:none}
+.blog-lang.active{display:block}
 .blog-hero{background:#1a2419;padding:80px 24px 60px;text-align:center}
 .blog-hero-img{width:100%;max-width:460px;border-radius:16px;margin:0 auto 32px;display:block;box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .blog-category{font-size:11px;letter-spacing:.14em;color:#b8963e;text-transform:uppercase;font-weight:600;margin-bottom:16px;display:block}
@@ -62,16 +61,26 @@ body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
 .blog-checklist-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(46,61,48,.1);font-size:15px;color:#2e3d30}
 .blog-checklist-item:last-child{border-bottom:none}
 .blog-checklist-item::before{content:'✓';color:#b8963e;font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px}
-.blog-warning{background:#fff8f0;border:1px solid #f0c060;border-radius:12px;padding:20px 24px;margin:28px 0;font-size:15px;line-height:1.7}
+.blog-redflags{background:#fff8f8;border:1px solid #fdd;border-radius:16px;padding:28px 32px;margin:32px 0}
+.blog-redflags h3{color:#c0392b;margin:0 0 16px;font-size:18px}
+.blog-redflag-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(192,57,43,.08);font-size:15px;line-height:1.6}
+.blog-redflag-item:last-child{border-bottom:none}
+.blog-redflag-item::before{content:'⚠';flex-shrink:0}
+.blog-greenflags{background:#f5fdf5;border:1px solid #c8e6c9;border-radius:16px;padding:28px 32px;margin:32px 0}
+.blog-greenflags h3{color:#2e7d32;margin:0 0 16px;font-size:18px}
+.blog-greenflag-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(46,125,50,.08);font-size:15px;line-height:1.6}
+.blog-greenflag-item:last-child{border-bottom:none}
+.blog-greenflag-item::before{content:'✓';color:#2e7d32;font-weight:700;flex-shrink:0}
 .blog-signals{display:grid;gap:16px;margin:28px 0}
 .blog-signal{background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start}
 .blog-signal-badge{background:#2e3d30;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0}
 .blog-signal-badge.alert{background:#c0392b}
 .blog-signal-badge.warn{background:#e67e22}
-.blog-stats{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin:32px 0}
-.blog-stat{text-align:center;background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:20px 28px}
+.blog-stats{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin:32px 0}
+.blog-stat{text-align:center;background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:20px 24px}
 .blog-stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;color:#b8963e;display:block}
 .blog-stat-label{font-size:13px;color:#6b7c6d;margin-top:4px}
+.blog-warning{background:#fff8f0;border:1px solid #f0c060;border-radius:12px;padding:20px 24px;margin:28px 0;font-size:15px;line-height:1.7}
 .blog-back{display:inline-flex;align-items:center;gap:8px;color:#b8963e;text-decoration:none;font-size:14px;font-weight:500;margin-bottom:40px}
 footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:#2e3d30}
@@ -79,9 +88,23 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
 .footer-note{font-size:13px;color:#6b7c6d;max-width:540px;line-height:1.7;text-align:right}
 @media(max-width:768px){.blog-body{padding:40px 20px 60px;font-size:16px}.blog-hero{padding:60px 20px 40px}.blog-highlight{font-size:17px;padding:24px}.blog-stats{gap:16px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
 </style>
-</head>
-<body>
-<nav class="vpdk-nav-global">
+<script>
+(function(){
+  function applyBlogLang(l){
+    document.querySelectorAll('.blog-lang').forEach(function(el){
+      el.classList.toggle('active', el.getAttribute('data-lang')===l);
+    });
+  }
+  var saved = localStorage.getItem('vpLang')||'tr';
+  document.addEventListener('DOMContentLoaded', function(){ applyBlogLang(saved); });
+  var _orig = window.vpNavLang;
+  window.vpNavLang = function(l,btn){
+    if(_orig) _orig(l,btn);
+    localStorage.setItem('vpLang',l);
+    applyBlogLang(l);
+  };
+})();
+</script></head><body><nav class="vpdk-nav-global">
   <a class="vpdk-nav-logo" href="/index.html">vital<span>protocol</span>DK</a>
   <div class="vpdk-nav-center">
     <a href="/index.html" class="vpdk-nav-link" data-nav="home">Anasayfa</a>
@@ -850,79 +873,83 @@ document.addEventListener('click', function(e){
     t = t.parentElement;
   }
 });
-</script>
-<div class="blog-hero">
-  <img src="/butunsel.png" alt="Bütünsel Sağlık Nedir ve Neden Önemlidir?" class="blog-hero-img">
-  <span class="blog-category">✦ Bütünsel Sağlık</span>
-  <h1>Bütünsel Sağlık Nedir ve Neden Önemlidir?</h1>
-  <h2>Fiziksel, zihinsel ve hücresel sağlık arasındaki bağlantıyı keşfedin</h2>
-  <div class="blog-meta"><span>⏱ ~6 dakika okuma</span><span>✦ Deniz KAT</span></div>
-</div>
-<div class="blog-body">
-<a href="/blog.html" class="blog-back">← Blog'a Dön</a>
-<p>Bütünsel sağlık, sadece fiziksel iyi olma hali değil; zihinsel ve hücresel sistemlerin birlikte dengede çalışmasıdır.</p>
-
-<p>Vücudunuz birbirine bağlı dişlilerden oluşan kusursuz bir makine gibidir. Bir dişlideki aksama (örneğin zayıf bir sindirim veya yetersiz kan dolaşımı), tüm sistemin performansını düşürür. Fiziksel Bütünlük protokolü, bu dişlilerin tamamını aynı anda optimize etmeyi hedefler.</p>
-
+</script><div class="blog-lang active" data-lang="tr">
+<div class="blog-hero"><img src="/butunsel.png" alt="Bütünsel Sağlık Nedir ve Neden Önemlidir?" class="blog-hero-img">
+<span class="blog-category">✦ Bütünsel Sağlık</span><h1>Bütünsel Sağlık Nedir ve Neden Önemlidir?</h1><h2>Fiziksel, zihinsel ve hücresel sağlık arasındaki bağlantıyı keşfedin</h2>
+<div class="blog-meta"><span>⏱ ~6 dk okuma</span><span>✦ Deniz KAT</span></div></div>
+<div class="blog-body"><a href="/blog.html" class="blog-back">← Blog'a Dön</a>
+<p>Bütünsel sağlık, sadece fiziksel iyi olma hali değil; zihinsel ve hücresel sistemlerin birlikte dengede çalışmasıdır. Vücudunuz birbirine bağlı dişlilerden oluşan kusursuz bir makine gibidir. Bir dişlideki aksama tüm sistemin performansını düşürür.</p>
 <h2>Protokolün 3 Ana Direği</h2>
-
-<h3>A. Mikrobiyata ve Emilim (Sağlığın Temeli)</h3>
-<p>"Her şey bağırsakta başlar. 22 süper gıdanın (Sunrise) ve doğal liflerin emilebilmesi için sağlıklı bir bağırsak florası şarttır. Vücudunuzu içeriden besleyerek emilim kapasitenizi artırıyoruz."</p>
-
+<h3>A. Mikrobiyata ve Emilim</h3>
+<p>"Her şey bağırsakta başlar. 22 süper gıdanın emilebilmesi için sağlıklı bir bağırsak florası şarttır. Vücudunuzu içeriden besleyerek emilim kapasitenizi artırıyoruz."</p>
 <h3>B. Yaşam Molekülü ve İletim (Nitro Etkisi)</h3>
-<p>"Nobel ödüllü Nitrik Oksit bilimini kullanarak, damarlarınızın esnekliğini ve kan akışını destekliyoruz. Bu, besinlerin ve oksijenin en uç hücrelere kadar 'hızlı şeritten' ulaşması demektir."</p>
-
-<h3>C. Hücresel Onarım ve Anti-Oksidatif Kalkan (Sunset)</h3>
-<p>"Vahşi Alaska Somonu'ndan gelen saf Omega-3 ve dünyanın en güçlü antioksidanlarından Astaksantin ile hücre zarlarınızı koruyor, gece boyunca vücudunuzun kendini tamir etmesine yardımcı oluyoruz."</p>
-
-<h2>Fiziksel Bütünlük Kimler İçin Gereklidir?</h2>
-<div class="blog-checklist">
-  <h3>Hedef Kitle</h3>
-  <div class="blog-checklist-item"><strong>Sistemik Yorgunluk Yaşayanlar:</strong> "Vücudum ağırlaşıyor, sabahları uyanamıyorum" diyenler.</div>
-  <div class="blog-checklist-item"><strong>Performans Odaklı Profesyoneller:</strong> Gün boyu yüksek odak ve fiziksel direnç arayanlar.</div>
-  <div class="blog-checklist-item"><strong>Kronik Destek Arayanlar:</strong> Vücudunun doğal savunma hattını bilimsel bir disiplinle güçlendirmek isteyenler.</div>
-</div>
-
+<p>"Nobel ödüllü Nitrik Oksit bilimini kullanarak, damarlarınızın esnekliğini ve kan akışını destekliyoruz. Besinlerin ve oksijenin en uç hücrelere 'hızlı şeritten' ulaşması demektir."</p>
+<h3>C. Hücresel Onarım ve Antioksidan Kalkan</h3>
+<p>"Vahşi Alaska Somonu'ndan gelen saf Omega-3 ve Astaksantin ile hücre zarlarınızı koruyor, gece boyunca vücudunuzun kendini tamir etmesine yardımcı oluyoruz."</p>
+<div class="blog-checklist"><h3>Kimler İçin?</h3>
+<div class="blog-checklist-item"><strong>Sistemik Yorgunluk Yaşayanlar:</strong> "Vücudum ağırlaşıyor, sabahları uyanamıyorum" diyenler.</div>
+<div class="blog-checklist-item"><strong>Performans Odaklı Profesyoneller:</strong> Gün boyu yüksek odak ve fiziksel direnç arayanlar.</div>
+<div class="blog-checklist-item"><strong>Kronik Destek Arayanlar:</strong> Doğal savunma hattını bilimsel bir disiplinle güçlendirmek isteyenler.</div></div>
 <h2>Sunrise: Hücresel Oksidasyon Kontrolü</h2>
-<p>Fiziksel bütünlüğün korunması için hücrelerin paslanmasını (oksidasyonu) durdurmamız gerekir. Sunrise bunu iki ana koldan yapar:</p>
-
-<h3>1. Vahşi Yaban Mersini ve 22 Süper Gıda</h3>
-<p>Sıradan meyvelerden farklı olarak, ekstrem koşullarda yetişen Vahşi Alaska Yaban Mersini, hayatta kalmak için çok daha yüksek oranda antioksidan üretir. Sunrise bu gücü alıp, yanına Nar, Bektaşi Üzümü ve Ginseng gibi 22 farklı süper gıdayı ekleyerek vücuda geniş spektrumlu bir koruma sağlar.</p>
-
-<h3>2. Suda Çözünen Vitamin ve Mineral Kompleksi</h3>
-<p>Vücudun günlük sistemini çalıştırması için gereken 10 temel vitamin ve 74 minerali sıvı formda sunar. Bu, biyoyararlanımı (emilimi) maksimuma çıkarır.</p>
-
-<div class="blog-quote">"Güne Sunrise ile başlamak, vücudunuzun temizlik ve onarım mekanizmasını devreye sokmaktır. İçerdiği yüksek antioksidan kapasitesiyle, gün boyu maruz kaldığınız hücresel stresi nötralize eder."</div>
-
-<h2>Sunset: Gece Onarımı ve Yapısal Bütünlük</h2>
-<p>Gündüz korunan hücrelerin, gece boyunca yenilenmesi ve yapısal olarak sağlam kalması gerekir. Sunset, vücudun bu kritik "restorasyon" fazını yönetir:</p>
-
-<h3>1. Vahşi Alaska Somonu ve Saf Omega-3</h3>
-<p>Vücudun üretemediği ama beyin ve kalp sağlığı için zorunlu olan en saf Omega-3 formunu sunar. Standart yağların aksine, balık kıkırdağından elde edilen doğal kapsül yapısı sayesinde vücutla tam uyum sağlar. Bu sadece bir yağ desteği değil, hücre zarlarınızın esnekliğini ve dayanıklılığını koruyan bir mimari dokunuştur.</p>
-
-<h3>2. Vitamin A, D, E ve Astaksantin Sinerjisi</h3>
-<p>Doğadaki en güçlü antioksidanlardan biri olan Astaksantin ile A, D ve E vitaminlerini birleştirir. Bu kombinasyon, uyku sırasında hücresel düzeyde derin bir temizlik ve onarım yapar.</p>
-
-<div class="blog-quote">"Siz uyurken vücudunuzun kendini yeniden inşa etmesine izin verin; sabah sadece dinlenmiş değil, yenilenmiş uyanın."</div>
-
-<h2>Nitro: Yaşam Molekülü ve İletim Hattı</h2>
-<p>En iyi besinleri alsanız bile, bu besinler hücrelere ulaşmıyorsa sistem eksik demektir. Nitro, tüm bu protokolün "anahtar" mekanizmasıdır:</p>
-
-<h3>1. Nobel Ödüllü Nitrik Oksit Bilimi</h3>
-<p>1998 Nobel Tıp Ödülü'ne konu olan Nitrik Oksit ("Yaşam Molekülü") üretimini destekler. Damar duvarlarını rahatlatarak kan akışını optimize eder. Bu, vücudunuzdaki "otoyolların" açılması ve Sunrise ile Sunset'ten gelen tüm değerli içeriklerin en uç hücrelere bile takılmadan ulaşması demektir.</p>
-
-<h3>2. Maksimum Biyoyararlanım (Nitro Etkisi)</h3>
-<p>Sadece besin iletimini değil, sindirim sistemindeki emilimi de hızlandırır. Nitro olmadan yapılan bir takviye programı, kapalı bir kapıya anahtarsız girmeye çalışmak gibidir.</p>
-
-<div class="blog-quote">"Vücudunuzun iletişim ve iletim ağını aktive edin. Aldığınız her damla besinin tam kapasiteyle çalışmasını sağlayın."</div>
-
-<div class="blog-highlight">"Üçlü Sinerji Protokolü: Sunrise ile koruyun, Nitro ile taşıyın, Sunset ile onarın. Fiziksel bütünlük, bu üç aşamanın kusursuz bir döngü içinde çalışmasıyla başlar."</div>
-
-<p>Bütünsel sağlığı desteklemek için geliştirilen Wellness Üçgeni sistemi, besinlerin vücutta daha etkili kullanılmasına yardımcı olur.</p>
+<p>Ekstrem koşullarda yetişen Vahşi Alaska Yaban Mersini, çok daha yüksek oranda antioksidan üretir. Sunrise bu gücü Nar, Bektaşi Üzümü ve Ginseng gibi 22 farklı süper gıdayla birleştirerek vücuda geniş spektrumlu bir koruma sağlar. Yanı sıra 10 temel vitamin ve 74 minerali sıvı formda sunar.</p>
+<div class="blog-quote">"Güne Sunrise ile başlamak, vücudunuzun temizlik ve onarım mekanizmasını devreye sokmaktır."</div>
+<h2>Sunset: Gece Onarımı</h2>
+<p>Vücudun üretemediği ama beyin ve kalp sağlığı için zorunlu olan en saf Omega-3 formunu sunar. Astaksantin ile A, D ve E vitaminlerini birleştiren bu kombinasyon, uyku sırasında hücresel düzeyde derin bir temizlik ve onarım yapar.</p>
+<div class="blog-quote">"Siz uyurken vücudunuzun kendini yeniden inşa etmesine izin verin; sabah yenilenmiş uyanın."</div>
+<h2>Nitro: İletim Hattı</h2>
+<p>En iyi besinleri alsanız bile, hücrelere ulaşmıyorsa sistem eksik demektir. 1998 Nobel Tıp Ödülü'ne konu olan Nitrik Oksit üretimini destekler. Nitro olmadan yapılan bir takviye programı, kapalı bir kapıya anahtarsız girmeye çalışmak gibidir.</p>
+<div class="blog-highlight">"Üçlü Sinerji Protokolü: Sunrise ile koruyun, Nitro ile taşıyın, Sunset ile onarın."</div>
 <p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Danışmanı · vitalprotocolDK</p>
 </div>
-<footer>
-  <div class="footer-logo">vital<span>protocol</span>DK</div>
-  <div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.</div>
-</footer>
-</body></html>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.</div></footer>
+</div><div class="blog-lang" data-lang="en">
+<div class="blog-hero"><img src="/butunsel.png" alt="What Is Holistic Health and Why Does It Matter?" class="blog-hero-img">
+<span class="blog-category">✦ Holistic Health</span><h1>What Is Holistic Health and Why Does It Matter?</h1><h2>Discover the connection between physical, mental and cellular health</h2>
+<div class="blog-meta"><span>⏱ ~6 min read</span><span>✦ Deniz KAT</span></div></div>
+<div class="blog-body"><a href="/blog.html" class="blog-back">← Back to Blog</a>
+<p>Holistic health is not just physical well-being — it's the balanced functioning of mental and cellular systems together. Your body is like a perfect machine made up of interconnected gears. A malfunction in one gear reduces the performance of the entire system.</p>
+<h2>The 3 Main Pillars of the Protocol</h2>
+<h3>A. Microbiome & Absorption</h3>
+<p>"Everything starts in the gut. A healthy intestinal flora is essential for absorbing 22 superfoods and natural fibers. By nourishing your body from within, we increase your absorption capacity."</p>
+<h3>B. The Life Molecule & Transport (Nitro Effect)</h3>
+<p>"Using Nobel Prize-winning Nitric Oxide science, we support the elasticity of your vessels and blood flow — this means nutrients and oxygen reach even the most distant cells via the 'fast lane.'"</p>
+<h3>C. Cellular Repair & Antioxidant Shield</h3>
+<p>"With pure Omega-3 from Wild Alaskan Salmon and Astaxanthin, we protect your cell membranes and help your body repair itself throughout the night."</p>
+<div class="blog-checklist"><h3>Who Is This For?</h3>
+<div class="blog-checklist-item"><strong>Those Experiencing Systemic Fatigue:</strong> "My body feels heavy, I can't wake up in the mornings."</div>
+<div class="blog-checklist-item"><strong>Performance-Focused Professionals:</strong> Those seeking high focus and physical endurance throughout the day.</div>
+<div class="blog-checklist-item"><strong>Those Seeking Chronic Support:</strong> Those wanting to scientifically strengthen their body's natural defense line.</div></div>
+<h2>Sunrise: Cellular Oxidation Control</h2>
+<p>Wild Alaskan Blueberry, grown in extreme conditions, produces much higher levels of antioxidants. Sunrise combines this power with 22 different superfoods like Pomegranate, Gooseberry, and Ginseng, providing broad-spectrum protection. It also delivers 10 essential vitamins and 74 minerals in liquid form.</p>
+<div class="blog-quote">"Starting the day with Sunrise activates your body's cleansing and repair mechanisms."</div>
+<h2>Sunset: Overnight Repair</h2>
+<p>Provides the purest form of Omega-3 — essential for brain and heart health. Combined with Astaxanthin and vitamins A, D, and E, this combination performs deep cellular cleansing and repair during sleep.</p>
+<div class="blog-quote">"Let your body rebuild itself while you sleep; wake up renewed, not just rested."</div>
+<h2>Nitro: The Delivery Line</h2>
+<p>Even if you take the best nutrients, the system is incomplete if they don't reach the cells. It supports production of Nitric Oxide — the subject of the 1998 Nobel Prize in Medicine. Without Nitro, a supplement program is like trying to enter a locked door without a key.</p>
+<div class="blog-highlight">"Triple Synergy Protocol: Protect with Sunrise, Transport with Nitro, Repair with Sunset."</div>
+<p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Consultant · vitalprotocolDK</p>
+</div>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Transparency Note:</strong> This page is for informational purposes only. Supplements do not replace a balanced diet.</div></footer>
+</div><div class="blog-lang" data-lang="es">
+<div class="blog-hero"><img src="/butunsel.png" alt="¿Qué Es la Salud Integral y Por Qué Importa?" class="blog-hero-img">
+<span class="blog-category">✦ Salud Integral</span><h1>¿Qué Es la Salud Integral y Por Qué Importa?</h1><h2>Descubre la conexión entre salud física, mental y celular</h2>
+<div class="blog-meta"><span>⏱ ~6 min de lectura</span><span>✦ Deniz KAT</span></div></div>
+<div class="blog-body"><a href="/blog.html" class="blog-back">← Volver al Blog</a>
+<p>La salud integral no es solo el bienestar físico — es el funcionamiento equilibrado de los sistemas mentales y celulares juntos. Tu cuerpo es como una máquina perfecta de engranajes interconectados. Un mal funcionamiento en un engranaje reduce el rendimiento de todo el sistema.</p>
+<h2>Los 3 Pilares Principales del Protocolo</h2>
+<h3>A. Microbioma y Absorción</h3>
+<p>"Todo comienza en el intestino. Una flora intestinal saludable es esencial para absorber 22 superalimentos. Al nutrir tu cuerpo desde adentro, aumentamos tu capacidad de absorción."</p>
+<h3>B. La Molécula de la Vida y Transporte</h3>
+<p>"Usando la ciencia del Óxido Nítrico galardonada con el Nobel, apoyamos la elasticidad de tus vasos y el flujo sanguíneo — esto significa que los nutrientes llegan incluso a las células más distantes."</p>
+<h3>C. Reparación Celular y Escudo Antioxidante</h3>
+<p>"Con Omega-3 puro del Salmón Salvaje de Alaska y Astaxantina, protegemos tus membranas celulares y ayudamos a tu cuerpo a repararse durante la noche."</p>
+<div class="blog-checklist"><h3>¿Para Quién Es?</h3>
+<div class="blog-checklist-item"><strong>Quienes Experimentan Fatiga Sistémica:</strong> "Mi cuerpo se siente pesado, no puedo despertar por las mañanas."</div>
+<div class="blog-checklist-item"><strong>Profesionales Orientados al Rendimiento:</strong> Quienes buscan alto enfoque y resistencia física.</div>
+<div class="blog-checklist-item"><strong>Quienes Buscan Apoyo Crónico:</strong> Quienes quieren fortalecer científicamente la línea de defensa natural de su cuerpo.</div></div>
+<div class="blog-highlight">"Protocolo de Triple Sinergia: Proteger con Sunrise, Transportar con Nitro, Reparar con Sunset."</div>
+<p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Consultor de Bienestar · vitalprotocolDK</p>
+</div>
+<footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Nota de Transparencia:</strong> Esta página es solo informativa. Los suplementos no reemplazan una dieta equilibrada.</div></footer>
+</div></body></html>
