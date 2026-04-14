@@ -17,19 +17,60 @@
 .vpdk-nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:#2e3d30;letter-spacing:.02em;text-decoration:none;flex-shrink:0}
 .vpdk-nav-logo span{color:#b8963e;font-style:italic}
 .vpdk-nav-center{display:flex;align-items:center;gap:4px;position:absolute;left:50%;transform:translateX(-50%)}
-.vpdk-nav-link{padding:6px 14px;font-size:13px;color:#2e3d30;text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap}
-.vpdk-nav-link:hover{background:#f0ede6}
+.vpdk-nav-link{padding:6px 14px;font-size:15px;color:#2e3d30;text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap}
+.vpdk-nav-link:hover{background:transparent}
+
+/* ── NAV HOVER DAİRE EFEKTİ ── */
+.vpdk-nav-link,
+.vpdk-nav-dropdown-btn {
+  position: relative;
+  overflow: visible !important;
+}
+.vpdk-nav-link .nav-circle,
+.vpdk-nav-dropdown-btn .nav-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 18px);
+  height: calc(100% + 12px);
+  pointer-events: none;
+  overflow: visible;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+.vpdk-nav-link:hover .nav-circle,
+.vpdk-nav-dropdown-btn:hover .nav-circle {
+  opacity: 1;
+}
+.vpdk-nav-link .nav-circle ellipse,
+.vpdk-nav-dropdown-btn .nav-circle ellipse {
+  fill: none;
+  stroke: #2e3d30;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+.vpdk-nav-link:hover .nav-circle ellipse,
+.vpdk-nav-dropdown-btn:hover .nav-circle ellipse {
+  animation: drawCircle 0.5s ease forwards;
+}
+@keyframes drawCircle {
+  to { stroke-dashoffset: 0; }
+}
+
 .vpdk-nav-dropdown{position:relative}
-.vpdk-nav-dropdown-btn{padding:6px 14px;font-size:13px;color:#2e3d30;background:none;border:none;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;white-space:nowrap}
+.vpdk-nav-dropdown-btn{padding:6px 14px;font-size:15px;color:#2e3d30;background:none;border:none;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;white-space:nowrap}
 .vpdk-nav-dropdown-btn:hover{background:#f0ede6}
 .vpdk-nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:8px;min-width:180px;box-shadow:0 8px 32px rgba(0,0,0,.1);z-index:9999}
 .vpdk-nav-dropdown:hover .vpdk-nav-dropdown-menu{display:block}
-.vpdk-nav-dropdown-item{display:block;padding:9px 14px;font-size:13px;color:#2e3d30;text-decoration:none;border-radius:8px;transition:all .2s}
+.vpdk-nav-dropdown-item{display:block;padding:9px 14px;font-size:15px;color:#2e3d30;text-decoration:none;border-radius:8px;transition:all .2s}
 .vpdk-nav-dropdown-item:hover{background:#f0ede6;color:#b8963e}
 .vpdk-nav-right{display:flex;gap:6px;align-items:center}
 .vpdk-nav-lang{padding:4px 12px;font-size:11px;font-weight:500;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7c6d;transition:all .2s;font-family:'DM Sans',sans-serif}
 .vpdk-nav-lang.active{background:#2e3d30;color:#fcfcfa;border-color:#2e3d30}
-.vpdk-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.vpdk-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index:10000;position:relative}
 .vpdk-hamburger span{width:22px;height:2px;background:#2e3d30;border-radius:2px;display:block}
 .vpdk-mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid #d6ddd7;padding:16px;z-index:9998;box-shadow:0 8px 24px rgba(0,0,0,.08);max-height:80vh;overflow-y:auto}
 .vpdk-mobile-menu.open{display:block}
@@ -65,7 +106,7 @@
     <a href="/saglik-ucgeni.html" class="vpdk-nav-link" data-nav="health">Sağlık Üçgeni</a>
     <div class="vpdk-nav-dropdown">
       <button class="vpdk-nav-dropdown-btn">
-        <span data-nav="protocols">Protokoller</span>
+        <span data-nav="protocols">Çözümler</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:12px;height:12px"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="vpdk-nav-dropdown-menu">
@@ -96,7 +137,7 @@
 <div class="vpdk-mobile-menu" id="vpdk-mob">
   <a href="/index.html" class="vpdk-mobile-link" data-mnav="home">Anasayfa</a>
   <a href="/saglik-ucgeni.html" class="vpdk-mobile-link" data-mnav="health">Sağlık Üçgeni</a>
-  <div class="vpdk-mobile-section" data-mnavs="protocols">Protokoller</div>
+  <div class="vpdk-mobile-section" data-mnavs="protocols">Çözümler</div>
   <div class="vpdk-mobile-sub">
     <a href="/hl5.html" class="vpdk-mobile-link">HL5</a>
     <a href="/fit20.html" class="vpdk-mobile-link">FIT20</a>
@@ -1530,7 +1571,7 @@ document.addEventListener('click', function(e){
 
 <script>
 (function(){
-  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Protokoller",blog:"Blog",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Protocols",blog:"Insights",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Protocolos",blog:"Perspectivas",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
+  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Çözümler",blog:"Blog",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Solutions",blog:"Insights",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Soluciones",blog:"Perspectivas",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
   function applyNav(l){
     document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){b.classList.toggle("active",b.textContent.trim().toLowerCase()===l)});
     var lbl=lb[l]||lb.tr;
@@ -1840,6 +1881,209 @@ document.getElementById('wlES').onclick = function(){ waSetLang('ES'); };
         window.open('https://wa.me/905054549582?text=Merhaba%2C%20bilgi%20almak%20istiyorum.', '_blank');
       };
     }
+  }
+})();
+</script>
+
+
+<!-- VERA -->
+<style>
+#vera-widget{position:fixed;bottom:24px;left:24px;z-index:2147483647;font-family:'DM Sans',sans-serif}
+@media(max-width:768px){#vera-widget{display:none!important}}
+#vera-btn{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#2e3d30,#4a5e4c);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(46,61,48,.35);position:relative;z-index:2147483647}
+#vera-btn svg{width:26px;height:26px;fill:#fcfcfa;pointer-events:none}
+#vera-btn::after{content:'';position:absolute;width:100%;height:100%;border-radius:50%;border:2px solid #2e3d30;animation:vp 2s infinite;opacity:0}
+@keyframes vp{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.5);opacity:0}}
+#vera-panel{position:absolute;bottom:68px;left:0;width:340px;background:#fff;border-radius:20px;box-shadow:0 12px 48px rgba(0,0,0,.18);flex-direction:column;overflow:hidden;display:none}
+#vera-panel.vopen{display:flex}
+#vera-head{background:linear-gradient(135deg,#2e3d30,#3d5240);padding:14px 18px;display:flex;align-items:center;gap:10px}
+#vera-av{width:38px;height:38px;border-radius:50%;background:rgba(184,150,62,.2);border:2px solid rgba(184,150,62,.4);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:17px;color:#d4ae5e;flex-shrink:0}
+#vera-hi h4{margin:0;font-size:14px;font-weight:600;color:#fcfcfa;font-family:'Cormorant Garamond',serif}
+#vera-hi p{margin:2px 0 0;font-size:11px;color:rgba(252,252,250,.55)}
+#vera-x{margin-left:auto;background:none;border:none;cursor:pointer;color:rgba(252,252,250,.6);font-size:18px;line-height:1;padding:0}
+#vera-msgs{overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;max-height:260px}
+.vm{display:flex;gap:8px;align-items:flex-start}
+.vm.vu{flex-direction:row-reverse}
+.vmav{width:26px;height:26px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#2e3d30,#4a5e4c);display:flex;align-items:center;justify-content:center;font-size:11px;color:#d4ae5e;font-family:'Cormorant Garamond',serif}
+.vm.vu .vmav{background:#f0ede6;color:#2e3d30}
+.vmb{max-width:220px;padding:9px 13px;border-radius:16px;font-size:13px;line-height:1.6;color:#1e2b1f;background:#f5f2ec;white-space:pre-wrap;word-break:break-word}
+.vm.vu .vmb{background:#2e3d30;color:#fcfcfa;border-radius:16px 16px 4px 16px}
+.vm:not(.vu) .vmb{border-radius:4px 16px 16px 16px}
+#vera-typing{display:none;gap:8px;align-items:center;padding:4px 14px}
+#vera-typing.vs{display:flex}
+.vdots{display:flex;gap:4px;padding:10px 13px;background:#f5f2ec;border-radius:4px 16px 16px 16px}
+.vdots span{width:5px;height:5px;border-radius:50%;background:#b8963e;animation:vd .8s infinite}
+.vdots span:nth-child(2){animation-delay:.15s}
+.vdots span:nth-child(3){animation-delay:.3s}
+@keyframes vd{0%,80%,100%{transform:scale(.8);opacity:.4}40%{transform:scale(1.1);opacity:1}}
+#vera-quick{padding:6px 14px 2px;display:flex;gap:5px;flex-wrap:wrap;border-top:1px solid #f0ede6}
+.vqb{padding:4px 9px;font-size:11px;border-radius:12px;border:1px solid #d6ddd7;background:#fff;color:#4a5a4b;cursor:pointer;font-family:'DM Sans',sans-serif}
+#vera-disc{padding:7px 14px;font-size:10px;color:#9aaa9b;border-top:1px solid #f0ede6;line-height:1.5;background:#fafaf8}
+#vera-inp-wrap{display:flex;gap:8px;padding:10px 14px;border-top:1px solid #f0ede6}
+#vera-inp{flex:1;padding:8px 13px;border:1px solid #d6ddd7;border-radius:20px;font-size:13px;outline:none;font-family:'DM Sans',sans-serif}
+#vera-inp:focus{border-color:#2e3d30}
+#vera-go{width:34px;height:34px;border-radius:50%;background:#2e3d30;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+#vera-go svg{width:14px;height:14px;fill:#fcfcfa;pointer-events:none}
+@media(min-width:769px) and (max-width:900px){#vera-panel{width:calc(100vw - 32px)}}
+</style>
+
+<div id="vera-widget">
+  <button id="vera-btn" aria-label="Vera ile konuş">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+  </button>
+  <div id="vera-panel">
+    <div id="vera-head">
+      <div id="vera-av">V</div>
+      <div id="vera-hi"><h4>Vera</h4><p id="vera-st">vitalprotocolDK · Wellness Rehberi</p></div>
+      <button id="vera-x">✕</button>
+    </div>
+    <div id="vera-msgs"></div>
+    <div id="vera-typing"><div class="vmav">V</div><div class="vdots"><span></span><span></span><span></span></div></div>
+    <div id="vera-quick"></div>
+    <div id="vera-disc"></div>
+    <div id="vera-inp-wrap">
+      <input id="vera-inp" type="text" placeholder="Sorunuzu yazın...">
+      <button id="vera-go"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+var vL=localStorage.getItem('vpLang')||'tr';
+var vOpen=false;
+var vHist=[];
+var vT={
+  tr:{ph:'Sorunuzu yazın...',st:'vitalprotocolDK · Wellness Rehberi',disc:'⚠ Bu bilgiler genel rehberlik amaçlıdır, tıbbi reçete yerine geçmez.',wel:'Merhaba! Ben Vera 🌿\n\nvitalprotocolDK\'nin wellness rehberiyim. Ürünler, protokoller veya wellness hakkında sana yardımcı olmaktan mutluluk duyarım!',q:['Nitro Plus nedir?','Hangi protokol bana uyar?','Ürünleri nereden alırım?','Wellness Üçgeni nedir?']},
+  en:{ph:'Type your question...',st:'vitalprotocolDK · Wellness Guide',disc:'⚠ Information is for general guidance only, not medical advice.',wel:"Hello! I\'m Vera 🌿\n\nI\'m the wellness guide at vitalprotocolDK. I\'m happy to help you with products, protocols or wellness questions!",q:['What is Nitro Plus?','Which protocol suits me?','Where can I buy products?','What is the Wellness Triangle?']},
+  es:{ph:'Escribe tu pregunta...',st:'vitalprotocolDK · Guía de Bienestar',disc:'⚠ La información es orientativa y no reemplaza el consejo médico.',wel:'¡Hola! Soy Vera 🌿\n\nSoy la guía de bienestar de vitalprotocolDK. ¡Estoy aquí para ayudarte con productos, protocolos o preguntas de bienestar!',q:['¿Qué es Nitro Plus?','¿Qué protocolo me conviene?','¿Dónde puedo comprar?','¿Qué es el Triángulo de Bienestar?']}
+};
+var vSys='Sen Vera\'sın — vitalprotocolDK wellness rehberi. Deniz KAT adına çalışıyorsun. Samimi, sıcak ama profesyonel ol.\n\nÜRÜNLER: Nitro Plus (Nitrik Oksit, vasküler sağlık), Sunrise (22 süper gıda, B vitamini), Sunset (Omega-3, Astaksantin, gece onarımı), HL5 (Hidrolize Kolajen), FIT20 (fitness protokolü), ORIGIN (temel beslenme), NRGI (hücresel enerji, ATP), EDGE (zihinsel berraklık, dopamin), IGNT (hormonal denge), R-STOUR (sindirim, enzim+probiyotik), ON-SHOTS (anlık odak, adaptogen).\n\nSATIN ALMA: https://amare.com/tr-tr/g10/2180152\n\nSINIRLAR: Asla tıbbi tanı/tedavi önerme. Hamilelik/emzirme sorularında doktora yönlendir.\n\nDİL: Kullanıcı hangi dilde yazarsa o dilde cevap ver. Kısa ve net ol. Kullanıcı satın alma sorarsa linki tıklanabilir göster.';
+
+window.vSetLang=function(l){
+  if(!vT[l])return;
+  vL=l;
+  var inp=document.getElementById('vera-inp');
+  var st=document.getElementById('vera-st');
+  var disc=document.getElementById('vera-disc');
+  if(inp)inp.placeholder=vT[l].ph;
+  if(st)st.textContent=vT[l].st;
+  if(disc)disc.textContent=vT[l].disc;
+  vRenderQ(l);
+};
+
+function vRenderQ(l){
+  var q=document.getElementById('vera-quick');
+  if(!q)return;
+  q.innerHTML='';
+  vT[l].q.forEach(function(txt){
+    var b=document.createElement('button');
+    b.className='vqb';b.textContent=txt;
+    b.addEventListener('click',function(){document.getElementById('vera-inp').value=txt;vSend();});
+    q.appendChild(b);
+  });
+}
+
+function vAddMsg(role,text){
+  var msgs=document.getElementById('vera-msgs');
+  var d=document.createElement('div');
+  d.className='vm'+(role==='user'?' vu':'');
+  var av=document.createElement('div');av.className='vmav';av.textContent=role==='user'?'👤':'V';
+  var b=document.createElement('div');b.className='vmb';
+  if(role==='user'){
+    b.textContent=text;
+  } else {
+    var html=text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    html=html.replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener" style="color:#b8963e;text-decoration:underline;word-break:break-all;">$1</a>');
+    html=html.replace(/\n/g,'<br>');
+    b.innerHTML=html;
+  }
+  d.appendChild(av);d.appendChild(b);
+  msgs.appendChild(d);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+
+function vInit(){
+  var sl=localStorage.getItem('vpLang')||'tr';
+  vL=sl;
+  window.vSetLang(sl);
+  var msgs=document.getElementById('vera-msgs');
+  if(msgs.children.length===0)vAddMsg('vera',vT[sl].wel);
+}
+
+async function vSend(){
+  var inp=document.getElementById('vera-inp');
+  var txt=inp.value.trim();
+  if(!txt)return;
+  inp.value='';
+  vAddMsg('user',txt);
+  vHist.push({role:'user',content:txt});
+  document.getElementById('vera-typing').classList.add('vs');
+  document.getElementById('vera-quick').style.display='none';
+  try{
+    var ctx=vHist.slice(-6).map(function(m){return m.role+': '+m.content;}).join('\n');
+    var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:[{role:'user',content:vSys+'\n\nKullanıcı dili: '+vL+'\n\nGeçmiş:\n'+ctx}]})});
+    var data=await r.json();
+    var reply=data.content&&data.content[0]?data.content[0].text:'...';
+    vHist.push({role:'assistant',content:reply});
+    document.getElementById('vera-typing').classList.remove('vs');
+    vAddMsg('vera',reply);
+  }catch(e){
+    document.getElementById('vera-typing').classList.remove('vs');
+    vAddMsg('vera',{tr:'Bağlantı hatası, tekrar dene.',en:'Connection error, please try again.',es:'Error de conexión, inténtalo de nuevo.'}[vL]);
+  }
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  document.getElementById('vera-btn').addEventListener('click',function(e){
+    e.stopPropagation();vOpen=!vOpen;
+    var p=document.getElementById('vera-panel');
+    p.classList.toggle('vopen',vOpen);
+    if(vOpen)vInit();
+  });
+  document.getElementById('vera-x').addEventListener('click',function(e){
+    e.stopPropagation();vOpen=false;
+    document.getElementById('vera-panel').classList.remove('vopen');
+  });
+  document.getElementById('vera-go').addEventListener('click',function(e){e.stopPropagation();vSend();});
+  document.getElementById('vera-inp').addEventListener('keydown',function(e){if(e.key==='Enter'){e.stopPropagation();vSend();}});
+});
+})();
+</script>
+<!-- END VERA -->
+
+
+<script>
+(function(){
+  function addCircles() {
+    var links = document.querySelectorAll('.vpdk-nav-link, .vpdk-nav-dropdown-btn');
+    links.forEach(function(el) {
+      if (el.querySelector('.nav-circle')) return;
+      var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+      svg.setAttribute('class','nav-circle');
+      svg.setAttribute('viewBox','0 0 100 100');
+      svg.setAttribute('preserveAspectRatio','none');
+      var ellipse = document.createElementNS('http://www.w3.org/2000/svg','ellipse');
+      ellipse.setAttribute('cx','50');
+      ellipse.setAttribute('cy','50');
+      ellipse.setAttribute('rx','46');
+      ellipse.setAttribute('ry','42');
+      // Hafif döndürme - el yazısı hissi
+      ellipse.setAttribute('transform','rotate(-3, 50, 50)');
+      svg.appendChild(ellipse);
+      el.appendChild(svg);
+      // Hover'da animasyonu sıfırla (tekrar çizilsin)
+      el.addEventListener('mouseenter', function() {
+        ellipse.style.animation = 'none';
+        ellipse.offsetHeight; // reflow
+        ellipse.style.animation = '';
+      });
+    });
+  }
+  if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addCircles);
+  } else {
+    addCircles();
   }
 })();
 </script>
