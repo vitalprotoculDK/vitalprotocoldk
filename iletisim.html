@@ -17,7 +17,7 @@
 .vpdk-nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:#2e3d30;letter-spacing:.02em;text-decoration:none;flex-shrink:0}
 .vpdk-nav-logo span{color:#b8963e;font-style:italic}
 .vpdk-nav-center{display:flex;align-items:center;gap:4px;position:absolute;left:50%;transform:translateX(-50%);min-width:0}
-.vpdk-nav-link{padding:6px 14px;font-size:15px;color:#2e3d30;text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap;position:relative}
+.vpdk-nav-link{padding:6px 14px;font-size:16px;color:#2e3d30;text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap;position:relative}
 .vpdk-nav-link:hover{background:transparent}
 
 /* ── NAV HOVER DAİRE EFEKTİ ── */
@@ -49,8 +49,8 @@
   stroke: #2e3d30;
   stroke-width: 1.5;
   stroke-linecap: round;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
 }
 .vpdk-nav-link:hover .nav-circle ellipse,
 .vpdk-nav-dropdown-btn:hover .nav-circle ellipse {
@@ -61,7 +61,7 @@
 }
 
 .vpdk-nav-dropdown{position:relative}
-.vpdk-nav-dropdown-btn{padding:6px 14px;font-size:15px;color:#2e3d30;background:none;border:none;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;white-space:nowrap;position:relative}
+.vpdk-nav-dropdown-btn{padding:6px 14px;font-size:16px;color:#2e3d30;background:none;border:none;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;white-space:nowrap;position:relative}
 .vpdk-nav-dropdown-btn:hover{background:transparent}
 .vpdk-nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:8px;min-width:180px;box-shadow:0 8px 32px rgba(0,0,0,.1);z-index:9999}
 .vpdk-nav-dropdown:hover .vpdk-nav-dropdown-menu{display:block}
@@ -996,7 +996,7 @@ window.vpNavLang = function(l, btn){
       ellipse.setAttribute('cx','50');
       ellipse.setAttribute('cy','50');
       ellipse.setAttribute('rx','46');
-      ellipse.setAttribute('ry','42');
+      ellipse.setAttribute('ry','18');
       // Hafif döndürme - el yazısı hissi
       ellipse.setAttribute('transform','rotate(-3, 50, 50)');
       svg.appendChild(ellipse);

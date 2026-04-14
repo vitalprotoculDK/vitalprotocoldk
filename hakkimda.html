@@ -17,7 +17,7 @@
 .vpdk-nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:#2e3d30;letter-spacing:.02em;text-decoration:none;flex-shrink:0}
 .vpdk-nav-logo span{color:#b8963e;font-style:italic}
 .vpdk-nav-center{display:flex;align-items:center;gap:4px;position:absolute;left:50%;transform:translateX(-50%);min-width:0}
-.vpdk-nav-link{padding:6px 14px;font-size:15px;color:#2e3d30;text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap;position:relative}
+.vpdk-nav-link{padding:6px 14px;font-size:16px;color:#2e3d30;text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap;position:relative}
 .vpdk-nav-link:hover{background:transparent}
 
 /* ── NAV HOVER DAİRE EFEKTİ ── */
@@ -49,8 +49,8 @@
   stroke: #2e3d30;
   stroke-width: 1.5;
   stroke-linecap: round;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
 }
 .vpdk-nav-link:hover .nav-circle ellipse,
 .vpdk-nav-dropdown-btn:hover .nav-circle ellipse {
@@ -61,7 +61,7 @@
 }
 
 .vpdk-nav-dropdown{position:relative}
-.vpdk-nav-dropdown-btn{padding:6px 14px;font-size:15px;color:#2e3d30;background:none;border:none;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;white-space:nowrap;position:relative}
+.vpdk-nav-dropdown-btn{padding:6px 14px;font-size:16px;color:#2e3d30;background:none;border:none;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;white-space:nowrap;position:relative}
 .vpdk-nav-dropdown-btn:hover{background:transparent}
 .vpdk-nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:8px;min-width:180px;box-shadow:0 8px 32px rgba(0,0,0,.1);z-index:9999}
 .vpdk-nav-dropdown:hover .vpdk-nav-dropdown-menu{display:block}
@@ -423,6 +423,11 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
     <div class="vp-sticky-title">
       <h2>My Story:<br>From 25 Years of Experience.<br><span style="color:#d4af37;">To "Thank Goodness".</span></h2>
       <div style="width:80px;height:5px;background:#d4af37;margin-top:25px;border-radius:10px;"></div>
+      <div style="margin-top:32px;display:flex;justify-content:center;">
+        <div style="width:220px;height:220px;border-radius:20px;overflow:hidden;border:4px solid #d4af37;box-shadow:0 8px 32px rgba(46,61,48,0.18);display:block;">
+          <img src="/positano.jpeg" alt="Deniz KAT" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+        </div>
+      </div>
     </div>
     <div class="vp-story-text">
       <p>For 25 years I was at the very centre of corporate life. Different countries, different cities, endless meetings, business trips... That exhaustion where days blurred into nights. My priorities rarely belonged to me. Time stolen from my family and children, cancelled holiday plans, feeling undervalued — I'm not the only one who has lived this.</p>
@@ -535,6 +540,11 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
     <div class="vp-sticky-title">
       <h2>Mi Historia:<br>De 25 Años de Experiencia.<br><span style="color:#d4af37;">A "Menos Mal".</span></h2>
       <div style="width:80px;height:5px;background:#d4af37;margin-top:25px;border-radius:10px;"></div>
+      <div style="margin-top:32px;display:flex;justify-content:center;">
+        <div style="width:220px;height:220px;border-radius:20px;overflow:hidden;border:4px solid #d4af37;box-shadow:0 8px 32px rgba(46,61,48,0.18);display:block;">
+          <img src="/positano.jpeg" alt="Deniz KAT" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+        </div>
+      </div>
     </div>
     <div class="vp-story-text">
       <p>Durante 25 años estuve en el centro mismo de la vida corporativa. Distintos países, distintas ciudades, reuniones interminables, viajes de negocios... Ese agotamiento donde los días se confunden con las noches. Las prioridades de mi vida rara vez me pertenecían. El tiempo robado a mi familia y a mis hijos, los planes de vacaciones que nunca llegaron, sentirse infravalorado — no soy el único que ha vivido esto.</p>
@@ -659,7 +669,7 @@ function vpLang(lang, btn) {
       ellipse.setAttribute('cx','50');
       ellipse.setAttribute('cy','50');
       ellipse.setAttribute('rx','46');
-      ellipse.setAttribute('ry','42');
+      ellipse.setAttribute('ry','18');
       // Hafif döndürme - el yazısı hissi
       ellipse.setAttribute('transform','rotate(-3, 50, 50)');
       svg.appendChild(ellipse);
