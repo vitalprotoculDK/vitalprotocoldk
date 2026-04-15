@@ -101,7 +101,7 @@
 body{font-family:'DM Sans',sans-serif;background:#f9f8f4;color:var(--text);overflow-x:hidden;font-size:18px;line-height:1.8}
 .lang-section{display:none}.lang-section.active{display:block}
 .blog-wrap{max-width:860px;margin:0 auto;padding:40px 20px 80px}
-.article-header{border-radius:16px;overflow:hidden;margin-bottom:40px;position:relative}
+.article-header{border-radius:16px;overflow:hidden;margin-bottom:40px;position:relative;min-height:320px;display:flex;align-items:flex-end}
 .article-header h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);font-weight:300;line-height:1.1;color:#f9f8f4;margin-bottom:10px}
 .article-header .subtitle{font-size:18px;color:rgba(249,248,244,0.7);font-weight:300}
 .article-meta{margin-top:16px;font-size:13px;color:rgba(249,248,244,0.5)}
@@ -138,6 +138,7 @@ body{font-family:'DM Sans',sans-serif;background:#f9f8f4;color:var(--text);overf
   .article-content{padding:28px 18px}
   .article-content h2{font-size:22px}
   .data-highlight{display:block;margin:8px 0}
+  .article-header{min-height:240px}
 }
 </style>
 </head>
@@ -224,9 +225,9 @@ document.addEventListener('click', function(e){
 <!-- TR -->
 <div class="lang-section active" id="lang-tr">
   <div class="blog-wrap">
-    <div class="article-header" style="background-image:url('tabaktaki_çöküş.jpg');background-size:cover;background-position:center;padding:80px 36px;position:relative">
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,36,25,0.65),rgba(26,36,25,0.9))"></div>
-  <div style="position:relative;z-index:1">
+    <div class="article-header" style="background-image:url('tabaktaki_çöküş.jpg');background-size:cover;background-position:center">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,36,25,0.5),rgba(26,36,25,0.92))"></div>
+  <div style="position:relative;z-index:1;padding:40px 36px;width:100%">
     <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(212,175,55,0.75);margin-bottom:14px">Beslenme & Sağlık Bilimi · vitalprotocolDK</div>
     <h1>Tabağınızda Yaşanan Çöküş</h1>
     <p class="subtitle">50 Yıldır Beslenme Neden Kötüleşti?</p>
@@ -360,7 +361,7 @@ document.addEventListener('click', function(e){
                 <li><strong>Aynı tabak ispanak (2020):</strong> Günlük demir ihtiyacının %8-10'unu karşılıyor</li>
             </ul>
 
-            <div style="background: #FFE5E5; border-left: 5px solid #b8963e; padding: 15px 20px; margin: 20px 0; border-radius: 6px; color: #7a5c1e;">
+            <div style="background: #FFE5E5; border-left: 4px solid #b8963e; padding: 15px 20px; margin: 20px 0; border-radius: 6px; color: #7a5c1e;">
                 <p style="margin: 0; font-weight: 600; color: #b8963e;">2026'da Tahmin:</p>
                 <p style="margin: 10px 0 0 0; font-size: 1.2em;"><strong>%5-8 mi? <span style="font-size: 1.5em; color: #2e3d30;">?</span></strong></p>
                 <p style="margin: 10px 0 0 0; font-size: 0.9em; font-style: italic; color: #555;">Eğer bu trend devam ederse...</p>
@@ -1084,9 +1085,9 @@ document.addEventListener('click', function(e){
 <!-- EN -->
 <div class="lang-section" id="lang-en">
   <div class="blog-wrap">
-    <div class="article-header" style="background-image:url('tabaktaki_çöküş.jpg');background-size:cover;background-position:center;padding:80px 36px;position:relative">
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,36,25,0.65),rgba(26,36,25,0.9))"></div>
-  <div style="position:relative;z-index:1">
+    <div class="article-header" style="background-image:url('tabaktaki_çöküş.jpg');background-size:cover;background-position:center">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,36,25,0.5),rgba(26,36,25,0.92))"></div>
+  <div style="position:relative;z-index:1;padding:40px 36px;width:100%">
     <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(212,175,55,0.75);margin-bottom:14px">Nutrition & Health Science · vitalprotocolDK</div>
     <h1>The Collapse on Your Plate</h1>
     <p class="subtitle">Why Has Nutrition Declined Over 50 Years?</p>
@@ -1098,7 +1099,7 @@ document.addEventListener('click', function(e){
             <!-- GİRİŞ -->
             <h2>Introduction: The Question That Separates Then and Now</h2>
 
-            <p>1970'ler. Dedenizin bahçesinden topladığı veya pazardan aldığı bir domates, belki de bugün yediğiniz beş domatesten daha fazla mineral içeriyordu. Bugün süpermarketlerde "organik" etiketi taşıyan ürünler bile, teknoloji ve verimsiz topraklar yüzünden beslenme değeri bakımından önceki kuşakların gıdalarının gölgesinde kalıyor.</p>
+            <p>The 1970s. A tomato picked from your grandfather's garden or bought at the market likely contained more minerals than five tomatoes you eat today. Even products labeled "organic" in today's supermarkets fall short of the nutritional value of previous generations' food, due to technology and depleted soils.</p>
 
             <p>Bu sadece bir şikayet değil. Geigy Pharmakonzern (1985) ve Karlsruhe Gıda Laboratuvarı (2002) başta olmak üzere binlerce araştırma, tabağımızda her 100 gramda bulunan vitamin ve minerallerin dramatik düşüşünü kanıtlıyor. Peki, neden bu oluyor? Ve bunun sonuçları gerçekten o kadar ciddi mi?</p>
 
@@ -1194,24 +1195,24 @@ document.addEventListener('click', function(e){
             <!-- BÖLÜM 1 -->
             <h2>1. Soil Collapse: What's Inside Is the Problem</h2>
 
-            <h3>Toprağın Ölümü, Besinin Yokluğu</h3>
+            <h3>The Death of Soil, the Absence of Nutrition</h3>
 
-            <p>Bitkilerin büyüdüğü toprak, onların mineral haznesidir. Ama modern tarım, bu hazneyi tüketmiştir.</p>
+            <p>The soil in which plants grow is their mineral reservoir. But modern agriculture has depleted this reservoir.</p>
 
-            <h4>50 yılda olanlar:</h4>
+            <h4>What happened in 50 years:</h4>
             <ul>
-                <li>Yoğun tarım (tek ürünlü tarım), toprağı mineral yönünden tüketmiş hale getirdi</li>
-                <li>Sentetik gübreler, kısa vadeli verim sağladı ama toprak yapısını harabladı</li>
-                <li>Erozyonla kaybolan üst toprak tabakası, tarihin en az mineral içeren toprağa geçilmesi anlamına geliyordu</li>
+                <li>Intensive farming (monoculture) depleted the soil of minerals</li>
+                <li>Synthetic fertilizers provided short-term yields but destroyed soil structure</li>
+                <li>The loss of topsoil through erosion meant transitioning to the least mineral-rich soil in history</li>
             </ul>
 
-            <p>Basit matematikle açıklamak gerekirse: <span class="data-highlight">Bir bitki, bulunduğu toprağın minerallerini çeker</span>. Toprakta potasyum yoksa, ürüne de potasyum girmez. Domateste nikel yok ise, nikel almıyorsunuz.</p>
+            <p>To explain with simple math: <span class="data-highlight">Bir bitki, bulunduğu toprağın minerallerini çeker</span>. Toprakta potasyum yoksa, ürüne de potasyum girmez. Domateste nikel yok ise, nikel almıyorsunuz.</p>
 
             <div class="stat-box">
                 <strong>2002 Karlsruhe Laboratuvarı Bulgusu:</strong> 1950'lerde yetiştirilmiş sebzelerle 2000 yılında yetiştirilmiş sebzeler karşılaştırıldığında, mineral içeriğinde ortalama <strong>%40-60 düşüş</strong> gözlemlenmiştir. Bazı elementlerde (bakır, çinko) bu rakam <strong>%75</strong>'i aşmıştır.
             </div>
 
-            <h3>Bugünün Besini, Dünün Kalori Eşdeğeri</h3>
+            <h3>Today's Food, Yesterday's Calorie Equivalent</h3>
 
             <p>Bu, sadece sayılar üzerinde durmak değil. Somut olarak:</p>
 
@@ -1220,24 +1221,24 @@ document.addEventListener('click', function(e){
                 <li><strong>Aynı tabak ispanak (2020):</strong> Günlük demir ihtiyacının %8-10'unu karşılıyor</li>
             </ul>
 
-            <div style="background: #FFE5E5; border-left: 5px solid #b8963e; padding: 15px 20px; margin: 20px 0; border-radius: 6px; color: #7a5c1e;">
+            <div style="background: #FFE5E5; border-left: 4px solid #b8963e; padding: 15px 20px; margin: 20px 0; border-radius: 6px; color: #7a5c1e;">
                 <p style="margin: 0; font-weight: 600; color: #b8963e;">2026'da Tahmin:</p>
                 <p style="margin: 10px 0 0 0; font-size: 1.2em;"><strong>%5-8 mi? <span style="font-size: 1.5em; color: #2e3d30;">?</span></strong></p>
                 <p style="margin: 10px 0 0 0; font-size: 0.9em; font-style: italic; color: #555;">Eğer bu trend devam ederse...</p>
             </div>
 
-            <p>Görünenler öyle değil. Beslendiğinizi düşünürken, aslında kalori alıyor ama amino asitler, vitaminler, mineraller konusunda eksikliğiniz artıyor.</p>
+            <p>Things are not as they appear. While you think you are eating nutritiously, you are actually consuming calories while your deficiency in amino acids, vitamins, and minerals continues to grow.</p>
 
             <hr class="section-divider">
 
             <!-- BÖLÜM 2 -->
             <h2>2. The Chemical Chain: Pesticides, Fungicides, Herbicides</h2>
 
-            <h3>"Güvenli Seviyeler"in Gerçek Yüzü</h3>
+            <h3>The Real Face of "Safe Levels"</h3>
 
-            <p>İlaçlama yapmayan tarım, modern dünyada neredeyse imkansız. Fakat burada ortaya çıkan soru: <strong>Bu zehirler organizmamıza nasıl giriyor?</strong></p>
+            <p>Agriculture without pesticides is almost impossible in the modern world. But the question that arises here is: <strong>Bu zehirler organizmamıza nasıl giriyor?</strong></p>
 
-            <p>Pestisitler, doğrudan bitki hücresi içine nüfuz ettiği için, yıkamakla temizlenemiyor. Ayrıca toprağa da yerleşmiş durumdadır.</p>
+            <p>Because pesticides penetrate directly into plant cells, they cannot be removed by washing. They are also settled in the soil.</p>
 
             <div class="highlight-box">
                 <h4>Geigy 1985 Araştırması Ortaya Koymaktadır:</h4>
@@ -1248,13 +1249,13 @@ document.addEventListener('click', function(e){
                 </ul>
             </div>
 
-            <p>Bu, sadece "yedikleriniz" meselesi değil. Anne karnındaki bebekler dahi, kordon analizi edildiğinde bu kimyasalları taşıyordu. Bir nesil "toksinli" büyüyordu.</p>
+            <p>This is not just a matter of "what you eat." Even babies in the womb were found to carry these chemicals when cord blood was analyzed. An entire generation was growing up "toxic."</p>
 
-            <h3>Biyolojik Birikinti: Zehir Zinciri</h3>
+            <h3>Biological Accumulation: The Poison Chain</h3>
 
-            <p>Pestisitler bozulmadığı için, besin zincirinin her basamağında (bitki → hayvan → insan) birikir. Bir insan, hayatı boyunca çeşitli pestisitlerin birikmiş miktarlarını taşır.</p>
+            <p>Because pesticides do not break down, they accumulate at every level of the food chain (plant → animal → human). A person carries accumulated amounts of various pesticides throughout their life.</p>
 
-            <p>Bunun hastalıklarla olan ilişkisi:</p>
+            <p>Its relationship to diseases:</p>
             <ul>
                 <li><strong>Endokrin bozukluğu:</strong> Hormon gibi davrandığında vücut yanılıyor</li>
                 <li><strong>Sinir sistemi hasarı:</strong> Sinir hücrelerine zarar verir (otizm-pestisit ilişkisi bilimsel kanıtlarla desteklenmektedir)</li>
@@ -1798,9 +1799,9 @@ document.addEventListener('click', function(e){
             <!-- BÖLÜM 7 -->
             <h2>7. The Future of Nutrition: Despair or Hope?</h2>
 
-            <p>Modern tarım teknolojileri hızla ilerliyor. Çiftçiler akıllı sensörler ve yapay zeka sistemleri kullanarak, her tarım parselinin mineral seviyesini ölçüp optimize edebiliyor. <strong>Hassas tarım uygulamaları</strong>, doğru zamanda doğru minerallerin toprağa eklenmesini sağlıyor.</p>
+            <p>Modern agricultural technologies are advancing rapidly. Farmers can use smart sensors and artificial intelligence systems to measure and optimize the mineral levels of each agricultural plot. <strong>Hassas tarım uygulamaları</strong>, doğru zamanda doğru minerallerin toprağa eklenmesini sağlıyor.</p>
 
-            <p>Sonraki 10 yılda:</p>
+            <p>In the next 10 years:</p>
             <ul>
                 <li><strong>Hassas gübre uygulaması:</strong> Takviyeli toprağın mineral profili, sağlık protokolüne uyacak şekilde ayarlanacak</li>
                 <li><strong>Kısa depo zinciri:</strong> Blockchain takibi ile, sebze 6 saat içinde sofranıza gelecek</li>
@@ -1903,25 +1904,25 @@ document.addEventListener('click', function(e){
 
             <p>Dedenizin zaman travması olan <strong>"Eski günlerde nasıl sağlıklıydık?"</strong> sorusunun cevabı şudur: Onlar besleniyordu, biz kalori alıyoruz.</p>
 
-            <p>Fakat bu, tercihiniz olmak zorunda değil. Beslenme, bilgiyle başlar.</p>
+            <p>But this does not have to be your reality. Nutrition begins with knowledge.</p>
 
-            <h3>Bugün yapılabilecekler:</h3>
+            <h3>What can be done today:</h3>
             <ol>
-                <li>Toprağı tanıyan tarımcılardan satın alın</li>
-                <li>Mevsimsel tüketim yapın</li>
-                <li>Yüksek kullanılabilirlik takviyeler kullanın</li>
-                <li>Çeşitli beslenin</li>
-                <li>En önemlisi: <strong>Yediklerinizi sorgulamaya başlayın</strong></li>
+                <li>Buy from farmers who know their soil</li>
+                <li>Consume seasonally</li>
+                <li>Use high-bioavailability supplements</li>
+                <li>Eat a diverse diet</li>
+                <li>Most importantly: <strong>Yediklerinizi sorgulamaya başlayın</strong></li>
             </ol>
 
-            <p><strong>Sağlık, tabakta başlar. Ama bilgi, seçimde başlar.</strong></p>
+            <p><strong>Health begins on the plate. But knowledge begins with choice.</strong></p>
 
             <!-- CTA BÖLÜMÜ -->
             <div class="cta-section">
                 <h3>Share This Knowledge</h3>
                 <p>At vitalprotocolDK.com, we want people to make conscious nutritional choices. Together, can we reduce the risk of disease and build healthier lives?</p>
                 <p style="font-style: italic; margin-top: 30px; font-size: 1.1em; line-height: 1.8;">
-                    <strong>Question: What do you see on your family's plate, and what are you doing to change it?</strong>
+                    <strong>Soru: Siz, aile tabağınızda neler görüyor ve değiştirebilmek için neler yapıyorsunuz?</strong>
                 </p>
             </div>
 
@@ -1944,9 +1945,9 @@ document.addEventListener('click', function(e){
 <!-- ES -->
 <div class="lang-section" id="lang-es">
   <div class="blog-wrap">
-    <div class="article-header" style="background-image:url('tabaktaki_çöküş.jpg');background-size:cover;background-position:center;padding:80px 36px;position:relative">
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,36,25,0.65),rgba(26,36,25,0.9))"></div>
-  <div style="position:relative;z-index:1">
+    <div class="article-header" style="background-image:url('tabaktaki_çöküş.jpg');background-size:cover;background-position:center">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,36,25,0.5),rgba(26,36,25,0.92))"></div>
+  <div style="position:relative;z-index:1;padding:40px 36px;width:100%">
     <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(212,175,55,0.75);margin-bottom:14px">Ciencia Nutricional · vitalprotocolDK</div>
     <h1>El Colapso en Tu Plato</h1>
     <p class="subtitle">¿Por Qué la Nutrición Ha Empeorado en 50 Años?</p>
@@ -1958,7 +1959,7 @@ document.addEventListener('click', function(e){
             <!-- GİRİŞ -->
             <h2>Introducción: La Pregunta que Separa el Ayer del Hoy</h2>
 
-            <p>1970'ler. Dedenizin bahçesinden topladığı veya pazardan aldığı bir domates, belki de bugün yediğiniz beş domatesten daha fazla mineral içeriyordu. Bugün süpermarketlerde "organik" etiketi taşıyan ürünler bile, teknoloji ve verimsiz topraklar yüzünden beslenme değeri bakımından önceki kuşakların gıdalarının gölgesinde kalıyor.</p>
+            <p>Los años 70. Un tomate recogido del jardín de tu abuelo o comprado en el mercado probablemente contenía más minerales que cinco tomates que comes hoy. Incluso los productos etiquetados como "orgánicos" en los supermercados actuales quedan por debajo del valor nutricional de los alimentos de generaciones anteriores, debido a la tecnología y los suelos empobrecidos.</p>
 
             <p>Bu sadece bir şikayet değil. Geigy Pharmakonzern (1985) ve Karlsruhe Gıda Laboratuvarı (2002) başta olmak üzere binlerce araştırma, tabağımızda her 100 gramda bulunan vitamin ve minerallerin dramatik düşüşünü kanıtlıyor. Peki, neden bu oluyor? Ve bunun sonuçları gerçekten o kadar ciddi mi?</p>
 
@@ -2054,24 +2055,24 @@ document.addEventListener('click', function(e){
             <!-- BÖLÜM 1 -->
             <h2>1. El Colapso del Suelo: Lo que Hay Dentro es el Problema</h2>
 
-            <h3>Toprağın Ölümü, Besinin Yokluğu</h3>
+            <h3>La Muerte del Suelo, la Ausencia de Nutrición</h3>
 
-            <p>Bitkilerin büyüdüğü toprak, onların mineral haznesidir. Ama modern tarım, bu hazneyi tüketmiştir.</p>
+            <p>El suelo en el que crecen las plantas es su reservorio de minerales. Pero la agricultura moderna ha agotado este reservorio.</p>
 
-            <h4>50 yılda olanlar:</h4>
+            <h4>Lo que ocurrió en 50 años:</h4>
             <ul>
-                <li>Yoğun tarım (tek ürünlü tarım), toprağı mineral yönünden tüketmiş hale getirdi</li>
-                <li>Sentetik gübreler, kısa vadeli verim sağladı ama toprak yapısını harabladı</li>
-                <li>Erozyonla kaybolan üst toprak tabakası, tarihin en az mineral içeren toprağa geçilmesi anlamına geliyordu</li>
+                <li>La agricultura intensiva (monocultivo) agotó los minerales del suelo</li>
+                <li>Los fertilizantes sintéticos proporcionaron rendimientos a corto plazo pero destruyeron la estructura del suelo</li>
+                <li>La pérdida de la capa superior del suelo por erosión significó la transición al suelo con menos minerales en la historia</li>
             </ul>
 
-            <p>Basit matematikle açıklamak gerekirse: <span class="data-highlight">Bir bitki, bulunduğu toprağın minerallerini çeker</span>. Toprakta potasyum yoksa, ürüne de potasyum girmez. Domateste nikel yok ise, nikel almıyorsunuz.</p>
+            <p>Para explicarlo con matemáticas simples: <span class="data-highlight">Bir bitki, bulunduğu toprağın minerallerini çeker</span>. Toprakta potasyum yoksa, ürüne de potasyum girmez. Domateste nikel yok ise, nikel almıyorsunuz.</p>
 
             <div class="stat-box">
                 <strong>2002 Karlsruhe Laboratuvarı Bulgusu:</strong> 1950'lerde yetiştirilmiş sebzelerle 2000 yılında yetiştirilmiş sebzeler karşılaştırıldığında, mineral içeriğinde ortalama <strong>%40-60 düşüş</strong> gözlemlenmiştir. Bazı elementlerde (bakır, çinko) bu rakam <strong>%75</strong>'i aşmıştır.
             </div>
 
-            <h3>Bugünün Besini, Dünün Kalori Eşdeğeri</h3>
+            <h3>El Alimento de Hoy, el Equivalente Calórico de Ayer</h3>
 
             <p>Bu, sadece sayılar üzerinde durmak değil. Somut olarak:</p>
 
@@ -2080,24 +2081,24 @@ document.addEventListener('click', function(e){
                 <li><strong>Aynı tabak ispanak (2020):</strong> Günlük demir ihtiyacının %8-10'unu karşılıyor</li>
             </ul>
 
-            <div style="background: #FFE5E5; border-left: 5px solid #b8963e; padding: 15px 20px; margin: 20px 0; border-radius: 6px; color: #7a5c1e;">
+            <div style="background: #FFE5E5; border-left: 4px solid #b8963e; padding: 15px 20px; margin: 20px 0; border-radius: 6px; color: #7a5c1e;">
                 <p style="margin: 0; font-weight: 600; color: #b8963e;">2026'da Tahmin:</p>
                 <p style="margin: 10px 0 0 0; font-size: 1.2em;"><strong>%5-8 mi? <span style="font-size: 1.5em; color: #2e3d30;">?</span></strong></p>
                 <p style="margin: 10px 0 0 0; font-size: 0.9em; font-style: italic; color: #555;">Eğer bu trend devam ederse...</p>
             </div>
 
-            <p>Görünenler öyle değil. Beslendiğinizi düşünürken, aslında kalori alıyor ama amino asitler, vitaminler, mineraller konusunda eksikliğiniz artıyor.</p>
+            <p>Las cosas no son como parecen. Mientras crees que te estás alimentando bien, en realidad estás consumiendo calorías mientras tu deficiencia en aminoácidos, vitaminas y minerales sigue creciendo.</p>
 
             <hr class="section-divider">
 
             <!-- BÖLÜM 2 -->
             <h2>2. La Cadena Química: Pesticidas, Fungicidas, Herbicidas</h2>
 
-            <h3>"Güvenli Seviyeler"in Gerçek Yüzü</h3>
+            <h3>La Cara Real de los "Niveles Seguros"</h3>
 
-            <p>İlaçlama yapmayan tarım, modern dünyada neredeyse imkansız. Fakat burada ortaya çıkan soru: <strong>Bu zehirler organizmamıza nasıl giriyor?</strong></p>
+            <p>La agricultura sin pesticidas es casi imposible en el mundo moderno. Pero la pregunta que surge aquí es: <strong>Bu zehirler organizmamıza nasıl giriyor?</strong></p>
 
-            <p>Pestisitler, doğrudan bitki hücresi içine nüfuz ettiği için, yıkamakla temizlenemiyor. Ayrıca toprağa da yerleşmiş durumdadır.</p>
+            <p>Debido a que los pesticidas penetran directamente en las células de las plantas, no se pueden eliminar con el lavado. También están asentados en el suelo.</p>
 
             <div class="highlight-box">
                 <h4>Geigy 1985 Araştırması Ortaya Koymaktadır:</h4>
@@ -2108,13 +2109,13 @@ document.addEventListener('click', function(e){
                 </ul>
             </div>
 
-            <p>Bu, sadece "yedikleriniz" meselesi değil. Anne karnındaki bebekler dahi, kordon analizi edildiğinde bu kimyasalları taşıyordu. Bir nesil "toksinli" büyüyordu.</p>
+            <p>Esto no es solo una cuestión de "lo que comes". Incluso los bebés en el útero llevaban estos químicos cuando se analizaba la sangre del cordón umbilical. Toda una generación crecía "tóxica".</p>
 
-            <h3>Biyolojik Birikinti: Zehir Zinciri</h3>
+            <h3>Bioacumulación: La Cadena del Veneno</h3>
 
-            <p>Pestisitler bozulmadığı için, besin zincirinin her basamağında (bitki → hayvan → insan) birikir. Bir insan, hayatı boyunca çeşitli pestisitlerin birikmiş miktarlarını taşır.</p>
+            <p>Como los pesticidas no se degradan, se acumulan en cada nivel de la cadena alimentaria (planta → animal → humano). Una persona lleva cantidades acumuladas de varios pesticidas a lo largo de su vida.</p>
 
-            <p>Bunun hastalıklarla olan ilişkisi:</p>
+            <p>Su relación con las enfermedades:</p>
             <ul>
                 <li><strong>Endokrin bozukluğu:</strong> Hormon gibi davrandığında vücut yanılıyor</li>
                 <li><strong>Sinir sistemi hasarı:</strong> Sinir hücrelerine zarar verir (otizm-pestisit ilişkisi bilimsel kanıtlarla desteklenmektedir)</li>
@@ -2658,9 +2659,9 @@ document.addEventListener('click', function(e){
             <!-- BÖLÜM 7 -->
             <h2>7. El Futuro de la Nutrición: ¿Desesperanza u Esperanza?</h2>
 
-            <p>Modern tarım teknolojileri hızla ilerliyor. Çiftçiler akıllı sensörler ve yapay zeka sistemleri kullanarak, her tarım parselinin mineral seviyesini ölçüp optimize edebiliyor. <strong>Hassas tarım uygulamaları</strong>, doğru zamanda doğru minerallerin toprağa eklenmesini sağlıyor.</p>
+            <p>Las tecnologías agrícolas modernas avanzan rápidamente. Los agricultores pueden usar sensores inteligentes y sistemas de inteligencia artificial para medir y optimizar los niveles de minerales de cada parcela agrícola. <strong>Hassas tarım uygulamaları</strong>, doğru zamanda doğru minerallerin toprağa eklenmesini sağlıyor.</p>
 
-            <p>Sonraki 10 yılda:</p>
+            <p>En los próximos 10 años:</p>
             <ul>
                 <li><strong>Hassas gübre uygulaması:</strong> Takviyeli toprağın mineral profili, sağlık protokolüne uyacak şekilde ayarlanacak</li>
                 <li><strong>Kısa depo zinciri:</strong> Blockchain takibi ile, sebze 6 saat içinde sofranıza gelecek</li>
@@ -2763,25 +2764,25 @@ document.addEventListener('click', function(e){
 
             <p>Dedenizin zaman travması olan <strong>"Eski günlerde nasıl sağlıklıydık?"</strong> sorusunun cevabı şudur: Onlar besleniyordu, biz kalori alıyoruz.</p>
 
-            <p>Fakat bu, tercihiniz olmak zorunda değil. Beslenme, bilgiyle başlar.</p>
+            <p>Pero esto no tiene que ser tu realidad. La nutrición comienza con el conocimiento.</p>
 
-            <h3>Bugün yapılabilecekler:</h3>
+            <h3>Lo que se puede hacer hoy:</h3>
             <ol>
-                <li>Toprağı tanıyan tarımcılardan satın alın</li>
-                <li>Mevsimsel tüketim yapın</li>
-                <li>Yüksek kullanılabilirlik takviyeler kullanın</li>
-                <li>Çeşitli beslenin</li>
-                <li>En önemlisi: <strong>Yediklerinizi sorgulamaya başlayın</strong></li>
+                <li>Compra a agricultores que conocen su suelo</li>
+                <li>Consume de temporada</li>
+                <li>Usa suplementos de alta biodisponibilidad</li>
+                <li>Come una dieta variada</li>
+                <li>Lo más importante: <strong>Yediklerinizi sorgulamaya başlayın</strong></li>
             </ol>
 
-            <p><strong>Sağlık, tabakta başlar. Ama bilgi, seçimde başlar.</strong></p>
+            <p><strong>La salud comienza en el plato. Pero el conocimiento comienza con la elección.</strong></p>
 
             <!-- CTA BÖLÜMÜ -->
             <div class="cta-section">
                 <h3>Comparte Este Conocimiento</h3>
                 <p>En vitalprotocolDK.com queremos que las personas tomen decisiones nutricionales conscientes. ¿Podemos todos reducir el riesgo de enfermedades y construir vidas más saludables?</p>
                 <p style="font-style: italic; margin-top: 30px; font-size: 1.1em; line-height: 1.8;">
-                    <strong>Pregunta: ¿Qué ves en el plato de tu familia y qué estás haciendo para cambiarlo?</strong>
+                    <strong>Soru: Siz, aile tabağınızda neler görüyor ve değiştirebilmek için neler yapıyorsunuz?</strong>
                 </p>
             </div>
 
