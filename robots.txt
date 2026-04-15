@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.vitalprotocoldk.com/sitemap.xml
+Sitemap: https://vitalprotocoldk.com/sitemap.xml
+
+# Block non-essential files
+Disallow: /googlea87bb3864cc5e5c5.html
