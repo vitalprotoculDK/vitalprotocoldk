@@ -51,7 +51,7 @@
 }
 </style>
 <style>
-.blog-lang{display:none}.blog-lang.active{display:block!important}.blog-lang[data-lang="tr"]{display:block}
+.blog-lang{display:none}.blog-lang.active{display:block!important}.blog-lang[data-lang="tr"]{display:block!important}
 .blog-index-hero{background:#1a2419;padding:80px 24px 60px;text-align:center}
 .blog-index-hero h1,.blog-index-hero h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;color:#fcfcfa;margin-bottom:12px}
 .blog-index-hero h1 em,.blog-index-hero h2 em{font-style:italic;color:#d4ae5e}
@@ -76,11 +76,18 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
 <script>
 (function(){
   function applyBlogLang(l){
+    var target = null;
     document.querySelectorAll('.blog-lang').forEach(function(el){
-      var isActive = el.getAttribute('data-lang')===l;
-      el.classList.toggle('active', isActive);
-      el.style.display = isActive ? 'block' : 'none';
+      var lang = el.getAttribute('data-lang');
+      if(lang === l) { target = el; }
     });
+    document.querySelectorAll('.blog-lang').forEach(function(el){
+      var lang = el.getAttribute('data-lang');
+      var show = (lang === l);
+      el.classList.toggle('active', show);
+      el.style.display = show ? 'block' : 'none';
+    });
+    if(target) target.style.display = 'block';
   }
   var saved = localStorage.getItem('vpLang')||'tr';
   document.addEventListener('DOMContentLoaded', function(){ applyBlogLang(saved); });
@@ -898,26 +905,7 @@ footer{
   .footer-note{text-align:center!important;font-size:11px!important;width:100%!important}
 }
 </style>
-<script>
-function setLang(lang) {
-  document.querySelectorAll('.lang-section').forEach(function(s){ s.style.display='none'; });
-  var target = document.getElementById('lang-' + lang);
-  if(target) target.style.display = 'block';
-  document.querySelectorAll('.vpdk-lang').forEach(function(b){ b.classList.remove('active'); });
-  document.querySelectorAll('.vpdk-lang').forEach(function(b){
-    if(b.textContent.trim() === lang.toUpperCase()) b.classList.add('active');
-  });
-}
-// Event delegation - data-setlang butonları
-document.addEventListener('click', function(e){
-  var t = e.target;
-  while(t && t !== document.body){
-    var lang = t.getAttribute('data-setlang');
-    if(lang){ setLang(lang); return; }
-    t = t.parentElement;
-  }
-});
-</script>
+<script></script>
 
 <div class="blog-lang active" data-lang="tr" style="display:block">
 <div class="blog-index-hero"><h1>Blog & <em>Perspektif</em></h1>
