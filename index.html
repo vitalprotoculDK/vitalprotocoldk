@@ -167,7 +167,6 @@
     </button>
   </div>
 </nav>
-<main id="main-content">
 
 <div class="vpdk-mobile-menu" id="vpdk-mob">
   <a href="/index.html" class="vpdk-mobile-link" data-mnav="home">Anasayfa</a>
@@ -855,6 +854,10 @@ function setLang(lang) {
   document.querySelectorAll('.vpdk-lang').forEach(function(b){
     if(b.textContent.trim() === lang.toUpperCase()) b.classList.add('active');
   });
+  // Footer dil notu
+  document.querySelectorAll('.footer-tr,.footer-en,.footer-es').forEach(function(el){ el.style.display='none'; });
+  var fn = document.querySelector('.footer-'+lang);
+  if(fn) fn.style.display='block';
 }
 // Event delegation - data-setlang butonları
 document.addEventListener('click', function(e){
@@ -867,7 +870,7 @@ document.addEventListener('click', function(e){
 });
 </script>
 
-<div class="lang-section active" id="lang-tr">
+<div class="lang-section active" id="lang-tr" role="main">
 
 
   <!-- 1. HERO -->
@@ -1060,14 +1063,8 @@ document.addEventListener('click', function(e){
 
   <!-- SOSYAL KANIT TR -->
   
-  </main>
-<footer>
-    <div class="footer-logo">vital<span>protocol</span>DK</div>
-    <div class="footer-note">
-      <b>Şeffaflık Notu:</b> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez. Referans: Gıda ve Takviye Edici Gıdalarda Sağlık Beyanı Yönetmeliği (20 Nisan 2023). — Deniz KAT · Wellness Danışmanı
-    </div>
-  </footer></div>
-<div class="lang-section" id="lang-en" style="display:none">
+  </div>
+<div class="lang-section" id="lang-en" role="main" style="display:none">
 
 
   <section class="hero">
@@ -1242,15 +1239,10 @@ document.addEventListener('click', function(e){
   </section>
 
   
-  <footer>
-    <div class="footer-logo">vital<span>protocol</span>DK</div>
-    <div class="footer-note">
-      <b>Transparency Note:</b> This page is for informational purposes only. Supplements do not replace a balanced diet. — Deniz KAT · Wellness Consultant
-    </div>
-  </footer>
+  
 </div>
 </div>
-<div class="lang-section" id="lang-es" style="display:none">
+<div class="lang-section" id="lang-es" role="main" style="display:none">
 
 
   <section class="hero">
@@ -1425,12 +1417,7 @@ document.addEventListener('click', function(e){
   </section>
 
   
-  <footer>
-    <div class="footer-logo">vital<span>protocol</span>DK</div>
-    <div class="footer-note">
-      <b>Nota de Transparencia:</b> Esta página es de carácter informativo. Los suplementos no sustituyen una dieta equilibrada. — Deniz KAT · Consultor de Bienestar
-    </div>
-  </footer>
+  
 </div>
 </div>
 
@@ -1979,5 +1966,17 @@ document.addEventListener('DOMContentLoaded',function(){
 })();
 </script>
 
+<footer>
+  <div class="footer-logo">vital<span>protocol</span>DK</div>
+  <div class="footer-note footer-tr">
+    <b>Şeffaflık Notu:</b> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez. Referans: Gıda ve Takviye Edici Gıdalarda Sağlık Beyanı Yönetmeliği (20 Nisan 2023). — Deniz KAT · Wellness Danışmanı
+  </div>
+  <div class="footer-note footer-en" style="display:none">
+    <b>Transparency Note:</b> This page is for informational purposes only. Supplements do not replace a balanced diet. — Deniz KAT · Wellness Consultant
+  </div>
+  <div class="footer-note footer-es" style="display:none">
+    <b>Nota de Transparencia:</b> Esta página es de carácter informativo. Los suplementos no sustituyen una dieta equilibrada. — Deniz KAT · Consultor de Bienestar
+  </div>
+</footer>
 </body>
 </html>
