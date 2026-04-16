@@ -6,70 +6,26 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vital Protocol DK">
 <meta name="description" content="Fiziksel, zihinsel ve hücresel sağlık arasındaki bağlantı. Üçlü Sinerji Protokolü ile bütünsel wellness.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
 .vpdk-nav-global{width:100%;background:rgba(252,252,250,0.98);border-bottom:1px solid #d6ddd7;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:9999;backdrop-filter:blur(12px);font-family:'DM Sans',sans-serif;box-sizing:border-box}
 .vpdk-nav-global *{box-sizing:border-box}
 .vpdk-nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:#2e3d30;letter-spacing:.02em;text-decoration:none;flex-shrink:0}
 .vpdk-nav-logo span{color:#b8963e;font-style:italic}
-.vpdk-nav-center{display:flex;align-items:center;gap:4px;position:absolute;left:50%;transform:translateX(-50%);min-width:0}
-.vpdk-nav-link{padding:6px 14px;font-size:16px;color:#2e3d30;text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap;position:relative}
-.vpdk-nav-link:hover{background:transparent}
-
-/* ── NAV HOVER DAİRE EFEKTİ ── */
-.vpdk-nav-link,
-.vpdk-nav-dropdown-btn {
-  position: relative;
-  overflow: visible !important;
-}
-.vpdk-nav-link .nav-circle,
-.vpdk-nav-dropdown-btn .nav-circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% + 18px);
-  height: calc(100% + 12px);
-  pointer-events: none;
-  overflow: visible;
-  opacity: 0;
-  transition: opacity 0.1s;
-}
-.vpdk-nav-link:hover .nav-circle,
-.vpdk-nav-dropdown-btn:hover .nav-circle {
-  opacity: 1;
-}
-.vpdk-nav-link .nav-circle ellipse,
-.vpdk-nav-dropdown-btn .nav-circle ellipse {
-  fill: none;
-  stroke: #2e3d30;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-}
-.vpdk-nav-link:hover .nav-circle ellipse,
-.vpdk-nav-dropdown-btn:hover .nav-circle ellipse {
-  animation: drawCircle 0.5s ease forwards;
-}
-@keyframes drawCircle {
-  to { stroke-dashoffset: 0; }
-}
-
+.vpdk-nav-center{display:flex;align-items:center;gap:4px;position:absolute;left:50%;transform:translateX(-50%)}
+.vpdk-nav-link{padding:6px 14px;font-size:13px;color:#2e3d30;text-decoration:none;border-radius:6px;transition:all .2s;white-space:nowrap}
+.vpdk-nav-link:hover{background:#f0ede6}
 .vpdk-nav-dropdown{position:relative}
-.vpdk-nav-dropdown-btn{padding:6px 14px;font-size:16px;color:#2e3d30;background:none;border:none;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;white-space:nowrap;position:relative}
-.vpdk-nav-dropdown-btn:hover{background:transparent}
+.vpdk-nav-dropdown-btn{padding:6px 14px;font-size:13px;color:#2e3d30;background:none;border:none;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;white-space:nowrap}
+.vpdk-nav-dropdown-btn:hover{background:#f0ede6}
 .vpdk-nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:8px;min-width:180px;box-shadow:0 8px 32px rgba(0,0,0,.1);z-index:9999}
 .vpdk-nav-dropdown:hover .vpdk-nav-dropdown-menu{display:block}
-.vpdk-nav-dropdown-item{display:block;padding:9px 14px;font-size:18px;color:#2e3d30;text-decoration:none;border-radius:8px;transition:all .2s}
+.vpdk-nav-dropdown-item{display:block;padding:9px 14px;font-size:13px;color:#2e3d30;text-decoration:none;border-radius:8px;transition:all .2s}
 .vpdk-nav-dropdown-item:hover{background:#f0ede6;color:#b8963e}
-.vpdk-nav-right{display:flex;gap:6px;align-items:center;flex-shrink:0}
+.vpdk-nav-right{display:flex;gap:6px;align-items:center}
 .vpdk-nav-lang{padding:4px 12px;font-size:11px;font-weight:500;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7c6d;transition:all .2s;font-family:'DM Sans',sans-serif}
 .vpdk-nav-lang.active{background:#2e3d30;color:#fcfcfa;border-color:#2e3d30}
-.vpdk-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index:10000}
+.vpdk-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
 .vpdk-hamburger span{width:22px;height:2px;background:#2e3d30;border-radius:2px;display:block}
 .vpdk-mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid #d6ddd7;padding:16px;z-index:9998;box-shadow:0 8px 24px rgba(0,0,0,.08);max-height:80vh;overflow-y:auto}
 .vpdk-mobile-menu.open{display:block}
@@ -85,7 +41,7 @@
 @media(max-width:900px){
   .vpdk-nav-center{display:none!important}
   .vpdk-nav-global{padding:0 16px!important;height:56px!important}
-  .vpdk-hamburger{display:flex!important;z-index:10000}
+  .vpdk-hamburger{display:flex!important}
   .vpdk-mobile-menu{top:56px!important}
 }
 
@@ -96,28 +52,28 @@ body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
 .blog-hero{background:#1a2419;padding:80px 24px 60px;text-align:center}
 .blog-hero-img{width:100%;max-width:460px;border-radius:16px;margin:0 auto 32px;display:block;box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .blog-category{font-size:11px;letter-spacing:.14em;color:#b8963e;text-transform:uppercase;font-weight:600;margin-bottom:16px;display:block}
-.blog-hero h1,.blog-hero .blog-main-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,52px);font-weight:300;color:#fcfcfa;line-height:1.15;margin-bottom:8px}
+.blog-hero h1,.blog-hero h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,52px);font-weight:300;color:#fcfcfa;line-height:1.15;margin-bottom:8px}
 .blog-hero h2{font-family:'Cormorant Garamond',serif;font-size:clamp(16px,2.5vw,24px);font-weight:300;color:#d4ae5e;font-style:italic;margin-bottom:24px}
 .blog-meta{font-size:13px;color:rgba(252,252,250,.5);display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
 .blog-body{max-width:780px;margin:0 auto;padding:60px 24px 100px;color:#1e2b1f;line-height:1.85;font-size:17px}
 .blog-body p{margin-bottom:24px}
 .blog-body h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,34px);font-weight:500;color:#1a2419;margin:48px 0 20px;line-height:1.2}
-.blog-body h3{font-size:19px;font-weight:600;color:#2e3d30;margin:32px 0 12px}
+.blog-body h3{font-size:17px;font-weight:600;color:#2e3d30;margin:32px 0 12px}
 .blog-quote{font-style:italic;color:#4a5a4b;display:block;padding:20px 24px;border-left:3px solid #b8963e;background:#f5f2ec;border-radius:0 8px 8px 0;margin:28px 0;font-size:16px;line-height:1.7}
 .blog-highlight{background:#1a2419;color:#fcfcfa;border-radius:16px;padding:32px;margin:40px 0;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.7;text-align:center}
 .blog-checklist{background:#f0ede6;border-radius:16px;padding:32px;margin:40px 0}
 .blog-checklist h3{font-family:'Cormorant Garamond',serif;font-size:22px;color:#1a2419;margin:0 0 20px}
-.blog-checklist-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(46,61,48,.1);font-size:18px;color:#2e3d30}
+.blog-checklist-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(46,61,48,.1);font-size:15px;color:#2e3d30}
 .blog-checklist-item:last-child{border-bottom:none}
 .blog-checklist-item::before{content:'✓';color:#b8963e;font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px}
 .blog-redflags{background:#fff8f8;border:1px solid #fdd;border-radius:16px;padding:28px 32px;margin:32px 0}
 .blog-redflags h3{color:#c0392b;margin:0 0 16px;font-size:18px}
-.blog-redflag-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(192,57,43,.08);font-size:18px;line-height:1.6}
+.blog-redflag-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(192,57,43,.08);font-size:15px;line-height:1.6}
 .blog-redflag-item:last-child{border-bottom:none}
 .blog-redflag-item::before{content:'⚠';flex-shrink:0}
 .blog-greenflags{background:#f5fdf5;border:1px solid #c8e6c9;border-radius:16px;padding:28px 32px;margin:32px 0}
 .blog-greenflags h3{color:#2e7d32;margin:0 0 16px;font-size:18px}
-.blog-greenflag-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(46,125,50,.08);font-size:18px;line-height:1.6}
+.blog-greenflag-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(46,125,50,.08);font-size:15px;line-height:1.6}
 .blog-greenflag-item:last-child{border-bottom:none}
 .blog-greenflag-item::before{content:'✓';color:#2e7d32;font-weight:700;flex-shrink:0}
 .blog-signals{display:grid;gap:16px;margin:28px 0}
@@ -129,13 +85,13 @@ body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
 .blog-stat{text-align:center;background:#fff;border:1px solid #d6ddd7;border-radius:12px;padding:20px 24px}
 .blog-stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;color:#b8963e;display:block}
 .blog-stat-label{font-size:13px;color:#6b7c6d;margin-top:4px}
-.blog-warning{background:#fff8f0;border:1px solid #f0c060;border-radius:12px;padding:20px 24px;margin:28px 0;font-size:18px;line-height:1.7}
+.blog-warning{background:#fff8f0;border:1px solid #f0c060;border-radius:12px;padding:20px 24px;margin:28px 0;font-size:15px;line-height:1.7}
 .blog-back{display:inline-flex;align-items:center;gap:8px;color:#b8963e;text-decoration:none;font-size:14px;font-weight:500;margin-bottom:40px}
 footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:#2e3d30}
 .footer-logo span{color:#b8963e;font-style:italic}
 .footer-note{font-size:13px;color:#6b7c6d;max-width:540px;line-height:1.7;text-align:right}
-@media(max-width:768px){.blog-body{padding:40px 20px 60px;font-size:16px}.blog-hero{padding:60px 20px 40px}.blog-highlight{font-size:19px;padding:24px}.blog-stats{gap:16px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
+@media(max-width:768px){.blog-body{padding:40px 20px 60px;font-size:16px}.blog-hero{padding:60px 20px 40px}.blog-highlight{font-size:17px;padding:24px}.blog-stats{gap:16px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
 </style>
 <script>
 (function(){
@@ -162,58 +118,18 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
 }
 </style>
 <link rel="canonical" href="https://vitalprotocoldk.com/blog-butunsel-saglik">
-<meta name="keywords" content="bütünsel sağlık, wellness, hücresel sağlık, zihinsel sağlık, sinerji protokolü">
-<meta name="author" content="Deniz KAT">
-<meta name="robots" content="index, follow">
-<meta property="og:url" content="https://vitalprotocoldk.com/blog-butunsel-saglik">
-<meta property="og:type" content="article">
-<meta property="og:image" content="https://vitalprotocoldk.com/logo.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="tr_TR">
-<meta property="og:site_name" content="Vital Protocol DK">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bütünsel Sağlık Nedir? Fiziksel, Zihinsel ve Hücresel Denge | Vital Protocol DK">
-<meta name="twitter:description" content="Fiziksel, zihinsel ve hücresel sağlık arasındaki bağlantı. Üçlü Sinerji Protokolü ile bütünsel wellness.">
-<meta name="twitter:image" content="https://vitalprotocoldk.com/logo.png">
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Bütünsel Sağlık Nedir? Fiziksel, Zihinsel ve Hücresel Denge",
-  "description": "Fiziksel, zihinsel ve hücresel sağlık arasındaki bağlantı. Üçlü Sinerji Protokolü ile bütünsel wellness.",
-  "url": "https://vitalprotocoldk.com/blog-butunsel-saglik",
-  "datePublished": "2024-01-20",
-  "dateModified": "2024-01-20",
-  "author": {"@type": "Person", "name": "Deniz KAT"},
-  "publisher": {"@type": "Organization", "name": "Vital Protocol DK", "url": "https://vitalprotocoldk.com"},
-  "image": "https://vitalprotocoldk.com/logo.png",
-  "mainEntityOfPage": "https://vitalprotocoldk.com/blog-butunsel-saglik"
-}</script>
 <link rel="alternate" hreflang="tr" href="https://vitalprotocoldk.com/blog-butunsel-saglik">
 <link rel="alternate" hreflang="en" href="https://vitalprotocoldk.com/blog-butunsel-saglik">
 <link rel="alternate" hreflang="es" href="https://vitalprotocoldk.com/blog-butunsel-saglik">
 <link rel="alternate" hreflang="x-default" href="https://vitalprotocoldk.com/blog-butunsel-saglik">
 </head><body><nav class="vpdk-nav-global">
-  <a class="vpdk-nav-logo" href="/index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 48" width="220" height="40" role="img" aria-label="vitalprotocolDK">
-  <title>vitalprotocolDK</title>
-  <style>
-    .vp-ring{fill:none;stroke:#b8963e;stroke-width:1.8}
-    .vp-dot{fill:#b8963e}
-    .vp-word{font-family:"Cormorant Garamond",Georgia,serif;font-size:28px;font-weight:500;fill:#1e2b1f}
-    .vp-dk{font-family:"Cormorant Garamond",Georgia,serif;font-size:28px;font-weight:600;font-style:italic;fill:#b8963e;stroke:#2e3d30;stroke-width:0.4px;paint-order:stroke fill}
-  </style>
-  <circle class="vp-ring" cx="22" cy="24" r="18"/>
-  <circle class="vp-dot" cx="31" cy="35" r="7"/>
-  <text x="50" y="33">
-    <tspan class="vp-word">vitalprotocol</tspan><tspan class="vp-dk">DK</tspan>
-  </text>
-</svg></a>
+  <a class="vpdk-nav-logo" href="/index.html"><img src="/logo.png" alt="vitalprotocolDK" style="height:36px;width:auto;display:block"></a>
   <div class="vpdk-nav-center">
     <a href="/index.html" class="vpdk-nav-link" data-nav="home">Anasayfa</a>
     <a href="/saglik-ucgeni.html" class="vpdk-nav-link" data-nav="health">Sağlık Üçgeni</a>
     <div class="vpdk-nav-dropdown">
       <button class="vpdk-nav-dropdown-btn">
-        <span data-nav="protocols">Çözümler</span>
+        <span data-nav="protocols">Protokoller</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:12px;height:12px"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="vpdk-nav-dropdown-menu">
@@ -242,50 +158,10 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
     </button>
   </div>
 </nav>
-<script>
-
-(function(){
-  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Çözümler",blog:"Blog",stories:"Hikayeler",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Solutions",blog:"Insights",stories:"Stories",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Soluciones",blog:"Perspectivas",stories:"Historias",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
-  function applyNav(l){
-    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){b.classList.toggle("active",b.textContent.trim().toLowerCase()===l)});
-    var lbl=lb[l]||lb.tr;
-    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lbl[k]});
-  }
-  function applyPage(l){
-    if(typeof setLang==="function"){setLang(l);return;}
-    var allLangDivs=document.querySelectorAll('[class$="-lang"],[class*="-lang active"]');
-    document.querySelectorAll('[id$="-tr"],[id$="-en"],[id$="-es"]').forEach(function(el){
-      var show=el.id.endsWith('-'+l);
-      el.style.display=show?'block':'none';
-    });
-    var btns=document.querySelectorAll('button[onclick*="Lang"]');
-    btns.forEach(function(btn){if(btn.textContent.trim().toLowerCase()===l)btn.click();});
-  }
-  window.vpNavLang=function(l,btn){
-    localStorage.setItem('vpLang',l);
-    applyNav(l);
-    applyPage(l);
-  };
-  document.addEventListener("DOMContentLoaded",function(){
-    var saved=localStorage.getItem('vpLang')||'tr';
-    applyNav(saved);
-    setTimeout(function(){applyPage(saved);},50);
-    var path=window.location.pathname.split('/').pop()||'index.html';
-    document.querySelectorAll('.vpdk-nav-link,.vpdk-nav-dropdown-item,.vpdk-mobile-link').forEach(function(el){
-      var h=(el.getAttribute('href')||'').split('/').pop();
-      if(h&&h===path){el.style.color='#b8963e';el.style.fontWeight='500';}
-    });
-  });
-})();
-
-</script>
-
 <div class="vpdk-mobile-menu" id="vpdk-mob">
   <a href="/index.html" class="vpdk-mobile-link" data-mnav="home">Anasayfa</a>
   <a href="/saglik-ucgeni.html" class="vpdk-mobile-link" data-mnav="health">Sağlık Üçgeni</a>
-  <div class="vpdk-mobile-section" data-mnavs="protocols">Çözümler</div>
+  <div class="vpdk-mobile-section" data-mnavs="protocols">Protokoller</div>
   <div class="vpdk-mobile-sub">
     <a href="/hl5.html" class="vpdk-mobile-link">HL5</a>
     <a href="/fit20.html" class="vpdk-mobile-link">FIT20</a>
@@ -298,11 +174,10 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
   </div>
   <a href="/hakkimda.html" class="vpdk-mobile-link" data-mnav="mission">Misyon</a>
   <a href="/blog.html" target="_blank" class="vpdk-mobile-link" data-mnav="blog">Blog</a>
-  <a href="/hikayeler.html" class="vpdk-mobile-link" data-mnav="stories">Hikayeler</a>
   <a href="/faq.html" class="vpdk-mobile-link" data-mnav="faq">SSS</a>
   <a href="/iletisim.html" class="vpdk-mobile-link" data-mnav="contact">İletişim</a>
 </div>
-
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
 html{overflow-x:hidden;width:100%}
@@ -325,7 +200,7 @@ html{overflow-x:hidden;width:100%}
 html{scroll-behavior:smooth}
 .lang-section{display:none}
 .lang-section.active{display:block}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;width:100%;max-width:100%;font-size:18px}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;width:100%;max-width:100%}
 
 
 
@@ -333,7 +208,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
    1. HERO
 ══════════════════════════════════ */
 .hero{
-  min-height:auto;
+  min-height:100vh;
   display:grid;grid-template-columns:1fr 1fr;
   align-items:center;gap:0;
   background:var(--cream);
@@ -351,7 +226,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
 .hero-h1{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(52px,5vw,76px);
+  font-size:clamp(48px,5vw,72px);
   font-weight:300;line-height:1.08;
   color:var(--forest-deep);margin-bottom:28px;
 }
@@ -367,11 +242,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 }
 .hero-quote p{
   font-family:'Cormorant Garamond',serif;
-  font-size:26px;font-style:italic;
+  font-size:24px;font-style:italic;
   color:var(--forest);line-height:1.65;
 }
 .hero-tagline{
-  font-size:21px;color:var(--muted);line-height:1.8;
+  font-size:20px;color:var(--muted);line-height:1.8;
   max-width:480px;font-weight:300;
 }
 .hero-tagline b{color:var(--forest);font-weight:500}
@@ -464,7 +339,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .section-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
 .section-h2{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(38px,3.5vw,56px);
+  font-size:clamp(34px,3.5vw,52px);
   font-weight:300;line-height:1.12;
   color:var(--forest-deep);margin-bottom:8px;
 }
@@ -479,7 +354,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 }
 .yasam-quote p{
   font-family:'Cormorant Garamond',serif;
-  font-size:25px;font-style:italic;
+  font-size:23px;font-style:italic;
   color:var(--forest);line-height:1.65;
 }
 .yasam-dark-card{
@@ -513,13 +388,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .herbeden-section .section-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold)}
 .herbeden-h2{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(36px,4vw,58px);
+  font-size:clamp(32px,4vw,54px);
   font-weight:300;line-height:1.15;
   color:var(--forest-deep);margin-bottom:16px;
 }
 .herbeden-h2 em{font-style:normal;color:var(--gold)}
 .herbeden-sub{
-  font-size:21px;color:var(--muted);
+  font-size:20px;color:var(--muted);
   max-width:620px;margin:0 auto 56px;line-height:1.75;font-weight:300;
 }
 .herbeden-grid{
@@ -546,7 +421,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
   line-height:1.2;
 }
 .hb-text{
-  font-size:20px;color:var(--muted);
+  font-size:18px;color:var(--muted);
   line-height:1.75;text-transform:none;
 }
 
@@ -568,11 +443,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .nitro-header .section-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold)}
 .nitro-h2{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(36px,4vw,56px);font-weight:300;
+  font-size:clamp(32px,4vw,52px);font-weight:300;
   color:var(--forest-deep);line-height:1.15;margin-bottom:10px;
 }
 .nitro-h2 em{font-style:italic;color:var(--gold)}
-.nitro-sub{font-size:18px;color:var(--muted);line-height:1.7;letter-spacing:.02em}
+.nitro-sub{font-size:15px;color:var(--muted);line-height:1.7;letter-spacing:.02em}
 .nitro-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .nitro-card-light{
   background:white;border:1px solid var(--border);
@@ -591,7 +466,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
   color:var(--forest-deep);margin-bottom:18px;line-height:1.2;
 }
 .nitro-card-text{
-  font-size:21px;color:var(--muted);line-height:1.85;font-weight:300;
+  font-size:20px;color:var(--muted);line-height:1.85;font-weight:300;
 }
 .nitro-card-dark{
   background:var(--forest);border-radius:20px;padding:40px;
@@ -607,7 +482,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .nitro-checks{margin-top:24px;display:flex;flex-direction:column;gap:10px}
 .nitro-check{
   display:flex;align-items:center;gap:10px;
-  font-size:19px;color:var(--gold-light);letter-spacing:.03em;font-weight:500;
+  font-size:17px;color:var(--gold-light);letter-spacing:.03em;font-weight:500;
 }
 .nitro-check::before{
   content:'✓';color:var(--gold);font-size:14px;font-weight:600;
@@ -647,12 +522,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .sinerji-eyebrow::before,.sinerji-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold)}
 .sinerji-h2{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(34px,3.5vw,54px);font-weight:300;
+  font-size:clamp(30px,3.5vw,50px);font-weight:300;
   color:var(--forest-deep);line-height:1.2;margin-bottom:14px;
 }
 .sinerji-h2 em{font-style:italic;color:var(--gold-light)}
 .sinerji-sub{
-  font-size:21px;color:var(--muted);
+  font-size:19px;color:var(--muted);
   max-width:680px;margin:0 auto 60px;line-height:1.75;font-weight:300;
 }
 .sinerji-grid{
@@ -690,13 +565,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 }
 .sinerji-col.center-col .sinerji-product{color:var(--cream)}
 .sinerji-desc{
-  font-size:19px;color:var(--muted);
+  font-size:17px;color:var(--muted);
   line-height:1.8;font-weight:300;margin-bottom:20px;
 }
 .sinerji-col.center-col .sinerji-desc{color:rgba(252,252,250,.7)}
 .sinerji-tags{display:flex;flex-direction:column;gap:8px}
 .sinerji-tag{
-  font-size:18px;
+  font-size:15px;
   color:var(--muted);font-weight:400;
   padding:8px 0;
   border-bottom:1px solid rgba(0,0,0,.07);
@@ -715,12 +590,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 }
 .sinerji-eq-text{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(32px,3vw,48px);font-weight:300;
+  font-size:clamp(28px,3vw,44px);font-weight:300;
   color:var(--forest-deep);letter-spacing:.04em;
 }
 .sinerji-eq-text span{color:var(--gold)}
 .sinerji-eq-sub{
-  font-size:20px;color:var(--muted);
+  font-size:18px;color:var(--muted);
   margin-top:12px;line-height:1.7;
 }
 
@@ -735,11 +610,11 @@ footer{
 }
 .footer-logo{
   font-family:'Cormorant Garamond',serif;
-  font-size:20px;color:var(--forest);
+  font-size:18px;color:var(--forest);
 }
 .footer-logo span{color:var(--gold);font-style:italic}
 .footer-note{
-  font-size:17px;color:var(--muted);
+  font-size:14px;color:var(--muted);
   max-width:540px;line-height:1.7;text-align:right;
 }
 
@@ -817,12 +692,12 @@ footer{
 .quiz-cta-wrap{text-align:center}
 .quiz-h2{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(36px,4vw,58px);font-weight:300;
+  font-size:clamp(32px,4vw,54px);font-weight:300;
   color:var(--cream);line-height:1.15;margin-bottom:16px;
 }
 .quiz-h2 em{font-style:italic;color:var(--gold-light)}
 .quiz-sub{
-  font-size:19px;color:rgba(252,252,250,.6);
+  font-size:17px;color:rgba(252,252,250,.6);
   max-width:580px;margin:0 auto 40px;
   font-weight:300;line-height:1.7;
 }
@@ -842,7 +717,7 @@ footer{
   border-radius:0;
   text-decoration:none;
   font-weight:700;
-  font-size:18px;
+  font-size:15px;
   letter-spacing:.08em;
   text-transform:uppercase;
   transition:all .3s;
@@ -876,7 +751,7 @@ footer{
 .social-eyebrow::before,.social-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold)}
 .social-h2{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(32px,3.5vw,50px);font-weight:300;
+  font-size:clamp(28px,3.5vw,46px);font-weight:300;
   color:var(--forest-deep);line-height:1.2;
 }
 .social-h2 em{font-style:italic;color:var(--gold)}
@@ -896,7 +771,7 @@ footer{
 .review-stars{color:var(--gold);font-size:18px;letter-spacing:2px}
 .review-text{
   font-family:'Cormorant Garamond',serif;
-  font-size:21px;font-style:italic;
+  font-size:19px;font-style:italic;
   color:var(--forest);line-height:1.7;flex:1;
 }
 .review-author{
@@ -911,8 +786,8 @@ footer{
   font-size:16px;font-weight:500;color:var(--cream);
   flex-shrink:0;
 }
-.review-name{font-size:18px;font-weight:500;color:var(--forest-deep)}
-.review-meta{font-size:16px;color:var(--muted)}
+.review-name{font-size:15px;font-weight:500;color:var(--forest-deep)}
+.review-meta{font-size:13px;color:var(--muted)}
 
 @media(max-width:768px){
   .reviews-grid{grid-template-columns:1fr}
@@ -963,14 +838,14 @@ footer{
   .hero{grid-template-columns:1fr!important;width:100%!important}
   .hero-left{padding:70px 18px 36px!important;width:100%!important}
   .hero-right{height:300px!important;width:100%!important}
-  .hero-quote p{font-size:18px!important}
+  .hero-quote p{font-size:15px!important}
   .yasam-section{grid-template-columns:1fr!important;width:100%!important}
   .yasam-photo{margin:0!important;border-radius:0!important;width:100%!important;min-height:260px!important}
   .yasam-content{padding:28px 18px!important;width:100%!important}
   .yasam-quote{padding:12px 14px!important}
-  .yasam-quote p{font-size:20px!important}
+  .yasam-quote p{font-size:17px!important}
   .yasam-dark-card{padding:18px 14px!important}
-  .yasam-dark-card p{font-size:18px!important}
+  .yasam-dark-card p{font-size:15px!important}
   .herbeden-section{padding:48px 16px!important;width:100%!important}
   .herbeden-grid{grid-template-columns:1fr!important;gap:14px!important}
   .herbeden-card{padding:28px 18px!important;width:100%!important}
@@ -983,19 +858,19 @@ footer{
   .sinerji-col,.sinerji-col.center-col{padding:22px 18px!important;width:100%!important}
   .sinerji-inner{width:100%!important;padding:0!important}
   .sinerji-equation{padding-top:32px!important;margin-top:32px!important}
-  .sinerji-eq-text{font-size:clamp(18px,4vw,30px)!important}
-  .sinerji-eq-sub{font-size:17px!important}
+  .sinerji-eq-text{font-size:clamp(16px,4vw,28px)!important}
+  .sinerji-eq-sub{font-size:14px!important}
   .quiz-section{padding:48px 14px!important;width:100%!important}
   .quiz-inner{width:100%!important;padding:0!important}
   .quiz-card{padding:20px 14px!important;width:100%!important;border-radius:14px!important}
   .quiz-options{grid-template-columns:1fr!important}
   .quiz-opt{font-size:13px!important;padding:12px 14px!important;width:100%!important}
-  .quiz-sub{font-size:17px!important}
+  .quiz-sub{font-size:14px!important}
   .social-section{padding:48px 16px!important;width:100%!important}
   .reviews-grid{grid-template-columns:1fr!important}
   .review-card{padding:22px 16px!important;width:100%!important}
   footer{padding:28px 16px!important;flex-direction:column!important;text-align:center!important;width:100%!important}
-  .footer-note{text-align:center!important;font-size:14px!important;width:100%!important}
+  .footer-note{text-align:center!important;font-size:11px!important;width:100%!important}
 }
 </style>
 <script>
@@ -1017,8 +892,8 @@ document.addEventListener('click', function(e){
     t = t.parentElement;
   }
 });
-</script><div class="blog-lang lang-section active" data-lang="tr">
-<div class="blog-hero"><img loading="lazy" src="/butunsel.png" alt="Bütünsel Sağlık Nedir ve Neden Önemlidir?" class="blog-hero-img">
+</script><div class="blog-lang active" data-lang="tr">
+<div class="blog-hero"><img src="/butunsel.png" alt="Bütünsel Sağlık Nedir ve Neden Önemlidir?" class="blog-hero-img">
 <span class="blog-category">✦ Bütünsel Sağlık</span><h1>Bütünsel Sağlık Nedir ve Neden Önemlidir?</h1><h2>Fiziksel, zihinsel ve hücresel sağlık arasındaki bağlantıyı keşfedin</h2>
 <div class="blog-meta"><span>⏱ ~6 dk okuma</span><span>✦ Deniz KAT</span></div></div>
 <div class="blog-body"><a href="/blog.html" class="blog-back">← Blog'a Dön</a>
@@ -1046,9 +921,9 @@ document.addEventListener('click', function(e){
 <p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Danışmanı · vitalprotocolDK</p>
 </div>
 <footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.</div></footer>
-</div><div class="blog-lang lang-section" data-lang="en">
-<div class="blog-hero"><img loading="lazy" src="/butunsel.png" alt="What Is Holistic Health and Why Does It Matter?" class="blog-hero-img">
-<span class="blog-category">✦ Holistic Health</span><h2 class="blog-main-title">What Is Holistic Health and Why Does It Matter?</h2><h2>Discover the connection between physical, mental and cellular health</h2>
+</div><div class="blog-lang" data-lang="en">
+<div class="blog-hero"><img src="/butunsel.png" alt="What Is Holistic Health and Why Does It Matter?" class="blog-hero-img">
+<span class="blog-category">✦ Holistic Health</span><h1>What Is Holistic Health and Why Does It Matter?</h1><h2>Discover the connection between physical, mental and cellular health</h2>
 <div class="blog-meta"><span>⏱ ~6 min read</span><span>✦ Deniz KAT</span></div></div>
 <div class="blog-body"><a href="/blog.html" class="blog-back">← Back to Blog</a>
 <p>Holistic health is not just physical well-being — it's the balanced functioning of mental and cellular systems together. Your body is like a perfect machine made up of interconnected gears. A malfunction in one gear reduces the performance of the entire system.</p>
@@ -1075,9 +950,9 @@ document.addEventListener('click', function(e){
 <p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Consultant · vitalprotocolDK</p>
 </div>
 <footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Transparency Note:</strong> This page is for informational purposes only. Supplements do not replace a balanced diet.</div></footer>
-</div><div class="blog-lang lang-section" data-lang="es">
-<div class="blog-hero"><img loading="lazy" src="/butunsel.png" alt="¿Qué Es la Salud Integral y Por Qué Importa?" class="blog-hero-img">
-<span class="blog-category">✦ Salud Integral</span><h2 class="blog-main-title">¿Qué Es la Salud Integral y Por Qué Importa?</h2><h2>Descubre la conexión entre salud física, mental y celular</h2>
+</div><div class="blog-lang" data-lang="es">
+<div class="blog-hero"><img src="/butunsel.png" alt="¿Qué Es la Salud Integral y Por Qué Importa?" class="blog-hero-img">
+<span class="blog-category">✦ Salud Integral</span><h1>¿Qué Es la Salud Integral y Por Qué Importa?</h1><h2>Descubre la conexión entre salud física, mental y celular</h2>
 <div class="blog-meta"><span>⏱ ~6 min de lectura</span><span>✦ Deniz KAT</span></div></div>
 <div class="blog-body"><a href="/blog.html" class="blog-back">← Volver al Blog</a>
 <p>La salud integral no es solo el bienestar físico — es el funcionamiento equilibrado de los sistemas mentales y celulares juntos. Tu cuerpo es como una máquina perfecta de engranajes interconectados. Un mal funcionamiento en un engranaje reduce el rendimiento de todo el sistema.</p>
@@ -1098,41 +973,165 @@ document.addEventListener('click', function(e){
 <footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Nota de Transparencia:</strong> Esta página es solo informativa. Los suplementos no reemplazan una dieta equilibrada.</div></footer>
 </div>
 
+<!-- VERA -->
+<style>
+#vera-widget{position:fixed;bottom:24px;left:24px;z-index:2147483647;font-family:'DM Sans',sans-serif}
+#vera-btn{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#2e3d30,#4a5e4c);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(46,61,48,.35);position:relative;z-index:2147483647}
+#vera-btn svg{width:26px;height:26px;fill:#fcfcfa;pointer-events:none}
+#vera-btn::after{content:'';position:absolute;width:100%;height:100%;border-radius:50%;border:2px solid #2e3d30;animation:vp 2s infinite;opacity:0}
+@keyframes vp{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.5);opacity:0}}
+#vera-panel{position:absolute;bottom:68px;left:0;width:340px;background:#fff;border-radius:20px;box-shadow:0 12px 48px rgba(0,0,0,.18);flex-direction:column;overflow:hidden;display:none}
+#vera-panel.vopen{display:flex}
+#vera-head{background:linear-gradient(135deg,#2e3d30,#3d5240);padding:14px 18px;display:flex;align-items:center;gap:10px}
+#vera-av{width:38px;height:38px;border-radius:50%;background:rgba(184,150,62,.2);border:2px solid rgba(184,150,62,.4);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:17px;color:#d4ae5e;flex-shrink:0}
+#vera-hi h4{margin:0;font-size:14px;font-weight:600;color:#fcfcfa;font-family:'Cormorant Garamond',serif}
+#vera-hi p{margin:2px 0 0;font-size:11px;color:rgba(252,252,250,.55)}
+#vera-x{margin-left:auto;background:none;border:none;cursor:pointer;color:rgba(252,252,250,.6);font-size:18px;line-height:1;padding:0}
+#vera-langs{display:flex;gap:6px;padding:8px 14px;border-bottom:1px solid #f0ede6;background:#fafaf8}
+.vlb{padding:3px 10px;font-size:10px;font-weight:600;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7c6d;font-family:'DM Sans',sans-serif}
+.vlb.va{background:#2e3d30;color:#fcfcfa;border-color:#2e3d30}
+#vera-msgs{overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;max-height:260px}
+.vm{display:flex;gap:8px;align-items:flex-start}
+.vm.vu{flex-direction:row-reverse}
+.vmav{width:26px;height:26px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#2e3d30,#4a5e4c);display:flex;align-items:center;justify-content:center;font-size:11px;color:#d4ae5e;font-family:'Cormorant Garamond',serif}
+.vm.vu .vmav{background:#f0ede6;color:#2e3d30}
+.vmb{max-width:220px;padding:9px 13px;border-radius:16px;font-size:13px;line-height:1.6;color:#1e2b1f;background:#f5f2ec;white-space:pre-wrap}
+.vm.vu .vmb{background:#2e3d30;color:#fcfcfa;border-radius:16px 16px 4px 16px}
+.vm:not(.vu) .vmb{border-radius:4px 16px 16px 16px}
+#vera-typing{display:none;gap:8px;align-items:center;padding:4px 14px}
+#vera-typing.vs{display:flex}
+.vdots{display:flex;gap:4px;padding:10px 13px;background:#f5f2ec;border-radius:4px 16px 16px 16px}
+.vdots span{width:5px;height:5px;border-radius:50%;background:#b8963e;animation:vd .8s infinite}
+.vdots span:nth-child(2){animation-delay:.15s}
+.vdots span:nth-child(3){animation-delay:.3s}
+@keyframes vd{0%,80%,100%{transform:scale(.8);opacity:.4}40%{transform:scale(1.1);opacity:1}}
+#vera-quick{padding:6px 14px 2px;display:flex;gap:5px;flex-wrap:wrap;border-top:1px solid #f0ede6}
+.vqb{padding:4px 9px;font-size:11px;border-radius:12px;border:1px solid #d6ddd7;background:#fff;color:#4a5a4b;cursor:pointer;font-family:'DM Sans',sans-serif}
+#vera-disc{padding:7px 14px;font-size:10px;color:#9aaa9b;border-top:1px solid #f0ede6;line-height:1.5;background:#fafaf8}
+#vera-inp-wrap{display:flex;gap:8px;padding:10px 14px;border-top:1px solid #f0ede6}
+#vera-inp{flex:1;padding:8px 13px;border:1px solid #d6ddd7;border-radius:20px;font-size:13px;outline:none;font-family:'DM Sans',sans-serif}
+#vera-inp:focus{border-color:#2e3d30}
+#vera-go{width:34px;height:34px;border-radius:50%;background:#2e3d30;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+#vera-go svg{width:14px;height:14px;fill:#fcfcfa;pointer-events:none}
+@media(max-width:480px){#vera-panel{width:calc(100vw - 32px)}}
+</style>
 
+<div id="vera-widget">
+  <button id="vera-btn" aria-label="Vera ile konuş">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+  </button>
+  <div id="vera-panel">
+    <div id="vera-head">
+      <div id="vera-av">V</div>
+      <div id="vera-hi"><h4>Vera</h4><p id="vera-st">vitalprotocolDK · Wellness Rehberi</p></div>
+      <button id="vera-x">✕</button>
+    </div>
+    <div id="vera-langs">
+      <button class="vlb va" data-l="tr">TR</button>
+      <button class="vlb" data-l="en">EN</button>
+      <button class="vlb" data-l="es">ES</button>
+    </div>
+    <div id="vera-msgs"></div>
+    <div id="vera-typing"><div class="vmav">V</div><div class="vdots"><span></span><span></span><span></span></div></div>
+    <div id="vera-quick"></div>
+    <div id="vera-disc"></div>
+    <div id="vera-inp-wrap">
+      <input id="vera-inp" type="text" placeholder="Sorunuzu yazın...">
+      <button id="vera-go"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+    </div>
+  </div>
+</div>
 
 <script>
 (function(){
-  function addCircles() {
-    var links = document.querySelectorAll('.vpdk-nav-link, .vpdk-nav-dropdown-btn');
-    links.forEach(function(el) {
-      if (el.querySelector('.nav-circle')) return;
-      var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
-      svg.setAttribute('class','nav-circle');
-      svg.setAttribute('viewBox','0 0 100 100');
-      svg.setAttribute('preserveAspectRatio','none');
-      var ellipse = document.createElementNS('http://www.w3.org/2000/svg','ellipse');
-      ellipse.setAttribute('cx','50');
-      ellipse.setAttribute('cy','50');
-      ellipse.setAttribute('rx','46');
-      ellipse.setAttribute('ry','18');
-      // Hafif döndürme - el yazısı hissi
-      ellipse.setAttribute('transform','rotate(-3, 50, 50)');
-      svg.appendChild(ellipse);
-      el.appendChild(svg);
-      // Hover'da animasyonu sıfırla (tekrar çizilsin)
-      el.addEventListener('mouseenter', function() {
-        ellipse.style.animation = 'none';
-        ellipse.offsetHeight; // reflow
-        ellipse.style.animation = '';
-      });
-    });
+var vL=localStorage.getItem('vpLang')||'tr';
+var vOpen=false;
+var vHist=[];
+var vT={
+  tr:{ph:'Sorunuzu yazın...',st:'vitalprotocolDK · Wellness Rehberi',disc:'⚠ Bu bilgiler genel rehberlik amaçlıdır, tıbbi reçete yerine geçmez.',wel:'Merhaba! Ben Vera 🌿\n\nvitalprotocolDK\'nin wellness rehberiyim. Ürünler, protokoller veya wellness hakkında sana yardımcı olmaktan mutluluk duyarım!',q:['Nitro Plus nedir?','Hangi protokol bana uyar?','Ürünleri nereden alırım?','Wellness Üçgeni nedir?']},
+  en:{ph:'Type your question...',st:'vitalprotocolDK · Wellness Guide',disc:'⚠ Information is for general guidance only, not medical advice.',wel:"Hello! I'm Vera 🌿\n\nI'm the wellness guide at vitalprotocolDK. I'm happy to help you with products, protocols or wellness questions!",q:['What is Nitro Plus?','Which protocol suits me?','Where can I buy products?','What is the Wellness Triangle?']},
+  es:{ph:'Escribe tu pregunta...',st:'vitalprotocolDK · Guía de Bienestar',disc:'⚠ La información es orientativa y no reemplaza el consejo médico.',wel:'¡Hola! Soy Vera 🌿\n\nSoy la guía de bienestar de vitalprotocolDK. ¡Estoy aquí para ayudarte con productos, protocolos o preguntas de bienestar!',q:['¿Qué es Nitro Plus?','¿Qué protocolo me conviene?','¿Dónde puedo comprar?','¿Qué es el Triángulo de Bienestar?']}
+};
+var vSys='Sen Vera\'sın — vitalprotocolDK wellness rehberi. Deniz KAT adına çalışıyorsun. Samimi, sıcak ama profesyonel ol. "özüne dönmek", "canlanmak", "sürdürülebilir enerji" gibi kavramlar kullan. Teknik jargondan kaçın.\n\nÜRÜNLER: Nitro Plus (Nitrik Oksit, vasküler sağlık), Sunrise (22 süper gıda, B vitamini), Sunset (Omega-3, Astaksantin, gece onarımı), HL5 (Hidrolize Kolajen), FIT20 (fitness protokolü), ORIGIN (temel beslenme), NRGI (hücresel enerji, ATP), EDGE (zihinsel berraklık, dopamin), IGNT (hormonal denge), R-STOUR (sindirim, enzim+probiyotik), ON-SHOTS (anlık odak, adaptogen).\n\nSATIN ALMA: https://amare.com/tr-tr/g10/2180152\n\nSINIRLAR: Asla tıbbi tanı/tedavi önerme. Hamilelik/emzirme sorularında doktora yönlendir. Her sağlık sorusunda: "Bu bilgiler genel rehberlik amaçlıdır, hekimine danışmanı öneririm." de.\n\nDİL: Kullanıcı hangi dilde yazarsa o dilde cevap ver. Kısa ve net ol.';
+
+function vSetLang(l){
+  vL=l;
+  document.querySelectorAll('.vlb').forEach(function(b){b.classList.toggle('va',b.getAttribute('data-l')===l)});
+  document.getElementById('vera-inp').placeholder=vT[l].ph;
+  document.getElementById('vera-st').textContent=vT[l].st;
+  document.getElementById('vera-disc').textContent=vT[l].disc;
+  vRenderQ(l);
+}
+function vRenderQ(l){
+  var q=document.getElementById('vera-quick');
+  q.innerHTML='';
+  vT[l].q.forEach(function(txt){
+    var b=document.createElement('button');
+    b.className='vqb';b.textContent=txt;
+    b.addEventListener('click',function(){document.getElementById('vera-inp').value=txt;vSend();});
+    q.appendChild(b);
+  });
+}
+function vAddMsg(role,text){
+  var msgs=document.getElementById('vera-msgs');
+  var d=document.createElement('div');
+  d.className='vm'+(role==='user'?' vu':'');
+  var av=document.createElement('div');av.className='vmav';av.textContent=role==='user'?'👤':'V';
+  var b=document.createElement('div');b.className='vmb';b.textContent=text;
+  d.appendChild(av);d.appendChild(b);
+  msgs.appendChild(d);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+function vInit(){
+  var sl=localStorage.getItem('vpLang')||'tr';
+  vSetLang(sl);
+  var msgs=document.getElementById('vera-msgs');
+  if(msgs.children.length===0) vAddMsg('vera',vT[sl].wel);
+}
+async function vSend(){
+  var inp=document.getElementById('vera-inp');
+  var txt=inp.value.trim();
+  if(!txt)return;
+  inp.value='';
+  vAddMsg('user',txt);
+  vHist.push({role:'user',content:txt});
+  document.getElementById('vera-typing').classList.add('vs');
+  document.getElementById('vera-quick').style.display='none';
+  try{
+    var ctx=vHist.slice(-6).map(function(m){return m.role+': '+m.content;}).join('\n');
+    var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:[{role:'user',content:vSys+'\n\nKullanıcı dili: '+vL+'\n\nGeçmiş:\n'+ctx}]})});
+    var data=await r.json();
+    var reply=data.content&&data.content[0]?data.content[0].text:'...';
+    vHist.push({role:'assistant',content:reply});
+    document.getElementById('vera-typing').classList.remove('vs');
+    vAddMsg('vera',reply);
+  }catch(e){
+    document.getElementById('vera-typing').classList.remove('vs');
+    vAddMsg('vera',{tr:'Bağlantı hatası, tekrar dene.',en:'Connection error, please try again.',es:'Error de conexión, inténtalo de nuevo.'}[vL]);
   }
-  if(document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', addCircles);
-  } else {
-    addCircles();
-  }
+}
+
+// Event listeners - no onclick attributes
+document.addEventListener('DOMContentLoaded',function(){
+  document.getElementById('vera-btn').addEventListener('click',function(e){
+    e.stopPropagation();
+    vOpen=!vOpen;
+    var p=document.getElementById('vera-panel');
+    p.classList.toggle('vopen',vOpen);
+    if(vOpen) vInit();
+  });
+  document.getElementById('vera-x').addEventListener('click',function(e){
+    e.stopPropagation();
+    vOpen=false;
+    document.getElementById('vera-panel').classList.remove('vopen');
+  });
+  document.getElementById('vera-go').addEventListener('click',function(e){e.stopPropagation();vSend();});
+  document.getElementById('vera-inp').addEventListener('keydown',function(e){if(e.key==='Enter'){e.stopPropagation();vSend();}});
+  document.querySelectorAll('.vlb').forEach(function(b){
+    b.addEventListener('click',function(e){e.stopPropagation();vSetLang(b.getAttribute('data-l'));});
+  });
+});
 })();
 </script>
-
+<!-- END VERA -->
 </body></html>
