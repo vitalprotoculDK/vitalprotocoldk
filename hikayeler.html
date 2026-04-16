@@ -101,8 +101,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 
 .st-hero{background:var(--forest);padding:80px 40px 56px;text-align:center}
 .st-hero-eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px}
-.st-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,60px);font-weight:300;color:#f9f8f4;line-height:1.1;margin-bottom:16px}
-.st-hero h1 em{color:var(--gold-light);font-style:italic}
+.st-hero h1,.st-hero h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,60px);font-weight:300;color:#f9f8f4;line-height:1.1;margin-bottom:16px}
+.st-hero h1 em,.st-hero h2 em{color:var(--gold-light);font-style:italic}
 .st-hero-sub{font-size:16px;color:rgba(249,248,244,0.6);max-width:520px;margin:0 auto;line-height:1.7}
 
 .st-stats{display:flex;justify-content:center;background:var(--forest-deep);border-top:1px solid rgba(212,175,55,0.2)}
@@ -328,6 +328,45 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 </script>
 </head>
 <body>
+<script>
+
+(function(){
+  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Çözümler",blog:"Blog",stories:"Hikayeler",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Solutions",blog:"Insights",stories:"Stories",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Soluciones",blog:"Perspectivas",stories:"Historias",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
+  function applyNav(l){
+    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){b.classList.toggle("active",b.textContent.trim().toLowerCase()===l)});
+    var lbl=lb[l]||lb.tr;
+    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
+    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lbl[k]});
+    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lbl[k]});
+  }
+  function applyPage(l){
+    if(typeof setLang==="function"){setLang(l);return;}
+    var allLangDivs=document.querySelectorAll('[class$="-lang"],[class*="-lang active"]');
+    document.querySelectorAll('[id$="-tr"],[id$="-en"],[id$="-es"]').forEach(function(el){
+      var show=el.id.endsWith('-'+l);
+      el.style.display=show?'block':'none';
+    });
+    var btns=document.querySelectorAll('button[onclick*="Lang"]');
+    btns.forEach(function(btn){if(btn.textContent.trim().toLowerCase()===l)btn.click();});
+  }
+  window.vpNavLang=function(l,btn){
+    localStorage.setItem('vpLang',l);
+    applyNav(l);
+    applyPage(l);
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    var saved=localStorage.getItem('vpLang')||'tr';
+    applyNav(saved);
+    setTimeout(function(){applyPage(saved);},50);
+    var path=window.location.pathname.split('/').pop()||'index.html';
+    document.querySelectorAll('.vpdk-nav-link,.vpdk-nav-dropdown-item,.vpdk-mobile-link').forEach(function(el){
+      var h=(el.getAttribute('href')||'').split('/').pop();
+      if(h&&h===path){el.style.color='#b8963e';el.style.fontWeight='500';}
+    });
+  });
+})();
+
+</script>
 <script>
 (function(){
   function applyBlogLang(l){
