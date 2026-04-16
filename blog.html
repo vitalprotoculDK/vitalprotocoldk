@@ -51,7 +51,7 @@
 }
 </style>
 <style>
-.blog-lang{display:none}.blog-lang.active{display:block!important}.blog-lang[data-lang="tr"]{display:block!important}
+.blog-lang{display:none}.blog-lang.active{display:block}
 .blog-index-hero{background:#1a2419;padding:80px 24px 60px;text-align:center}
 .blog-index-hero h1,.blog-index-hero h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;color:#fcfcfa;margin-bottom:12px}
 .blog-index-hero h1 em,.blog-index-hero h2 em{font-style:italic;color:#d4ae5e}
@@ -76,11 +76,10 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
 <script>
 (function(){
   function applyBlogLang(l){
-    var target = null;
     document.querySelectorAll('.blog-lang').forEach(function(el){
-      var lang = el.getAttribute('data-lang');
-      if(lang === l) { target = el; }
+      el.classList.toggle('active', el.getAttribute('data-lang')===l);
     });
+  });
     document.querySelectorAll('.blog-lang').forEach(function(el){
       var lang = el.getAttribute('data-lang');
       var show = (lang === l);
@@ -907,7 +906,7 @@ footer{
 </style>
 <script></script>
 
-<div class="blog-lang active" data-lang="tr" style="display:block">
+<div class="blog-lang active" data-lang="tr">
 <div class="blog-index-hero"><h1>Blog & <em>Perspektif</em></h1>
 <p>Sağlık, beslenme ve wellness hakkında dürüst içerikler. Gürültüyü susturmak için.</p></div>
 <div class="blog-index-body"><div class="blog-grid"><a href="/blog-tabaktaki-cokus.html" class="blog-card">
