@@ -96,7 +96,7 @@ body{font-family:'DM Sans',sans-serif;background:#fafaf8;margin:0}
 .blog-hero{background:#1a2419;padding:80px 24px 60px;text-align:center}
 .blog-hero-img{width:100%;max-width:460px;border-radius:16px;margin:0 auto 32px;display:block;box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .blog-category{font-size:11px;letter-spacing:.14em;color:#b8963e;text-transform:uppercase;font-weight:600;margin-bottom:16px;display:block}
-.blog-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,52px);font-weight:300;color:#fcfcfa;line-height:1.15;margin-bottom:8px}
+.blog-hero h1,.blog-hero .blog-main-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,52px);font-weight:300;color:#fcfcfa;line-height:1.15;margin-bottom:8px}
 .blog-hero h2{font-family:'Cormorant Garamond',serif;font-size:clamp(16px,2.5vw,24px);font-weight:300;color:#d4ae5e;font-style:italic;margin-bottom:24px}
 .blog-meta{font-size:13px;color:rgba(252,252,250,.5);display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
 .blog-body{max-width:780px;margin:0 auto;padding:60px 24px 100px;color:#1e2b1f;line-height:1.85;font-size:17px}
@@ -242,6 +242,46 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
     </button>
   </div>
 </nav>
+<script>
+
+(function(){
+  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Çözümler",blog:"Blog",stories:"Hikayeler",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Solutions",blog:"Insights",stories:"Stories",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Soluciones",blog:"Perspectivas",stories:"Historias",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
+  function applyNav(l){
+    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){b.classList.toggle("active",b.textContent.trim().toLowerCase()===l)});
+    var lbl=lb[l]||lb.tr;
+    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
+    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lbl[k]});
+    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lbl[k]});
+  }
+  function applyPage(l){
+    if(typeof setLang==="function"){setLang(l);return;}
+    var allLangDivs=document.querySelectorAll('[class$="-lang"],[class*="-lang active"]');
+    document.querySelectorAll('[id$="-tr"],[id$="-en"],[id$="-es"]').forEach(function(el){
+      var show=el.id.endsWith('-'+l);
+      el.style.display=show?'block':'none';
+    });
+    var btns=document.querySelectorAll('button[onclick*="Lang"]');
+    btns.forEach(function(btn){if(btn.textContent.trim().toLowerCase()===l)btn.click();});
+  }
+  window.vpNavLang=function(l,btn){
+    localStorage.setItem('vpLang',l);
+    applyNav(l);
+    applyPage(l);
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    var saved=localStorage.getItem('vpLang')||'tr';
+    applyNav(saved);
+    setTimeout(function(){applyPage(saved);},50);
+    var path=window.location.pathname.split('/').pop()||'index.html';
+    document.querySelectorAll('.vpdk-nav-link,.vpdk-nav-dropdown-item,.vpdk-mobile-link').forEach(function(el){
+      var h=(el.getAttribute('href')||'').split('/').pop();
+      if(h&&h===path){el.style.color='#b8963e';el.style.fontWeight='500';}
+    });
+  });
+})();
+
+</script>
+
 <div class="vpdk-mobile-menu" id="vpdk-mob">
   <a href="/index.html" class="vpdk-mobile-link" data-mnav="home">Anasayfa</a>
   <a href="/saglik-ucgeni.html" class="vpdk-mobile-link" data-mnav="health">Sağlık Üçgeni</a>
@@ -1008,7 +1048,7 @@ document.addEventListener('click', function(e){
 <footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.</div></footer>
 </div><div class="blog-lang lang-section" data-lang="en">
 <div class="blog-hero"><img loading="lazy" src="/butunsel.png" alt="What Is Holistic Health and Why Does It Matter?" class="blog-hero-img">
-<span class="blog-category">✦ Holistic Health</span><h2>What Is Holistic Health and Why Does It Matter?</h2><h2>Discover the connection between physical, mental and cellular health</h2>
+<span class="blog-category">✦ Holistic Health</span><h2 class="blog-main-title">What Is Holistic Health and Why Does It Matter?</h2><h2>Discover the connection between physical, mental and cellular health</h2>
 <div class="blog-meta"><span>⏱ ~6 min read</span><span>✦ Deniz KAT</span></div></div>
 <div class="blog-body"><a href="/blog.html" class="blog-back">← Back to Blog</a>
 <p>Holistic health is not just physical well-being — it's the balanced functioning of mental and cellular systems together. Your body is like a perfect machine made up of interconnected gears. A malfunction in one gear reduces the performance of the entire system.</p>
@@ -1037,7 +1077,7 @@ document.addEventListener('click', function(e){
 <footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Transparency Note:</strong> This page is for informational purposes only. Supplements do not replace a balanced diet.</div></footer>
 </div><div class="blog-lang lang-section" data-lang="es">
 <div class="blog-hero"><img loading="lazy" src="/butunsel.png" alt="¿Qué Es la Salud Integral y Por Qué Importa?" class="blog-hero-img">
-<span class="blog-category">✦ Salud Integral</span><h2>¿Qué Es la Salud Integral y Por Qué Importa?</h2><h2>Descubre la conexión entre salud física, mental y celular</h2>
+<span class="blog-category">✦ Salud Integral</span><h2 class="blog-main-title">¿Qué Es la Salud Integral y Por Qué Importa?</h2><h2>Descubre la conexión entre salud física, mental y celular</h2>
 <div class="blog-meta"><span>⏱ ~6 min de lectura</span><span>✦ Deniz KAT</span></div></div>
 <div class="blog-body"><a href="/blog.html" class="blog-back">← Volver al Blog</a>
 <p>La salud integral no es solo el bienestar físico — es el funcionamiento equilibrado de los sistemas mentales y celulares juntos. Tu cuerpo es como una máquina perfecta de engranajes interconectados. Un mal funcionamiento en un engranaje reduce el rendimiento de todo el sistema.</p>
