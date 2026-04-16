@@ -97,7 +97,7 @@
 :root{--forest:#2e3d30;--forest-light:#3d5240;--forest-deep:#1a2419;--cream:#fcfcfa;--cream-warm:#f5f2ec;--cream-section:#f0ede6;--gold:#b8963e;--gold-light:#d4ae5e;--muted:#6b7c6d;--border:#d6ddd7;--text:#1e2b1f}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;font-size:18px}
-.lang-section{display:none}.lang-section.active{display:block}
+.lang-section{display:none}.lang-section.active{display:block}.blog-lang{display:none}.blog-lang.active{display:block}
 
 .st-hero{background:var(--forest);padding:80px 40px 56px;text-align:center}
 .st-hero-eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px}
@@ -328,6 +328,23 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 </script>
 </head>
 <body>
+<script>
+(function(){
+  function applyBlogLang(l){
+    document.querySelectorAll('.blog-lang').forEach(function(el){
+      el.classList.toggle('active', el.getAttribute('data-lang')===l);
+    });
+  }
+  var saved = localStorage.getItem('vpLang')||'tr';
+  document.addEventListener('DOMContentLoaded', function(){ applyBlogLang(saved); });
+  var _orig = window.vpNavLang;
+  window.vpNavLang = function(l,btn){
+    if(_orig) _orig(l,btn);
+    localStorage.setItem('vpLang',l);
+    applyBlogLang(l);
+  };
+})();
+</script>
 <nav class="vpdk-nav-global">
   <a class="vpdk-nav-logo" href="/index.html"><img loading="lazy" src="/logo.png" alt="vitalprotocolDK" style="height:36px;width:auto;display:block"></a>
   <div class="vpdk-nav-center">
@@ -386,7 +403,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 </div>
 <script>
 function setLang(lang) {
-  localStorage.setItem('vpLang', lang);  // ← YENİ SATIR
   document.querySelectorAll('.lang-section').forEach(function(s){ s.style.display='none'; });
   var target = document.getElementById('lang-' + lang);
   if(target) target.style.display = 'block';
@@ -410,7 +426,7 @@ document.addEventListener('click', function(e){
 </script>
 
 <!-- TR -->
-<div class="lang-section active" id="lang-tr">
+<div class="blog-lang lang-section active" data-lang="tr" id="lang-tr">
   <div class="st-hero">
     <div class="st-hero-eyebrow"></div>
     <h1>Onların <em>Hikayeleri,</em><br>Sizin Yolculuğunuz.</h1>
@@ -546,7 +562,7 @@ document.addEventListener('click', function(e){
 </div>
 
 <!-- EN -->
-<div class="lang-section" id="lang-en">
+<div class="blog-lang lang-section" data-lang="en" id="lang-en">
   <div class="st-hero">
     <div class="st-hero-eyebrow"></div>
     <h2>Their <em>Stories,</em><br>Your Journey.</h2>
@@ -682,7 +698,7 @@ document.addEventListener('click', function(e){
 </div>
 
 <!-- ES -->
-<div class="lang-section" id="lang-es">
+<div class="blog-lang lang-section" data-lang="es" id="lang-es">
   <div class="st-hero">
     <div class="st-hero-eyebrow"></div>
     <h2>Sus <em>Historias,</em><br>Tu Camino.</h2>
