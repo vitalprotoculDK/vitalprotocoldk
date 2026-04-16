@@ -452,6 +452,9 @@ function setLang(lang) {
   if(typeof vSetLang === 'function') vSetLang(lang);  // ← YENİ SATIR
 }
   });
+  document.querySelectorAll('.footer-tr,.footer-en,.footer-es').forEach(function(el){ el.style.display='none'; });
+  var fn = document.querySelector('.footer-'+lang);
+  if(fn) fn.style.display='block';
 }
 // Event delegation - data-setlang butonları
 document.addEventListener('click', function(e){
@@ -873,16 +876,26 @@ document.addEventListener('click', function(e){
 </div>
 
 <footer>
-    <div class="footer-logo">vital<span>protocol</span>DK</div>
-    <div class="footer-note">
-      <b>Nota de Transparencia:</b> Esta página es informativa. Los suplementos no reemplazan una dieta equilibrada. Referencia: Reglamento de Declaraciones de Salud en Alimentos y Suplementos (20 Abril 2023). — Deniz KAT · Asesor de Bienestar
-    </div>
-  </footer>
+  <div class="footer-logo">vital<span>protocol</span>DK</div>
+  <div class="footer-note footer-tr">
+    <b>Şeffaflık Notu:</b> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez. Referans: Gıda ve Takviye Edici Gıdalarda Sağlık Beyanı Yönetmeliği (20 Nisan 2023). — Deniz KAT · Wellness Danışmanı
+  </div>
+  <div class="footer-note footer-en" style="display:none">
+    <b>Transparency Note:</b> This page is for informational purposes only. Supplements do not replace a balanced diet. — Deniz KAT · Wellness Consultant
+  </div>
+  <div class="footer-note footer-es" style="display:none">
+    <b>Nota de Transparencia:</b> Esta página es de carácter informativo. Los suplementos no sustituyen una dieta equilibrada. — Deniz KAT · Consultor de Bienestar
+  </div>
+</footer>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var lang = localStorage.getItem('vpLang') || 'tr';
   setLang(lang);
+  // Footer init
+  document.querySelectorAll('.footer-tr,.footer-en,.footer-es').forEach(function(el){ el.style.display='none'; });
+  var fn = document.querySelector('.footer-'+lang);
+  if(fn) fn.style.display='block';
 });
 </script>
 </body>
