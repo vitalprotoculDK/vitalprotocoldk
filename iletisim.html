@@ -851,11 +851,13 @@ function ctSubmit(lang) {
 document.addEventListener('DOMContentLoaded', function(){
   var saved = localStorage.getItem('vpLang') || 'tr';
   if(typeof ctLang === 'function') ctLang(saved, null);
+  if(typeof applyImpNote === 'function') applyImpNote(saved);
 });
 var _vpOrig = window.vpNavLang;
 window.vpNavLang = function(l, btn){
   if(_vpOrig) _vpOrig(l, btn);
   if(typeof ctLang === 'function') ctLang(l, null);
+  if(typeof applyImpNote === 'function') applyImpNote(l);
 };
 </script>
 
