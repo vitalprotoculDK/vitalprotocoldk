@@ -92,6 +92,25 @@
   .vpdk-hamburger{display:flex!important;z-index:10000}
   .vpdk-mobile-menu{top:56px!important}
 }
+
+.important-note{
+  text-align:center;
+  padding:24px 20px;
+  margin:0;
+  background:#f9f8f4;
+  border-top:1px solid #e8e4dc;
+  font-size:13px;
+  color:#4a4a42;
+  line-height:1.7;
+  max-width:100%;
+}
+.important-note strong{
+  color:#2e3d30;
+  display:block;
+  margin-bottom:4px;
+  font-size:13px;
+  letter-spacing:.03em;
+}
 </style>
 <style>
 /* Quiz kendi dil çubuğunu gizle - nav bar yönetiyor */
@@ -170,7 +189,6 @@ div[style*="justify-content:flex-end"][style*="gap:8px"] { display:none !importa
     </div>
     <a href="/hakkimda.html" class="vpdk-nav-link" data-nav="mission">Misyon</a>
     <a href="/blog.html" target="_blank" class="vpdk-nav-link" data-nav="blog">Blog</a>
-    <a href="/hikayeler.html" class="vpdk-nav-link" data-nav="stories">Hikayeler</a>
     <a href="/faq.html" class="vpdk-nav-link" data-nav="faq">SSS</a>
     <a href="/iletisim.html" class="vpdk-nav-link" data-nav="contact">İletişim</a>
   </div>
@@ -186,7 +204,7 @@ div[style*="justify-content:flex-end"][style*="gap:8px"] { display:none !importa
 <script>
 
 (function(){
-  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Çözümler",blog:"Blog",stories:"Hikayeler",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Solutions",blog:"Insights",stories:"Stories",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Soluciones",blog:"Perspectivas",stories:"Historias",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
+  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Çözümler",blog:"Blog",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Solutions",blog:"Insights",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Soluciones",blog:"Perspectivas",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
   function applyNav(l){
     document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){b.classList.toggle("active",b.textContent.trim().toLowerCase()===l)});
     var lbl=lb[l]||lb.tr;
@@ -239,7 +257,6 @@ div[style*="justify-content:flex-end"][style*="gap:8px"] { display:none !importa
   </div>
   <a href="/hakkimda.html" class="vpdk-mobile-link" data-mnav="mission">Misyon</a>
   <a href="/blog.html" target="_blank" class="vpdk-mobile-link" data-mnav="blog">Blog</a>
-  <a href="/hikayeler.html" class="vpdk-mobile-link" data-mnav="stories">Hikayeler</a>
   <a href="/faq.html" class="vpdk-mobile-link" data-mnav="faq">SSS</a>
   <a href="/iletisim.html" class="vpdk-mobile-link" data-mnav="contact">İletişim</a>
 </div>
@@ -752,7 +769,8 @@ div[style*="justify-content:flex-end"][style*="gap:8px"] { display:none !importa
   </div>
   <div class="tst-nav" style="margin-top:28px"><a href="#en-result" style="padding:15px 40px;background:#d4af37;color:#1a1a1a;text-decoration:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;display:inline-block">SEE MY PROTOCOL →</a></div>
 </div>
-<div id="en-result" style="max-width:760px;margin:0 auto;padding:48px 20px 80px">
+<div <p style="text-align:center;font-size:13px;color:#6b7c6d;margin-top:32px;padding:16px 20px;background:#f9f8f4;border-radius:8px;line-height:1.7"><strong style="color:#2e3d30">Önemli:</strong> Bu test bir teşhis aracı değildir, yaşam tarzı alışkanlıklarınıza göre bir öneri rehberidir.</p>
+id="en-result" style="max-width:760px;margin:0 auto;padding:48px 20px 80px">
   <div style="text-align:center;margin-bottom:48px">
     <div class="tst-result-badge">Your Protocol is Ready</div>
     <div class="tst-result-title">Your Personal <em>Wellness Protocol</em></div>
@@ -829,7 +847,8 @@ div[style*="justify-content:flex-end"][style*="gap:8px"] { display:none !importa
   </div>
   <div class="tst-nav" style="margin-top:28px"><a href="#es-result" style="padding:15px 40px;background:#d4af37;color:#1a1a1a;text-decoration:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;display:inline-block">VER MI PROTOCOLO →</a></div>
 </div>
-<div id="es-result" style="max-width:760px;margin:0 auto;padding:48px 20px 80px">
+<div <p style="text-align:center;font-size:13px;color:#6b7c6d;margin-top:32px;padding:16px 20px;background:#f9f8f4;border-radius:8px;line-height:1.7"><strong style="color:#2e3d30">Important:</strong> This test is not a diagnostic tool; it is a recommendation guide based on your lifestyle habits.</p>
+id="es-result" style="max-width:760px;margin:0 auto;padding:48px 20px 80px">
   <div style="text-align:center;margin-bottom:48px">
     <div class="tst-result-badge">Tu Protocolo está Listo</div>
     <div class="tst-result-title">Tu <em>Protocolo de Bienestar</em> Personal</div>
@@ -988,5 +1007,29 @@ window.addEventListener('hashchange',function(){
 })();
 </script>
 
+<div class="important-note">
+  <div class="imp-tr" style="display:block"><strong>Önemli Not:</strong> Sitemizde yer alan bilgiler, vücudun normal fonksiyonlarını desteklemeye yönelik genel bilgilendirmedir. Ürünlerimiz ilaç değildir, hastalıkların tedavisi veya teşhisi amacıyla kullanılamaz.</div>
+  <div class="imp-en" style="display:none"><strong>Important Notice:</strong> The information on our website is for general informational purposes only, aimed at supporting the body's normal functions. Our products are not medicines and cannot be used for the treatment or diagnosis of any disease.</div>
+  <div class="imp-es" style="display:none"><strong>Aviso Importante:</strong> La información de nuestro sitio web tiene carácter informativo general y está orientada a apoyar las funciones normales del organismo. Nuestros productos no son medicamentos y no pueden utilizarse para el tratamiento ni el diagnóstico de enfermedades.</div>
+</div>
+<script>
+(function(){
+  function applyImpNote(l){
+    var notes = {'tr':'.imp-tr','en':'.imp-en','es':'.imp-es'};
+    Object.keys(notes).forEach(function(lang){
+      var el = document.querySelector(notes[lang]);
+      if(el) el.style.display = lang===l ? 'block' : 'none';
+    });
+  }
+  var saved = localStorage.getItem('vpLang')||'tr';
+  document.addEventListener('DOMContentLoaded', function(){ applyImpNote(saved); });
+  var _origImp = window.vpNavLang;
+  window.vpNavLang = function(l, btn){
+    if(_origImp) _origImp(l, btn);
+    applyImpNote(l);
+  };
+})();
+</script>
+<p style="text-align:center;font-size:13px;color:#6b7c6d;margin-top:32px;padding:16px 20px;background:#f9f8f4;border-radius:8px;line-height:1.7"><strong style="color:#2e3d30">Importante:</strong> Esta prueba no es una herramienta de diagnóstico; es una guía de recomendaciones basada en sus hábitos de vida.</p>
 </body>
 </html>

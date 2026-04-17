@@ -92,6 +92,25 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
 .footer-logo span{color:#b8963e;font-style:italic}
 .footer-note{font-size:13px;color:#6b7c6d;max-width:540px;line-height:1.7;text-align:right}
 @media(max-width:768px){.blog-body{padding:40px 20px 60px;font-size:16px}.blog-hero{padding:60px 20px 40px}.blog-highlight{font-size:17px;padding:24px}.blog-stats{gap:16px}footer{padding:28px 20px;flex-direction:column;text-align:center}.footer-note{text-align:center}}
+
+.important-note{
+  text-align:center;
+  padding:24px 20px;
+  margin:0;
+  background:#f9f8f4;
+  border-top:1px solid #e8e4dc;
+  font-size:13px;
+  color:#4a4a42;
+  line-height:1.7;
+  max-width:100%;
+}
+.important-note strong{
+  color:#2e3d30;
+  display:block;
+  margin-bottom:4px;
+  font-size:13px;
+  letter-spacing:.03em;
+}
 </style>
 <script>
 (function(){
@@ -145,7 +164,6 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
     </div>
     <a href="/hakkimda.html" class="vpdk-nav-link" data-nav="mission">Misyon</a>
     <a href="/blog.html" target="_blank" class="vpdk-nav-link" data-nav="blog">Blog</a>
-    <a href="/hikayeler.html" class="vpdk-nav-link" data-nav="stories">Hikayeler</a>
     <a href="/faq.html" class="vpdk-nav-link" data-nav="faq">SSS</a>
     <a href="/iletisim.html" class="vpdk-nav-link" data-nav="contact">İletişim</a>
   </div>
@@ -920,10 +938,15 @@ document.addEventListener('click', function(e){
 <div class="blog-highlight">"Üçlü Sinerji Protokolü: Sunrise ile koruyun, Nitro ile taşıyın, Sunset ile onarın."</div>
 <p style="margin-top:40px;font-size:14px;color:#6b7c6d;border-top:1px solid #d6ddd7;padding-top:24px;"><strong>Deniz KAT</strong> · Wellness Danışmanı · vitalprotocolDK</p>
 </div>
+<div class="important-note">
+  <div class="imp-tr" style="display:block"><strong>Önemli Not:</strong> Sitemizde yer alan bilgiler, vücudun normal fonksiyonlarını desteklemeye yönelik genel bilgilendirmedir. Ürünlerimiz ilaç değildir, hastalıkların tedavisi veya teşhisi amacıyla kullanılamaz.</div>
+  <div class="imp-en" style="display:none"><strong>Important Notice:</strong> The information on our website is for general informational purposes only, aimed at supporting the body's normal functions. Our products are not medicines and cannot be used for the treatment or diagnosis of any disease.</div>
+  <div class="imp-es" style="display:none"><strong>Aviso Importante:</strong> La información de nuestro sitio web tiene carácter informativo general y está orientada a apoyar las funciones normales del organismo. Nuestros productos no son medicamentos y no pueden utilizarse para el tratamiento ni el diagnóstico de enfermedades.</div>
+</div>
 <footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Şeffaflık Notu:</strong> Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.</div></footer>
 </div><div class="blog-lang" data-lang="en">
 <div class="blog-hero"><img src="/butunsel.png" alt="What Is Holistic Health and Why Does It Matter?" class="blog-hero-img">
-<span class="blog-category">✦ Holistic Health</span><h1>What Is Holistic Health and Why Does It Matter?</h1><h2>Discover the connection between physical, mental and cellular health</h2>
+<span class="blog-category">✦ Holistic Health</span><h2>What Is Holistic Health and Why Does It Matter?</h2><h2>Discover the connection between physical, mental and cellular health</h2>
 <div class="blog-meta"><span>⏱ ~6 min read</span><span>✦ Deniz KAT</span></div></div>
 <div class="blog-body"><a href="/blog.html" class="blog-back">← Back to Blog</a>
 <p>Holistic health is not just physical well-being — it's the balanced functioning of mental and cellular systems together. Your body is like a perfect machine made up of interconnected gears. A malfunction in one gear reduces the performance of the entire system.</p>
@@ -952,7 +975,7 @@ document.addEventListener('click', function(e){
 <footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note"><strong>Transparency Note:</strong> This page is for informational purposes only. Supplements do not replace a balanced diet.</div></footer>
 </div><div class="blog-lang" data-lang="es">
 <div class="blog-hero"><img src="/butunsel.png" alt="¿Qué Es la Salud Integral y Por Qué Importa?" class="blog-hero-img">
-<span class="blog-category">✦ Salud Integral</span><h1>¿Qué Es la Salud Integral y Por Qué Importa?</h1><h2>Descubre la conexión entre salud física, mental y celular</h2>
+<span class="blog-category">✦ Salud Integral</span><h2>¿Qué Es la Salud Integral y Por Qué Importa?</h2><h2>Descubre la conexión entre salud física, mental y celular</h2>
 <div class="blog-meta"><span>⏱ ~6 min de lectura</span><span>✦ Deniz KAT</span></div></div>
 <div class="blog-body"><a href="/blog.html" class="blog-back">← Volver al Blog</a>
 <p>La salud integral no es solo el bienestar físico — es el funcionamiento equilibrado de los sistemas mentales y celulares juntos. Tu cuerpo es como una máquina perfecta de engranajes interconectados. Un mal funcionamiento en un engranaje reduce el rendimiento de todo el sistema.</p>
@@ -1134,4 +1157,22 @@ document.addEventListener('DOMContentLoaded',function(){
 })();
 </script>
 <!-- END VERA -->
+<script>
+(function(){
+  function applyImpNote(l){
+    var notes = {'tr':'.imp-tr','en':'.imp-en','es':'.imp-es'};
+    Object.keys(notes).forEach(function(lang){
+      var el = document.querySelector(notes[lang]);
+      if(el) el.style.display = lang===l ? 'block' : 'none';
+    });
+  }
+  var saved = localStorage.getItem('vpLang')||'tr';
+  document.addEventListener('DOMContentLoaded', function(){ applyImpNote(saved); });
+  var _origImp = window.vpNavLang;
+  window.vpNavLang = function(l, btn){
+    if(_origImp) _origImp(l, btn);
+    applyImpNote(l);
+  };
+})();
+</script>
 </body></html>

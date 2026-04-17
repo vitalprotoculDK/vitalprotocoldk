@@ -46,6 +46,25 @@
   .vpdk-hamburger{display:flex!important}
   .vpdk-mobile-menu{top:56px!important}
 }
+
+.important-note{
+  text-align:center;
+  padding:24px 20px;
+  margin:0;
+  background:#f9f8f4;
+  border-top:1px solid #e8e4dc;
+  font-size:13px;
+  color:#4a4a42;
+  line-height:1.7;
+  max-width:100%;
+}
+.important-note strong{
+  color:#2e3d30;
+  display:block;
+  margin-bottom:4px;
+  font-size:13px;
+  letter-spacing:.03em;
+}
 </style>
 <style>
 .blog-lang{display:none}.blog-lang.active{display:block}
@@ -105,9 +124,9 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
 <script>
 // Apply saved language to nav immediately
 (function(){
-  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Protokoller",blog:"Blog",stories:"Hikayeler",mission:"Misyon",faq:"SSS",contact:"İletişim"},
-          en:{home:"Homepage",health:"Health Triangle",protocols:"Protocols",blog:"Insights",stories:"Stories",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},
-          es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Protocolos",blog:"Perspectivas",stories:"Historias",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
+  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Protokoller",blog:"Blog",mission:"Misyon",faq:"SSS",contact:"İletişim"},
+          en:{home:"Homepage",health:"Health Triangle",protocols:"Protocols",blog:"Insights",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},
+          es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Protocolos",blog:"Perspectivas",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
   var saved = localStorage.getItem('vpLang')||'tr';
   function applyNav(l){
     document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){
@@ -155,7 +174,6 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
     </div>
     <a href="/hakkimda.html" class="vpdk-nav-link" data-nav="mission">Misyon</a>
     <a href="/blog.html" target="_blank" class="vpdk-nav-link" data-nav="blog">Blog</a>
-    <a href="/hikayeler.html" class="vpdk-nav-link" data-nav="stories">Hikayeler</a>
     <a href="/faq.html" class="vpdk-nav-link" data-nav="faq">SSS</a>
     <a href="/iletisim.html" class="vpdk-nav-link" data-nav="contact">İletişim</a>
   </div>
@@ -184,7 +202,6 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
   </div>
   <a href="/hakkimda.html" class="vpdk-mobile-link" data-mnav="mission">Misyon</a>
   <a href="/blog.html" target="_blank" class="vpdk-mobile-link" data-mnav="blog">Blog</a>
-  <a href="/hikayeler.html" class="vpdk-mobile-link" data-mnav="stories">Hikayeler</a>
   <a href="/faq.html" class="vpdk-mobile-link" data-mnav="faq">SSS</a>
   <a href="/iletisim.html" class="vpdk-mobile-link" data-mnav="contact">İletişim</a>
 </div>
@@ -966,6 +983,11 @@ document.addEventListener('click', function(e){
     <div class="blog-card-meta">⏱ ~6 dk · Deniz KAT →</div>
   </div>
 </a></div></div>
+<div class="important-note">
+  <div class="imp-tr" style="display:block"><strong>Önemli Not:</strong> Sitemizde yer alan bilgiler, vücudun normal fonksiyonlarını desteklemeye yönelik genel bilgilendirmedir. Ürünlerimiz ilaç değildir, hastalıkların tedavisi veya teşhisi amacıyla kullanılamaz.</div>
+  <div class="imp-en" style="display:none"><strong>Important Notice:</strong> The information on our website is for general informational purposes only, aimed at supporting the body's normal functions. Our products are not medicines and cannot be used for the treatment or diagnosis of any disease.</div>
+  <div class="imp-es" style="display:none"><strong>Aviso Importante:</strong> La información de nuestro sitio web tiene carácter informativo general y está orientada a apoyar las funciones normales del organismo. Nuestros productos no son medicamentos y no pueden utilizarse para el tratamiento ni el diagnóstico de enfermedades.</div>
+</div>
 <footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note">Bilgilendirme amaçlıdır. — Deniz KAT · Wellness Danışmanı</div></footer>
 </div>
 
@@ -1242,4 +1264,22 @@ document.addEventListener('DOMContentLoaded',function(){
 })();
 </script>
 <!-- END VERA -->
+<script>
+(function(){
+  function applyImpNote(l){
+    var notes = {'tr':'.imp-tr','en':'.imp-en','es':'.imp-es'};
+    Object.keys(notes).forEach(function(lang){
+      var el = document.querySelector(notes[lang]);
+      if(el) el.style.display = lang===l ? 'block' : 'none';
+    });
+  }
+  var saved = localStorage.getItem('vpLang')||'tr';
+  document.addEventListener('DOMContentLoaded', function(){ applyImpNote(saved); });
+  var _origImp = window.vpNavLang;
+  window.vpNavLang = function(l, btn){
+    if(_origImp) _origImp(l, btn);
+    applyImpNote(l);
+  };
+})();
+</script>
 </body></html>
