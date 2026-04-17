@@ -899,11 +899,7 @@ window.vpNavLang = function(l, btn){
 })();
 </script>
 
-<div style="text-align:center;padding:14px 20px;background:#f9f8f4;border-top:1px solid #e8e4dc;font-size:11px;font-family:'DM Sans',sans-serif">
-  <a href="/yasal.html" style="color:#8a8278;text-decoration:none;margin:0 10px">Gizlilik & KVKK</a>
-  <a href="/yasal.html#ortaklik-tr" style="color:#8a8278;text-decoration:none;margin:0 10px">Ortaklık Bildirimi</a>
-  <a href="/yasal.html#sorumluluk-tr" style="color:#8a8278;text-decoration:none;margin:0 10px">Yasal Uyarı</a>
-</div>
+
 <div class="important-note">
   <div class="imp-tr" style="display:block"><strong>Önemli Not:</strong> Sitemizde yer alan bilgiler, vücudun normal fonksiyonlarını desteklemeye yönelik genel bilgilendirmedir. Ürünlerimiz ilaç değildir, hastalıkların tedavisi veya teşhisi amacıyla kullanılamaz.</div>
   <div class="imp-en" style="display:none"><strong>Important Notice:</strong> The information on our website is for general informational purposes only, aimed at supporting the body's normal functions. Our products are not medicines and cannot be used for the treatment or diagnosis of any disease.</div>
@@ -924,6 +920,40 @@ window.vpNavLang = function(l, btn){
   window.vpNavLang = function(l, btn){
     if(_origImp) _origImp(l, btn);
     applyImpNote(l);
+  };
+})();
+</script>
+<div class="yasal-bar" style="text-align:center;padding:18px 20px;background:#f9f8f4;border-top:1px solid #e8e4dc;font-family:'DM Sans',sans-serif">
+  <div class="yasal-bar-tr" style="display:block;font-size:13px">
+    <a href="/yasal.html" style="color:#6b7280;text-decoration:none;margin:0 10px">Gizlilik & KVKK</a>
+    <a href="/yasal.html#ortaklik-tr" style="color:#6b7280;text-decoration:none;margin:0 10px">Ortaklık Bildirimi</a>
+    <a href="/yasal.html#sorumluluk-tr" style="color:#6b7280;text-decoration:none;margin:0 10px">Yasal Uyarı</a>
+  </div>
+  <div class="yasal-bar-en" style="display:none;font-size:13px">
+    <a href="/yasal.html" style="color:#6b7280;text-decoration:none;margin:0 10px">Privacy & KVKK</a>
+    <a href="/yasal.html#ortaklik-en" style="color:#6b7280;text-decoration:none;margin:0 10px">Affiliate Notice</a>
+    <a href="/yasal.html#sorumluluk-en" style="color:#6b7280;text-decoration:none;margin:0 10px">Legal Disclaimer</a>
+  </div>
+  <div class="yasal-bar-es" style="display:none;font-size:13px">
+    <a href="/yasal.html" style="color:#6b7280;text-decoration:none;margin:0 10px">Privacidad & KVKK</a>
+    <a href="/yasal.html#ortaklik-es" style="color:#6b7280;text-decoration:none;margin:0 10px">Declaración de Afiliación</a>
+    <a href="/yasal.html#sorumluluk-es" style="color:#6b7280;text-decoration:none;margin:0 10px">Aviso Legal</a>
+  </div>
+</div>
+<script>
+(function(){
+  function applyYasalBar(l){
+    ['tr','en','es'].forEach(function(lang){
+      var el = document.querySelector('.yasal-bar-'+lang);
+      if(el) el.style.display = lang===l ? 'block' : 'none';
+    });
+  }
+  var saved = localStorage.getItem('vpLang')||'tr';
+  document.addEventListener('DOMContentLoaded', function(){ applyYasalBar(saved); });
+  var _origYB = window.vpNavLang;
+  window.vpNavLang = function(l,btn){
+    if(_origYB) _origYB(l,btn);
+    applyYasalBar(l);
   };
 })();
 </script>

@@ -271,7 +271,7 @@ footer a:hover{color:var(--gold)}
 </div>
 
 <!-- TR -->
-<div class="yl-lang active" id="yl-tr">
+<div class="yl-lang active" id="yl-tr" style="display:block">
 <div class="yl-hero">
   <div class="yl-eyebrow">vitalprotocolDK</div>
   <h1>Yasal Bildirimler &<em> Gizlilik</em></h1>
@@ -290,10 +290,10 @@ footer a:hover{color:var(--gold)}
     <h2 class="yl-section-title">📋 KVKK Aydınlatma Metni</h2>
     <p class="yl-text">İşbu Aydınlatma Metni, <strong>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK)</strong> kapsamında veri sorumlusu sıfatıyla <strong>Deniz KAT (vitalprotocolDK)</strong> tarafından kişisel verilerinizin işlenmesine ilişkin sizi bilgilendirmek amacıyla hazırlanmıştır.</p>
     <div class="yl-subtitle">1. Veri Sorumlusu</div>
-    <div class="yl-box"><strong>Ad Soyad:</strong> Deniz KAT<br><strong>Web Sitesi:</strong> vitalprotocoldk.com<br><strong>E-posta:</strong> vitalprotocoldk@outlook.com</div>
+    <div class="yl-box"><strong>Ad:</strong> Deniz KAT<br><strong>Web Sitesi:</strong> vitalprotocoldk.com<br><strong>E-posta:</strong> vitalprotocoldk@outlook.com</div>
     <div class="yl-subtitle">2. Toplanan Kişisel Veriler</div>
     <p class="yl-text">İletişim formu aracılığıyla yalnızca aşağıdaki bilgiler toplanmaktadır:</p>
-    <ul class="yl-list"><li>Ad Soyad</li><li>E-posta adresi</li><li>Mesaj konusu ve içeriği</li></ul>
+    <ul class="yl-list"><li>Ad</li><li>E-posta adresi</li><li>Mesaj konusu ve içeriği</li></ul>
     <div class="yl-subtitle">3. İşlenme Amacı</div>
     <ul class="yl-list"><li>Gönderilen sorulara yanıt verebilmek</li><li>İletişim talebinin yerine getirilmesi</li><li>Hizmet kalitesinin artırılması</li></ul>
     <div class="yl-subtitle">4. Kişisel Verilerin Aktarımı</div>
@@ -355,8 +355,9 @@ footer a:hover{color:var(--gold)}
     <p class="yl-text" style="margin-top:16px;font-size:13px;color:var(--muted)">Son güncelleme: Nisan 2025 · © 2025 vitalprotocolDK · Deniz KAT</p>
   </section>
 </div>
+</div>
 
-<!-- Eid="yl-en">
+<div class="yl-lang" id="yl-en" style="display:none">
 <div class="yl-hero">
   <div class="yl-eyebrow">vitalprotocolDK</div>
   <h2>Legal Notices &<em> Privacy</em></h2>
@@ -377,7 +378,7 @@ footer a:hover{color:var(--gold)}
     <div class="yl-subtitle">1. Data Controller</div>
     <div class="yl-box"><strong>Name:</strong> Deniz KAT<br><strong>Website:</strong> vitalprotocoldk.com<br><strong>Email:</strong> vitalprotocoldk@outlook.com</div>
     <div class="yl-subtitle">2. Personal Data Collected</div>
-    <ul class="yl-list"><li>Full name</li><li>Email address</li><li>Message subject and content</li></ul>
+    <ul class="yl-list"><li>First name</li><li>Email address</li><li>Message subject and content</li></ul>
     <div class="yl-subtitle">3. Purpose of Processing</div>
     <ul class="yl-list"><li>To respond to your enquiries</li><li>To fulfil your contact request</li><li>To improve service quality</li></ul>
     <div class="yl-subtitle">4. Data Sharing</div>
@@ -433,7 +434,7 @@ footer a:hover{color:var(--gold)}
 </div>
 
 <!-- ES -->
-<div class="yl-lang" id="yl-es">
+<div class="yl-lang" id="yl-es" style="display:none">
 <div class="yl-hero">
   <div class="yl-eyebrow">vitalprotocolDK</div>
   <h2>Avisos Legales &<em> Privacidad</em></h2>
@@ -454,7 +455,7 @@ footer a:hover{color:var(--gold)}
     <div class="yl-subtitle">1. Responsable del Tratamiento</div>
     <div class="yl-box"><strong>Nombre:</strong> Deniz KAT<br><strong>Sitio web:</strong> vitalprotocoldk.com<br><strong>Correo:</strong> vitalprotocoldk@outlook.com</div>
     <div class="yl-subtitle">2. Datos Recopilados</div>
-    <ul class="yl-list"><li>Nombre y apellidos</li><li>Correo electrónico</li><li>Asunto y contenido del mensaje</li></ul>
+    <ul class="yl-list"><li>Nombre</li><li>Correo electrónico</li><li>Asunto y contenido del mensaje</li></ul>
     <div class="yl-subtitle">3. Finalidad</div>
     <ul class="yl-list"><li>Responder a sus consultas</li><li>Atender su solicitud de contacto</li><li>Mejorar la calidad del servicio</li></ul>
     <div class="yl-subtitle">4. Compartición de Datos</div>
@@ -536,41 +537,30 @@ footer a:hover{color:var(--gold)}
   </div>
 </div>
 
+
+
+
+
 <script>
-(function(){
-  function ylLang(l){
-    document.querySelectorAll('.yl-lang').forEach(function(el){
-      el.style.display = el.id === 'yl-' + l ? 'block' : 'none';
-    });
-  }
-  var saved = localStorage.getItem('vpLang') || 'tr';
-  document.addEventListener('DOMContentLoaded', function(){ ylLang(saved); });
-  var _orig = window.vpNavLang;
-  window.vpNavLang = function(l, btn){
-    if(_orig) _orig(l, btn);
+// yasal.html dil geçişi
+function ylLang(l) {
+  document.querySelectorAll('.yl-lang').forEach(function(el) {
+    el.style.display = (el.id === 'yl-' + l) ? 'block' : 'none';
+  });
+}
+// Sayfa açılınca
+var _ylSaved = localStorage.getItem('vpLang') || 'tr';
+document.addEventListener('DOMContentLoaded', function() {
+  ylLang(_ylSaved);
+});
+// Nav dil değişimi
+(function() {
+  var _ylOrig = window.vpNavLang;
+  window.vpNavLang = function(l, btn) {
+    if (_ylOrig) _ylOrig(l, btn);
     ylLang(l);
   };
 })();
 </script>
-
-<script>
-(function(){
-  function applyImpNote(l){
-    var notes = {'tr':'.imp-tr','en':'.imp-en','es':'.imp-es'};
-    Object.keys(notes).forEach(function(lang){
-      var el = document.querySelector(notes[lang]);
-      if(el) el.style.display = lang===l ? 'block' : 'none';
-    });
-  }
-  var saved = localStorage.getItem('vpLang')||'tr';
-  document.addEventListener('DOMContentLoaded', function(){ applyImpNote(saved); });
-  var _origImp = window.vpNavLang;
-  window.vpNavLang = function(l, btn){
-    if(_origImp) _origImp(l, btn);
-    applyImpNote(l);
-  };
-})();
-</script>
-
 </body>
 </html>
