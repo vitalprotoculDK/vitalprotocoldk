@@ -352,7 +352,7 @@ footer a:hover{color:var(--gold)}
       <li>Bu sitedeki bağlantılar üzerinden ulaşılan üçüncü taraf sitelerin içeriklerinden vitalprotocolDK sorumlu tutulamaz.</li>
       <li>İçerikler önceden haber verilmeksizin güncellenebilir.</li>
     </ul>
-    <p class="yl-text" style="margin-top:16px;font-size:13px;color:var(--muted)">Son güncelleme: Nisan 2025 · © 2025 vitalprotocolDK · Deniz KAT</p>
+    <p class="yl-text" style="margin-top:16px;font-size:13px;color:var(--muted)">Son güncelleme: Nisan 2026 · © 2026 vitalprotocolDK · Deniz KAT</p>
   </section>
 </div>
 </div>
@@ -428,7 +428,7 @@ footer a:hover{color:var(--gold)}
       <li>vitalprotocolDK accepts no responsibility for third-party site content.</li>
       <li>Content may be updated without notice.</li>
     </ul>
-    <p class="yl-text" style="margin-top:16px;font-size:13px;color:var(--muted)">Last updated: April 2025 · © 2025 vitalprotocolDK · Deniz KAT</p>
+    <p class="yl-text" style="margin-top:16px;font-size:13px;color:var(--muted)">Last updated: April 2026 · © 2026 vitalprotocolDK · Deniz KAT</p>
   </section>
 </div>
 </div>
@@ -503,7 +503,7 @@ footer a:hover{color:var(--gold)}
       <li>vitalprotocolDK no se hace responsable del contenido de sitios de terceros.</li>
       <li>El contenido puede actualizarse sin previo aviso.</li>
     </ul>
-    <p class="yl-text" style="margin-top:16px;font-size:13px;color:var(--muted)">Última actualización: abril 2025 · © 2025 vitalprotocolDK · Deniz KAT</p>
+    <p class="yl-text" style="margin-top:16px;font-size:13px;color:var(--muted)">Última actualización: Abril 2026 · © 2026 vitalprotocolDK · Deniz KAT</p>
   </section>
 </div>
 
@@ -513,7 +513,7 @@ footer a:hover{color:var(--gold)}
     <a href="/iletisim.html">İletişim</a>
     <a href="/yasal.html">Yasal & Gizlilik</a>
   </div>
-  <div>© 2025 vitalprotocolDK · Deniz KAT · Tüm hakları saklıdır.</div>
+  <div>© 2026 vitalprotocolDK · Deniz KAT · Tüm hakları saklıdır.</div>
 </footer>
 
 <div id="vera-widget">
@@ -560,6 +560,28 @@ document.addEventListener('DOMContentLoaded', function() {
     if (_ylOrig) _ylOrig(l, btn);
     ylLang(l);
   };
+})();
+</script>
+<script>
+(function(){
+  var _origVSt = window.vpNavLang;
+  var veraSubs = {
+    tr: 'vitalprotocolDK · Wellness Rehberi',
+    en: 'vitalprotocolDK · Wellness Guide',
+    es: 'vitalprotocolDK · Guía de Bienestar'
+  };
+  function applyVeraSub(l) {
+    var st = document.getElementById('vera-st');
+    if (st) st.textContent = veraSubs[l] || veraSubs['tr'];
+  }
+  window.vpNavLang = function(l, btn) {
+    if (_origVSt) _origVSt(l, btn);
+    applyVeraSub(l);
+  };
+  document.addEventListener('DOMContentLoaded', function() {
+    var saved = localStorage.getItem('vpLang') || 'tr';
+    applyVeraSub(saved);
+  });
 })();
 </script>
 </body>
