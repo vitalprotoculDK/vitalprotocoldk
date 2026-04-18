@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitrin Export</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#111;padding:32px 20px;font-family:'DM Sans',sans-serif}
+
+.section-label{
+  color:#d4af37;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  margin-bottom:14px;margin-top:36px;display:flex;align-items:center;gap:10px;
+}
+.section-label::after{content:'';flex:1;height:1px;background:rgba(212,175,55,0.2)}
+
+/* 1920×1080 oranı → 16:9 */
+.vitrin{
+  width:100%;max-width:640px;
+  aspect-ratio:16/9;
+  border-radius:6px;
+  overflow:hidden;
+  position:relative;
+  margin-bottom:10px;
+}
+
+/* ══════════════════════
+   VİTRİN 1 — "Gürültüyü Susturun"
+   Koyu, orta alan odaklı
+══════════════════════ */
+.v1{background:#2e3d30}
+.v1 .noise{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at 20% 80%,rgba(212,175,55,0.07) 0%,transparent 60%),
+             radial-gradient(ellipse at 80% 20%,rgba(212,175,55,0.05) 0%,transparent 50%);
+}
+.v1 .ring1{
+  position:absolute;width:340px;height:340px;border-radius:50%;
+  border:1px solid rgba(212,175,55,0.08);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+}
+.v1 .ring2{
+  position:absolute;width:220px;height:220px;border-radius:50%;
+  border:1px solid rgba(212,175,55,0.06);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+}
+.v1 .center{
+  position:relative;z-index:2;
+  height:100%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:32px;text-align:center;
+}
+.v1 .brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(22px,4vw,38px);font-weight:400;
+  color:#f9f8f4;letter-spacing:.05em;margin-bottom:4px;
+}
+.v1 .brand span{color:#d4af37;font-style:italic}
+.v1 .sub{
+  font-size:clamp(8px,1.2vw,11px);letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(249,248,244,0.4);margin-bottom:20px;
+}
+.v1 .line{width:48px;height:1px;background:#d4af37;margin:0 auto 20px}
+.v1 .headline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(14px,2.4vw,22px);font-weight:300;
+  color:#f9f8f4;line-height:1.5;margin-bottom:8px;
+}
+.v1 .headline em{color:#d4af37;font-style:italic}
+.v1 .tagline{
+  font-size:clamp(8px,1vw,10px);letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(249,248,244,0.35);margin-top:12px;
+}
+.v1 .corner{
+  position:absolute;bottom:14px;right:18px;z-index:2;
+  font-size:clamp(7px,.9vw,9px);letter-spacing:.1em;
+  color:rgba(212,175,55,0.4);
+}
+
+/* ══════════════════════
+   VİTRİN 2 — "Çözümler"
+   İki sütun: sol marka, sağ ürünler
+══════════════════════ */
+.v2{background:#f9f8f4;display:flex}
+.v2 .left{
+  width:52%;background:#2e3d30;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(20px,4%,40px);position:relative;
+}
+.v2 .left::after{
+  content:'';position:absolute;right:0;top:0;bottom:0;width:32px;
+  background:linear-gradient(to right,#2e3d30 0%,transparent 100%);
+  z-index:1;
+}
+.v2 .right{
+  width:48%;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(16px,3%,32px) clamp(20px,4%,36px);
+}
+.v2 .brand2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(18px,3.2vw,30px);font-weight:400;
+  color:#f9f8f4;letter-spacing:.03em;margin-bottom:3px;
+}
+.v2 .brand2 span{color:#d4af37;font-style:italic}
+.v2 .sub2{
+  font-size:clamp(7px,.9vw,9px);letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(249,248,244,0.4);margin-bottom:14px;
+}
+.v2 .line2{width:36px;height:1.5px;background:#d4af37;margin-bottom:12px}
+.v2 .quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(11px,1.8vw,15px);font-style:italic;font-weight:300;
+  color:rgba(249,248,244,0.7);line-height:1.6;
+}
+.v2 .rtitle{
+  font-size:clamp(7px,.9vw,9px);letter-spacing:.18em;text-transform:uppercase;
+  color:#b8963e;font-weight:600;margin-bottom:10px;
+}
+.v2 .plist{display:flex;flex-direction:column;gap:clamp(4px,.8vw,7px)}
+.v2 .pitem{display:flex;align-items:flex-start;gap:7px}
+.v2 .pdot{width:4px;height:4px;border-radius:50%;background:#d4af37;margin-top:4px;flex-shrink:0}
+.v2 .pname{font-size:clamp(9px,1.4vw,12px);color:#2e3d30;font-weight:500;line-height:1.3}
+.v2 .psub{font-size:clamp(7px,.9vw,9px);color:#8a9b8c}
+.v2 .corner2{
+  position:absolute;bottom:10px;right:14px;
+  font-size:clamp(7px,.9vw,9px);letter-spacing:.08em;color:#b8963e;
+}
+
+/* ══════════════════════
+   VİTRİN 3 — "Deniz KAT"
+   Kişisel marka odaklı
+══════════════════════ */
+.v3{
+  background:linear-gradient(145deg,#1a2b1c 0%,#243328 40%,#2e3d30 70%,#3a4e3c 100%);
+  display:flex;align-items:stretch;
+}
+.v3 .left3{
+  width:58%;display:flex;flex-direction:column;
+  justify-content:center;padding:clamp(20px,4%,44px);
+  position:relative;z-index:2;
+}
+.v3 .right3{
+  width:42%;display:flex;flex-direction:column;
+  justify-content:center;align-items:flex-end;
+  padding:clamp(16px,3%,36px);
+  position:relative;
+}
+.v3 .right3::before{
+  content:'';position:absolute;left:0;top:10%;bottom:10%;
+  width:1px;background:linear-gradient(to bottom,transparent,rgba(212,175,55,0.2),transparent);
+}
+.v3 .glow{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at 70% 50%,rgba(212,175,55,0.06) 0%,transparent 60%);
+  pointer-events:none;
+}
+.v3 .eyebrow{
+  font-size:clamp(7px,.9vw,9px);letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(212,175,55,0.6);margin-bottom:10px;
+}
+.v3 .brand3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(20px,3.5vw,34px);font-weight:400;
+  color:#f9f8f4;letter-spacing:.04em;margin-bottom:4px;
+}
+.v3 .brand3 span{color:#d4af37;font-style:italic}
+.v3 .line3{width:44px;height:1px;background:rgba(212,175,55,0.5);margin:14px 0}
+.v3 .headline3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(13px,2.2vw,20px);font-weight:300;
+  color:#f9f8f4;line-height:1.55;margin-bottom:16px;
+}
+.v3 .headline3 strong{color:#d4af37;font-weight:500;font-style:italic}
+.v3 .pills{display:flex;flex-wrap:wrap;gap:5px}
+.v3 .pill{
+  padding:3px 9px;
+  border:1px solid rgba(212,175,55,0.25);border-radius:20px;
+  font-size:clamp(7px,.85vw,9px);letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(249,248,244,0.5);
+}
+.v3 .right-content{text-align:right}
+.v3 .author-label{
+  font-size:clamp(7px,.9vw,9px);letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(212,175,55,0.5);margin-bottom:8px;
+}
+.v3 .author-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(14px,2.4vw,22px);font-weight:400;font-style:italic;
+  color:#f9f8f4;margin-bottom:6px;
+}
+.v3 .author-title{
+  font-size:clamp(8px,1vw,10px);color:rgba(249,248,244,0.4);
+  letter-spacing:.1em;line-height:1.6;text-transform:uppercase;
+}
+.v3 .amare-badge{
+  margin-top:16px;padding:5px 11px;
+  border:1px solid rgba(212,175,55,0.2);border-radius:4px;
+  display:inline-flex;flex-direction:column;align-items:flex-end;gap:1px;
+}
+.v3 .amare-badge span:first-child{
+  font-size:clamp(7px,.85vw,9px);letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(212,175,55,0.5);
+}
+.v3 .amare-badge span:last-child{
+  font-size:clamp(8px,1vw,10px);font-weight:600;color:rgba(249,248,244,0.6);letter-spacing:.05em;
+}
+.v3 .corner3{
+  position:absolute;bottom:12px;left:clamp(20px,4%,44px);z-index:2;
+  font-size:clamp(7px,.9vw,9px);letter-spacing:.1em;color:rgba(212,175,55,0.35);
+}
+
+.note{
+  color:#555;font-size:11px;line-height:1.5;padding:8px 0 4px;
+}
+</style>
+</head>
+<body>
+
+<!-- VİTRİN 1 -->
+<div class="section-label">Vitrin 1 — "Gürültüyü Susturun" · Koyu Minimal</div>
+<div class="vitrin v1">
+  <div class="noise"></div>
+  <div class="ring1"></div>
+  <div class="ring2"></div>
+  <div class="center">
+    <div class="brand">vitalprotocol<span>DK</span></div>
+    <div class="sub">Bağımsız Wellness Danışmanlığı</div>
+    <div class="line"></div>
+    <div class="headline">Yaşam Protokolü:<br><em>Gürültüyü</em> Susturun.</div>
+    <div class="tagline">Amare Global · Türkçe Danışmanlık · Deniz KAT</div>
+  </div>
+  <div class="corner">vitalprotocoldk.com</div>
+</div>
+<div class="note">✦ Sade ve güçlü — logo görseli olarak da kullanılabilir</div>
+
+<!-- VİTRİN 2 -->
+<div class="section-label">Vitrin 2 — "Çözümler" · İki Sütun</div>
+<div class="vitrin v2">
+  <div class="left">
+    <div class="brand2">vitalprotocol<span>DK</span></div>
+    <div class="sub2">Wellness · Amare Global Partner</div>
+    <div class="line2"></div>
+    <div class="quote">"Temiz ve doğru içeriğe ulaşmanız için samimi bir rehber."</div>
+  </div>
+  <div class="right">
+    <div class="rtitle">Wellness Çözümleri</div>
+    <div class="plist">
+      <div class="pitem"><div class="pdot"></div><div><div class="pname">Nitro Plus · Sunrise · Sunset</div><div class="psub">Vasküler & Günlük Wellness</div></div></div>
+      <div class="pitem"><div class="pdot"></div><div><div class="pname">EDGE · NRGI · ON-SHOTS</div><div class="psub">Zihin, Enerji & Odak</div></div></div>
+      <div class="pitem"><div class="pdot"></div><div><div class="pname">HL5 · R-STOUR</div><div class="psub">Kolajen & Sindirim Sağlığı</div></div></div>
+      <div class="pitem"><div class="pdot"></div><div><div class="pname">IGNT · FIT20 · ORIGIN</div><div class="psub">Hormon, Fitness & Temel Beslenme</div></div></div>
+    </div>
+  </div>
+  <div class="corner2">vitalprotocoldk.com</div>
+</div>
+<div class="note">✦ Ürünlerin tamamını gösterir — bilgi arayan ziyaretçiler için ideal</div>
+
+<!-- VİTRİN 3 -->
+<div class="section-label">Vitrin 3 — "Deniz KAT" · Kişisel Marka</div>
+<div class="vitrin v3">
+  <div class="glow"></div>
+  <div class="left3">
+    <div class="eyebrow">Bağımsız İyi Yaşam (Wellness) Yol Arkadaşı</div>
+    <div class="brand3">vitalprotocol<span>DK</span></div>
+    <div class="line3"></div>
+    <div class="headline3">Doğru bilgi, <strong>doğru ürün,</strong><br>doğru yaşam.</div>
+    <div class="pills">
+      <div class="pill">Türkçe Danışmanlık</div>
+      <div class="pill">Kişisel Rehberlik</div>
+      <div class="pill">Güvenilir İçerik</div>
+    </div>
+  </div>
+  <div class="right3">
+    <div class="right-content">
+      <div class="author-label">Kurucu</div>
+      <div class="author-name">Deniz KAT</div>
+      <div class="author-title">İyi Yaşam (Wellness) Yol Arkadaşı<br>Amare Global<br>Bağımsız İş Ortağı</div>
+      <div class="amare-badge">
+        <span>Partner</span>
+        <span>Amare Global</span>
+      </div>
+    </div>
+  </div>
+  <div class="corner3">vitalprotocoldk.com</div>
+</div>
+<div class="note">✦ Kişisel marka vurgusu — "bunu bir insan yürütüyor" güveni verir</div>
+
+</body>
+</html>
