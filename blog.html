@@ -119,6 +119,27 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
 <link rel="alternate" hreflang="en" href="https://vitalprotocoldk.com/blog">
 <link rel="alternate" hreflang="es" href="https://vitalprotocoldk.com/blog">
 <link rel="alternate" hreflang="x-default" href="https://vitalprotocoldk.com/blog">
+
+<style>
+.bilim-section{max-width:900px;margin:48px auto 32px;padding:0 20px}
+.bilim-header{text-align:center;margin-bottom:32px}
+.bilim-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#b8963e;font-weight:600;display:block;margin-bottom:10px}
+.bilim-title{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.5vw,36px);font-weight:400;color:#2e3d30;margin-bottom:10px}
+.bilim-subtitle{font-size:15px;color:#6b7280;max-width:580px;margin:0 auto;line-height:1.7}
+.bilim-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:20px}
+.bilim-kart{background:#fff;border:1px solid #e8e4dc;border-radius:12px;padding:24px;box-shadow:0 2px 16px rgba(0,0,0,0.05);display:flex;flex-direction:column;gap:12px}
+.bilim-kart-ust{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.bilim-rozet{font-size:11px;font-weight:600;color:#b8963e;letter-spacing:.5px;background:#fdf8ee;padding:4px 10px;border-radius:20px;border:1px solid #e8d5a0}
+.bilim-yil{font-size:12px;color:#6b7280;font-weight:500;background:#f3f4f6;padding:3px 10px;border-radius:20px}
+.bilim-kart-baslik{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:#2e3d30;line-height:1.4;margin:0}
+.bilim-kart-ozet{font-size:13.5px;color:#4b5563;line-height:1.8;margin:0;flex:1}
+.bilim-kart-meta{display:flex;gap:12px;flex-wrap:wrap}
+.bilim-kart-meta span{font-size:12px;color:#6b7280;background:#f9f7f2;padding:4px 10px;border-radius:20px;border:1px solid #e8e4dc}
+.bilim-doi{font-size:12px;color:#b8963e;text-decoration:none;font-weight:600;letter-spacing:.3px;margin-top:4px;display:inline-block}
+.bilim-doi:hover{text-decoration:underline}
+.bilim-uyari{text-align:center;font-size:12px;color:#9ca3af;font-style:italic;margin-top:8px;line-height:1.6;padding:0 20px}
+@media(max-width:640px){.bilim-grid{grid-template-columns:1fr}.bilim-kart-ust{flex-wrap:wrap}}
+</style>
 </head>
 <body>
 <script>
@@ -1070,6 +1091,45 @@ document.addEventListener('click', function(e){
   <div class="imp-en" style="display:none"><strong>Important Notice:</strong> The information on our website is for general informational purposes only, aimed at supporting the body's normal functions. Our products are not medicines and cannot be used for the treatment or diagnosis of any disease.</div>
   <div class="imp-es" style="display:none"><strong>Aviso Importante:</strong> La información de nuestro sitio web tiene carácter informativo general y está orientada a apoyar las funciones normales del organismo. Nuestros productos no son medicamentos y no pueden utilizarse para el tratamiento ni el diagnóstico de enfermedades.</div>
 </div>
+
+<div class="bilim-section">
+  <div class="bilim-header">
+    <span class="bilim-eyebrow">📚 Bilim Köşesi</span>
+    <h2 class="bilim-title">Referans Aldığımız Araştırmalar</h2>
+    <p class="bilim-subtitle">İçeriklerimizi hazırlarken başvurduğumuz yayınlanmış bağımsız çalışmalardan ikisi.</p>
+  </div>
+  <div class="bilim-grid">
+    <div class="bilim-kart">
+      <div class="bilim-kart-ust">
+        <span class="bilim-rozet">Nature · Scientific Reports</span>
+        <span class="bilim-yil">2020</span>
+      </div>
+      <h3 class="bilim-kart-baslik">Kronik Hastalıklarda İltihap, Oksidatif Stres ve Endotel Disfonksiyonunun Düzeltilmesi</h3>
+      <p class="bilim-kart-ozet">178 kronik hastada (diyabet, hipertansiyon, Alzheimer, MS, kanser vb.) 12 haftalık müdahale sonucunda; inflamasyon belirteçleri, oksidatif stres ve endotel disfonksiyonu belirgin biçimde iyileşti. Vitamin B12, D vitamini, folik asit, HDL kolesterol ve serum albümin düzeyleri anlamlı olarak arttı.</p>
+      <div class="bilim-kart-meta">
+        <span>👥 178 hasta</span>
+        <span>⏱ 12 hafta</span>
+        <span>📊 p &lt; 0.001</span>
+      </div>
+      <a href="https://doi.org/10.1038/s41598-020-65528-6" target="_blank" rel="nofollow noopener" class="bilim-doi">DOI: 10.1038/s41598-020-65528-6 →</a>
+    </div>
+    <div class="bilim-kart">
+      <div class="bilim-kart-ust">
+        <span class="bilim-rozet">Avrupa Tıp Dergisi · MRA</span>
+        <span class="bilim-yil">2025</span>
+      </div>
+      <h3 class="bilim-kart-baslik">Evre 4 Kanser Hastalarında Hücresel Beslenme ve Yaşam Kalitesi</h3>
+      <p class="bilim-kart-ozet">Kemoterapi ve radyoterapiyi tamamlamış 98 evre 4 metastatik kanser hastasında 52 haftalık takip sonucunda hastaların %75.5'i 52. haftada takip kapsamındaydı. Vücut ağırlığı 31-44 kg'dan 48-76 kg'a yükseldi. İştah, kilo alımı ve yaşam kalitesinde anlamlı iyileşme gözlemlendi.</p>
+      <div class="bilim-kart-meta">
+        <span>👥 98 hasta</span>
+        <span>⏱ 52 hafta</span>
+        <span>📊 %75.5 takip tamamlama</span>
+      </div>
+      <a href="https://doi.org/10.18103/mra.v13i3.6419" target="_blank" rel="nofollow noopener" class="bilim-doi">DOI: 10.18103/mra.v13i3.6419 →</a>
+    </div>
+  </div>
+  <p class="bilim-uyari">⚠️ Bu çalışmalar bağımsız araştırmacılar tarafından yürütülmüş olup vitalprotocolDK bu araştırmaların sponsoru veya ortağı değildir. Bilimsel literatüre atıf amaçlıdır. Ürünler ilaç değildir; hastalıkların tedavisi, teşhisi veya önlenmesi amacıyla kullanılamaz.</p>
+</div>
 <footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note">Bilgilendirme amaçlıdır. — Deniz KAT · Wellness Danışmanı</div>
 
 </footer>
@@ -1280,6 +1340,45 @@ document.addEventListener('click', function(e){
     <div class="blog-card-meta">⏱ ~6 min · Deniz KAT →</div>
   </div>
 </a></div></div>
+
+<div class="bilim-section">
+  <div class="bilim-header">
+    <span class="bilim-eyebrow">📚 Science Corner</span>
+    <h2 class="bilim-title">Studies We Referenced</h2>
+    <p class="bilim-subtitle">Two independent published studies we consulted while preparing our content.</p>
+  </div>
+  <div class="bilim-grid">
+    <div class="bilim-kart">
+      <div class="bilim-kart-ust">
+        <span class="bilim-rozet">Nature · Scientific Reports</span>
+        <span class="bilim-yil">2020</span>
+      </div>
+      <h3 class="bilim-kart-baslik">Correcting Inflammation, Oxidative Stress and Endothelial Dysfunction in Chronic Diseases</h3>
+      <p class="bilim-kart-ozet">In a 12-week intervention with 178 chronic disease patients (diabetes, hypertension, Alzheimer's, MS, cancer, etc.), inflammatory markers, oxidative stress and endothelial dysfunction improved significantly. Vitamin B12, vitamin D, folic acid, HDL cholesterol and serum albumin levels increased meaningfully.</p>
+      <div class="bilim-kart-meta">
+        <span>👥 178 patients</span>
+        <span>⏱ 12 weeks</span>
+        <span>📊 p &lt; 0.001</span>
+      </div>
+      <a href="https://doi.org/10.1038/s41598-020-65528-6" target="_blank" rel="nofollow noopener" class="bilim-doi">DOI: 10.1038/s41598-020-65528-6 →</a>
+    </div>
+    <div class="bilim-kart">
+      <div class="bilim-kart-ust">
+        <span class="bilim-rozet">European Medical Journal · MRA</span>
+        <span class="bilim-yil">2025</span>
+      </div>
+      <h3 class="bilim-kart-baslik">Cellular Nutrition and Quality of Life in Stage 4 Cancer Patients</h3>
+      <p class="bilim-kart-ozet">In a 52-week follow-up of 98 stage 4 metastatic cancer patients who had completed chemotherapy and radiotherapy, 75.5% of patients remained in follow-up at week 52. Body weight increased from 31–44 kg to 48–76 kg. Significant improvements were observed in appetite, weight gain and quality of life.</p>
+      <div class="bilim-kart-meta">
+        <span>👥 98 patients</span>
+        <span>⏱ 52 weeks</span>
+        <span>📊 75.5% follow-up completion</span>
+      </div>
+      <a href="https://doi.org/10.18103/mra.v13i3.6419" target="_blank" rel="nofollow noopener" class="bilim-doi">DOI: 10.18103/mra.v13i3.6419 →</a>
+    </div>
+  </div>
+  <p class="bilim-uyari">⚠️ These studies were conducted by independent researchers. vitalprotocolDK is not a sponsor or partner of these studies. References are for scientific literature purposes only. The products are not medicines and cannot be used for the treatment, diagnosis or prevention of any disease.</p>
+</div>
 <footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note">For informational purposes only. — Deniz KAT · Wellness Consultant</div></footer>
 </div>
 
@@ -1344,6 +1443,45 @@ document.addEventListener('click', function(e){
     <div class="blog-card-meta">⏱ ~6 min · Deniz KAT →</div>
   </div>
 </a></div></div>
+
+<div class="bilim-section">
+  <div class="bilim-header">
+    <span class="bilim-eyebrow">📚 Rincón Científico</span>
+    <h2 class="bilim-title">Estudios que Hemos Consultado</h2>
+    <p class="bilim-subtitle">Dos estudios independientes publicados que consultamos al preparar nuestros contenidos.</p>
+  </div>
+  <div class="bilim-grid">
+    <div class="bilim-kart">
+      <div class="bilim-kart-ust">
+        <span class="bilim-rozet">Nature · Scientific Reports</span>
+        <span class="bilim-yil">2020</span>
+      </div>
+      <h3 class="bilim-kart-baslik">Corrección de Inflamación, Estrés Oxidativo y Disfunción Endotelial en Enfermedades Crónicas</h3>
+      <p class="bilim-kart-ozet">En una intervención de 12 semanas con 178 pacientes con enfermedades crónicas (diabetes, hipertensión, Alzheimer, EM, cáncer, etc.), los marcadores inflamatorios, el estrés oxidativo y la disfunción endotelial mejoraron significativamente. Los niveles de vitamina B12, vitamina D, ácido fólico, colesterol HDL y albúmina sérica aumentaron considerablemente.</p>
+      <div class="bilim-kart-meta">
+        <span>👥 178 pacientes</span>
+        <span>⏱ 12 semanas</span>
+        <span>📊 p &lt; 0.001</span>
+      </div>
+      <a href="https://doi.org/10.1038/s41598-020-65528-6" target="_blank" rel="nofollow noopener" class="bilim-doi">DOI: 10.1038/s41598-020-65528-6 →</a>
+    </div>
+    <div class="bilim-kart">
+      <div class="bilim-kart-ust">
+        <span class="bilim-rozet">Revista Médica Europea · MRA</span>
+        <span class="bilim-yil">2025</span>
+      </div>
+      <h3 class="bilim-kart-baslik">Nutrición Celular y Calidad de Vida en Pacientes con Cáncer en Estadio 4</h3>
+      <p class="bilim-kart-ozet">En un seguimiento de 52 semanas de 98 pacientes con cáncer metastásico en estadio 4 que habían completado quimioterapia y radioterapia, el 75,5% de los pacientes permanecía en seguimiento en la semana 52. El peso corporal aumentó de 31-44 kg a 48-76 kg. Se observaron mejoras significativas en el apetito, la ganancia de peso y la calidad de vida.</p>
+      <div class="bilim-kart-meta">
+        <span>👥 98 pacientes</span>
+        <span>⏱ 52 semanas</span>
+        <span>📊 75,5% seguimiento completado</span>
+      </div>
+      <a href="https://doi.org/10.18103/mra.v13i3.6419" target="_blank" rel="nofollow noopener" class="bilim-doi">DOI: 10.18103/mra.v13i3.6419 →</a>
+    </div>
+  </div>
+  <p class="bilim-uyari">⚠️ Estos estudios fueron realizados por investigadores independientes. vitalprotocolDK no es patrocinador ni socio de estas investigaciones. Las referencias son únicamente con fines de literatura científica. Los productos no son medicamentos y no pueden utilizarse para el tratamiento, diagnóstico o prevención de ninguna enfermedad.</p>
+</div>
 <footer><div class="footer-logo">vital<span>protocol</span>DK</div><div class="footer-note">Solo informativa. — Deniz KAT · Consultor de Bienestar</div></footer>
 </div>
 
