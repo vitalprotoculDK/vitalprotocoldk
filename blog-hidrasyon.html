@@ -928,30 +928,6 @@ footer{
 </style>
 </head>
 <body>
-<script>
-// Apply saved language to nav immediately
-(function(){
-  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Çözümler",blog:"Blog",mission:"Misyon",faq:"SSS",contact:"İletişim"},
-          en:{home:"Homepage",health:"Health Triangle",protocols:"Solutions",blog:"Insights",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},
-          es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Soluciones",blog:"Perspectivas",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
-  var saved = localStorage.getItem('vpLang')||'tr';
-  function applyNav(l){
-    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){
-      b.classList.toggle("active",b.textContent.trim().toLowerCase()===l);
-    });
-    var lbl=lb[l]||lb.tr;
-    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lbl[k]});
-  }
-  // Apply immediately when DOM is ready
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',function(){applyNav(saved);});
-  } else {
-    applyNav(saved);
-  }
-})();
-</script>
 <nav class="vpdk-nav-global">
   <a class="vpdk-nav-logo" href="/index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 48" width="220" height="40" role="img" aria-label="vitalprotocolDK">
   <title>vitalprotocolDK</title>
@@ -1020,552 +996,300 @@ footer{
   <a href="/iletisim.html" class="vpdk-mobile-link" data-mnav="contact">İletişim</a>
 </div>
 
-<!-- TR -->
-<div class="blog-lang lang-section active" id="blog-hd-tr">
-
+<!-- ══════════ TÜRKÇE ══════════ -->
+<div class="blog-lang active" id="blog-hd-tr">
 <div class="blog-hero">
   <span class="blog-category">✦ Hidrasyon</span>
   <h1>Neden Su İçmek Yetmiyor?</h1>
-  <h2>Hücrenin Susuzluğu ve Gerçek Hidrasyon</h2>
-  <div class="blog-meta"><span>⏱ ~6 dk okuma</span><span>✦ Deniz KAT</span></div>
+  <h2>Hücrenin Susuzluğu ve Bütünsel Hidrasyon</h2>
+  <div class="blog-meta"><span>⏱ ~6 dk okuma</span><span>✦ Deniz KAT</span><span>İyi Yaşam (Wellness) Yol Arkadaşı</span></div>
 </div>
 
 <article class="blog-article">
+  <a href="/blog.html" class="blog-back">← Blog'a Dön</a>
 
-  <p class="blog-lead">Elinizde bir kova su var ve kurumuş, çatlamış bir toprağın üzerine döküyorsunuz. Ne olur? Su toprağın içine süzülmek yerine üzerinden akıp gider. Vücudumuzda da durum tam olarak böyledir; su bazen "yoldan geçiyor" ama "eve girmiyor."</p>
+  <p class="blog-lead">Elinizde bir kova su var ve kurumuş, çatlamış bir toprağın üzerine döküyorsunuz. Ne olur? Su, toprağın içine süzülmek yerine üzerinden akıp gider. Vücudumuzda da durum bazen böyledir; su bazen "yoldan geçer" ama "eve girmez."</p>
 
-<div style="margin:32px 0;text-align:center">
-<svg viewBox="0 0 560 180" xmlns="http://www.w3.org/2000/svg" style="max-width:560px;width:100%;height:auto">
-  <rect width="560" height="180" fill="#1a2419" rx="12"/>
-  <!-- Orta ayırıcı -->
-  <line x1="280" y1="15" x2="280" y2="170" stroke="#b8963e" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
-  <!-- Sol: Kuru toprak -->
-  <text x="100" y="28" text-anchor="middle" fill="#c0693a" font-size="11" font-family="Georgia,serif" letter-spacing="1">KURUMUŞ TOPRAK</text>
-  <!-- Kuru toprak zemini -->
-  <rect x="20" y="110" width="220" height="55" fill="#3d2a10" rx="4"/>
-  <!-- Çatlaklar -->
-  <path d="M60,110 L55,140 L70,165" stroke="#6b4a22" stroke-width="2" fill="none"/>
-  <path d="M100,110 L108,135 L95,165" stroke="#6b4a22" stroke-width="2" fill="none"/>
-  <path d="M150,110 L145,145 L160,165" stroke="#6b4a22" stroke-width="2" fill="none"/>
-  <path d="M190,110 L198,138 L185,165" stroke="#6b4a22" stroke-width="2" fill="none"/>
-  <path d="M80,120 L90,130" stroke="#6b4a22" stroke-width="1.5" fill="none"/>
-  <path d="M130,115 L120,128" stroke="#6b4a22" stroke-width="1.5" fill="none"/>
-  <!-- Su akıyor ama içeri girmiyor -->
-  <path d="M100,40 Q100,60 100,80 Q100,95 80,105 Q60,108 50,110" stroke="#4a90d9" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
-  <path d="M140,40 Q140,65 140,85 Q140,100 160,106 Q180,108 195,110" stroke="#4a90d9" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
-  <!-- Su damlaları -->
-  <ellipse cx="100" cy="38" rx="6" ry="8" fill="#4a90d9" opacity="0.8"/>
-  <ellipse cx="140" cy="38" rx="6" ry="8" fill="#4a90d9" opacity="0.8"/>
-  <!-- X işareti -->
-  <circle cx="130" cy="90" r="14" fill="#8B0000" opacity="0.3"/>
-  <text x="130" y="95" text-anchor="middle" fill="#ff6b6b" font-size="16">✕</text>
+  <div class="blog-svg-wrap"><svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;display:block;margin:0 auto">
+  <rect width="500" height="200" fill="#f5f2ec" rx="16"/>
+  <!-- Sol: Kurumuş -->
+  <rect x="20" y="20" width="210" height="160" rx="12" fill="#2e3d30"/>
+  <text x="125" y="50" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" fill="#b8963e" letter-spacing="1">KURUMUŞ TOPRAK ✗</text>
+  <!-- Çatlak çizgiler -->
+  <path d="M 60 80 L 80 95 L 70 115 L 90 130" fill="none" stroke="#6b5a3e" stroke-width="1.5"/>
+  <path d="M 110 75 L 130 90 L 120 110" fill="none" stroke="#6b5a3e" stroke-width="1.5"/>
+  <path d="M 150 85 L 165 100 L 155 120 L 175 135" fill="none" stroke="#6b5a3e" stroke-width="1.5"/>
+  <text x="125" y="155" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(252,252,250,0.6)">Su üzerinden akıp gider</text>
+  <!-- Su damlası kayıyor -->
+  <path d="M 125 65 Q 128 72 125 78 Q 122 72 125 65Z" fill="#4a90d9" opacity="0.7"/>
+  <line x1="125" y1="78" x2="175" y2="95" stroke="#4a90d9" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
 
-  <!-- Sağ: Sulanan toprak -->
-  <text x="440" y="28" text-anchor="middle" fill="#4a9a5a" font-size="11" font-family="Georgia,serif" letter-spacing="1">CANLANAN TOPRAK</text>
-  <!-- Nemli toprak -->
-  <rect x="320" y="110" width="220" height="55" fill="#2e4a1a" rx="4"/>
-  <!-- Nem çizgileri -->
-  <ellipse cx="380" cy="130" rx="25" ry="8" fill="#1a5a2a" opacity="0.5"/>
-  <ellipse cx="440" cy="140" rx="30" ry="8" fill="#1a5a2a" opacity="0.4"/>
-  <ellipse cx="500" cy="128" rx="20" ry="7" fill="#1a5a2a" opacity="0.5"/>
-  <!-- Çiçekler -->
-  <line x1="380" y1="110" x2="380" y2="88" stroke="#4a6741" stroke-width="2"/>
-  <circle cx="380" cy="84" r="8" fill="#d4ae5e" opacity="0.8"/>
-  <line x1="440" y1="110" x2="440" y2="82" stroke="#4a6741" stroke-width="2"/>
-  <circle cx="440" cy="78" r="10" fill="#d4ae5e" opacity="0.9"/>
-  <line x1="500" y1="110" x2="500" y2="86" stroke="#4a6741" stroke-width="2"/>
-  <circle cx="500" cy="82" r="8" fill="#d4ae5e" opacity="0.8"/>
-  <!-- Su içeri giriyor -->
-  <path d="M400,40 Q400,65 400,88 Q400,100 410,108" stroke="#4a90d9" stroke-width="2.5" fill="none"/>
-  <path d="M460,40 Q460,62 460,88 Q460,100 450,108" stroke="#4a90d9" stroke-width="2.5" fill="none"/>
-  <ellipse cx="400" cy="38" rx="6" ry="8" fill="#4a90d9" opacity="0.9"/>
-  <ellipse cx="460" cy="38" rx="6" ry="8" fill="#4a90d9" opacity="0.9"/>
-  <!-- Tik işareti -->
-  <circle cx="430" cy="68" r="14" fill="#1a5a2a" opacity="0.5"/>
-  <text x="430" y="73" text-anchor="middle" fill="#4a9a5a" font-size="16">✓</text>
-  <!-- Alt yazılar -->
-  <text x="130" y="175" text-anchor="middle" fill="#c0693a" font-size="9" font-family="Georgia,serif">Su akıp gidiyor</text>
-  <text x="430" y="175" text-anchor="middle" fill="#4a9a5a" font-size="9" font-family="Georgia,serif">Su hücreye ulaşıyor</text>
-</svg>
-</div>
-  <p class="blog-illus-label">Kuru toprak suyu içine almaz — hücre de öyle</p>
+  <!-- Sağ: Canlanan -->
+  <rect x="270" y="20" width="210" height="160" rx="12" fill="#1a2419"/>
+  <text x="375" y="50" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" fill="#b8963e" letter-spacing="1">CANLI HÜCRE ✓</text>
+  <!-- Dalgalar -->
+  <path d="M 295 90 Q 315 80 335 90 Q 355 100 375 90 Q 395 80 415 90 Q 435 100 455 90" fill="none" stroke="#4a90d9" stroke-width="1.5" opacity="0.7"/>
+  <path d="M 295 105 Q 315 95 335 105 Q 355 115 375 105 Q 395 95 415 105 Q 435 115 455 105" fill="none" stroke="#4a90d9" stroke-width="1.2" opacity="0.5"/>
+  <!-- Hücre -->
+  <circle cx="375" cy="110" r="30" fill="none" stroke="#b8963e" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="375" cy="110" r="18" fill="rgba(74,144,217,0.25)"/>
+  <circle cx="375" cy="110" r="8" fill="rgba(74,144,217,0.5)"/>
+  <text x="375" y="155" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(252,252,250,0.6)">Su en derinlere ulaşır</text>
+</svg></div>
 
   <h2>Ödem mi, Susuzluk mu?</h2>
+  <p>Aynaya baktığınızda yüzünüzde veya ayaklarınızda şişlik (ödem) hissediyorsanız, bu vücudun <em>"Su var ama doğru yere yönlendiremiyorum!"</em> sinyali olabilir. Su, hücrenin içinde olması gerekirken dokular arasında birikmiş olabilir.</p>
 
-  <p>Aynaya baktığınızda yüzünüzde veya ayaklarınızda şişlik (ödem) görüyorsanız, bu vücudun <strong>"Su var ama içeri sokamıyorum!"</strong> çığlığıdır. Su, hücrenin içinde olması gerekirken kapıda birikmiştir.</p>
-
-  <div class="blog-callout">
-    💡 Su hücreye ulaşabilmek için <a href="/blog-damar-otobani.html">damar otobanının açık</a> olması şart. Tıkalı yolda su da gidemez.
-  </div>
+  <blockquote class="blog-quote">Suyun hedefine ulaşabilmesi için dolaşım sisteminin desteklenmesi önem taşır. Akışın verimli olmadığı bir sistemde, su da yolunu bulmakta zorlanabilir.</blockquote>
 
   <h2>1. Su Hücrenin Kapısından Neden Dönüyor?</h2>
 
-  <ul>
-    <li>🔒 <strong>Hücre Zarı Paslanmışsa:</strong> Hücrelerimizin etrafındaki kalkan paslanmışsa su içeri giremez.</li>
-    <li>⚡ <strong>Mineraller Eksikse:</strong> Su yolunu şaşırır; hücreye değil, boşluklara dolar — ödem budur.</li>
-    <li>😴 <strong>Gerçek Susuzluk:</strong> Gerçekten susuz kalan hücre, yorgunluk ve cilt kuruluğu olarak sinyal verir.</li>
-  </ul>
+  <div class="blog-steps">
+    <div class="blog-step">
+      <div class="blog-step-num">🔒</div>
+      <div class="blog-step-content">
+        <h3>Hücre Zarı Esnekliği</h3>
+        <p>Hücrelerimizin dış çeperi yeterince esnek değilse, besinlerin ve suyun içeri girişi zorlaşabilir. Kaliteli yağ asitleri bu yapının normal işleyişine katkıda bulunur.</p>
+      </div>
+    </div>
+    <div class="blog-step">
+      <div class="blog-step-num">⚡</div>
+      <div class="blog-step-content">
+        <h3>Mineral Dengesi</h3>
+        <p>Sodyum, potasyum ve magnezyum gibi elektrolitler, suyun hücre içi-dışı dengesi için kritik rol oynar. Mineral dengesinin desteklenmesi, suyun doğru kompartmana yönlenmesine yardımcı olabilir.</p>
+      </div>
+    </div>
+    <div class="blog-step">
+      <div class="blog-step-num">😴</div>
+      <div class="blog-step-content">
+        <h3>Yorgunluk Sinyalleri</h3>
+        <p>Yeterli su tüketimine karşın süregelen yorgunluk, konsantrasyon güçlüğü veya cilt kuruluğu; hücresel hidrasyonun değerlendirilmesi için bir işaret olabilir.</p>
+      </div>
+    </div>
+  </div>
 
   <h2>2. Hücreyi Nasıl "Sulayabiliriz"?</h2>
+  <p>Sadece su içmek tek başına yeterli olmayabilir; o suyun hücre tarafından verimli şekilde kullanılmasını desteklemek de önem taşır:</p>
 
-  <p>Sadece su içmek yetmez, suyu hücrenin içine sokmak gerekir:</p>
-
-  <div class="blog-hidrasyon-grid">
-    <div class="blog-hidrasyon-item">
-      <div class="icon">🫧</div>
-      <strong>Kapıları Yağlayın</strong>
-      <p><a href="/saglik-ucgeni.html" style="color:#b8963e">Omega-3</a> ile hücre zarı esnerse su kolayca içeri süzülür.</p>
+  <div class="blog-checklist">
+    <h3>Bütünsel Hidrasyon Yaklaşımı</h3>
+    <div class="blog-checklist-item">
+      <strong>🫧 Hücre Zarını Destekleyin:</strong> Omega-3 gibi kaliteli yağ asitleri, hücre zarının normal yapısına eşlik ederek suyun hücre içine geçişini destekleyebilir.
     </div>
-    <div class="blog-hidrasyon-item">
-      <div class="icon">🛣️</div>
-      <strong>Otobanı Açın</strong>
-      <p><a href="/blog-damar-otobani.html" style="color:#b8963e">Nitrik Oksit</a> ile damarlar akışkan olursa su en uçtaki hücreye ulaşır.</p>
+    <div class="blog-checklist-item">
+      <strong>🛣️ Dolaşımı Canlı Tutun:</strong> Vücudun doğal dolaşım süreçlerinin desteklenmesi, suyun en uçtaki hücreye bile ulaşmasına katkıda bulunabilir.
     </div>
-    <div class="blog-hidrasyon-item">
-      <div class="icon">🔋</div>
-      <strong>Enerji Verin</strong>
-      <p>Suyun içeri pompalanması için <a href="/blog-mitokondri.html" style="color:#b8963e">mitokondri gücüne</a> ihtiyaç vardır.</p>
+    <div class="blog-checklist-item">
+      <strong>🔋 Enerji Üretimine Katkı Sağlayın:</strong> CoQ10 ve B vitaminleri gibi bileşenler, hücresel enerji oluşum metabolizmasına katkıda bulunur. Enerji yeterli olduğunda besin ve su taşıma süreçleri daha verimli işleyebilir.
     </div>
   </div>
-
-<div style="margin:32px 0;text-align:center">
-<svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg" style="max-width:560px;width:100%;height:auto">
-  <rect width="560" height="200" fill="#1a2419" rx="12"/>
-  <!-- Ana hücre -->
-  <ellipse cx="280" cy="105" rx="100" ry="75" fill="#2e3d30" stroke="#b8963e" stroke-width="2.5"/>
-  <ellipse cx="280" cy="105" rx="80" ry="57" fill="#1a2419"/>
-  <!-- Çekirdek -->
-  <ellipse cx="280" cy="108" rx="28" ry="22" fill="#2e3d30" stroke="#d4ae5e" stroke-width="1.5"/>
-  <ellipse cx="280" cy="108" rx="18" ry="14" fill="#1a3a1a"/>
-  <text x="280" y="113" text-anchor="middle" fill="#d4ae5e" font-size="10" font-family="Georgia,serif">DNA</text>
-  <!-- Mitokondri -->
-  <ellipse cx="230" cy="90" rx="18" ry="10" fill="#2e4a2e" stroke="#4a6741" stroke-width="1.5"/>
-  <text x="230" y="94" text-anchor="middle" fill="#b8963e" font-size="7" font-family="Georgia,serif">ATP</text>
-  <ellipse cx="330" cy="120" rx="16" ry="9" fill="#2e4a2e" stroke="#4a6741" stroke-width="1.5"/>
-  <text x="330" y="124" text-anchor="middle" fill="#b8963e" font-size="7" font-family="Georgia,serif">ATP</text>
-  <!-- Omega-3 kanallar (hücre zarı kapıları) -->
-  <rect x="178" y="88" width="6" height="20" fill="#d4ae5e" rx="2" opacity="0.9"/>
-  <rect x="376" y="88" width="6" height="20" fill="#d4ae5e" rx="2" opacity="0.9"/>
-  <rect x="240" y="33" width="20" height="6" fill="#d4ae5e" rx="2" opacity="0.9"/>
-  <rect x="300" y="33" width="20" height="6" fill="#d4ae5e" rx="2" opacity="0.9"/>
-  <!-- Sol su damlaları (giriyor) -->
-  <ellipse cx="100" cy="85" rx="8" ry="11" fill="#4a90d9" opacity="0.9"/>
-  <ellipse cx="120" cy="105" rx="7" ry="10" fill="#4a90d9" opacity="0.7"/>
-  <ellipse cx="100" cy="125" rx="8" ry="11" fill="#4a90d9" opacity="0.9"/>
-  <!-- Ok soldan -->
-  <path d="M135,100 L175,98" stroke="#4a90d9" stroke-width="2" marker-end="url(#arrow)"/>
-  <defs>
-    <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L6,3 z" fill="#4a90d9"/>
-    </marker>
-  </defs>
-  <!-- Sağ su damlaları (çıkıyor - atık) -->
-  <ellipse cx="460" cy="82" rx="7" ry="9" fill="#6b6b3a" opacity="0.7"/>
-  <ellipse cx="478" cy="102" rx="6" ry="8" fill="#6b6b3a" opacity="0.6"/>
-  <ellipse cx="460" cy="122" rx="7" ry="9" fill="#6b6b3a" opacity="0.7"/>
-  <!-- Ok sağa (atık çıkıyor) -->
-  <path d="M385,100 L450,100" stroke="#6b6b3a" stroke-width="2" marker-end="url(#arrow2)"/>
-  <defs>
-    <marker id="arrow2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L6,3 z" fill="#6b6b3a"/>
-    </marker>
-  </defs>
-  <!-- Etiketler -->
-  <text x="95" y="155" text-anchor="middle" fill="#4a90d9" font-size="9" font-family="Georgia,serif">Su + Mineral</text>
-  <text x="95" y="167" text-anchor="middle" fill="#4a90d9" font-size="9" font-family="Georgia,serif">İçeri</text>
-  <text x="468" y="155" text-anchor="middle" fill="#6b6b3a" font-size="9" font-family="Georgia,serif">Atık</text>
-  <text x="468" y="167" text-anchor="middle" fill="#6b6b3a" font-size="9" font-family="Georgia,serif">Dışarı</text>
-  <!-- Omega-3 etiketi -->
-  <text x="155" y="100" text-anchor="middle" fill="#d4ae5e" font-size="8" font-family="Georgia,serif">Ω-3</text>
-  <text x="405" y="100" text-anchor="middle" fill="#d4ae5e" font-size="8" font-family="Georgia,serif">Ω-3</text>
-  <!-- Alt başlık -->
-  <text x="280" y="185" text-anchor="middle" fill="#6b7280" font-size="9" font-family="Georgia,serif" letter-spacing="1">HÜCRESEL HİDRASYON MEKANİZMASI</text>
-</svg>
-</div>
-  <p class="blog-illus-label">Omega-3 kapıları, mitokondri pompası: su hücreye böyle girer</p>
 
   <h2>3. Su Akıp Gitmesin, Can Versin</h2>
+  <p>Günde kaç litre su içtiğinizden ziyade, o suyun ne kadarının sisteminiz tarafından verimli kullanıldığına odaklanın. Bütünsel beslenme yaklaşımı, o kurumuş toprağın suyla buluşmasını destekler. Gerçek zindelik işte bu "içsel denge" ile başlar.</p>
 
-  <p>Günde kaç litre su içtiğinizden ziyade, o suyun ne kadarının hücreye girdiğine odaklanın. Hücresel beslenme o kurumuş toprağı yumuşatır ve suyun içeri süzülmesini sağlar. <strong>Gerçek canlılık işte bu "içsel ıslanma" ile başlar.</strong></p>
-
-  <div class="blog-summary">
-    <h3>Özetle</h3>
-    <p>Su içmek mideyi doldurmak değil, hücreyi canlandırmaktır. Hücrelerinizin kapısını açın ki su içeri girip hayat versin!</p>
+  <div class="blog-final-msg">
+    <p>Su, yaşamın temelidir — ama yolunu bulması için <strong>doğru zemin</strong> gerekir. Vücudunuzun doğal işleyişine bugün destek vermek, yarınki dengenizi şekillendirir.</p>
   </div>
 
-  <div class="blog-author-card">
-    <div class="blog-author-info">
-      <strong>Deniz KAT</strong>
-      <span>İyi Yaşam (Wellness) Yol Arkadaşı · vitalprotocolDK</span>
-    </div>
-  </div>
-
+  <p style="text-align:center;margin-top:40px">📖 <a href="/saglik-ucgeni.html" style="color:#b8963e;text-decoration:none;font-weight:500">Sağlık Üçgeni: Bütünsel Destek Sistemi →</a></p>
 </article>
 </div>
 
-<!-- EN -->
+<!-- ══════════ ENGLISH ══════════ -->
 <div class="blog-lang" id="blog-hd-en" style="display:none">
-
 <div class="blog-hero">
   <span class="blog-category">✦ Hydration</span>
-  <h2 class="blog-main-title">Why Isn't Drinking Water Enough?</h2>
-  <p class="blog-hero-sub" style="font-family:'Cormorant Garamond',serif;font-size:clamp(16px,2.5vw,24px);font-weight:300;color:#d4ae5e;font-style:italic;margin-bottom:24px">Cellular Dehydration and True Hydration</p>
-  <div class="blog-meta"><span>⏱ ~6 min read</span><span>✦ Deniz KAT</span></div>
+  <h1>Why Isn't Drinking Water Enough?</h1>
+  <h2>Cellular Thirst and Holistic Hydration</h2>
+  <div class="blog-meta"><span>⏱ ~6 min read</span><span>✦ Deniz KAT</span><span>Wellness Companion</span></div>
 </div>
 
 <article class="blog-article">
+  <a href="/blog.html" class="blog-back">← Back to Blog</a>
 
-  <p class="blog-lead">You have a bucket of water and you pour it onto dry, cracked earth. What happens? Instead of soaking in, the water runs off the surface. Our body works in exactly the same way — water sometimes "passes through" but never "comes home."</p>
+  <p class="blog-lead">Imagine you have a bucket of water and pour it over dry, cracked soil. What happens? Instead of soaking in, the water runs straight off the surface. Sometimes our bodies work the same way — water passes through but never quite "comes home."</p>
 
-<div style="margin:32px 0;text-align:center">
-<svg viewBox="0 0 560 180" xmlns="http://www.w3.org/2000/svg" style="max-width:560px;width:100%;height:auto">
-  <rect width="560" height="180" fill="#1a2419" rx="12"/>
-  <!-- Orta ayırıcı -->
-  <line x1="280" y1="15" x2="280" y2="170" stroke="#b8963e" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
-  <!-- Sol: Kuru toprak -->
-  <text x="100" y="28" text-anchor="middle" fill="#c0693a" font-size="11" font-family="Georgia,serif" letter-spacing="1">DRY EARTH</text>
-  <!-- Kuru toprak zemini -->
-  <rect x="20" y="110" width="220" height="55" fill="#3d2a10" rx="4"/>
-  <!-- Çatlaklar -->
-  <path d="M60,110 L55,140 L70,165" stroke="#6b4a22" stroke-width="2" fill="none"/>
-  <path d="M100,110 L108,135 L95,165" stroke="#6b4a22" stroke-width="2" fill="none"/>
-  <path d="M150,110 L145,145 L160,165" stroke="#6b4a22" stroke-width="2" fill="none"/>
-  <path d="M190,110 L198,138 L185,165" stroke="#6b4a22" stroke-width="2" fill="none"/>
-  <path d="M80,120 L90,130" stroke="#6b4a22" stroke-width="1.5" fill="none"/>
-  <path d="M130,115 L120,128" stroke="#6b4a22" stroke-width="1.5" fill="none"/>
-  <!-- Su akıyor ama içeri girmiyor -->
-  <path d="M100,40 Q100,60 100,80 Q100,95 80,105 Q60,108 50,110" stroke="#4a90d9" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
-  <path d="M140,40 Q140,65 140,85 Q140,100 160,106 Q180,108 195,110" stroke="#4a90d9" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
-  <!-- Su damlaları -->
-  <ellipse cx="100" cy="38" rx="6" ry="8" fill="#4a90d9" opacity="0.8"/>
-  <ellipse cx="140" cy="38" rx="6" ry="8" fill="#4a90d9" opacity="0.8"/>
-  <!-- X işareti -->
-  <circle cx="130" cy="90" r="14" fill="#8B0000" opacity="0.3"/>
-  <text x="130" y="95" text-anchor="middle" fill="#ff6b6b" font-size="16">✕</text>
+  <div class="blog-svg-wrap"><svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;display:block;margin:0 auto">
+  <rect width="500" height="200" fill="#f5f2ec" rx="16"/>
+  <!-- Sol: Kurumuş -->
+  <rect x="20" y="20" width="210" height="160" rx="12" fill="#2e3d30"/>
+  <text x="125" y="50" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" fill="#b8963e" letter-spacing="1">DRY SOIL ✗</text>
+  <!-- Çatlak çizgiler -->
+  <path d="M 60 80 L 80 95 L 70 115 L 90 130" fill="none" stroke="#6b5a3e" stroke-width="1.5"/>
+  <path d="M 110 75 L 130 90 L 120 110" fill="none" stroke="#6b5a3e" stroke-width="1.5"/>
+  <path d="M 150 85 L 165 100 L 155 120 L 175 135" fill="none" stroke="#6b5a3e" stroke-width="1.5"/>
+  <text x="125" y="155" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(252,252,250,0.6)">Water runs off the surface</text>
+  <!-- Su damlası kayıyor -->
+  <path d="M 125 65 Q 128 72 125 78 Q 122 72 125 65Z" fill="#4a90d9" opacity="0.7"/>
+  <line x1="125" y1="78" x2="175" y2="95" stroke="#4a90d9" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
 
-  <!-- Sağ: Sulanan toprak -->
-  <text x="440" y="28" text-anchor="middle" fill="#4a9a5a" font-size="11" font-family="Georgia,serif" letter-spacing="1">LIVING EARTH</text>
-  <!-- Nemli toprak -->
-  <rect x="320" y="110" width="220" height="55" fill="#2e4a1a" rx="4"/>
-  <!-- Nem çizgileri -->
-  <ellipse cx="380" cy="130" rx="25" ry="8" fill="#1a5a2a" opacity="0.5"/>
-  <ellipse cx="440" cy="140" rx="30" ry="8" fill="#1a5a2a" opacity="0.4"/>
-  <ellipse cx="500" cy="128" rx="20" ry="7" fill="#1a5a2a" opacity="0.5"/>
-  <!-- Çiçekler -->
-  <line x1="380" y1="110" x2="380" y2="88" stroke="#4a6741" stroke-width="2"/>
-  <circle cx="380" cy="84" r="8" fill="#d4ae5e" opacity="0.8"/>
-  <line x1="440" y1="110" x2="440" y2="82" stroke="#4a6741" stroke-width="2"/>
-  <circle cx="440" cy="78" r="10" fill="#d4ae5e" opacity="0.9"/>
-  <line x1="500" y1="110" x2="500" y2="86" stroke="#4a6741" stroke-width="2"/>
-  <circle cx="500" cy="82" r="8" fill="#d4ae5e" opacity="0.8"/>
-  <!-- Su içeri giriyor -->
-  <path d="M400,40 Q400,65 400,88 Q400,100 410,108" stroke="#4a90d9" stroke-width="2.5" fill="none"/>
-  <path d="M460,40 Q460,62 460,88 Q460,100 450,108" stroke="#4a90d9" stroke-width="2.5" fill="none"/>
-  <ellipse cx="400" cy="38" rx="6" ry="8" fill="#4a90d9" opacity="0.9"/>
-  <ellipse cx="460" cy="38" rx="6" ry="8" fill="#4a90d9" opacity="0.9"/>
-  <!-- Tik işareti -->
-  <circle cx="430" cy="68" r="14" fill="#1a5a2a" opacity="0.5"/>
-  <text x="430" y="73" text-anchor="middle" fill="#4a9a5a" font-size="16">✓</text>
-  <!-- Alt yazılar -->
-  <text x="130" y="175" text-anchor="middle" fill="#c0693a" font-size="9" font-family="Georgia,serif">Water runs off</text>
-  <text x="430" y="175" text-anchor="middle" fill="#4a9a5a" font-size="9" font-family="Georgia,serif">Water reaches the cell</text>
-</svg>
-</div>
-  <p class="blog-illus-label">Dry earth won't absorb water — neither will a cell</p>
+  <!-- Sağ: Canlanan -->
+  <rect x="270" y="20" width="210" height="160" rx="12" fill="#1a2419"/>
+  <text x="375" y="50" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" fill="#b8963e" letter-spacing="1">LIVING CELL ✓</text>
+  <!-- Dalgalar -->
+  <path d="M 295 90 Q 315 80 335 90 Q 355 100 375 90 Q 395 80 415 90 Q 435 100 455 90" fill="none" stroke="#4a90d9" stroke-width="1.5" opacity="0.7"/>
+  <path d="M 295 105 Q 315 95 335 105 Q 355 115 375 105 Q 395 95 415 105 Q 435 115 455 105" fill="none" stroke="#4a90d9" stroke-width="1.2" opacity="0.5"/>
+  <!-- Hücre -->
+  <circle cx="375" cy="110" r="30" fill="none" stroke="#b8963e" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="375" cy="110" r="18" fill="rgba(74,144,217,0.25)"/>
+  <circle cx="375" cy="110" r="8" fill="rgba(74,144,217,0.5)"/>
+  <text x="375" y="155" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(252,252,250,0.6)">Water reaches the deepest layers</text>
+</svg></div>
 
   <h2>Oedema or Dehydration?</h2>
+  <p>If you notice puffiness in your face or feet, this may be your body signalling: <em>"I have water but I can't direct it to the right place!"</em> Instead of sitting inside the cells where it belongs, water may be pooling in the spaces between tissues.</p>
 
-  <p>If you look in the mirror and see swelling (oedema) in your face or feet, this is the body crying out: <strong>"There's water but I can't get it inside!"</strong> The water has accumulated at the door instead of being inside the cell.</p>
-
-  <div class="blog-callout">
-    💡 For water to reach the cell, the <a href="/blog-damar-otobani.html">vascular highway must be open</a>. Water can't travel a blocked road either.
-  </div>
+  <blockquote class="blog-quote">For water to reach its destination, supporting the circulatory system matters. In a system where flow is not functioning efficiently, water may also struggle to find its way.</blockquote>
 
   <h2>1. Why Does Water Turn Away at the Cell Door?</h2>
 
-  <ul>
-    <li>🔒 <strong>Rusted Cell Membrane:</strong> If the shield around our cells has rusted, water cannot enter.</li>
-    <li>⚡ <strong>Mineral Deficiency:</strong> Water loses its way; instead of entering the cell it fills the gaps — that is oedema.</li>
-    <li>😴 <strong>True Dehydration:</strong> A cell that is truly thirsty signals through fatigue and dry skin.</li>
-  </ul>
-
-  <h2>2. How Do We "Water" the Cell?</h2>
-
-  <p>Drinking water alone isn't enough — we need to get the water inside the cell:</p>
-
-  <div class="blog-hidrasyon-grid">
-    <div class="blog-hidrasyon-item">
-      <div class="icon">🫧</div>
-      <strong>Lubricate the Doors</strong>
-      <p>With <a href="/saglik-ucgeni.html" style="color:#b8963e">Omega-3</a>, if the cell membrane becomes flexible, water filters in easily.</p>
+  <div class="blog-steps">
+    <div class="blog-step">
+      <div class="blog-step-num">🔒</div>
+      <div class="blog-step-content">
+        <h3>Cell Membrane Flexibility</h3>
+        <p>If the outer wall of our cells is not sufficiently flexible, the entry of nutrients and water may become more difficult. Quality fatty acids contribute to the normal functioning of this structure.</p>
+      </div>
     </div>
-    <div class="blog-hidrasyon-item">
-      <div class="icon">🛣️</div>
-      <strong>Open the Highway</strong>
-      <p>With <a href="/blog-damar-otobani.html" style="color:#b8963e">Nitric Oxide</a>, when blood vessels become fluid, water reaches even the outermost cell.</p>
+    <div class="blog-step">
+      <div class="blog-step-num">⚡</div>
+      <div class="blog-step-content">
+        <h3>Mineral Balance</h3>
+        <p>Electrolytes such as sodium, potassium and magnesium play a critical role in the fluid balance between the inside and outside of cells. Supporting mineral balance may help direct water to the right compartment.</p>
+      </div>
     </div>
-    <div class="blog-hidrasyon-item">
-      <div class="icon">🔋</div>
-      <strong>Provide Energy</strong>
-      <p>Pumping water inside requires <a href="/blog-mitokondri.html" style="color:#b8963e">mitochondrial power</a>.</p>
+    <div class="blog-step">
+      <div class="blog-step-num">😴</div>
+      <div class="blog-step-content">
+        <h3>Fatigue Signals</h3>
+        <p>Persistent fatigue, difficulty concentrating or dry skin despite adequate water intake may be signs worth considering when evaluating cellular hydration.</p>
+      </div>
     </div>
   </div>
 
-<div style="margin:32px 0;text-align:center">
-<svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg" style="max-width:560px;width:100%;height:auto">
-  <rect width="560" height="200" fill="#1a2419" rx="12"/>
-  <!-- Ana hücre -->
-  <ellipse cx="280" cy="105" rx="100" ry="75" fill="#2e3d30" stroke="#b8963e" stroke-width="2.5"/>
-  <ellipse cx="280" cy="105" rx="80" ry="57" fill="#1a2419"/>
-  <!-- Çekirdek -->
-  <ellipse cx="280" cy="108" rx="28" ry="22" fill="#2e3d30" stroke="#d4ae5e" stroke-width="1.5"/>
-  <ellipse cx="280" cy="108" rx="18" ry="14" fill="#1a3a1a"/>
-  <text x="280" y="113" text-anchor="middle" fill="#d4ae5e" font-size="10" font-family="Georgia,serif">DNA</text>
-  <!-- Mitokondri -->
-  <ellipse cx="230" cy="90" rx="18" ry="10" fill="#2e4a2e" stroke="#4a6741" stroke-width="1.5"/>
-  <text x="230" y="94" text-anchor="middle" fill="#b8963e" font-size="7" font-family="Georgia,serif">ATP</text>
-  <ellipse cx="330" cy="120" rx="16" ry="9" fill="#2e4a2e" stroke="#4a6741" stroke-width="1.5"/>
-  <text x="330" y="124" text-anchor="middle" fill="#b8963e" font-size="7" font-family="Georgia,serif">ATP</text>
-  <!-- Omega-3 kanallar (hücre zarı kapıları) -->
-  <rect x="178" y="88" width="6" height="20" fill="#d4ae5e" rx="2" opacity="0.9"/>
-  <rect x="376" y="88" width="6" height="20" fill="#d4ae5e" rx="2" opacity="0.9"/>
-  <rect x="240" y="33" width="20" height="6" fill="#d4ae5e" rx="2" opacity="0.9"/>
-  <rect x="300" y="33" width="20" height="6" fill="#d4ae5e" rx="2" opacity="0.9"/>
-  <!-- Sol su damlaları (giriyor) -->
-  <ellipse cx="100" cy="85" rx="8" ry="11" fill="#4a90d9" opacity="0.9"/>
-  <ellipse cx="120" cy="105" rx="7" ry="10" fill="#4a90d9" opacity="0.7"/>
-  <ellipse cx="100" cy="125" rx="8" ry="11" fill="#4a90d9" opacity="0.9"/>
-  <!-- Ok soldan -->
-  <path d="M135,100 L175,98" stroke="#4a90d9" stroke-width="2" marker-end="url(#arrow)"/>
-  <defs>
-    <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L6,3 z" fill="#4a90d9"/>
-    </marker>
-  </defs>
-  <!-- Sağ su damlaları (çıkıyor - atık) -->
-  <ellipse cx="460" cy="82" rx="7" ry="9" fill="#6b6b3a" opacity="0.7"/>
-  <ellipse cx="478" cy="102" rx="6" ry="8" fill="#6b6b3a" opacity="0.6"/>
-  <ellipse cx="460" cy="122" rx="7" ry="9" fill="#6b6b3a" opacity="0.7"/>
-  <!-- Ok sağa (atık çıkıyor) -->
-  <path d="M385,100 L450,100" stroke="#6b6b3a" stroke-width="2" marker-end="url(#arrow2)"/>
-  <defs>
-    <marker id="arrow2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L6,3 z" fill="#6b6b3a"/>
-    </marker>
-  </defs>
-  <!-- Etiketler -->
-  <text x="95" y="155" text-anchor="middle" fill="#4a90d9" font-size="9" font-family="Georgia,serif">Water + Mineral</text>
-  <text x="95" y="167" text-anchor="middle" fill="#4a90d9" font-size="9" font-family="Georgia,serif">In</text>
-  <text x="468" y="155" text-anchor="middle" fill="#6b6b3a" font-size="9" font-family="Georgia,serif">Waste</text>
-  <text x="468" y="167" text-anchor="middle" fill="#6b6b3a" font-size="9" font-family="Georgia,serif">Out</text>
-  <!-- Omega-3 etiketi -->
-  <text x="155" y="100" text-anchor="middle" fill="#d4ae5e" font-size="8" font-family="Georgia,serif">Ω-3</text>
-  <text x="405" y="100" text-anchor="middle" fill="#d4ae5e" font-size="8" font-family="Georgia,serif">Ω-3</text>
-  <!-- Alt başlık -->
-  <text x="280" y="185" text-anchor="middle" fill="#6b7280" font-size="9" font-family="Georgia,serif" letter-spacing="1">CELLULAR HYDRATION MECHANISM</text>
-</svg>
-</div>
-  <p class="blog-illus-label">Omega-3 doors, mitochondrial pump: this is how water enters the cell</p>
+  <h2>2. How Can We "Water" Our Cells?</h2>
+  <p>Simply drinking water may not be sufficient on its own — supporting the body's ability to use that water efficiently also matters:</p>
 
-  <h2>3. Let Water Give Life, Not Just Pass Through</h2>
-
-  <p>Focus not on how many litres of water you drink each day, but on how much of that water actually enters your cells. Cellular nutrition softens that dry earth and allows water to filter inside. <strong>True vitality begins with this "inner hydration".</strong></p>
-
-  <div class="blog-summary">
-    <h3>In Summary</h3>
-    <p>Drinking water is not about filling the stomach — it is about reviving the cell. Open the doors of your cells so that water can enter and give life!</p>
-  </div>
-
-  <div class="blog-author-card">
-    <div class="blog-author-info">
-      <strong>Deniz KAT</strong>
-      <span>Wellness Companion · vitalprotocolDK</span>
+  <div class="blog-checklist">
+    <h3>A Holistic Hydration Approach</h3>
+    <div class="blog-checklist-item">
+      <strong>🫧 Support the Cell Membrane:</strong> Quality fatty acids such as Omega-3 accompany the normal structure of the cell membrane and may support water's passage into the cell.
+    </div>
+    <div class="blog-checklist-item">
+      <strong>🛣️ Keep Circulation Active:</strong> Supporting the body's natural circulatory processes may contribute to water reaching even the most distant cells.
+    </div>
+    <div class="blog-checklist-item">
+      <strong>🔋 Contribute to Energy Production:</strong> Compounds such as CoQ10 and B vitamins contribute to cellular energy-yielding metabolism. When energy is sufficient, nutrient and water transport processes may function more efficiently.
     </div>
   </div>
 
+  <h2>3. Let Water Nourish, Not Just Flow Through</h2>
+  <p>Rather than focusing solely on how many litres of water you drink each day, consider how much of it your system is using efficiently. A holistic nutritional approach supports that dry soil in meeting the water it needs. True vitality begins with this "inner balance."</p>
+
+  <div class="blog-final-msg">
+    <p>Water is the foundation of life — but it needs <strong>the right environment</strong> to find its way. Supporting your body's natural functioning today shapes your balance tomorrow.</p>
+  </div>
+
+  <p style="text-align:center;margin-top:40px">📖 <a href="/saglik-ucgeni.html" style="color:#b8963e;text-decoration:none;font-weight:500">The Wellness Triangle: Holistic Support System →</a></p>
 </article>
 </div>
 
-<!-- ES -->
+<!-- ══════════ ESPAÑOL ══════════ -->
 <div class="blog-lang" id="blog-hd-es" style="display:none">
-
 <div class="blog-hero">
   <span class="blog-category">✦ Hidratación</span>
-  <h2 class="blog-main-title">¿Por Qué No Basta con Beber Agua?</h2>
-  <p class="blog-hero-sub" style="font-family:'Cormorant Garamond',serif;font-size:clamp(16px,2.5vw,24px);font-weight:300;color:#d4ae5e;font-style:italic;margin-bottom:24px">La Deshidratación Celular y la Hidratación Real</p>
-  <div class="blog-meta"><span>⏱ ~6 min lectura</span><span>✦ Deniz KAT</span></div>
+  <h1>¿Por Qué No Basta con Beber Agua?</h1>
+  <h2>La Sed Celular y la Hidratación Integral</h2>
+  <div class="blog-meta"><span>⏱ ~6 min de lectura</span><span>✦ Deniz KAT</span><span>Compañero de Bienestar</span></div>
 </div>
 
 <article class="blog-article">
+  <a href="/blog.html" class="blog-back">← Volver al Blog</a>
 
-  <p class="blog-lead">Tienes un cubo de agua y lo viertes sobre tierra seca y agrietada. ¿Qué ocurre? En lugar de absorberse, el agua escurre por la superficie. Nuestro cuerpo funciona exactamente igual — el agua a veces "pasa de largo" pero nunca "entra en casa".</p>
+  <p class="blog-lead">Imagina que tienes un cubo de agua y lo viertes sobre un suelo seco y agrietado. ¿Qué ocurre? En lugar de filtrarse, el agua simplemente fluye por la superficie. A veces nuestro cuerpo funciona igual: el agua "pasa por" pero nunca llega a "entrar en casa."</p>
 
-<div style="margin:32px 0;text-align:center">
-<svg viewBox="0 0 560 180" xmlns="http://www.w3.org/2000/svg" style="max-width:560px;width:100%;height:auto">
-  <rect width="560" height="180" fill="#1a2419" rx="12"/>
-  <!-- Orta ayırıcı -->
-  <line x1="280" y1="15" x2="280" y2="170" stroke="#b8963e" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
-  <!-- Sol: Kuru toprak -->
-  <text x="100" y="28" text-anchor="middle" fill="#c0693a" font-size="11" font-family="Georgia,serif" letter-spacing="1">TIERRA SECA</text>
-  <!-- Kuru toprak zemini -->
-  <rect x="20" y="110" width="220" height="55" fill="#3d2a10" rx="4"/>
-  <!-- Çatlaklar -->
-  <path d="M60,110 L55,140 L70,165" stroke="#6b4a22" stroke-width="2" fill="none"/>
-  <path d="M100,110 L108,135 L95,165" stroke="#6b4a22" stroke-width="2" fill="none"/>
-  <path d="M150,110 L145,145 L160,165" stroke="#6b4a22" stroke-width="2" fill="none"/>
-  <path d="M190,110 L198,138 L185,165" stroke="#6b4a22" stroke-width="2" fill="none"/>
-  <path d="M80,120 L90,130" stroke="#6b4a22" stroke-width="1.5" fill="none"/>
-  <path d="M130,115 L120,128" stroke="#6b4a22" stroke-width="1.5" fill="none"/>
-  <!-- Su akıyor ama içeri girmiyor -->
-  <path d="M100,40 Q100,60 100,80 Q100,95 80,105 Q60,108 50,110" stroke="#4a90d9" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
-  <path d="M140,40 Q140,65 140,85 Q140,100 160,106 Q180,108 195,110" stroke="#4a90d9" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
-  <!-- Su damlaları -->
-  <ellipse cx="100" cy="38" rx="6" ry="8" fill="#4a90d9" opacity="0.8"/>
-  <ellipse cx="140" cy="38" rx="6" ry="8" fill="#4a90d9" opacity="0.8"/>
-  <!-- X işareti -->
-  <circle cx="130" cy="90" r="14" fill="#8B0000" opacity="0.3"/>
-  <text x="130" y="95" text-anchor="middle" fill="#ff6b6b" font-size="16">✕</text>
+  <div class="blog-svg-wrap"><svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;display:block;margin:0 auto">
+  <rect width="500" height="200" fill="#f5f2ec" rx="16"/>
+  <!-- Sol: Kurumuş -->
+  <rect x="20" y="20" width="210" height="160" rx="12" fill="#2e3d30"/>
+  <text x="125" y="50" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" fill="#b8963e" letter-spacing="1">SUELO SECO ✗</text>
+  <!-- Çatlak çizgiler -->
+  <path d="M 60 80 L 80 95 L 70 115 L 90 130" fill="none" stroke="#6b5a3e" stroke-width="1.5"/>
+  <path d="M 110 75 L 130 90 L 120 110" fill="none" stroke="#6b5a3e" stroke-width="1.5"/>
+  <path d="M 150 85 L 165 100 L 155 120 L 175 135" fill="none" stroke="#6b5a3e" stroke-width="1.5"/>
+  <text x="125" y="155" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(252,252,250,0.6)">El agua fluye sin penetrar</text>
+  <!-- Su damlası kayıyor -->
+  <path d="M 125 65 Q 128 72 125 78 Q 122 72 125 65Z" fill="#4a90d9" opacity="0.7"/>
+  <line x1="125" y1="78" x2="175" y2="95" stroke="#4a90d9" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
 
-  <!-- Sağ: Sulanan toprak -->
-  <text x="440" y="28" text-anchor="middle" fill="#4a9a5a" font-size="11" font-family="Georgia,serif" letter-spacing="1">TIERRA VIVA</text>
-  <!-- Nemli toprak -->
-  <rect x="320" y="110" width="220" height="55" fill="#2e4a1a" rx="4"/>
-  <!-- Nem çizgileri -->
-  <ellipse cx="380" cy="130" rx="25" ry="8" fill="#1a5a2a" opacity="0.5"/>
-  <ellipse cx="440" cy="140" rx="30" ry="8" fill="#1a5a2a" opacity="0.4"/>
-  <ellipse cx="500" cy="128" rx="20" ry="7" fill="#1a5a2a" opacity="0.5"/>
-  <!-- Çiçekler -->
-  <line x1="380" y1="110" x2="380" y2="88" stroke="#4a6741" stroke-width="2"/>
-  <circle cx="380" cy="84" r="8" fill="#d4ae5e" opacity="0.8"/>
-  <line x1="440" y1="110" x2="440" y2="82" stroke="#4a6741" stroke-width="2"/>
-  <circle cx="440" cy="78" r="10" fill="#d4ae5e" opacity="0.9"/>
-  <line x1="500" y1="110" x2="500" y2="86" stroke="#4a6741" stroke-width="2"/>
-  <circle cx="500" cy="82" r="8" fill="#d4ae5e" opacity="0.8"/>
-  <!-- Su içeri giriyor -->
-  <path d="M400,40 Q400,65 400,88 Q400,100 410,108" stroke="#4a90d9" stroke-width="2.5" fill="none"/>
-  <path d="M460,40 Q460,62 460,88 Q460,100 450,108" stroke="#4a90d9" stroke-width="2.5" fill="none"/>
-  <ellipse cx="400" cy="38" rx="6" ry="8" fill="#4a90d9" opacity="0.9"/>
-  <ellipse cx="460" cy="38" rx="6" ry="8" fill="#4a90d9" opacity="0.9"/>
-  <!-- Tik işareti -->
-  <circle cx="430" cy="68" r="14" fill="#1a5a2a" opacity="0.5"/>
-  <text x="430" y="73" text-anchor="middle" fill="#4a9a5a" font-size="16">✓</text>
-  <!-- Alt yazılar -->
-  <text x="130" y="175" text-anchor="middle" fill="#c0693a" font-size="9" font-family="Georgia,serif">El agua escurre</text>
-  <text x="430" y="175" text-anchor="middle" fill="#4a9a5a" font-size="9" font-family="Georgia,serif">El agua llega a la célula</text>
-</svg>
-</div>
-  <p class="blog-illus-label">La tierra seca no absorbe el agua — tampoco la célula</p>
+  <!-- Sağ: Canlanan -->
+  <rect x="270" y="20" width="210" height="160" rx="12" fill="#1a2419"/>
+  <text x="375" y="50" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" fill="#b8963e" letter-spacing="1">CÉLULA VIVA ✓</text>
+  <!-- Dalgalar -->
+  <path d="M 295 90 Q 315 80 335 90 Q 355 100 375 90 Q 395 80 415 90 Q 435 100 455 90" fill="none" stroke="#4a90d9" stroke-width="1.5" opacity="0.7"/>
+  <path d="M 295 105 Q 315 95 335 105 Q 355 115 375 105 Q 395 95 415 105 Q 435 115 455 105" fill="none" stroke="#4a90d9" stroke-width="1.2" opacity="0.5"/>
+  <!-- Hücre -->
+  <circle cx="375" cy="110" r="30" fill="none" stroke="#b8963e" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="375" cy="110" r="18" fill="rgba(74,144,217,0.25)"/>
+  <circle cx="375" cy="110" r="8" fill="rgba(74,144,217,0.5)"/>
+  <text x="375" y="155" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="rgba(252,252,250,0.6)">El agua llega a las profundidades</text>
+</svg></div>
 
   <h2>¿Edema o Deshidratación?</h2>
+  <p>Si notas hinchazón en la cara o los pies, puede ser la señal de tu cuerpo diciendo: <em>"¡Tengo agua pero no puedo dirigirla al lugar correcto!"</em> En lugar de estar dentro de las células donde debería, el agua puede estar acumulándose en los espacios entre los tejidos.</p>
 
-  <p>Si te miras al espejo y ves hinchazón (edema) en la cara o los pies, esto es el grito del cuerpo: <strong>"¡Hay agua pero no puedo meterla dentro!"</strong> El agua se ha acumulado en la puerta en lugar de estar dentro de la célula.</p>
+  <blockquote class="blog-quote">Para que el agua llegue a su destino, apoyar el sistema circulatorio resulta importante. En un sistema donde el flujo no funciona con eficiencia, el agua también puede tener dificultades para encontrar su camino.</blockquote>
 
-  <div class="blog-callout">
-    💡 Para que el agua llegue a la célula, <a href="/blog-damar-otobani.html">la autopista vascular debe estar abierta</a>. El agua tampoco puede viajar por un camino bloqueado.
-  </div>
+  <h2>1. ¿Por Qué el Agua Se Queda en la Puerta de la Célula?</h2>
 
-  <h2>1. ¿Por Qué el Agua Se Vuelve en la Puerta de la Célula?</h2>
-
-  <ul>
-    <li>🔒 <strong>Membrana Celular Oxidada:</strong> Si el escudo alrededor de nuestras células está oxidado, el agua no puede entrar.</li>
-    <li>⚡ <strong>Deficiencia de Minerales:</strong> El agua pierde su camino; en lugar de entrar a la célula llena los espacios — eso es el edema.</li>
-    <li>😴 <strong>Deshidratación Real:</strong> Una célula verdaderamente sedienta envía señales a través de fatiga y piel seca.</li>
-  </ul>
-
-  <h2>2. ¿Cómo "Regamos" la Célula?</h2>
-
-  <p>Beber agua sola no es suficiente — necesitamos meter el agua dentro de la célula:</p>
-
-  <div class="blog-hidrasyon-grid">
-    <div class="blog-hidrasyon-item">
-      <div class="icon">🫧</div>
-      <strong>Lubrica las Puertas</strong>
-      <p>Con <a href="/saglik-ucgeni.html" style="color:#b8963e">Omega-3</a>, si la membrana celular se vuelve flexible, el agua se filtra fácilmente.</p>
+  <div class="blog-steps">
+    <div class="blog-step">
+      <div class="blog-step-num">🔒</div>
+      <div class="blog-step-content">
+        <h3>Flexibilidad de la Membrana Celular</h3>
+        <p>Si la pared exterior de nuestras células no es suficientemente flexible, la entrada de nutrientes y agua puede dificultarse. Los ácidos grasos de calidad contribuyen al funcionamiento normal de esta estructura.</p>
+      </div>
     </div>
-    <div class="blog-hidrasyon-item">
-      <div class="icon">🛣️</div>
-      <strong>Abre la Autopista</strong>
-      <p>Con <a href="/blog-damar-otobani.html" style="color:#b8963e">Óxido Nítrico</a>, cuando los vasos sanguíneos fluyen, el agua llega hasta la célula más lejana.</p>
+    <div class="blog-step">
+      <div class="blog-step-num">⚡</div>
+      <div class="blog-step-content">
+        <h3>Equilibrio Mineral</h3>
+        <p>Los electrolitos como el sodio, el potasio y el magnesio desempeñan un papel fundamental en el equilibrio hídrico entre el interior y el exterior de las células. Apoyar el equilibrio mineral puede ayudar a dirigir el agua al compartimento adecuado.</p>
+      </div>
     </div>
-    <div class="blog-hidrasyon-item">
-      <div class="icon">🔋</div>
-      <strong>Proporciona Energía</strong>
-      <p>Bombear agua hacia adentro requiere <a href="/blog-mitokondri.html" style="color:#b8963e">potencia mitocondrial</a>.</p>
+    <div class="blog-step">
+      <div class="blog-step-num">😴</div>
+      <div class="blog-step-content">
+        <h3>Señales de Fatiga</h3>
+        <p>La fatiga persistente, la dificultad de concentración o la sequedad de piel a pesar de una ingesta adecuada de agua pueden ser señales a considerar al evaluar la hidratación celular.</p>
+      </div>
     </div>
   </div>
 
-<div style="margin:32px 0;text-align:center">
-<svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg" style="max-width:560px;width:100%;height:auto">
-  <rect width="560" height="200" fill="#1a2419" rx="12"/>
-  <!-- Ana hücre -->
-  <ellipse cx="280" cy="105" rx="100" ry="75" fill="#2e3d30" stroke="#b8963e" stroke-width="2.5"/>
-  <ellipse cx="280" cy="105" rx="80" ry="57" fill="#1a2419"/>
-  <!-- Çekirdek -->
-  <ellipse cx="280" cy="108" rx="28" ry="22" fill="#2e3d30" stroke="#d4ae5e" stroke-width="1.5"/>
-  <ellipse cx="280" cy="108" rx="18" ry="14" fill="#1a3a1a"/>
-  <text x="280" y="113" text-anchor="middle" fill="#d4ae5e" font-size="10" font-family="Georgia,serif">DNA</text>
-  <!-- Mitokondri -->
-  <ellipse cx="230" cy="90" rx="18" ry="10" fill="#2e4a2e" stroke="#4a6741" stroke-width="1.5"/>
-  <text x="230" y="94" text-anchor="middle" fill="#b8963e" font-size="7" font-family="Georgia,serif">ATP</text>
-  <ellipse cx="330" cy="120" rx="16" ry="9" fill="#2e4a2e" stroke="#4a6741" stroke-width="1.5"/>
-  <text x="330" y="124" text-anchor="middle" fill="#b8963e" font-size="7" font-family="Georgia,serif">ATP</text>
-  <!-- Omega-3 kanallar (hücre zarı kapıları) -->
-  <rect x="178" y="88" width="6" height="20" fill="#d4ae5e" rx="2" opacity="0.9"/>
-  <rect x="376" y="88" width="6" height="20" fill="#d4ae5e" rx="2" opacity="0.9"/>
-  <rect x="240" y="33" width="20" height="6" fill="#d4ae5e" rx="2" opacity="0.9"/>
-  <rect x="300" y="33" width="20" height="6" fill="#d4ae5e" rx="2" opacity="0.9"/>
-  <!-- Sol su damlaları (giriyor) -->
-  <ellipse cx="100" cy="85" rx="8" ry="11" fill="#4a90d9" opacity="0.9"/>
-  <ellipse cx="120" cy="105" rx="7" ry="10" fill="#4a90d9" opacity="0.7"/>
-  <ellipse cx="100" cy="125" rx="8" ry="11" fill="#4a90d9" opacity="0.9"/>
-  <!-- Ok soldan -->
-  <path d="M135,100 L175,98" stroke="#4a90d9" stroke-width="2" marker-end="url(#arrow)"/>
-  <defs>
-    <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L6,3 z" fill="#4a90d9"/>
-    </marker>
-  </defs>
-  <!-- Sağ su damlaları (çıkıyor - atık) -->
-  <ellipse cx="460" cy="82" rx="7" ry="9" fill="#6b6b3a" opacity="0.7"/>
-  <ellipse cx="478" cy="102" rx="6" ry="8" fill="#6b6b3a" opacity="0.6"/>
-  <ellipse cx="460" cy="122" rx="7" ry="9" fill="#6b6b3a" opacity="0.7"/>
-  <!-- Ok sağa (atık çıkıyor) -->
-  <path d="M385,100 L450,100" stroke="#6b6b3a" stroke-width="2" marker-end="url(#arrow2)"/>
-  <defs>
-    <marker id="arrow2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L6,3 z" fill="#6b6b3a"/>
-    </marker>
-  </defs>
-  <!-- Etiketler -->
-  <text x="95" y="155" text-anchor="middle" fill="#4a90d9" font-size="9" font-family="Georgia,serif">Agua + Mineral</text>
-  <text x="95" y="167" text-anchor="middle" fill="#4a90d9" font-size="9" font-family="Georgia,serif">Dentro</text>
-  <text x="468" y="155" text-anchor="middle" fill="#6b6b3a" font-size="9" font-family="Georgia,serif">Residuo</text>
-  <text x="468" y="167" text-anchor="middle" fill="#6b6b3a" font-size="9" font-family="Georgia,serif">Fuera</text>
-  <!-- Omega-3 etiketi -->
-  <text x="155" y="100" text-anchor="middle" fill="#d4ae5e" font-size="8" font-family="Georgia,serif">Ω-3</text>
-  <text x="405" y="100" text-anchor="middle" fill="#d4ae5e" font-size="8" font-family="Georgia,serif">Ω-3</text>
-  <!-- Alt başlık -->
-  <text x="280" y="185" text-anchor="middle" fill="#6b7280" font-size="9" font-family="Georgia,serif" letter-spacing="1">MECANISMO DE HIDRATACIÓN CELULAR</text>
-</svg>
-</div>
-  <p class="blog-illus-label">Puertas Omega-3, bomba mitocondrial: así entra el agua a la célula</p>
+  <h2>2. ¿Cómo Podemos "Regar" Nuestras Células?</h2>
+  <p>Simplemente beber agua puede no ser suficiente por sí solo — apoyar la capacidad del cuerpo para utilizar esa agua de manera eficiente también es importante:</p>
 
-  <h2>3. Que el Agua Dé Vida, No Solo Pase</h2>
-
-  <p>Concéntrate no en cuántos litros de agua bebes cada día, sino en cuánta de esa agua realmente entra en tus células. La nutrición celular ablanda esa tierra seca y permite que el agua se filtre hacia adentro. <strong>La verdadera vitalidad comienza con esta "hidratación interior".</strong></p>
-
-  <div class="blog-summary">
-    <h3>En Resumen</h3>
-    <p>Beber agua no se trata de llenar el estómago — se trata de revivir la célula. ¡Abre las puertas de tus células para que el agua pueda entrar y dar vida!</p>
-  </div>
-
-  <div class="blog-author-card">
-    <div class="blog-author-info">
-      <strong>Deniz KAT</strong>
-      <span>Compañero de Bienestar · vitalprotocolDK</span>
+  <div class="blog-checklist">
+    <h3>Un Enfoque de Hidratación Integral</h3>
+    <div class="blog-checklist-item">
+      <strong>🫧 Apoya la Membrana Celular:</strong> Los ácidos grasos de calidad como el Omega-3 acompañan la estructura normal de la membrana celular y pueden favorecer el paso del agua al interior de la célula.
+    </div>
+    <div class="blog-checklist-item">
+      <strong>🛣️ Mantén Activa la Circulación:</strong> Apoyar los procesos circulatorios naturales del cuerpo puede contribuir a que el agua llegue incluso a las células más alejadas.
+    </div>
+    <div class="blog-checklist-item">
+      <strong>🔋 Contribuye a la Producción de Energía:</strong> Compuestos como el CoQ10 y las vitaminas B contribuyen al metabolismo energético celular. Cuando la energía es suficiente, los procesos de transporte de nutrientes y agua pueden funcionar con mayor eficiencia.
     </div>
   </div>
 
+  <h2>3. Que el Agua Nutra, No Solo Fluya</h2>
+  <p>En lugar de centrarte únicamente en cuántos litros de agua bebes cada día, considera cuánta de esa agua está siendo utilizada eficientemente por tu sistema. Un enfoque nutricional integral apoya a ese suelo seco para que se encuentre con el agua que necesita. La verdadera vitalidad comienza con este "equilibrio interior."</p>
+
+  <div class="blog-final-msg">
+    <p>El agua es el fundamento de la vida — pero necesita <strong>el entorno adecuado</strong> para encontrar su camino. Apoyar el funcionamiento natural de tu cuerpo hoy da forma a tu equilibrio de mañana.</p>
+  </div>
+
+  <p style="text-align:center;margin-top:40px">📖 <a href="/saglik-ucgeni.html" style="color:#b8963e;text-decoration:none;font-weight:500">El Triángulo del Bienestar: Sistema de Apoyo Integral →</a></p>
 </article>
 </div>
 
@@ -1574,6 +1298,65 @@ footer{
   <div class="imp-en" style="display:none"><strong>Important Notice and Disclaimer:</strong> All content on this website is for general informational purposes only. The information and products presented are not intended to diagnose, treat, cure or prevent any disease. Our products are dietary supplements and are not a substitute for medication. For accurate information regarding your health condition, current treatments or supplement use, please consult your doctor or a qualified healthcare professional. Consultation with a specialist is recommended during pregnancy, breastfeeding or when taking medication. vitalprotocolDK</div>
   <div class="imp-es" style="display:none"><strong>Aviso Importante y Descargo de Responsabilidad:</strong> Todo el contenido de este sitio web tiene fines informativos generales. La información y los productos presentados no están destinados a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Nuestros productos son suplementos alimenticios y no sustituyen a los medicamentos. Para obtener información precisa sobre su estado de salud, tratamientos actuales o uso de suplementos, consulte a su médico o a un profesional de la salud calificado. Se recomienda consultar con un especialista durante el embarazo, la lactancia o cuando se tomen medicamentos. vitalprotocolDK</div>
 </div>
+<script>
+// Apply saved language to nav immediately
+(function(){
+  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Çözümler",blog:"Blog",mission:"Misyon",faq:"SSS",contact:"İletişim"},
+          en:{home:"Homepage",health:"Health Triangle",protocols:"Solutions",blog:"Insights",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},
+          es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Soluciones",blog:"Perspectivas",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
+  var saved = localStorage.getItem('vpLang')||'tr';
+  function applyNav(l){
+    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){
+      b.classList.toggle("active",b.textContent.trim().toLowerCase()===l);
+    });
+    var lbl=lb[l]||lb.tr;
+    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
+    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lbl[k]});
+    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lbl[k]});
+  }
+  // Apply immediately when DOM is ready
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',function(){applyNav(saved);});
+  } else {
+    applyNav(saved);
+  }
+})();
+</script>
+<script>
+(function(){
+  var langMap = {'tr':'blog-hd-tr','en':'blog-hd-en','es':'blog-hd-es'};
+  function applyBlogLang(l){
+    Object.keys(langMap).forEach(function(lang){
+      var el = document.getElementById(langMap[lang]);
+      if(el) el.style.display = lang===l ? 'block' : 'none';
+    });
+  }
+  var saved = localStorage.getItem('vpLang')||'tr';
+  document.addEventListener('DOMContentLoaded',function(){ applyBlogLang(saved); });
+  var _orig = window.vpNavLang;
+  window.vpNavLang = function(l,btn){ 
+    if(_orig) _orig(l,btn);
+    applyBlogLang(l);
+  };
+})();
+</script>
+<script>
+(function(){
+  function applyYasalBar(l){
+    ['tr','en','es'].forEach(function(lang){
+      var el = document.querySelector('.yasal-bar-'+lang);
+      if(el) el.style.display = lang===l ? 'block' : 'none';
+    });
+  }
+  var saved = localStorage.getItem('vpLang')||'tr';
+  document.addEventListener('DOMContentLoaded', function(){ applyYasalBar(saved); });
+  var _origYB = window.vpNavLang;
+  window.vpNavLang = function(l,btn){
+    if(_origYB) _origYB(l,btn);
+    applyYasalBar(l);
+  };
+})();
+</script>
 <script>
 (function(){
   function applyImpNote(l){
@@ -1626,60 +1409,5 @@ footer{
   };
 })();
 </script>
-<div id="vera-widget">
-  <button id="vera-btn" aria-label="Vera ile konuş">
-    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-  </button>
-  <div id="vera-panel">
-    <div id="vera-head">
-      <div id="vera-av">V</div>
-      <div id="vera-hi"><h4>Vera</h4><p id="vera-st">vitalprotocolDK · Wellness Rehberi</p></div>
-      <button id="vera-x" aria-label="Sohbeti kapat">✕</button>
-    </div>
-    <div id="vera-msgs"></div>
-    <div id="vera-typing"><div class="vmav">V</div><div class="vdots"><span></span><span></span><span></span></div></div>
-    <div id="vera-quick"></div>
-    <div id="vera-disc"></div>
-    <div id="vera-inp-wrap">
-      <input id="vera-inp" type="text" placeholder="Sorunuzu yazın...">
-      <button id="vera-go" aria-label="Mesaj gönder"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
-    </div>
-  </div>
-</div>
-
-<script>
-(function(){
-  var langMap = {'tr':'blog-hd-tr','en':'blog-hd-en','es':'blog-hd-es'};
-  function applyBlogLang(l){
-    Object.keys(langMap).forEach(function(lang){
-      var el = document.getElementById(langMap[lang]);
-      if(el) el.style.display = lang===l ? 'block' : 'none';
-    });
-  }
-  var saved = localStorage.getItem('vpLang')||'tr';
-  document.addEventListener('DOMContentLoaded',function(){ applyBlogLang(saved); });
-  var _orig = window.vpNavLang;
-  window.vpNavLang = function(l,btn){ if(_orig) _orig(l,btn); applyBlogLang(l); };
-})();
-</script>
-
-<script>
-(function(){
-  function applyYasalBar(l){
-    ['tr','en','es'].forEach(function(lang){
-      var el = document.querySelector('.yasal-bar-'+lang);
-      if(el) el.style.display = lang===l ? 'block' : 'none';
-    });
-  }
-  var saved = localStorage.getItem('vpLang')||'tr';
-  document.addEventListener('DOMContentLoaded', function(){ applyYasalBar(saved); });
-  var _origYB = window.vpNavLang;
-  window.vpNavLang = function(l,btn){
-    if(_origYB) _origYB(l,btn);
-    applyYasalBar(l);
-  };
-})();
-</script>
-
 </body>
 </html>
