@@ -1,7 +1,15 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vitalprotocoldk.com/sitemap.xml
+# Geçici/test dosyaları engelle
+Disallow: /tipografi-ornekler.html
+Disallow: /parallax-onizleme.html
+Disallow: /vitrin-export.html
+Disallow: /vitrin-c-export.html
+Disallow: /vitrin-ornekler.html
+Disallow: /vera_final.html
+Disallow: /vera_widget_FINAL.html
+Disallow: /yasal_FINAL.html
 
-# Block non-essential files
-Disallow: /googlea87bb3864cc5e5c5.html
+# Sitemap
+Sitemap: https://vitalprotocoldk.com/sitemap.xml
