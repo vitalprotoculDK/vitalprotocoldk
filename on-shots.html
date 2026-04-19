@@ -179,6 +179,29 @@
   }
 }
 </script>
+<script>
+(function(){
+  function onLang(lang){
+    ['on-tr','on-en','on-es'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.style.display = id === 'on-'+lang ? 'block' : 'none';
+    });
+    document.querySelectorAll('.on-lang-btn').forEach(function(b){
+      var m = (b.getAttribute('onclick')||'').match(/'([a-z]+)'/);
+      if(m) b.classList.toggle('active', m[1] === lang);
+    });
+    localStorage.setItem('vpLang', lang);
+  }
+  window.onLang = onLang;
+  var saved = localStorage.getItem('vpLang') || 'tr';
+  document.addEventListener('DOMContentLoaded', function(){ onLang(saved); });
+  var _orig = window.vpNavLang;
+  window.vpNavLang = function(l, btn){
+    if(_orig) _orig(l, btn);
+    onLang(l);
+  };
+})();
+</script>
 <link rel="alternate" hreflang="tr" href="https://vitalprotocoldk.com/on-shots">
 <link rel="alternate" hreflang="en" href="https://vitalprotocoldk.com/on-shots">
 <link rel="alternate" hreflang="es" href="https://vitalprotocoldk.com/on-shots">
@@ -257,7 +280,7 @@
 .on-container{font-family:'Plus Jakarta Sans',sans-serif;color:#1a1a1a;line-height:1.6;margin:0;padding:0;background:#fff}
 
 /* DİL ÇUBUĞU */
-.on-lang-bar{display:flex;justify-content:flex-end;gap:8px;padding:16px 20px}
+.on-lang-bar{display:flex!important;justify-content:flex-end;gap:8px;padding:16px 20px}
 .on-lang-btn{padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7280;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
 .on-lang-btn.active{background:#2e3d30;color:#fff;border-color:#2e3d30}
 .on-lang{display:none}
@@ -308,37 +331,37 @@
 
   <div class="on-hero">
     <span class="on-badge">Dikkat, Berraklık &amp; Güvenli Enerji</span>
-    <h1>ON-SHOTS: Sınırları Zorlarken<br>Kontrolü Elde Tutun.</h1>
-    <p>İster masada ister yolda; zihinsel keskinliğinizi en üst seviyede tutun. Guarana ve Nootropik harman ile 4-6 saat süren dengeli bir odaklanma sistemi.</p>
+    <h1>ON-SHOTS ile<br>Kontrol Sizin Elinizde.</h1>
+    <p>İster masada ister yolda; zihinsel zindeliğinizi en üst seviyede tutun. Guarana ve özel bileşenlerle tasarlanmış harmanı ile gün boyu süren dengeli bir odaklanma ve canlılık desteği.</p>
     <div class="on-tags">
       <span class="on-tag">21 KALORİ</span>
       <span class="on-tag">DOĞAL GUARANA KAFEİNİ</span>
-      <span class="on-tag">REAKSİYON HIZI DESTEĞİ</span>
-      <span class="on-tag">JET LAG KARŞITI</span>
+      <span class="on-tag">ZİHİNSEL PERFORMANS DESTEĞİ</span>
+      <span class="on-tag">SEYAHAT KONFORU</span>
     </div>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="on-btn">SİSTEMİ KEŞFET</a>
   </div>
 
   <div class="on-profiles">
     <div style="text-align:center;max-width:850px;margin:0 auto 60px;">
-      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Farklı Şartlar, <span style="color:#d4af37">Aynı Odak.</span></h2>
-      <p style="color:#636e72;font-size:18px;">ON-SHOTS, yaşamsal konforunu koruyarak performansını artırmak isteyen sürücülerden yöneticilere kadar herkes için tasarlandı.</p>
+      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Farklı Şartlar, <span style="color:#d4af37">Ortak Odak.</span></h2>
+      <p style="color:#636e72;font-size:18px;">ON-SHOTS; performansını korumak isteyen profesyonellerden, uzun yolculuklardaki gezginlere kadar herkes için zihinsel konforu desteklemek üzere tasarlandı.</p>
     </div>
     <div class="profile-grid">
       <div class="profile-card" style="border-bottom:4px solid #d4af37;">
         <span class="card-icon">🚗</span>
-        <div class="card-title">Sürücüler &amp; Gezginler</div>
-        <p class="card-desc">Uzun seyahatlerde zihinsel uyanıklığı koruyup reaksiyon süresini optimize eden, seyahat yorgunluğuyla savaşan hızlı çözüm.</p>
+        <div class="card-title">Sürücüler ve Gezginler</div>
+        <p class="card-desc">Uzun seyahatlerde zihinsel uyanıklığı destekleyen ve yolculuk boyunca ihtiyaç duyulan uyanıklık haline eşlik eden pratik çözüm.</p>
       </div>
       <div class="profile-card">
         <span class="card-icon">👩‍💼</span>
         <div class="card-title">Yoğun Profesyoneller</div>
-        <p class="card-desc">Ardışık toplantılar arasında zihinsel yorgunluğu azaltıp karar verme mekanizmalarını taze tutan destek.</p>
+        <p class="card-desc">Ardışık toplantılar arasında zihinsel yorgunluğun azalmasına katkıda bulunan ve karar verme süreçlerinde zindelik sunan destek.</p>
       </div>
       <div class="profile-card">
         <span class="card-icon">🏡</span>
-        <div class="card-title">Çok Yönlü Ebeveynler</div>
-        <p class="card-desc">Hem iş hem ev hayatına yetişirken yaşam konforunu korumak ve gün boyu enerjik kalmak isteyenler için.</p>
+        <div class="card-title">Çok Yönlü Yaşam</div>
+        <p class="card-desc">Hem iş hem ev hayatındaki yoğun tempoya yetişirken, vücudun enerji dengesini korumaya yardımcı içerikler.</p>
       </div>
     </div>
   </div>
@@ -346,28 +369,28 @@
   <div class="on-tech-panel">
     <div class="tech-container">
       <div>
-        <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">Yolculukta ve Çalışırken<br><span style="color:#d4af37">Biyokimyasal Kalkan.</span></h2>
-        <p style="font-size:16px;color:#444;margin-bottom:20px;">ON-SHOTS, vücudun enerji metabolizmasını, bağışıklık sistemini ve görme yetisini destekleyen çok yönlü bir içerik mimarisine sahiptir.</p>
+        <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">Yolculukta ve Çalışırken:<br><span style="color:#d4af37">Biyokimyasal Destek.</span></h2>
+        <p style="font-size:16px;color:#444;margin-bottom:20px;">ON-SHOTS; vücudun enerji metabolizmasını, görme yetisini ve genel sistem direncini destekleyen çok yönlü bir içerik mimarisine sahiptir:</p>
         <div class="tech-item">
-          <strong>Nootropik Güç (Sitikolin &amp; L-Teanin)</strong>
-          <p>Zihinsel süreçlerin uyanık ve kontrollü kalmasına yardımcı olarak sürüş sırasında dikkati ve reaksiyon hızını optimize eder.</p>
+          <strong>Bilişsel Zindelik (Sitikolin &amp; L-Teanin)</strong>
+          <p>Zihinsel süreçlerin uyanık ve dengeli kalmasına yardımcı olarak, yüksek dikkat gerektiren anlarda bilişsel fonksiyonlara eşlik eder.</p>
         </div>
         <div class="tech-item">
-          <strong>Seyahat Yorgunluğu (B12 &amp; B-Kompleks)</strong>
-          <p>Özellikle uzun uçuşlar ve yolculuklar sonrası metabolizmanın toparlanmasına ve jet lag semptomlarının azaltılmasına katkıda bulunur.</p>
+          <strong>Seyahat Sonrası Adaptasyon (B12 &amp; B-Kompleks)</strong>
+          <p>Özellikle uzun yolculuklar sonrası normal enerji oluşum metabolizmasına katkıda bulunur, yorgunluk ve bitkinliğin azalmasını destekler.</p>
         </div>
         <div class="tech-item">
-          <strong>Göz Sağlığı &amp; Koruma (B2 Vitamini)</strong>
-          <p>Yetersiz ışıkta sürüş yapanlar ve ekran karşısında çalışanlar için normal görme yetisinin korunmasına destek sağlar.</p>
+          <strong>Göz Sağlığı ve Koruma (B2 Vitamini)</strong>
+          <p>Ekran başında çalışanlar ve yoğun ışık değişimine maruz kalanlar için normal görme yetisinin korunmasına destek sağlar.</p>
         </div>
       </div>
       <div style="background:#2e3d30;color:#fff;padding:50px;border-radius:8px;">
         <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:13px;letter-spacing:2px;">Öne Çıkan Destek Alanları</h4>
         <ul style="padding-left:0;list-style:none;font-size:18px;margin-top:25px;">
-          <li style="margin-bottom:20px;">✓ <strong>Reaksiyon Süresi:</strong> Sitikolin ile bilişsel motor hızı artışı.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Görsel Keskinlik:</strong> Riboflavin ile göz yorgunluğu desteği.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Dengeli Enerji:</strong> Guarana ile çarpıntısız 4-6 saat uyanıklık.</li>
-          <li>✓ <strong>Bağışıklık Kalkanı:</strong> B6 ve B12 ile seyahat sırası koruma.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Bilişsel Performans:</strong> Sitikolin ile zihinsel süreçlerin verimliliğine katkı.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Görsel Konfor:</strong> Riboflavin (B2 Vitamini) ile normal görme yetisinin korunmasına destek.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Dengeli Enerji:</strong> Guarana içeriğiyle, geleneksel uyarıcıların aksine dengeli bir uyanıklık hali.</li>
+          <li>✓ <strong>Sistemik Koruma:</strong> B6 ve B12 vitaminleri ile bağışıklık sisteminin normal fonksiyonuna katkı.</li>
         </ul>
       </div>
     </div>
@@ -375,7 +398,7 @@
 
   <div class="footer-cta">
     <h2>Yollar Sizin, Kontrol Hücrelerinizin Olsun</h2>
-    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Sürüş yorgunluğunu bir kader olarak kabul etmeyin. ON-SHOTS ile gürültüyü susturun, ufka odaklanın ve her varış noktasını taze bir zihinle karşılayın."</p>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Yorgunluğu bir sınır olarak kabul etmeyin. ON-SHOTS ile zihinsel gürültüyü susturun, hedefinize odaklanın ve her varış noktasını zinde bir zihinle karşılayın."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="on-btn-dark">RESMİ SİTEDEN TEMİN ET</a>
     <p class="footer-note">7 Adet 60 ml Şişe | Pratik Taşınabilir | 11 Yaş ve Üzeri</p>
   </div>
@@ -383,41 +406,41 @@
 </div>
 
 <!-- ══════════ ENGLISH ══════════ -->
-<div class="on-lang" id="on-en">
+<div class="on-lang" id="on-en" style="display:none">
 
   <div class="on-hero">
     <span class="on-badge">Attention, Clarity &amp; Safe Energy</span>
-    <h2>ON-SHOTS: Push Your Limits<br>While Staying in Control.</h2>
-    <p>Whether at your desk or on the road — keep your mental sharpness at its peak. A balanced focus system lasting 4-6 hours with Guarana and Nootropic blend.</p>
+    <h2>Control is in Your Hands<br>with ON-SHOTS.</h2>
+    <p>Whether at your desk or on the road — keep your mental vitality at its peak. Balanced focus and vitality support throughout the day with Guarana and its specially designed blend of ingredients.</p>
     <div class="on-tags">
       <span class="on-tag">21 CALORIES</span>
       <span class="on-tag">NATURAL GUARANA CAFFEINE</span>
-      <span class="on-tag">REACTION TIME SUPPORT</span>
-      <span class="on-tag">ANTI JET LAG</span>
+      <span class="on-tag">MENTAL PERFORMANCE SUPPORT</span>
+      <span class="on-tag">TRAVEL COMFORT</span>
     </div>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="on-btn">DISCOVER THE SYSTEM</a>
   </div>
 
   <div class="on-profiles">
     <div style="text-align:center;max-width:850px;margin:0 auto 60px;">
-      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Different Conditions, <span style="color:#d4af37">Same Focus.</span></h2>
-      <p style="color:#636e72;font-size:18px;">ON-SHOTS was designed for everyone from drivers to executives who want to boost their performance while maintaining their vital comfort.</p>
+      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Different Conditions, <span style="color:#d4af37">Shared Focus.</span></h2>
+      <p style="color:#636e72;font-size:18px;">ON-SHOTS was designed to support mental comfort for everyone — from professionals who want to maintain their performance to travellers on long journeys.</p>
     </div>
     <div class="profile-grid">
       <div class="profile-card" style="border-bottom:4px solid #d4af37;">
         <span class="card-icon">🚗</span>
         <div class="card-title">Drivers &amp; Travellers</div>
-        <p class="card-desc">A fast-acting solution that maintains mental alertness, optimises reaction time and fights travel fatigue on long journeys by car, plane or bus.</p>
+        <p class="card-desc">A practical solution that supports mental alertness on long journeys and accompanies the alertness state needed throughout the trip.</p>
       </div>
       <div class="profile-card">
         <span class="card-icon">👩‍💼</span>
         <div class="card-title">Busy Professionals</div>
-        <p class="card-desc">Support that reduces mental fatigue between back-to-back meetings and keeps decision-making mechanisms fresh.</p>
+        <p class="card-desc">Support that contributes to reducing mental fatigue between back-to-back meetings and provides vitality during decision-making processes.</p>
       </div>
       <div class="profile-card">
         <span class="card-icon">🏡</span>
-        <div class="card-title">Versatile Parents</div>
-        <p class="card-desc">For those who want to maintain their quality of life while juggling work and home, and stay energetic throughout the day.</p>
+        <div class="card-title">Versatile Living</div>
+        <p class="card-desc">Ingredients that help maintain the body's energy balance while keeping pace with the intense tempo of both work and home life.</p>
       </div>
     </div>
   </div>
@@ -425,28 +448,28 @@
   <div class="on-tech-panel">
     <div class="tech-container">
       <div>
-        <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">On the Road and at Work:<br><span style="color:#d4af37">Biochemical Shield.</span></h2>
-        <p style="font-size:16px;color:#444;margin-bottom:20px;">ON-SHOTS has a multi-faceted ingredient architecture that supports the body's energy metabolism, immune system and vision.</p>
+        <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">On the Road and at Work:<br><span style="color:#d4af37">Biochemical Support.</span></h2>
+        <p style="font-size:16px;color:#444;margin-bottom:20px;">ON-SHOTS has a multifaceted ingredient architecture that supports the body's energy metabolism, vision and overall system resilience:</p>
         <div class="tech-item">
-          <strong>Nootropic Power (Citicoline &amp; L-Theanine)</strong>
-          <p>Helps keep mental processes alert and controlled, optimising attention and reaction speed while driving.</p>
+          <strong>Cognitive Vitality (Citicoline &amp; L-Theanine)</strong>
+          <p>Helps keep mental processes alert and balanced, accompanying cognitive functions in moments that require high levels of attention.</p>
         </div>
         <div class="tech-item">
-          <strong>Travel Fatigue (B12 &amp; B-Complex)</strong>
-          <p>Contributes to metabolic recovery and reduction of jet lag symptoms, especially after long flights and journeys.</p>
+          <strong>Post-Travel Adaptation (B12 &amp; B-Complex)</strong>
+          <p>Contributes to normal energy-yielding metabolism, especially after long journeys, and supports the reduction of tiredness and fatigue.</p>
         </div>
         <div class="tech-item">
           <strong>Eye Health &amp; Protection (Vitamin B2)</strong>
-          <p>Supports the maintenance of normal vision for those driving in low light or working in front of screens.</p>
+          <p>Provides support for the maintenance of normal vision for those working in front of screens and those exposed to intense light changes.</p>
         </div>
       </div>
       <div style="background:#2e3d30;color:#fff;padding:50px;border-radius:8px;">
         <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:13px;letter-spacing:2px;">Key Support Areas</h4>
         <ul style="padding-left:0;list-style:none;font-size:18px;margin-top:25px;">
-          <li style="margin-bottom:20px;">✓ <strong>Reaction Time:</strong> Increased cognitive motor speed with Citicoline.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Visual Acuity:</strong> Eye fatigue support with Riboflavin.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Balanced Energy:</strong> 4-6 hours of alertness without palpitations with Guarana.</li>
-          <li>✓ <strong>Immune Shield:</strong> Travel-time protection with B6 and B12.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Cognitive Performance:</strong> Contributing to the efficiency of mental processes with Citicoline.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Visual Comfort:</strong> Supporting the maintenance of normal vision with Riboflavin (Vitamin B2).</li>
+          <li style="margin-bottom:20px;">✓ <strong>Balanced Energy:</strong> A balanced state of alertness with Guarana, unlike traditional stimulants.</li>
+          <li>✓ <strong>Systemic Protection:</strong> Contributing to the normal function of the immune system with Vitamins B6 and B12.</li>
         </ul>
       </div>
     </div>
@@ -454,7 +477,7 @@
 
   <div class="footer-cta">
     <h2>The Roads are Yours — Let Your Cells Stay in Control</h2>
-    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Don't accept driving fatigue as inevitable. Silence the noise with ON-SHOTS, focus on the horizon and arrive at every destination with a fresh mind."</p>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Don't accept fatigue as a limit. Silence the mental noise with ON-SHOTS, focus on your destination and arrive at every stop with a vital mind."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="on-btn-dark">GET IT FROM THE OFFICIAL SITE</a>
     <p class="footer-note">7 x 60 ml Bottles | Practical &amp; Portable | Ages 11 and Over</p>
   </div>
@@ -462,41 +485,41 @@
 </div>
 
 <!-- ══════════ ESPAÑOL ══════════ -->
-<div class="on-lang" id="on-es">
+<div class="on-lang" id="on-es" style="display:none">
 
   <div class="on-hero">
     <span class="on-badge">Atención, Claridad &amp; Energía Segura</span>
-    <h2>ON-SHOTS: Lleva tus Límites al Máximo<br>sin Perder el Control.</h2>
-    <p>Ya sea en la mesa o en la carretera — mantén tu agudeza mental al más alto nivel. Un sistema de concentración equilibrado de 4-6 horas con Guaraná y mezcla Nootrópica.</p>
+    <h2>El Control Está<br>en tus Manos con ON-SHOTS.</h2>
+    <p>Ya sea en tu escritorio o en la carretera — mantén tu vitalidad mental al máximo. Apoyo de enfoque y vitalidad equilibrados durante todo el día con Guaraná y su mezcla de ingredientes especialmente diseñada.</p>
     <div class="on-tags">
       <span class="on-tag">21 CALORÍAS</span>
       <span class="on-tag">CAFEÍNA NATURAL DE GUARANÁ</span>
-      <span class="on-tag">SOPORTE DE TIEMPO DE REACCIÓN</span>
-      <span class="on-tag">ANTI JET LAG</span>
+      <span class="on-tag">APOYO AL RENDIMIENTO MENTAL</span>
+      <span class="on-tag">COMODIDAD EN VIAJE</span>
     </div>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="on-btn">DESCUBRIR EL SISTEMA</a>
   </div>
 
   <div class="on-profiles">
     <div style="text-align:center;max-width:850px;margin:0 auto 60px;">
-      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Distintas Condiciones, <span style="color:#d4af37">el Mismo Enfoque.</span></h2>
-      <p style="color:#636e72;font-size:18px;">ON-SHOTS fue diseñado para todos, desde conductores hasta directivos, que quieren mejorar su rendimiento manteniendo su confort vital.</p>
+      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Diferentes Condiciones, <span style="color:#d4af37">Enfoque Compartido.</span></h2>
+      <p style="color:#636e72;font-size:18px;">ON-SHOTS fue diseñado para apoyar el confort mental de todos — desde profesionales que quieren mantener su rendimiento hasta viajeros en largos trayectos.</p>
     </div>
     <div class="profile-grid">
       <div class="profile-card" style="border-bottom:4px solid #d4af37;">
         <span class="card-icon">🚗</span>
-        <div class="card-title">Conductores &amp; Viajeros</div>
-        <p class="card-desc">Una solución de acción rápida que mantiene la alerta mental, optimiza el tiempo de reacción y combate el cansancio en viajes largos.</p>
+        <div class="card-title">Conductores y Viajeros</div>
+        <p class="card-desc">Una solución práctica que apoya la alerta mental en viajes largos y acompaña el estado de vigilancia necesario durante todo el trayecto.</p>
       </div>
       <div class="profile-card">
         <span class="card-icon">👩‍💼</span>
         <div class="card-title">Profesionales Ocupados</div>
-        <p class="card-desc">Soporte que reduce la fatiga mental entre reuniones consecutivas y mantiene frescos los mecanismos de toma de decisiones.</p>
+        <p class="card-desc">Apoyo que contribuye a reducir la fatiga mental entre reuniones consecutivas y proporciona vitalidad durante los procesos de toma de decisiones.</p>
       </div>
       <div class="profile-card">
         <span class="card-icon">🏡</span>
-        <div class="card-title">Padres Versátiles</div>
-        <p class="card-desc">Para quienes quieren mantener su calidad de vida combinando trabajo y hogar, y mantenerse con energía durante todo el día.</p>
+        <div class="card-title">Vida Versátil</div>
+        <p class="card-desc">Ingredientes que ayudan a mantener el equilibrio energético del cuerpo mientras se sigue el ritmo intenso tanto de la vida laboral como del hogar.</p>
       </div>
     </div>
   </div>
@@ -504,128 +527,43 @@
   <div class="on-tech-panel">
     <div class="tech-container">
       <div>
-        <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">En el Camino y en el Trabajo:<br><span style="color:#d4af37">Escudo Bioquímico.</span></h2>
-        <p style="font-size:16px;color:#444;margin-bottom:20px;">ON-SHOTS tiene una arquitectura de ingredientes multifacética que apoya el metabolismo energético, el sistema inmunológico y la visión del cuerpo.</p>
+        <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">En el Camino y en el Trabajo:<br><span style="color:#d4af37">Apoyo Bioquímico.</span></h2>
+        <p style="font-size:16px;color:#444;margin-bottom:20px;">ON-SHOTS tiene una arquitectura de ingredientes multifacética que apoya el metabolismo energético, la visión y la resistencia general del sistema del cuerpo:</p>
         <div class="tech-item">
-          <strong>Poder Nootrópico (Citicolina &amp; L-Teanina)</strong>
-          <p>Ayuda a mantener los procesos mentales alerta y controlados, optimizando la atención y la velocidad de reacción al volante.</p>
+          <strong>Vitalidad Cognitiva (Citicolina &amp; L-Teanina)</strong>
+          <p>Ayuda a mantener los procesos mentales alerta y equilibrados, acompañando las funciones cognitivas en momentos que requieren altos niveles de atención.</p>
         </div>
         <div class="tech-item">
-          <strong>Fatiga de Viaje (B12 &amp; Complejo B)</strong>
-          <p>Contribuye a la recuperación metabólica y a la reducción de los síntomas del jet lag, especialmente tras vuelos y viajes largos.</p>
+          <strong>Adaptación Post-Viaje (B12 &amp; Complejo B)</strong>
+          <p>Contribuye al metabolismo energético normal, especialmente después de largos viajes, y apoya la reducción del cansancio y la fatiga.</p>
         </div>
         <div class="tech-item">
-          <strong>Salud Visual &amp; Protección (Vitamina B2)</strong>
-          <p>Apoya el mantenimiento de la visión normal para quienes conducen con poca luz o trabajan frente a pantallas.</p>
+          <strong>Salud Visual y Protección (Vitamina B2)</strong>
+          <p>Proporciona apoyo para el mantenimiento de la visión normal para quienes trabajan frente a pantallas y quienes están expuestos a cambios intensos de luz.</p>
         </div>
       </div>
       <div style="background:#2e3d30;color:#fff;padding:50px;border-radius:8px;">
         <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:13px;letter-spacing:2px;">Áreas de Apoyo Destacadas</h4>
         <ul style="padding-left:0;list-style:none;font-size:18px;margin-top:25px;">
-          <li style="margin-bottom:20px;">✓ <strong>Tiempo de Reacción:</strong> Mayor velocidad motora cognitiva con Citicolina.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Agudeza Visual:</strong> Soporte para el cansancio ocular con Riboflavina.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Energía Equilibrada:</strong> 4-6 horas de alerta sin palpitaciones con Guaraná.</li>
-          <li>✓ <strong>Escudo Inmunitario:</strong> Protección durante el viaje con B6 y B12.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Rendimiento Cognitivo:</strong> Contribuyendo a la eficiencia de los procesos mentales con Citicolina.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Confort Visual:</strong> Apoyando el mantenimiento de la visión normal con Riboflavina (Vitamina B2).</li>
+          <li style="margin-bottom:20px;">✓ <strong>Energía Equilibrada:</strong> Un estado de alerta equilibrado con Guaraná, a diferencia de los estimulantes tradicionales.</li>
+          <li>✓ <strong>Protección Sistémica:</strong> Contribuyendo a la función normal del sistema inmune con las Vitaminas B6 y B12.</li>
         </ul>
       </div>
     </div>
   </div>
 
   <div class="footer-cta">
-    <h2>Los Caminos son Tuyos — que tus Células Mantengan el Control</h2>
-    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"No aceptes el cansancio al volante como inevitable. Silencia el ruido con ON-SHOTS, enfócate en el horizonte y llega a cada destino con una mente fresca."</p>
+    <h2>Los Caminos son Tuyos — Deja que tus Células se Mantengan en Control</h2>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"No aceptes la fatiga como un límite. Silencia el ruido mental con ON-SHOTS, concéntrate en tu destino y llega a cada parada con una mente vital."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="on-btn-dark">OBTENERLO EN EL SITIO OFICIAL</a>
-    <p class="footer-note">7 Botellas de 60 ml | Práctico &amp; Portátil | A partir de 11 Años</p>
+    <p class="footer-note">7 Botellas de 60 ml | Práctico y Portátil | A Partir de 11 Años</p>
   </div>
 
 </div>
 
 </div>
-
-<script>
-function onLang(lang, btn) {
-  document.querySelectorAll('.on-lang').forEach(function(el){ el.style.display='none'; });
-  document.querySelectorAll('.on-lang-btn').forEach(function(b){ b.classList.remove('active'); });
-  document.getElementById('on-' + lang).style.display = 'block';
-  btn.classList.add('active');
-}
-</script>
-
-<script>
-(function(){
-  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Çözümler",blog:"Blog",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Solutions",blog:"Insights",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Soluciones",blog:"Perspectivas",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
-  function applyNav(l){
-    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){b.classList.toggle("active",b.textContent.trim().toLowerCase()===l)});
-    var lbl=lb[l]||lb.tr;
-    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lbl[k]});
-  }
-  function applyPage(l){
-    if(typeof setLang==="function"){setLang(l);return;}
-    var allLangDivs=document.querySelectorAll('[class$="-lang"],[class*="-lang active"]');
-    document.querySelectorAll('[id$="-tr"],[id$="-en"],[id$="-es"]').forEach(function(el){
-      var show=el.id.endsWith('-'+l);
-      el.style.display=show?'block':'none';
-    });
-    var btns=document.querySelectorAll('button[onclick*="Lang"]');
-    btns.forEach(function(btn){if(btn.textContent.trim().toLowerCase()===l)btn.click();});
-  }
-  window.vpNavLang=function(l,btn){
-    localStorage.setItem('vpLang',l);
-    applyNav(l);
-    applyPage(l);
-  };
-  document.addEventListener("DOMContentLoaded",function(){
-    var saved=localStorage.getItem('vpLang')||'tr';
-    applyNav(saved);
-    setTimeout(function(){applyPage(saved);},50);
-    var path=window.location.pathname.split('/').pop()||'index.html';
-    document.querySelectorAll('.vpdk-nav-link,.vpdk-nav-dropdown-item,.vpdk-mobile-link').forEach(function(el){
-      var h=(el.getAttribute('href')||'').split('/').pop();
-      if(h&&h===path){el.style.color='#b8963e';el.style.fontWeight='500';}
-    });
-  });
-})();
-</script>
-
-
-
-
-<script>
-(function(){
-  function addCircles() {
-    var links = document.querySelectorAll('.vpdk-nav-link, .vpdk-nav-dropdown-btn');
-    links.forEach(function(el) {
-      if (el.querySelector('.nav-circle')) return;
-      var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
-      svg.setAttribute('class','nav-circle');
-      svg.setAttribute('viewBox','0 0 100 100');
-      svg.setAttribute('preserveAspectRatio','none');
-      var ellipse = document.createElementNS('http://www.w3.org/2000/svg','ellipse');
-      ellipse.setAttribute('cx','50');
-      ellipse.setAttribute('cy','50');
-      ellipse.setAttribute('rx','46');
-      ellipse.setAttribute('ry','18');
-      // Hafif döndürme - el yazısı hissi
-      ellipse.setAttribute('transform','rotate(-3, 50, 50)');
-      svg.appendChild(ellipse);
-      el.appendChild(svg);
-      // Hover'da animasyonu sıfırla (tekrar çizilsin)
-      el.addEventListener('mouseenter', function() {
-        ellipse.style.animation = 'none';
-        ellipse.offsetHeight; // reflow
-        ellipse.style.animation = '';
-      });
-    });
-  }
-  if(document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', addCircles);
-  } else {
-    addCircles();
-  }
-})();
-</script>
 
 <div class="important-note">
   <div class="imp-tr" style="display:block"><strong>Önemli Not ve Sorumluluk Reddi:</strong> Sitemizde yer alan tüm içerikler genel bilgilendirme amaçlıdır. Sunulan bilgiler ve ürünler, herhangi bir hastalığı teşhis etme, tedavi etme, iyileştirme veya önleme amacı taşımaz. Ürünlerimiz takviye edici gıda olup, ilaç yerine geçmez. Sağlık durumunuz, mevcut tedavileriniz veya takviye kullanımı hakkında en doğru bilgi için mutlaka doktorunuza veya yetkili bir sağlık profesyoneline danışınız. Hamilelik, emzirme dönemi veya ilaç kullanımı durumunda bir uzmana danışılması önerilir. vitalprotocolDK</div>
