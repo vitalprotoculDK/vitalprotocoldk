@@ -114,6 +114,50 @@
 </style>
 <style>.hl5-lang-bar,.f-lang-bar,.or-lang-bar,.nr-lang-bar,.ed-lang-bar,.ig-lang-bar,.rs-lang-bar,.os-lang-bar,.su-lang-bar,.hk-lang-bar,.sss-lang-bar,.qz-lang-bar,[class*="-lang-bar"]{display:none!important}</style>
 <script defer src="/_vercel/insights/script.js"></script>
+<script>
+(function(){
+  function hl5Lang(l, btn){
+    localStorage.setItem('vpLang', l);
+    // Dil butonları
+    document.querySelectorAll('.hl5-lang-btn').forEach(function(b){
+      b.classList.toggle('active', b === btn);
+    });
+    // Section'lar
+    ['hl5-tr','hl5-en','hl5-es'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.style.display = id === 'hl5-'+l ? 'block' : 'none';
+    });
+    // vpNavLang zinciri
+    if(window._hl5OrigVpNav) window._hl5OrigVpNav(l, btn);
+  }
+  window.hl5Lang = hl5Lang;
+
+  // Sayfa yüklenince uygula
+  var saved = localStorage.getItem('vpLang') || 'tr';
+  document.addEventListener('DOMContentLoaded', function(){
+    // Section'lar
+    ['hl5-tr','hl5-en','hl5-es'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.style.display = id === 'hl5-'+saved ? 'block' : 'none';
+    });
+    // Buton aktif
+    document.querySelectorAll('.hl5-lang-btn').forEach(function(b){
+      var lang = b.getAttribute('onclick').match(/'([a-z]+)'/)[1];
+      b.classList.toggle('active', lang === saved);
+    });
+  });
+
+  // vpNavLang hook
+  window._hl5OrigVpNav = window.vpNavLang;
+  window.vpNavLang = function(l, btn){
+    if(window._hl5OrigVpNav) window._hl5OrigVpNav(l, btn);
+    ['hl5-tr','hl5-en','hl5-es'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.style.display = id === 'hl5-'+l ? 'block' : 'none';
+    });
+  };
+})();
+</script>
 <style>
 .vpdk-nav-logo img { 
   height: 40px !important; 
@@ -258,7 +302,7 @@
 .hl5-root *{box-sizing:border-box;font-family:inherit}
 
 /* DİL ÇUBUĞU */
-.hl5-lang-bar{display:flex;justify-content:flex-end;gap:8px;padding:16px 20px}
+.hl5-lang-bar{display:flex!important;justify-content:flex-end;gap:8px;padding:16px 20px}
 .hl5-lang-btn{padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7280;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
 .hl5-lang-btn.active{background:#2e3d30;color:#fff;border-color:#2e3d30}
 .hl5-lang{display:none}
@@ -403,7 +447,7 @@
   </div>
 
   <!-- ══════════ ENGLISH ══════════ -->
-  <div class="hl5-lang" id="hl5-en">
+  <div class="hl5-lang" id="hl5-en" style="display:none">
     <div class="hl5-hero">
       <span class="hl5-badge">Biological Architecture &amp; Aesthetics</span>
       <h2>The Shared Foundation of<br>Beauty and Strength: HL5</h2>
@@ -477,7 +521,7 @@
   </div>
 
   <!-- ══════════ ESPAÑOL ══════════ -->
-  <div class="hl5-lang" id="hl5-es">
+  <div class="hl5-lang" id="hl5-es" style="display:none">
     <div class="hl5-hero">
       <span class="hl5-badge">Arquitectura Biológica &amp; Estética</span>
       <h2>La Base Común de la<br>Belleza y la Fuerza: HL5</h2>
