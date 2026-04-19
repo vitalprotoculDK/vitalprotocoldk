@@ -65,6 +65,11 @@ div[style*="justify-content:flex-end"][style*="gap:8px"] { display:none !importa
   display: block !important;
 }
 </style>
+<style>
+/* ── QUIZ SECTION GİZLEME ── */
+.tst-qwrap{display:none!important}
+#tr-result,#en-result,#es-result{display:none!important}
+</style>
 </head>
 <body>
 <nav class="vpdk-nav-global">
@@ -249,10 +254,6 @@ div[style*="justify-content:flex-end"][style*="gap:8px"] { display:none !importa
 /* Dil bölümleri */
 #en,#es{display:none}
 #tr{display:block}
-
-/* ── QUIZ SECTION GİZLEME — JS açana kadar gizli ── */
-.tst-qwrap { display: none; }
-#tr-result, #en-result, #es-result { display: none; }
 </style>
 
 
@@ -882,14 +883,14 @@ if(window.location.hash && window.navigateQuiz) {
   function hideAll(lang) {
     ALL_IDS[lang].forEach(function(id){
       var el = document.getElementById(id);
-      if(el) el.style.display = 'none';
+      if(el) el.style.setProperty('display','none','important');
     });
   }
 
   function showSection(id) {
     var el = document.getElementById(id);
     if(el) {
-      el.style.display = 'block';
+      el.style.setProperty('display','block','important');
       window.scrollTo(0, 0);
     }
   }
