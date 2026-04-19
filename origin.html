@@ -111,6 +111,110 @@
   font-size:13px;
   letter-spacing:.03em;
 }
+
+/* ── TİPOGRAFİ STANDARDI ── */
+.origin-container h1,
+.origin-container h2 {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800;
+  line-height:1.15;
+  letter-spacing:-0.5px;
+}
+.origin-container h1 {
+  font-size:clamp(28px,5vw,52px);
+}
+.origin-container h2 {
+  font-size:clamp(22px,4vw,40px);
+}
+.origin-container p {
+  font-size:17px;
+  line-height:1.7;
+}
+.origin-badge {
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.origin-tag {
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+/* Altın şeritli alıntı kutusu */
+.origin-quote-box,
+.origin-quote {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:18px;
+  font-style:italic;
+  line-height:1.7;
+  color:rgba(255,255,255,0.9);
+}
+/* ── MOBİL TİPOGRAFİ ── */
+@media(max-width:768px){
+  .origin-container h1 {font-size:clamp(24px,7vw,36px)}
+  .origin-container h2 {font-size:clamp(18px,5vw,28px)}
+  .origin-container p {font-size:16px}
+  .origin-badge {font-size:11px}
+  .origin-tag {font-size:10px;padding:6px 12px}
+  .origin-quote-box,
+  .origin-quote {font-size:16px}
+  .tech-list-item p,
+  .tech-item p,
+  .profile-desc,
+  .card-desc,
+  .inc-desc,
+  .f-feat-p,
+  .f-step-text {font-size:15px!important;line-height:1.65}
+  .footer-note,
+  .origin-footnote {font-size:13px}
+}
+@media(max-width:480px){
+  .origin-container h1 {font-size:22px}
+  .origin-container h2 {font-size:18px}
+  .origin-container p {font-size:15px}
+}
+
+/* ── MOBİL KRİTİK DÜZELTME ── */
+@media(max-width:768px){
+  .footer-cta p[style*="font-size:18px"],
+  .footer-cta p[style*="font-size: 18px"] {
+    font-size:16px!important;
+  }
+  .footer-cta h2 {
+    font-size:22px!important;
+  }
+  .tech-container {
+    grid-template-columns:1fr!important;
+  }
+  .tech-container > div[style*="padding:50px"] {
+    padding:28px 20px!important;
+  }
+  .tech-list-item strong,
+  .tech-item strong {
+    font-size:16px!important;
+  }
+  .tech-list-item p,
+  .tech-item p {
+    font-size:15px!important;
+    line-height:1.65!important;
+  }
+  .profile-grid {
+    grid-template-columns:1fr!important;
+  }
+  .inclusion-grid {
+    grid-template-columns:1fr!important;
+  }
+}
+@media(max-width:480px){
+  .footer-cta p[style*="font-size:18px"],
+  .footer-cta p[style*="font-size: 18px"] {
+    font-size:15px!important;
+  }
+  .footer-cta h2 {
+    font-size:20px!important;
+  }
+}
 </style>
 <style>.hl5-lang-bar,.f-lang-bar,.or-lang-bar,.nr-lang-bar,.ed-lang-bar,.ig-lang-bar,.rs-lang-bar,.os-lang-bar,.su-lang-bar,.hk-lang-bar,.sss-lang-bar,.qz-lang-bar,[class*="-lang-bar"]{display:none!important}</style>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -350,7 +454,7 @@
       <div class="inclusion-card">
         <span style="font-size:30px;display:block;margin-bottom:10px;">🏃‍♂️</span>
         <h3>Aktif Yaşam</h3>
-        <p>Bezelye, bal kabağı ve ayçiçeği çekirdeğinden gelen 18 farklı amino asit profili ile kas kütlesinin korunmasına ve gelişimine katkıda bulunur.</p>
+        <p>Bezelye, bal kabağı ve ayçiçeği çekirdeğinden gelen tam spektrum 18 amino asit ile vücudunuzun bitkisel protein depolarını en saf haliyle destekler.</p>
       </div>
       <div class="inclusion-card">
         <span style="font-size:30px;display:block;margin-bottom:10px;">⏳</span>
@@ -424,7 +528,7 @@
       <div class="inclusion-card">
         <span style="font-size:30px;display:block;margin-bottom:10px;">🏃‍♂️</span>
         <h3>Active Living</h3>
-        <p>With a profile of 18 different amino acids from pea, pumpkin and sunflower seed, it contributes to the maintenance and growth of muscle mass.</p>
+        <p>With a full-spectrum profile of 18 amino acids from pea, pumpkin and sunflower seed, it supports replenishing your body's plant-based protein reserves in their purest form.</p>
       </div>
       <div class="inclusion-card">
         <span style="font-size:30px;display:block;margin-bottom:10px;">⏳</span>
@@ -498,7 +602,7 @@
       <div class="inclusion-card">
         <span style="font-size:30px;display:block;margin-bottom:10px;">🏃‍♂️</span>
         <h3>Vida Activa</h3>
-        <p>Con un perfil de 18 aminoácidos diferentes provenientes de guisante, calabaza y semilla de girasol, contribuye al mantenimiento y aumento de la masa muscular.</p>
+        <p>Con un perfil de espectro completo de 18 aminoácidos provenientes de guisante, calabaza y semilla de girasol, apoya la reposición de las reservas de proteína vegetal de tu cuerpo en su forma más pura.</p>
       </div>
       <div class="inclusion-card">
         <span style="font-size:30px;display:block;margin-bottom:10px;">⏳</span>

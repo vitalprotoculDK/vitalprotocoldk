@@ -347,6 +347,110 @@
   .f-grid{grid-template-columns:1fr}
   .f-usage{grid-template-columns:1fr;padding:32px 24px;gap:32px}
 }
+
+/* ── TİPOGRAFİ STANDARDI ── */
+.fit20-root h1,
+.fit20-root h2 {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800;
+  line-height:1.15;
+  letter-spacing:-0.5px;
+}
+.fit20-root h1 {
+  font-size:clamp(28px,5vw,52px);
+}
+.fit20-root h2 {
+  font-size:clamp(22px,4vw,40px);
+}
+.fit20-root p {
+  font-size:17px;
+  line-height:1.7;
+}
+.f-badge {
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.f-tag {
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+/* Altın şeritli alıntı kutusu */
+.f-quote-box,
+.f-quote {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:18px;
+  font-style:italic;
+  line-height:1.7;
+  color:rgba(255,255,255,0.9);
+}
+/* ── MOBİL TİPOGRAFİ ── */
+@media(max-width:768px){
+  .fit20-root h1 {font-size:clamp(24px,7vw,36px)}
+  .fit20-root h2 {font-size:clamp(18px,5vw,28px)}
+  .fit20-root p {font-size:16px}
+  .f-badge {font-size:11px}
+  .f-tag {font-size:10px;padding:6px 12px}
+  .f-quote-box,
+  .f-quote {font-size:16px}
+  .tech-list-item p,
+  .tech-item p,
+  .profile-desc,
+  .card-desc,
+  .inc-desc,
+  .f-feat-p,
+  .f-step-text {font-size:15px!important;line-height:1.65}
+  .footer-note,
+  .origin-footnote {font-size:13px}
+}
+@media(max-width:480px){
+  .fit20-root h1 {font-size:22px}
+  .fit20-root h2 {font-size:18px}
+  .fit20-root p {font-size:15px}
+}
+
+/* ── MOBİL KRİTİK DÜZELTME ── */
+@media(max-width:768px){
+  .footer-cta p[style*="font-size:18px"],
+  .footer-cta p[style*="font-size: 18px"] {
+    font-size:16px!important;
+  }
+  .footer-cta h2 {
+    font-size:22px!important;
+  }
+  .tech-container {
+    grid-template-columns:1fr!important;
+  }
+  .tech-container > div[style*="padding:50px"] {
+    padding:28px 20px!important;
+  }
+  .tech-list-item strong,
+  .tech-item strong {
+    font-size:16px!important;
+  }
+  .tech-list-item p,
+  .tech-item p {
+    font-size:15px!important;
+    line-height:1.65!important;
+  }
+  .profile-grid {
+    grid-template-columns:1fr!important;
+  }
+  .inclusion-grid {
+    grid-template-columns:1fr!important;
+  }
+}
+@media(max-width:480px){
+  .footer-cta p[style*="font-size:18px"],
+  .footer-cta p[style*="font-size: 18px"] {
+    font-size:15px!important;
+  }
+  .footer-cta h2 {
+    font-size:20px!important;
+  }
+}
 </style>
 
 <div id="fit20-root">

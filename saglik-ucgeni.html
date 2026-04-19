@@ -111,6 +111,69 @@
   font-size:13px;
   letter-spacing:.03em;
 }
+
+/* ── TİPOGRAFİ STANDARDI ── */
+.container h1,
+.container h2 {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800;
+  line-height:1.15;
+  letter-spacing:-0.5px;
+}
+.container h1 {
+  font-size:clamp(28px,5vw,52px);
+}
+.container h2 {
+  font-size:clamp(22px,4vw,40px);
+}
+.container p {
+  font-size:17px;
+  line-height:1.7;
+}
+.su-badge {
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.su-tag {
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+/* Altın şeritli alıntı kutusu */
+.su-quote-box,
+.su-quote {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:18px;
+  font-style:italic;
+  line-height:1.7;
+  color:rgba(255,255,255,0.9);
+}
+/* ── MOBİL TİPOGRAFİ ── */
+@media(max-width:768px){
+  .container h1 {font-size:clamp(24px,7vw,36px)}
+  .container h2 {font-size:clamp(18px,5vw,28px)}
+  .container p {font-size:16px}
+  .su-badge {font-size:11px}
+  .su-tag {font-size:10px;padding:6px 12px}
+  .su-quote-box,
+  .su-quote {font-size:16px}
+  .tech-list-item p,
+  .tech-item p,
+  .profile-desc,
+  .card-desc,
+  .inc-desc,
+  .f-feat-p,
+  .f-step-text {font-size:15px!important;line-height:1.65}
+  .footer-note,
+  .origin-footnote {font-size:13px}
+}
+@media(max-width:480px){
+  .container h1 {font-size:22px}
+  .container h2 {font-size:18px}
+  .container p {font-size:15px}
+}
 </style>
 <style>.hl5-lang-bar,.f-lang-bar,.or-lang-bar,.nr-lang-bar,.ed-lang-bar,.ig-lang-bar,.rs-lang-bar,.os-lang-bar,.su-lang-bar,.hk-lang-bar,.sss-lang-bar,.qz-lang-bar,[class*="-lang-bar"]{display:none!important}</style>
 <script defer src="/_vercel/insights/script.js"></script>

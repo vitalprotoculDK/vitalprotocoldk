@@ -111,6 +111,110 @@
   font-size:13px;
   letter-spacing:.03em;
 }
+
+/* ── TİPOGRAFİ STANDARDI ── */
+.nrgi-container h1,
+.nrgi-container h2 {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800;
+  line-height:1.15;
+  letter-spacing:-0.5px;
+}
+.nrgi-container h1 {
+  font-size:clamp(28px,5vw,52px);
+}
+.nrgi-container h2 {
+  font-size:clamp(22px,4vw,40px);
+}
+.nrgi-container p {
+  font-size:17px;
+  line-height:1.7;
+}
+.nrgi-badge {
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.nrgi-tag {
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+/* Altın şeritli alıntı kutusu */
+.nrgi-quote-box,
+.nrgi-quote {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:18px;
+  font-style:italic;
+  line-height:1.7;
+  color:rgba(255,255,255,0.9);
+}
+/* ── MOBİL TİPOGRAFİ ── */
+@media(max-width:768px){
+  .nrgi-container h1 {font-size:clamp(24px,7vw,36px)}
+  .nrgi-container h2 {font-size:clamp(18px,5vw,28px)}
+  .nrgi-container p {font-size:16px}
+  .nrgi-badge {font-size:11px}
+  .nrgi-tag {font-size:10px;padding:6px 12px}
+  .nrgi-quote-box,
+  .nrgi-quote {font-size:16px}
+  .tech-list-item p,
+  .tech-item p,
+  .profile-desc,
+  .card-desc,
+  .inc-desc,
+  .f-feat-p,
+  .f-step-text {font-size:15px!important;line-height:1.65}
+  .footer-note,
+  .origin-footnote {font-size:13px}
+}
+@media(max-width:480px){
+  .nrgi-container h1 {font-size:22px}
+  .nrgi-container h2 {font-size:18px}
+  .nrgi-container p {font-size:15px}
+}
+
+/* ── MOBİL KRİTİK DÜZELTME ── */
+@media(max-width:768px){
+  .footer-cta p[style*="font-size:18px"],
+  .footer-cta p[style*="font-size: 18px"] {
+    font-size:16px!important;
+  }
+  .footer-cta h2 {
+    font-size:22px!important;
+  }
+  .tech-container {
+    grid-template-columns:1fr!important;
+  }
+  .tech-container > div[style*="padding:50px"] {
+    padding:28px 20px!important;
+  }
+  .tech-list-item strong,
+  .tech-item strong {
+    font-size:16px!important;
+  }
+  .tech-list-item p,
+  .tech-item p {
+    font-size:15px!important;
+    line-height:1.65!important;
+  }
+  .profile-grid {
+    grid-template-columns:1fr!important;
+  }
+  .inclusion-grid {
+    grid-template-columns:1fr!important;
+  }
+}
+@media(max-width:480px){
+  .footer-cta p[style*="font-size:18px"],
+  .footer-cta p[style*="font-size: 18px"] {
+    font-size:15px!important;
+  }
+  .footer-cta h2 {
+    font-size:20px!important;
+  }
+}
 </style>
 <style>.hl5-lang-bar,.f-lang-bar,.or-lang-bar,.nr-lang-bar,.ed-lang-bar,.ig-lang-bar,.rs-lang-bar,.os-lang-bar,.su-lang-bar,.hk-lang-bar,.sss-lang-bar,.qz-lang-bar,[class*="-lang-bar"]{display:none!important}</style>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -397,7 +501,7 @@
 
   <div class="footer-cta">
     <h2>Daha Net Bir Zihinle Tanışın</h2>
-    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Odaklanmak bir tesadüf değil, vücudunuza sunduğunuz doğru kaynakların bir sonucudur. NRGI ile zihinsel gürültüyü geride bırakın ve doğal potansiyelinizi destekleyin."</p>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Hücresel berraklığa yer açın ve gün boyu süren zindeliği deneyimleyin. NRGI ile yapay uyarıcıların gölgesinden çıkın, vücudunuzun gerçek ritmine adım atın."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn-dark">RESMİ SİTEDEN TEMİN ET</a>
     <p class="footer-note">30 Saşe | Doğal Tatlandırıcı (Stevia) | Günlük Kullanım</p>
   </div>
@@ -475,7 +579,7 @@
 
   <div class="footer-cta">
     <h2>Meet a Clearer Mind</h2>
-    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Focus is not a coincidence — it is the result of the right resources you provide to your body. Leave the mental noise behind with NRGI and support your natural potential."</p>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Make room for cellular clarity and experience all-day vitality. Step out of the shadow of artificial stimulants with NRGI and step into your body's true rhythm."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn-dark">GET IT FROM THE OFFICIAL SITE</a>
     <p class="footer-note">30 Sachets | Natural Sweetener (Stevia) | Daily Use</p>
   </div>
@@ -553,7 +657,7 @@
 
   <div class="footer-cta">
     <h2>Conoce una Mente más Clara</h2>
-    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"La concentración no es casualidad — es el resultado de los recursos correctos que le proporcionas a tu cuerpo. Deja el ruido mental atrás con NRGI y apoya tu potencial natural."</p>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Dale espacio a la claridad celular y experimenta una vitalidad que dura todo el día. Sal de la sombra de los estimulantes artificiales con NRGI y entra en el ritmo real de tu cuerpo."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn-dark">OBTENERLO EN EL SITIO OFICIAL</a>
     <p class="footer-note">30 Sobres | Edulcorante Natural (Stevia) | Uso Diario</p>
   </div>

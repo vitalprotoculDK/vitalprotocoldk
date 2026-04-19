@@ -111,6 +111,110 @@
   font-size:13px;
   letter-spacing:.03em;
 }
+
+/* ── TİPOGRAFİ STANDARDI ── */
+.edge-container h1,
+.edge-container h2 {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800;
+  line-height:1.15;
+  letter-spacing:-0.5px;
+}
+.edge-container h1 {
+  font-size:clamp(28px,5vw,52px);
+}
+.edge-container h2 {
+  font-size:clamp(22px,4vw,40px);
+}
+.edge-container p {
+  font-size:17px;
+  line-height:1.7;
+}
+.edge-badge {
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.edge-tag {
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+/* Altın şeritli alıntı kutusu */
+.edge-quote-box,
+.edge-quote {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:18px;
+  font-style:italic;
+  line-height:1.7;
+  color:rgba(255,255,255,0.9);
+}
+/* ── MOBİL TİPOGRAFİ ── */
+@media(max-width:768px){
+  .edge-container h1 {font-size:clamp(24px,7vw,36px)}
+  .edge-container h2 {font-size:clamp(18px,5vw,28px)}
+  .edge-container p {font-size:16px}
+  .edge-badge {font-size:11px}
+  .edge-tag {font-size:10px;padding:6px 12px}
+  .edge-quote-box,
+  .edge-quote {font-size:16px}
+  .tech-list-item p,
+  .tech-item p,
+  .profile-desc,
+  .card-desc,
+  .inc-desc,
+  .f-feat-p,
+  .f-step-text {font-size:15px!important;line-height:1.65}
+  .footer-note,
+  .origin-footnote {font-size:13px}
+}
+@media(max-width:480px){
+  .edge-container h1 {font-size:22px}
+  .edge-container h2 {font-size:18px}
+  .edge-container p {font-size:15px}
+}
+
+/* ── MOBİL KRİTİK DÜZELTME ── */
+@media(max-width:768px){
+  .footer-cta p[style*="font-size:18px"],
+  .footer-cta p[style*="font-size: 18px"] {
+    font-size:16px!important;
+  }
+  .footer-cta h2 {
+    font-size:22px!important;
+  }
+  .tech-container {
+    grid-template-columns:1fr!important;
+  }
+  .tech-container > div[style*="padding:50px"] {
+    padding:28px 20px!important;
+  }
+  .tech-list-item strong,
+  .tech-item strong {
+    font-size:16px!important;
+  }
+  .tech-list-item p,
+  .tech-item p {
+    font-size:15px!important;
+    line-height:1.65!important;
+  }
+  .profile-grid {
+    grid-template-columns:1fr!important;
+  }
+  .inclusion-grid {
+    grid-template-columns:1fr!important;
+  }
+}
+@media(max-width:480px){
+  .footer-cta p[style*="font-size:18px"],
+  .footer-cta p[style*="font-size: 18px"] {
+    font-size:15px!important;
+  }
+  .footer-cta h2 {
+    font-size:20px!important;
+  }
+}
 </style>
 <style>.hl5-lang-bar,.f-lang-bar,.or-lang-bar,.nr-lang-bar,.ed-lang-bar,.ig-lang-bar,.rs-lang-bar,.os-lang-bar,.su-lang-bar,.hk-lang-bar,.sss-lang-bar,.qz-lang-bar,[class*="-lang-bar"]{display:none!important}</style>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -370,7 +474,7 @@
     <div class="tech-container">
       <div>
         <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">Hücrelerin Dilinden Konuşan<br><span style="color:#d4af37">Bitkisel Teknoloji.</span></h2>
-        <p style="font-size:16px;color:#444;margin-bottom:20px;">EDGE'in kalbinde yer alan benzersiz formül, yapay uyarıcılar yerine vücudun kendi doğal biyolojik süreçlerini desteklemeyi amaçlar:</p>
+        <p style="font-size:16px;color:#444;margin-bottom:20px;">EDGE'in kalbindeki patentli formül, anlık çöküş yaratan uyarıcılar yerine vücudun kendi nörobiyolojik dengesini pekiştirmeyi hedefler:</p>
         <div class="tech-item">
           <strong>Mango Yaprağı Ekstresi</strong>
           <p>İçeriğindeki özel bileşikler sayesinde zihinsel enerjiyi ve bilişsel performansı destekler, fiziksel dayanıklılığa katkıda bulunur.</p>
@@ -398,7 +502,7 @@
 
   <div class="footer-cta">
     <h2>Zihinsel Sınırlarınızı Yeniden Keşfedin</h2>
-    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Motivasyon sadece bir duygu değil, hücrelerinize sunduğunuz doğru kaynakların bir sonucudur. EDGE ile zihinsel gürültüyü geride bırakın ve potansiyelinizi destekleyin."</p>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Zihinsel sınırlarınızı genişletin ve motivasyonun en saf halini keşfedin. EDGE ile bilişsel performansınızı bir üst seviyeye taşıyın ve her güne tam odakla başlayın."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-dark">RESMİ SİTEDEN TEMİN ET</a>
     <p class="footer-note">30 Stick | Doğal Bazlı | Günlük Kullanım</p>
   </div>
@@ -449,7 +553,7 @@
     <div class="tech-container">
       <div>
         <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">Botanical Technology<br><span style="color:#d4af37">That Speaks the Language of Cells.</span></h2>
-        <p style="font-size:16px;color:#444;margin-bottom:20px;">The unique formula at the heart of EDGE aims to support the body's own natural biological processes rather than artificial stimulants:</p>
+        <p style="font-size:16px;color:#444;margin-bottom:20px;">Instead of temporary energy spikes, meet the intelligent botanical synergy that optimises your cognitive functions: the unique formula at the heart of EDGE accompanies the body's own natural mechanisms.</p>
         <div class="tech-item">
           <strong>Mango Leaf Extract</strong>
           <p>Supports mental energy and cognitive performance through its special compounds, contributing to physical endurance.</p>
@@ -477,7 +581,7 @@
 
   <div class="footer-cta">
     <h2>Rediscover Your Mental Limits</h2>
-    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Motivation is not just a feeling — it is the result of the right resources you provide to your cells. Leave the mental noise behind with EDGE and support your potential."</p>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Expand your mental boundaries and discover motivation in its purest form. Take your cognitive performance to the next level with EDGE and start every day with full focus."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-dark">GET IT FROM THE OFFICIAL SITE</a>
     <p class="footer-note">30 Sticks | Natural-Based | Daily Use</p>
   </div>
@@ -528,7 +632,7 @@
     <div class="tech-container">
       <div>
         <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">Tecnología Botánica<br><span style="color:#d4af37">que Habla el Idioma de las Células.</span></h2>
-        <p style="font-size:16px;color:#444;margin-bottom:20px;">La fórmula única en el corazón de EDGE tiene como objetivo apoyar los propios procesos biológicos naturales del cuerpo en lugar de estimulantes artificiales:</p>
+        <p style="font-size:16px;color:#444;margin-bottom:20px;">En lugar de explosiones de energía temporales, conoce la sinergia botánica inteligente que optimiza tus funciones cognitivas: la fórmula única en el corazón de EDGE acompaña los mecanismos naturales propios del cuerpo.</p>
         <div class="tech-item">
           <strong>Extracto de Hoja de Mango</strong>
           <p>Apoya la energía mental y el rendimiento cognitivo a través de sus compuestos especiales, contribuyendo a la resistencia física.</p>
@@ -556,7 +660,7 @@
 
   <div class="footer-cta">
     <h2>Redescubre tus Límites Mentales</h2>
-    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"La motivación no es solo una sensación — es el resultado de los recursos correctos que le proporcionas a tus células. Deja el ruido mental atrás con EDGE y apoya tu potencial."</p>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Amplía tus límites mentales y descubre la motivación en su forma más pura. Lleva tu rendimiento cognitivo al siguiente nivel con EDGE y comienza cada día con pleno enfoque."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-dark">OBTENERLO EN EL SITIO OFICIAL</a>
     <p class="footer-note">30 Sticks | Base Natural | Uso Diario</p>
   </div>

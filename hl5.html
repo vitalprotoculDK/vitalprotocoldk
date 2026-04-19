@@ -111,6 +111,110 @@
   font-size:13px;
   letter-spacing:.03em;
 }
+
+/* ── TİPOGRAFİ STANDARDI ── */
+.hl5-root h1,
+.hl5-root h2 {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800;
+  line-height:1.15;
+  letter-spacing:-0.5px;
+}
+.hl5-root h1 {
+  font-size:clamp(28px,5vw,52px);
+}
+.hl5-root h2 {
+  font-size:clamp(22px,4vw,40px);
+}
+.hl5-root p {
+  font-size:17px;
+  line-height:1.7;
+}
+.hl5-badge {
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.hl5-tag {
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+/* Altın şeritli alıntı kutusu */
+.hl5-quote-box,
+.hl5-quote {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:18px;
+  font-style:italic;
+  line-height:1.7;
+  color:rgba(255,255,255,0.9);
+}
+/* ── MOBİL TİPOGRAFİ ── */
+@media(max-width:768px){
+  .hl5-root h1 {font-size:clamp(24px,7vw,36px)}
+  .hl5-root h2 {font-size:clamp(18px,5vw,28px)}
+  .hl5-root p {font-size:16px}
+  .hl5-badge {font-size:11px}
+  .hl5-tag {font-size:10px;padding:6px 12px}
+  .hl5-quote-box,
+  .hl5-quote {font-size:16px}
+  .tech-list-item p,
+  .tech-item p,
+  .profile-desc,
+  .card-desc,
+  .inc-desc,
+  .f-feat-p,
+  .f-step-text {font-size:15px!important;line-height:1.65}
+  .footer-note,
+  .origin-footnote {font-size:13px}
+}
+@media(max-width:480px){
+  .hl5-root h1 {font-size:22px}
+  .hl5-root h2 {font-size:18px}
+  .hl5-root p {font-size:15px}
+}
+
+/* ── MOBİL KRİTİK DÜZELTME ── */
+@media(max-width:768px){
+  .footer-cta p[style*="font-size:18px"],
+  .footer-cta p[style*="font-size: 18px"] {
+    font-size:16px!important;
+  }
+  .footer-cta h2 {
+    font-size:22px!important;
+  }
+  .tech-container {
+    grid-template-columns:1fr!important;
+  }
+  .tech-container > div[style*="padding:50px"] {
+    padding:28px 20px!important;
+  }
+  .tech-list-item strong,
+  .tech-item strong {
+    font-size:16px!important;
+  }
+  .tech-list-item p,
+  .tech-item p {
+    font-size:15px!important;
+    line-height:1.65!important;
+  }
+  .profile-grid {
+    grid-template-columns:1fr!important;
+  }
+  .inclusion-grid {
+    grid-template-columns:1fr!important;
+  }
+}
+@media(max-width:480px){
+  .footer-cta p[style*="font-size:18px"],
+  .footer-cta p[style*="font-size: 18px"] {
+    font-size:15px!important;
+  }
+  .footer-cta h2 {
+    font-size:20px!important;
+  }
+}
 </style>
 <style>.hl5-lang-bar,.f-lang-bar,.or-lang-bar,.nr-lang-bar,.ed-lang-bar,.ig-lang-bar,.rs-lang-bar,.os-lang-bar,.su-lang-bar,.hk-lang-bar,.sss-lang-bar,.qz-lang-bar,[class*="-lang-bar"]{display:none!important}</style>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -384,7 +488,7 @@
         <span class="hl5-tag">DOĞAL ŞEFTALİ AROMASI</span>
       </div>
       <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="hl5-btn">DEĞİŞİMİ DESTEKLE</a>
-      <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px">"Vücudunuza iyi bakmanız için maraton koşmanıza gerek yok;<br>ona sadece doğru yakıtı vermeniz yeterli."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
+      <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px">"Vücudunuzun temel mimarisini korumak için mucizelere değil;<br>eksilen yapı taşlarını yerine koymaya ihtiyacınız var."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
     </div>
 
     <div class="hl5-vision-grid">
@@ -458,7 +562,7 @@
         <span class="hl5-tag">NATURAL PEACH FLAVOUR</span>
       </div>
       <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="hl5-btn">SUPPORT THE CHANGE</a>
-      <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px">"You don't need to run a marathon to take good care of your body;<br>you just need to give it the right fuel."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
+      <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px">"To protect your body's fundamental architecture, you don't need miracles —<br>you need to replenish the building blocks that are running low."<span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
     </div>
 
     <div class="hl5-vision-grid">
@@ -532,7 +636,7 @@
         <span class="hl5-tag">AROMA NATURAL DE MELOCOTÓN</span>
       </div>
       <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="hl5-btn">APOYA EL CAMBIO</a>
-      <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px">"No necesitas correr un maratón para cuidar bien tu cuerpo;<br>solo necesitas darle el combustible adecuado."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
+      <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px">"Para proteger la arquitectura fundamental de tu cuerpo, no necesitas milagros —<br>necesitas reponer los bloques de construcción que se están agotando."<span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
     </div>
 
     <div class="hl5-vision-grid">
