@@ -179,6 +179,29 @@
   }
 }
 </script>
+<script>
+(function(){
+  function edgeLang(lang){
+    ['edge-tr','edge-en','edge-es'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.style.display = id === 'edge-'+lang ? 'block' : 'none';
+    });
+    document.querySelectorAll('.edge-lang-btn').forEach(function(b){
+      var m = (b.getAttribute('onclick')||'').match(/'([a-z]+)'/);
+      if(m) b.classList.toggle('active', m[1] === lang);
+    });
+    localStorage.setItem('vpLang', lang);
+  }
+  window.edgeLang = edgeLang;
+  var saved = localStorage.getItem('vpLang') || 'tr';
+  document.addEventListener('DOMContentLoaded', function(){ edgeLang(saved); });
+  var _orig = window.vpNavLang;
+  window.vpNavLang = function(l, btn){
+    if(_orig) _orig(l, btn);
+    edgeLang(l);
+  };
+})();
+</script>
 <link rel="alternate" hreflang="tr" href="https://vitalprotocoldk.com/edge">
 <link rel="alternate" hreflang="en" href="https://vitalprotocoldk.com/edge">
 <link rel="alternate" hreflang="es" href="https://vitalprotocoldk.com/edge">
@@ -257,7 +280,7 @@
 .edge-container{font-family:'Plus Jakarta Sans',sans-serif;color:#1a1a1a;line-height:1.6;margin:0;padding:0;background:#fff}
 
 /* DİL ÇUBUĞU */
-.edge-lang-bar{display:flex;justify-content:flex-end;gap:8px;padding:16px 20px}
+.edge-lang-bar{display:flex!important;justify-content:flex-end;gap:8px;padding:16px 20px}
 .edge-lang-btn{padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7280;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
 .edge-lang-btn.active{background:#2e3d30;color:#fff;border-color:#2e3d30}
 .edge-lang{display:none}
@@ -308,37 +331,37 @@
 
   <div class="edge-hero">
     <span class="edge-badge">Zihinsel Keskinlik &amp; Motivasyon</span>
-    <h1>EDGE: Kafein Çöküşü Olmadan<br>Sürdürülebilir Odaklanma.</h1>
-    <p>Vücudun doğal motivasyon kaynaklarını harekete geçirin. 3 patentli bitkisel sinerji ile gün boyu süren zihinsel enerji ve reaksiyon hızı.</p>
+    <h1>Kafein Çöküşü Olmadan<br>Sürdürülebilir Odaklanma.</h1>
+    <p>Vücudun doğal motivasyon kaynaklarını destekleyin. 3 patentli bitkisel sinerji ile gün boyu süren zihinsel zindelik ve reaksiyon dengesi.</p>
     <div class="edge-tags">
       <span class="edge-tag">KAFEİN İÇERMEZ</span>
       <span class="edge-tag">0 KALORİ</span>
       <span class="edge-tag">3 PATENTLİ BİLEŞEN</span>
-      <span class="edge-tag">DOĞAL KARPUZ &amp; MANGO</span>
+      <span class="edge-tag">DOĞAL KARPUZ VE MANGO</span>
     </div>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn">SİSTEMİ KEŞFET</a>
   </div>
 
   <div class="edge-inclusion">
     <div style="text-align:center;max-width:850px;margin:0 auto 60px;">
-      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Farklı Hayatlar, <span style="color:#d4af37">Aynı Performans.</span></h2>
-      <p style="color:#636e72;font-size:18px;">EDGE, biyolojik yapısı ve hedefleri ne olursa olsun; zihnini bir araç gibi kullanan herkes için tasarlandı.</p>
+      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Farklı Hayatlar, <span style="color:#d4af37">Ortak Performans.</span></h2>
+      <p style="color:#636e72;font-size:18px;">EDGE; biyolojik yapısı ve hedefleri ne olursa olsun, zihnini bir enstrüman gibi kullanan herkes için tasarlandı.</p>
     </div>
     <div class="inclusion-grid">
       <div class="inclusion-card">
         <span class="inc-icon">⚡</span>
-        <div class="inc-title">Profesyonel Sporcular</div>
-        <p class="inc-desc">Gelişmiş güç çıkışı, azalan yorgunluk hissi ve egzersiz sonrası hızlandırılmış hücresel iyileşme desteği.</p>
+        <div class="inc-title">Aktif Sporcular</div>
+        <p class="inc-desc">Fiziksel dayanıklılığı destekleyen, yorgunluk hissini dengelemeye yardımcı olan ve egzersiz sonrası vücudun doğal toparlanma sürecine eşlik eden içerik yapısı.</p>
       </div>
       <div class="inclusion-card">
         <span class="inc-icon">👔</span>
         <div class="inc-title">Yoğun Çalışanlar</div>
-        <p class="inc-desc">Yoğun iş temposunda motivasyonu korumak, bilişsel performansı ve reaksiyon süresini optimize etmek için.</p>
+        <p class="inc-desc">Yoğun iş temposunda motivasyonu korumak, bilişsel zindeliği ve odaklanma süresini desteklemek için.</p>
       </div>
       <div class="inclusion-card" style="border-bottom:4px solid #d4af37;">
         <span class="inc-icon">⏳</span>
-        <div class="inc-title">Bilinçli Yaş Alanlar</div>
-        <p class="inc-desc">Nöron rejenerasyonunu destekleyen, ruh halini ve dopamin dengesini dengeleyen bütünsel bilişsel kalkan.</p>
+        <div class="inc-title">Bilinçli Yaş Alanlar (Well-Aging)</div>
+        <p class="inc-desc">Ruh halini ve bilişsel fonksiyonları destekleyen bütünsel içerik kalkanı.</p>
       </div>
     </div>
   </div>
@@ -347,35 +370,35 @@
     <div class="tech-container">
       <div>
         <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">Hücrelerin Dilinden Konuşan<br><span style="color:#d4af37">Bitkisel Teknoloji.</span></h2>
-        <p style="font-size:16px;color:#444;margin-bottom:20px;">EDGE'in kalbinde yer alan benzersiz formül, yapay uyarıcılar yerine vücudun doğal biyolojik süreçlerini ve nörotransmiterlerini optimize eder.</p>
+        <p style="font-size:16px;color:#444;margin-bottom:20px;">EDGE'in kalbinde yer alan benzersiz formül, yapay uyarıcılar yerine vücudun kendi doğal biyolojik süreçlerini desteklemeyi amaçlar:</p>
         <div class="tech-item">
           <strong>Mango Yaprağı Ekstresi</strong>
-          <p>Ksanton bileşikleri sayesinde zihinsel enerjiyi yükseltir, bilişsel performansı ve fiziksel dayanıklılığı destekler.</p>
+          <p>İçeriğindeki özel bileşikler sayesinde zihinsel enerjiyi ve bilişsel performansı destekler, fiziksel dayanıklılığa katkıda bulunur.</p>
         </div>
         <div class="tech-item">
           <strong>Palmiye Meyvesi Biyoaktifleri</strong>
-          <p>Nöron rejenerasyonunu ve ruh halini destekleyen nörotrofik faktörleri (BDNF) iyileştirmeye yardımcı olur.</p>
+          <p>Sistemin genel dengesini ve zihinsel esenliği destekleyen doğal bileşenler sunar.</p>
         </div>
         <div class="tech-item">
           <strong>B5 Vitamini (Pantotenik Asit)</strong>
-          <p>Normal enerji oluşum metabolizmasına katkıda bulunur, yorgunluk ve bitkinliğin azalmasını destekler.</p>
+          <p>Normal enerji oluşum metabolizmasına katkıda bulunur, zihinsel performansın korunmasına ve yorgunluğun azalmasına yardımcı olur.</p>
         </div>
       </div>
       <div style="background:#2e3d30;color:#fff;padding:50px;border-radius:8px;">
         <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:13px;letter-spacing:2px;">Öne Çıkan Özellikler</h4>
         <ul style="padding-left:0;list-style:none;font-size:18px;margin-top:25px;">
-          <li style="margin-bottom:20px;">✓ <strong>Dopamin Desteği:</strong> Motivasyon ve ruh hali üzerine olumlu etkiler.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Antioksidan Güç:</strong> Mangostana ile oksidatif strese karşı hücresel koruma.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Sıfır Çöküş:</strong> Kafein içermediği için kalp çarpıntısı veya ani enerji düşüşü yaratmaz.</li>
-          <li>✓ <strong>Doğal Tat:</strong> Stevya bitkisi ile tatlandırılmış enfes karpuz ve mango aroması.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Motivasyon Desteği:</strong> Günlük ruh hali ve motivasyon süreçlerine olumlu katkılar.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Antioksidan Güç:</strong> Mangostana içeriği ile hücrelerin oksidatif stresten korunmasına yardımcı olur.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Sıfır Çöküş:</strong> Kafein içermediği için kalp çarpıntısı veya ani enerji düşüşleri yaşatmadan stabil bir zindelik sunar.</li>
+          <li>✓ <strong>Doğal Tat:</strong> Stevya bitkisi ile tatlandırılmış, meyve özlerinden gelen ferahlatıcı lezzet.</li>
         </ul>
       </div>
     </div>
   </div>
 
   <div class="footer-cta">
-    <h2>Zihinsel Sınırlarınızı Yeniden Çizin</h2>
-    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Motivasyon bir duygu değil, hücrelerinize verdiğiniz doğru sinyalin bir sonucudur. EDGE ile gürültüyü susturun ve en iyi halinize ulaşmayı destekleyin."</p>
+    <h2>Zihinsel Sınırlarınızı Yeniden Keşfedin</h2>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Motivasyon sadece bir duygu değil, hücrelerinize sunduğunuz doğru kaynakların bir sonucudur. EDGE ile zihinsel gürültüyü geride bırakın ve potansiyelinizi destekleyin."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-dark">RESMİ SİTEDEN TEMİN ET</a>
     <p class="footer-note">30 Stick | Doğal Bazlı | Günlük Kullanım</p>
   </div>
@@ -383,12 +406,12 @@
 </div>
 
 <!-- ══════════ ENGLISH ══════════ -->
-<div class="edge-lang" id="edge-en">
+<div class="edge-lang" id="edge-en" style="display:none">
 
   <div class="edge-hero">
     <span class="edge-badge">Mental Sharpness &amp; Motivation</span>
-    <h2>EDGE: Sustainable Focus<br>Without the Caffeine Crash.</h2>
-    <p>Activate your body's natural sources of motivation. All-day mental energy and reaction speed with 3 patented botanical synergies.</p>
+    <h2>Sustainable Focus<br>Without the Caffeine Crash.</h2>
+    <p>Support your body's natural sources of motivation. All-day mental vitality and reaction balance with 3 patented botanical synergies.</p>
     <div class="edge-tags">
       <span class="edge-tag">CAFFEINE-FREE</span>
       <span class="edge-tag">0 CALORIES</span>
@@ -400,24 +423,24 @@
 
   <div class="edge-inclusion">
     <div style="text-align:center;max-width:850px;margin:0 auto 60px;">
-      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Different Lives, <span style="color:#d4af37">Same Performance.</span></h2>
-      <p style="color:#636e72;font-size:18px;">EDGE was designed for everyone who uses their mind as a tool, whatever their biology and goals.</p>
+      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Different Lives, <span style="color:#d4af37">Shared Performance.</span></h2>
+      <p style="color:#636e72;font-size:18px;">EDGE was designed for everyone who uses their mind as an instrument, whatever their biology and goals.</p>
     </div>
     <div class="inclusion-grid">
       <div class="inclusion-card">
         <span class="inc-icon">⚡</span>
-        <div class="inc-title">Professional Athletes</div>
-        <p class="inc-desc">Support for enhanced power output, reduced fatigue and accelerated cellular recovery after exercise.</p>
+        <div class="inc-title">Active Athletes</div>
+        <p class="inc-desc">An ingredient structure that supports physical endurance, helps balance the feeling of fatigue and accompanies the body's natural recovery process after exercise.</p>
       </div>
       <div class="inclusion-card">
         <span class="inc-icon">👔</span>
         <div class="inc-title">Busy Professionals</div>
-        <p class="inc-desc">For maintaining motivation in an intense work pace, and optimising cognitive performance and reaction time.</p>
+        <p class="inc-desc">For maintaining motivation in an intense work pace, and supporting cognitive vitality and focus duration.</p>
       </div>
       <div class="inclusion-card" style="border-bottom:4px solid #d4af37;">
         <span class="inc-icon">⏳</span>
-        <div class="inc-title">Conscious Agers</div>
-        <p class="inc-desc">A holistic cognitive shield that supports neuronal regeneration and balances mood and dopamine levels.</p>
+        <div class="inc-title">Conscious Agers (Well-Ageing)</div>
+        <p class="inc-desc">A holistic content shield that supports mood and cognitive functions.</p>
       </div>
     </div>
   </div>
@@ -426,35 +449,35 @@
     <div class="tech-container">
       <div>
         <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">Botanical Technology<br><span style="color:#d4af37">That Speaks the Language of Cells.</span></h2>
-        <p style="font-size:16px;color:#444;margin-bottom:20px;">The unique formula at the heart of EDGE optimises the body's natural biological processes and neurotransmitters instead of artificial stimulants.</p>
+        <p style="font-size:16px;color:#444;margin-bottom:20px;">The unique formula at the heart of EDGE aims to support the body's own natural biological processes rather than artificial stimulants:</p>
         <div class="tech-item">
           <strong>Mango Leaf Extract</strong>
-          <p>Elevates mental energy through xanthone compounds, supporting cognitive performance and physical endurance.</p>
+          <p>Supports mental energy and cognitive performance through its special compounds, contributing to physical endurance.</p>
         </div>
         <div class="tech-item">
           <strong>Palm Fruit Bioactives</strong>
-          <p>Helps improve neurotrophic factors (BDNF) that support neuronal regeneration and mood.</p>
+          <p>Provides natural compounds that support the system's overall balance and mental wellbeing.</p>
         </div>
         <div class="tech-item">
           <strong>Vitamin B5 (Pantothenic Acid)</strong>
-          <p>Contributes to normal energy-yielding metabolism and supports the reduction of fatigue and tiredness.</p>
+          <p>Contributes to normal energy-yielding metabolism and helps support the maintenance of mental performance and the reduction of fatigue.</p>
         </div>
       </div>
       <div style="background:#2e3d30;color:#fff;padding:50px;border-radius:8px;">
         <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:13px;letter-spacing:2px;">Key Features</h4>
         <ul style="padding-left:0;list-style:none;font-size:18px;margin-top:25px;">
-          <li style="margin-bottom:20px;">✓ <strong>Dopamine Support:</strong> Positive effects on motivation and mood.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Antioxidant Power:</strong> Cellular protection against oxidative stress with Mangosteen.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Zero Crash:</strong> No palpitations or sudden energy drop as it contains no caffeine.</li>
-          <li>✓ <strong>Natural Taste:</strong> Delicious watermelon and mango flavour sweetened with the Stevia plant.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Motivation Support:</strong> Positive contributions to daily mood and motivation processes.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Antioxidant Power:</strong> Helps protect cells from oxidative stress through Mangosteen content.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Zero Crash:</strong> Provides stable vitality without palpitations or sudden energy drops as it contains no caffeine.</li>
+          <li>✓ <strong>Natural Taste:</strong> A refreshing flavour from fruit extracts, sweetened with the Stevia plant.</li>
         </ul>
       </div>
     </div>
   </div>
 
   <div class="footer-cta">
-    <h2>Redraw Your Mental Limits</h2>
-    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Motivation is not a feeling — it is the result of giving your cells the right signal. Silence the noise with EDGE and focus on your best self."</p>
+    <h2>Rediscover Your Mental Limits</h2>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Motivation is not just a feeling — it is the result of the right resources you provide to your cells. Leave the mental noise behind with EDGE and support your potential."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-dark">GET IT FROM THE OFFICIAL SITE</a>
     <p class="footer-note">30 Sticks | Natural-Based | Daily Use</p>
   </div>
@@ -462,41 +485,41 @@
 </div>
 
 <!-- ══════════ ESPAÑOL ══════════ -->
-<div class="edge-lang" id="edge-es">
+<div class="edge-lang" id="edge-es" style="display:none">
 
   <div class="edge-hero">
     <span class="edge-badge">Agudeza Mental &amp; Motivación</span>
-    <h2>EDGE: Concentración Ininterrumpida<br>sin el Bajón de la Cafeína.</h2>
-    <p>Activa las fuentes naturales de motivación de tu cuerpo. Energía mental durante todo el día y velocidad de reacción con 3 sinergias botánicas patentadas.</p>
+    <h2>Enfoque Sostenible<br>Sin el Bajón de la Cafeína.</h2>
+    <p>Apoya las fuentes naturales de motivación de tu cuerpo. Vitalidad mental durante todo el día y equilibrio de reacción con 3 sinergias botánicas patentadas.</p>
     <div class="edge-tags">
       <span class="edge-tag">SIN CAFEÍNA</span>
       <span class="edge-tag">0 CALORÍAS</span>
       <span class="edge-tag">3 INGREDIENTES PATENTADOS</span>
-      <span class="edge-tag">SANDÍA &amp; MANGO NATURALES</span>
+      <span class="edge-tag">SANDÍA Y MANGO NATURALES</span>
     </div>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn">DESCUBRIR EL SISTEMA</a>
   </div>
 
   <div class="edge-inclusion">
     <div style="text-align:center;max-width:850px;margin:0 auto 60px;">
-      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Distintas Vidas, <span style="color:#d4af37">el Mismo Rendimiento.</span></h2>
-      <p style="color:#636e72;font-size:18px;">EDGE fue diseñado para todos los que usan su mente como herramienta, sea cual sea su biología y sus objetivos.</p>
+      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Diferentes Vidas, <span style="color:#d4af37">Rendimiento Compartido.</span></h2>
+      <p style="color:#636e72;font-size:18px;">EDGE fue diseñado para todos los que usan su mente como instrumento, independientemente de su biología y objetivos.</p>
     </div>
     <div class="inclusion-grid">
       <div class="inclusion-card">
         <span class="inc-icon">⚡</span>
-        <div class="inc-title">Deportistas Profesionales</div>
-        <p class="inc-desc">Soporte para una mayor producción de potencia, reducción de la fatiga y recuperación celular acelerada tras el ejercicio.</p>
+        <div class="inc-title">Deportistas Activos</div>
+        <p class="inc-desc">Una estructura de ingredientes que apoya la resistencia física, ayuda a equilibrar la sensación de fatiga y acompaña el proceso natural de recuperación del cuerpo tras el ejercicio.</p>
       </div>
       <div class="inclusion-card">
         <span class="inc-icon">👔</span>
         <div class="inc-title">Profesionales Ocupados</div>
-        <p class="inc-desc">Para mantener la motivación en un ritmo de trabajo intenso y optimizar el rendimiento cognitivo y el tiempo de reacción.</p>
+        <p class="inc-desc">Para mantener la motivación en un ritmo de trabajo intenso y apoyar la vitalidad cognitiva y la duración del enfoque.</p>
       </div>
       <div class="inclusion-card" style="border-bottom:4px solid #d4af37;">
         <span class="inc-icon">⏳</span>
-        <div class="inc-title">Envejecimiento Consciente</div>
-        <p class="inc-desc">Un escudo cognitivo integral que apoya la regeneración neuronal y equilibra el estado de ánimo y los niveles de dopamina.</p>
+        <div class="inc-title">Envejecimiento Consciente (Well-Aging)</div>
+        <p class="inc-desc">Un escudo de contenido integral que apoya el estado de ánimo y las funciones cognitivas.</p>
       </div>
     </div>
   </div>
@@ -504,36 +527,36 @@
   <div class="edge-tech-panel">
     <div class="tech-container">
       <div>
-        <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">Tecnología Botánica<br><span style="color:#d4af37">que Habla el Lenguaje de las Células.</span></h2>
-        <p style="font-size:16px;color:#444;margin-bottom:20px;">La fórmula única en el corazón de EDGE optimiza los procesos biológicos naturales del cuerpo y los neurotransmisores en lugar de estimulantes artificiales.</p>
+        <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">Tecnología Botánica<br><span style="color:#d4af37">que Habla el Idioma de las Células.</span></h2>
+        <p style="font-size:16px;color:#444;margin-bottom:20px;">La fórmula única en el corazón de EDGE tiene como objetivo apoyar los propios procesos biológicos naturales del cuerpo en lugar de estimulantes artificiales:</p>
         <div class="tech-item">
           <strong>Extracto de Hoja de Mango</strong>
-          <p>Eleva la energía mental a través de compuestos xantónicos, apoyando el rendimiento cognitivo y la resistencia física.</p>
+          <p>Apoya la energía mental y el rendimiento cognitivo a través de sus compuestos especiales, contribuyendo a la resistencia física.</p>
         </div>
         <div class="tech-item">
-          <strong>Bioactivos de Fruta de Palma</strong>
-          <p>Ayuda a mejorar los factores neurotróficos (BDNF) que apoyan la regeneración neuronal y el estado de ánimo.</p>
+          <strong>Bioactivos de Fruto de Palma</strong>
+          <p>Proporciona compuestos naturales que apoyan el equilibrio general del sistema y el bienestar mental.</p>
         </div>
         <div class="tech-item">
           <strong>Vitamina B5 (Ácido Pantoténico)</strong>
-          <p>Contribuye al metabolismo energético normal y apoya la reducción del cansancio y la fatiga.</p>
+          <p>Contribuye al metabolismo energético normal y ayuda a apoyar el mantenimiento del rendimiento mental y la reducción de la fatiga.</p>
         </div>
       </div>
       <div style="background:#2e3d30;color:#fff;padding:50px;border-radius:8px;">
         <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:13px;letter-spacing:2px;">Características Destacadas</h4>
         <ul style="padding-left:0;list-style:none;font-size:18px;margin-top:25px;">
-          <li style="margin-bottom:20px;">✓ <strong>Soporte de Dopamina:</strong> Efectos positivos sobre la motivación y el estado de ánimo.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Poder Antioxidante:</strong> Protección celular contra el estrés oxidativo con Mangostino.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Cero Bajón:</strong> Sin palpitaciones ni caída repentina de energía al no contener cafeína.</li>
-          <li>✓ <strong>Sabor Natural:</strong> Delicioso sabor a sandía y mango endulzado con la planta Stevia.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Apoyo a la Motivación:</strong> Contribuciones positivas a los procesos diarios de estado de ánimo y motivación.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Poder Antioxidante:</strong> Ayuda a proteger las células del estrés oxidativo a través del contenido de Mangostán.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Cero Bajón:</strong> Proporciona una vitalidad estable sin palpitaciones ni caídas repentinas de energía al no contener cafeína.</li>
+          <li>✓ <strong>Sabor Natural:</strong> Un sabor refrescante de extractos de frutas, endulzado con la planta Stevia.</li>
         </ul>
       </div>
     </div>
   </div>
 
   <div class="footer-cta">
-    <h2>Redefine tus Límites Mentales</h2>
-    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"La motivación no es un sentimiento — es el resultado de dar a tus células la señal correcta. Silencia el ruido con EDGE y apoya tu mejor versión."</p>
+    <h2>Redescubre tus Límites Mentales</h2>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"La motivación no es solo una sensación — es el resultado de los recursos correctos que le proporcionas a tus células. Deja el ruido mental atrás con EDGE y apoya tu potencial."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-dark">OBTENERLO EN EL SITIO OFICIAL</a>
     <p class="footer-note">30 Sticks | Base Natural | Uso Diario</p>
   </div>
@@ -541,91 +564,6 @@
 </div>
 
 </div>
-
-<script>
-function edgeLang(lang, btn) {
-  document.querySelectorAll('.edge-lang').forEach(function(el){ el.style.display='none'; });
-  document.querySelectorAll('.edge-lang-btn').forEach(function(b){ b.classList.remove('active'); });
-  document.getElementById('edge-' + lang).style.display = 'block';
-  btn.classList.add('active');
-}
-</script>
-
-<script>
-(function(){
-  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Çözümler",blog:"Blog",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Solutions",blog:"Insights",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Soluciones",blog:"Perspectivas",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
-  function applyNav(l){
-    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){b.classList.toggle("active",b.textContent.trim().toLowerCase()===l)});
-    var lbl=lb[l]||lb.tr;
-    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lbl[k]});
-  }
-  function applyPage(l){
-    if(typeof setLang==="function"){setLang(l);return;}
-    var allLangDivs=document.querySelectorAll('[class$="-lang"],[class*="-lang active"]');
-    document.querySelectorAll('[id$="-tr"],[id$="-en"],[id$="-es"]').forEach(function(el){
-      var show=el.id.endsWith('-'+l);
-      el.style.display=show?'block':'none';
-    });
-    var btns=document.querySelectorAll('button[onclick*="Lang"]');
-    btns.forEach(function(btn){if(btn.textContent.trim().toLowerCase()===l)btn.click();});
-  }
-  window.vpNavLang=function(l,btn){
-    localStorage.setItem('vpLang',l);
-    applyNav(l);
-    applyPage(l);
-  };
-  document.addEventListener("DOMContentLoaded",function(){
-    var saved=localStorage.getItem('vpLang')||'tr';
-    applyNav(saved);
-    setTimeout(function(){applyPage(saved);},50);
-    var path=window.location.pathname.split('/').pop()||'index.html';
-    document.querySelectorAll('.vpdk-nav-link,.vpdk-nav-dropdown-item,.vpdk-mobile-link').forEach(function(el){
-      var h=(el.getAttribute('href')||'').split('/').pop();
-      if(h&&h===path){el.style.color='#b8963e';el.style.fontWeight='500';}
-    });
-  });
-})();
-</script>
-
-
-
-
-<script>
-(function(){
-  function addCircles() {
-    var links = document.querySelectorAll('.vpdk-nav-link, .vpdk-nav-dropdown-btn');
-    links.forEach(function(el) {
-      if (el.querySelector('.nav-circle')) return;
-      var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
-      svg.setAttribute('class','nav-circle');
-      svg.setAttribute('viewBox','0 0 100 100');
-      svg.setAttribute('preserveAspectRatio','none');
-      var ellipse = document.createElementNS('http://www.w3.org/2000/svg','ellipse');
-      ellipse.setAttribute('cx','50');
-      ellipse.setAttribute('cy','50');
-      ellipse.setAttribute('rx','46');
-      ellipse.setAttribute('ry','18');
-      // Hafif döndürme - el yazısı hissi
-      ellipse.setAttribute('transform','rotate(-3, 50, 50)');
-      svg.appendChild(ellipse);
-      el.appendChild(svg);
-      // Hover'da animasyonu sıfırla (tekrar çizilsin)
-      el.addEventListener('mouseenter', function() {
-        ellipse.style.animation = 'none';
-        ellipse.offsetHeight; // reflow
-        ellipse.style.animation = '';
-      });
-    });
-  }
-  if(document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', addCircles);
-  } else {
-    addCircles();
-  }
-})();
-</script>
 
 <div class="important-note">
   <div class="imp-tr" style="display:block"><strong>Önemli Not ve Sorumluluk Reddi:</strong> Sitemizde yer alan tüm içerikler genel bilgilendirme amaçlıdır. Sunulan bilgiler ve ürünler, herhangi bir hastalığı teşhis etme, tedavi etme, iyileştirme veya önleme amacı taşımaz. Ürünlerimiz takviye edici gıda olup, ilaç yerine geçmez. Sağlık durumunuz, mevcut tedavileriniz veya takviye kullanımı hakkında en doğru bilgi için mutlaka doktorunuza veya yetkili bir sağlık profesyoneline danışınız. Hamilelik, emzirme dönemi veya ilaç kullanımı durumunda bir uzmana danışılması önerilir. vitalprotocolDK</div>
