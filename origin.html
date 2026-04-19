@@ -179,6 +179,29 @@
   }
 }
 </script>
+<script>
+(function(){
+  function orLang(lang){
+    ['or-tr','or-en','or-es'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.style.display = id === 'or-'+lang ? 'block' : 'none';
+    });
+    document.querySelectorAll('.or-lang-btn').forEach(function(b){
+      var m = (b.getAttribute('onclick')||'').match(/'([a-z]+)'/);
+      if(m) b.classList.toggle('active', m[1] === lang);
+    });
+    localStorage.setItem('vpLang', lang);
+  }
+  window.orLang = orLang;
+  var saved = localStorage.getItem('vpLang') || 'tr';
+  document.addEventListener('DOMContentLoaded', function(){ orLang(saved); });
+  var _orig = window.vpNavLang;
+  window.vpNavLang = function(l, btn){
+    if(_orig) _orig(l, btn);
+    orLang(l);
+  };
+})();
+</script>
 <link rel="alternate" hreflang="tr" href="https://vitalprotocoldk.com/origin">
 <link rel="alternate" hreflang="en" href="https://vitalprotocoldk.com/origin">
 <link rel="alternate" hreflang="es" href="https://vitalprotocoldk.com/origin">
@@ -257,7 +280,7 @@
 .origin-container{font-family:'Plus Jakarta Sans',sans-serif;color:#1a1a1a;line-height:1.6;margin:0;padding:0;background:#fff}
 
 /* DİL ÇUBUĞU */
-.or-lang-bar{display:flex;justify-content:flex-end;gap:8px;padding:16px 20px}
+.or-lang-bar{display:flex!important;justify-content:flex-end;gap:8px;padding:16px 20px}
 .or-lang-btn{padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7280;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
 .or-lang-btn.active{background:#2e3d30;color:#fff;border-color:#2e3d30}
 .or-lang{display:none}
@@ -307,8 +330,8 @@
 
   <div class="origin-hero">
     <span class="origin-badge">Bütünsel Makro Beslenme</span>
-    <h1>Kaynak Her Şeydir:<br>Hücresel Yakıtın Kökeni</h1>
-    <p>Vücudumuz, dünyanın sunduğu en iyi besinlerin desteğini hak eden olağanüstü bir sistemdir. Origin, bitki bazlı saf proteinleri biyolojik ritminizle buluşturur.</p>
+    <h1>Hücresel Yakıtın Kökeni</h1>
+    <p>Vücudumuz, doğanın sunduğu en saf besinlerin desteğini hak eden olağanüstü bir sistemdir. Origin, bitki bazlı saf proteinleri biyolojik ritminizle uyumlu bir şekilde bir araya getirir.</p>
     <div class="origin-tags">
       <span class="origin-tag">20G BİTKİSEL PROTEİN</span>
       <span class="origin-tag">L-SİTRÜLİN DESTEĞİ</span>
@@ -321,28 +344,28 @@
   <div class="origin-inclusion-section">
     <div style="text-align:center;max-width:800px;margin:0 auto 50px;">
       <h2 style="font-size:32px;font-weight:800;color:#2e3d30;margin-bottom:15px;">Her Beden İçin <span style="color:#d4af37">Ortak Çözüm.</span></h2>
-      <p style="color:#666;">Boyunuz, kilonuz veya yaşam tarzınız ne olursa olsun; hücrelerinizin dili ortaktır. Origin, yaş ve cinsiyet fark etmeksizin biyolojik potansiyelinizi desteklemek için tasarlandı.</p>
+      <p style="color:#666;">Yaşam tarzınız ne olursa olsun hücrelerinizin ihtiyaç duyduğu temel yapı taşları ortaktır. Origin, biyolojik potansiyelinizi desteklemek ve günlük beslenme rutininizi zenginleştirmek için tasarlandı.</p>
     </div>
     <div class="inclusion-grid">
       <div class="inclusion-card">
         <span style="font-size:30px;display:block;margin-bottom:10px;">🏃‍♂️</span>
-        <h3>Aktif Sporcular</h3>
-        <p>Bezelye, bal kabağı ve ayçiçeği çekirdeğinden gelen 18 farklı amino asit ile kas kütlesinin artışına ve korunmasına destek.</p>
+        <h3>Aktif Yaşam</h3>
+        <p>Bezelye, bal kabağı ve ayçiçeği çekirdeğinden gelen 18 farklı amino asit profili ile kas kütlesinin korunmasına ve gelişimine katkıda bulunur.</p>
       </div>
       <div class="inclusion-card">
         <span style="font-size:30px;display:block;margin-bottom:10px;">⏳</span>
-        <h3>Zarif Yaş Alma</h3>
-        <p>Yaş aldıkça önem kazanan protein ihtiyacını, sindirimi yormayan bitkisel kaynaklarla ve magnezyum desteğiyle karşılayın.</p>
+        <h3>Bilinçli Yaş Alma (Well-Aging)</h3>
+        <p>Yaş aldıkça önemi artan protein ihtiyacını, sindirim sistemini yormayan bitkisel kaynaklar ve magnezyum desteğiyle karşılamanızı sağlar.</p>
       </div>
       <div class="inclusion-card">
         <span style="font-size:30px;display:block;margin-bottom:10px;">💼</span>
-        <h3>Yoğun Profesyoneller</h3>
-        <p>Öğün atlamaya son. MCT yağları sayesinde karaciğerde parçalanmadan hücreye giren anında enerji ve tokluk hissi.</p>
+        <h3>Yoğun Tempo</h3>
+        <p>Öğün aralarında vücudun ihtiyaç duyduğu lojistiği sağlar. MCT yağları sayesinde, vücudun enerji kullanım süreçlerine verimli bir şekilde eşlik eder.</p>
       </div>
       <div class="inclusion-card" style="border-bottom:4px solid #d4af37;">
         <span style="font-size:30px;display:block;margin-bottom:10px;">🌿</span>
-        <h3>Bilinçli Tüketiciler</h3>
-        <p>Laktoz intoleransı veya glüten hassasiyeti olanlar için %100 bitki bazlı, kolesterolsüz ve temiz içerikli bir seçim.</p>
+        <h3>Hassas Bünyeler</h3>
+        <p>Laktoz intoleransı veya glüten hassasiyeti olanlar için %100 bitki bazlı, kolesterolsüz ve temiz içerikli bir alternatiftir.</p>
       </div>
     </div>
   </div>
@@ -351,17 +374,17 @@
     <div class="tech-box">
       <div class="tech-content">
         <div class="nitro-badge">NITRO EFFECT™</div>
-        <h2 style="font-size:28px;font-weight:800;margin-bottom:20px;color:#2e3d30;">Emilim Kapasitesini Artırın</h2>
-        <p style="color:#444;font-size:16px;margin-bottom:20px;">Piyasadaki pek çok shake sadece protein sunar. Origin ise içeriğindeki <strong>L-Sitrülin</strong> ile vücudunuzun doğal dolaşımını destekler.</p>
-        <p style="color:#444;font-size:16px;">Dolaşım sistemi optimize olduğunda, shake içerisindeki bitki proteini, magnezyum ve vitaminler hedefe çok daha hızlı ulaşır. Biz buna beslenmede gerçek verimlilik diyoruz.</p>
+        <h2 style="font-size:28px;font-weight:800;margin-bottom:20px;color:#2e3d30;">Verimliliği Artırın</h2>
+        <p style="color:#444;font-size:16px;margin-bottom:20px;">Klasik protein karışımları sadece ham madde sunarken, Origin içeriğindeki <strong>L-Sitrülin</strong> ile vücudun doğal işleyişine destek olur.</p>
+        <p style="color:#444;font-size:16px;">Dolaşım sistemi doğal akışında desteklendiğinde, shake içerisindeki bitki proteini, magnezyum ve vitaminler vücut tarafından çok daha verimli bir şekilde işlenir. Biz buna beslenmede <strong>"Gerçek Verimlilik"</strong> diyoruz.</p>
       </div>
       <div class="tech-sidebar">
         <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:12px;letter-spacing:2px;">Öne Çıkan Faydalar</h4>
         <ul style="padding-left:0;list-style:none;font-size:14px;color:#eee;">
-          <li style="margin-bottom:15px;">✓ <strong>Magnezyum:</strong> Yorgunluğun azalmasına ve normal kas fonksiyonuna katkı.</li>
-          <li style="margin-bottom:15px;">✓ <strong>Prebiyotik:</strong> Elma ve keten tohumu lifiyle sağlıklı bağırsak florası.</li>
-          <li style="margin-bottom:15px;">✓ <strong>MCT Yağları:</strong> Hindistan cevizinden gelen, depolanmayan anında enerji.</li>
-          <li>✓ <strong>18 Amino Asit:</strong> Tam spektrum protein desteği.</li>
+          <li style="margin-bottom:15px;">✓ <strong>Magnezyum:</strong> Yorgunluk ve bitkinliğin azalmasına, normal kas fonksiyonuna katkıda bulunur.</li>
+          <li style="margin-bottom:15px;">✓ <strong>Prebiyotik Lifler:</strong> Elma ve keten tohumu lifiyle sindirim sisteminin doğal dengesini destekler.</li>
+          <li style="margin-bottom:15px;">✓ <strong>MCT Yağları:</strong> Hindistan cevizinden elde edilen bu özel yağlar, vücudun enerji metabolizmasına hızlı bir geçiş sağlar.</li>
+          <li>✓ <strong>18 Amino Asit:</strong> Tam spektrum bitkisel protein desteği sunar.</li>
         </ul>
       </div>
     </div>
@@ -369,7 +392,7 @@
 
   <div class="origin-cta">
     <h2>Bedeninize Hak Ettiği Desteği Verin</h2>
-    <p style="max-width:600px;margin:0 auto 40px;color:#666;font-style:italic;">"Beslenme, sadece ne yediğiniz değil; vücudunuzun bu gıdayı ne kadar tanıyıp hücreye ne kadarını iletebildiği ile ilgilidir. Origin ile döngüyü tamamlayın."</p>
+    <p style="max-width:600px;margin:0 auto 40px;color:#666;font-style:italic;">"Beslenme, sadece ne yediğiniz değil; vücudunuzun bu gıdayı ne kadar tanıyıp hücreye ne kadarını iletebildiği ile ilgilidir. Origin ile hücresel döngünüzü tamamlayın."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn-dark">RESMİ SİTEDEN TEMİN ET</a>
     <p class="origin-footnote">14 Porsiyon | Vanilya &amp; Çikolata Seçenekleri | Vegan</p>
   </div>
@@ -377,12 +400,12 @@
 </div>
 
 <!-- ══════════ ENGLISH ══════════ -->
-<div class="or-lang" id="or-en">
+<div class="or-lang" id="or-en" style="display:none">
 
   <div class="origin-hero">
     <span class="origin-badge">Holistic Macro Nutrition</span>
-    <h2>Source is Everything:<br>The Origin of Cellular Fuel</h2>
-    <p>Our body is an extraordinary system that deserves the support of the best nutrients the world has to offer. Origin brings together pure plant-based proteins and your biological rhythm.</p>
+    <h2>The Origin of Cellular Fuel</h2>
+    <p>Our body is an extraordinary system that deserves the support of the purest nutrients nature has to offer. Origin brings together pure plant-based proteins in harmony with your biological rhythm.</p>
     <div class="origin-tags">
       <span class="origin-tag">20G PLANT PROTEIN</span>
       <span class="origin-tag">L-CITRULLINE SUPPORT</span>
@@ -395,28 +418,28 @@
   <div class="origin-inclusion-section">
     <div style="text-align:center;max-width:800px;margin:0 auto 50px;">
       <h2 style="font-size:32px;font-weight:800;color:#2e3d30;margin-bottom:15px;">A <span style="color:#d4af37">Shared Solution</span> for Every Body.</h2>
-      <p style="color:#666;">Whatever your height, weight or lifestyle — your cells speak the same language. Origin was designed to support your biological potential regardless of age or gender.</p>
+      <p style="color:#666;">Whatever your lifestyle, the fundamental building blocks your cells need are shared. Origin was designed to support your biological potential and enrich your daily nutritional routine.</p>
     </div>
     <div class="inclusion-grid">
       <div class="inclusion-card">
         <span style="font-size:30px;display:block;margin-bottom:10px;">🏃‍♂️</span>
-        <h3>Active Athletes</h3>
-        <p>18 different amino acids from pea, pumpkin and sunflower seed support the growth and maintenance of muscle mass.</p>
+        <h3>Active Living</h3>
+        <p>With a profile of 18 different amino acids from pea, pumpkin and sunflower seed, it contributes to the maintenance and growth of muscle mass.</p>
       </div>
       <div class="inclusion-card">
         <span style="font-size:30px;display:block;margin-bottom:10px;">⏳</span>
-        <h3>Graceful Ageing</h3>
-        <p>Meet the growing protein needs that come with age through plant-based sources that are easy on digestion, with magnesium support.</p>
+        <h3>Conscious Ageing (Well-Ageing)</h3>
+        <p>Meets the protein needs that grow increasingly important with age through plant-based sources that are gentle on digestion, with magnesium support.</p>
       </div>
       <div class="inclusion-card">
         <span style="font-size:30px;display:block;margin-bottom:10px;">💼</span>
-        <h3>Busy Professionals</h3>
-        <p>No more skipping meals. MCT fats provide instant energy that enters cells directly without being broken down in the liver, plus a sustained feeling of fullness.</p>
+        <h3>Demanding Pace</h3>
+        <p>Provides the logistical support the body needs between meals. Thanks to MCT fats, it efficiently accompanies the body's energy utilisation processes.</p>
       </div>
       <div class="inclusion-card" style="border-bottom:4px solid #d4af37;">
         <span style="font-size:30px;display:block;margin-bottom:10px;">🌿</span>
-        <h3>Conscious Consumers</h3>
-        <p>100% plant-based, cholesterol-free and clean-ingredient choice for those with lactose intolerance or gluten sensitivity.</p>
+        <h3>Sensitive Constitutions</h3>
+        <p>A 100% plant-based, cholesterol-free and clean-ingredient alternative for those with lactose intolerance or gluten sensitivity.</p>
       </div>
     </div>
   </div>
@@ -425,17 +448,17 @@
     <div class="tech-box">
       <div class="tech-content">
         <div class="nitro-badge">NITRO EFFECT™</div>
-        <h2 style="font-size:28px;font-weight:800;margin-bottom:20px;color:#2e3d30;">Boost Your Absorption Capacity</h2>
-        <p style="color:#444;font-size:16px;margin-bottom:20px;">Most shakes on the market simply provide protein. Origin also supports your body's natural circulation through <strong>L-Citrulline</strong> in its formula.</p>
-        <p style="color:#444;font-size:16px;">When the circulatory system is optimised, the plant protein, magnesium and vitamins in the shake reach their target much faster. We call this true nutritional efficiency.</p>
+        <h2 style="font-size:28px;font-weight:800;margin-bottom:20px;color:#2e3d30;">Boost Your Efficiency</h2>
+        <p style="color:#444;font-size:16px;margin-bottom:20px;">While classic protein blends only provide raw material, Origin supports the body's natural functioning through <strong>L-Citrulline</strong> in its formula.</p>
+        <p style="color:#444;font-size:16px;">When the circulatory system is supported in its natural flow, the plant protein, magnesium and vitamins in the shake are processed by the body much more efficiently. We call this <strong>"True Nutritional Efficiency."</strong></p>
       </div>
       <div class="tech-sidebar">
         <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:12px;letter-spacing:2px;">Key Benefits</h4>
         <ul style="padding-left:0;list-style:none;font-size:14px;color:#eee;">
-          <li style="margin-bottom:15px;">✓ <strong>Magnesium:</strong> Contributes to reducing fatigue and normal muscle function.</li>
-          <li style="margin-bottom:15px;">✓ <strong>Prebiotic:</strong> Healthy gut flora with apple and flaxseed fibre.</li>
-          <li style="margin-bottom:15px;">✓ <strong>MCT Fats:</strong> Instant energy from coconut that is not stored.</li>
-          <li>✓ <strong>18 Amino Acids:</strong> Full-spectrum protein support.</li>
+          <li style="margin-bottom:15px;">✓ <strong>Magnesium:</strong> Contributes to the reduction of tiredness and fatigue, and to normal muscle function.</li>
+          <li style="margin-bottom:15px;">✓ <strong>Prebiotic Fibres:</strong> Supports the natural balance of the digestive system with apple and flaxseed fibre.</li>
+          <li style="margin-bottom:15px;">✓ <strong>MCT Fats:</strong> These special fats from coconut provide a rapid transition for the body's energy metabolism.</li>
+          <li>✓ <strong>18 Amino Acids:</strong> Offers full-spectrum plant-based protein support.</li>
         </ul>
       </div>
     </div>
@@ -443,7 +466,7 @@
 
   <div class="origin-cta">
     <h2>Give Your Body the Support It Deserves</h2>
-    <p style="max-width:600px;margin:0 auto 40px;color:#666;font-style:italic;">"Nutrition is not just about what you eat — it's about how well your body recognises that food and how much of it reaches the cell. Complete the cycle with Origin."</p>
+    <p style="max-width:600px;margin:0 auto 40px;color:#666;font-style:italic;">"Nutrition is not just about what you eat — it's about how well your body recognises that food and how much of it reaches the cell. Complete your cellular cycle with Origin."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn-dark">GET IT FROM THE OFFICIAL SITE</a>
     <p class="origin-footnote">14 Servings | Vanilla &amp; Chocolate Options | Vegan</p>
   </div>
@@ -451,15 +474,15 @@
 </div>
 
 <!-- ══════════ ESPAÑOL ══════════ -->
-<div class="or-lang" id="or-es">
+<div class="or-lang" id="or-es" style="display:none">
 
   <div class="origin-hero">
     <span class="origin-badge">Nutrición Macro Integral</span>
-    <h2>El Origen lo es Todo:<br>El Combustible Celular en su Fuente</h2>
-    <p>Nuestro cuerpo es un sistema extraordinario que merece el apoyo de los mejores nutrientes que el mundo puede ofrecer. Origin une proteínas vegetales puras con tu ritmo biológico.</p>
+    <h2>El Origen del Combustible Celular</h2>
+    <p>Nuestro cuerpo es un sistema extraordinario que merece el apoyo de los nutrientes más puros que la naturaleza puede ofrecer. Origin reúne proteínas vegetales puras en armonía con tu ritmo biológico.</p>
     <div class="origin-tags">
       <span class="origin-tag">20G PROTEÍNA VEGETAL</span>
-      <span class="origin-tag">SOPORTE L-CITRULINA</span>
+      <span class="origin-tag">APOYO L-CITRULINA</span>
       <span class="origin-tag">ENERGÍA MCT</span>
       <span class="origin-tag">FIBRA PREBIÓTICA</span>
     </div>
@@ -469,28 +492,28 @@
   <div class="origin-inclusion-section">
     <div style="text-align:center;max-width:800px;margin:0 auto 50px;">
       <h2 style="font-size:32px;font-weight:800;color:#2e3d30;margin-bottom:15px;">Una <span style="color:#d4af37">Solución Común</span> para Cada Cuerpo.</h2>
-      <p style="color:#666;">Sea cual sea tu estatura, peso o estilo de vida — tus células hablan el mismo idioma. Origin fue diseñado para apoyar tu potencial biológico independientemente de la edad o el género.</p>
+      <p style="color:#666;">Independientemente de tu estilo de vida, los bloques de construcción fundamentales que necesitan tus células son compartidos. Origin fue diseñado para apoyar tu potencial biológico y enriquecer tu rutina nutricional diaria.</p>
     </div>
     <div class="inclusion-grid">
       <div class="inclusion-card">
         <span style="font-size:30px;display:block;margin-bottom:10px;">🏃‍♂️</span>
-        <h3>Deportistas Activos</h3>
-        <p>18 aminoácidos diferentes procedentes de guisante, calabaza y semilla de girasol apoyan el crecimiento y mantenimiento de la masa muscular.</p>
+        <h3>Vida Activa</h3>
+        <p>Con un perfil de 18 aminoácidos diferentes provenientes de guisante, calabaza y semilla de girasol, contribuye al mantenimiento y aumento de la masa muscular.</p>
       </div>
       <div class="inclusion-card">
         <span style="font-size:30px;display:block;margin-bottom:10px;">⏳</span>
-        <h3>Envejecimiento Digno</h3>
-        <p>Satisface las crecientes necesidades proteicas que vienen con la edad a través de fuentes vegetales fáciles de digerir, con soporte de magnesio.</p>
+        <h3>Envejecimiento Consciente (Well-Aging)</h3>
+        <p>Satisface las necesidades proteicas que crecen en importancia con la edad a través de fuentes vegetales suaves para la digestión, con apoyo de magnesio.</p>
       </div>
       <div class="inclusion-card">
         <span style="font-size:30px;display:block;margin-bottom:10px;">💼</span>
-        <h3>Profesionales Ocupados</h3>
-        <p>Fin a saltarse comidas. Las grasas MCT proporcionan energía instantánea que entra directamente en las células sin procesarse en el hígado, más sensación de saciedad.</p>
+        <h3>Ritmo Exigente</h3>
+        <p>Proporciona el apoyo logístico que el cuerpo necesita entre comidas. Gracias a las grasas MCT, acompaña eficientemente los procesos de utilización de energía del cuerpo.</p>
       </div>
       <div class="inclusion-card" style="border-bottom:4px solid #d4af37;">
         <span style="font-size:30px;display:block;margin-bottom:10px;">🌿</span>
-        <h3>Consumidores Conscientes</h3>
-        <p>Elección 100% vegetal, sin colesterol y con ingredientes limpios para quienes tienen intolerancia a la lactosa o sensibilidad al gluten.</p>
+        <h3>Constituciones Sensibles</h3>
+        <p>Una alternativa 100% vegetal, libre de colesterol y de contenido limpio para quienes tienen intolerancia a la lactosa o sensibilidad al gluten.</p>
       </div>
     </div>
   </div>
@@ -499,17 +522,17 @@
     <div class="tech-box">
       <div class="tech-content">
         <div class="nitro-badge">NITRO EFFECT™</div>
-        <h2 style="font-size:28px;font-weight:800;margin-bottom:20px;color:#2e3d30;">Aumenta tu Capacidad de Absorción</h2>
-        <p style="color:#444;font-size:16px;margin-bottom:20px;">La mayoría de los shakes del mercado simplemente aportan proteína. Origin también apoya la circulación natural de tu cuerpo gracias a la <strong>L-Citrulina</strong> en su fórmula.</p>
-        <p style="color:#444;font-size:16px;">Cuando el sistema circulatorio está optimizado, la proteína vegetal, el magnesio y las vitaminas del shake llegan a su destino mucho más rápido. A esto lo llamamos eficiencia nutricional real.</p>
+        <h2 style="font-size:28px;font-weight:800;margin-bottom:20px;color:#2e3d30;">Aumenta tu Eficiencia</h2>
+        <p style="color:#444;font-size:16px;margin-bottom:20px;">Mientras las mezclas proteicas clásicas solo proporcionan materia prima, Origin apoya el funcionamiento natural del cuerpo a través de la <strong>L-Citrulina</strong> en su fórmula.</p>
+        <p style="color:#444;font-size:16px;">Cuando el sistema circulatorio recibe apoyo en su flujo natural, la proteína vegetal, el magnesio y las vitaminas del shake son procesados por el cuerpo de manera mucho más eficiente. A esto lo llamamos <strong>"Eficiencia Nutricional Real."</strong></p>
       </div>
       <div class="tech-sidebar">
         <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:12px;letter-spacing:2px;">Beneficios Destacados</h4>
         <ul style="padding-left:0;list-style:none;font-size:14px;color:#eee;">
-          <li style="margin-bottom:15px;">✓ <strong>Magnesio:</strong> Contribuye a reducir el cansancio y a la función muscular normal.</li>
-          <li style="margin-bottom:15px;">✓ <strong>Prebiótico:</strong> Flora intestinal saludable con fibra de manzana y linaza.</li>
-          <li style="margin-bottom:15px;">✓ <strong>Grasas MCT:</strong> Energía instantánea del coco que no se almacena.</li>
-          <li>✓ <strong>18 Aminoácidos:</strong> Soporte proteico de espectro completo.</li>
+          <li style="margin-bottom:15px;">✓ <strong>Magnesio:</strong> Contribuye a la reducción del cansancio y la fatiga, y a la función muscular normal.</li>
+          <li style="margin-bottom:15px;">✓ <strong>Fibras Prebióticas:</strong> Apoya el equilibrio natural del sistema digestivo con fibra de manzana y lino.</li>
+          <li style="margin-bottom:15px;">✓ <strong>Grasas MCT:</strong> Estas grasas especiales del coco proporcionan una transición rápida para el metabolismo energético del cuerpo.</li>
+          <li>✓ <strong>18 Aminoácidos:</strong> Ofrece soporte proteico vegetal de espectro completo.</li>
         </ul>
       </div>
     </div>
@@ -517,7 +540,7 @@
 
   <div class="origin-cta">
     <h2>Dale a tu Cuerpo el Apoyo que Merece</h2>
-    <p style="max-width:600px;margin:0 auto 40px;color:#666;font-style:italic;">"La nutrición no es solo lo que comes — es cuánto reconoce tu cuerpo ese alimento y cuánto puede llevarlo a la célula. Completa el ciclo con Origin."</p>
+    <p style="max-width:600px;margin:0 auto 40px;color:#666;font-style:italic;">"La nutrición no es solo lo que comes — es qué tan bien tu cuerpo reconoce ese alimento y cuánto de él llega a la célula. Completa tu ciclo celular con Origin."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn-dark">OBTENERLO EN EL SITIO OFICIAL</a>
     <p class="origin-footnote">14 Porciones | Opciones Vainilla &amp; Chocolate | Vegano</p>
   </div>
@@ -525,92 +548,6 @@
 </div>
 
 </div>
-
-<script>
-function orLang(lang, btn) {
-  document.querySelectorAll('.or-lang').forEach(function(el){ el.style.display='none'; });
-  document.querySelectorAll('.or-lang-btn').forEach(function(b){ b.classList.remove('active'); });
-  document.getElementById('or-' + lang).style.display = 'block';
-  btn.classList.add('active');
-}
-</script>
-
-<script>
-(function(){
-  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Çözümler",blog:"Blog",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Solutions",blog:"Insights",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Soluciones",blog:"Perspectivas",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
-  function applyNav(l){
-    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){b.classList.toggle("active",b.textContent.trim().toLowerCase()===l)});
-    var lbl=lb[l]||lb.tr;
-    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lbl[k]});
-  }
-  function applyPage(l){
-    if(typeof setLang==="function"){setLang(l);return;}
-    var allLangDivs=document.querySelectorAll('[class$="-lang"],[class*="-lang active"]');
-    document.querySelectorAll('[id$="-tr"],[id$="-en"],[id$="-es"]').forEach(function(el){
-      var show=el.id.endsWith('-'+l);
-      el.style.display=show?'block':'none';
-    });
-    var btns=document.querySelectorAll('button[onclick*="Lang"]');
-    btns.forEach(function(btn){if(btn.textContent.trim().toLowerCase()===l)btn.click();});
-  }
-  window.vpNavLang=function(l,btn){
-    localStorage.setItem('vpLang',l);
-    applyNav(l);
-    applyPage(l);
-  };
-  document.addEventListener("DOMContentLoaded",function(){
-    var saved=localStorage.getItem('vpLang')||'tr';
-    applyNav(saved);
-    setTimeout(function(){applyPage(saved);},50);
-    var path=window.location.pathname.split('/').pop()||'index.html';
-    document.querySelectorAll('.vpdk-nav-link,.vpdk-nav-dropdown-item,.vpdk-mobile-link').forEach(function(el){
-      var h=(el.getAttribute('href')||'').split('/').pop();
-      if(h&&h===path){el.style.color='#b8963e';el.style.fontWeight='500';}
-    });
-  });
-})();
-</script>
-
-
-
-
-<script>
-(function(){
-  function addCircles() {
-    var links = document.querySelectorAll('.vpdk-nav-link, .vpdk-nav-dropdown-btn');
-    links.forEach(function(el) {
-      if (el.querySelector('.nav-circle')) return;
-      var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
-      svg.setAttribute('class','nav-circle');
-      svg.setAttribute('viewBox','0 0 100 100');
-      svg.setAttribute('preserveAspectRatio','none');
-      var ellipse = document.createElementNS('http://www.w3.org/2000/svg','ellipse');
-      ellipse.setAttribute('cx','50');
-      ellipse.setAttribute('cy','50');
-      ellipse.setAttribute('rx','46');
-      ellipse.setAttribute('ry','18');
-      // Hafif döndürme - el yazısı hissi
-      ellipse.setAttribute('transform','rotate(-3, 50, 50)');
-      svg.appendChild(ellipse);
-      el.appendChild(svg);
-      // Hover'da animasyonu sıfırla (tekrar çizilsin)
-      el.addEventListener('mouseenter', function() {
-        ellipse.style.animation = 'none';
-        ellipse.offsetHeight; // reflow
-        ellipse.style.animation = '';
-      });
-    });
-  }
-  if(document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', addCircles);
-  } else {
-    addCircles();
-  }
-})();
-</script>
-
 
 <div class="important-note">
   <div class="imp-tr" style="display:block"><strong>Önemli Not ve Sorumluluk Reddi:</strong> Sitemizde yer alan tüm içerikler genel bilgilendirme amaçlıdır. Sunulan bilgiler ve ürünler, herhangi bir hastalığı teşhis etme, tedavi etme, iyileştirme veya önleme amacı taşımaz. Ürünlerimiz takviye edici gıda olup, ilaç yerine geçmez. Sağlık durumunuz, mevcut tedavileriniz veya takviye kullanımı hakkında en doğru bilgi için mutlaka doktorunuza veya yetkili bir sağlık profesyoneline danışınız. Hamilelik, emzirme dönemi veya ilaç kullanımı durumunda bir uzmana danışılması önerilir. vitalprotocolDK</div>
