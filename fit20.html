@@ -179,6 +179,32 @@
   }
 }
 </script>
+<script>
+(function(){
+  function fitLang(lang){
+    ['fit-tr','fit-en','fit-es'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.style.display = id === 'fit-'+lang ? 'block' : 'none';
+    });
+    document.querySelectorAll('.f-lang-btn').forEach(function(b){
+      var m = (b.getAttribute('onclick')||'').match(/'([a-z]+)'/);
+      if(m) b.classList.toggle('active', m[1] === lang);
+    });
+    localStorage.setItem('vpLang', lang);
+  }
+  window.fitLang = fitLang;
+
+  var saved = localStorage.getItem('vpLang') || 'tr';
+  document.addEventListener('DOMContentLoaded', function(){ fitLang(saved); });
+
+  var _orig = window.vpNavLang;
+  window.vpNavLang = function(l, btn){
+    if(_orig) _orig(l, btn);
+    fitLang(l);
+  };
+})();
+</script>
+
 <link rel="alternate" hreflang="tr" href="https://vitalprotocoldk.com/fit20">
 <link rel="alternate" hreflang="en" href="https://vitalprotocoldk.com/fit20">
 <link rel="alternate" hreflang="es" href="https://vitalprotocoldk.com/fit20">
@@ -259,7 +285,7 @@
 .f-wrap{max-width:1100px;margin:0 auto;padding:40px 24px}
 
 /* DİL ÇUBUĞU */
-.f-lang-bar{display:flex;justify-content:flex-end;gap:8px;padding:0 0 24px 0}
+.f-lang-bar{display:flex!important;justify-content:flex-end;gap:8px;padding:0 0 24px 0}
 .f-lang-btn{padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7280;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
 .f-lang-btn.active{background:#2e3d30;color:#fff;border-color:#2e3d30}
 
@@ -416,7 +442,7 @@
   </div>
 
   <!-- ══════════ ENGLISH ══════════ -->
-  <div class="f-lang" id="fit-en">
+  <div class="f-lang" id="fit-en" style="display:none">
 
     <section class="f-hero">
       <div>
@@ -502,7 +528,7 @@
   </div>
 
   <!-- ══════════ ESPAÑOL ══════════ -->
-  <div class="f-lang" id="fit-es">
+  <div class="f-lang" id="fit-es" style="display:none">
 
     <section class="f-hero">
       <div>
