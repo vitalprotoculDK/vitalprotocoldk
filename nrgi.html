@@ -179,6 +179,29 @@
   }
 }
 </script>
+<script>
+(function(){
+  function nrgiLang(lang){
+    ['nrgi-tr','nrgi-en','nrgi-es'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.style.display = id === 'nrgi-'+lang ? 'block' : 'none';
+    });
+    document.querySelectorAll('.nrgi-lang-btn').forEach(function(b){
+      var m = (b.getAttribute('onclick')||'').match(/'([a-z]+)'/);
+      if(m) b.classList.toggle('active', m[1] === lang);
+    });
+    localStorage.setItem('vpLang', lang);
+  }
+  window.nrgiLang = nrgiLang;
+  var saved = localStorage.getItem('vpLang') || 'tr';
+  document.addEventListener('DOMContentLoaded', function(){ nrgiLang(saved); });
+  var _orig = window.vpNavLang;
+  window.vpNavLang = function(l, btn){
+    if(_orig) _orig(l, btn);
+    nrgiLang(l);
+  };
+})();
+</script>
 <link rel="alternate" hreflang="tr" href="https://vitalprotocoldk.com/nrgi">
 <link rel="alternate" hreflang="en" href="https://vitalprotocoldk.com/nrgi">
 <link rel="alternate" hreflang="es" href="https://vitalprotocoldk.com/nrgi">
@@ -257,7 +280,7 @@
 .nrgi-container{font-family:'Plus Jakarta Sans',sans-serif;color:#1a1a1a;line-height:1.6;margin:0;padding:0;background:#fff}
 
 /* DİL ÇUBUĞU */
-.nrgi-lang-bar{display:flex;justify-content:flex-end;gap:8px;padding:16px 20px}
+.nrgi-lang-bar{display:flex!important;justify-content:flex-end;gap:8px;padding:16px 20px}
 .nrgi-lang-btn{padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7280;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
 .nrgi-lang-btn.active{background:#2e3d30;color:#fff;border-color:#2e3d30}
 .nrgi-lang{display:none}
@@ -308,8 +331,8 @@
 
   <div class="nrgi-hero">
     <span class="nrgi-badge">Zihinsel Performans &amp; Enerji</span>
-    <h1>NRGI: Yapay Uyarıcılar Yerine<br>Hücresel Berraklık.</h1>
-    <p>Vücudun biyolojik enerjisini, kafein çarpıntısı yaşamadan en üst seviyeye taşıyın. Doğal içeriklerle tasarlanmış yeni nesil bir odaklanma protokolü.</p>
+    <h1>Yapay Uyarıcılar Yerine<br>Hücresel Berraklık.</h1>
+    <p>Vücudun biyolojik enerjisini, kafein kaynaklı dalgalanmalar yaşamadan destekleyin. Doğal içeriklerle tasarlanmış yeni nesil bir odaklanma ve zindelik protokolü.</p>
     <div class="nrgi-tags">
       <span class="nrgi-tag">KAFEİN İÇERMEZ</span>
       <span class="nrgi-tag">İLAVE ŞEKERSİZ</span>
@@ -321,24 +344,24 @@
 
   <div class="nrgi-profile-section">
     <div style="text-align:center;max-width:850px;margin:0 auto 60px;">
-      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Farklı Hedefler, <span style="color:#d4af37">Aynı Odak.</span></h2>
-      <p style="color:#636e72;font-size:18px;">NRGI, her yaştan ve her hayat tarzından insanın "zihinsel sis" ile olan mücadelesini kazanması için formüle edildi.</p>
+      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Farklı Hedefler, <span style="color:#d4af37">Ortak Zindelik.</span></h2>
+      <p style="color:#636e72;font-size:18px;">NRGI; yoğun tempo içerisinde zihinsel berraklığını korumak ve gün boyu süren bir canlılık hissetmek isteyenler için formüle edildi.</p>
     </div>
     <div class="profile-grid">
       <div class="profile-card">
         <span class="profile-icon">🧠</span>
         <div class="profile-title">Zihinsel Keskinlik</div>
-        <p class="profile-desc">Yoğun çalışma günlerinde veya sınav dönemlerinde hafızayı güçlendirmek ve bilişsel performansı desteklemek isteyenler için.</p>
+        <p class="profile-desc">Yoğun çalışma dönemlerinde ve yüksek dikkat gerektiren anlarda bilişsel performansı ve zihinsel zindeliği desteklemek isteyenler için.</p>
       </div>
       <div class="profile-card">
         <span class="profile-icon">⚡</span>
         <div class="profile-title">Egzersiz Gücü</div>
-        <p class="profile-desc">Antrenman öncesi kafeine ihtiyaç duymadan fiziksel enerjiyi ve motivasyonu optimize eden doğal içerik sinerjisi.</p>
+        <p class="profile-desc">Antrenman öncesi kafeine ihtiyaç duymadan, fiziksel dayanıklılığı ve motivasyonu doğal içerik sinerjisiyle destekleyen formül.</p>
       </div>
       <div class="profile-card" style="border-bottom:4px solid #d4af37;">
         <span class="profile-icon">🔋</span>
-        <div class="profile-title">Gün Boyu Zindelik</div>
-        <p class="profile-desc">Sabah yorgunluğuna ve öğleden sonra yaşanan enerji düşüşlerine karşı, vücudun kendi enerji metabolizmasını canlandıran destek.</p>
+        <div class="profile-title">Gün Boyu Canlılık</div>
+        <p class="profile-desc">Sabah mahmurluğuna ve öğleden sonra yaşanan enerji düşüşlerine karşı, vücudun normal enerji oluşum metabolizmasını destekleyen içerikler.</p>
       </div>
     </div>
   </div>
@@ -347,27 +370,26 @@
     <div class="tech-container">
       <div>
         <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">Hücrelerin Dilinden Konuşan<br><span style="color:#d4af37">İçerik Sinerjisi.</span></h2>
-        <p style="font-size:16px;color:#444;margin-bottom:20px;">NRGI'ın kalbinde yer alan <strong>3 Patentli İçerik</strong>, kafein gibi geçici uyarıcılar yerine vücudun doğal biyolojik süreçlerini kullanır.</p>
+        <p style="font-size:16px;color:#444;margin-bottom:20px;">NRGI'ın kalbinde yer alan bileşenler, geçici uyarıcılar yerine vücudun kendi doğal biyolojik süreçlerine eşlik eder:</p>
         <div class="tech-list-item">
           <strong>Glisin (1000 mg)</strong>
-          <p>Protein üretimine ve serotonin iletimine yardımcı olarak beyin zindeliğini ve doğal enerji artışını destekler.</p>
+          <p>Vücudun protein sentezi süreçlerinde yer alan önemli bir amino asit olarak, sistemin genel dengesine ve zindeliğine katkıda bulunur.</p>
         </div>
         <div class="tech-list-item">
           <strong>İnülin (3000 mg)</strong>
-          <p>Prebiyotik lif görevi görerek sağlıklı bağırsak florasını ve dolayısıyla genel esenlik halini destekler.</p>
+          <p>Prebiyotik lif görevi görerek sindirim sisteminin düzenlenmesine ve bağırsak florasının dengelenmesine yardımcı olur.</p>
         </div>
         <div class="tech-list-item">
           <strong>Asya Elma Polifenolleri</strong>
-          <p>Motivasyon ve psikolojik denge üzerine yapılan klinik çalışmalarla desteklenen yüksek antioksidan kapasite.</p>
+          <p>Yüksek antioksidan kapasitesi ile vücudun oksidatif strese karşı direncini destekler.</p>
         </div>
       </div>
       <div style="background:#2e3d30;color:#fff;padding:50px;border-radius:8px;">
-        <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:13px;letter-spacing:2px;">Vitamin &amp; Ekstrakt</h4>
+        <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:13px;letter-spacing:2px;">Vitamin ve Bitkisel Ekstraktlar</h4>
         <ul style="padding-left:0;list-style:none;font-size:18px;margin-top:25px;">
-          <li style="margin-bottom:20px;">✓ <strong>C Vitamini:</strong> Yorgunluk ve bitkinliğin azalmasına, demir emiliminin artmasına katkıda bulunur.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Nar Ekstresi:</strong> Flavonoidler açısından zengin, oksidatif strese karşı hücre koruması.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Sahil Çamı Kabuğu:</strong> Proantosiyanidinler ile damar sağlığı ve antioksidan desteği.</li>
-          <li>✓ <strong>Üzüm Tohumu:</strong> Kardiyovasküler sistemi ve kollajen üretimini destekleyen güç.</li>
+          <li style="margin-bottom:20px;">✓ <strong>C Vitamini:</strong> Yorgunluk ve bitkinliğin azalmasına, normal enerji oluşum metabolizmasına ve bağışıklık sisteminin güçlenmesine katkıda bulunur.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Nar Ekstresi:</strong> Hücreleri dış etkenlerin yorucu etkilerine karşı koruyan zengin flavonoid kaynağı.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Sahil Çamı Kabuğu &amp; Üzüm Tohumu:</strong> Güçlü antioksidan bileşenleri ile damar sisteminin korunmasına ve bütünsel esenliğe yardımcı olur.</li>
         </ul>
       </div>
     </div>
@@ -375,7 +397,7 @@
 
   <div class="footer-cta">
     <h2>Daha Net Bir Zihinle Tanışın</h2>
-    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Odaklanmak bir yetenek değil, vücudunuza verdiğiniz doğru yakıtın bir sonucudur. NRGI ile gürültüyü susturun ve potansiyelinizi serbest bırakın."</p>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Odaklanmak bir tesadüf değil, vücudunuza sunduğunuz doğru kaynakların bir sonucudur. NRGI ile zihinsel gürültüyü geride bırakın ve doğal potansiyelinizi destekleyin."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn-dark">RESMİ SİTEDEN TEMİN ET</a>
     <p class="footer-note">30 Saşe | Doğal Tatlandırıcı (Stevia) | Günlük Kullanım</p>
   </div>
@@ -383,12 +405,12 @@
 </div>
 
 <!-- ══════════ ENGLISH ══════════ -->
-<div class="nrgi-lang" id="nrgi-en">
+<div class="nrgi-lang" id="nrgi-en" style="display:none">
 
   <div class="nrgi-hero">
     <span class="nrgi-badge">Mental Performance &amp; Energy</span>
-    <h2>NRGI: Cellular Clarity<br>Instead of Artificial Stimulants.</h2>
-    <p>Take your body's biological energy to the highest level without the jitters of caffeine. A next-generation focus protocol designed with natural ingredients.</p>
+    <h2>Cellular Clarity<br>Instead of Artificial Stimulants.</h2>
+    <p>Support your body's biological energy without the fluctuations caused by caffeine. A next-generation focus and vitality protocol designed with natural ingredients.</p>
     <div class="nrgi-tags">
       <span class="nrgi-tag">CAFFEINE-FREE</span>
       <span class="nrgi-tag">NO ADDED SUGAR</span>
@@ -400,24 +422,24 @@
 
   <div class="nrgi-profile-section">
     <div style="text-align:center;max-width:850px;margin:0 auto 60px;">
-      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Different Goals, <span style="color:#d4af37">Same Focus.</span></h2>
-      <p style="color:#636e72;font-size:18px;">NRGI was formulated to help people of every age and lifestyle win their battle against "brain fog".</p>
+      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Different Goals, <span style="color:#d4af37">Shared Vitality.</span></h2>
+      <p style="color:#636e72;font-size:18px;">NRGI was formulated for those who want to maintain mental clarity within a demanding pace and experience lasting vitality throughout the day.</p>
     </div>
     <div class="profile-grid">
       <div class="profile-card">
         <span class="profile-icon">🧠</span>
         <div class="profile-title">Mental Sharpness</div>
-        <p class="profile-desc">For those who want to strengthen memory and support cognitive performance during intense working days or exam periods.</p>
+        <p class="profile-desc">For those who want to support cognitive performance and mental vitality during intense working periods and moments that require high levels of attention.</p>
       </div>
       <div class="profile-card">
         <span class="profile-icon">⚡</span>
         <div class="profile-title">Exercise Power</div>
-        <p class="profile-desc">A natural ingredient synergy that optimises physical energy and motivation before training without needing caffeine.</p>
+        <p class="profile-desc">A formula that supports physical endurance and motivation through a natural ingredient synergy, without needing caffeine before training.</p>
       </div>
       <div class="profile-card" style="border-bottom:4px solid #d4af37;">
         <span class="profile-icon">🔋</span>
         <div class="profile-title">All-Day Vitality</div>
-        <p class="profile-desc">Support that revitalises the body's own energy metabolism against morning fatigue and afternoon energy crashes.</p>
+        <p class="profile-desc">Ingredients that support the body's normal energy-yielding metabolism against morning fatigue and the afternoon energy drop.</p>
       </div>
     </div>
   </div>
@@ -426,27 +448,26 @@
     <div class="tech-container">
       <div>
         <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">An Ingredient Synergy<br><span style="color:#d4af37">That Speaks the Language of Cells.</span></h2>
-        <p style="font-size:16px;color:#444;margin-bottom:20px;">The <strong>3 Patented Ingredients</strong> at the heart of NRGI use the body's natural biological processes instead of temporary stimulants like caffeine.</p>
+        <p style="font-size:16px;color:#444;margin-bottom:20px;">The ingredients at the heart of NRGI accompany the body's own natural biological processes rather than temporary stimulants:</p>
         <div class="tech-list-item">
           <strong>Glycine (1000 mg)</strong>
-          <p>Supports brain vitality and natural energy boost by aiding protein production and serotonin transmission.</p>
+          <p>As an important amino acid involved in the body's protein synthesis processes, it contributes to the overall balance and vitality of the system.</p>
         </div>
         <div class="tech-list-item">
           <strong>Inulin (3000 mg)</strong>
-          <p>Acts as a prebiotic fibre, supporting healthy gut flora and therefore overall wellbeing.</p>
+          <p>Acts as a prebiotic fibre, helping to regulate the digestive system and balance the gut flora.</p>
         </div>
         <div class="tech-list-item">
           <strong>Asian Apple Polyphenols</strong>
-          <p>High antioxidant capacity supported by clinical studies on motivation and psychological balance.</p>
+          <p>Supports the body's resilience against oxidative stress with high antioxidant capacity.</p>
         </div>
       </div>
       <div style="background:#2e3d30;color:#fff;padding:50px;border-radius:8px;">
-        <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:13px;letter-spacing:2px;">Vitamins &amp; Extracts</h4>
+        <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:13px;letter-spacing:2px;">Vitamins &amp; Botanical Extracts</h4>
         <ul style="padding-left:0;list-style:none;font-size:18px;margin-top:25px;">
-          <li style="margin-bottom:20px;">✓ <strong>Vitamin C:</strong> Contributes to reducing fatigue and tiredness, and to increasing iron absorption.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Pomegranate Extract:</strong> Rich in flavonoids, cellular protection against oxidative stress.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Maritime Pine Bark:</strong> Vascular health and antioxidant support with proanthocyanidins.</li>
-          <li>✓ <strong>Grape Seed:</strong> Power supporting the cardiovascular system and collagen production.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Vitamin C:</strong> Contributes to the reduction of tiredness and fatigue, to normal energy-yielding metabolism and to strengthening the immune system.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Pomegranate Extract:</strong> A rich source of flavonoids that protects cells from the tiring effects of external factors.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Maritime Pine Bark &amp; Grape Seed:</strong> Helps protect the vascular system and supports holistic wellbeing with powerful antioxidant compounds.</li>
         </ul>
       </div>
     </div>
@@ -454,7 +475,7 @@
 
   <div class="footer-cta">
     <h2>Meet a Clearer Mind</h2>
-    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Focus is not a talent — it is the result of giving your body the right fuel. Silence the noise with NRGI and unleash your potential."</p>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Focus is not a coincidence — it is the result of the right resources you provide to your body. Leave the mental noise behind with NRGI and support your natural potential."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn-dark">GET IT FROM THE OFFICIAL SITE</a>
     <p class="footer-note">30 Sachets | Natural Sweetener (Stevia) | Daily Use</p>
   </div>
@@ -462,41 +483,41 @@
 </div>
 
 <!-- ══════════ ESPAÑOL ══════════ -->
-<div class="nrgi-lang" id="nrgi-es">
+<div class="nrgi-lang" id="nrgi-es" style="display:none">
 
   <div class="nrgi-hero">
     <span class="nrgi-badge">Rendimiento Mental &amp; Energía</span>
-    <h2>NRGI: Claridad Celular en Lugar<br>de Estimulantes Artificiales.</h2>
-    <p>Lleva la energía biológica de tu cuerpo al nivel más alto sin los nervios de la cafeína. Un protocolo de concentración de nueva generación diseñado con ingredientes naturales.</p>
+    <h2>Claridad Celular<br>en Lugar de Estimulantes Artificiales.</h2>
+    <p>Apoya la energía biológica de tu cuerpo sin las fluctuaciones causadas por la cafeína. Un protocolo de enfoque y vitalidad de nueva generación diseñado con ingredientes naturales.</p>
     <div class="nrgi-tags">
       <span class="nrgi-tag">SIN CAFEÍNA</span>
       <span class="nrgi-tag">SIN AZÚCAR AÑADIDO</span>
       <span class="nrgi-tag">VEGANO &amp; SIN GLUTEN</span>
-      <span class="nrgi-tag">SABOR FRUTAS TROPICALES</span>
+      <span class="nrgi-tag">SABOR FRUTA TROPICAL</span>
     </div>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn">DESCUBRIR EL SISTEMA</a>
   </div>
 
   <div class="nrgi-profile-section">
     <div style="text-align:center;max-width:850px;margin:0 auto 60px;">
-      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Distintos Objetivos, <span style="color:#d4af37">el Mismo Enfoque.</span></h2>
-      <p style="color:#636e72;font-size:18px;">NRGI fue formulado para ayudar a personas de todas las edades y estilos de vida a ganar su batalla contra la "niebla mental".</p>
+      <h2 style="font-size:36px;font-weight:800;color:#111;margin-bottom:20px;">Diferentes Objetivos, <span style="color:#d4af37">Vitalidad Compartida.</span></h2>
+      <p style="color:#636e72;font-size:18px;">NRGI fue formulado para quienes quieren mantener la claridad mental dentro de un ritmo exigente y sentir una vitalidad que dure todo el día.</p>
     </div>
     <div class="profile-grid">
       <div class="profile-card">
         <span class="profile-icon">🧠</span>
         <div class="profile-title">Agudeza Mental</div>
-        <p class="profile-desc">Para quienes quieren fortalecer la memoria y apoyar el rendimiento cognitivo durante jornadas de trabajo intensas o períodos de exámenes.</p>
+        <p class="profile-desc">Para quienes quieren apoyar el rendimiento cognitivo y la vitalidad mental durante períodos de trabajo intenso y momentos que requieren altos niveles de atención.</p>
       </div>
       <div class="profile-card">
         <span class="profile-icon">⚡</span>
-        <div class="profile-title">Potencia en el Ejercicio</div>
-        <p class="profile-desc">Una sinergia de ingredientes naturales que optimiza la energía física y la motivación antes del entrenamiento sin necesidad de cafeína.</p>
+        <div class="profile-title">Potencia para el Ejercicio</div>
+        <p class="profile-desc">Una fórmula que apoya la resistencia física y la motivación a través de una sinergia de ingredientes naturales, sin necesitar cafeína antes del entrenamiento.</p>
       </div>
       <div class="profile-card" style="border-bottom:4px solid #d4af37;">
         <span class="profile-icon">🔋</span>
-        <div class="profile-title">Vitalidad Todo el Día</div>
-        <p class="profile-desc">Apoyo que revitaliza el propio metabolismo energético del cuerpo contra el cansancio matutino y las bajadas de energía de la tarde.</p>
+        <div class="profile-title">Vitalidad Durante Todo el Día</div>
+        <p class="profile-desc">Ingredientes que apoyan el metabolismo energético normal del cuerpo contra la fatiga matutina y la caída de energía de la tarde.</p>
       </div>
     </div>
   </div>
@@ -504,36 +525,35 @@
   <div class="nrgi-tech-panel">
     <div class="tech-container">
       <div>
-        <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">Una Sinergia de Ingredientes<br><span style="color:#d4af37">que Habla el Lenguaje de las Células.</span></h2>
-        <p style="font-size:16px;color:#444;margin-bottom:20px;">Los <strong>3 Ingredientes Patentados</strong> en el corazón de NRGI utilizan los procesos biológicos naturales del cuerpo en lugar de estimulantes temporales como la cafeína.</p>
+        <h2 style="font-size:30px;font-weight:800;color:#111;margin-bottom:30px;">Una Sinergia de Ingredientes<br><span style="color:#d4af37">que Habla el Idioma de las Células.</span></h2>
+        <p style="font-size:16px;color:#444;margin-bottom:20px;">Los ingredientes en el corazón de NRGI acompañan los propios procesos biológicos naturales del cuerpo en lugar de estimulantes temporales:</p>
         <div class="tech-list-item">
           <strong>Glicina (1000 mg)</strong>
-          <p>Apoya la vitalidad cerebral y el aumento natural de energía ayudando en la producción de proteínas y la transmisión de serotonina.</p>
+          <p>Como aminoácido importante involucrado en los procesos de síntesis proteica del cuerpo, contribuye al equilibrio general y la vitalidad del sistema.</p>
         </div>
         <div class="tech-list-item">
           <strong>Inulina (3000 mg)</strong>
-          <p>Actúa como fibra prebiótica, apoyando una flora intestinal saludable y, por tanto, el bienestar general.</p>
+          <p>Actúa como fibra prebiótica, ayudando a regular el sistema digestivo y equilibrar la flora intestinal.</p>
         </div>
         <div class="tech-list-item">
           <strong>Polifenoles de Manzana Asiática</strong>
-          <p>Alta capacidad antioxidante respaldada por estudios clínicos sobre motivación y equilibrio psicológico.</p>
+          <p>Apoya la resistencia del cuerpo al estrés oxidativo con alta capacidad antioxidante.</p>
         </div>
       </div>
       <div style="background:#2e3d30;color:#fff;padding:50px;border-radius:8px;">
-        <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:13px;letter-spacing:2px;">Vitaminas &amp; Extractos</h4>
+        <h4 style="margin-top:0;color:#d4af37;text-transform:uppercase;font-size:13px;letter-spacing:2px;">Vitaminas y Extractos Botánicos</h4>
         <ul style="padding-left:0;list-style:none;font-size:18px;margin-top:25px;">
-          <li style="margin-bottom:20px;">✓ <strong>Vitamina C:</strong> Contribuye a reducir el cansancio y la fatiga, y a aumentar la absorción del hierro.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Extracto de Granada:</strong> Rico en flavonoides, protección celular contra el estrés oxidativo.</li>
-          <li style="margin-bottom:20px;">✓ <strong>Corteza de Pino Marítimo:</strong> Salud vascular y soporte antioxidante con proantocianidinas.</li>
-          <li>✓ <strong>Semilla de Uva:</strong> Potencia que apoya el sistema cardiovascular y la producción de colágeno.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Vitamina C:</strong> Contribuye a la reducción del cansancio y la fatiga, al metabolismo energético normal y al fortalecimiento del sistema inmune.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Extracto de Granada:</strong> Rica fuente de flavonoides que protege las células de los efectos agotadores de los factores externos.</li>
+          <li style="margin-bottom:20px;">✓ <strong>Corteza de Pino Marítimo &amp; Semilla de Uva:</strong> Ayuda a proteger el sistema vascular y apoya el bienestar integral con potentes compuestos antioxidantes.</li>
         </ul>
       </div>
     </div>
   </div>
 
   <div class="footer-cta">
-    <h2>Conoce una Mente más Despejada</h2>
-    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"La concentración no es un talento — es el resultado de dar a tu cuerpo el combustible correcto. Silencia el ruido con NRGI y libera tu potencial."</p>
+    <h2>Conoce una Mente más Clara</h2>
+    <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"La concentración no es casualidad — es el resultado de los recursos correctos que le proporcionas a tu cuerpo. Deja el ruido mental atrás con NRGI y apoya tu potencial natural."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn-dark">OBTENERLO EN EL SITIO OFICIAL</a>
     <p class="footer-note">30 Sobres | Edulcorante Natural (Stevia) | Uso Diario</p>
   </div>
@@ -541,91 +561,6 @@
 </div>
 
 </div>
-
-<script>
-function nrgiLang(lang, btn) {
-  document.querySelectorAll('.nrgi-lang').forEach(function(el){ el.style.display='none'; });
-  document.querySelectorAll('.nrgi-lang-btn').forEach(function(b){ b.classList.remove('active'); });
-  document.getElementById('nrgi-' + lang).style.display = 'block';
-  btn.classList.add('active');
-}
-</script>
-
-<script>
-(function(){
-  var lb={tr:{home:"Anasayfa",health:"Sağlık Üçgeni",protocols:"Çözümler",blog:"Blog",mission:"Misyon",faq:"SSS",contact:"İletişim"},en:{home:"Homepage",health:"Health Triangle",protocols:"Solutions",blog:"Insights",mission:"The Mission",faq:"FAQ",contact:"Get in Touch"},es:{home:"Inicio",health:"Triángulo de Salud",protocols:"Soluciones",blog:"Perspectivas",mission:"La Misión",faq:"Preguntas",contact:"Contacto"}};
-  function applyNav(l){
-    document.querySelectorAll(".vpdk-nav-lang").forEach(function(b){b.classList.toggle("active",b.textContent.trim().toLowerCase()===l)});
-    var lbl=lb[l]||lb.tr;
-    document.querySelectorAll("[data-nav]").forEach(function(el){var k=el.getAttribute("data-nav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnav]").forEach(function(el){var k=el.getAttribute("data-mnav");if(lbl[k])el.textContent=lbl[k]});
-    document.querySelectorAll("[data-mnavs]").forEach(function(el){var k=el.getAttribute("data-mnavs");if(lbl[k])el.textContent=lbl[k]});
-  }
-  function applyPage(l){
-    if(typeof setLang==="function"){setLang(l);return;}
-    var allLangDivs=document.querySelectorAll('[class$="-lang"],[class*="-lang active"]');
-    document.querySelectorAll('[id$="-tr"],[id$="-en"],[id$="-es"]').forEach(function(el){
-      var show=el.id.endsWith('-'+l);
-      el.style.display=show?'block':'none';
-    });
-    var btns=document.querySelectorAll('button[onclick*="Lang"]');
-    btns.forEach(function(btn){if(btn.textContent.trim().toLowerCase()===l)btn.click();});
-  }
-  window.vpNavLang=function(l,btn){
-    localStorage.setItem('vpLang',l);
-    applyNav(l);
-    applyPage(l);
-  };
-  document.addEventListener("DOMContentLoaded",function(){
-    var saved=localStorage.getItem('vpLang')||'tr';
-    applyNav(saved);
-    setTimeout(function(){applyPage(saved);},50);
-    var path=window.location.pathname.split('/').pop()||'index.html';
-    document.querySelectorAll('.vpdk-nav-link,.vpdk-nav-dropdown-item,.vpdk-mobile-link').forEach(function(el){
-      var h=(el.getAttribute('href')||'').split('/').pop();
-      if(h&&h===path){el.style.color='#b8963e';el.style.fontWeight='500';}
-    });
-  });
-})();
-</script>
-
-
-
-
-<script>
-(function(){
-  function addCircles() {
-    var links = document.querySelectorAll('.vpdk-nav-link, .vpdk-nav-dropdown-btn');
-    links.forEach(function(el) {
-      if (el.querySelector('.nav-circle')) return;
-      var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
-      svg.setAttribute('class','nav-circle');
-      svg.setAttribute('viewBox','0 0 100 100');
-      svg.setAttribute('preserveAspectRatio','none');
-      var ellipse = document.createElementNS('http://www.w3.org/2000/svg','ellipse');
-      ellipse.setAttribute('cx','50');
-      ellipse.setAttribute('cy','50');
-      ellipse.setAttribute('rx','46');
-      ellipse.setAttribute('ry','18');
-      // Hafif döndürme - el yazısı hissi
-      ellipse.setAttribute('transform','rotate(-3, 50, 50)');
-      svg.appendChild(ellipse);
-      el.appendChild(svg);
-      // Hover'da animasyonu sıfırla (tekrar çizilsin)
-      el.addEventListener('mouseenter', function() {
-        ellipse.style.animation = 'none';
-        ellipse.offsetHeight; // reflow
-        ellipse.style.animation = '';
-      });
-    });
-  }
-  if(document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', addCircles);
-  } else {
-    addCircles();
-  }
-})();
-</script>
 
 <div class="important-note">
   <div class="imp-tr" style="display:block"><strong>Önemli Not ve Sorumluluk Reddi:</strong> Sitemizde yer alan tüm içerikler genel bilgilendirme amaçlıdır. Sunulan bilgiler ve ürünler, herhangi bir hastalığı teşhis etme, tedavi etme, iyileştirme veya önleme amacı taşımaz. Ürünlerimiz takviye edici gıda olup, ilaç yerine geçmez. Sağlık durumunuz, mevcut tedavileriniz veya takviye kullanımı hakkında en doğru bilgi için mutlaka doktorunuza veya yetkili bir sağlık profesyoneline danışınız. Hamilelik, emzirme dönemi veya ilaç kullanımı durumunda bir uzmana danışılması önerilir. vitalprotocolDK</div>
