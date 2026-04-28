@@ -1,4 +1,5 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "headers": [
     {
       "source": "/sitemap.xml",
@@ -17,6 +18,168 @@
           "value": "text/plain; charset=utf-8"
         }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/on-shots",
+      "destination": "/on-shots.html",
+      "permanent": true
+    },
+    {
+      "source": "/hl5",
+      "destination": "/hl5.html",
+      "permanent": true
+    },
+    {
+      "source": "/fit20",
+      "destination": "/fit20.html",
+      "permanent": true
+    },
+    {
+      "source": "/origin",
+      "destination": "/origin.html",
+      "permanent": true
+    },
+    {
+      "source": "/nrgi",
+      "destination": "/nrgi.html",
+      "permanent": true
+    },
+    {
+      "source": "/edge",
+      "destination": "/edge.html",
+      "permanent": true
+    },
+    {
+      "source": "/ignt",
+      "destination": "/ignt.html",
+      "permanent": true
+    },
+    {
+      "source": "/r-stour",
+      "destination": "/r-stour.html",
+      "permanent": true
+    },
+    {
+      "source": "/saglik-ucgeni",
+      "destination": "/saglik-ucgeni.html",
+      "permanent": true
+    },
+    {
+      "source": "/hakkimda",
+      "destination": "/hakkimda.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog.html",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq.html",
+      "permanent": true
+    },
+    {
+      "source": "/iletisim",
+      "destination": "/iletisim.html",
+      "permanent": true
+    },
+    {
+      "source": "/quiz",
+      "destination": "/quiz.html",
+      "permanent": true
+    },
+    {
+      "source": "/yasal",
+      "destination": "/yasal.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-mitokondri",
+      "destination": "/blog-mitokondri.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-bagisiklik",
+      "destination": "/blog-bagisiklik.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-beyin-sisi",
+      "destination": "/blog-beyin-sisi.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-beyne-pihti",
+      "destination": "/blog-beyne-pihti.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-butunsel-saglik",
+      "destination": "/blog-butunsel-saglik.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-damar-otobani",
+      "destination": "/blog-damar-otobani.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-detoks",
+      "destination": "/blog-detoks.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-gelecek",
+      "destination": "/blog-gelecek.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-hidrasyon",
+      "destination": "/blog-hidrasyon.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-hormonlar",
+      "destination": "/blog-hormonlar.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-hucresel-beslenme",
+      "destination": "/blog-hucresel-beslenme.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-odaklanamiyorum",
+      "destination": "/blog-odaklanamiyorum.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-saglikli-yasam",
+      "destination": "/blog-saglikli-yasam.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-tabaktaki-cokus",
+      "destination": "/blog-tabaktaki-cokus.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-temiz-takviye",
+      "destination": "/blog-temiz-takviye.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-yaslanmak",
+      "destination": "/blog-yaslanmak.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-zihinsel-performans",
+      "destination": "/blog-zihinsel-performans.html",
+      "permanent": true
     }
   ]
 }
