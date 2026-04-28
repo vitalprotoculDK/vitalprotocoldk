@@ -12,4 +12,4 @@ Disallow: /vera_widget_FINAL.html
 Disallow: /yasal_FINAL.html
 
 # Sitemap
-Sitemap: https://vitalprotocoldk.com/sitemap.xml
+Sitemap: https://www.vitalprotocoldk.com/sitemap.xml
