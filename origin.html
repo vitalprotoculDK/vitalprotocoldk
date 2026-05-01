@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+<style>
+/* HIGHEST PRIORITY LANGUAGE FIX */
+#or-en{display:none}
+#or-es{display:none}
+#or-tr{display:block}
+.or-lang.active{display:block}
+.or-lang:not(.active){display:none}
+</style>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ORIGIN: %100 Vegan Bitkisel Protein Formülü | Vital Protocol DK</title>
@@ -1252,5 +1261,14 @@
 })();
 </script>
 
+<style id="lang-nuclear-fix">
+/* NUCLEAR OPTION: Force language section visibility */
+html body div#or-tr.or-lang{display:block!important}
+html body div#or-en.or-lang:not(.active){display:none!important}
+html body div#or-es.or-lang:not(.active){display:none!important}
+html body div#or-en.or-lang.active{display:block!important}
+html body div#or-es.or-lang.active{display:block!important}
+html body div#or-tr.or-lang:not(.active){display:none!important}
+</style>
 </body>
 </html>
