@@ -15,6 +15,13 @@
 <noscript></noscript>
 
 <style>
+/* CRITICAL: language section visibility — must run before everything else */
+#or-en{display:none}
+#or-es{display:none}
+.or-lang.active{display:block!important}
+#or-en.active{display:block!important}
+#or-es.active{display:block!important}
+
 .vpdk-nav-global{width:100%;background:rgba(252,252,250,0.98);border-bottom:1px solid #d6ddd7;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:9999;backdrop-filter:blur(12px);font-family:'DM Sans',sans-serif;box-sizing:border-box}
 .vpdk-nav-global *{box-sizing:border-box}
 .vpdk-nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:#2e3d30;letter-spacing:.02em;text-decoration:none;flex-shrink:0}
@@ -248,7 +255,15 @@
   function orLang(lang){
     ['or-tr','or-en','or-es'].forEach(function(id){
       var el = document.getElementById(id);
-      if(el) el.style.display = id === 'or-'+lang ? 'block' : 'none';
+      if(el){
+        if(id === 'or-'+lang){
+          el.classList.add('active');
+          el.style.display = 'block';
+        } else {
+          el.classList.remove('active');
+          el.style.display = 'none';
+        }
+      }
     });
     document.querySelectorAll('.or-lang-btn').forEach(function(b){
       var m = (b.getAttribute('onclick')||'').match(/'([a-z]+)'/);
@@ -299,6 +314,92 @@
   }
 }
 </script>
+<style>
+
+
+/* CSS-only safety net for language switching */
+.or-lang:not(.active){display:none!important}
+.or-lang.active{display:block!important}
+
+/* ═══ ORIGIN - Bölüm 2: Çevremizde Gözlem ═══ */
+.origin-observation{background:#f9f8f4;padding:80px 20px;text-align:center}
+.origin-obs-inner{max-width:780px;margin:0 auto}
+.origin-obs-tag{display:inline-block;background:#fff;color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;border:1px solid #e8e4dc}
+.origin-obs-inner h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:#2e3d30;margin-bottom:24px;line-height:1.2;letter-spacing:-1px}
+.origin-obs-inner p{font-size:17px;color:#444;line-height:1.8;margin-bottom:18px;text-align:left}
+.origin-obs-highlight{background:#fff;border-left:4px solid #d4af37;padding:20px 26px;border-radius:0 16px 16px 0;margin:28px 0;font-style:italic;color:#2e3d30;text-align:left}
+
+/* ═══ ORIGIN - Bölüm 7: Bilim & Araştırma ═══ */
+.origin-science{background:#fff;padding:80px 20px}
+.origin-sci-inner{max-width:1100px;margin:0 auto;text-align:center}
+.origin-sci-tag{display:inline-block;background:#f0ede6;color:#2e3d30;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.origin-sci-inner h2{font-size:clamp(28px,4vw,40px);font-weight:800;color:#2e3d30;margin-bottom:14px;letter-spacing:-1px}
+.origin-sci-sub{color:#666;font-size:16px;font-style:italic;margin-bottom:50px}
+.origin-sci-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
+.origin-sci-card{background:#fafaf8;border:1px solid #e8e4dc;border-radius:24px;padding:32px 28px;text-align:left;transition:all .3s}
+.origin-sci-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(46,61,48,.08);border-color:#d4af37}
+.origin-sci-icon{width:50px;height:50px;border-radius:14px;background:#fff7ed;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}
+.origin-sci-card h3{font-size:18px;font-weight:800;color:#2e3d30;margin-bottom:14px}
+.origin-sci-card p{font-size:14px;color:#666;line-height:1.7;margin-bottom:14px}
+.origin-sci-source{font-size:11px;color:#9a8c5e;font-style:italic;border-top:1px solid #e8e4dc;padding-top:10px;margin-top:10px}
+
+/* ═══ ORIGIN - Bölüm 8: Slider ═══ */
+.origin-slider-section{background:linear-gradient(135deg,#2e3d30 0%,#1a1a1a 100%);padding:80px 20px}
+.origin-sl-inner{max-width:1280px;margin:0 auto}
+.origin-sl-tag{display:inline-block;background:rgba(212,175,55,0.15);color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center}
+.origin-sl-center{text-align:center;margin-bottom:40px}
+.origin-sl-center h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:#fff;letter-spacing:-1px;margin-bottom:0}
+.origin-slider-wrap{position:relative;overflow:hidden;border-radius:24px;background:#000;aspect-ratio:16/9;max-width:1100px;margin:0 auto;box-shadow:0 24px 48px rgba(0,0,0,0.35)}
+.origin-slider-track{display:flex;width:100%;height:100%;transition:transform .6s ease-in-out}
+.origin-slide{flex:0 0 100%;width:100%;height:100%}
+.origin-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.origin-slider-dots{display:flex;justify-content:center;gap:10px;margin-top:24px}
+.origin-slider-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.25);border:none;cursor:pointer;transition:all .3s;padding:0}
+.origin-slider-dot.active{background:#d4af37;transform:scale(1.3)}
+.origin-slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);color:#fff;width:42px;height:42px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s;z-index:5;font-size:18px;font-weight:700}
+.origin-slider-arrow:hover{background:rgba(212,175,55,.85)}
+.origin-slider-arrow.prev{left:16px}
+.origin-slider-arrow.next{right:16px}
+
+/* ═══ ORIGIN - Bölüm 9: Geliştirilmiş CTA ═══ */
+.origin-cta-enhanced{background:linear-gradient(135deg,#fff 0%,#f9f8f4 100%);border-radius:0;padding:80px 20px;text-align:center}
+.origin-cta-inner{max-width:780px;margin:0 auto}
+.origin-cta-enhanced h2{font-size:clamp(28px,4vw,40px);font-weight:800;color:#2e3d30;margin-bottom:14px;letter-spacing:-1px}
+.origin-cta-lead{font-size:17px;color:#555;line-height:1.7;margin-bottom:30px}
+.origin-cta-features{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:24px auto 32px;max-width:700px}
+.origin-cta-feat{background:#fff;border:1px solid #e8e4dc;border-radius:50px;padding:8px 16px;font-size:12px;color:#2e3d30;font-weight:700;letter-spacing:.3px}
+.origin-cta-buttons{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:8px}
+.origin-btn-quiz{display:inline-block;background:transparent;color:#2e3d30;padding:16px 32px;font-size:14px;font-weight:800;letter-spacing:.5px;text-decoration:none;border:2px solid #2e3d30;border-radius:50px;transition:all .3s;text-transform:uppercase}
+.origin-btn-quiz:hover{background:#2e3d30;color:#fff}
+.origin-btn-buy{display:inline-block;background:#d4af37;color:#1a1a1a;padding:16px 32px;font-size:14px;font-weight:800;letter-spacing:.5px;text-decoration:none;border:2px solid #d4af37;border-radius:50px;transition:all .3s;text-transform:uppercase}
+.origin-btn-buy:hover{background:#c49b2a;border-color:#c49b2a;transform:translateY(-2px)}
+.origin-cta-helper{margin-top:24px;font-size:13px;color:#666;font-style:italic;max-width:540px;margin-left:auto;margin-right:auto}
+
+/* ═══ ORIGIN - Bölüm 10: İlgili Bloglar ═══ */
+.origin-related{background:#fafaf8;padding:80px 20px;border-top:1px solid #e8e4dc}
+.origin-rel-inner{max-width:1100px;margin:0 auto}
+.origin-rel-tag{display:inline-block;background:#fff;color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center;border:1px solid #e8e4dc}
+.origin-rel-center{text-align:center;margin-bottom:40px}
+.origin-rel-center h2{font-size:clamp(26px,4vw,36px);font-weight:800;color:#2e3d30;letter-spacing:-1px}
+.origin-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.origin-rel-card{background:#fff;border:1px solid #e8e4dc;border-radius:24px;overflow:hidden;text-decoration:none;color:inherit;transition:all .3s;display:flex;flex-direction:column}
+.origin-rel-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08);border-color:#d4af37}
+.origin-rel-img{height:150px;display:flex;align-items:center;justify-content:center;font-size:44px}
+.origin-rel-body{padding:24px}
+.origin-rel-cat{font-size:10px;letter-spacing:1.5px;color:#d4af37;text-transform:uppercase;font-weight:700;margin-bottom:10px;display:block}
+.origin-rel-title{font-size:18px;font-weight:800;color:#2e3d30;margin-bottom:10px;line-height:1.3}
+.origin-rel-desc{font-size:13px;color:#666;line-height:1.6;margin-bottom:14px}
+.origin-rel-meta{font-size:11px;color:#9a8c5e;font-style:italic;font-weight:700}
+
+@media(max-width:900px){
+  .origin-observation,.origin-science,.origin-slider-section,.origin-cta-enhanced,.origin-related{padding:60px 16px}
+  .origin-sci-grid,.origin-rel-grid{grid-template-columns:1fr}
+  .origin-cta-buttons{flex-direction:column;align-items:stretch}
+  .origin-btn-quiz,.origin-btn-buy{width:100%}
+  .origin-slider-arrow{width:36px;height:36px}
+}
+
+</style>
 </head>
 <body>
 <nav class="vpdk-nav-global">
@@ -490,6 +591,133 @@
     <p class="origin-footnote">14 Porsiyon | Vanilya &amp; Çikolata Seçenekleri | Vegan</p>
   </div>
 
+  <!-- Bölüm 2: Çevremizde Gözlem -->
+  <div class="origin-observation">
+    <div class="origin-obs-inner">
+      <span class="origin-obs-tag">Çevremizde Gözlem</span>
+      <h2>Bitkisel Beslenmenin Önündeki Sessiz Sorun</h2>
+      <p>Son yıllarda bitkisel beslenmeye yönelim hızla artıyor. Bunun bir sebebi etik tercih, bir sebebi sağlık ve sürdürülebilirlik. Ancak bitkisel proteinler söz konusu olduğunda çoğu kişi şu yorumu duyuyor: "Bitkisel protein eksik kalır, vücut yeterince işleyemez."</p>
+      <p>Gözlem doğru — ama nedeni eksik anlatılıyor. Tek bir bitkisel kaynak genelde tüm amino asitleri yeterli oranda içermiyor. Bu yüzden <strong>çoklu bitki kaynağı</strong> ile zenginleştirilmiş formüller önemli.</p>
+      <div class="origin-obs-highlight">
+        Bezelye, bal kabağı çekirdeği ve ayçiçeği çekirdeği bir araya geldiğinde, hayvansal proteinlere yakın bir amino asit profili oluşuyor. Bu, bitkisel beslenmeye geçenler için sessiz bir kazanç.
+      </div>
+      <p>Origin tam burada devreye giriyor — <strong>3 bitki kaynağı + L-Sitrülin + MCT + Prebiyotik lif</strong> ile günlük protein takviyesine bütünsel bir yaklaşım sunuyor.</p>
+    </div>
+  </div>
+
+  <!-- Bölüm 7: Bilim & Araştırma -->
+  <div class="origin-science">
+    <div class="origin-sci-inner">
+      <span class="origin-sci-tag">Bilim & Araştırma</span>
+      <h2>Neden Çoklu Bitki Kaynağı Önemli?</h2>
+      <p class="origin-sci-sub">Bitkisel proteinler hakkında bilimsel bakış</p>
+      <div class="origin-sci-grid">
+        <div class="origin-sci-card">
+          <div class="origin-sci-icon">🌱</div>
+          <h3>Tam Spektrum Amino Asit</h3>
+          <p>Bitkisel kaynaklar tek başına alındığında bazı amino asitler yetersiz kalabiliyor. Birden fazla bitkisel kaynağın bir araya getirildiği formüller, "tam spektrum" olarak değerlendirilen yaklaşımlardan biridir.</p>
+        </div>
+        <div class="origin-sci-card">
+          <div class="origin-sci-icon">⚡</div>
+          <h3>L-Sitrülin & Dolaşım</h3>
+          <p>L-Sitrülin, vücutta L-Arjinin'e dönüşen ve nitrik oksit üretimine katkıda bulunduğu bilinen bir amino asittir. Beslenme literatüründe sıklıkla atıf edilen bir bileşendir.</p>
+        </div>
+        <div class="origin-sci-card">
+          <div class="origin-sci-icon">🥥</div>
+          <h3>MCT Yağları</h3>
+          <p>Orta zincirli trigliseritler (MCT), uzun zincirli yağlara kıyasla farklı bir metabolik yol izler. Hindistan cevizinden elde edilen bu yağlar, beslenme bilimlerinde özel bir yer tutar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölüm 8: Slider -->
+  <div class="origin-slider-section">
+    <div class="origin-sl-inner">
+      <div class="origin-sl-center">
+        <span class="origin-sl-tag">Yaşamın İçinde</span>
+        <h2>Origin Günlük Hayatta</h2>
+      </div>
+      <div class="origin-slider-wrap" id="origin-slider-tr">
+        <div class="origin-slider-track">
+          <div class="origin-slide"><img src="/images/origin/origin-slide-01.png" alt="Origin Ürün" loading="lazy"></div>
+          <div class="origin-slide"><img src="/images/origin/origin-slide-02.png" alt="Origin Kullanım" loading="lazy"></div>
+          <div class="origin-slide"><img src="/images/origin/origin-slide-03.png" alt="Origin İçerik" loading="lazy"></div>
+          <div class="origin-slide"><img src="/images/origin/origin-slide-04.png" alt="Origin Yaşam Tarzı" loading="lazy"></div>
+          <div class="origin-slide"><img src="/images/origin/origin-slide-05.png" alt="Origin Marka" loading="lazy"></div>
+        </div>
+        <button class="origin-slider-arrow prev" aria-label="Önceki">‹</button>
+        <button class="origin-slider-arrow next" aria-label="Sonraki">›</button>
+      </div>
+      <div class="origin-slider-dots">
+        <button class="origin-slider-dot active" data-slide="0"></button>
+        <button class="origin-slider-dot" data-slide="1"></button>
+        <button class="origin-slider-dot" data-slide="2"></button>
+        <button class="origin-slider-dot" data-slide="3"></button>
+        <button class="origin-slider-dot" data-slide="4"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölüm 9: Geliştirilmiş CTA -->
+  <div class="origin-cta-enhanced">
+    <div class="origin-cta-inner">
+      <h2>Hücresel Yakıtın Kökenine Dön</h2>
+      <p class="origin-cta-lead">Bitkisel protein, doğal lif ve mineraller. Tek bir formülde, hücreniz için bütünsel bir yaklaşım.</p>
+      <div class="origin-cta-features">
+        <span class="origin-cta-feat">✦ 20g Bitkisel Protein</span>
+        <span class="origin-cta-feat">✦ L-Sitrülin</span>
+        <span class="origin-cta-feat">✦ MCT Yağları</span>
+        <span class="origin-cta-feat">✦ Prebiyotik Lif</span>
+        <span class="origin-cta-feat">✦ %100 Vegan</span>
+      </div>
+      <div class="origin-cta-buttons">
+        <a href="/quiz.html" class="origin-btn-quiz">Önce Quizi Tamamla</a>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn-buy">Origin Satın Al →</a>
+      </div>
+      <p class="origin-cta-helper">Hangi protokolün size uygun olduğundan emin değil misiniz? 2 dakikalık quizimizle başlayın. Karar verdiyseniz Amare resmi sitesinden temin edebilirsiniz.</p>
+    </div>
+  </div>
+
+  <!-- Bölüm 10: İlgili Bloglar -->
+  <div class="origin-related">
+    <div class="origin-rel-inner">
+      <div class="origin-rel-center">
+        <span class="origin-rel-tag">Devamını Okuyun</span>
+        <h2>Origin ile İlgili İçeriklerimiz</h2>
+      </div>
+      <div class="origin-rel-grid">
+        <a href="/blog-hucresel-beslenme.html" class="origin-rel-card">
+          <div class="origin-rel-img" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0)">🧬</div>
+          <div class="origin-rel-body">
+            <span class="origin-rel-cat">✦ Hücresel Beslenme</span>
+            <h3 class="origin-rel-title">Hücresel Beslenme Nedir?</h3>
+            <p class="origin-rel-desc">Vücudun gerçek ihtiyaçları hücre seviyesinde nasıl karşılanır?</p>
+            <div class="origin-rel-meta">⏱ ~6 dk · Deniz KAT →</div>
+          </div>
+        </a>
+        <a href="/blog-bagisiklik.html" class="origin-rel-card">
+          <div class="origin-rel-img" style="background:linear-gradient(135deg,#fef3c7,#fde68a)">🛡️</div>
+          <div class="origin-rel-body">
+            <span class="origin-rel-cat">✦ Bağışıklık</span>
+            <h3 class="origin-rel-title">Bağışıklık ve Bağırsak Sağlığı</h3>
+            <p class="origin-rel-desc">Sindirim sisteminin sağlık üzerindeki sessiz etkisi.</p>
+            <div class="origin-rel-meta">⏱ ~5 dk · Deniz KAT →</div>
+          </div>
+        </a>
+        <a href="/blog-saglikli-yasam.html" class="origin-rel-card">
+          <div class="origin-rel-img" style="background:linear-gradient(135deg,#fff7ed,#fed7aa)">🌿</div>
+          <div class="origin-rel-body">
+            <span class="origin-rel-cat">✦ Sağlıklı Yaşam</span>
+            <h3 class="origin-rel-title">Sağlıklı Yaşamın Temelleri</h3>
+            <p class="origin-rel-desc">Modern hayatta dengeli ve aktif kalmak için bütünsel yaklaşım.</p>
+            <div class="origin-rel-meta">⏱ ~5 dk · Deniz KAT →</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- ══════════ ENGLISH ══════════ -->
@@ -562,6 +790,133 @@
     <p style="max-width:600px;margin:0 auto 40px;color:#666;font-style:italic;">"Nutrition is not just about what you eat — it's about how well your body recognises that food and how much of it reaches the cell. Complete your cellular cycle with Origin."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn-dark">GET IT FROM THE OFFICIAL SITE</a>
     <p class="origin-footnote">14 Servings | Vanilla &amp; Chocolate Options | Vegan</p>
+  </div>
+
+  <!-- Section 2: Common Observation -->
+  <div class="origin-observation">
+    <div class="origin-obs-inner">
+      <span class="origin-obs-tag">Common Observation</span>
+      <h2>The Silent Issue Behind Plant-Based Nutrition</h2>
+      <p>The shift toward plant-based nutrition has been accelerating in recent years. The reasons range from ethical choice to health and sustainability. However, when it comes to plant proteins, most people hear: "Plant protein is incomplete; the body can't fully utilise it."</p>
+      <p>The observation is correct — but the explanation is incomplete. A single plant source typically doesn't contain all amino acids in adequate proportions. This is why <strong>multi-source plant formulas</strong> matter.</p>
+      <div class="origin-obs-highlight">
+        When peas, pumpkin seeds and sunflower seeds are combined, an amino acid profile close to animal proteins emerges. This is a quiet gain for those transitioning to plant-based nutrition.
+      </div>
+      <p>Origin steps in here — <strong>3 plant sources + L-Citrulline + MCT + Prebiotic fibre</strong> offer a holistic approach to daily protein supplementation.</p>
+    </div>
+  </div>
+
+  <!-- Section 7: Science & Research -->
+  <div class="origin-science">
+    <div class="origin-sci-inner">
+      <span class="origin-sci-tag">Science & Research</span>
+      <h2>Why Multi-Source Plant Protein Matters</h2>
+      <p class="origin-sci-sub">A scientific perspective on plant proteins</p>
+      <div class="origin-sci-grid">
+        <div class="origin-sci-card">
+          <div class="origin-sci-icon">🌱</div>
+          <h3>Full-Spectrum Amino Acids</h3>
+          <p>When plant sources are taken alone, certain amino acids may fall short. Formulas that combine multiple plant sources are recognised as approaches that aim for "full-spectrum" amino acid coverage.</p>
+        </div>
+        <div class="origin-sci-card">
+          <div class="origin-sci-icon">⚡</div>
+          <h3>L-Citrulline & Circulation</h3>
+          <p>L-Citrulline is an amino acid known to convert to L-Arginine in the body and contribute to nitric oxide production. It is a frequently referenced compound in nutritional literature.</p>
+        </div>
+        <div class="origin-sci-card">
+          <div class="origin-sci-icon">🥥</div>
+          <h3>MCT Oils</h3>
+          <p>Medium-chain triglycerides (MCTs) follow a different metabolic pathway compared to long-chain fats. Derived from coconut, these oils hold a distinctive place in nutritional sciences.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 8: Slider -->
+  <div class="origin-slider-section">
+    <div class="origin-sl-inner">
+      <div class="origin-sl-center">
+        <span class="origin-sl-tag">In Daily Life</span>
+        <h2>Origin in Daily Life</h2>
+      </div>
+      <div class="origin-slider-wrap" id="origin-slider-en">
+        <div class="origin-slider-track">
+          <div class="origin-slide"><img src="/images/origin/origin-slide-01.png" alt="Origin Product" loading="lazy"></div>
+          <div class="origin-slide"><img src="/images/origin/origin-slide-02.png" alt="Origin Usage" loading="lazy"></div>
+          <div class="origin-slide"><img src="/images/origin/origin-slide-03.png" alt="Origin Ingredients" loading="lazy"></div>
+          <div class="origin-slide"><img src="/images/origin/origin-slide-04.png" alt="Origin Lifestyle" loading="lazy"></div>
+          <div class="origin-slide"><img src="/images/origin/origin-slide-05.png" alt="Origin Brand" loading="lazy"></div>
+        </div>
+        <button class="origin-slider-arrow prev" aria-label="Previous">‹</button>
+        <button class="origin-slider-arrow next" aria-label="Next">›</button>
+      </div>
+      <div class="origin-slider-dots">
+        <button class="origin-slider-dot active" data-slide="0"></button>
+        <button class="origin-slider-dot" data-slide="1"></button>
+        <button class="origin-slider-dot" data-slide="2"></button>
+        <button class="origin-slider-dot" data-slide="3"></button>
+        <button class="origin-slider-dot" data-slide="4"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 9: Enhanced CTA -->
+  <div class="origin-cta-enhanced">
+    <div class="origin-cta-inner">
+      <h2>Return to the Origin of Cellular Fuel</h2>
+      <p class="origin-cta-lead">Plant protein, natural fibre and minerals. A holistic approach for your cells, in a single formula.</p>
+      <div class="origin-cta-features">
+        <span class="origin-cta-feat">✦ 20g Plant Protein</span>
+        <span class="origin-cta-feat">✦ L-Citrulline</span>
+        <span class="origin-cta-feat">✦ MCT Oils</span>
+        <span class="origin-cta-feat">✦ Prebiotic Fibre</span>
+        <span class="origin-cta-feat">✦ 100% Vegan</span>
+      </div>
+      <div class="origin-cta-buttons">
+        <a href="/quiz.html" class="origin-btn-quiz">Start with the Quiz</a>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn-buy">Buy Origin →</a>
+      </div>
+      <p class="origin-cta-helper">Not sure which protocol is right for you? Start with our 2-minute quiz. If you've decided, you can get it from the official Amare site.</p>
+    </div>
+  </div>
+
+  <!-- Section 10: Related Blogs -->
+  <div class="origin-related">
+    <div class="origin-rel-inner">
+      <div class="origin-rel-center">
+        <span class="origin-rel-tag">Read More</span>
+        <h2>Related Content</h2>
+      </div>
+      <div class="origin-rel-grid">
+        <a href="/blog-hucresel-beslenme.html" class="origin-rel-card">
+          <div class="origin-rel-img" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0)">🧬</div>
+          <div class="origin-rel-body">
+            <span class="origin-rel-cat">✦ Cellular Nutrition</span>
+            <h3 class="origin-rel-title">What is Cellular Nutrition?</h3>
+            <p class="origin-rel-desc">How are the body's real needs met at the cellular level?</p>
+            <div class="origin-rel-meta">⏱ ~6 min · Deniz KAT →</div>
+          </div>
+        </a>
+        <a href="/blog-bagisiklik.html" class="origin-rel-card">
+          <div class="origin-rel-img" style="background:linear-gradient(135deg,#fef3c7,#fde68a)">🛡️</div>
+          <div class="origin-rel-body">
+            <span class="origin-rel-cat">✦ Immunity</span>
+            <h3 class="origin-rel-title">Immunity and Gut Health</h3>
+            <p class="origin-rel-desc">The silent influence of the digestive system on overall health.</p>
+            <div class="origin-rel-meta">⏱ ~5 min · Deniz KAT →</div>
+          </div>
+        </a>
+        <a href="/blog-saglikli-yasam.html" class="origin-rel-card">
+          <div class="origin-rel-img" style="background:linear-gradient(135deg,#fff7ed,#fed7aa)">🌿</div>
+          <div class="origin-rel-body">
+            <span class="origin-rel-cat">✦ Healthy Living</span>
+            <h3 class="origin-rel-title">Foundations of Healthy Living</h3>
+            <p class="origin-rel-desc">A holistic approach to staying balanced and active in modern life.</p>
+            <div class="origin-rel-meta">⏱ ~5 min · Deniz KAT →</div>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
 
 </div>
@@ -640,6 +995,133 @@
 
 </div>
 
+  <!-- Sección 2: Observación Común -->
+  <div class="origin-observation">
+    <div class="origin-obs-inner">
+      <span class="origin-obs-tag">Observación Común</span>
+      <h2>El Problema Silencioso de la Nutrición Vegetal</h2>
+      <p>El cambio hacia la nutrición vegetal se ha acelerado en los últimos años. Las razones van desde la elección ética hasta la salud y la sostenibilidad. Sin embargo, cuando se trata de proteínas vegetales, la mayoría de las personas escuchan: "La proteína vegetal está incompleta; el cuerpo no puede utilizarla por completo."</p>
+      <p>La observación es correcta — pero la explicación está incompleta. Una sola fuente vegetal típicamente no contiene todos los aminoácidos en proporciones adecuadas. Por eso son importantes las <strong>fórmulas vegetales multi-fuente</strong>.</p>
+      <div class="origin-obs-highlight">
+        Cuando se combinan guisantes, semillas de calabaza y semillas de girasol, surge un perfil de aminoácidos cercano a las proteínas animales. Esta es una ganancia silenciosa para quienes hacen la transición a la nutrición vegetal.
+      </div>
+      <p>Aquí entra Origin — <strong>3 fuentes vegetales + L-Citrulina + MCT + Fibra prebiótica</strong> ofrecen un enfoque integral para la suplementación diaria de proteína.</p>
+    </div>
+  </div>
+
+  <!-- Sección 7: Ciencia & Investigación -->
+  <div class="origin-science">
+    <div class="origin-sci-inner">
+      <span class="origin-sci-tag">Ciencia & Investigación</span>
+      <h2>¿Por Qué Importan las Fuentes Vegetales Múltiples?</h2>
+      <p class="origin-sci-sub">Una perspectiva científica sobre las proteínas vegetales</p>
+      <div class="origin-sci-grid">
+        <div class="origin-sci-card">
+          <div class="origin-sci-icon">🌱</div>
+          <h3>Aminoácidos de Espectro Completo</h3>
+          <p>Cuando las fuentes vegetales se toman solas, ciertos aminoácidos pueden quedar insuficientes. Las fórmulas que combinan múltiples fuentes vegetales se reconocen como enfoques que apuntan a una cobertura de "espectro completo" de aminoácidos.</p>
+        </div>
+        <div class="origin-sci-card">
+          <div class="origin-sci-icon">⚡</div>
+          <h3>L-Citrulina & Circulación</h3>
+          <p>La L-Citrulina es un aminoácido conocido por convertirse en L-Arginina en el cuerpo y contribuir a la producción de óxido nítrico. Es un compuesto frecuentemente referenciado en la literatura nutricional.</p>
+        </div>
+        <div class="origin-sci-card">
+          <div class="origin-sci-icon">🥥</div>
+          <h3>Aceites MCT</h3>
+          <p>Los triglicéridos de cadena media (MCT) siguen una vía metabólica diferente en comparación con las grasas de cadena larga. Derivados del coco, estos aceites tienen un lugar distintivo en las ciencias nutricionales.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección 8: Slider -->
+  <div class="origin-slider-section">
+    <div class="origin-sl-inner">
+      <div class="origin-sl-center">
+        <span class="origin-sl-tag">En la Vida Diaria</span>
+        <h2>Origin en la Vida Diaria</h2>
+      </div>
+      <div class="origin-slider-wrap" id="origin-slider-es">
+        <div class="origin-slider-track">
+          <div class="origin-slide"><img src="/images/origin/origin-slide-01.png" alt="Producto Origin" loading="lazy"></div>
+          <div class="origin-slide"><img src="/images/origin/origin-slide-02.png" alt="Uso Origin" loading="lazy"></div>
+          <div class="origin-slide"><img src="/images/origin/origin-slide-03.png" alt="Ingredientes Origin" loading="lazy"></div>
+          <div class="origin-slide"><img src="/images/origin/origin-slide-04.png" alt="Estilo de Vida Origin" loading="lazy"></div>
+          <div class="origin-slide"><img src="/images/origin/origin-slide-05.png" alt="Marca Origin" loading="lazy"></div>
+        </div>
+        <button class="origin-slider-arrow prev" aria-label="Anterior">‹</button>
+        <button class="origin-slider-arrow next" aria-label="Siguiente">›</button>
+      </div>
+      <div class="origin-slider-dots">
+        <button class="origin-slider-dot active" data-slide="0"></button>
+        <button class="origin-slider-dot" data-slide="1"></button>
+        <button class="origin-slider-dot" data-slide="2"></button>
+        <button class="origin-slider-dot" data-slide="3"></button>
+        <button class="origin-slider-dot" data-slide="4"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección 9: CTA Mejorado -->
+  <div class="origin-cta-enhanced">
+    <div class="origin-cta-inner">
+      <h2>Vuelve al Origen del Combustible Celular</h2>
+      <p class="origin-cta-lead">Proteína vegetal, fibra natural y minerales. Un enfoque integral para tus células, en una sola fórmula.</p>
+      <div class="origin-cta-features">
+        <span class="origin-cta-feat">✦ 20g Proteína Vegetal</span>
+        <span class="origin-cta-feat">✦ L-Citrulina</span>
+        <span class="origin-cta-feat">✦ Aceites MCT</span>
+        <span class="origin-cta-feat">✦ Fibra Prebiótica</span>
+        <span class="origin-cta-feat">✦ 100% Vegano</span>
+      </div>
+      <div class="origin-cta-buttons">
+        <a href="/quiz.html" class="origin-btn-quiz">Comenzar con el Quiz</a>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn-buy">Comprar Origin →</a>
+      </div>
+      <p class="origin-cta-helper">¿No estás seguro de qué protocolo es adecuado para ti? Comienza con nuestro quiz de 2 minutos. Si has decidido, puedes obtenerlo en el sitio oficial de Amare.</p>
+    </div>
+  </div>
+
+  <!-- Sección 10: Blogs Relacionados -->
+  <div class="origin-related">
+    <div class="origin-rel-inner">
+      <div class="origin-rel-center">
+        <span class="origin-rel-tag">Sigue Leyendo</span>
+        <h2>Contenido Relacionado</h2>
+      </div>
+      <div class="origin-rel-grid">
+        <a href="/blog-hucresel-beslenme.html" class="origin-rel-card">
+          <div class="origin-rel-img" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0)">🧬</div>
+          <div class="origin-rel-body">
+            <span class="origin-rel-cat">✦ Nutrición Celular</span>
+            <h3 class="origin-rel-title">¿Qué es la Nutrición Celular?</h3>
+            <p class="origin-rel-desc">¿Cómo se satisfacen las verdaderas necesidades del cuerpo a nivel celular?</p>
+            <div class="origin-rel-meta">⏱ ~6 min · Deniz KAT →</div>
+          </div>
+        </a>
+        <a href="/blog-bagisiklik.html" class="origin-rel-card">
+          <div class="origin-rel-img" style="background:linear-gradient(135deg,#fef3c7,#fde68a)">🛡️</div>
+          <div class="origin-rel-body">
+            <span class="origin-rel-cat">✦ Inmunidad</span>
+            <h3 class="origin-rel-title">Inmunidad y Salud Intestinal</h3>
+            <p class="origin-rel-desc">La influencia silenciosa del sistema digestivo en la salud general.</p>
+            <div class="origin-rel-meta">⏱ ~5 min · Deniz KAT →</div>
+          </div>
+        </a>
+        <a href="/blog-saglikli-yasam.html" class="origin-rel-card">
+          <div class="origin-rel-img" style="background:linear-gradient(135deg,#fff7ed,#fed7aa)">🌿</div>
+          <div class="origin-rel-body">
+            <span class="origin-rel-cat">✦ Vida Saludable</span>
+            <h3 class="origin-rel-title">Fundamentos de la Vida Saludable</h3>
+            <p class="origin-rel-desc">Un enfoque holístico para mantenerse equilibrado y activo en la vida moderna.</p>
+            <div class="origin-rel-meta">⏱ ~5 min · Deniz KAT →</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <div class="important-note">
@@ -699,5 +1181,75 @@
   };
 })();
 </script>
+<script>
+(function(){
+  function initOriginSlider(sliderId){
+    var slider = document.getElementById(sliderId);
+    if(!slider) return;
+    var track = slider.querySelector('.origin-slider-track');
+    var slides = slider.querySelectorAll('.origin-slide');
+    var prevBtn = slider.querySelector('.origin-slider-arrow.prev');
+    var nextBtn = slider.querySelector('.origin-slider-arrow.next');
+    var section = slider.closest('.origin-slider-section');
+    var dots = section ? section.querySelectorAll('.origin-slider-dot') : [];
+    var current = 0;
+    var total = slides.length;
+    var autoplayInterval = null;
+    
+    function goTo(idx){
+      if(idx < 0) idx = total - 1;
+      if(idx >= total) idx = 0;
+      current = idx;
+      track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+      dots.forEach(function(dot, i){
+        dot.classList.toggle('active', i === idx);
+      });
+    }
+    
+    function next(){ goTo(current + 1); }
+    function prev(){ goTo(current - 1); }
+    
+    function startAutoplay(){
+      stopAutoplay();
+      autoplayInterval = setInterval(next, 5000);
+    }
+    function stopAutoplay(){
+      if(autoplayInterval) clearInterval(autoplayInterval);
+    }
+    
+    if(prevBtn) prevBtn.addEventListener('click', function(){ prev(); startAutoplay(); });
+    if(nextBtn) nextBtn.addEventListener('click', function(){ next(); startAutoplay(); });
+    dots.forEach(function(dot, i){
+      dot.addEventListener('click', function(){ goTo(i); startAutoplay(); });
+    });
+    
+    // Touch/swipe support
+    var touchStartX = 0;
+    slider.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
+    slider.addEventListener('touchend', function(e){
+      var diff = touchStartX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 50){
+        if(diff > 0) next(); else prev();
+        startAutoplay();
+      }
+    });
+    
+    startAutoplay();
+  }
+  
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      initOriginSlider('origin-slider-tr');
+      initOriginSlider('origin-slider-en');
+      initOriginSlider('origin-slider-es');
+    });
+  } else {
+    initOriginSlider('origin-slider-tr');
+    initOriginSlider('origin-slider-en');
+    initOriginSlider('origin-slider-es');
+  }
+})();
+</script>
+
 </body>
 </html>
