@@ -215,6 +215,81 @@
     font-size:20px!important;
   }
 }
+
+/* ═══ Bölüm 2: Neden HL5? (Gözlem dili) ═══ */
+.hl5-observation{background:#f5f2ec;padding:80px 20px;text-align:center}
+.hl5-observation-inner{max-width:780px;margin:0 auto}
+.hl5-observation .label{font-size:11px;letter-spacing:.18em;color:#b8963e;text-transform:uppercase;font-weight:700;margin-bottom:20px;display:block}
+.hl5-observation h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,38px);font-weight:400;color:#1a2419;margin-bottom:24px;line-height:1.2}
+.hl5-observation p{font-size:17px;color:#3a4a3b;line-height:1.85;margin-bottom:18px;text-align:left}
+.hl5-observation .highlight{font-style:italic;color:#2e3d30;border-left:3px solid #b8963e;padding-left:16px;margin:24px 0}
+
+/* ═══ Bölüm 7: Bilim & Araştırma ═══ */
+.hl5-science{background:#fff;padding:80px 20px;border-top:1px solid #e8e4dc}
+.hl5-science-inner{max-width:1100px;margin:0 auto;text-align:center}
+.hl5-science .label{font-size:11px;letter-spacing:.18em;color:#b8963e;text-transform:uppercase;font-weight:700;margin-bottom:16px;display:block}
+.hl5-science h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,40px);font-weight:400;color:#1a2419;margin-bottom:14px}
+.hl5-science .subtitle{color:#6b7c6d;font-size:16px;margin-bottom:50px;font-style:italic}
+.hl5-science-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:30px}
+.hl5-science-card{background:#fafaf8;border:1px solid #e8e4dc;border-radius:14px;padding:32px 26px;text-align:left;transition:transform .3s,box-shadow .3s}
+.hl5-science-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(46,61,48,.08)}
+.hl5-science-card .icon{font-size:32px;margin-bottom:14px;display:block}
+.hl5-science-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;color:#2e3d30;margin-bottom:14px;font-weight:500}
+.hl5-science-card p{font-size:14px;color:#3a4a3b;line-height:1.7;margin-bottom:14px}
+.hl5-science-card .source{font-size:12px;color:#9a8c5e;font-style:italic;border-top:1px solid #e8e4dc;padding-top:12px;margin-top:14px}
+
+/* ═══ Bölüm 8: Slider ═══ */
+.hl5-slider-section{background:#1a2419;padding:80px 20px}
+.hl5-slider-inner{max-width:1280px;margin:0 auto}
+.hl5-slider-section .label{font-size:11px;letter-spacing:.18em;color:#d4af37;text-transform:uppercase;font-weight:700;margin-bottom:14px;display:block;text-align:center}
+.hl5-slider-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,38px);font-weight:400;color:#fcfcfa;margin-bottom:40px;text-align:center}
+.hl5-slider-wrap{position:relative;overflow:hidden;border-radius:14px;background:#000;aspect-ratio:16/9;max-width:1280px;margin:0 auto}
+.hl5-slider-track{display:flex;width:100%;height:100%;transition:transform .6s ease-in-out}
+.hl5-slide{flex:0 0 100%;width:100%;height:100%}
+.hl5-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.hl5-slider-dots{display:flex;justify-content:center;gap:10px;margin-top:24px}
+.hl5-slider-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.25);border:none;cursor:pointer;transition:background .3s,transform .3s;padding:0}
+.hl5-slider-dot.active{background:#d4af37;transform:scale(1.3)}
+.hl5-slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.2);color:#fff;width:42px;height:42px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s;z-index:5}
+.hl5-slider-arrow:hover{background:rgba(212,175,55,.8)}
+.hl5-slider-arrow.prev{left:16px}
+.hl5-slider-arrow.next{right:16px}
+
+/* ═══ Bölüm 9: Geliştirilmiş CTA ═══ */
+.hl5-cta-enhanced{text-align:center;padding:90px 20px;background:linear-gradient(135deg,#fafaf8 0%,#f0ede6 100%)}
+.hl5-cta-enhanced h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,40px);font-weight:400;color:#1a2419;margin-bottom:16px}
+.hl5-cta-enhanced .lead{max-width:600px;margin:0 auto 30px;color:#4a5a4b;font-size:17px;line-height:1.7}
+.hl5-cta-features{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin:30px auto 36px;max-width:700px}
+.hl5-cta-feature{background:#fff;border:1px solid #d6ddd7;border-radius:24px;padding:8px 18px;font-size:13px;color:#2e3d30;font-weight:500}
+.hl5-cta-buttons{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:20px}
+.hl5-btn-quiz{display:inline-block;background:transparent;color:#2e3d30;padding:14px 32px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:2px solid #2e3d30;border-radius:4px;transition:all .3s}
+.hl5-btn-quiz:hover{background:#2e3d30;color:#fcfcfa}
+.hl5-btn-buy{display:inline-block;background:#d4af37;color:#1a1a1a;padding:14px 32px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:2px solid #d4af37;border-radius:4px;transition:all .3s}
+.hl5-btn-buy:hover{background:#b8963e;border-color:#b8963e}
+.hl5-cta-helper{margin-top:24px;font-size:13px;color:#6b7c6d;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+
+/* ═══ Bölüm 10: İlgili Bloglar ═══ */
+.hl5-related-blogs{background:#fafaf8;padding:80px 20px;border-top:1px solid #e8e4dc}
+.hl5-related-inner{max-width:1100px;margin:0 auto}
+.hl5-related-blogs .label{font-size:11px;letter-spacing:.18em;color:#b8963e;text-transform:uppercase;font-weight:700;margin-bottom:14px;display:block;text-align:center}
+.hl5-related-blogs h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,36px);font-weight:400;color:#1a2419;margin-bottom:40px;text-align:center}
+.hl5-related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.hl5-blog-card{background:#fff;border:1px solid #e8e4dc;border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
+.hl5-blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(46,61,48,.1)}
+.hl5-blog-card-img{height:160px;display:flex;align-items:center;justify-content:center;font-size:48px}
+.hl5-blog-card-body{padding:24px}
+.hl5-blog-card-cat{font-size:11px;letter-spacing:.14em;color:#b8963e;text-transform:uppercase;font-weight:700;margin-bottom:10px;display:block}
+.hl5-blog-card-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:#1a2419;margin-bottom:10px;line-height:1.3}
+.hl5-blog-card-desc{font-size:14px;color:#6b7c6d;line-height:1.6;margin-bottom:14px}
+.hl5-blog-card-meta{font-size:12px;color:#9a8c5e;font-style:italic}
+
+@media(max-width:768px){
+  .hl5-observation,.hl5-science,.hl5-slider-section,.hl5-cta-enhanced,.hl5-related-blogs{padding:60px 16px}
+  .hl5-cta-buttons{flex-direction:column;align-items:stretch}
+  .hl5-btn-quiz,.hl5-btn-buy{width:100%}
+  .hl5-slider-arrow{width:36px;height:36px}
+}
+
 </style>
 <style>.hl5-lang-bar,.f-lang-bar,.or-lang-bar,.nr-lang-bar,.ed-lang-bar,.ig-lang-bar,.rs-lang-bar,.os-lang-bar,.su-lang-bar,.hk-lang-bar,.sss-lang-bar,.qz-lang-bar,[class*="-lang-bar"]{display:none!important}</style>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -480,6 +555,20 @@
       <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px">"Vücudunuzun temel mimarisini korumak için mucizelere değil;<br>eksilen yapı taşlarını yerine koymaya ihtiyacınız var."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
     </div>
 
+        <!-- Bölüm 2: Neden HL5 (Gözlem) -->
+    <div class="hl5-observation">
+      <div class="hl5-observation-inner">
+        <span class="label">Çevremizde Gözlem</span>
+        <h2>Çevremizde Sıkça Gördüğümüz Bir Tablo</h2>
+        <p>35 yaş sonrası birçok kişide ortak gözlemler dikkat çekiyor: eklemlerde tutukluk, cilt esnekliğinin azalması, saç ve tırnak zayıflığı, antrenman sonrası uzayan toparlanma süreleri.</p>
+        <p>Bu durumun arkasında çoğu zaman tek bir gerçek yatıyor: vücudun kolajen üretimi 25 yaşından itibaren her on yılda yaklaşık <strong>%1 azalıyor</strong>.</p>
+        <div class="highlight">
+          Pazarda satılan kolajen ürünlerinin büyük çoğunluğu, molekül büyüklüğü nedeniyle yeterince emilemiyor. Yani tüketici ödüyor ama vücut kullanamıyor.
+        </div>
+        <p>HL5'in farkı tam burada başlıyor — <strong>hidrolize teknolojisi</strong> ile molekül parçalanmış, biyoyararlanım maksimuma çıkarılmış.</p>
+      </div>
+    </div>
+
     <div class="hl5-vision-grid">
       <div class="hl5-vision-card">
         <div style="font-size:40px;margin-bottom:15px">✨</div>
@@ -531,11 +620,114 @@
       </div>
     </div>
 
-    <div class="hl5-cta">
-      <h2>Bedeninizin Hak Ettiğine Yatırım Yapın</h2>
-      <p style="max-width:600px;margin:0 auto 40px;color:#666">Güzellik, sağlık ve güç... Hepsi aynı kaynaktan beslenir. HL5 ile bütünsel dönüşümünüze bugün başlayın.</p>
-      <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="hl5-btn-dark">RESMİ SITEYE GIT</a>
-      <p style="margin-top:30px;font-size:12px;color:#999;text-transform:uppercase;letter-spacing:1px">30 Tek Kullanımlık Saşe | Doğal Şeftali Aroması</p>
+<!-- Bölüm 7: Bilim & Araştırma -->
+    <div class="hl5-science">
+      <div class="hl5-science-inner">
+        <span class="label">Bilim & Araştırma</span>
+        <h2>Hidrolize Kolajen Neden Farklı?</h2>
+        <p class="subtitle">Bilimsel literatürün gösterdikleri</p>
+        <div class="hl5-science-grid">
+          <div class="hl5-science-card">
+            <span class="icon">🔬</span>
+            <h3>Biyoyararlanım Avantajı</h3>
+            <p>Tarım ve Gıda Kimyası dergisinde yayımlanan bir araştırmaya göre, hidrolize kolajen peptidleri sindirim sisteminden %95'in üzerinde oranla emilirken, denatüre edilmemiş kolajen formlarında bu oran %30-40 seviyesinde kalıyor.</p>
+            <p class="source">Kaynak: Tarım ve Gıda Kimyası Dergisi, 2010</p>
+          </div>
+          <div class="hl5-science-card">
+            <span class="icon">🧬</span>
+            <h3>Tip 1 ve Tip 3 Sinerjisi</h3>
+            <p>Vücudundaki kolajenin yaklaşık %90'ı Tip 1 ve Tip 3'tür. Bu iki tipin birlikte alımı, tek tip alıma kıyasla cilt, kemik ve bağ doku desteği için daha kapsamlı yarar sağlar.</p>
+            <p class="source">Kaynak: Beslenme Bilimleri Dergisi, 2019</p>
+          </div>
+          <div class="hl5-science-card">
+            <span class="icon">⏱</span>
+            <h3>Dozaj ve Süre</h3>
+            <p>Klinik araştırmalar, günlük 2.5–10 gram hidrolize kolajen peptidinin 8–12 hafta boyunca kullanımının gözlenebilir sonuçlar için uygun bir aralık olduğunu gösteriyor. HL5'in 5000 mg dozu bu aralığın orta noktasında.</p>
+            <p class="source">Kaynak: Cilt Farmakolojisi ve Fizyolojisi Dergisi, 2014</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bölüm 8: Slider -->
+    <div class="hl5-slider-section">
+      <div class="hl5-slider-inner">
+        <span class="label">Yaşamın İçinde</span>
+        <h2>HL5 Günlük Hayatta</h2>
+        <div class="hl5-slider-wrap" id="hl5-slider-tr">
+          <div class="hl5-slider-track">
+            <div class="hl5-slide"><img src="/images/hl5/hl5-slide-01.png" alt="HL5 Ürün" loading="lazy"></div>
+            <div class="hl5-slide"><img src="/images/hl5/hl5-slide-02.png" alt="HL5 Kullanım" loading="lazy"></div>
+            <div class="hl5-slide"><img src="/images/hl5/hl5-slide-03.png" alt="HL5 İçerik" loading="lazy"></div>
+            <div class="hl5-slide"><img src="/images/hl5/hl5-slide-04.png" alt="HL5 Yaşam Tarzı" loading="lazy"></div>
+            <div class="hl5-slide"><img src="/images/hl5/hl5-slide-05.png" alt="HL5 Marka" loading="lazy"></div>
+          </div>
+          <button class="hl5-slider-arrow prev" aria-label="Önceki">‹</button>
+          <button class="hl5-slider-arrow next" aria-label="Sonraki">›</button>
+        </div>
+        <div class="hl5-slider-dots">
+          <button class="hl5-slider-dot active" data-slide="0"></button>
+          <button class="hl5-slider-dot" data-slide="1"></button>
+          <button class="hl5-slider-dot" data-slide="2"></button>
+          <button class="hl5-slider-dot" data-slide="3"></button>
+          <button class="hl5-slider-dot" data-slide="4"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bölüm 9: Geliştirilmiş CTA -->
+    <div class="hl5-cta-enhanced">
+      <h2>Vücudunuza Hak Ettiği Yatırımı Yapın</h2>
+      <p class="lead">Güzellik, sağlık ve güç... Hepsi aynı kaynaktan beslenir. HL5 ile bütünsel dönüşümünüzü bugün destekleyin.</p>
+      <div class="hl5-cta-features">
+        <span class="hl5-cta-feature">✦ 48 ülkede onaylı</span>
+        <span class="hl5-cta-feature">✦ 30 saşe / paket</span>
+        <span class="hl5-cta-feature">✦ Şeffaf içerik</span>
+        <span class="hl5-cta-feature">✦ Doğal şeftali aroması</span>
+        <span class="hl5-cta-feature">✦ Şekersiz formül</span>
+      </div>
+      <div class="hl5-cta-buttons">
+        <a href="/quiz.html" class="hl5-btn-quiz">Önce Quizi Tamamla</a>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="hl5-btn-buy">Resmi Siteden Satın Al →</a>
+      </div>
+      <p class="hl5-cta-helper">Hangi protokolün size uygun olduğundan emin değil misiniz? 2 dakikalık quizimizle başlayın. Karar verdiyseniz Amare resmi sitesinden temin edebilirsiniz.</p>
+    </div>
+
+    <!-- Bölüm 10: İlgili Bloglar -->
+    <div class="hl5-related-blogs">
+      <div class="hl5-related-inner">
+        <span class="label">Devamını Okuyun</span>
+        <h2>HL5 ile İlgili İçeriklerimiz</h2>
+        <div class="hl5-related-grid">
+          <a href="/blog-yaslanmak.html" class="hl5-blog-card">
+            <div class="hl5-blog-card-img" style="background:linear-gradient(135deg,#2e3d30,#1a3a2a)">⏳</div>
+            <div class="hl5-blog-card-body">
+              <span class="hl5-blog-card-cat">✦ Yaşlanma</span>
+              <h3 class="hl5-blog-card-title">Zarif Yaşlanmanın Bilimi</h3>
+              <p class="hl5-blog-card-desc">Yaşlanma süreci ve kolajen üretiminin azalmasıyla nasıl başa çıkılır?</p>
+              <div class="hl5-blog-card-meta">⏱ ~5 dk · Deniz KAT →</div>
+            </div>
+          </a>
+          <a href="/blog-hucresel-beslenme.html" class="hl5-blog-card">
+            <div class="hl5-blog-card-img" style="background:linear-gradient(135deg,#1a2419,#3d2a1a)">🧬</div>
+            <div class="hl5-blog-card-body">
+              <span class="hl5-blog-card-cat">✦ Hücresel Beslenme</span>
+              <h3 class="hl5-blog-card-title">Hücresel Beslenme Nedir?</h3>
+              <p class="hl5-blog-card-desc">Vücudun gerçek ihtiyaçları hücre seviyesinde nasıl karşılanır?</p>
+              <div class="hl5-blog-card-meta">⏱ ~6 dk · Deniz KAT →</div>
+            </div>
+          </a>
+          <a href="/blog-saglikli-yasam.html" class="hl5-blog-card">
+            <div class="hl5-blog-card-img" style="background:linear-gradient(135deg,#2e3d30,#3d2a3a)">🌿</div>
+            <div class="hl5-blog-card-body">
+              <span class="hl5-blog-card-cat">✦ Sağlıklı Yaşam</span>
+              <h3 class="hl5-blog-card-title">Sağlıklı Yaşamın Temelleri</h3>
+              <p class="hl5-blog-card-desc">Modern yaşamda dengeyi korumak için bütünsel yaklaşım.</p>
+              <div class="hl5-blog-card-meta">⏱ ~5 dk · Deniz KAT →</div>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -552,6 +744,20 @@
       </div>
       <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="hl5-btn">SUPPORT THE CHANGE</a>
       <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px">"To protect your body's fundamental architecture, you don't need miracles —<br>you need to replenish the building blocks that are running low."<span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
+    </div>
+
+        <!-- Section 2: Why HL5 (Observation) -->
+    <div class="hl5-observation">
+      <div class="hl5-observation-inner">
+        <span class="label">Common Observation</span>
+        <h2>A Pattern We Often Observe</h2>
+        <p>After age 35, many people share common observations: joint stiffness, declining skin elasticity, weakened hair and nails, prolonged recovery times after physical activity.</p>
+        <p>Behind this pattern lies a single biological reality: the body's collagen production decreases by approximately <strong>1% every decade</strong> after age 25.</p>
+        <div class="highlight">
+          Most collagen products on the market suffer from poor absorption due to large molecular size. The consumer pays, but the body can't use it.
+        </div>
+        <p>This is exactly where HL5 stands apart — <strong>hydrolysis technology</strong> breaks down the molecules, maximising bioavailability.</p>
+      </div>
     </div>
 
     <div class="hl5-vision-grid">
@@ -605,11 +811,114 @@
       </div>
     </div>
 
-    <div class="hl5-cta">
+<!-- Section 7: Science & Research -->
+    <div class="hl5-science">
+      <div class="hl5-science-inner">
+        <span class="label">Science & Research</span>
+        <h2>Why is Hydrolysed Collagen Different?</h2>
+        <p class="subtitle">What the scientific literature shows</p>
+        <div class="hl5-science-grid">
+          <div class="hl5-science-card">
+            <span class="icon">🔬</span>
+            <h3>Bioavailability Advantage</h3>
+            <p>Research published in the Journal of Agricultural and Food Chemistry shows that hydrolysed collagen peptides are absorbed from the digestive system at a rate of over 95%, while undenatured collagen forms remain at 30-40%.</p>
+            <p class="source">Source: J Agric Food Chem, 2010</p>
+          </div>
+          <div class="hl5-science-card">
+            <span class="icon">🧬</span>
+            <h3>Type 1 and Type 3 Synergy</h3>
+            <p>Approximately 90% of the collagen in your body is Type 1 and Type 3. Taking these two types together provides more comprehensive support for skin, bone and connective tissue than single-type intake.</p>
+            <p class="source">Source: Nutrients, 2019</p>
+          </div>
+          <div class="hl5-science-card">
+            <span class="icon">⏱</span>
+            <h3>Dosage and Duration</h3>
+            <p>Clinical studies show that 2.5–10 grams of hydrolysed collagen peptides daily, used for 8–12 weeks, is an appropriate range for observable results. HL5's 5000 mg dose sits at the midpoint of this range.</p>
+            <p class="source">Source: Skin Pharmacology and Physiology, 2014</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 8: Slider -->
+    <div class="hl5-slider-section">
+      <div class="hl5-slider-inner">
+        <span class="label">In Daily Life</span>
+        <h2>HL5 in Daily Life</h2>
+        <div class="hl5-slider-wrap" id="hl5-slider-en">
+          <div class="hl5-slider-track">
+            <div class="hl5-slide"><img src="/images/hl5/hl5-slide-01.png" alt="HL5 Product" loading="lazy"></div>
+            <div class="hl5-slide"><img src="/images/hl5/hl5-slide-02.png" alt="HL5 Usage" loading="lazy"></div>
+            <div class="hl5-slide"><img src="/images/hl5/hl5-slide-03.png" alt="HL5 Ingredients" loading="lazy"></div>
+            <div class="hl5-slide"><img src="/images/hl5/hl5-slide-04.png" alt="HL5 Lifestyle" loading="lazy"></div>
+            <div class="hl5-slide"><img src="/images/hl5/hl5-slide-05.png" alt="HL5 Brand" loading="lazy"></div>
+          </div>
+          <button class="hl5-slider-arrow prev" aria-label="Previous">‹</button>
+          <button class="hl5-slider-arrow next" aria-label="Next">›</button>
+        </div>
+        <div class="hl5-slider-dots">
+          <button class="hl5-slider-dot active" data-slide="0"></button>
+          <button class="hl5-slider-dot" data-slide="1"></button>
+          <button class="hl5-slider-dot" data-slide="2"></button>
+          <button class="hl5-slider-dot" data-slide="3"></button>
+          <button class="hl5-slider-dot" data-slide="4"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 9: Enhanced CTA -->
+    <div class="hl5-cta-enhanced">
       <h2>Invest in What Your Body Deserves</h2>
-      <p style="max-width:600px;margin:0 auto 40px;color:#666">Beauty, health and strength — they all draw from the same source. Start your holistic transformation with HL5 today.</p>
-      <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="hl5-btn-dark">GO TO THE OFFICIAL SITE</a>
-      <p style="margin-top:30px;font-size:12px;color:#999;text-transform:uppercase;letter-spacing:1px">30 Single-Use Sachets | Natural Peach Flavour</p>
+      <p class="lead">Beauty, health and strength... They all draw from the same source. Support your holistic transformation with HL5 today.</p>
+      <div class="hl5-cta-features">
+        <span class="hl5-cta-feature">✦ Approved in 48 countries</span>
+        <span class="hl5-cta-feature">✦ 30 sachets / pack</span>
+        <span class="hl5-cta-feature">✦ Transparent content</span>
+        <span class="hl5-cta-feature">✦ Natural peach flavour</span>
+        <span class="hl5-cta-feature">✦ Sugar-free formula</span>
+      </div>
+      <div class="hl5-cta-buttons">
+        <a href="/quiz.html" class="hl5-btn-quiz">Start with the Quiz</a>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="hl5-btn-buy">Buy from Official Site →</a>
+      </div>
+      <p class="hl5-cta-helper">Not sure which protocol is right for you? Start with our 2-minute quiz. If you've decided, you can get it from the official Amare site.</p>
+    </div>
+
+    <!-- Section 10: Related Blogs -->
+    <div class="hl5-related-blogs">
+      <div class="hl5-related-inner">
+        <span class="label">Read More</span>
+        <h2>Related Content</h2>
+        <div class="hl5-related-grid">
+          <a href="/blog-yaslanmak.html" class="hl5-blog-card">
+            <div class="hl5-blog-card-img" style="background:linear-gradient(135deg,#2e3d30,#1a3a2a)">⏳</div>
+            <div class="hl5-blog-card-body">
+              <span class="hl5-blog-card-cat">✦ Ageing</span>
+              <h3 class="hl5-blog-card-title">The Science of Graceful Ageing</h3>
+              <p class="hl5-blog-card-desc">How to navigate the ageing process and declining collagen production.</p>
+              <div class="hl5-blog-card-meta">⏱ ~5 min · Deniz KAT →</div>
+            </div>
+          </a>
+          <a href="/blog-hucresel-beslenme.html" class="hl5-blog-card">
+            <div class="hl5-blog-card-img" style="background:linear-gradient(135deg,#1a2419,#3d2a1a)">🧬</div>
+            <div class="hl5-blog-card-body">
+              <span class="hl5-blog-card-cat">✦ Cellular Nutrition</span>
+              <h3 class="hl5-blog-card-title">What is Cellular Nutrition?</h3>
+              <p class="hl5-blog-card-desc">How are the body's real needs met at the cellular level?</p>
+              <div class="hl5-blog-card-meta">⏱ ~6 min · Deniz KAT →</div>
+            </div>
+          </a>
+          <a href="/blog-saglikli-yasam.html" class="hl5-blog-card">
+            <div class="hl5-blog-card-img" style="background:linear-gradient(135deg,#2e3d30,#3d2a3a)">🌿</div>
+            <div class="hl5-blog-card-body">
+              <span class="hl5-blog-card-cat">✦ Healthy Living</span>
+              <h3 class="hl5-blog-card-title">Foundations of Healthy Living</h3>
+              <p class="hl5-blog-card-desc">A holistic approach to maintaining balance in modern life.</p>
+              <div class="hl5-blog-card-meta">⏱ ~5 min · Deniz KAT →</div>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -626,6 +935,20 @@
       </div>
       <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="hl5-btn">APOYA EL CAMBIO</a>
       <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px">"Para proteger la arquitectura fundamental de tu cuerpo, no necesitas milagros —<br>necesitas reponer los bloques de construcción que se están agotando."<span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
+    </div>
+
+        <!-- Sección 2: Por Qué HL5 (Observación) -->
+    <div class="hl5-observation">
+      <div class="hl5-observation-inner">
+        <span class="label">Observación Común</span>
+        <h2>Un Patrón Que Observamos Con Frecuencia</h2>
+        <p>Después de los 35 años, muchas personas comparten observaciones comunes: rigidez articular, disminución de la elasticidad de la piel, cabello y uñas debilitados, tiempos de recuperación prolongados después de la actividad física.</p>
+        <p>Detrás de este patrón hay una realidad biológica única: la producción de colágeno del cuerpo disminuye aproximadamente <strong>un 1% cada década</strong> a partir de los 25 años.</p>
+        <div class="highlight">
+          La mayoría de los productos de colágeno en el mercado sufren una mala absorción debido al gran tamaño molecular. El consumidor paga, pero el cuerpo no puede usarlo.
+        </div>
+        <p>Aquí es exactamente donde HL5 se distingue — la <strong>tecnología de hidrólisis</strong> descompone las moléculas, maximizando la biodisponibilidad.</p>
+      </div>
     </div>
 
     <div class="hl5-vision-grid">
@@ -679,11 +1002,114 @@
       </div>
     </div>
 
-    <div class="hl5-cta">
-      <h2>Invierte en lo que Tu Cuerpo Merece</h2>
-      <p style="max-width:600px;margin:0 auto 40px;color:#666">Belleza, salud y fuerza — todas se nutren de la misma fuente. Comienza tu transformación integral con HL5 hoy.</p>
-      <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="hl5-btn-dark">IR AL SITIO OFICIAL</a>
-      <p style="margin-top:30px;font-size:12px;color:#999;text-transform:uppercase;letter-spacing:1px">30 Sobres Individuales | Aroma Natural de Melocotón</p>
+<!-- Sección 7: Ciencia & Investigación -->
+    <div class="hl5-science">
+      <div class="hl5-science-inner">
+        <span class="label">Ciencia & Investigación</span>
+        <h2>¿Por Qué es Diferente el Colágeno Hidrolizado?</h2>
+        <p class="subtitle">Lo que muestra la literatura científica</p>
+        <div class="hl5-science-grid">
+          <div class="hl5-science-card">
+            <span class="icon">🔬</span>
+            <h3>Ventaja de Biodisponibilidad</h3>
+            <p>Investigaciones publicadas en el Journal of Agricultural and Food Chemistry muestran que los péptidos de colágeno hidrolizado se absorben del sistema digestivo a una tasa superior al 95%, mientras que las formas de colágeno sin desnaturalizar se mantienen entre el 30-40%.</p>
+            <p class="source">Fuente: J Agric Food Chem, 2010</p>
+          </div>
+          <div class="hl5-science-card">
+            <span class="icon">🧬</span>
+            <h3>Sinergia Tipo 1 y Tipo 3</h3>
+            <p>Aproximadamente el 90% del colágeno en tu cuerpo es Tipo 1 y Tipo 3. Tomar estos dos tipos juntos proporciona un apoyo más completo para la piel, los huesos y el tejido conectivo que la ingesta de un solo tipo.</p>
+            <p class="source">Fuente: Nutrients, 2019</p>
+          </div>
+          <div class="hl5-science-card">
+            <span class="icon">⏱</span>
+            <h3>Dosis y Duración</h3>
+            <p>Los estudios clínicos muestran que 2.5–10 gramos de péptidos de colágeno hidrolizado al día, utilizados durante 8–12 semanas, es un rango apropiado para resultados observables. La dosis de 5000 mg de HL5 se encuentra en el punto medio de este rango.</p>
+            <p class="source">Fuente: Skin Pharmacology and Physiology, 2014</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 8: Slider -->
+    <div class="hl5-slider-section">
+      <div class="hl5-slider-inner">
+        <span class="label">En la Vida Diaria</span>
+        <h2>HL5 en la Vida Diaria</h2>
+        <div class="hl5-slider-wrap" id="hl5-slider-es">
+          <div class="hl5-slider-track">
+            <div class="hl5-slide"><img src="/images/hl5/hl5-slide-01.png" alt="Producto HL5" loading="lazy"></div>
+            <div class="hl5-slide"><img src="/images/hl5/hl5-slide-02.png" alt="Uso HL5" loading="lazy"></div>
+            <div class="hl5-slide"><img src="/images/hl5/hl5-slide-03.png" alt="Ingredientes HL5" loading="lazy"></div>
+            <div class="hl5-slide"><img src="/images/hl5/hl5-slide-04.png" alt="Estilo de Vida HL5" loading="lazy"></div>
+            <div class="hl5-slide"><img src="/images/hl5/hl5-slide-05.png" alt="Marca HL5" loading="lazy"></div>
+          </div>
+          <button class="hl5-slider-arrow prev" aria-label="Anterior">‹</button>
+          <button class="hl5-slider-arrow next" aria-label="Siguiente">›</button>
+        </div>
+        <div class="hl5-slider-dots">
+          <button class="hl5-slider-dot active" data-slide="0"></button>
+          <button class="hl5-slider-dot" data-slide="1"></button>
+          <button class="hl5-slider-dot" data-slide="2"></button>
+          <button class="hl5-slider-dot" data-slide="3"></button>
+          <button class="hl5-slider-dot" data-slide="4"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 9: CTA Mejorado -->
+    <div class="hl5-cta-enhanced">
+      <h2>Invierte en lo que tu Cuerpo Merece</h2>
+      <p class="lead">Belleza, salud y fuerza... Todos se nutren de la misma fuente. Apoya tu transformación holística con HL5 hoy.</p>
+      <div class="hl5-cta-features">
+        <span class="hl5-cta-feature">✦ Aprobado en 48 países</span>
+        <span class="hl5-cta-feature">✦ 30 sobres / paquete</span>
+        <span class="hl5-cta-feature">✦ Contenido transparente</span>
+        <span class="hl5-cta-feature">✦ Sabor natural de melocotón</span>
+        <span class="hl5-cta-feature">✦ Fórmula sin azúcar</span>
+      </div>
+      <div class="hl5-cta-buttons">
+        <a href="/quiz.html" class="hl5-btn-quiz">Comenzar con el Quiz</a>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="hl5-btn-buy">Comprar en el Sitio Oficial →</a>
+      </div>
+      <p class="hl5-cta-helper">¿No estás seguro de qué protocolo es adecuado para ti? Comienza con nuestro quiz de 2 minutos. Si has decidido, puedes obtenerlo en el sitio oficial de Amare.</p>
+    </div>
+
+    <!-- Sección 10: Blogs Relacionados -->
+    <div class="hl5-related-blogs">
+      <div class="hl5-related-inner">
+        <span class="label">Sigue Leyendo</span>
+        <h2>Contenido Relacionado</h2>
+        <div class="hl5-related-grid">
+          <a href="/blog-yaslanmak.html" class="hl5-blog-card">
+            <div class="hl5-blog-card-img" style="background:linear-gradient(135deg,#2e3d30,#1a3a2a)">⏳</div>
+            <div class="hl5-blog-card-body">
+              <span class="hl5-blog-card-cat">✦ Envejecimiento</span>
+              <h3 class="hl5-blog-card-title">La Ciencia del Envejecimiento Digno</h3>
+              <p class="hl5-blog-card-desc">Cómo afrontar el proceso de envejecimiento y la disminución de la producción de colágeno.</p>
+              <div class="hl5-blog-card-meta">⏱ ~5 min · Deniz KAT →</div>
+            </div>
+          </a>
+          <a href="/blog-hucresel-beslenme.html" class="hl5-blog-card">
+            <div class="hl5-blog-card-img" style="background:linear-gradient(135deg,#1a2419,#3d2a1a)">🧬</div>
+            <div class="hl5-blog-card-body">
+              <span class="hl5-blog-card-cat">✦ Nutrición Celular</span>
+              <h3 class="hl5-blog-card-title">¿Qué es la Nutrición Celular?</h3>
+              <p class="hl5-blog-card-desc">¿Cómo se satisfacen las verdaderas necesidades del cuerpo a nivel celular?</p>
+              <div class="hl5-blog-card-meta">⏱ ~6 min · Deniz KAT →</div>
+            </div>
+          </a>
+          <a href="/blog-saglikli-yasam.html" class="hl5-blog-card">
+            <div class="hl5-blog-card-img" style="background:linear-gradient(135deg,#2e3d30,#3d2a3a)">🌿</div>
+            <div class="hl5-blog-card-body">
+              <span class="hl5-blog-card-cat">✦ Vida Saludable</span>
+              <h3 class="hl5-blog-card-title">Fundamentos de la Vida Saludable</h3>
+              <p class="hl5-blog-card-desc">Un enfoque holístico para mantener el equilibrio en la vida moderna.</p>
+              <div class="hl5-blog-card-meta">⏱ ~5 min · Deniz KAT →</div>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -745,5 +1171,75 @@
   };
 })();
 </script>
+<script>
+(function(){
+  function initSlider(sliderId){
+    var slider = document.getElementById(sliderId);
+    if(!slider) return;
+    var track = slider.querySelector('.hl5-slider-track');
+    var slides = slider.querySelectorAll('.hl5-slide');
+    var prevBtn = slider.querySelector('.hl5-slider-arrow.prev');
+    var nextBtn = slider.querySelector('.hl5-slider-arrow.next');
+    var section = slider.closest('.hl5-slider-section');
+    var dots = section ? section.querySelectorAll('.hl5-slider-dot') : [];
+    var current = 0;
+    var total = slides.length;
+    var autoplayInterval = null;
+    
+    function goTo(idx){
+      if(idx < 0) idx = total - 1;
+      if(idx >= total) idx = 0;
+      current = idx;
+      track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+      dots.forEach(function(dot, i){
+        dot.classList.toggle('active', i === idx);
+      });
+    }
+    
+    function next(){ goTo(current + 1); }
+    function prev(){ goTo(current - 1); }
+    
+    function startAutoplay(){
+      stopAutoplay();
+      autoplayInterval = setInterval(next, 5000);
+    }
+    function stopAutoplay(){
+      if(autoplayInterval) clearInterval(autoplayInterval);
+    }
+    
+    if(prevBtn) prevBtn.addEventListener('click', function(){ prev(); startAutoplay(); });
+    if(nextBtn) nextBtn.addEventListener('click', function(){ next(); startAutoplay(); });
+    dots.forEach(function(dot, i){
+      dot.addEventListener('click', function(){ goTo(i); startAutoplay(); });
+    });
+    
+    // Touch/swipe support
+    var touchStartX = 0;
+    slider.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; });
+    slider.addEventListener('touchend', function(e){
+      var diff = touchStartX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 50){
+        if(diff > 0) next(); else prev();
+        startAutoplay();
+      }
+    });
+    
+    startAutoplay();
+  }
+  
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      initSlider('hl5-slider-tr');
+      initSlider('hl5-slider-en');
+      initSlider('hl5-slider-es');
+    });
+  } else {
+    initSlider('hl5-slider-tr');
+    initSlider('hl5-slider-en');
+    initSlider('hl5-slider-es');
+  }
+})();
+</script>
+
 </body>
 </html>
