@@ -1279,5 +1279,77 @@
 })();
 </script>
 
+<script>
+(function(){
+  // Header navigasyon çevirileri
+  var navTranslations = {
+    home:      { tr: 'Anasayfa',     en: 'Homepage',       es: 'Inicio' },
+    health:    { tr: 'Sağlık Üçgeni', en: 'Health Triangle', es: 'Triángulo de Salud' },
+    protocols: { tr: 'Çözümler',     en: 'Solutions',      es: 'Soluciones' },
+    mission:   { tr: 'Misyon',       en: 'The Mission',    es: 'La Misión' },
+    blog:      { tr: 'Blog',         en: 'Insights',       es: 'Reflexiones' },
+    faq:       { tr: 'SSS',          en: 'FAQ',            es: 'FAQ' },
+    contact:   { tr: 'İletişim',     en: 'Get in Touch',   es: 'Contacto' }
+  };
+  
+  function translateNav(lang){
+    if(!lang || !['tr','en','es'].includes(lang)) lang = 'tr';
+    
+    // Desktop nav (data-nav)
+    document.querySelectorAll('[data-nav]').forEach(function(el){
+      var key = el.getAttribute('data-nav');
+      if(navTranslations[key] && navTranslations[key][lang]){
+        el.textContent = navTranslations[key][lang];
+      }
+    });
+    
+    // Mobile nav (data-mnav)
+    document.querySelectorAll('[data-mnav]').forEach(function(el){
+      var key = el.getAttribute('data-mnav');
+      if(navTranslations[key] && navTranslations[key][lang]){
+        el.textContent = navTranslations[key][lang];
+      }
+    });
+    
+    // Mobile section (data-mnavs)
+    document.querySelectorAll('[data-mnavs]').forEach(function(el){
+      var key = el.getAttribute('data-mnavs');
+      if(navTranslations[key] && navTranslations[key][lang]){
+        el.textContent = navTranslations[key][lang];
+      }
+    });
+    
+    // Update active state on nav lang buttons
+    document.querySelectorAll('.vpdk-nav-lang').forEach(function(b){
+      var match = (b.getAttribute('onclick') || '').match(/'([a-z]+)'/);
+      if(match) b.classList.toggle('active', match[1] === lang);
+    });
+  }
+  
+  // Hook into vpNavLang
+  var _origVp = window.vpNavLang;
+  window.vpNavLang = function(lang, btn){
+    translateNav(lang);
+    try { localStorage.setItem('vpLang', lang); } catch(e){}
+    if(typeof _origVp === 'function'){
+      try { _origVp(lang, btn); } catch(e){}
+    }
+  };
+  
+  // Apply on page load
+  function init(){
+    var saved = 'tr';
+    try { saved = localStorage.getItem('vpLang') || 'tr'; } catch(e){}
+    translateNav(saved);
+  }
+  
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
 </body>
 </html>
