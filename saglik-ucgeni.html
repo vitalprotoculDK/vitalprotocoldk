@@ -1327,5 +1327,98 @@
 })();
 </script>
 
+<style>
+.vpdk-music-btn{
+  position:fixed;
+  top:12px;
+  left:12px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#2e3d30;
+  color:#d4af37;
+  border:2px solid #d4af37;
+  cursor:pointer;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  transition:all 0.3s;
+  font-family:sans-serif;
+}
+.vpdk-music-btn:hover{
+  transform:scale(1.1);
+  background:#d4af37;
+  color:#2e3d30;
+}
+.vpdk-music-btn.playing{
+  background:#d4af37;
+  color:#2e3d30;
+  animation:vpdk-pulse 2s infinite;
+}
+@keyframes vpdk-pulse{
+  0%,100%{box-shadow:0 4px 12px rgba(212,175,55,0.4)}
+  50%{box-shadow:0 4px 20px rgba(212,175,55,0.8)}
+}
+@media(max-width:600px){
+  .vpdk-music-btn{width:40px;height:40px;font-size:16px;top:8px;left:8px}
+}
+</style>
+
+<button class="vpdk-music-btn" id="vpdk-music-btn" aria-label="Müziği aç/kapat">🎵</button>
+<audio id="vpdk-music-audio" loop preload="none">
+  <source src="/background.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+(function(){
+  var btn = document.getElementById('vpdk-music-btn');
+  var audio = document.getElementById('vpdk-music-audio');
+  if(!btn || !audio) return;
+  
+  audio.volume = 0.4;
+  
+  // Kullanıcının önceki tercihini hatırla (sayfa geçişlerinde)
+  var wasPlaying = false;
+  try {
+    wasPlaying = localStorage.getItem('vpdkMusic') === 'on';
+  } catch(e){}
+  
+  function play(){
+    audio.play().then(function(){
+      btn.classList.add('playing');
+      btn.innerHTML = '🎵';
+      try { localStorage.setItem('vpdkMusic', 'on'); } catch(e){}
+    }).catch(function(){});
+  }
+  
+  function pause(){
+    audio.pause();
+    btn.classList.remove('playing');
+    btn.innerHTML = '🔇';
+    try { localStorage.setItem('vpdkMusic', 'off'); } catch(e){}
+  }
+  
+  // İlk durum
+  if(wasPlaying){
+    btn.innerHTML = '🎵';
+    // Tarayıcı politikası: autoplay engellenebilir, deneyelim
+    setTimeout(play, 100);
+  } else {
+    btn.innerHTML = '🔇';
+  }
+  
+  btn.addEventListener('click', function(){
+    if(audio.paused){
+      play();
+    } else {
+      pause();
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
