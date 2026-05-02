@@ -299,6 +299,91 @@
   gtag('js', new Date());
   gtag('config', 'G-RHV7YVRK18');
 </script>
+<style>
+/* ═══ EDGE - Bölüm 2: Çevremizde Gözlem ═══ */
+.edge-observation{background:#fafaf8;padding:80px 20px;text-align:center}
+.edge-obs-inner{max-width:780px;margin:0 auto}
+.edge-obs-tag{display:inline-block;background:#fff;color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;border:1px solid #e8e4dc}
+.edge-obs-inner h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:#2e3d30;margin-bottom:24px;line-height:1.2;letter-spacing:-1px}
+.edge-obs-inner p{font-size:17px;color:#444;line-height:1.8;margin-bottom:18px;text-align:left}
+.edge-obs-highlight{background:#fff;border-left:4px solid #d4af37;padding:20px 26px;border-radius:0 16px 16px 0;margin:28px 0;font-style:italic;color:#2e3d30;text-align:left}
+
+/* ═══ EDGE - Bölüm 7: Bilim & Araştırma ═══ */
+.edge-science{background:#fff;padding:80px 20px}
+.edge-sci-inner{max-width:1100px;margin:0 auto;text-align:center}
+.edge-sci-tag{display:inline-block;background:#f0ede6;color:#2e3d30;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.edge-sci-inner h2{font-size:clamp(28px,4vw,40px);font-weight:800;color:#2e3d30;margin-bottom:14px;letter-spacing:-1px}
+.edge-sci-sub{color:#666;font-size:16px;font-style:italic;margin-bottom:50px}
+.edge-sci-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
+.edge-sci-card{background:#fafaf8;border:1px solid #e8e4dc;border-radius:24px;padding:32px 28px;text-align:left;transition:all .3s}
+.edge-sci-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(46,61,48,.08);border-color:#d4af37}
+.edge-sci-icon{width:50px;height:50px;border-radius:14px;background:#fff7ed;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}
+.edge-sci-card h3{font-size:18px;font-weight:800;color:#2e3d30;margin-bottom:14px}
+.edge-sci-card p{font-size:14px;color:#666;line-height:1.7;margin-bottom:14px}
+.edge-sci-source{font-size:11px;color:#9a8c5e;font-style:italic;border-top:1px solid #e8e4dc;padding-top:10px;margin-top:10px}
+
+/* ═══ EDGE - Bölüm 8: Slider ═══ */
+.edge-slider-section{background:linear-gradient(135deg,#2e3d30 0%,#0f172a 100%);padding:80px 20px}
+.edge-sl-inner{max-width:1280px;margin:0 auto}
+.edge-sl-tag{display:inline-block;background:rgba(212,175,55,0.15);color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center}
+.edge-sl-center{text-align:center;margin-bottom:40px}
+.edge-sl-center h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:#fff;letter-spacing:-1px;margin-bottom:0}
+.edge-slider-wrap{position:relative;overflow:hidden;border-radius:24px;background:#000;aspect-ratio:16/9;max-width:1100px;margin:0 auto;box-shadow:0 24px 48px rgba(0,0,0,0.35)}
+.edge-slider-track{display:flex;width:100%;height:100%;transition:transform .6s ease-in-out}
+.edge-slide{flex:0 0 100%;width:100%;height:100%}
+.edge-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.edge-slider-dots{display:flex;justify-content:center;gap:10px;margin-top:24px}
+.edge-slider-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.25);border:none;cursor:pointer;transition:all .3s;padding:0}
+.edge-slider-dot.active{background:#d4af37;transform:scale(1.3)}
+.edge-slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);color:#fff;width:42px;height:42px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s;z-index:5;font-size:18px;font-weight:700}
+.edge-slider-arrow:hover{background:rgba(212,175,55,.85)}
+.edge-slider-arrow.prev{left:16px}
+.edge-slider-arrow.next{right:16px}
+
+/* ═══ EDGE - Bölüm 9: Geliştirilmiş CTA ═══ */
+.edge-cta-enhanced{background:linear-gradient(135deg,#fff 0%,#fafaf8 100%);padding:80px 20px;text-align:center;border-top:1px solid #e8e4dc}
+.edge-cta-inner{max-width:780px;margin:0 auto}
+.edge-cta-enhanced h2{font-size:clamp(28px,4vw,40px);font-weight:800;color:#2e3d30;margin-bottom:14px;letter-spacing:-1px}
+.edge-cta-lead{font-size:17px;color:#555;line-height:1.7;margin-bottom:30px}
+.edge-cta-features{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:24px auto 32px;max-width:700px}
+.edge-cta-feat{background:#fff;border:1px solid #e8e4dc;border-radius:50px;padding:8px 16px;font-size:12px;color:#2e3d30;font-weight:700;letter-spacing:.3px}
+.edge-cta-buttons{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:8px}
+.edge-btn-quiz{display:inline-block;background:transparent;color:#2e3d30;padding:16px 32px;font-size:14px;font-weight:800;letter-spacing:.5px;text-decoration:none;border:2px solid #2e3d30;border-radius:50px;transition:all .3s;text-transform:uppercase}
+.edge-btn-quiz:hover{background:#2e3d30;color:#fff}
+.edge-btn-buy{display:inline-block;background:#d4af37;color:#1a1a1a;padding:16px 32px;font-size:14px;font-weight:800;letter-spacing:.5px;text-decoration:none;border:2px solid #d4af37;border-radius:50px;transition:all .3s;text-transform:uppercase}
+.edge-btn-buy:hover{background:#c49b2a;border-color:#c49b2a;transform:translateY(-2px)}
+.edge-cta-helper{margin-top:24px;font-size:13px;color:#666;font-style:italic;max-width:540px;margin-left:auto;margin-right:auto}
+
+/* ═══ EDGE - Bölüm 10: İlgili Bloglar ═══ */
+.edge-related{background:#fafaf8;padding:80px 20px;border-top:1px solid #e8e4dc}
+.edge-rel-inner{max-width:1100px;margin:0 auto}
+.edge-rel-tag{display:inline-block;background:#fff;color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center;border:1px solid #e8e4dc}
+.edge-rel-center{text-align:center;margin-bottom:40px}
+.edge-rel-center h2{font-size:clamp(26px,4vw,36px);font-weight:800;color:#2e3d30;letter-spacing:-1px}
+.edge-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.edge-rel-card{background:#fff;border:1px solid #e8e4dc;border-radius:24px;overflow:hidden;text-decoration:none;color:inherit;transition:all .3s;display:flex;flex-direction:column}
+.edge-rel-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08);border-color:#d4af37}
+.edge-rel-img{height:150px;display:flex;align-items:center;justify-content:center;font-size:44px}
+.edge-rel-body{padding:24px}
+.edge-rel-cat{font-size:10px;letter-spacing:1.5px;color:#d4af37;text-transform:uppercase;font-weight:700;margin-bottom:10px;display:block}
+.edge-rel-title{font-size:18px;font-weight:800;color:#2e3d30;margin-bottom:10px;line-height:1.3}
+.edge-rel-desc{font-size:13px;color:#666;line-height:1.6;margin-bottom:14px}
+.edge-rel-meta{font-size:11px;color:#9a8c5e;font-style:italic;font-weight:700}
+
+@media(max-width:900px){
+  .edge-observation,.edge-science,.edge-slider-section,.edge-cta-enhanced,.edge-related{padding:60px 16px}
+  .edge-sci-grid,.edge-rel-grid{grid-template-columns:1fr}
+  .edge-cta-buttons{flex-direction:column;align-items:stretch}
+  .edge-btn-quiz,.edge-btn-buy{width:100%}
+  .edge-slider-arrow{width:36px;height:36px}
+}
+
+</style>
+<style>
+/* CSS-only safety net for language switching */
+.edge-lang:not(.active){display:none!important}
+.edge-lang.active{display:block!important}
+</style>
 </head>
 <body>
 <nav class="vpdk-nav-global">
@@ -496,6 +581,134 @@
     <p class="footer-note">30 Stick | Doğal Bazlı | Günlük Kullanım</p>
   </div>
 
+  <!-- Bölüm 2: Çevremizde Gözlem -->
+  <div class="edge-observation">
+    <div class="edge-obs-inner">
+      <span class="edge-obs-tag">Çevremizde Gözlem</span>
+      <h2>Motivasyon Bir Hata Değil, Bir İhtiyaç</h2>
+      <p>Modern yaşamda en sık duyulan cümlelerden biri "motivasyonum yok" oldu. Sabah uyanırken, önemli bir toplantıdan önce, antrenman saatinde... Çoğu zaman bunu kendi suçumuz gibi algılıyoruz, sanki yeterince çabalamıyormuşuz gibi.</p>
+      <p>Aslında durum çoğu zaman daha basit: vücudun enerji üretim sisteminde bir adım eksiktir. Yetersiz B5 vitamini, doğal polifenollerin azlığı, yorucu günlerin biriktirdiği oksidatif stres — bunların hepsi motivasyon hissini etkileyebilen biyolojik faktörler.</p>
+      <div class="edge-obs-highlight">
+        Motivasyon sadece "isteme gücü" değil — vücudun normal enerji oluşum metabolizmasının bir yansımasıdır. Bu sistem desteklendiğinde, "isteme" kısmı çok daha doğal bir hâle gelir.
+      </div>
+      <p>EDGE tam burada devreye giriyor — <strong>3 patentli bitki ekstresi</strong> (Mango Yaprağı, Mangostana, Palmiye Meyvesi) ve <strong>B5 Vitamini</strong> sinerjisiyle, "aradığın motivasyon" mesajını biyolojik bir temele oturtuyor.</p>
+    </div>
+  </div>
+
+  <!-- Bölüm 7: Bilim & Araştırma -->
+  <div class="edge-science">
+    <div class="edge-sci-inner">
+      <span class="edge-sci-tag">Bilim & Araştırma</span>
+      <h2>EDGE Formülünün Bilimsel Temeli</h2>
+      <p class="edge-sci-sub">B5 Vitamini'nin EFSA onaylı 3 sağlık beyanı + 3 patentli bitki ekstresi</p>
+      <div class="edge-sci-grid">
+        <div class="edge-sci-card">
+          <div class="edge-sci-icon">⚡</div>
+          <h3>B5 Vitamini & Enerji</h3>
+          <p>B5 Vitamini (Pantotenik asit), normal enerji oluşum metabolizmasına ve yorgunluk ile bitkinliğin azalmasına katkıda bulunur. Ayrıca steroid hormonlarının ve bazı sinir ileticilerinin normal sentezi için gereklidir.</p>
+          <p class="edge-sci-source">EFSA onaylı 3 sağlık beyanı</p>
+        </div>
+        <div class="edge-sci-card">
+          <div class="edge-sci-icon">🌿</div>
+          <h3>3 Patentli Bitki Ekstresi</h3>
+          <p>Mango Yaprağı (Zynamite®), Mangostana ve Palmiye Meyvesi (PFBc®) — antioksidan özellikleriyle bilinen bileşenler. Bu üçlü, beslenme bilimleri literatüründe sinerjik etki üzerine atıf alan formül yaklaşımlarından biridir.</p>
+        </div>
+        <div class="edge-sci-card">
+          <div class="edge-sci-icon">🥭</div>
+          <h3>Mango Yaprağı (Zynamite®)</h3>
+          <p>Mango yaprağı ekstresi, terpenoidler ve polifenoller açısından zengin bir bileşendir. Antioksidan özellikleri ve hücreleri serbest radikallerden koruyan içeriğiyle, beslenme literatüründe öne çıkan ekstraktlardan biridir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölüm 8: Slider -->
+  <div class="edge-slider-section">
+    <div class="edge-sl-inner">
+      <div class="edge-sl-center">
+        <span class="edge-sl-tag">Yaşamın İçinde</span>
+        <h2>EDGE Günlük Hayatta</h2>
+      </div>
+      <div class="edge-slider-wrap" id="edge-slider-tr">
+        <div class="edge-slider-track">
+          <div class="edge-slide"><img src="/images/edge/edge-slide-01.png" alt="EDGE Sabah Motivasyonu" loading="lazy"></div>
+          <div class="edge-slide"><img src="/images/edge/edge-slide-02.png" alt="EDGE Egzersiz" loading="lazy"></div>
+          <div class="edge-slide"><img src="/images/edge/edge-slide-03.png" alt="EDGE Mango Karpuz" loading="lazy"></div>
+          <div class="edge-slide"><img src="/images/edge/edge-slide-04.png" alt="EDGE Yoğun Çalışma" loading="lazy"></div>
+          <div class="edge-slide"><img src="/images/edge/edge-slide-05.png" alt="EDGE Marka" loading="lazy"></div>
+        </div>
+        <button class="edge-slider-arrow prev" aria-label="Önceki">‹</button>
+        <button class="edge-slider-arrow next" aria-label="Sonraki">›</button>
+      </div>
+      <div class="edge-slider-dots">
+        <button class="edge-slider-dot active" data-slide="0"></button>
+        <button class="edge-slider-dot" data-slide="1"></button>
+        <button class="edge-slider-dot" data-slide="2"></button>
+        <button class="edge-slider-dot" data-slide="3"></button>
+        <button class="edge-slider-dot" data-slide="4"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölüm 9: Geliştirilmiş CTA -->
+  <div class="edge-cta-enhanced">
+    <div class="edge-cta-inner">
+      <h2>Aradığın Motivasyona Doğal Bir Yaklaşım</h2>
+      <p class="edge-cta-lead">3 patentli bitki ekstresi + B5 Vitamini. Karpuz ve mango aromasıyla, kafeinsiz ve doğal bazlı bir destek. Yoğun günlerin yanında.</p>
+      <div class="edge-cta-features">
+        <span class="edge-cta-feat">✦ 3 Patentli İçerik</span>
+        <span class="edge-cta-feat">✦ Kafeinsiz</span>
+        <span class="edge-cta-feat">✦ %100 Vegan</span>
+        <span class="edge-cta-feat">✦ 0 Kalori</span>
+        <span class="edge-cta-feat">✦ Karpuz & Mango</span>
+      </div>
+      <div class="edge-cta-buttons">
+        <a href="/quiz.html" class="edge-btn-quiz">Önce Quizi Tamamla</a>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-buy">EDGE Satın Al →</a>
+      </div>
+      <p class="edge-cta-helper">Hangi protokolün size uygun olduğundan emin değil misiniz? 2 dakikalık quizimizle başlayın. Karar verdiyseniz Amare resmi sitesinden temin edebilirsiniz.</p>
+    </div>
+  </div>
+
+  <!-- Bölüm 10: İlgili Bloglar -->
+  <div class="edge-related">
+    <div class="edge-rel-inner">
+      <div class="edge-rel-center">
+        <span class="edge-rel-tag">Devamını Okuyun</span>
+        <h2>EDGE ile İlgili İçeriklerimiz</h2>
+      </div>
+      <div class="edge-rel-grid">
+        <a href="/blog-kortizol.html" class="edge-rel-card">
+          <div class="edge-rel-img" style="background:linear-gradient(135deg,#2e3d30,#3d2a3a)">⚖️</div>
+          <div class="edge-rel-body">
+            <span class="edge-rel-cat">✦ Hormonal Denge</span>
+            <h3 class="edge-rel-title">Kortizol ve Yorgunluk</h3>
+            <p class="edge-rel-desc">Stres hormonu nasıl enerji ve motivasyon seviyenizi etkiler?</p>
+            <div class="edge-rel-meta">⏱ ~5 dk · Deniz KAT →</div>
+          </div>
+        </a>
+        <a href="/blog-beyin-sisi.html" class="edge-rel-card">
+          <div class="edge-rel-img" style="background:linear-gradient(135deg,#1a3a4a,#1a3d4a)">🧠</div>
+          <div class="edge-rel-body">
+            <span class="edge-rel-cat">✦ Beyin Sağlığı</span>
+            <h3 class="edge-rel-title">Beyin Sisi ve Berraklık</h3>
+            <p class="edge-rel-desc">Mental keskinliği ve odaklanmayı geri kazanmak için bilimsel yaklaşım.</p>
+            <div class="edge-rel-meta">⏱ ~6 dk · Deniz KAT →</div>
+          </div>
+        </a>
+        <a href="/blog-saglikli-yasam.html" class="edge-rel-card">
+          <div class="edge-rel-img" style="background:linear-gradient(135deg,#fff7ed,#fed7aa)">🌿</div>
+          <div class="edge-rel-body">
+            <span class="edge-rel-cat">✦ Sağlıklı Yaşam</span>
+            <h3 class="edge-rel-title">Sağlıklı Yaşamın Temelleri</h3>
+            <p class="edge-rel-desc">Modern hayatta dengeli ve motivasyonlu kalmak için bütünsel yaklaşım.</p>
+            <div class="edge-rel-meta">⏱ ~5 dk · Deniz KAT →</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- ══════════ ENGLISH ══════════ -->
@@ -573,6 +786,134 @@
     <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Expand your mental boundaries and discover motivation in its purest form. Take your cognitive performance to the next level with EDGE and start every day with full focus."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-dark">GET IT FROM THE OFFICIAL SITE</a>
     <p class="footer-note">30 Sticks | Natural-Based | Daily Use</p>
+  </div>
+
+  <!-- Section 2: Common Observation -->
+  <div class="edge-observation">
+    <div class="edge-obs-inner">
+      <span class="edge-obs-tag">Common Observation</span>
+      <h2>Motivation Isn't a Failure — It's a Need</h2>
+      <p>"I have no motivation" has become one of the most common phrases in modern life. When waking up in the morning, before an important meeting, at workout time... We often perceive this as our own fault, as if we're not trying hard enough.</p>
+      <p>The reality is often simpler: there's a missing step in the body's energy production system. Insufficient B5 vitamin, low natural polyphenols, the oxidative stress accumulated from exhausting days — these are all biological factors that can affect the feeling of motivation.</p>
+      <div class="edge-obs-highlight">
+        Motivation isn't just "willpower" — it's a reflection of the body's normal energy-yielding metabolism. When this system is supported, the "wanting to" part becomes much more natural.
+      </div>
+      <p>EDGE steps in here — with the synergy of <strong>3 patented plant extracts</strong> (Mango Leaf, Mangosteen, Palm Fruit) and <strong>Vitamin B5</strong>, it grounds the "motivation you're seeking" message in a biological foundation.</p>
+    </div>
+  </div>
+
+  <!-- Section 7: Science & Research -->
+  <div class="edge-science">
+    <div class="edge-sci-inner">
+      <span class="edge-sci-tag">Science & Research</span>
+      <h2>The Scientific Foundation of EDGE</h2>
+      <p class="edge-sci-sub">Vitamin B5's 3 EFSA-approved health claims + 3 patented plant extracts</p>
+      <div class="edge-sci-grid">
+        <div class="edge-sci-card">
+          <div class="edge-sci-icon">⚡</div>
+          <h3>Vitamin B5 & Energy</h3>
+          <p>Vitamin B5 (Pantothenic acid) contributes to normal energy-yielding metabolism and to the reduction of tiredness and fatigue. It is also necessary for the normal synthesis of steroid hormones and some neurotransmitters.</p>
+          <p class="edge-sci-source">3 EFSA-approved health claims</p>
+        </div>
+        <div class="edge-sci-card">
+          <div class="edge-sci-icon">🌿</div>
+          <h3>3 Patented Plant Extracts</h3>
+          <p>Mango Leaf (Zynamite®), Mangosteen and Palm Fruit (PFBc®) — components known for their antioxidant properties. This trio is one of the formula approaches frequently referenced in nutritional science literature for its synergistic effect.</p>
+        </div>
+        <div class="edge-sci-card">
+          <div class="edge-sci-icon">🥭</div>
+          <h3>Mango Leaf (Zynamite®)</h3>
+          <p>Mango leaf extract is a component rich in terpenoids and polyphenols. With its antioxidant properties and content that protects cells from free radicals, it stands out as one of the prominent extracts in nutritional literature.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 8: Slider -->
+  <div class="edge-slider-section">
+    <div class="edge-sl-inner">
+      <div class="edge-sl-center">
+        <span class="edge-sl-tag">In Daily Life</span>
+        <h2>EDGE in Daily Life</h2>
+      </div>
+      <div class="edge-slider-wrap" id="edge-slider-en">
+        <div class="edge-slider-track">
+          <div class="edge-slide"><img src="/images/edge/edge-slide-01.png" alt="EDGE Morning Motivation" loading="lazy"></div>
+          <div class="edge-slide"><img src="/images/edge/edge-slide-02.png" alt="EDGE Workout" loading="lazy"></div>
+          <div class="edge-slide"><img src="/images/edge/edge-slide-03.png" alt="EDGE Mango Watermelon" loading="lazy"></div>
+          <div class="edge-slide"><img src="/images/edge/edge-slide-04.png" alt="EDGE Busy Day" loading="lazy"></div>
+          <div class="edge-slide"><img src="/images/edge/edge-slide-05.png" alt="EDGE Brand" loading="lazy"></div>
+        </div>
+        <button class="edge-slider-arrow prev" aria-label="Previous">‹</button>
+        <button class="edge-slider-arrow next" aria-label="Next">›</button>
+      </div>
+      <div class="edge-slider-dots">
+        <button class="edge-slider-dot active" data-slide="0"></button>
+        <button class="edge-slider-dot" data-slide="1"></button>
+        <button class="edge-slider-dot" data-slide="2"></button>
+        <button class="edge-slider-dot" data-slide="3"></button>
+        <button class="edge-slider-dot" data-slide="4"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 9: Enhanced CTA -->
+  <div class="edge-cta-enhanced">
+    <div class="edge-cta-inner">
+      <h2>A Natural Approach to the Motivation You Seek</h2>
+      <p class="edge-cta-lead">3 patented plant extracts + Vitamin B5. With watermelon and mango flavour, a caffeine-free and natural-based support. Alongside intense days.</p>
+      <div class="edge-cta-features">
+        <span class="edge-cta-feat">✦ 3 Patented Ingredients</span>
+        <span class="edge-cta-feat">✦ Caffeine-Free</span>
+        <span class="edge-cta-feat">✦ 100% Vegan</span>
+        <span class="edge-cta-feat">✦ 0 Calories</span>
+        <span class="edge-cta-feat">✦ Watermelon & Mango</span>
+      </div>
+      <div class="edge-cta-buttons">
+        <a href="/quiz.html" class="edge-btn-quiz">Start with the Quiz</a>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-buy">Buy EDGE →</a>
+      </div>
+      <p class="edge-cta-helper">Not sure which protocol is right for you? Start with our 2-minute quiz. If you've decided, you can get it from the official Amare site.</p>
+    </div>
+  </div>
+
+  <!-- Section 10: Related Blogs -->
+  <div class="edge-related">
+    <div class="edge-rel-inner">
+      <div class="edge-rel-center">
+        <span class="edge-rel-tag">Read More</span>
+        <h2>Related Content</h2>
+      </div>
+      <div class="edge-rel-grid">
+        <a href="/blog-kortizol.html" class="edge-rel-card">
+          <div class="edge-rel-img" style="background:linear-gradient(135deg,#2e3d30,#3d2a3a)">⚖️</div>
+          <div class="edge-rel-body">
+            <span class="edge-rel-cat">✦ Hormonal Balance</span>
+            <h3 class="edge-rel-title">Cortisol and Fatigue</h3>
+            <p class="edge-rel-desc">How the stress hormone affects your energy and motivation levels.</p>
+            <div class="edge-rel-meta">⏱ ~5 min · Deniz KAT →</div>
+          </div>
+        </a>
+        <a href="/blog-beyin-sisi.html" class="edge-rel-card">
+          <div class="edge-rel-img" style="background:linear-gradient(135deg,#1a3a4a,#1a3d4a)">🧠</div>
+          <div class="edge-rel-body">
+            <span class="edge-rel-cat">✦ Brain Health</span>
+            <h3 class="edge-rel-title">Brain Fog and Clarity</h3>
+            <p class="edge-rel-desc">A scientific approach to regaining mental sharpness and focus.</p>
+            <div class="edge-rel-meta">⏱ ~6 min · Deniz KAT →</div>
+          </div>
+        </a>
+        <a href="/blog-saglikli-yasam.html" class="edge-rel-card">
+          <div class="edge-rel-img" style="background:linear-gradient(135deg,#fff7ed,#fed7aa)">🌿</div>
+          <div class="edge-rel-body">
+            <span class="edge-rel-cat">✦ Healthy Living</span>
+            <h3 class="edge-rel-title">Foundations of Healthy Living</h3>
+            <p class="edge-rel-desc">A holistic approach to staying balanced and motivated in modern life.</p>
+            <div class="edge-rel-meta">⏱ ~5 min · Deniz KAT →</div>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
 
 </div>
@@ -654,6 +995,134 @@
     <p class="footer-note">30 Sticks | Base Natural | Uso Diario</p>
   </div>
 
+  <!-- Sección 2: Observación Común -->
+  <div class="edge-observation">
+    <div class="edge-obs-inner">
+      <span class="edge-obs-tag">Observación Común</span>
+      <h2>La Motivación No Es un Fallo — Es una Necesidad</h2>
+      <p>"No tengo motivación" se ha convertido en una de las frases más comunes en la vida moderna. Al despertar por la mañana, antes de una reunión importante, en el momento del entrenamiento... A menudo lo percibimos como nuestra propia culpa, como si no nos esforzáramos lo suficiente.</p>
+      <p>La realidad suele ser más simple: hay un paso faltante en el sistema de producción de energía del cuerpo. Vitamina B5 insuficiente, polifenoles naturales bajos, el estrés oxidativo acumulado de los días agotadores — todos estos son factores biológicos que pueden afectar la sensación de motivación.</p>
+      <div class="edge-obs-highlight">
+        La motivación no es solo "fuerza de voluntad" — es un reflejo del metabolismo energético normal del cuerpo. Cuando este sistema se apoya, la parte de "querer hacer" se vuelve mucho más natural.
+      </div>
+      <p>Aquí entra EDGE — con la sinergia de <strong>3 extractos vegetales patentados</strong> (Hoja de Mango, Mangostán, Fruta de Palma) y <strong>Vitamina B5</strong>, fundamenta el mensaje de "la motivación que buscas" sobre una base biológica.</p>
+    </div>
+  </div>
+
+  <!-- Sección 7: Ciencia & Investigación -->
+  <div class="edge-science">
+    <div class="edge-sci-inner">
+      <span class="edge-sci-tag">Ciencia & Investigación</span>
+      <h2>La Base Científica de EDGE</h2>
+      <p class="edge-sci-sub">3 declaraciones de salud aprobadas por EFSA de la Vitamina B5 + 3 extractos vegetales patentados</p>
+      <div class="edge-sci-grid">
+        <div class="edge-sci-card">
+          <div class="edge-sci-icon">⚡</div>
+          <h3>Vitamina B5 & Energía</h3>
+          <p>La Vitamina B5 (Ácido pantoténico) contribuye al metabolismo energético normal y a la reducción del cansancio y la fatiga. También es necesaria para la síntesis normal de hormonas esteroides y algunos neurotransmisores.</p>
+          <p class="edge-sci-source">3 declaraciones de salud aprobadas por EFSA</p>
+        </div>
+        <div class="edge-sci-card">
+          <div class="edge-sci-icon">🌿</div>
+          <h3>3 Extractos Vegetales Patentados</h3>
+          <p>Hoja de Mango (Zynamite®), Mangostán y Fruta de Palma (PFBc®) — componentes conocidos por sus propiedades antioxidantes. Este trío es uno de los enfoques de fórmula frecuentemente referenciados en la literatura de las ciencias nutricionales por su efecto sinérgico.</p>
+        </div>
+        <div class="edge-sci-card">
+          <div class="edge-sci-icon">🥭</div>
+          <h3>Hoja de Mango (Zynamite®)</h3>
+          <p>El extracto de hoja de mango es un componente rico en terpenoides y polifenoles. Con sus propiedades antioxidantes y contenido que protege las células de los radicales libres, destaca como uno de los extractos prominentes en la literatura nutricional.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección 8: Slider -->
+  <div class="edge-slider-section">
+    <div class="edge-sl-inner">
+      <div class="edge-sl-center">
+        <span class="edge-sl-tag">En la Vida Diaria</span>
+        <h2>EDGE en la Vida Diaria</h2>
+      </div>
+      <div class="edge-slider-wrap" id="edge-slider-es">
+        <div class="edge-slider-track">
+          <div class="edge-slide"><img src="/images/edge/edge-slide-01.png" alt="EDGE Motivación Mañana" loading="lazy"></div>
+          <div class="edge-slide"><img src="/images/edge/edge-slide-02.png" alt="EDGE Entrenamiento" loading="lazy"></div>
+          <div class="edge-slide"><img src="/images/edge/edge-slide-03.png" alt="EDGE Mango Sandía" loading="lazy"></div>
+          <div class="edge-slide"><img src="/images/edge/edge-slide-04.png" alt="EDGE Día Ocupado" loading="lazy"></div>
+          <div class="edge-slide"><img src="/images/edge/edge-slide-05.png" alt="EDGE Marca" loading="lazy"></div>
+        </div>
+        <button class="edge-slider-arrow prev" aria-label="Anterior">‹</button>
+        <button class="edge-slider-arrow next" aria-label="Siguiente">›</button>
+      </div>
+      <div class="edge-slider-dots">
+        <button class="edge-slider-dot active" data-slide="0"></button>
+        <button class="edge-slider-dot" data-slide="1"></button>
+        <button class="edge-slider-dot" data-slide="2"></button>
+        <button class="edge-slider-dot" data-slide="3"></button>
+        <button class="edge-slider-dot" data-slide="4"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección 9: CTA Mejorado -->
+  <div class="edge-cta-enhanced">
+    <div class="edge-cta-inner">
+      <h2>Un Enfoque Natural para la Motivación que Buscas</h2>
+      <p class="edge-cta-lead">3 extractos vegetales patentados + Vitamina B5. Con sabor a sandía y mango, un apoyo sin cafeína y de base natural. Junto a los días intensos.</p>
+      <div class="edge-cta-features">
+        <span class="edge-cta-feat">✦ 3 Ingredientes Patentados</span>
+        <span class="edge-cta-feat">✦ Sin Cafeína</span>
+        <span class="edge-cta-feat">✦ 100% Vegano</span>
+        <span class="edge-cta-feat">✦ 0 Calorías</span>
+        <span class="edge-cta-feat">✦ Sandía & Mango</span>
+      </div>
+      <div class="edge-cta-buttons">
+        <a href="/quiz.html" class="edge-btn-quiz">Comenzar con el Quiz</a>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-buy">Comprar EDGE →</a>
+      </div>
+      <p class="edge-cta-helper">¿No estás seguro de qué protocolo es adecuado para ti? Comienza con nuestro quiz de 2 minutos. Si has decidido, puedes obtenerlo en el sitio oficial de Amare.</p>
+    </div>
+  </div>
+
+  <!-- Sección 10: Blogs Relacionados -->
+  <div class="edge-related">
+    <div class="edge-rel-inner">
+      <div class="edge-rel-center">
+        <span class="edge-rel-tag">Sigue Leyendo</span>
+        <h2>Contenido Relacionado</h2>
+      </div>
+      <div class="edge-rel-grid">
+        <a href="/blog-kortizol.html" class="edge-rel-card">
+          <div class="edge-rel-img" style="background:linear-gradient(135deg,#2e3d30,#3d2a3a)">⚖️</div>
+          <div class="edge-rel-body">
+            <span class="edge-rel-cat">✦ Equilibrio Hormonal</span>
+            <h3 class="edge-rel-title">Cortisol y Fatiga</h3>
+            <p class="edge-rel-desc">Cómo la hormona del estrés afecta tus niveles de energía y motivación.</p>
+            <div class="edge-rel-meta">⏱ ~5 min · Deniz KAT →</div>
+          </div>
+        </a>
+        <a href="/blog-beyin-sisi.html" class="edge-rel-card">
+          <div class="edge-rel-img" style="background:linear-gradient(135deg,#1a3a4a,#1a3d4a)">🧠</div>
+          <div class="edge-rel-body">
+            <span class="edge-rel-cat">✦ Salud Cerebral</span>
+            <h3 class="edge-rel-title">Niebla Mental y Claridad</h3>
+            <p class="edge-rel-desc">Un enfoque científico para recuperar la agudeza mental y el enfoque.</p>
+            <div class="edge-rel-meta">⏱ ~6 min · Deniz KAT →</div>
+          </div>
+        </a>
+        <a href="/blog-saglikli-yasam.html" class="edge-rel-card">
+          <div class="edge-rel-img" style="background:linear-gradient(135deg,#fff7ed,#fed7aa)">🌿</div>
+          <div class="edge-rel-body">
+            <span class="edge-rel-cat">✦ Vida Saludable</span>
+            <h3 class="edge-rel-title">Fundamentos de la Vida Saludable</h3>
+            <p class="edge-rel-desc">Un enfoque holístico para mantenerse equilibrado y motivado en la vida moderna.</p>
+            <div class="edge-rel-meta">⏱ ~5 min · Deniz KAT →</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 </div>
@@ -716,5 +1185,75 @@
   };
 })();
 </script>
+<script>
+(function(){
+  function initEdgeSlider(sliderId){
+    var slider = document.getElementById(sliderId);
+    if(!slider) return;
+    var track = slider.querySelector('.edge-slider-track');
+    var slides = slider.querySelectorAll('.edge-slide');
+    var prevBtn = slider.querySelector('.edge-slider-arrow.prev');
+    var nextBtn = slider.querySelector('.edge-slider-arrow.next');
+    var section = slider.closest('.edge-slider-section');
+    var dots = section ? section.querySelectorAll('.edge-slider-dot') : [];
+    var current = 0;
+    var total = slides.length;
+    var autoplayInterval = null;
+    
+    function goTo(idx){
+      if(idx < 0) idx = total - 1;
+      if(idx >= total) idx = 0;
+      current = idx;
+      track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+      dots.forEach(function(dot, i){
+        dot.classList.toggle('active', i === idx);
+      });
+    }
+    
+    function next(){ goTo(current + 1); }
+    function prev(){ goTo(current - 1); }
+    
+    function startAutoplay(){
+      stopAutoplay();
+      autoplayInterval = setInterval(next, 5000);
+    }
+    function stopAutoplay(){
+      if(autoplayInterval) clearInterval(autoplayInterval);
+    }
+    
+    if(prevBtn) prevBtn.addEventListener('click', function(){ prev(); startAutoplay(); });
+    if(nextBtn) nextBtn.addEventListener('click', function(){ next(); startAutoplay(); });
+    dots.forEach(function(dot, i){
+      dot.addEventListener('click', function(){ goTo(i); startAutoplay(); });
+    });
+    
+    // Touch/swipe support
+    var touchStartX = 0;
+    slider.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
+    slider.addEventListener('touchend', function(e){
+      var diff = touchStartX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 50){
+        if(diff > 0) next(); else prev();
+        startAutoplay();
+      }
+    });
+    
+    startAutoplay();
+  }
+  
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      initEdgeSlider('edge-slider-tr');
+      initEdgeSlider('edge-slider-en');
+      initEdgeSlider('edge-slider-es');
+    });
+  } else {
+    initEdgeSlider('edge-slider-tr');
+    initEdgeSlider('edge-slider-en');
+    initEdgeSlider('edge-slider-es');
+  }
+})();
+</script>
+
 </body>
 </html>
