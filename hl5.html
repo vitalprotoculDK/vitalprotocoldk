@@ -306,35 +306,58 @@
       var el = document.getElementById(id);
       if(el) el.style.display = id === 'hl5-'+l ? 'block' : 'none';
     });
-    // vpNavLang zinciri
-    if(window._hl5OrigVpNav) window._hl5OrigVpNav(l, btn);
   }
   window.hl5Lang = hl5Lang;
 
-  // Sayfa yüklenince uygula
-  var saved = localStorage.getItem('vpLang') || 'tr';
-  document.addEventListener('DOMContentLoaded', function(){
-    // Section'lar
+  // Page load handler - DOĞRU SIRA
+  function applyLanguage(lang){
+    // 1. Update sections
     ['hl5-tr','hl5-en','hl5-es'].forEach(function(id){
       var el = document.getElementById(id);
-      if(el) el.style.display = id === 'hl5-'+saved ? 'block' : 'none';
+      if(el) el.style.setProperty('display', id === 'hl5-'+lang ? 'block' : 'none', 'important');
     });
-    // Buton aktif
-    document.querySelectorAll('.hl5-lang-btn').forEach(function(b){
-      var lang = b.getAttribute('onclick').match(/'([a-z]+)'/)[1];
-      b.classList.toggle('active', lang === saved);
+    // 2. Update header nav buttons (TR/EN/ES at top)
+    document.querySelectorAll('.vpdk-nav-lang').forEach(function(b){
+      var btnLang = (b.getAttribute('onclick') || '').match(/'([a-z]+)'/);
+      if(btnLang) b.classList.toggle('active', btnLang[1] === lang);
     });
-  });
-
-  // vpNavLang hook
-  window._hl5OrigVpNav = window.vpNavLang;
-  window.vpNavLang = function(l, btn){
-    if(window._hl5OrigVpNav) window._hl5OrigVpNav(l, btn);
-    ['hl5-tr','hl5-en','hl5-es'].forEach(function(id){
-      var el = document.getElementById(id);
-      if(el) el.style.display = id === 'hl5-'+l ? 'block' : 'none';
+    // 3. Save preference
+    try { localStorage.setItem('vpLang', lang); } catch(e){}
+    // 4. Call ORIGINAL vpNavLang to update header titles (Anasayfa→Homepage etc.)
+    if(typeof window._origNavLang === 'function'){
+      try { window._origNavLang(lang); } catch(e){}
+    }
+  }
+  
+  // CAPTURE original vpNavLang AFTER page load (when it's actually defined)
+  function captureAndOverride(){
+    if(window.vpNavLang && !window._origNavLang){
+      window._origNavLang = window.vpNavLang;
+      window.vpNavLang = function(lang, btn){
+        applyLanguage(lang);
+      };
+    }
+    // Apply saved language
+    var saved = 'tr';
+    try { saved = localStorage.getItem('vpLang') || 'tr'; } catch(e){}
+    applyLanguage(saved);
+    // Direct binding to nav buttons (extra safety)
+    document.querySelectorAll('.vpdk-nav-lang').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        var match = (btn.getAttribute('onclick') || '').match(/'([a-z]+)'/);
+        if(match) applyLanguage(match[1]);
+      });
     });
-  };
+  }
+  
+  // Run when DOM ready, with small delay so other scripts register first
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      setTimeout(captureAndOverride, 50);
+    });
+  } else {
+    setTimeout(captureAndOverride, 50);
+  }
 })();
 </script>
 <style>
@@ -470,8 +493,8 @@
 .hl5-root *{box-sizing:border-box;font-family:inherit}
 
 /* DİL ÇUBUĞU */
-.hl5-lang-bar{display:flex!important;justify-content:flex-end;gap:8px;padding:16px 20px}
-.hl5-lang-btn{padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;border-radius:20px;cursor:pointer;border:1px solid #d6ddd7;background:transparent;color:#6b7280;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
+.hl5-lang-bar{display:none!important}
+.hl5-lang-btn{display:none!important}
 .hl5-lang-btn.active{background:#2e3d30;color:#fff;border-color:#2e3d30}
 .hl5-lang{display:none}
 .hl5-lang.active{display:block}
