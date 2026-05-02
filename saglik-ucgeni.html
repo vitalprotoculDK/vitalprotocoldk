@@ -309,6 +309,63 @@
   }
 }
 </script>
+<style>
+/* ═══ SAĞLIK ÜÇGENİ - Slider (Sayfa Ortasında) ═══ */
+.su-slider-section{margin:60px auto;max-width:1100px;padding:0 20px}
+.su-sl-header{text-align:center;margin-bottom:32px}
+.su-sl-tag{display:inline-block;background:var(--primary);color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.su-sl-header h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--primary);letter-spacing:-1px;margin:0}
+.su-sl-header p{font-size:16px;color:var(--text-muted);font-style:italic;margin-top:8px}
+.su-slider-wrap{position:relative;overflow:hidden;border-radius:24px;background:#000;aspect-ratio:16/9;box-shadow:0 24px 48px rgba(0,0,0,0.15)}
+.su-slider-track{display:flex;width:100%;height:100%;transition:transform .6s ease-in-out}
+.su-slide{flex:0 0 100%;width:100%;height:100%}
+.su-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.su-slider-dots{display:flex;justify-content:center;gap:10px;margin-top:20px}
+.su-slider-dot{width:10px;height:10px;border-radius:50%;background:#d6ddd7;border:none;cursor:pointer;transition:all .3s;padding:0}
+.su-slider-dot.active{background:var(--accent);transform:scale(1.3)}
+.su-slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.85);border:1px solid rgba(0,0,0,.1);color:var(--primary);width:42px;height:42px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s;z-index:5;font-size:18px;font-weight:700}
+.su-slider-arrow:hover{background:var(--accent);color:#000}
+.su-slider-arrow.prev{left:16px}
+.su-slider-arrow.next{right:16px}
+
+/* ═══ SAĞLIK ÜÇGENİ - Geliştirilmiş CTA ═══ */
+.su-cta-enhanced{margin:60px auto;max-width:780px;padding:0 20px;text-align:center}
+.su-cta-features{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:24px auto 28px;max-width:680px}
+.su-cta-feat{background:#fff;border:1px solid #e8e4dc;border-radius:50px;padding:8px 16px;font-size:12px;color:var(--primary);font-weight:700;letter-spacing:.3px}
+.su-cta-buttons{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.su-btn-quiz{display:inline-block;background:transparent;color:var(--primary);padding:18px 36px;font-size:14px;font-weight:800;letter-spacing:.5px;text-decoration:none;border:2px solid var(--primary);border-radius:50px;transition:all .3s;text-transform:uppercase}
+.su-btn-quiz:hover{background:var(--primary);color:#fff}
+.su-cta-helper{margin-top:20px;font-size:13px;color:var(--text-muted);font-style:italic;max-width:540px;margin-left:auto;margin-right:auto}
+
+/* ═══ SAĞLIK ÜÇGENİ - İlgili Bloglar ═══ */
+.su-related{margin:80px auto 40px;max-width:1100px;padding:0 20px}
+.su-rel-header{text-align:center;margin-bottom:32px}
+.su-rel-tag{display:inline-block;background:#fff;color:var(--accent);padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;border:1px solid #e8e4dc}
+.su-rel-header h2{font-size:clamp(24px,4vw,32px);font-weight:800;color:var(--primary);letter-spacing:-1px;margin:0}
+.su-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.su-rel-card{background:#fff;border:1px solid #e8e4dc;border-radius:24px;overflow:hidden;text-decoration:none;color:inherit;transition:all .3s;display:flex;flex-direction:column}
+.su-rel-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08);border-color:var(--accent)}
+.su-rel-img{height:140px;display:flex;align-items:center;justify-content:center;font-size:42px}
+.su-rel-body{padding:24px}
+.su-rel-cat{font-size:10px;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase;font-weight:700;margin-bottom:10px;display:block}
+.su-rel-title{font-size:18px;font-weight:800;color:var(--primary);margin-bottom:10px;line-height:1.3}
+.su-rel-desc{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:14px}
+.su-rel-meta{font-size:11px;color:#9a8c5e;font-style:italic;font-weight:700}
+
+@media(max-width:900px){
+  .su-slider-section,.su-related{margin:40px auto;padding:0 16px}
+  .su-rel-grid{grid-template-columns:1fr}
+  .su-cta-buttons{flex-direction:column;align-items:stretch}
+  .su-btn-quiz{width:100%}
+  .su-slider-arrow{width:36px;height:36px}
+}
+
+</style>
+<style>
+/* CSS-only safety net for language switching */
+.su-lang:not(.active){display:none!important}
+.su-lang.active{display:block!important}
+</style>
 </head>
 <body>
 <nav class="vpdk-nav-global">
@@ -487,6 +544,33 @@
         </div>
       </section>
 
+      <!-- 🆕 SLIDER - Sayfanın ortasında (Nitro Plus + tablodan ÖNCE) -->
+      <div class="su-slider-section">
+        <div class="su-sl-header">
+          <span class="su-sl-tag">24 Saatin Ritmi</span>
+          <h2>Sabah · Gün Boyu · Akşam</h2>
+          <p>Üç ürünün uyumu, gün boyu süren bir ritim oluşturuyor.</p>
+        </div>
+        <div class="su-slider-wrap" id="su-slider-tr">
+          <div class="su-slider-track">
+            <div class="su-slide"><img src="/images/saglik-ucgeni/saglik-ucgeni-slide-01.png" alt="Sabah - Sunrise" loading="lazy"></div>
+            <div class="su-slide"><img src="/images/saglik-ucgeni/saglik-ucgeni-slide-02.png" alt="Gün Boyu - Nitro Plus" loading="lazy"></div>
+            <div class="su-slide"><img src="/images/saglik-ucgeni/saglik-ucgeni-slide-03.png" alt="Akşam - Sunset" loading="lazy"></div>
+            <div class="su-slide"><img src="/images/saglik-ucgeni/saglik-ucgeni-slide-04.png" alt="24 Saat Döngü" loading="lazy"></div>
+            <div class="su-slide"><img src="/images/saglik-ucgeni/saglik-ucgeni-slide-05.png" alt="Sağlık Üçgeni Marka" loading="lazy"></div>
+          </div>
+          <button class="su-slider-arrow prev" aria-label="Önceki">‹</button>
+          <button class="su-slider-arrow next" aria-label="Sonraki">›</button>
+        </div>
+        <div class="su-slider-dots">
+          <button class="su-slider-dot active" data-slide="0"></button>
+          <button class="su-slider-dot" data-slide="1"></button>
+          <button class="su-slider-dot" data-slide="2"></button>
+          <button class="su-slider-dot" data-slide="3"></button>
+          <button class="su-slider-dot" data-slide="4"></button>
+        </div>
+      </div>
+
       <div class="protocol-table-wrapper">
         <h2>Sistem Bileşenleri ve Fonksiyonları</h2>
         <table class="v-table">
@@ -536,6 +620,58 @@
         </div>
       </section>
 
+      <!-- 🆕 GELİŞTİRİLMİŞ CTA - Quiz ek butonu -->
+      <div class="su-cta-enhanced">
+        <div class="su-cta-features">
+          <span class="su-cta-feat">✦ 3 Ürün Sinerjisi</span>
+          <span class="su-cta-feat">✦ Sabah · Gün · Akşam</span>
+          <span class="su-cta-feat">✦ Hücresel Destek</span>
+          <span class="su-cta-feat">✦ Doğal İçerikler</span>
+          <span class="su-cta-feat">✦ Bilim Temelli</span>
+        </div>
+        <div class="su-cta-buttons">
+          <a href="/quiz.html" class="su-btn-quiz">Hangi Protokol Size Uygun? — Quizi Tamamla</a>
+        </div>
+        <p class="su-cta-helper">Sağlık Üçgeni protokolü herkese aynı şekilde uygulanmaz. 2 dakikalık quizimizle başlayın — kişisel ihtiyaçlarınıza uygun yaklaşımı keşfedin.</p>
+      </div>
+
+      <!-- 🆕 İLGİLİ BLOGLAR -->
+      <div class="su-related">
+        <div class="su-rel-header">
+          <span class="su-rel-tag">Devamını Okuyun</span>
+          <h2>Sağlık Üçgeni ile İlgili İçeriklerimiz</h2>
+        </div>
+        <div class="su-rel-grid">
+          <a href="/blog-hucresel-beslenme.html" class="su-rel-card">
+            <div class="su-rel-img" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0)">🧬</div>
+            <div class="su-rel-body">
+              <span class="su-rel-cat">✦ Hücresel Beslenme</span>
+              <h3 class="su-rel-title">Hücresel Beslenme Nedir?</h3>
+              <p class="su-rel-desc">Vücudun gerçek ihtiyaçları hücre seviyesinde nasıl karşılanır?</p>
+              <div class="su-rel-meta">⏱ ~6 dk · Deniz KAT →</div>
+            </div>
+          </a>
+          <a href="/blog-modern-yorgunluk.html" class="su-rel-card">
+            <div class="su-rel-img" style="background:linear-gradient(135deg,#2e3d30,#3d2a3a)">⏰</div>
+            <div class="su-rel-body">
+              <span class="su-rel-cat">✦ Modern Yorgunluk</span>
+              <h3 class="su-rel-title">Modern Yorgunluk Sendromu</h3>
+              <p class="su-rel-desc">Neden hep yorgun hissediyoruz ve bu döngüyü nasıl kırarız?</p>
+              <div class="su-rel-meta">⏱ ~5 dk · Deniz KAT →</div>
+            </div>
+          </a>
+          <a href="/blog-saglikli-yasam.html" class="su-rel-card">
+            <div class="su-rel-img" style="background:linear-gradient(135deg,#fff7ed,#fed7aa)">🌿</div>
+            <div class="su-rel-body">
+              <span class="su-rel-cat">✦ Sağlıklı Yaşam</span>
+              <h3 class="su-rel-title">Sağlıklı Yaşamın Temelleri</h3>
+              <p class="su-rel-desc">Modern hayatta dengeli ve enerjik kalmak için bütünsel yaklaşım.</p>
+              <div class="su-rel-meta">⏱ ~5 dk · Deniz KAT →</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
       <p class="footnote">*Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.<br>Referans: Gıda ve Takviye Edici Gıdalarda Sağlık Beyanı Yönetmeliği (20 Nisan 2023).</p>
     </div>
   </div>
@@ -579,6 +715,33 @@
           </div>
         </div>
       </section>
+
+      <!-- 🆕 SLIDER -->
+      <div class="su-slider-section">
+        <div class="su-sl-header">
+          <span class="su-sl-tag">The Rhythm of 24 Hours</span>
+          <h2>Morning · Throughout the Day · Evening</h2>
+          <p>The harmony of three products creates a rhythm that flows throughout the day.</p>
+        </div>
+        <div class="su-slider-wrap" id="su-slider-en">
+          <div class="su-slider-track">
+            <div class="su-slide"><img src="/images/saglik-ucgeni/saglik-ucgeni-slide-01.png" alt="Morning - Sunrise" loading="lazy"></div>
+            <div class="su-slide"><img src="/images/saglik-ucgeni/saglik-ucgeni-slide-02.png" alt="Throughout the Day - Nitro Plus" loading="lazy"></div>
+            <div class="su-slide"><img src="/images/saglik-ucgeni/saglik-ucgeni-slide-03.png" alt="Evening - Sunset" loading="lazy"></div>
+            <div class="su-slide"><img src="/images/saglik-ucgeni/saglik-ucgeni-slide-04.png" alt="24 Hour Cycle" loading="lazy"></div>
+            <div class="su-slide"><img src="/images/saglik-ucgeni/saglik-ucgeni-slide-05.png" alt="Wellness Triangle Brand" loading="lazy"></div>
+          </div>
+          <button class="su-slider-arrow prev" aria-label="Previous">‹</button>
+          <button class="su-slider-arrow next" aria-label="Next">›</button>
+        </div>
+        <div class="su-slider-dots">
+          <button class="su-slider-dot active" data-slide="0"></button>
+          <button class="su-slider-dot" data-slide="1"></button>
+          <button class="su-slider-dot" data-slide="2"></button>
+          <button class="su-slider-dot" data-slide="3"></button>
+          <button class="su-slider-dot" data-slide="4"></button>
+        </div>
+      </div>
 
       <div class="protocol-table-wrapper">
         <h2>System Components and Functions</h2>
@@ -629,7 +792,59 @@
         </div>
       </section>
 
-      <p class="footnote">*This page is for informational purposes only. Food supplements are not a substitute for a balanced diet.<br>Reference: Food and Supplementary Food Health Claims Regulation (20 April 2023).</p>
+      <!-- 🆕 ENHANCED CTA -->
+      <div class="su-cta-enhanced">
+        <div class="su-cta-features">
+          <span class="su-cta-feat">✦ 3-Product Synergy</span>
+          <span class="su-cta-feat">✦ Morning · Day · Evening</span>
+          <span class="su-cta-feat">✦ Cellular Support</span>
+          <span class="su-cta-feat">✦ Natural Ingredients</span>
+          <span class="su-cta-feat">✦ Science-Based</span>
+        </div>
+        <div class="su-cta-buttons">
+          <a href="/quiz.html" class="su-btn-quiz">Which Protocol Is Right for You? — Take the Quiz</a>
+        </div>
+        <p class="su-cta-helper">The Wellness Triangle protocol isn't applied the same way for everyone. Start with our 2-minute quiz — discover the approach that fits your personal needs.</p>
+      </div>
+
+      <!-- 🆕 RELATED BLOGS -->
+      <div class="su-related">
+        <div class="su-rel-header">
+          <span class="su-rel-tag">Read More</span>
+          <h2>Related Content</h2>
+        </div>
+        <div class="su-rel-grid">
+          <a href="/blog-hucresel-beslenme.html" class="su-rel-card">
+            <div class="su-rel-img" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0)">🧬</div>
+            <div class="su-rel-body">
+              <span class="su-rel-cat">✦ Cellular Nutrition</span>
+              <h3 class="su-rel-title">What Is Cellular Nutrition?</h3>
+              <p class="su-rel-desc">How are the body's real needs met at the cellular level?</p>
+              <div class="su-rel-meta">⏱ ~6 min · Deniz KAT →</div>
+            </div>
+          </a>
+          <a href="/blog-modern-yorgunluk.html" class="su-rel-card">
+            <div class="su-rel-img" style="background:linear-gradient(135deg,#2e3d30,#3d2a3a)">⏰</div>
+            <div class="su-rel-body">
+              <span class="su-rel-cat">✦ Modern Fatigue</span>
+              <h3 class="su-rel-title">Modern Fatigue Syndrome</h3>
+              <p class="su-rel-desc">Why do we always feel tired, and how can we break this cycle?</p>
+              <div class="su-rel-meta">⏱ ~5 min · Deniz KAT →</div>
+            </div>
+          </a>
+          <a href="/blog-saglikli-yasam.html" class="su-rel-card">
+            <div class="su-rel-img" style="background:linear-gradient(135deg,#fff7ed,#fed7aa)">🌿</div>
+            <div class="su-rel-body">
+              <span class="su-rel-cat">✦ Healthy Living</span>
+              <h3 class="su-rel-title">Foundations of Healthy Living</h3>
+              <p class="su-rel-desc">A holistic approach to staying balanced and energetic in modern life.</p>
+              <div class="su-rel-meta">⏱ ~5 min · Deniz KAT →</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <p class="footnote">*This page is for informational purposes.nly. Food supplements are not a substitute for a balanced diet.<br>Reference: Food and Supplementary Food Health Claims Regulation (20 April 2023).</p>
     </div>
   </div>
 
@@ -672,6 +887,33 @@
           </div>
         </div>
       </section>
+
+      <!-- 🆕 SLIDER -->
+      <div class="su-slider-section">
+        <div class="su-sl-header">
+          <span class="su-sl-tag">El Ritmo de 24 Horas</span>
+          <h2>Mañana · Durante el Día · Tarde</h2>
+          <p>La armonía de tres productos crea un ritmo que fluye durante todo el día.</p>
+        </div>
+        <div class="su-slider-wrap" id="su-slider-es">
+          <div class="su-slider-track">
+            <div class="su-slide"><img src="/images/saglik-ucgeni/saglik-ucgeni-slide-01.png" alt="Mañana - Sunrise" loading="lazy"></div>
+            <div class="su-slide"><img src="/images/saglik-ucgeni/saglik-ucgeni-slide-02.png" alt="Durante el Día - Nitro Plus" loading="lazy"></div>
+            <div class="su-slide"><img src="/images/saglik-ucgeni/saglik-ucgeni-slide-03.png" alt="Tarde - Sunset" loading="lazy"></div>
+            <div class="su-slide"><img src="/images/saglik-ucgeni/saglik-ucgeni-slide-04.png" alt="Ciclo de 24 Horas" loading="lazy"></div>
+            <div class="su-slide"><img src="/images/saglik-ucgeni/saglik-ucgeni-slide-05.png" alt="Triángulo Bienestar Marca" loading="lazy"></div>
+          </div>
+          <button class="su-slider-arrow prev" aria-label="Anterior">‹</button>
+          <button class="su-slider-arrow next" aria-label="Siguiente">›</button>
+        </div>
+        <div class="su-slider-dots">
+          <button class="su-slider-dot active" data-slide="0"></button>
+          <button class="su-slider-dot" data-slide="1"></button>
+          <button class="su-slider-dot" data-slide="2"></button>
+          <button class="su-slider-dot" data-slide="3"></button>
+          <button class="su-slider-dot" data-slide="4"></button>
+        </div>
+      </div>
 
       <div class="protocol-table-wrapper">
         <h2>Componentes del Sistema y Funciones</h2>
@@ -721,6 +963,58 @@
           Después del ritmo intenso de mi vida laboral y las experiencias de salud personales dentro de mi familia; en lugar de métodos complejos con efectos inciertos, elegí este sistema "transparente" — inspirado en los descubrimientos basados en la investigación del Premio Nobel de 1998 — que respeta el ritmo natural del cuerpo.
         </div>
       </section>
+
+      <!-- 🆕 CTA MEJORADO -->
+      <div class="su-cta-enhanced">
+        <div class="su-cta-features">
+          <span class="su-cta-feat">✦ Sinergia de 3 Productos</span>
+          <span class="su-cta-feat">✦ Mañana · Día · Tarde</span>
+          <span class="su-cta-feat">✦ Apoyo Celular</span>
+          <span class="su-cta-feat">✦ Ingredientes Naturales</span>
+          <span class="su-cta-feat">✦ Basado en Ciencia</span>
+        </div>
+        <div class="su-cta-buttons">
+          <a href="/quiz.html" class="su-btn-quiz">¿Qué Protocolo Es Adecuado para Ti? — Haz el Quiz</a>
+        </div>
+        <p class="su-cta-helper">El protocolo del Triángulo del Bienestar no se aplica de la misma manera para todos. Comienza con nuestro quiz de 2 minutos — descubre el enfoque que se adapta a tus necesidades personales.</p>
+      </div>
+
+      <!-- 🆕 BLOGS RELACIONADOS -->
+      <div class="su-related">
+        <div class="su-rel-header">
+          <span class="su-rel-tag">Sigue Leyendo</span>
+          <h2>Contenido Relacionado</h2>
+        </div>
+        <div class="su-rel-grid">
+          <a href="/blog-hucresel-beslenme.html" class="su-rel-card">
+            <div class="su-rel-img" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0)">🧬</div>
+            <div class="su-rel-body">
+              <span class="su-rel-cat">✦ Nutrición Celular</span>
+              <h3 class="su-rel-title">¿Qué es la Nutrición Celular?</h3>
+              <p class="su-rel-desc">¿Cómo se satisfacen las verdaderas necesidades del cuerpo a nivel celular?</p>
+              <div class="su-rel-meta">⏱ ~6 min · Deniz KAT →</div>
+            </div>
+          </a>
+          <a href="/blog-modern-yorgunluk.html" class="su-rel-card">
+            <div class="su-rel-img" style="background:linear-gradient(135deg,#2e3d30,#3d2a3a)">⏰</div>
+            <div class="su-rel-body">
+              <span class="su-rel-cat">✦ Fatiga Moderna</span>
+              <h3 class="su-rel-title">Síndrome de Fatiga Moderna</h3>
+              <p class="su-rel-desc">¿Por qué siempre nos sentimos cansados y cómo podemos romper este ciclo?</p>
+              <div class="su-rel-meta">⏱ ~5 min · Deniz KAT →</div>
+            </div>
+          </a>
+          <a href="/blog-saglikli-yasam.html" class="su-rel-card">
+            <div class="su-rel-img" style="background:linear-gradient(135deg,#fff7ed,#fed7aa)">🌿</div>
+            <div class="su-rel-body">
+              <span class="su-rel-cat">✦ Vida Saludable</span>
+              <h3 class="su-rel-title">Fundamentos de la Vida Saludable</h3>
+              <p class="su-rel-desc">Un enfoque holístico para mantenerse equilibrado y enérgico en la vida moderna.</p>
+              <div class="su-rel-meta">⏱ ~5 min · Deniz KAT →</div>
+            </div>
+          </a>
+        </div>
+      </div>
 
       <p class="footnote">*Esta página es solo para fines informativos. Los suplementos alimenticios no sustituyen una dieta equilibrada.<br>Referencia: Reglamento de Declaraciones de Propiedades Saludables en Alimentos y Suplementos Alimenticios (20 de abril de 2023).</p>
     </div>
@@ -829,5 +1123,137 @@
   };
 })();
 </script>
+<script>
+(function(){
+  // ROBUST SAĞLIK ÜÇGENİ LANGUAGE SWITCHER (NRGI bug fix pattern)
+  function suLangRobust(lang){
+    if(!lang || !['tr','en','es'].includes(lang)) lang = 'tr';
+    
+    ['su-tr','su-en','su-es'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el){
+        if(id === 'su-'+lang){
+          el.classList.add('active');
+          el.style.setProperty('display', 'block', 'important');
+        } else {
+          el.classList.remove('active');
+          el.style.setProperty('display', 'none', 'important');
+        }
+      }
+    });
+    
+    document.querySelectorAll('.vpdk-nav-lang').forEach(function(b){
+      var onclickAttr = b.getAttribute('onclick') || '';
+      var match = onclickAttr.match(/'([a-z]+)'/);
+      if(match){
+        b.classList.toggle('active', match[1] === lang);
+      }
+    });
+    
+    try { localStorage.setItem('vpLang', lang); } catch(e){}
+  }
+  
+  window.suLang = suLangRobust;
+  window.suLangRobust = suLangRobust;
+  
+  var _origVpNav = window.vpNavLang;
+  window.vpNavLang = function(l, btn){
+    suLangRobust(l);
+    if(_origVpNav) {
+      try { _origVpNav(l, btn); } catch(e) { console.warn('orig vpNavLang failed:', e); }
+    }
+  };
+  
+  function init(){
+    var saved = 'tr';
+    try { saved = localStorage.getItem('vpLang') || 'tr'; } catch(e){}
+    suLangRobust(saved);
+    
+    document.querySelectorAll('.vpdk-nav-lang').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        var onclickAttr = btn.getAttribute('onclick') || '';
+        var match = onclickAttr.match(/'([a-z]+)'/);
+        if(match) suLangRobust(match[1]);
+      });
+    });
+  }
+  
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+<script>
+(function(){
+  function initSuSlider(sliderId){
+    var slider = document.getElementById(sliderId);
+    if(!slider) return;
+    var track = slider.querySelector('.su-slider-track');
+    var slides = slider.querySelectorAll('.su-slide');
+    var prevBtn = slider.querySelector('.su-slider-arrow.prev');
+    var nextBtn = slider.querySelector('.su-slider-arrow.next');
+    var section = slider.closest('.su-slider-section');
+    var dots = section ? section.querySelectorAll('.su-slider-dot') : [];
+    var current = 0;
+    var total = slides.length;
+    var autoplayInterval = null;
+    
+    function goTo(idx){
+      if(idx < 0) idx = total - 1;
+      if(idx >= total) idx = 0;
+      current = idx;
+      track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+      dots.forEach(function(dot, i){
+        dot.classList.toggle('active', i === idx);
+      });
+    }
+    
+    function next(){ goTo(current + 1); }
+    function prev(){ goTo(current - 1); }
+    
+    function startAutoplay(){
+      stopAutoplay();
+      autoplayInterval = setInterval(next, 5000);
+    }
+    function stopAutoplay(){
+      if(autoplayInterval) clearInterval(autoplayInterval);
+    }
+    
+    if(prevBtn) prevBtn.addEventListener('click', function(){ prev(); startAutoplay(); });
+    if(nextBtn) nextBtn.addEventListener('click', function(){ next(); startAutoplay(); });
+    dots.forEach(function(dot, i){
+      dot.addEventListener('click', function(){ goTo(i); startAutoplay(); });
+    });
+    
+    var touchStartX = 0;
+    slider.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
+    slider.addEventListener('touchend', function(e){
+      var diff = touchStartX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 50){
+        if(diff > 0) next(); else prev();
+        startAutoplay();
+      }
+    });
+    
+    startAutoplay();
+  }
+  
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      initSuSlider('su-slider-tr');
+      initSuSlider('su-slider-en');
+      initSuSlider('su-slider-es');
+    });
+  } else {
+    initSuSlider('su-slider-tr');
+    initSuSlider('su-slider-en');
+    initSuSlider('su-slider-es');
+  }
+})();
+</script>
+
 </body>
 </html>
