@@ -266,29 +266,77 @@
   }
 }
 </script>
+
 <script>
 (function(){
-  function edgeLang(lang){
+  // ROBUST EDGE LANGUAGE SWITCHER
+  function edgeLangRobust(lang){
+    if(!lang || !['tr','en','es'].includes(lang)) lang = 'tr';
+    
     ['edge-tr','edge-en','edge-es'].forEach(function(id){
       var el = document.getElementById(id);
-      if(el) el.style.display = id === 'edge-'+lang ? 'block' : 'none';
+      if(el){
+        if(id === 'edge-'+lang){
+          el.classList.add('active');
+          el.style.display = 'block';
+          el.style.setProperty('display', 'block', 'important');
+        } else {
+          el.classList.remove('active');
+          el.style.display = 'none';
+          el.style.setProperty('display', 'none', 'important');
+        }
+      }
     });
-    document.querySelectorAll('.edge-lang-btn').forEach(function(b){
-      var m = (b.getAttribute('onclick')||'').match(/'([a-z]+)'/);
-      if(m) b.classList.toggle('active', m[1] === lang);
+    
+    // Update nav button states
+    document.querySelectorAll('.vpdk-nav-lang').forEach(function(b){
+      var onclickAttr = b.getAttribute('onclick') || '';
+      var match = onclickAttr.match(/'([a-z]+)'/);
+      if(match){
+        b.classList.toggle('active', match[1] === lang);
+      }
     });
-    localStorage.setItem('vpLang', lang);
+    
+    try { localStorage.setItem('vpLang', lang); } catch(e){}
   }
-  window.edgeLang = edgeLang;
-  var saved = localStorage.getItem('vpLang') || 'tr';
-  document.addEventListener('DOMContentLoaded', function(){ edgeLang(saved); });
-  var _orig = window.vpNavLang;
+  
+  // Make globally available
+  window.edgeLang = edgeLangRobust;
+  window.edgeLangRobust = edgeLangRobust;
+  
+  // Override vpNavLang completely on this page
+  var _origVpNav = window.vpNavLang;
   window.vpNavLang = function(l, btn){
-    if(_orig) _orig(l, btn);
-    edgeLang(l);
+    edgeLangRobust(l);
+    if(_origVpNav) {
+      try { _origVpNav(l, btn); } catch(e) { console.warn('orig vpNavLang failed:', e); }
+    }
   };
+  
+  // Apply on DOM ready
+  function init(){
+    var saved = 'tr';
+    try { saved = localStorage.getItem('vpLang') || 'tr'; } catch(e){}
+    edgeLangRobust(saved);
+    
+    // ALSO bind directly to nav buttons - belt and suspenders
+    document.querySelectorAll('.vpdk-nav-lang').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        var onclickAttr = btn.getAttribute('onclick') || '';
+        var match = onclickAttr.match(/'([a-z]+)'/);
+        if(match) edgeLangRobust(match[1]);
+      });
+    });
+  }
+  
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 </script>
+
 <link rel="alternate" hreflang="tr" href="https://www.vitalprotocoldk.com/edge.html">
 <link rel="alternate" hreflang="x-default" href="https://www.vitalprotocoldk.com/edge.html">
 <!-- Google tag (gtag.js) -->
