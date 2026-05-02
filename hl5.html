@@ -329,35 +329,59 @@
     }
   }
   
-  // CAPTURE original vpNavLang AFTER page load (when it's actually defined)
-  function captureAndOverride(){
-    if(window.vpNavLang && !window._origNavLang){
-      window._origNavLang = window.vpNavLang;
-      window.vpNavLang = function(lang, btn){
-        applyLanguage(lang);
-      };
+  // POLLING STRATEGY: Wait for vpNavLang to become available
+  var captureAttempts = 0;
+  var maxAttempts = 50;
+  
+  function tryCapture(){
+    captureAttempts++;
+    if(typeof window.vpNavLang === 'function' && !window._origNavLang){
+      var fnStr = window.vpNavLang.toString();
+      if(fnStr.indexOf('applyLanguage') === -1){
+        window._origNavLang = window.vpNavLang;
+        window.vpNavLang = function(lang, btn){
+          applyLanguage(lang);
+        };
+        return true;
+      }
     }
-    // Apply saved language
+    if(captureAttempts < maxAttempts){
+      setTimeout(tryCapture, 100);
+    }
+    return false;
+  }
+  
+  function init(){
     var saved = 'tr';
     try { saved = localStorage.getItem('vpLang') || 'tr'; } catch(e){}
     applyLanguage(saved);
-    // Direct binding to nav buttons (extra safety)
+    
     document.querySelectorAll('.vpdk-nav-lang').forEach(function(btn){
       btn.addEventListener('click', function(e){
         var match = (btn.getAttribute('onclick') || '').match(/'([a-z]+)'/);
-        if(match) applyLanguage(match[1]);
-      });
+        if(match){
+          applyLanguage(match[1]);
+          if(typeof window._origNavLang === 'function'){
+            try { window._origNavLang(match[1], btn); } catch(e){}
+          }
+        }
+      }, true);
     });
+    
+    tryCapture();
   }
   
-  // Run when DOM ready, with small delay so other scripts register first
   if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', function(){
-      setTimeout(captureAndOverride, 50);
-    });
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    setTimeout(captureAndOverride, 50);
+    init();
   }
+  
+  window.addEventListener('load', function(){
+    if(!window._origNavLang){
+      tryCapture();
+    }
+  });
 })();
 </script>
 <style>
