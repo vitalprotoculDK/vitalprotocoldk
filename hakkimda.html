@@ -255,6 +255,7 @@
 .vp-hero{text-align:center;margin-bottom:60px;padding-top:40px}
 .vp-badge{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
 .vp-hero h1{font-size:clamp(32px,6vw,54px);font-weight:800;line-height:1.1;margin-bottom:24px;letter-spacing:-1.5px;color:#2e3d30}
+.vp-hero h1 em,.vp-hero h2 em,.vp-story-section h2 em,.neden-title em{color:#d4af37;font-style:italic;font-weight:inherit}
 .vp-hero p{font-size:18px;color:#555;max-width:800px;margin:0 auto 16px;line-height:1.6}
 
 /* KARTLAR */
@@ -310,7 +311,7 @@
 /* NEDEN AMARE */
 .neden-section{background:#f9fbf9;border-radius:32px;padding:48px;border:1px solid #edf0ed;margin-bottom:72px}
 .neden-title{font-size:clamp(24px,3vw,36px);font-weight:800;color:#2e3d30;margin-bottom:36px;letter-spacing:-1px}
-.neden-title span{color:#d4af37}
+.neden-title em{color:#d4af37;font-style:italic;font-weight:inherit}
 .neden-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .neden-card{background:#fff;border-radius:18px;padding:28px;border:1px solid #edf0ed;transition:all .25s}
 .neden-card:hover{border-color:#d4af37;transform:translateY(-3px)}
@@ -439,7 +440,7 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
 
   <header class="vp-hero">
     <div class="vp-badge">VİZYON &amp; REHBERLİK</div>
-    <h1>Neyi, Neden Kullandığını <br><span style="color:#d4af37;">Gerçekten</span> Biliyor Musun?</h1>
+    <h1>Neyi, Neden Kullandığını <br><em>Gerçekten</em> Biliyor Musun?</h1>
     <p>Küresel takviye pazarı 200 milyar dolara ulaştı — kullanıcıların çoğu hâlâ ne aldığını bilmiyor.</p>
     <p>2023'te JAMA'da yayımlanan bir araştırmada 60 popüler takviye test edildi; yalnızca <strong>%11'i</strong> etikette yazdığı içerikleri tam olarak kapsıyordu. Ürünlerin %40'ında ise etikette belirtilen bir ya da daha fazla bileşen hiç bulunmadı.</p>
     <p><strong>Test edilen takviyelerin yalnızca %11'i etikette yazdığıyla birebir örtüşüyor. Geri kalanı? Tahmin.</strong></p>
@@ -453,8 +454,8 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
   <div class="vp-data-grid">
     <div class="vp-data-card">
       <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;border:40px solid rgba(46,61,48,0.05);pointer-events:none;"></div>
-      <h3 style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#999;margin-bottom:6px;">Pazar Verisi</h3>
-      <p style="font-size:22px;font-weight:800;color:#2e3d30;margin-bottom:32px;line-height:1.2;">Şüphe Faktörü</p>
+      <span style="display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;">Pazar Verisi</span>
+      <h3 style="font-size:22px;font-weight:800;color:#2e3d30;margin:0 0 32px;line-height:1.2;">Şüphe Faktörü</h3>
       <div style="display:flex;justify-content:center;align-items:center;height:200px;margin-bottom:24px;">
         <svg viewBox="0 0 200 120" width="280" height="168" style="overflow:visible;">
           <defs>
@@ -490,7 +491,7 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
 
   <div class="vp-story-section">
     <div class="vp-sticky-title">
-      <h2>Benim Hikayem:<br>25 Yıllık Deneyimden.<br><span style="color:#d4af37;">Bir 'İYİ Kİ' ye.</span></h2>
+      <h2>Benim Hikayem:<br>25 Yıllık Deneyimden.<br><em>Bir 'İYİ Kİ' ye.</em></h2>
       <div style="width:80px;height:5px;background:#d4af37;margin-top:25px;border-radius:10px;"></div>
       <div style="margin-top:32px;display:flex;justify-content:center;">
         <div style="width:220px;height:220px;border-radius:20px;overflow:hidden;border:4px solid #d4af37;box-shadow:0 8px 32px rgba(46,61,48,0.18);display:block;">
@@ -544,7 +545,7 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
   </div>
 
   <div class="neden-section">
-    <div class="neden-title">Neden <span>AMARE?</span></div>
+    <div class="neden-title">Neden <em>AMARE?</em></div>
     <div class="neden-grid">
       <div class="neden-card"><div class="neden-icon" style="background:#f0fdf4">🌿</div><div class="neden-card-title">Doğanın Gücü, Bilimin Dengesi</div><p class="neden-card-text">İçeriklerimiz, vücudun doğal biyolojik ritmiyle uyumlu, bitkisel ve yüksek kaliteli formlardan seçilir. Her bileşen, vücudun yabancılık çekmeyeceği ve en verimli şekilde kabul edebileceği kaynaklardan elde edilir.</p></div>
       <div class="neden-card"><div class="neden-icon" style="background:#fef9e7">🦠</div><div class="neden-card-title">Bütünsel Emilim Yaklaşımı</div><p class="neden-card-text">Bir takviyenin değeri, vücut tarafından ne kadar iyi değerlendirildiğiyle ölçülür. Amare, besin öğelerinin vücuda katılım sürecini bir bütün olarak ele alır ve sistemin bu desteği en doğru şekilde kabul etmesi için gereken zemini destekler.</p></div>
@@ -578,7 +579,7 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
 
   <header class="vp-hero">
     <div class="vp-badge">VISION &amp; GUIDANCE</div>
-    <h2>Do You Really Know What<br><span style="color:#d4af37;">You're Taking and Why?</span></h2>
+    <h2>Do You Really Know What<br><em>You're Taking and Why?</em></h2>
     <p>The global supplement market has reached $200 billion — yet most users still don't know what they're taking.</p>
     <p>A 2023 JAMA study tested 60 popular supplements; only <strong>11%</strong> contained exactly what the label claimed. In 40% of products, one or more listed ingredients were absent entirely.</p>
     <p><strong>Only 11% of tested supplements match their labels. The rest? Guesswork.</strong></p>
@@ -592,8 +593,8 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
   <div class="vp-data-grid">
     <div class="vp-data-card">
       <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;border:40px solid rgba(46,61,48,0.05);pointer-events:none;"></div>
-      <h3 style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#999;margin-bottom:6px;">Market Data</h3>
-      <p style="font-size:22px;font-weight:800;color:#2e3d30;margin-bottom:32px;line-height:1.2;">The Doubt Factor</p>
+      <span style="display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;">Market Data</span>
+      <h3 style="font-size:22px;font-weight:800;color:#2e3d30;margin:0 0 32px;line-height:1.2;">The Doubt Factor</h3>
       <div style="display:flex;justify-content:center;align-items:center;height:200px;margin-bottom:24px;">
         <svg viewBox="0 0 200 120" width="280" height="168" style="overflow:visible;">
           <defs>
@@ -629,7 +630,7 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
 
   <div class="vp-story-section">
     <div class="vp-sticky-title">
-      <h2>My Story:<br>From 25 Years of Experience.<br><span style="color:#d4af37;">To "Thank Goodness".</span></h2>
+      <h2>My Story:<br>From 25 Years of Experience.<br><em>To "Thank Goodness".</em></h2>
       <div style="width:80px;height:5px;background:#d4af37;margin-top:25px;border-radius:10px;"></div>
       <div style="margin-top:32px;display:flex;justify-content:center;">
         <div style="width:220px;height:220px;border-radius:20px;overflow:hidden;border:4px solid #d4af37;box-shadow:0 8px 32px rgba(46,61,48,0.18);display:block;">
@@ -683,7 +684,7 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
   </div>
 
   <div class="neden-section">
-    <div class="neden-title">Why <span>AMARE?</span></div>
+    <div class="neden-title">Why <em>AMARE?</em></div>
     <div class="neden-grid">
       <div class="neden-card"><div class="neden-icon" style="background:#f0fdf4">🌿</div><div class="neden-card-title">The Power of Nature, the Balance of Science</div><p class="neden-card-text">Our ingredients are selected from botanical, high-quality forms that are in harmony with the body's natural biological rhythm. Each ingredient is sourced from places the body will recognise and be able to accept in the most efficient way.</p></div>
       <div class="neden-card"><div class="neden-icon" style="background:#fef9e7">🦠</div><div class="neden-card-title">A Holistic Absorption Approach</div><p class="neden-card-text">The value of a supplement is measured by how well it is utilised by the body. Amare addresses the process by which nutrients join the body as a whole, and supports the foundation needed for the system to accept this support in the most appropriate way.</p></div>
@@ -718,7 +719,7 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
 
   <header class="vp-hero">
     <div class="vp-badge">VISIÓN &amp; ORIENTACIÓN</div>
-    <h2>¿Realmente Sabes Qué Tomas<br><span style="color:#d4af37;">y Por Qué?</span></h2>
+    <h2>¿Realmente Sabes Qué Tomas<br><em>y Por Qué?</em></h2>
     <p>El mercado global de suplementos ha alcanzado los 200 mil millones de dólares — y la mayoría aún no sabe qué está tomando.</p>
     <p>Un estudio de JAMA en 2023 analizó 60 suplementos populares; solo el <strong>11%</strong> contenía exactamente lo que decía la etiqueta. En el 40% de los productos, uno o más ingredientes estaban completamente ausentes.</p>
     <p><strong>Solo el 11% de los suplementos analizados coincide con su etiqueta. ¿El resto? Suposición.</strong></p>
@@ -732,8 +733,8 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
   <div class="vp-data-grid">
     <div class="vp-data-card">
       <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;border:40px solid rgba(46,61,48,0.05);pointer-events:none;"></div>
-      <h3 style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#999;margin-bottom:6px;">Datos de Mercado</h3>
-      <p style="font-size:22px;font-weight:800;color:#2e3d30;margin-bottom:32px;line-height:1.2;">El Factor Duda</p>
+      <span style="display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;">Datos de Mercado</span>
+      <h3 style="font-size:22px;font-weight:800;color:#2e3d30;margin:0 0 32px;line-height:1.2;">El Factor Duda</h3>
       <div style="display:flex;justify-content:center;align-items:center;height:200px;margin-bottom:24px;">
         <svg viewBox="0 0 200 120" width="280" height="168" style="overflow:visible;">
           <defs>
@@ -769,7 +770,7 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
 
   <div class="vp-story-section">
     <div class="vp-sticky-title">
-      <h2>Mi Historia:<br>De 25 Años de Experiencia.<br><span style="color:#d4af37;">A "Menos Mal".</span></h2>
+      <h2>Mi Historia:<br>De 25 Años de Experiencia.<br><em>A "Menos Mal".</em></h2>
       <div style="width:80px;height:5px;background:#d4af37;margin-top:25px;border-radius:10px;"></div>
       <div style="margin-top:32px;display:flex;justify-content:center;">
         <div style="width:220px;height:220px;border-radius:20px;overflow:hidden;border:4px solid #d4af37;box-shadow:0 8px 32px rgba(46,61,48,0.18);display:block;">
@@ -823,7 +824,7 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
   </div>
 
   <div class="neden-section">
-    <div class="neden-title">¿Por Qué <span>AMARE?</span></div>
+    <div class="neden-title">¿Por Qué <em>AMARE?</em></div>
     <div class="neden-grid">
       <div class="neden-card"><div class="neden-icon" style="background:#f0fdf4">🌿</div><div class="neden-card-title">El Poder de la Naturaleza, el Equilibrio de la Ciencia</div><p class="neden-card-text">Nuestros ingredientes se seleccionan de formas botánicas y de alta calidad que están en armonía con el ritmo biológico natural del cuerpo. Cada ingrediente proviene de fuentes que el cuerpo reconocerá y podrá aceptar de la manera más eficiente.</p></div>
       <div class="neden-card"><div class="neden-icon" style="background:#fef9e7">🦠</div><div class="neden-card-title">Un Enfoque de Absorción Integral</div><p class="neden-card-text">El valor de un suplemento se mide por lo bien que el cuerpo lo aprovecha. Amare aborda el proceso por el que los nutrientes se incorporan al organismo de manera integral, y apoya la base necesaria para que el sistema acepte este apoyo de la manera más adecuada.</p></div>
