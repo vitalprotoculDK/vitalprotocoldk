@@ -335,12 +335,88 @@
 .su-cta-buttons{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
 .su-btn-quiz{display:inline-block;background:transparent;color:var(--primary);padding:18px 36px;font-size:14px;font-weight:800;letter-spacing:.5px;text-decoration:none;border:2px solid var(--primary);border-radius:50px;transition:all .3s;text-transform:uppercase}
 .su-btn-quiz:hover{background:var(--primary);color:#fff}
+
+/* ── YENİ: WHATSAPP BUTONU ── */
+.su-btn-wa{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#25d366;
+  color:#fff!important;
+  padding:18px 32px;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.5px;
+  text-decoration:none;
+  border:2px solid #25d366;
+  border-radius:50px;
+  transition:all .3s;
+  text-transform:uppercase;
+}
+.su-btn-wa:hover{
+  background:#1ebe5a;
+  border-color:#1ebe5a;
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(37,211,102,.25);
+}
+.su-btn-wa svg{width:16px;height:16px;fill:#fff;flex-shrink:0}
+
+/* ── YENİ: SAYFA ORTASI MİNİ-CTA ── */
+.su-mini-cta{
+  max-width:780px;
+  margin:50px auto;
+  padding:24px 28px;
+  background:linear-gradient(135deg,#f0f8f3 0%,#e6f3ec 100%);
+  border:1.5px solid #25d366;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.su-mini-cta-text{
+  flex:1;
+  min-width:240px;
+  font-family:'DM Sans',sans-serif;
+  font-size:16px;
+  color:#1a3a23;
+  margin:0;
+  line-height:1.5;
+}
+.su-mini-cta-text strong{color:#0d2f1a;font-weight:700}
+.su-mini-cta-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#25d366;
+  color:#fff!important;
+  padding:14px 26px;
+  border-radius:50px;
+  text-decoration:none;
+  font-family:'DM Sans',sans-serif;
+  font-weight:600;
+  font-size:14px;
+  letter-spacing:.3px;
+  transition:all .3s;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.su-mini-cta-btn:hover{
+  background:#1ebe5a;
+  transform:translateY(-2px);
+}
+.su-mini-cta-btn svg{width:14px;height:14px;fill:#fff}
+@media(max-width:600px){
+  .su-mini-cta{flex-direction:column;text-align:center;padding:22px 18px;margin:40px 16px}
+  .su-mini-cta-btn{width:100%;justify-content:center}
+}
 .su-cta-helper{margin-top:20px;font-size:13px;color:var(--text-muted);font-style:italic;max-width:540px;margin-left:auto;margin-right:auto}
 
 /* ═══ SAĞLIK ÜÇGENİ - İlgili Bloglar ═══ */
 .su-related{margin:80px auto 40px;max-width:1100px;padding:0 20px}
 .su-rel-header{text-align:center;margin-bottom:32px}
-.su-rel-tag{display:inline-block;background:#fff;color:var(--accent);padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;border:1px solid #e8e4dc}
+.su-rel-tag{display:inline-block;background:var(--primary);color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
 .su-rel-header h2{font-size:clamp(24px,4vw,32px);font-weight:800;color:var(--primary);letter-spacing:-1px;margin:0}
 .su-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .su-rel-card{background:#fff;border:1px solid #e8e4dc;border-radius:24px;overflow:hidden;text-decoration:none;color:inherit;transition:all .3s;display:flex;flex-direction:column}
@@ -356,7 +432,7 @@
   .su-slider-section,.su-related{margin:40px auto;padding:0 16px}
   .su-rel-grid{grid-template-columns:1fr}
   .su-cta-buttons{flex-direction:column;align-items:stretch}
-  .su-btn-quiz{width:100%}
+  .su-btn-quiz,.su-btn-wa{width:100%;justify-content:center}
   .su-slider-arrow{width:36px;height:36px}
 }
 
@@ -451,29 +527,77 @@
 .container{max-width:1000px;margin:0 auto;padding:40px 20px}
 
 /* HEADER */
-.page-header{border-bottom:1px solid #eee;padding-bottom:40px;margin-bottom:60px}
-.page-header span{color:var(--primary);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
-.page-header h1,.page-header h2{font-size:clamp(32px,5vw,48px);font-weight:800;letter-spacing:-2px;margin:15px 0;line-height:1.1}
-.page-header p{font-size:19px;color:var(--text-muted);max-width:800px}
+.page-header{text-align:center;margin-bottom:60px;padding-top:40px;padding-bottom:40px;border-bottom:1px solid rgba(212,175,55,0.2)}
+.page-header span{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
+.page-header h1,.page-header h2{font-size:clamp(32px,6vw,54px);font-weight:800;line-height:1.1;margin:0 0 24px;letter-spacing:-1.5px;color:#2e3d30}
+.page-header h1 em,.page-header h2 em{color:#d4af37;font-style:italic;font-weight:800}
+.page-header p{font-size:18px;color:#555;max-width:800px;margin:0 auto 16px;line-height:1.6}
 
 /* NITRO */
 .nitro-focus{background:#f9fbf9;border-radius:40px;padding:60px;margin-bottom:80px;border:1px solid #e8f0e9}
 .nitro-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:center}
 .nitro-visual{text-align:center}
-.nobel-badge{background:#fff;border:1px solid var(--accent);padding:25px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.05)}
-.nobel-badge strong{display:block;font-size:18px;color:var(--accent);margin-bottom:5px}
-.nitro-content h2{font-size:32px;font-weight:800;margin-bottom:20px;color:var(--primary)}
+.nobel-badge{
+  background:linear-gradient(135deg,#fffdf6 0%,#fff 100%);
+  border:1.5px solid var(--accent);
+  padding:36px 28px 28px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(212,175,55,0.12);
+  position:relative;
+  margin-top:20px;
+}
+.nobel-badge-tag{
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--accent);
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+  padding:5px 14px;
+  border-radius:50px;
+  white-space:nowrap;
+}
+.nobel-badge strong{display:block;font-size:18px;color:var(--primary);margin-bottom:8px;font-weight:800}
+.nitro-content h2{font-size:clamp(22px,3.5vw,32px);font-weight:800;margin-bottom:20px;color:var(--primary);line-height:1.2}
 .nitro-content p{margin-bottom:20px;font-size:16px}
 
 /* MEKANİZMA KARTLARI */
 .mechanism-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
-.mech-card{background:#fff;padding:25px;border-radius:20px;border:1px solid #eee}
+.mech-card{
+  background:#fff;
+  padding:28px 24px;
+  border-radius:20px;
+  border:1px solid #eee;
+  position:relative;
+  transition:all .3s;
+  overflow:hidden;
+}
+.mech-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.06);border-color:var(--accent)}
+.mech-card-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  font-size:22px;
+  margin-bottom:14px;
+}
+.mech-card:nth-child(1) .mech-card-icon{background:#f0f8f3}
+.mech-card:nth-child(2) .mech-card-icon{background:#fff7e6}
+.mech-card:nth-child(3) .mech-card-icon{background:#eef4fb}
 .mech-card h4{margin:0 0 10px;color:var(--primary);font-size:16px;font-weight:800}
-.mech-card p{font-size:14px;color:#555;margin:0}
+.mech-card p{font-size:14px;color:#555;margin:0;line-height:1.55}
 
 /* TABLO */
 .protocol-table-wrapper{margin:80px 0}
-.protocol-table-wrapper h2{text-align:center;margin-bottom:40px;font-weight:800;font-size:28px}
+.protocol-table-wrapper-header{text-align:center;margin-bottom:40px}
+.protocol-table-tag{display:inline-block;background:var(--primary);color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.protocol-table-wrapper h2{text-align:center;margin:0;font-weight:800;font-size:clamp(24px,4vw,32px);color:var(--primary);letter-spacing:-0.5px}
+.protocol-table-wrapper h2 em{color:var(--accent);font-style:italic;font-weight:inherit}
 .v-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #eee;border-radius:20px;overflow:hidden}
 .v-table th{background:#f4f4f4;padding:20px;text-align:left;font-size:14px;color:#777}
 .v-table td{padding:30px 20px;border-bottom:1px solid #eee;vertical-align:top;font-size:15px}
@@ -482,13 +606,44 @@
 .product-tag{font-size:11px;background:#eee;padding:3px 10px;border-radius:5px;text-transform:uppercase;font-weight:700}
 
 /* SİNERJİ */
-.synergy-box{background:var(--primary);color:#fff;border-radius:30px;padding:50px;text-align:center;margin-top:80px}
-.synergy-box h2{color:#fff;font-size:32px;margin-bottom:20px}
-.synergy-box p{color:rgba(255,255,255,.8);max-width:700px;margin:0 auto 30px;font-size:18px}
-.btn-gold{display:inline-block;background:var(--accent);color:#000!important;padding:20px 50px;border-radius:100px;text-decoration:none;font-weight:800;transition:.3s}
+.synergy-box{
+  background:linear-gradient(135deg,#1a241b 0%,#2e3d30 50%,#1a241b 100%);
+  color:#fff;
+  border-radius:30px;
+  padding:60px 50px;
+  text-align:center;
+  margin-top:80px;
+  position:relative;
+  overflow:hidden;
+}
+.synergy-box::before{
+  content:"";
+  position:absolute;
+  top:-50%;
+  right:-10%;
+  width:300px;
+  height:300px;
+  background:radial-gradient(circle,rgba(212,175,55,0.15) 0%,transparent 70%);
+  pointer-events:none;
+}
+.synergy-box::after{
+  content:"";
+  position:absolute;
+  bottom:-30%;
+  left:-10%;
+  width:250px;
+  height:250px;
+  background:radial-gradient(circle,rgba(212,175,55,0.08) 0%,transparent 70%);
+  pointer-events:none;
+}
+.synergy-box h2{color:#fff;font-size:clamp(24px,4vw,32px);margin-bottom:20px;position:relative;z-index:1}
+.synergy-box h2 em{color:var(--accent);font-style:italic;font-weight:inherit}
+.synergy-box p{color:rgba(255,255,255,.85);max-width:700px;margin:0 auto 30px;font-size:18px;position:relative;z-index:1}
+.synergy-box ul{position:relative;z-index:1;text-align:left;max-width:640px;margin:0 auto 30px}
+.btn-gold{display:inline-block;background:var(--accent);color:#000!important;padding:20px 50px;border-radius:100px;text-decoration:none;font-weight:800;transition:.3s;position:relative;z-index:1}
 .btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(212,175,55,.4)}
-.rationale{margin-top:20px;padding-top:20px;border-top:1px dashed rgba(255,255,255,.2);font-size:14px;color:rgba(255,255,255,.65)}
-.rationale strong{color:#fff}
+.rationale{margin-top:20px;padding-top:20px;border-top:1px dashed rgba(255,255,255,.2);font-size:14px;color:rgba(255,255,255,.7);position:relative;z-index:1;max-width:640px;margin-left:auto;margin-right:auto;text-align:left}
+.rationale strong{color:var(--accent)}
 .footnote{text-align:center;margin-top:40px;font-size:12px;color:#999}
 
 @media(max-width:768px){
@@ -510,7 +665,7 @@
 
       <header class="page-header">
         <span>Bütünsel Wellness Protokolü</span>
-        <h1>Sistem Nasıl Çalışır?</h1>
+        <h1>Sistem <em>Nasıl</em> Çalışır?</h1>
         <p>Vücudumuz sadece bir makine değil; birbiriyle sürekli etkileşim halinde olan kimyasal süreçlerin yönettiği kusursuz bir ekosistemdir. Bütünsel Wellness Protokolü, bu ekosistemi hücresel düzeyde desteklemek ve vücudun doğal dengesini optimize etmek için tasarlandı.</p>
       </header>
 
@@ -518,6 +673,7 @@
         <div class="nitro-grid">
           <div class="nitro-visual">
             <div class="nobel-badge">
+              <span class="nobel-badge-tag">✦ 1998 NOBEL TEMELLİ ✦</span>
               <strong>Bilimin Işığında Bütünsel Destek</strong>
               Modern beslenme dünyasındaki araştırmalar, vücudun doğal işleyişinde rol alan temel moleküllerin önemini defalarca kanıtlamıştır.
             </div>
@@ -530,14 +686,17 @@
         </div>
         <div class="mechanism-grid">
           <div class="mech-card">
+            <div class="mech-card-icon">🌱</div>
             <h4>Besinlerin Yolculuğu</h4>
             <p>Optimize edilmiş bir beslenme düzeni, vücudunuza aldığınız vitamin ve minerallerin hedeflenen noktalara verimli bir şekilde ulaşmasına yardımcı olur.</p>
           </div>
           <div class="mech-card">
+            <div class="mech-card-icon">💛</div>
             <h4>Dolaşım Desteği</h4>
             <p>İçeriğindeki bileşenler, normal enerji oluşum metabolizmasına katkıda bulunarak kendinizi daha zinde hissetmenizi destekler.</p>
           </div>
           <div class="mech-card">
+            <div class="mech-card-icon">⚡</div>
             <h4>Hücresel Enerji (CoQ10)</h4>
             <p>Vücudun temel yapı taşlarını destekleyen CoQ10 ve Magnezyum ile güçlendirilmiş formülü, normal enerji oluşum metabolizmasına katkıda bulunarak gün boyu süren bir zindelik dengesi sunar.</p>
           </div>
@@ -571,8 +730,20 @@
         </div>
       </div>
 
+      <!-- 🆕 SAYFA ORTASI MİNİ-CTA -->
+      <div class="su-mini-cta">
+        <p class="su-mini-cta-text"><strong>Sorunuz mu var?</strong> Sağlık Üçgeni'nin sizin için uygun olup olmadığını birlikte değerlendirelim.</p>
+        <a href="https://wa.me/905054549582?text=Merhaba%20Deniz%2C%20Sa%C4%9Fl%C4%B1k%20%C3%9C%C3%A7geni%20protokol%C3%BC%20benim%20i%C3%A7in%20uygun%20mu%2C%20konu%C5%9Fabilir%20miyiz%3F" target="_blank" class="su-mini-cta-btn">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp'tan Konuşalım
+        </a>
+      </div>
+
       <div class="protocol-table-wrapper">
-        <h2>Sistem Bileşenleri ve Fonksiyonları</h2>
+        <div class="protocol-table-wrapper-header">
+          <span class="protocol-table-tag">Protokolün Mimarisi</span>
+          <h2>Sistem Bileşenleri ve <em>Fonksiyonları</em></h2>
+        </div>
         <table class="v-table">
           <thead>
             <tr>
@@ -606,18 +777,18 @@
       </div>
 
       <section class="synergy-box">
-        <h2>1 + 1 + 1 = Bütünsel Bir Denge</h2>
+        <h2>1 + 1 + 1 = <em>Bütünsel</em> Bir Denge</h2>
         <p>Bu üç ürünün her biri kendi içinde benzersiz içeriklere sahiptir; ancak birlikte kullanıldıklarında günlük beslenme rutininizi kapsamlı bir şekilde tamamlayan bir bütünlük sunarlar.</p>
         <ul style="list-style:none;padding-left:0;margin:12px 0">
           <li style="margin-bottom:10px">&#10022; <strong>Nitro Plus:</strong> Besinlerin vücudunuzdaki yolculuğuna eşlik eder ve genel sistem dengesini destekler.</li>
           <li style="margin-bottom:10px">&#10022; <strong>Sunrise:</strong> Özenle seçilmiş süper gıdalarla, gün boyu kendinizi zinde hissetmenize yardımcı olur.</li>
           <li style="margin-bottom:10px">&#10022; <strong>Sunset:</strong> Vücudun gece boyu süren doğal dinlenme dönemine, en saf Omega-3 kaynaklarıyla destek sunar.</li>
         </ul>
-        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="btn-gold">PROTOKOLÜ İNCELE</a>
         <div class="rationale">
           <strong>Neden bu protokolü seçtim?</strong><br>
           Çalışma hayatının getirdiği yoğun tempo ve ailesel sağlık deneyimlerimden sonra; karmaşık ve etkisi belirsiz yöntemler yerine, bilimsel temeli 1998 Nobel araştırmalarına dayanan keşiflerden ilham alan ve vücudun doğal ritmine saygı duyan bu "şeffaf" sistemi tercih ettim.
         </div>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="btn-gold">RESMİ SİTEDEN SATIN AL →</a>
       </section>
 
       <!-- 🆕 GELİŞTİRİLMİŞ CTA - Quiz ek butonu -->
@@ -631,8 +802,12 @@
         </div>
         <div class="su-cta-buttons">
           <a href="/quiz.html" class="su-btn-quiz">Hangi Protokol Size Uygun? — Quizi Tamamla</a>
+          <a href="https://wa.me/905054549582?text=Merhaba%20Deniz%2C%20Sa%C4%9Fl%C4%B1k%20%C3%9C%C3%A7geni%20protokol%C3%BC%20hakk%C4%B1nda%20bana%20biraz%20daha%20bilgi%20verebilir%20misin%3F" target="_blank" class="su-btn-wa">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp'tan Sor
+          </a>
         </div>
-        <p class="su-cta-helper">Sağlık Üçgeni protokolü herkese aynı şekilde uygulanmaz. 2 dakikalık quizimizle başlayın — kişisel ihtiyaçlarınıza uygun yaklaşımı keşfedin.</p>
+        <p class="su-cta-helper">Sağlık Üçgeni protokolü herkese aynı şekilde uygulanmaz. 2 dakikalık quiz ile başlayın veya WhatsApp'tan yazıp birlikte konuşalım.</p>
       </div>
 
       <!-- 🆕 İLGİLİ BLOGLAR -->
@@ -670,6 +845,9 @@
             </div>
           </a>
         </div>
+        <div style="text-align:center;margin-top:32px">
+          <a href="/blog.html" style="display:inline-block;color:var(--primary);font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:3px;transition:.3s">TÜM WELLNESS YAZILARI →</a>
+        </div>
       </div>
 
       <p class="footnote">*Bu sayfa bilgilendirme amaçlıdır. Takviye edici gıdalar normal beslenmenin yerine geçmez.<br>Referans: Gıda ve Takviye Edici Gıdalarda Sağlık Beyanı Yönetmeliği (20 Nisan 2023).</p>
@@ -682,7 +860,7 @@
 
       <header class="page-header">
         <span>Holistic Wellness Protocol</span>
-        <h2>How Does the System Work?</h2>
+        <h2><em>How</em> Does the System Work?</h2>
         <p>Our body is not just a machine — it is a flawless ecosystem governed by chemical processes in constant interaction with one another. The Holistic Wellness Protocol was designed to support this ecosystem at a cellular level and to optimise the body's natural balance.</p>
       </header>
 
@@ -690,6 +868,7 @@
         <div class="nitro-grid">
           <div class="nitro-visual">
             <div class="nobel-badge">
+              <span class="nobel-badge-tag">✦ 1998 NOBEL FOUNDED ✦</span>
               <strong>Holistic Support in the Light of Science</strong>
               Research in the modern nutrition world has repeatedly demonstrated the importance of the fundamental molecules involved in the body's natural functioning.
             </div>
@@ -702,14 +881,17 @@
         </div>
         <div class="mechanism-grid">
           <div class="mech-card">
+            <div class="mech-card-icon">🌱</div>
             <h4>The Journey of Nutrients</h4>
             <p>An optimised nutritional routine helps the vitamins and minerals you consume reach their intended destinations in the body efficiently.</p>
           </div>
           <div class="mech-card">
+            <div class="mech-card-icon">💛</div>
             <h4>Circulatory Support</h4>
             <p>Its ingredients contribute to normal energy-yielding metabolism, helping you feel more energised throughout the day.</p>
           </div>
           <div class="mech-card">
+            <div class="mech-card-icon">⚡</div>
             <h4>Cellular Energy (CoQ10)</h4>
             <p>Fortified with CoQ10 and Magnesium that support the body's fundamental building blocks, its formula contributes to normal energy-yielding metabolism, offering a sustained vitality balance throughout the day.</p>
           </div>
@@ -743,8 +925,20 @@
         </div>
       </div>
 
+      <!-- 🆕 MID-PAGE MINI-CTA -->
+      <div class="su-mini-cta">
+        <p class="su-mini-cta-text"><strong>Have questions?</strong> Let's figure out together whether the Wellness Triangle fits your needs.</p>
+        <a href="https://wa.me/905054549582?text=Hi%20Deniz%2C%20is%20the%20Wellness%20Triangle%20protocol%20right%20for%20me%3F%20Can%20we%20chat%3F" target="_blank" class="su-mini-cta-btn">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
       <div class="protocol-table-wrapper">
-        <h2>System Components and Functions</h2>
+        <div class="protocol-table-wrapper-header">
+          <span class="protocol-table-tag">Protocol Architecture</span>
+          <h2>System Components and <em>Functions</em></h2>
+        </div>
         <table class="v-table">
           <thead>
             <tr>
@@ -778,18 +972,18 @@
       </div>
 
       <section class="synergy-box">
-        <h2>1 + 1 + 1 = Holistic Balance</h2>
+        <h2>1 + 1 + 1 = <em>Holistic</em> Balance</h2>
         <p>Each of these three products has unique ingredients in its own right; yet when used together, they offer a wholeness that comprehensively completes your daily nutritional routine.</p>
         <ul style="list-style:none;padding-left:0;margin:12px 0">
           <li style="margin-bottom:10px">&#10022; <strong>Nitro Plus:</strong> Accompanies nutrients on their journey through your body and supports overall system balance.</li>
           <li style="margin-bottom:10px">&#10022; <strong>Sunrise:</strong> With carefully selected superfoods, helps you feel energised and vital throughout the day.</li>
           <li style="margin-bottom:10px">&#10022; <strong>Sunset:</strong> Supports the body's natural overnight rest period with the purest Omega-3 sources.</li>
         </ul>
-        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="btn-gold">EXPLORE THE PROTOCOL</a>
         <div class="rationale">
           <strong>Why did I choose this protocol?</strong><br>
           After the intense pace of my working life and personal health experiences within my family; rather than complex methods with uncertain effects, I chose this "transparent" system — inspired by discoveries rooted in the 1998 Nobel research findings — which respects the body's natural rhythm.
         </div>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="btn-gold">BUY ON OFFICIAL SITE →</a>
       </section>
 
       <!-- 🆕 ENHANCED CTA -->
@@ -803,6 +997,10 @@
         </div>
         <div class="su-cta-buttons">
           <a href="/quiz.html" class="su-btn-quiz">Which Protocol Is Right for You? — Take the Quiz</a>
+          <a href="https://wa.me/905054549582?text=Hi%20Deniz%2C%20could%20you%20tell%20me%20more%20about%20the%20Wellness%20Triangle%20protocol%3F" target="_blank" class="su-btn-wa">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Ask on WhatsApp
+          </a>
         </div>
         <p class="su-cta-helper">The Wellness Triangle protocol isn't applied the same way for everyone. Start with our 2-minute quiz — discover the approach that fits your personal needs.</p>
       </div>
@@ -842,6 +1040,9 @@
             </div>
           </a>
         </div>
+        <div style="text-align:center;margin-top:32px">
+          <a href="/blog.html" style="display:inline-block;color:var(--primary);font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:3px;transition:.3s">ALL WELLNESS ARTICLES →</a>
+        </div>
       </div>
 
       <p class="footnote">*This page is for informational purposes.nly. Food supplements are not a substitute for a balanced diet.<br>Reference: Food and Supplementary Food Health Claims Regulation (20 April 2023).</p>
@@ -854,7 +1055,7 @@
 
       <header class="page-header">
         <span>Protocolo de Bienestar Integral</span>
-        <h2>¿Cómo Funciona el Sistema?</h2>
+        <h2>¿<em>Cómo</em> Funciona el Sistema?</h2>
         <p>Nuestro cuerpo no es solo una máquina — es un ecosistema impecable gobernado por procesos químicos en constante interacción entre sí. El Protocolo de Bienestar Integral fue diseñado para apoyar este ecosistema a nivel celular y optimizar el equilibrio natural del cuerpo.</p>
       </header>
 
@@ -862,6 +1063,7 @@
         <div class="nitro-grid">
           <div class="nitro-visual">
             <div class="nobel-badge">
+              <span class="nobel-badge-tag">✦ BASADO EN NOBEL 1998 ✦</span>
               <strong>Apoyo Integral a la Luz de la Ciencia</strong>
               La investigación en el mundo moderno de la nutrición ha demostrado repetidamente la importancia de las moléculas fundamentales involucradas en el funcionamiento natural del cuerpo.
             </div>
@@ -874,14 +1076,17 @@
         </div>
         <div class="mechanism-grid">
           <div class="mech-card">
+            <div class="mech-card-icon">🌱</div>
             <h4>El Viaje de los Nutrientes</h4>
             <p>Una rutina nutricional optimizada ayuda a que las vitaminas y minerales que consumes lleguen eficientemente a sus destinos previstos en el cuerpo.</p>
           </div>
           <div class="mech-card">
+            <div class="mech-card-icon">💛</div>
             <h4>Apoyo Circulatorio</h4>
             <p>Sus ingredientes contribuyen al metabolismo energético normal, ayudándote a sentirte más vital durante todo el día.</p>
           </div>
           <div class="mech-card">
+            <div class="mech-card-icon">⚡</div>
             <h4>Energía Celular (CoQ10)</h4>
             <p>Reforzado con CoQ10 y Magnesio que apoyan los bloques de construcción fundamentales del cuerpo, su fórmula contribuye al metabolismo energético normal, ofreciendo un equilibrio de vitalidad sostenido durante todo el día.</p>
           </div>
@@ -915,8 +1120,20 @@
         </div>
       </div>
 
+      <!-- 🆕 MINI-CTA EN MEDIO DE LA PÁGINA -->
+      <div class="su-mini-cta">
+        <p class="su-mini-cta-text"><strong>¿Tienes preguntas?</strong> Veamos juntos si el Triángulo de Bienestar se adapta a ti.</p>
+        <a href="https://wa.me/905054549582?text=Hola%20Deniz%2C%20%C2%BFel%20protocolo%20Tri%C3%A1ngulo%20de%20Bienestar%20es%20adecuado%20para%20m%C3%AD%3F%20%C2%BFPodemos%20hablar%3F" target="_blank" class="su-mini-cta-btn">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Hablar por WhatsApp
+        </a>
+      </div>
+
       <div class="protocol-table-wrapper">
-        <h2>Componentes del Sistema y Funciones</h2>
+        <div class="protocol-table-wrapper-header">
+          <span class="protocol-table-tag">Arquitectura del Protocolo</span>
+          <h2>Componentes del Sistema y <em>Funciones</em></h2>
+        </div>
         <table class="v-table">
           <thead>
             <tr>
@@ -950,18 +1167,18 @@
       </div>
 
       <section class="synergy-box">
-        <h2>1 + 1 + 1 = Equilibrio Integral</h2>
+        <h2>1 + 1 + 1 = Equilibrio <em>Integral</em></h2>
         <p>Cada uno de estos tres productos tiene ingredientes únicos por sí mismo; pero cuando se usan juntos, ofrecen una integridad que complementa de manera integral tu rutina nutricional diaria.</p>
         <ul style="list-style:none;padding-left:0;margin:12px 0">
           <li style="margin-bottom:10px">&#10022; <strong>Nitro Plus:</strong> Acompaña a los nutrientes en su recorrido por tu cuerpo y apoya el equilibrio general del sistema.</li>
           <li style="margin-bottom:10px">&#10022; <strong>Sunrise:</strong> Con superalimentos cuidadosamente seleccionados, te ayuda a sentirte vital y lleno de energía durante todo el día.</li>
           <li style="margin-bottom:10px">&#10022; <strong>Sunset:</strong> Apoya el período natural de descanso nocturno del cuerpo con las fuentes de Omega-3 más puras.</li>
         </ul>
-        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="btn-gold">EXPLORAR EL PROTOCOLO</a>
         <div class="rationale">
           <strong>¿Por qué elegí este protocolo?</strong><br>
           Después del ritmo intenso de mi vida laboral y las experiencias de salud personales dentro de mi familia; en lugar de métodos complejos con efectos inciertos, elegí este sistema "transparente" — inspirado en los descubrimientos basados en la investigación del Premio Nobel de 1998 — que respeta el ritmo natural del cuerpo.
         </div>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="btn-gold">COMPRAR EN EL SITIO OFICIAL →</a>
       </section>
 
       <!-- 🆕 CTA MEJORADO -->
@@ -975,6 +1192,10 @@
         </div>
         <div class="su-cta-buttons">
           <a href="/quiz.html" class="su-btn-quiz">¿Qué Protocolo Es Adecuado para Ti? — Haz el Quiz</a>
+          <a href="https://wa.me/905054549582?text=Hola%20Deniz%2C%20%C2%BFpodr%C3%ADas%20contarme%20m%C3%A1s%20sobre%20el%20protocolo%20Tri%C3%A1ngulo%20de%20Bienestar%3F" target="_blank" class="su-btn-wa">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Pregunta por WhatsApp
+          </a>
         </div>
         <p class="su-cta-helper">El protocolo del Triángulo del Bienestar no se aplica de la misma manera para todos. Comienza con nuestro quiz de 2 minutos — descubre el enfoque que se adapta a tus necesidades personales.</p>
       </div>
@@ -1013,6 +1234,9 @@
               <div class="su-rel-meta">⏱ ~5 min · Deniz KAT →</div>
             </div>
           </a>
+        </div>
+        <div style="text-align:center;margin-top:32px">
+          <a href="/blog.html" style="display:inline-block;color:var(--primary);font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:3px;transition:.3s">TODOS LOS ARTÍCULOS WELLNESS →</a>
         </div>
       </div>
 
