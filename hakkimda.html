@@ -324,6 +324,104 @@
 .vp-author-title{color:#d4af37;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:1px}
 .vp-button{display:inline-block;background:#2e3d30;color:#fff!important;padding:20px 50px;border-radius:100px;text-decoration:none;font-weight:700;font-size:18px;margin-top:40px;transition:all .4s;border:none}
 .vp-button:hover{background:#1a241b;transform:translateY(-5px)}
+
+/* ── HERO ALTI MİNİ CTA ── */
+.vp-hero-cta{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  margin:28px auto 0;
+  max-width:560px;
+  padding:24px 28px;
+  background:linear-gradient(135deg,#fdf8e7 0%,#fbf3d4 100%);
+  border:1.5px solid #d4af37;
+  border-radius:16px;
+  text-align:center;
+}
+.vp-hero-cta-text{
+  font-family:'DM Sans',sans-serif;
+  font-size:17px;
+  font-weight:500;
+  color:#2e3d30;
+  margin:0;
+  line-height:1.5;
+}
+.vp-hero-cta-text strong{color:#1a241b;font-weight:700}
+.vp-hero-cta-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#d4af37;
+  color:#fff!important;
+  padding:14px 32px;
+  border-radius:100px;
+  text-decoration:none;
+  font-family:'DM Sans',sans-serif;
+  font-weight:600;
+  font-size:15px;
+  letter-spacing:0.3px;
+  transition:all .3s;
+}
+.vp-hero-cta-btn:hover{
+  background:#b8963e;
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(212,175,55,0.3);
+}
+
+/* ── SAYFA SONU ÇİFT CTA ── */
+.vp-final-cta-row{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:32px;
+}
+.vp-cta-quiz{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#d4af37;
+  color:#fff!important;
+  padding:18px 36px;
+  border-radius:100px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:16px;
+  letter-spacing:0.3px;
+  transition:all .3s;
+}
+.vp-cta-quiz:hover{
+  background:#b8963e;
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(212,175,55,0.3);
+}
+.vp-cta-wa{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#25d366;
+  color:#fff!important;
+  padding:18px 36px;
+  border-radius:100px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:16px;
+  letter-spacing:0.3px;
+  transition:all .3s;
+}
+.vp-cta-wa:hover{
+  background:#1ebe5a;
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(37,211,102,0.3);
+}
+.vp-cta-wa svg{width:18px;height:18px;fill:#fff;flex-shrink:0}
+@media(max-width:600px){
+  .vp-hero-cta{margin:24px 16px 0;padding:20px 18px}
+  .vp-hero-cta-text{font-size:15px}
+  .vp-final-cta-row{flex-direction:column;align-items:center;gap:12px;padding:0 16px}
+  .vp-cta-quiz,.vp-cta-wa{width:100%;justify-content:center;padding:16px 20px;font-size:15px}
+}
 .vp-transparency{font-size:13px;color:#aaa;margin-top:50px;max-width:750px;margin-left:auto;margin-right:auto;line-height:1.5;font-style:italic}
 
 h2{font-size:36px;font-weight:800;margin-bottom:24px;letter-spacing:-1.5px;line-height:1.2;color:#2e3d30}
@@ -345,6 +443,11 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
     <p>Küresel takviye pazarı 200 milyar dolara ulaştı — kullanıcıların çoğu hâlâ ne aldığını bilmiyor.</p>
     <p>2023'te JAMA'da yayımlanan bir araştırmada 60 popüler takviye test edildi; yalnızca <strong>%11'i</strong> etikette yazdığı içerikleri tam olarak kapsıyordu. Ürünlerin %40'ında ise etikette belirtilen bir ya da daha fazla bileşen hiç bulunmadı.</p>
     <p><strong>Test edilen takviyelerin yalnızca %11'i etikette yazdığıyla birebir örtüşüyor. Geri kalanı? Tahmin.</strong></p>
+
+    <div class="vp-hero-cta">
+      <p class="vp-hero-cta-text">Peki <strong>sen</strong> ne kullanıyorsun?<br>2 dakikada bedeninin gerçek ihtiyacını öğren.</p>
+      <a href="/quiz.html" class="vp-hero-cta-btn">Wellness Quiz'e Başla →</a>
+    </div>
   </header>
 
   <div class="vp-data-grid">
@@ -454,6 +557,14 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
     <p style="max-width:650px;margin:30px auto 10px;font-size:18px;color:#333;font-weight:500;">Bütünsel beslenme yaklaşımı ve bilinçli yaşam stratejileri üzerine yazıyorum.</p>
     <p style="max-width:600px;margin:0 auto;font-size:18px;color:#777;">Eğer sen de "Hayat ritmimi yeniden bulmak ve kendime en iyi versiyonumu hediye etmek istiyorum" diyorsan, buradaki paylaşımlarım senin için ilham dolu bir başlangıç olacak.</p>
 <p style="font-size:13px;color:#8a9a8b;line-height:1.7;margin-top:16px;font-style:italic;"><strong style="color:#2e3d30;font-style:normal;">Şeffaflık Notu:</strong> Paylaştığım her bilgi ve sunduğum her içerik, bizzat ailemle deneyimlediğim ve bilimsel temellerini incelediğim bileşenlerden oluşur. Benim için wellness, sadece bir ürün tercihi değil; doğruluğuna inandığım içeriklerle örülü bir yaşam tarzıdır.</p>
+
+    <div class="vp-final-cta-row">
+      <a href="/quiz.html" class="vp-cta-quiz">2 Dakikalık Quiz'i Başlat →</a>
+      <a href="https://wa.me/905054549582?text=Merhaba%20Deniz%2C%20hakk%C4%B1mda%20sayfan%C4%B1%20okudum.%20Bana%20uygun%20bir%20protokol%20%C3%B6nerebilir%20misin%3F" target="_blank" class="vp-cta-wa">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp'tan Yaz
+      </a>
+    </div>
     <a href="/blog.html" class="vp-button">İÇERİKLERE GÖZ AT ↗</a>
     
   </div>
@@ -471,6 +582,11 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
     <p>The global supplement market has reached $200 billion — yet most users still don't know what they're taking.</p>
     <p>A 2023 JAMA study tested 60 popular supplements; only <strong>11%</strong> contained exactly what the label claimed. In 40% of products, one or more listed ingredients were absent entirely.</p>
     <p><strong>Only 11% of tested supplements match their labels. The rest? Guesswork.</strong></p>
+
+    <div class="vp-hero-cta">
+      <p class="vp-hero-cta-text">So what about <strong>you</strong>?<br>Discover your body's real needs in 2 minutes.</p>
+      <a href="/quiz.html" class="vp-hero-cta-btn">Take the Wellness Quiz →</a>
+    </div>
   </header>
 
   <div class="vp-data-grid">
@@ -581,6 +697,14 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
     <p style="max-width:600px;margin:0 auto;font-size:18px;color:#777;">If you're tired of saying "I just can't seem to recover", the content here will be a very good starting point for you.</p>
     
     <p style="font-size:13px;color:#8a9a8b;line-height:1.7;margin-top:16px;font-style:italic;"><strong style="color:#2e3d30;font-style:normal;">Transparency Note:</strong> Every piece of information I share and every content I present consists of components I have personally experienced with my family and whose scientific foundations I have examined. For me, wellness is not merely a product choice; it is a lifestyle woven from content I truly believe in.</p>
+
+    <div class="vp-final-cta-row">
+      <a href="/quiz.html" class="vp-cta-quiz">Take the 2-Minute Quiz →</a>
+      <a href="https://wa.me/905054549582?text=Hi%20Deniz%2C%20I%20just%20read%20your%20About%20page.%20Could%20you%20suggest%20a%20protocol%20for%20me%3F" target="_blank" class="vp-cta-wa">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Message on WhatsApp
+      </a>
+    </div>
     <a href="/blog.html" class="vp-button">BROWSE THE CONTENT ↗</a>
     
   </div>
@@ -598,6 +722,11 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
     <p>El mercado global de suplementos ha alcanzado los 200 mil millones de dólares — y la mayoría aún no sabe qué está tomando.</p>
     <p>Un estudio de JAMA en 2023 analizó 60 suplementos populares; solo el <strong>11%</strong> contenía exactamente lo que decía la etiqueta. En el 40% de los productos, uno o más ingredientes estaban completamente ausentes.</p>
     <p><strong>Solo el 11% de los suplementos analizados coincide con su etiqueta. ¿El resto? Suposición.</strong></p>
+
+    <div class="vp-hero-cta">
+      <p class="vp-hero-cta-text">¿Y <strong>tú</strong>, qué tomas?<br>Descubre las necesidades reales de tu cuerpo en 2 minutos.</p>
+      <a href="/quiz.html" class="vp-hero-cta-btn">Hacer el Wellness Quiz →</a>
+    </div>
   </header>
 
   <div class="vp-data-grid">
@@ -708,6 +837,14 @@ h3{font-size:22px;font-weight:700;margin-bottom:15px;color:#2e3d30}
     <p style="max-width:600px;margin:0 auto;font-size:18px;color:#777;">Si tú también estás cansado de decir "simplemente no puedo recuperarme", el contenido aquí será un muy buen punto de partida.</p>
     
     <p style="font-size:13px;color:#8a9a8b;line-height:1.7;margin-top:16px;font-style:italic;"><strong style="color:#2e3d30;font-style:normal;">Nota de Transparencia:</strong> Cada información que comparto y cada contenido que presento está compuesto por componentes que he experimentado personalmente con mi familia y cuyas bases científicas he examinado. Para mí, el bienestar no es solo una elección de producto; es un estilo de vida tejido con contenidos en los que realmente creo.</p>
+
+    <div class="vp-final-cta-row">
+      <a href="/quiz.html" class="vp-cta-quiz">Hacer el Quiz de 2 Minutos →</a>
+      <a href="https://wa.me/905054549582?text=Hola%20Deniz%2C%20acabo%20de%20leer%20tu%20p%C3%A1gina%20Sobre%20M%C3%AD.%20%C2%BFPodr%C3%ADas%20sugerirme%20un%20protocolo%3F" target="_blank" class="vp-cta-wa">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Escribir por WhatsApp
+      </a>
+    </div>
     <a href="/blog.html" class="vp-button">VER EL CONTENIDO ↗</a>
     
   </div>
