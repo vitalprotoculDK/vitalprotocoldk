@@ -311,15 +311,16 @@
 /* ═══ ORIGIN - Bölüm 2: Çevremizde Gözlem ═══ */
 .origin-observation{background:#f9f8f4;padding:80px 20px;text-align:center}
 .origin-obs-inner{max-width:780px;margin:0 auto}
-.origin-obs-tag{display:inline-block;background:#fff;color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;border:1px solid #e8e4dc}
+.origin-obs-tag{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
 .origin-obs-inner h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:#2e3d30;margin-bottom:24px;line-height:1.2;letter-spacing:-1px}
+.origin-obs-inner h2 em,.origin-sci-inner h2 em,.origin-slider-section h2 em,.origin-cta h2 em,.origin-cta-enhanced h2 em,.origin-cta-inner h2 em,.origin-related h2 em,.origin-hero h1 em,.origin-hero h2 em{color:#d4af37;font-style:italic;font-weight:inherit}
 .origin-obs-inner p{font-size:17px;color:#444;line-height:1.8;margin-bottom:18px;text-align:left}
 .origin-obs-highlight{background:#fff;border-left:4px solid #d4af37;padding:20px 26px;border-radius:0 16px 16px 0;margin:28px 0;font-style:italic;color:#2e3d30;text-align:left}
 
 /* ═══ ORIGIN - Bölüm 7: Bilim & Araştırma ═══ */
 .origin-science{background:#fff;padding:80px 20px}
 .origin-sci-inner{max-width:1100px;margin:0 auto;text-align:center}
-.origin-sci-tag{display:inline-block;background:#f0ede6;color:#2e3d30;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.origin-sci-tag{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
 .origin-sci-inner h2{font-size:clamp(28px,4vw,40px);font-weight:800;color:#2e3d30;margin-bottom:14px;letter-spacing:-1px}
 .origin-sci-sub{color:#666;font-size:16px;font-style:italic;margin-bottom:50px}
 .origin-sci-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
@@ -333,7 +334,7 @@
 /* ═══ ORIGIN - Bölüm 8: Slider ═══ */
 .origin-slider-section{background:linear-gradient(135deg,#2e3d30 0%,#1a1a1a 100%);padding:80px 20px}
 .origin-sl-inner{max-width:1280px;margin:0 auto}
-.origin-sl-tag{display:inline-block;background:rgba(212,175,55,0.15);color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center}
+.origin-sl-tag{display:inline-block;background:#d4af37;color:#1a1a1a;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center}
 .origin-sl-center{text-align:center;margin-bottom:40px}
 .origin-sl-center h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:#fff;letter-spacing:-1px;margin-bottom:0}
 .origin-slider-wrap{position:relative;overflow:hidden;border-radius:24px;background:#000;aspect-ratio:16/9;max-width:1100px;margin:0 auto;box-shadow:0 24px 48px rgba(0,0,0,0.35)}
@@ -360,12 +361,64 @@
 .origin-btn-quiz:hover{background:#2e3d30;color:#fff}
 .origin-btn-buy{display:inline-block;background:#d4af37;color:#1a1a1a;padding:16px 32px;font-size:14px;font-weight:800;letter-spacing:.5px;text-decoration:none;border:2px solid #d4af37;border-radius:50px;transition:all .3s;text-transform:uppercase}
 .origin-btn-buy:hover{background:#c49b2a;border-color:#c49b2a;transform:translateY(-2px)}
+.origin-btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:16px 32px;font-size:14px;font-weight:800;letter-spacing:.5px;text-decoration:none;border:2px solid #25d366;border-radius:50px;transition:all .3s;text-transform:uppercase}
+.origin-btn-wa:hover{background:#1ebe5a;border-color:#1ebe5a;transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,211,102,.25)}
+.origin-btn-wa svg{width:14px;height:14px;fill:#fff;flex-shrink:0}
+
+/* SAYFA ORTASI MİNİ-CTA */
+.origin-mini-cta-wrap{padding:50px 20px;background:#fafaf8}
+.origin-mini-cta{
+  max-width:780px;
+  margin:0 auto;
+  padding:24px 28px;
+  background:linear-gradient(135deg,#f0f8f3 0%,#e6f3ec 100%);
+  border:1.5px solid #25d366;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.origin-mini-cta-text{
+  flex:1;
+  min-width:240px;
+  font-family:'DM Sans',sans-serif;
+  font-size:16px;
+  color:#1a3a23;
+  margin:0;
+  line-height:1.5;
+}
+.origin-mini-cta-text strong{color:#0d2f1a;font-weight:700}
+.origin-mini-cta-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#25d366;
+  color:#fff;
+  padding:14px 26px;
+  border-radius:50px;
+  text-decoration:none;
+  font-family:'DM Sans',sans-serif;
+  font-weight:600;
+  font-size:14px;
+  letter-spacing:.3px;
+  transition:all .3s;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.origin-mini-cta-btn:hover{background:#1ebe5a;transform:translateY(-2px)}
+.origin-mini-cta-btn svg{width:14px;height:14px;fill:#fff}
+@media(max-width:600px){
+  .origin-mini-cta{flex-direction:column;text-align:center;padding:22px 18px}
+  .origin-mini-cta-btn{width:100%;justify-content:center}
+}
 .origin-cta-helper{margin-top:24px;font-size:13px;color:#666;font-style:italic;max-width:540px;margin-left:auto;margin-right:auto}
 
 /* ═══ ORIGIN - Bölüm 10: İlgili Bloglar ═══ */
 .origin-related{background:#fafaf8;padding:80px 20px;border-top:1px solid #e8e4dc}
 .origin-rel-inner{max-width:1100px;margin:0 auto}
-.origin-rel-tag{display:inline-block;background:#fff;color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center;border:1px solid #e8e4dc}
+.origin-rel-tag{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center}
 .origin-rel-center{text-align:center;margin-bottom:40px}
 .origin-rel-center h2{font-size:clamp(26px,4vw,36px);font-weight:800;color:#2e3d30;letter-spacing:-1px}
 .origin-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -382,7 +435,7 @@
   .origin-observation,.origin-science,.origin-slider-section,.origin-cta-enhanced,.origin-related{padding:60px 16px}
   .origin-sci-grid,.origin-rel-grid{grid-template-columns:1fr}
   .origin-cta-buttons{flex-direction:column;align-items:stretch}
-  .origin-btn-quiz,.origin-btn-buy{width:100%}
+  .origin-btn-quiz,.origin-btn-buy,.origin-btn-wa{width:100%;justify-content:center}
   .origin-slider-arrow{width:36px;height:36px}
 }
 
@@ -516,7 +569,7 @@
 
   <div class="origin-hero">
     <span class="origin-badge">Bütünsel Makro Beslenme</span>
-    <h1>Hücresel Yakıtın Kökeni</h1>
+    <h1>Hücresel Yakıtın <em>Kökeni</em></h1>
     <p>Vücudumuz, doğanın sunduğu en saf besinlerin desteğini hak eden olağanüstü bir sistemdir. Origin, bitki bazlı saf proteinleri biyolojik ritminizle uyumlu bir şekilde bir araya getirir.</p>
     <div class="origin-tags">
       <span class="origin-tag">20G BİTKİSEL PROTEİN</span>
@@ -524,7 +577,8 @@
       <span class="origin-tag">MCT ENERJİSİ</span>
       <span class="origin-tag">PREBİYOTİK LİF</span>
     </div>
-    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn">PROTOKOLÜ İNCELE</a>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn">RESMİ SİTEDEN SATIN AL</a>
+    <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px;max-width:640px;margin-left:auto;margin-right:auto">"Yenilenmek sadece dinlenmek değildir;<br>100 trilyon hücreyi doğru amino asitlerle yeniden inşa etmektir."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
   </div>
 
   <div class="origin-inclusion-section">
@@ -577,7 +631,7 @@
   </div>
 
   <div class="origin-cta">
-    <h2>Bedeninize Hak Ettiği Desteği Verin</h2>
+    <h2>Bedeninize <em>Hak Ettiği</em> Desteği Verin</h2>
     <p style="max-width:600px;margin:0 auto 40px;color:#666;font-style:italic;">"Beslenme, sadece ne yediğiniz değil; vücudunuzun bu gıdayı ne kadar tanıyıp hücreye ne kadarını iletebildiği ile ilgilidir. Origin ile hücresel döngünüzü tamamlayın."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn-dark">RESMİ SİTEDEN TEMİN ET</a>
     <p class="origin-footnote">14 Porsiyon | Vanilya &amp; Çikolata Seçenekleri | Vegan</p>
@@ -587,7 +641,7 @@
   <div class="origin-observation">
     <div class="origin-obs-inner">
       <span class="origin-obs-tag">Çevremizde Gözlem</span>
-      <h2>Bitkisel Beslenmenin Önündeki Sessiz Sorun</h2>
+      <h2>Bitkisel Beslenmenin Önündeki <em>Sessiz Sorun</em></h2>
       <p>Son yıllarda bitkisel beslenmeye yönelim hızla artıyor. Bunun bir sebebi etik tercih, bir sebebi sağlık ve sürdürülebilirlik. Ancak bitkisel proteinler söz konusu olduğunda çoğu kişi şu yorumu duyuyor: "Bitkisel protein eksik kalır, vücut yeterince işleyemez."</p>
       <p>Gözlem doğru — ama nedeni eksik anlatılıyor. Tek bir bitkisel kaynak genelde tüm amino asitleri yeterli oranda içermiyor. Bu yüzden <strong>çoklu bitki kaynağı</strong> ile zenginleştirilmiş formüller önemli.</p>
       <div class="origin-obs-highlight">
@@ -601,7 +655,7 @@
   <div class="origin-science">
     <div class="origin-sci-inner">
       <span class="origin-sci-tag">Bilim & Araştırma</span>
-      <h2>Neden Çoklu Bitki Kaynağı Önemli?</h2>
+      <h2>Neden Çoklu Bitki Kaynağı <em>Önemli?</em></h2>
       <p class="origin-sci-sub">Bitkisel proteinler hakkında bilimsel bakış</p>
       <div class="origin-sci-grid">
         <div class="origin-sci-card">
@@ -628,7 +682,7 @@
     <div class="origin-sl-inner">
       <div class="origin-sl-center">
         <span class="origin-sl-tag">Yaşamın İçinde</span>
-        <h2>Origin Günlük Hayatta</h2>
+        <h2>Origin <em>Günlük Hayatta</em></h2>
       </div>
       <div class="origin-slider-wrap" id="origin-slider-tr">
         <div class="origin-slider-track">
@@ -651,10 +705,21 @@
     </div>
   </div>
 
+  <!-- 🆕 SAYFA ORTASI MİNİ-CTA -->
+  <div class="origin-mini-cta-wrap">
+    <div class="origin-mini-cta">
+      <p class="origin-mini-cta-text"><strong>Sorunuz mu var?</strong> Origin'in size uygun olup olmadığını birlikte değerlendirelim.</p>
+      <a href="https://wa.me/905054549582?text=Merhaba%20Deniz%2C%20Origin%20protein%20benim%20i%C3%A7in%20uygun%20mu%2C%20konu%C5%9Fabilir%20miyiz%3F" target="_blank" class="origin-mini-cta-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp'tan Konuşalım
+      </a>
+    </div>
+  </div>
+
   <!-- Bölüm 9: Geliştirilmiş CTA -->
   <div class="origin-cta-enhanced">
     <div class="origin-cta-inner">
-      <h2>Hücresel Yakıtın Kökenine Dön</h2>
+      <h2>Hücresel Yakıtın <em>Kökenine</em> Dön</h2>
       <p class="origin-cta-lead">Bitkisel protein, doğal lif ve mineraller. Tek bir formülde, hücreniz için bütünsel bir yaklaşım.</p>
       <div class="origin-cta-features">
         <span class="origin-cta-feat">✦ 20g Bitkisel Protein</span>
@@ -665,6 +730,10 @@
       </div>
       <div class="origin-cta-buttons">
         <a href="/quiz.html" class="origin-btn-quiz">Önce Quizi Tamamla</a>
+        <a href="https://wa.me/905054549582?text=Merhaba%20Deniz%2C%20Origin%20protein%20hakk%C4%B1nda%20bana%20biraz%20bilgi%20verir%20misin%3F" target="_blank" class="origin-btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp'tan Sor
+        </a>
         <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn-buy">Origin Satın Al →</a>
       </div>
       <p class="origin-cta-helper">Hangi protokolün size uygun olduğundan emin değil misiniz? 2 dakikalık quizimizle başlayın. Karar verdiyseniz Amare resmi sitesinden temin edebilirsiniz.</p>
@@ -676,7 +745,7 @@
     <div class="origin-rel-inner">
       <div class="origin-rel-center">
         <span class="origin-rel-tag">Devamını Okuyun</span>
-        <h2>Origin ile İlgili İçeriklerimiz</h2>
+        <h2>Origin ile <em>İlgili</em> İçeriklerimiz</h2>
       </div>
       <div class="origin-rel-grid">
         <a href="/blog-hucresel-beslenme.html" class="origin-rel-card">
@@ -707,6 +776,9 @@
           </div>
         </a>
       </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="/blog.html" style="display:inline-block;color:#2e3d30;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid #d4af37;padding-bottom:3px;transition:.3s">TÜM WELLNESS YAZILARI →</a>
+      </div>
     </div>
   </div>
 
@@ -717,7 +789,7 @@
 
   <div class="origin-hero">
     <span class="origin-badge">Holistic Macro Nutrition</span>
-    <h2>The Origin of Cellular Fuel</h2>
+    <h2>The <em>Origin</em> of Cellular Fuel</h2>
     <p>Our body is an extraordinary system that deserves the support of the purest nutrients nature has to offer. Origin brings together pure plant-based proteins in harmony with your biological rhythm.</p>
     <div class="origin-tags">
       <span class="origin-tag">20G PLANT PROTEIN</span>
@@ -725,7 +797,8 @@
       <span class="origin-tag">MCT ENERGY</span>
       <span class="origin-tag">PREBIOTIC FIBRE</span>
     </div>
-    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn">EXPLORE THE PROTOCOL</a>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn">BUY ON OFFICIAL SITE</a>
+    <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px;max-width:640px;margin-left:auto;margin-right:auto">"Renewal isn't only about rest;<br>it's about rebuilding 100 trillion cells with the right amino acids."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
   </div>
 
   <div class="origin-inclusion-section">
@@ -778,7 +851,7 @@
   </div>
 
   <div class="origin-cta">
-    <h2>Give Your Body the Support It Deserves</h2>
+    <h2>Give Your Body the <em>Support It Deserves</em></h2>
     <p style="max-width:600px;margin:0 auto 40px;color:#666;font-style:italic;">"Nutrition is not just about what you eat — it's about how well your body recognises that food and how much of it reaches the cell. Complete your cellular cycle with Origin."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn-dark">GET IT FROM THE OFFICIAL SITE</a>
     <p class="origin-footnote">14 Servings | Vanilla &amp; Chocolate Options | Vegan</p>
@@ -788,7 +861,7 @@
   <div class="origin-observation">
     <div class="origin-obs-inner">
       <span class="origin-obs-tag">Common Observation</span>
-      <h2>The Silent Issue Behind Plant-Based Nutrition</h2>
+      <h2>The <em>Silent Issue</em> Behind Plant-Based Nutrition</h2>
       <p>The shift toward plant-based nutrition has been accelerating in recent years. The reasons range from ethical choice to health and sustainability. However, when it comes to plant proteins, most people hear: "Plant protein is incomplete; the body can't fully utilise it."</p>
       <p>The observation is correct — but the explanation is incomplete. A single plant source typically doesn't contain all amino acids in adequate proportions. This is why <strong>multi-source plant formulas</strong> matter.</p>
       <div class="origin-obs-highlight">
@@ -802,7 +875,7 @@
   <div class="origin-science">
     <div class="origin-sci-inner">
       <span class="origin-sci-tag">Science & Research</span>
-      <h2>Why Multi-Source Plant Protein Matters</h2>
+      <h2>Why Multi-Source Plant Protein <em>Matters</em></h2>
       <p class="origin-sci-sub">A scientific perspective on plant proteins</p>
       <div class="origin-sci-grid">
         <div class="origin-sci-card">
@@ -829,7 +902,7 @@
     <div class="origin-sl-inner">
       <div class="origin-sl-center">
         <span class="origin-sl-tag">In Daily Life</span>
-        <h2>Origin in Daily Life</h2>
+        <h2>Origin in <em>Daily Life</em></h2>
       </div>
       <div class="origin-slider-wrap" id="origin-slider-en">
         <div class="origin-slider-track">
@@ -853,9 +926,20 @@
   </div>
 
   <!-- Section 9: Enhanced CTA -->
+  <!-- 🆕 MID-PAGE MINI-CTA -->
+  <div class="origin-mini-cta-wrap">
+    <div class="origin-mini-cta">
+      <p class="origin-mini-cta-text"><strong>Have questions?</strong> Let's figure out together whether Origin fits your needs.</p>
+      <a href="https://wa.me/905054549582?text=Hi%20Deniz%2C%20is%20Origin%20protein%20right%20for%20me%3F%20Can%20we%20chat%3F" target="_blank" class="origin-mini-cta-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+
   <div class="origin-cta-enhanced">
     <div class="origin-cta-inner">
-      <h2>Return to the Origin of Cellular Fuel</h2>
+      <h2>Return to the <em>Origin</em> of Cellular Fuel</h2>
       <p class="origin-cta-lead">Plant protein, natural fibre and minerals. A holistic approach for your cells, in a single formula.</p>
       <div class="origin-cta-features">
         <span class="origin-cta-feat">✦ 20g Plant Protein</span>
@@ -866,6 +950,10 @@
       </div>
       <div class="origin-cta-buttons">
         <a href="/quiz.html" class="origin-btn-quiz">Start with the Quiz</a>
+        <a href="https://wa.me/905054549582?text=Hi%20Deniz%2C%20could%20you%20tell%20me%20more%20about%20Origin%20plant-based%20protein%3F" target="_blank" class="origin-btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Ask on WhatsApp
+        </a>
         <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn-buy">Buy Origin →</a>
       </div>
       <p class="origin-cta-helper">Not sure which protocol is right for you? Start with our 2-minute quiz. If you've decided, you can get it from the official Amare site.</p>
@@ -877,7 +965,7 @@
     <div class="origin-rel-inner">
       <div class="origin-rel-center">
         <span class="origin-rel-tag">Read More</span>
-        <h2>Related Content</h2>
+        <h2><em>Related</em> Content</h2>
       </div>
       <div class="origin-rel-grid">
         <a href="/blog-hucresel-beslenme.html" class="origin-rel-card">
@@ -908,6 +996,9 @@
           </div>
         </a>
       </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="/blog.html" style="display:inline-block;color:#2e3d30;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid #d4af37;padding-bottom:3px;transition:.3s">ALL WELLNESS ARTICLES →</a>
+      </div>
     </div>
   </div>
 
@@ -918,7 +1009,7 @@
 
   <div class="origin-hero">
     <span class="origin-badge">Nutrición Macro Integral</span>
-    <h2>El Origen del Combustible Celular</h2>
+    <h2>El <em>Origen</em> del Combustible Celular</h2>
     <p>Nuestro cuerpo es un sistema extraordinario que merece el apoyo de los nutrientes más puros que la naturaleza puede ofrecer. Origin reúne proteínas vegetales puras en armonía con tu ritmo biológico.</p>
     <div class="origin-tags">
       <span class="origin-tag">20G PROTEÍNA VEGETAL</span>
@@ -926,7 +1017,8 @@
       <span class="origin-tag">ENERGÍA MCT</span>
       <span class="origin-tag">FIBRA PREBIÓTICA</span>
     </div>
-    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn">EXPLORAR EL PROTOCOLO</a>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn">COMPRAR EN EL SITIO OFICIAL</a>
+    <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px;max-width:640px;margin-left:auto;margin-right:auto">"Renovarse no es solo descansar;<br>es reconstruir 100 billones de células con los aminoácidos correctos."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
   </div>
 
   <div class="origin-inclusion-section">
@@ -979,7 +1071,7 @@
   </div>
 
   <div class="origin-cta">
-    <h2>Dale a tu Cuerpo el Apoyo que Merece</h2>
+    <h2>Dale a tu Cuerpo el <em>Apoyo que Merece</em></h2>
     <p style="max-width:600px;margin:0 auto 40px;color:#666;font-style:italic;">"La nutrición no es solo lo que comes — es qué tan bien tu cuerpo reconoce ese alimento y cuánto de él llega a la célula. Completa tu ciclo celular con Origin."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn-dark">OBTENERLO EN EL SITIO OFICIAL</a>
     <p class="origin-footnote">14 Porciones | Opciones Vainilla &amp; Chocolate | Vegano</p>
@@ -989,7 +1081,7 @@
   <div class="origin-observation">
     <div class="origin-obs-inner">
       <span class="origin-obs-tag">Observación Común</span>
-      <h2>El Problema Silencioso de la Nutrición Vegetal</h2>
+      <h2>El <em>Problema Silencioso</em> de la Nutrición Vegetal</h2>
       <p>El cambio hacia la nutrición vegetal se ha acelerado en los últimos años. Las razones van desde la elección ética hasta la salud y la sostenibilidad. Sin embargo, cuando se trata de proteínas vegetales, la mayoría de las personas escuchan: "La proteína vegetal está incompleta; el cuerpo no puede utilizarla por completo."</p>
       <p>La observación es correcta — pero la explicación está incompleta. Una sola fuente vegetal típicamente no contiene todos los aminoácidos en proporciones adecuadas. Por eso son importantes las <strong>fórmulas vegetales multi-fuente</strong>.</p>
       <div class="origin-obs-highlight">
@@ -1003,7 +1095,7 @@
   <div class="origin-science">
     <div class="origin-sci-inner">
       <span class="origin-sci-tag">Ciencia & Investigación</span>
-      <h2>¿Por Qué Importan las Fuentes Vegetales Múltiples?</h2>
+      <h2>¿Por Qué <em>Importan</em> las Fuentes Vegetales Múltiples?</h2>
       <p class="origin-sci-sub">Una perspectiva científica sobre las proteínas vegetales</p>
       <div class="origin-sci-grid">
         <div class="origin-sci-card">
@@ -1030,7 +1122,7 @@
     <div class="origin-sl-inner">
       <div class="origin-sl-center">
         <span class="origin-sl-tag">En la Vida Diaria</span>
-        <h2>Origin en la Vida Diaria</h2>
+        <h2>Origin en <em>la Vida Diaria</em></h2>
       </div>
       <div class="origin-slider-wrap" id="origin-slider-es">
         <div class="origin-slider-track">
@@ -1054,9 +1146,20 @@
   </div>
 
   <!-- Sección 9: CTA Mejorado -->
+  <!-- 🆕 MINI-CTA EN MEDIO DE LA PÁGINA -->
+  <div class="origin-mini-cta-wrap">
+    <div class="origin-mini-cta">
+      <p class="origin-mini-cta-text"><strong>¿Tienes preguntas?</strong> Veamos juntos si Origin se adapta a tus necesidades.</p>
+      <a href="https://wa.me/905054549582?text=Hola%20Deniz%2C%20%C2%BFOrigin%20es%20adecuado%20para%20m%C3%AD%3F%20%C2%BFPodemos%20hablar%3F" target="_blank" class="origin-mini-cta-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Hablar por WhatsApp
+      </a>
+    </div>
+  </div>
+
   <div class="origin-cta-enhanced">
     <div class="origin-cta-inner">
-      <h2>Vuelve al Origen del Combustible Celular</h2>
+      <h2>Vuelve al <em>Origen</em> del Combustible Celular</h2>
       <p class="origin-cta-lead">Proteína vegetal, fibra natural y minerales. Un enfoque integral para tus células, en una sola fórmula.</p>
       <div class="origin-cta-features">
         <span class="origin-cta-feat">✦ 20g Proteína Vegetal</span>
@@ -1067,6 +1170,10 @@
       </div>
       <div class="origin-cta-buttons">
         <a href="/quiz.html" class="origin-btn-quiz">Comenzar con el Quiz</a>
+        <a href="https://wa.me/905054549582?text=Hola%20Deniz%2C%20%C2%BFpodr%C3%ADas%20contarme%20m%C3%A1s%20sobre%20Origin%20prote%C3%ADna%20vegetal%3F" target="_blank" class="origin-btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Pregunta por WhatsApp
+        </a>
         <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="origin-btn-buy">Comprar Origin →</a>
       </div>
       <p class="origin-cta-helper">¿No estás seguro de qué protocolo es adecuado para ti? Comienza con nuestro quiz de 2 minutos. Si has decidido, puedes obtenerlo en el sitio oficial de Amare.</p>
@@ -1078,7 +1185,7 @@
     <div class="origin-rel-inner">
       <div class="origin-rel-center">
         <span class="origin-rel-tag">Sigue Leyendo</span>
-        <h2>Contenido Relacionado</h2>
+        <h2>Contenido <em>Relacionado</em></h2>
       </div>
       <div class="origin-rel-grid">
         <a href="/blog-hucresel-beslenme.html" class="origin-rel-card">
@@ -1108,6 +1215,9 @@
             <div class="origin-rel-meta">⏱ ~5 min · Deniz KAT →</div>
           </div>
         </a>
+      </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="/blog.html" style="display:inline-block;color:#2e3d30;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid #d4af37;padding-bottom:3px;transition:.3s">TODOS LOS ARTÍCULOS WELLNESS →</a>
       </div>
     </div>
   </div>
