@@ -219,15 +219,16 @@
 /* ═══ Bölüm 2: Neden HL5? (Gözlem dili) ═══ */
 .hl5-observation{background:#f5f2ec;padding:80px 20px;text-align:center}
 .hl5-observation-inner{max-width:780px;margin:0 auto}
-.hl5-observation .label{font-size:11px;letter-spacing:.18em;color:#b8963e;text-transform:uppercase;font-weight:700;margin-bottom:20px;display:block}
+.hl5-observation .label{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:20px}
 .hl5-observation h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,38px);font-weight:400;color:#1a2419;margin-bottom:24px;line-height:1.2}
+.hl5-observation h2 em,.hl5-science h2 em,.hl5-slider-section h2 em,.hl5-cta-enhanced h2 em,.hl5-related-blogs h2 em,.hl5-manifesto h2 em{color:#d4af37;font-style:italic;font-weight:inherit}
 .hl5-observation p{font-size:17px;color:#3a4a3b;line-height:1.85;margin-bottom:18px;text-align:left}
 .hl5-observation .highlight{font-style:italic;color:#2e3d30;border-left:3px solid #b8963e;padding-left:16px;margin:24px 0}
 
 /* ═══ Bölüm 7: Bilim & Araştırma ═══ */
 .hl5-science{background:#fff;padding:80px 20px;border-top:1px solid #e8e4dc}
 .hl5-science-inner{max-width:1100px;margin:0 auto;text-align:center}
-.hl5-science .label{font-size:11px;letter-spacing:.18em;color:#b8963e;text-transform:uppercase;font-weight:700;margin-bottom:16px;display:block}
+.hl5-science .label{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:16px}
 .hl5-science h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,40px);font-weight:400;color:#1a2419;margin-bottom:14px}
 .hl5-science .subtitle{color:#6b7c6d;font-size:16px;margin-bottom:50px;font-style:italic}
 .hl5-science-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:30px}
@@ -241,7 +242,7 @@
 /* ═══ Bölüm 8: Slider ═══ */
 .hl5-slider-section{background:#1a2419;padding:80px 20px}
 .hl5-slider-inner{max-width:1280px;margin:0 auto}
-.hl5-slider-section .label{font-size:11px;letter-spacing:.18em;color:#d4af37;text-transform:uppercase;font-weight:700;margin-bottom:14px;display:block;text-align:center}
+.hl5-slider-section .label{display:inline-block;background:#d4af37;color:#1a1a1a;padding:6px 16px;border-radius:50px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:14px}
 .hl5-slider-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,38px);font-weight:400;color:#fcfcfa;margin-bottom:40px;text-align:center}
 .hl5-slider-wrap{position:relative;overflow:hidden;border-radius:14px;background:#000;aspect-ratio:16/9;max-width:1280px;margin:0 auto}
 .hl5-slider-track{display:flex;width:100%;height:100%;transition:transform .6s ease-in-out}
@@ -266,12 +267,64 @@
 .hl5-btn-quiz:hover{background:#2e3d30;color:#fcfcfa}
 .hl5-btn-buy{display:inline-block;background:#d4af37;color:#1a1a1a;padding:14px 32px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:2px solid #d4af37;border-radius:4px;transition:all .3s}
 .hl5-btn-buy:hover{background:#b8963e;border-color:#b8963e}
+.hl5-btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:14px 32px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:2px solid #25d366;border-radius:4px;transition:all .3s}
+.hl5-btn-wa:hover{background:#1ebe5a;border-color:#1ebe5a;transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,211,102,.25)}
+.hl5-btn-wa svg{width:14px;height:14px;fill:#fff;flex-shrink:0}
 .hl5-cta-helper{margin-top:24px;font-size:13px;color:#6b7c6d;font-style:italic;max-width:560px;margin-left:auto;margin-right:auto}
+
+/* ── SAYFA ORTASI MİNİ-CTA ── */
+.hl5-mini-cta{
+  max-width:780px;
+  margin:0 auto;
+  padding:24px 28px;
+  background:linear-gradient(135deg,#f0f8f3 0%,#e6f3ec 100%);
+  border:1.5px solid #25d366;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.hl5-mini-cta-text{
+  flex:1;
+  min-width:240px;
+  font-family:'DM Sans',sans-serif;
+  font-size:16px;
+  color:#1a3a23;
+  margin:0;
+  line-height:1.5;
+}
+.hl5-mini-cta-text strong{color:#0d2f1a;font-weight:700}
+.hl5-mini-cta-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#25d366;
+  color:#fff;
+  padding:14px 26px;
+  border-radius:50px;
+  text-decoration:none;
+  font-family:'DM Sans',sans-serif;
+  font-weight:600;
+  font-size:14px;
+  letter-spacing:.3px;
+  transition:all .3s;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.hl5-mini-cta-btn:hover{background:#1ebe5a;transform:translateY(-2px)}
+.hl5-mini-cta-btn svg{width:14px;height:14px;fill:#fff}
+.hl5-mini-cta-wrap{padding:60px 20px;background:#fafaf8}
+@media(max-width:600px){
+  .hl5-mini-cta{flex-direction:column;text-align:center;padding:22px 18px}
+  .hl5-mini-cta-btn{width:100%;justify-content:center}
+}
 
 /* ═══ Bölüm 10: İlgili Bloglar ═══ */
 .hl5-related-blogs{background:#fafaf8;padding:80px 20px;border-top:1px solid #e8e4dc}
 .hl5-related-inner{max-width:1100px;margin:0 auto}
-.hl5-related-blogs .label{font-size:11px;letter-spacing:.18em;color:#b8963e;text-transform:uppercase;font-weight:700;margin-bottom:14px;display:block;text-align:center}
+.hl5-related-blogs .label{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:14px}
 .hl5-related-blogs h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,36px);font-weight:400;color:#1a2419;margin-bottom:40px;text-align:center}
 .hl5-related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
 .hl5-blog-card{background:#fff;border:1px solid #e8e4dc;border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
@@ -286,7 +339,7 @@
 @media(max-width:768px){
   .hl5-observation,.hl5-science,.hl5-slider-section,.hl5-cta-enhanced,.hl5-related-blogs{padding:60px 16px}
   .hl5-cta-buttons{flex-direction:column;align-items:stretch}
-  .hl5-btn-quiz,.hl5-btn-buy{width:100%}
+  .hl5-btn-quiz,.hl5-btn-buy,.hl5-btn-wa{width:100%;justify-content:center}
   .hl5-slider-arrow{width:36px;height:36px}
 }
 
@@ -606,7 +659,7 @@
     <div class="hl5-observation">
       <div class="hl5-observation-inner">
         <span class="label">Çevremizde Gözlem</span>
-        <h2>Çevremizde Sıkça Gördüğümüz Bir Tablo</h2>
+        <h2>Çevremizde <em>Sıkça</em> Gördüğümüz Bir Tablo</h2>
         <p>35 yaş sonrası birçok kişide ortak gözlemler dikkat çekiyor: eklemlerde tutukluk, cilt esnekliğinin azalması, saç ve tırnak zayıflığı, antrenman sonrası uzayan toparlanma süreleri.</p>
         <p>Bu durumun arkasında çoğu zaman tek bir gerçek yatıyor: vücudun kolajen üretimi 25 yaşından itibaren her on yılda yaklaşık <strong>%1 azalıyor</strong>.</p>
         <div class="highlight">
@@ -635,7 +688,7 @@
     </div>
 
     <div class="hl5-manifesto">
-      <h2>Neden HL5 Farklı?</h2>
+      <h2>Neden HL5 <em>Farklı?</em></h2>
       <p style="font-size:18px;color:#444">Piyasada bulunan pek çok protein ürünü, vücut tarafından verimli kullanılamayacak kadar büyük molekül yapısına sahip olabilir. HL5, <strong>Hidrolize Teknolojisi</strong> sayesinde bu proteinleri küçük peptitlere parçalayarak vücudun biyoyararlanım kapasitesini maksimize eder.</p>
       <div class="hl5-usage-icons">
         <div class="hl5-icon-item"><div class="hl5-icon-circle">🍋</div><span style="font-size:12px;font-weight:700">SİCİLYA LİMONU &amp; ELMA SİRKESİ</span></div>
@@ -671,7 +724,7 @@
     <div class="hl5-science">
       <div class="hl5-science-inner">
         <span class="label">Bilim & Araştırma</span>
-        <h2>Hidrolize Kolajen Neden Farklı?</h2>
+        <h2>Hidrolize Kolajen Neden <em>Farklı?</em></h2>
         <p class="subtitle">Bilimsel literatürün gösterdikleri</p>
         <div class="hl5-science-grid">
           <div class="hl5-science-card">
@@ -697,7 +750,7 @@
     <div class="hl5-slider-section">
       <div class="hl5-slider-inner">
         <span class="label">Yaşamın İçinde</span>
-        <h2>HL5 Günlük Hayatta</h2>
+        <h2>HL5 <em>Günlük Hayatta</em></h2>
         <div class="hl5-slider-wrap" id="hl5-slider-tr">
           <div class="hl5-slider-track">
             <div class="hl5-slide"><img src="/images/hl5/hl5-slide-01.png" alt="HL5 Ürün" loading="lazy"></div>
@@ -719,9 +772,20 @@
       </div>
     </div>
 
+    <!-- 🆕 SAYFA ORTASI MİNİ-CTA -->
+    <div class="hl5-mini-cta-wrap">
+      <div class="hl5-mini-cta">
+        <p class="hl5-mini-cta-text"><strong>Sorunuz mu var?</strong> HL5'in size uygun olup olmadığını birlikte değerlendirelim.</p>
+        <a href="https://wa.me/905054549582?text=Merhaba%20Deniz%2C%20HL5%20kolajen%20benim%20i%C3%A7in%20uygun%20mu%2C%20konu%C5%9Fabilir%20miyiz%3F" target="_blank" class="hl5-mini-cta-btn">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp'tan Konuşalım
+        </a>
+      </div>
+    </div>
+
     <!-- Bölüm 9: Geliştirilmiş CTA -->
     <div class="hl5-cta-enhanced">
-      <h2>Vücudunuza Hak Ettiği Yatırımı Yapın</h2>
+      <h2>Vücudunuza <em>Hak Ettiği</em> Yatırımı Yapın</h2>
       <p class="lead">Güzellik, sağlık ve güç... Hepsi aynı kaynaktan beslenir. HL5 ile bütünsel dönüşümünüzü bugün destekleyin.</p>
       <div class="hl5-cta-features">
         <span class="hl5-cta-feature">✦ 48 ülkede onaylı</span>
@@ -732,6 +796,10 @@
       </div>
       <div class="hl5-cta-buttons">
         <a href="/quiz.html" class="hl5-btn-quiz">Önce Quizi Tamamla</a>
+        <a href="https://wa.me/905054549582?text=Merhaba%20Deniz%2C%20HL5%20kolajen%20hakk%C4%B1nda%20bana%20biraz%20bilgi%20verir%20misin%3F" target="_blank" class="hl5-btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp'tan Sor
+        </a>
         <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="hl5-btn-buy">Resmi Siteden Satın Al →</a>
       </div>
       <p class="hl5-cta-helper">Hangi protokolün size uygun olduğundan emin değil misiniz? 2 dakikalık quizimizle başlayın. Karar verdiyseniz Amare resmi sitesinden temin edebilirsiniz.</p>
@@ -741,7 +809,7 @@
     <div class="hl5-related-blogs">
       <div class="hl5-related-inner">
         <span class="label">Devamını Okuyun</span>
-        <h2>HL5 ile İlgili İçeriklerimiz</h2>
+        <h2>HL5 ile <em>İlgili</em> İçeriklerimiz</h2>
         <div class="hl5-related-grid">
           <a href="/blog-yaslanmak.html" class="hl5-blog-card">
             <div class="hl5-blog-card-img" style="background:linear-gradient(135deg,#2e3d30,#1a3a2a)">⏳</div>
@@ -771,6 +839,9 @@
             </div>
           </a>
         </div>
+        <div style="text-align:center;margin-top:40px">
+          <a href="/blog.html" style="display:inline-block;color:#2e3d30;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid #d4af37;padding-bottom:3px;transition:.3s">TÜM WELLNESS YAZILARI →</a>
+        </div>
       </div>
     </div>
   </div>
@@ -794,7 +865,7 @@
     <div class="hl5-observation">
       <div class="hl5-observation-inner">
         <span class="label">Common Observation</span>
-        <h2>A Pattern We Often Observe</h2>
+        <h2>A Pattern We <em>Often</em> Observe</h2>
         <p>After age 35, many people share common observations: joint stiffness, declining skin elasticity, weakened hair and nails, prolonged recovery times after physical activity.</p>
         <p>Behind this pattern lies a single biological reality: the body's collagen production decreases by approximately <strong>1% every decade</strong> after age 25.</p>
         <div class="highlight">
@@ -823,7 +894,7 @@
     </div>
 
     <div class="hl5-manifesto">
-      <h2>Why Is HL5 Different?</h2>
+      <h2>Why Is HL5 <em>Different?</em></h2>
       <p style="font-size:18px;color:#444">Many protein products on the market may have a molecular structure too large to be used efficiently by the body. Thanks to <strong>Hydrolysis Technology</strong>, HL5 breaks these proteins down into small peptides, maximising the body's bioavailability capacity.</p>
       <div class="hl5-usage-icons">
         <div class="hl5-icon-item"><div class="hl5-icon-circle">🍋</div><span style="font-size:12px;font-weight:700">SICILIAN LEMON &amp; APPLE CIDER VINEGAR</span></div>
@@ -859,7 +930,7 @@
     <div class="hl5-science">
       <div class="hl5-science-inner">
         <span class="label">Science & Research</span>
-        <h2>Why is Hydrolysed Collagen Different?</h2>
+        <h2>Why is Hydrolysed Collagen <em>Different?</em></h2>
         <p class="subtitle">What the scientific literature shows</p>
         <div class="hl5-science-grid">
           <div class="hl5-science-card">
@@ -885,7 +956,7 @@
     <div class="hl5-slider-section">
       <div class="hl5-slider-inner">
         <span class="label">In Daily Life</span>
-        <h2>HL5 in Daily Life</h2>
+        <h2>HL5 in <em>Daily Life</em></h2>
         <div class="hl5-slider-wrap" id="hl5-slider-en">
           <div class="hl5-slider-track">
             <div class="hl5-slide"><img src="/images/hl5/hl5-slide-01.png" alt="HL5 Product" loading="lazy"></div>
@@ -908,8 +979,19 @@
     </div>
 
     <!-- Section 9: Enhanced CTA -->
+    <!-- 🆕 MID-PAGE MINI-CTA -->
+    <div class="hl5-mini-cta-wrap">
+      <div class="hl5-mini-cta">
+        <p class="hl5-mini-cta-text"><strong>Have questions?</strong> Let's figure out together whether HL5 fits your needs.</p>
+        <a href="https://wa.me/905054549582?text=Hi%20Deniz%2C%20is%20HL5%20collagen%20right%20for%20me%3F%20Can%20we%20chat%3F" target="_blank" class="hl5-mini-cta-btn">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+
     <div class="hl5-cta-enhanced">
-      <h2>Invest in What Your Body Deserves</h2>
+      <h2>Invest in What Your Body <em>Deserves</em></h2>
       <p class="lead">Beauty, health and strength... They all draw from the same source. Support your holistic transformation with HL5 today.</p>
       <div class="hl5-cta-features">
         <span class="hl5-cta-feature">✦ Approved in 48 countries</span>
@@ -920,6 +1002,10 @@
       </div>
       <div class="hl5-cta-buttons">
         <a href="/quiz.html" class="hl5-btn-quiz">Start with the Quiz</a>
+        <a href="https://wa.me/905054549582?text=Hi%20Deniz%2C%20could%20you%20tell%20me%20more%20about%20HL5%20collagen%3F" target="_blank" class="hl5-btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Ask on WhatsApp
+        </a>
         <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="hl5-btn-buy">Buy from Official Site →</a>
       </div>
       <p class="hl5-cta-helper">Not sure which protocol is right for you? Start with our 2-minute quiz. If you've decided, you can get it from the official Amare site.</p>
@@ -929,7 +1015,7 @@
     <div class="hl5-related-blogs">
       <div class="hl5-related-inner">
         <span class="label">Read More</span>
-        <h2>Related Content</h2>
+        <h2><em>Related</em> Content</h2>
         <div class="hl5-related-grid">
           <a href="/blog-yaslanmak.html" class="hl5-blog-card">
             <div class="hl5-blog-card-img" style="background:linear-gradient(135deg,#2e3d30,#1a3a2a)">⏳</div>
@@ -959,6 +1045,9 @@
             </div>
           </a>
         </div>
+        <div style="text-align:center;margin-top:40px">
+          <a href="/blog.html" style="display:inline-block;color:#2e3d30;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid #d4af37;padding-bottom:3px;transition:.3s">ALL WELLNESS ARTICLES →</a>
+        </div>
       </div>
     </div>
   </div>
@@ -982,7 +1071,7 @@
     <div class="hl5-observation">
       <div class="hl5-observation-inner">
         <span class="label">Observación Común</span>
-        <h2>Un Patrón Que Observamos Con Frecuencia</h2>
+        <h2>Un Patrón Que <em>Observamos Con Frecuencia</em></h2>
         <p>Después de los 35 años, muchas personas comparten observaciones comunes: rigidez articular, disminución de la elasticidad de la piel, cabello y uñas debilitados, tiempos de recuperación prolongados después de la actividad física.</p>
         <p>Detrás de este patrón hay una realidad biológica única: la producción de colágeno del cuerpo disminuye aproximadamente <strong>un 1% cada década</strong> a partir de los 25 años.</p>
         <div class="highlight">
@@ -1011,7 +1100,7 @@
     </div>
 
     <div class="hl5-manifesto">
-      <h2>¿Por Qué HL5 Es Diferente?</h2>
+      <h2>¿Por Qué HL5 Es <em>Diferente?</em></h2>
       <p style="font-size:18px;color:#444">Muchos productos proteicos en el mercado pueden tener una estructura molecular demasiado grande para ser utilizada eficientemente por el cuerpo. Gracias a la <strong>Tecnología de Hidrólisis</strong>, HL5 descompone estas proteínas en pequeños péptidos, maximizando la capacidad de biodisponibilidad del cuerpo.</p>
       <div class="hl5-usage-icons">
         <div class="hl5-icon-item"><div class="hl5-icon-circle">🍋</div><span style="font-size:12px;font-weight:700">LIMÓN SICILIANO &amp; VINAGRE DE MANZANA</span></div>
@@ -1047,7 +1136,7 @@
     <div class="hl5-science">
       <div class="hl5-science-inner">
         <span class="label">Ciencia & Investigación</span>
-        <h2>¿Por Qué es Diferente el Colágeno Hidrolizado?</h2>
+        <h2>¿Por Qué es <em>Diferente</em> el Colágeno Hidrolizado?</h2>
         <p class="subtitle">Lo que muestra la literatura científica</p>
         <div class="hl5-science-grid">
           <div class="hl5-science-card">
@@ -1073,7 +1162,7 @@
     <div class="hl5-slider-section">
       <div class="hl5-slider-inner">
         <span class="label">En la Vida Diaria</span>
-        <h2>HL5 en la Vida Diaria</h2>
+        <h2>HL5 en <em>la Vida Diaria</em></h2>
         <div class="hl5-slider-wrap" id="hl5-slider-es">
           <div class="hl5-slider-track">
             <div class="hl5-slide"><img src="/images/hl5/hl5-slide-01.png" alt="Producto HL5" loading="lazy"></div>
@@ -1096,8 +1185,19 @@
     </div>
 
     <!-- Sección 9: CTA Mejorado -->
+    <!-- 🆕 MINI-CTA EN MEDIO DE LA PÁGINA -->
+    <div class="hl5-mini-cta-wrap">
+      <div class="hl5-mini-cta">
+        <p class="hl5-mini-cta-text"><strong>¿Tienes preguntas?</strong> Veamos juntos si HL5 se adapta a tus necesidades.</p>
+        <a href="https://wa.me/905054549582?text=Hola%20Deniz%2C%20%C2%BFel%20col%C3%A1geno%20HL5%20es%20adecuado%20para%20m%C3%AD%3F%20%C2%BFPodemos%20hablar%3F" target="_blank" class="hl5-mini-cta-btn">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Hablar por WhatsApp
+        </a>
+      </div>
+    </div>
+
     <div class="hl5-cta-enhanced">
-      <h2>Invierte en lo que tu Cuerpo Merece</h2>
+      <h2>Invierte en lo que tu Cuerpo <em>Merece</em></h2>
       <p class="lead">Belleza, salud y fuerza... Todos se nutren de la misma fuente. Apoya tu transformación holística con HL5 hoy.</p>
       <div class="hl5-cta-features">
         <span class="hl5-cta-feature">✦ Aprobado en 48 países</span>
@@ -1108,6 +1208,10 @@
       </div>
       <div class="hl5-cta-buttons">
         <a href="/quiz.html" class="hl5-btn-quiz">Comenzar con el Quiz</a>
+        <a href="https://wa.me/905054549582?text=Hola%20Deniz%2C%20%C2%BFpodr%C3%ADas%20contarme%20m%C3%A1s%20sobre%20el%20col%C3%A1geno%20HL5%3F" target="_blank" class="hl5-btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Pregunta por WhatsApp
+        </a>
         <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="hl5-btn-buy">Comprar en el Sitio Oficial →</a>
       </div>
       <p class="hl5-cta-helper">¿No estás seguro de qué protocolo es adecuado para ti? Comienza con nuestro quiz de 2 minutos. Si has decidido, puedes obtenerlo en el sitio oficial de Amare.</p>
@@ -1117,7 +1221,7 @@
     <div class="hl5-related-blogs">
       <div class="hl5-related-inner">
         <span class="label">Sigue Leyendo</span>
-        <h2>Contenido Relacionado</h2>
+        <h2>Contenido <em>Relacionado</em></h2>
         <div class="hl5-related-grid">
           <a href="/blog-yaslanmak.html" class="hl5-blog-card">
             <div class="hl5-blog-card-img" style="background:linear-gradient(135deg,#2e3d30,#1a3a2a)">⏳</div>
@@ -1146,6 +1250,9 @@
               <div class="hl5-blog-card-meta">⏱ ~5 min · Deniz KAT →</div>
             </div>
           </a>
+        </div>
+        <div style="text-align:center;margin-top:40px">
+          <a href="/blog.html" style="display:inline-block;color:#2e3d30;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid #d4af37;padding-bottom:3px;transition:.3s">TODOS LOS ARTÍCULOS WELLNESS →</a>
         </div>
       </div>
     </div>
