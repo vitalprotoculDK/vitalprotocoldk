@@ -303,15 +303,16 @@
 /* ═══ R-STOUR - Bölüm 2: Çevremizde Gözlem ═══ */
 .rs-observation{background:#fafaf8;padding:80px 20px;text-align:center}
 .rs-obs-inner{max-width:780px;margin:0 auto}
-.rs-obs-tag{display:inline-block;background:#fff;color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;border:1px solid #e8e4dc}
+.rs-obs-tag{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
 .rs-obs-inner h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:#2e3d30;margin-bottom:24px;line-height:1.2;letter-spacing:-1px}
+.rs-obs-inner h2 em,.rs-sci-inner h2 em,.rs-slider-section h2 em,.rs-cta-enhanced h2 em,.rs-cta-inner h2 em,.rs-related h2 em,.rs-hero h1 em,.rs-hero h2 em,.rs-tech-panel h2 em,.rs-profiles h2 em,.footer-cta h2 em{color:#d4af37;font-style:italic;font-weight:inherit}
 .rs-obs-inner p{font-size:17px;color:#444;line-height:1.8;margin-bottom:18px;text-align:left}
 .rs-obs-highlight{background:#fff;border-left:4px solid #d4af37;padding:20px 26px;border-radius:0 16px 16px 0;margin:28px 0;font-style:italic;color:#2e3d30;text-align:left}
 
 /* ═══ R-STOUR - Bölüm 7: Bilim & Araştırma ═══ */
 .rs-science{background:#fff;padding:80px 20px}
 .rs-sci-inner{max-width:1100px;margin:0 auto;text-align:center}
-.rs-sci-tag{display:inline-block;background:#f0ede6;color:#2e3d30;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.rs-sci-tag{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
 .rs-sci-inner h2{font-size:clamp(28px,4vw,40px);font-weight:800;color:#2e3d30;margin-bottom:14px;letter-spacing:-1px}
 .rs-sci-sub{color:#666;font-size:16px;font-style:italic;margin-bottom:50px}
 .rs-sci-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
@@ -325,7 +326,7 @@
 /* ═══ R-STOUR - Bölüm 8: Slider ═══ */
 .rs-slider-section{background:linear-gradient(135deg,#1f3a2e 0%,#0f1f17 100%);padding:80px 20px}
 .rs-sl-inner{max-width:1280px;margin:0 auto}
-.rs-sl-tag{display:inline-block;background:rgba(212,175,55,0.15);color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center}
+.rs-sl-tag{display:inline-block;background:#d4af37;color:#1a1a1a;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center}
 .rs-sl-center{text-align:center;margin-bottom:40px}
 .rs-sl-center h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:#fff;letter-spacing:-1px;margin-bottom:0}
 .rs-slider-wrap{position:relative;overflow:hidden;border-radius:24px;background:#000;aspect-ratio:16/9;max-width:1100px;margin:0 auto;box-shadow:0 24px 48px rgba(0,0,0,0.35)}
@@ -352,12 +353,40 @@
 .rs-btn-quiz:hover{background:#2e3d30;color:#fff}
 .rs-btn-buy{display:inline-block;background:#d4af37;color:#1a1a1a;padding:16px 32px;font-size:14px;font-weight:800;letter-spacing:.5px;text-decoration:none;border:2px solid #d4af37;border-radius:50px;transition:all .3s;text-transform:uppercase}
 .rs-btn-buy:hover{background:#c49b2a;border-color:#c49b2a;transform:translateY(-2px)}
+.rs-btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:16px 32px;font-size:14px;font-weight:800;letter-spacing:.5px;text-decoration:none;border:2px solid #25d366;border-radius:50px;transition:all .3s;text-transform:uppercase}
+.rs-btn-wa:hover{background:#1ebe5a;border-color:#1ebe5a;transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,211,102,.25)}
+.rs-btn-wa svg{width:14px;height:14px;fill:#fff;flex-shrink:0}
+
+/* SAYFA ORTASI MİNİ-CTA */
+.rs-mini-cta-wrap{padding:50px 20px;background:#fafaf8}
+.rs-mini-cta{
+  max-width:780px;
+  margin:0 auto;
+  padding:24px 28px;
+  background:linear-gradient(135deg,#f0f8f3 0%,#e6f3ec 100%);
+  border:1.5px solid #25d366;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.rs-mini-cta-text{flex:1;min-width:240px;font-family:'DM Sans',sans-serif;font-size:16px;color:#1a3a23;margin:0;line-height:1.5}
+.rs-mini-cta-text strong{color:#0d2f1a;font-weight:700}
+.rs-mini-cta-btn{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:14px 26px;border-radius:50px;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;letter-spacing:.3px;transition:all .3s;white-space:nowrap;flex-shrink:0}
+.rs-mini-cta-btn:hover{background:#1ebe5a;transform:translateY(-2px)}
+.rs-mini-cta-btn svg{width:14px;height:14px;fill:#fff}
+@media(max-width:600px){
+  .rs-mini-cta{flex-direction:column;text-align:center;padding:22px 18px}
+  .rs-mini-cta-btn{width:100%;justify-content:center}
+}
 .rs-cta-helper{margin-top:24px;font-size:13px;color:#666;font-style:italic;max-width:540px;margin-left:auto;margin-right:auto}
 
 /* ═══ R-STOUR - Bölüm 10: İlgili Bloglar ═══ */
 .rs-related{background:#fafaf8;padding:80px 20px;border-top:1px solid #e8e4dc}
 .rs-rel-inner{max-width:1100px;margin:0 auto}
-.rs-rel-tag{display:inline-block;background:#fff;color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center;border:1px solid #e8e4dc}
+.rs-rel-tag{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center}
 .rs-rel-center{text-align:center;margin-bottom:40px}
 .rs-rel-center h2{font-size:clamp(26px,4vw,36px);font-weight:800;color:#2e3d30;letter-spacing:-1px}
 .rs-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -374,7 +403,7 @@
   .rs-observation,.rs-science,.rs-slider-section,.rs-cta-enhanced,.rs-related{padding:60px 16px}
   .rs-sci-grid,.rs-rel-grid{grid-template-columns:1fr}
   .rs-cta-buttons{flex-direction:column;align-items:stretch}
-  .rs-btn-quiz,.rs-btn-buy{width:100%}
+  .rs-btn-quiz,.rs-btn-buy,.rs-btn-wa{width:100%;justify-content:center}
   .rs-slider-arrow{width:36px;height:36px}
 }
 
@@ -509,7 +538,7 @@
 
   <div class="rs-hero">
     <span class="rs-badge">Sindirim, Bağışıklık &amp; Enerji Merkezi</span>
-    <h1>R-STOUR ile<br>Bütünsel Denge.</h1>
+    <h1>R-STOUR ile<br><em>Bütünsel Denge.</em></h1>
     <p>Sindirim sisteminiz, vücudunuzun ana enerji dağıtım noktasıdır. NitroBiotics™ teknolojisi ile yemek sonrası yaşanan ağırlık hissini dengeleyin ve vücudunuzun doğal biyolojik potansiyelini destekleyin.</p>
     <div class="rs-tags">
       <span class="rs-tag">VEGAN DOSTU</span>
@@ -517,7 +546,8 @@
       <span class="rs-tag">5 SİNDİRİM ENZİMİ</span>
       <span class="rs-tag">5 PROBİYOTİK SUŞ</span>
     </div>
-    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="rs-btn">SİSTEMİ KEŞFET</a>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="rs-btn">RESMİ SİTEDEN SATIN AL</a>
+    <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px;max-width:640px;margin-left:auto;margin-right:auto">"Sağlığın gerçek temeli, sandığın yerde değil;<br>bağırsaklarda başlar."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
   </div>
 
   <div class="rs-profiles">
@@ -575,7 +605,7 @@
   </div>
 
   <div class="footer-cta">
-    <h2>Vücudunuzun Dilini Dinleyin</h2>
+    <h2>Vücudunuzun <em>Dilini</em> Dinleyin</h2>
     <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Huzurlu bir sindirim sistemi, zinde bir zihnin temelidir. R-STOUR ile içsel dengenizi destekleyin ve hafifliğin tadını çıkarın."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="rs-btn-dark">RESMİ SİTEDEN TEMİN ET</a>
     <p class="footer-note">60 Kapsül | İlk Öğünde 2 Adet | Vegan &amp; Temiz İçerik</p>
@@ -585,7 +615,7 @@
   <div class="rs-observation">
     <div class="rs-obs-inner">
       <span class="rs-obs-tag">Çevremizde Gözlem</span>
-      <h2>Sindirim Sessiz Kahramanımız</h2>
+      <h2>Sindirim <em>Sessiz Kahramanımız</em></h2>
       <p>"İyi besleniyorum, egzersiz yapıyorum ama hâlâ kendimi yorgun hissediyorum." — Bu cümle, çevremizde sıkça duyulan bir gözlem. Çoğu zaman parmaklarımız diyete veya egzersize gider, oysa **gözden kaçan bir nokta** vardır: sindirim sistemi.</p>
       <p>Bilim insanları artık bağırsağı "ikinci beyin" olarak adlandırıyor. Çünkü bağırsakta **trilyonlarca mikroorganizma** yaşıyor ve bunlar yalnızca yediklerimizi sindirmekle kalmıyor — bağışıklık sistemimizin yaklaşık %70'i de burada şekilleniyor.</p>
       <div class="rs-obs-highlight">
@@ -599,7 +629,7 @@
   <div class="rs-science">
     <div class="rs-sci-inner">
       <span class="rs-sci-tag">Bilim & Araştırma</span>
-      <h2>R-Stour Formülünün Bilimsel Temeli</h2>
+      <h2>R-Stour Formülünün <em>Bilimsel</em> Temeli</h2>
       <p class="rs-sci-sub">5'i 1 arada bütünsel sindirim desteği</p>
       <div class="rs-sci-grid">
         <div class="rs-sci-card">
@@ -626,7 +656,7 @@
     <div class="rs-sl-inner">
       <div class="rs-sl-center">
         <span class="rs-sl-tag">Yaşamın İçinde</span>
-        <h2>R-Stour Günlük Hayatta</h2>
+        <h2>R-Stour <em>Günlük Hayatta</em></h2>
       </div>
       <div class="rs-slider-wrap" id="rs-slider-tr">
         <div class="rs-slider-track">
@@ -650,9 +680,20 @@
   </div>
 
   <!-- Bölüm 9: Geliştirilmiş CTA -->
+  <!-- 🆕 SAYFA ORTASI MİNİ-CTA -->
+  <div class="rs-mini-cta-wrap">
+    <div class="rs-mini-cta">
+      <p class="rs-mini-cta-text"><strong>Sorunuz mu var?</strong> R-Stour'un size uygun olup olmadığını birlikte değerlendirelim.</p>
+      <a href="https://wa.me/905054549582?text=Merhaba%20Deniz%2C%20R-Stour%20benim%20i%C3%A7in%20uygun%20mu%2C%20konu%C5%9Fabilir%20miyiz%3F" target="_blank" class="rs-mini-cta-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp'tan Konuşalım
+      </a>
+    </div>
+  </div>
+
   <div class="rs-cta-enhanced">
     <div class="rs-cta-inner">
-      <h2>Sindirimine Bütünsel Bir Yaklaşım</h2>
+      <h2>Sindirimine <em>Bütünsel Bir Yaklaşım</em></h2>
       <p class="rs-cta-lead">5 probiyotik + 5 enzim + 9 bitki. Tek bir kapsülde, sindirim sistemine doğal bir destek.</p>
       <div class="rs-cta-features">
         <span class="rs-cta-feat">✦ 5 Probiyotik Suşu</span>
@@ -663,6 +704,10 @@
       </div>
       <div class="rs-cta-buttons">
         <a href="/quiz.html" class="rs-btn-quiz">Önce Quizi Tamamla</a>
+        <a href="https://wa.me/905054549582?text=Merhaba%20Deniz%2C%20R-Stour%20sindirim%20deste%C4%9Fi%20hakk%C4%B1nda%20bana%20biraz%20bilgi%20verir%20misin%3F" target="_blank" class="rs-btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp'tan Sor
+        </a>
         <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="rs-btn-buy">R-Stour Satın Al →</a>
       </div>
       <p class="rs-cta-helper">Hangi protokolün size uygun olduğundan emin değil misiniz? 2 dakikalık quizimizle başlayın. Karar verdiyseniz Amare resmi sitesinden temin edebilirsiniz.</p>
@@ -674,7 +719,7 @@
     <div class="rs-rel-inner">
       <div class="rs-rel-center">
         <span class="rs-rel-tag">Devamını Okuyun</span>
-        <h2>R-Stour ile İlgili İçeriklerimiz</h2>
+        <h2>R-Stour ile <em>İlgili</em> İçeriklerimiz</h2>
       </div>
       <div class="rs-rel-grid">
         <a href="/blog-bagisiklik.html" class="rs-rel-card">
@@ -705,6 +750,9 @@
           </div>
         </a>
       </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="/blog.html" style="display:inline-block;color:#2e3d30;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid #d4af37;padding-bottom:3px;transition:.3s">TÜM WELLNESS YAZILARI →</a>
+      </div>
     </div>
   </div>
 
@@ -715,7 +763,7 @@
 
   <div class="rs-hero">
     <span class="rs-badge">Digestion, Immunity &amp; Energy Centre</span>
-    <h2>Holistic Balance<br>with R-STOUR.</h2>
+    <h2><em>Holistic Balance</em><br>with R-STOUR.</h2>
     <p>Your digestive system is your body's main energy distribution hub. Balance the heavy feeling after meals with NitroBiotics™ technology and support your body's natural biological potential.</p>
     <div class="rs-tags">
       <span class="rs-tag">VEGAN FRIENDLY</span>
@@ -723,7 +771,8 @@
       <span class="rs-tag">5 DIGESTIVE ENZYMES</span>
       <span class="rs-tag">5 PROBIOTIC STRAINS</span>
     </div>
-    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="rs-btn">DISCOVER THE SYSTEM</a>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="rs-btn">BUY ON OFFICIAL SITE</a>
+    <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px;max-width:640px;margin-left:auto;margin-right:auto">"The real foundation of health isn't where you think;<br>it begins in the gut."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
   </div>
 
   <div class="rs-profiles">
@@ -781,7 +830,7 @@
   </div>
 
   <div class="footer-cta">
-    <h2>Listen to Your Body's Language</h2>
+    <h2>Listen to Your Body's <em>Language</em></h2>
     <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"A peaceful digestive system is the foundation of a vital mind. Support your inner balance with R-STOUR and enjoy the feeling of lightness."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="rs-btn-dark">GET IT FROM THE OFFICIAL SITE</a>
     <p class="footer-note">60 Capsules | 2 Per First Meal | Vegan &amp; Clean Ingredients</p>
@@ -791,7 +840,7 @@
   <div class="rs-observation">
     <div class="rs-obs-inner">
       <span class="rs-obs-tag">Common Observation</span>
-      <h2>Digestion: Our Silent Hero</h2>
+      <h2>Digestion: Our <em>Silent Hero</em></h2>
       <p>"I eat well, I exercise, but I still feel tired." — This is a frequently heard observation. Often we point fingers at diet or exercise, while overlooking a key piece: the digestive system.</p>
       <p>Scientists now refer to the gut as the "second brain." Trillions of microorganisms live there, and they don't just digest what we eat — about 70% of our immune system is also shaped here.</p>
       <div class="rs-obs-highlight">
@@ -805,7 +854,7 @@
   <div class="rs-science">
     <div class="rs-sci-inner">
       <span class="rs-sci-tag">Science & Research</span>
-      <h2>The Scientific Foundation of R-Stour</h2>
+      <h2>The <em>Scientific</em> Foundation of R-Stour</h2>
       <p class="rs-sci-sub">A holistic 5-in-1 digestive support</p>
       <div class="rs-sci-grid">
         <div class="rs-sci-card">
@@ -832,7 +881,7 @@
     <div class="rs-sl-inner">
       <div class="rs-sl-center">
         <span class="rs-sl-tag">In Daily Life</span>
-        <h2>R-Stour in Daily Life</h2>
+        <h2>R-Stour in <em>Daily Life</em></h2>
       </div>
       <div class="rs-slider-wrap" id="rs-slider-en">
         <div class="rs-slider-track">
@@ -856,9 +905,20 @@
   </div>
 
   <!-- Section 9: Enhanced CTA -->
+  <!-- 🆕 MID-PAGE MINI-CTA -->
+  <div class="rs-mini-cta-wrap">
+    <div class="rs-mini-cta">
+      <p class="rs-mini-cta-text"><strong>Have questions?</strong> Let's figure out together whether R-Stour fits your needs.</p>
+      <a href="https://wa.me/905054549582?text=Hi%20Deniz%2C%20is%20R-Stour%20right%20for%20me%3F%20Can%20we%20chat%3F" target="_blank" class="rs-mini-cta-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+
   <div class="rs-cta-enhanced">
     <div class="rs-cta-inner">
-      <h2>A Holistic Approach to Your Digestion</h2>
+      <h2>A <em>Holistic Approach</em> to Your Digestion</h2>
       <p class="rs-cta-lead">5 probiotics + 5 enzymes + 9 herbs. A natural support for the digestive system, in a single capsule.</p>
       <div class="rs-cta-features">
         <span class="rs-cta-feat">✦ 5 Probiotic Strains</span>
@@ -869,6 +929,10 @@
       </div>
       <div class="rs-cta-buttons">
         <a href="/quiz.html" class="rs-btn-quiz">Start with the Quiz</a>
+        <a href="https://wa.me/905054549582?text=Hi%20Deniz%2C%20could%20you%20tell%20me%20more%20about%20R-Stour%20digestive%20support%3F" target="_blank" class="rs-btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Ask on WhatsApp
+        </a>
         <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="rs-btn-buy">Buy R-Stour →</a>
       </div>
       <p class="rs-cta-helper">Not sure which protocol is right for you? Start with our 2-minute quiz. If you've decided, you can get it from the official Amare site.</p>
@@ -880,7 +944,7 @@
     <div class="rs-rel-inner">
       <div class="rs-rel-center">
         <span class="rs-rel-tag">Read More</span>
-        <h2>Related Content</h2>
+        <h2><em>Related</em> Content</h2>
       </div>
       <div class="rs-rel-grid">
         <a href="/blog-bagisiklik.html" class="rs-rel-card">
@@ -911,6 +975,9 @@
           </div>
         </a>
       </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="/blog.html" style="display:inline-block;color:#2e3d30;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid #d4af37;padding-bottom:3px;transition:.3s">ALL WELLNESS ARTICLES →</a>
+      </div>
     </div>
   </div>
 
@@ -921,7 +988,7 @@
 
   <div class="rs-hero">
     <span class="rs-badge">Digestión, Inmunidad &amp; Centro de Energía</span>
-    <h2>Equilibrio Integral<br>con R-STOUR.</h2>
+    <h2><em>Equilibrio Integral</em><br>con R-STOUR.</h2>
     <p>Tu sistema digestivo es el principal punto de distribución de energía de tu cuerpo. Equilibra la sensación de pesadez después de las comidas con la tecnología NitroBiotics™ y apoya el potencial biológico natural de tu cuerpo.</p>
     <div class="rs-tags">
       <span class="rs-tag">APTO PARA VEGANOS</span>
@@ -929,7 +996,8 @@
       <span class="rs-tag">5 ENZIMAS DIGESTIVAS</span>
       <span class="rs-tag">5 CEPAS PROBIÓTICAS</span>
     </div>
-    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="rs-btn">DESCUBRIR EL SISTEMA</a>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="rs-btn">COMPRAR EN EL SITIO OFICIAL</a>
+    <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px;max-width:640px;margin-left:auto;margin-right:auto">"La verdadera base de la salud no está donde crees;<br>comienza en el intestino."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
   </div>
 
   <div class="rs-profiles">
@@ -987,7 +1055,7 @@
   </div>
 
   <div class="footer-cta">
-    <h2>Escucha el Idioma de tu Cuerpo</h2>
+    <h2>Escucha el <em>Idioma</em> de tu Cuerpo</h2>
     <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Un sistema digestivo tranquilo es la base de una mente vital. Apoya tu equilibrio interior con R-STOUR y disfruta de la sensación de ligereza."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="rs-btn-dark">OBTENERLO EN EL SITIO OFICIAL</a>
     <p class="footer-note">60 Cápsulas | 2 en la Primera Comida | Vegano &amp; Ingredientes Limpios</p>
@@ -997,7 +1065,7 @@
   <div class="rs-observation">
     <div class="rs-obs-inner">
       <span class="rs-obs-tag">Observación Común</span>
-      <h2>La Digestión: Nuestro Héroe Silencioso</h2>
+      <h2>La Digestión: Nuestro <em>Héroe Silencioso</em></h2>
       <p>"Como bien, hago ejercicio, pero todavía me siento cansado." — Esta es una observación que se escucha con frecuencia. A menudo señalamos la dieta o el ejercicio, mientras pasamos por alto una pieza clave: el sistema digestivo.</p>
       <p>Los científicos ahora se refieren al intestino como el "segundo cerebro." Trillones de microorganismos viven allí, y no solo digieren lo que comemos — alrededor del 70% de nuestro sistema inmunológico también se forma aquí.</p>
       <div class="rs-obs-highlight">
@@ -1011,7 +1079,7 @@
   <div class="rs-science">
     <div class="rs-sci-inner">
       <span class="rs-sci-tag">Ciencia & Investigación</span>
-      <h2>La Base Científica de R-Stour</h2>
+      <h2>La Base <em>Científica</em> de R-Stour</h2>
       <p class="rs-sci-sub">Un apoyo digestivo holístico 5-en-1</p>
       <div class="rs-sci-grid">
         <div class="rs-sci-card">
@@ -1038,7 +1106,7 @@
     <div class="rs-sl-inner">
       <div class="rs-sl-center">
         <span class="rs-sl-tag">En la Vida Diaria</span>
-        <h2>R-Stour en la Vida Diaria</h2>
+        <h2>R-Stour en <em>la Vida Diaria</em></h2>
       </div>
       <div class="rs-slider-wrap" id="rs-slider-es">
         <div class="rs-slider-track">
@@ -1062,9 +1130,20 @@
   </div>
 
   <!-- Sección 9: CTA Mejorado -->
+  <!-- 🆕 MINI-CTA EN MEDIO DE LA PÁGINA -->
+  <div class="rs-mini-cta-wrap">
+    <div class="rs-mini-cta">
+      <p class="rs-mini-cta-text"><strong>¿Tienes preguntas?</strong> Veamos juntos si R-Stour se adapta a tus necesidades.</p>
+      <a href="https://wa.me/905054549582?text=Hola%20Deniz%2C%20%C2%BFR-Stour%20es%20adecuado%20para%20m%C3%AD%3F%20%C2%BFPodemos%20hablar%3F" target="_blank" class="rs-mini-cta-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Hablar por WhatsApp
+      </a>
+    </div>
+  </div>
+
   <div class="rs-cta-enhanced">
     <div class="rs-cta-inner">
-      <h2>Un Enfoque Integral para tu Digestión</h2>
+      <h2>Un <em>Enfoque Integral</em> para tu Digestión</h2>
       <p class="rs-cta-lead">5 probióticos + 5 enzimas + 9 hierbas. Un apoyo natural para el sistema digestivo, en una sola cápsula.</p>
       <div class="rs-cta-features">
         <span class="rs-cta-feat">✦ 5 Cepas Probióticas</span>
@@ -1075,6 +1154,10 @@
       </div>
       <div class="rs-cta-buttons">
         <a href="/quiz.html" class="rs-btn-quiz">Comenzar con el Quiz</a>
+        <a href="https://wa.me/905054549582?text=Hola%20Deniz%2C%20%C2%BFpodr%C3%ADas%20contarme%20m%C3%A1s%20sobre%20R-Stour%20apoyo%20digestivo%3F" target="_blank" class="rs-btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Pregunta por WhatsApp
+        </a>
         <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="rs-btn-buy">Comprar R-Stour →</a>
       </div>
       <p class="rs-cta-helper">¿No estás seguro de qué protocolo es adecuado para ti? Comienza con nuestro quiz de 2 minutos. Si has decidido, puedes obtenerlo en el sitio oficial de Amare.</p>
@@ -1086,7 +1169,7 @@
     <div class="rs-rel-inner">
       <div class="rs-rel-center">
         <span class="rs-rel-tag">Sigue Leyendo</span>
-        <h2>Contenido Relacionado</h2>
+        <h2>Contenido <em>Relacionado</em></h2>
       </div>
       <div class="rs-rel-grid">
         <a href="/blog-bagisiklik.html" class="rs-rel-card">
@@ -1116,6 +1199,9 @@
             <div class="rs-rel-meta">⏱ ~5 min · Deniz KAT →</div>
           </div>
         </a>
+      </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="/blog.html" style="display:inline-block;color:#2e3d30;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid #d4af37;padding-bottom:3px;transition:.3s">TODOS LOS ARTÍCULOS WELLNESS →</a>
       </div>
     </div>
   </div>
