@@ -275,6 +275,70 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
 .footer-cta{text-align:center;padding:100px 20px;background:#f9f9f9}
 .footer-cta h2{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;margin-bottom:25px;color:#111}
 .footer-note{margin-top:30px;font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:2px;font-weight:700}
+
+/* SAYFA SONU WHATSAPP BUTONU (HIM/HER ortak) */
+.ig-btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:20px 36px;text-decoration:none;font-weight:800;letter-spacing:2px;border-radius:0;transition:.3s;text-transform:uppercase;font-size:13px;margin-left:10px}
+.ig-btn-wa:hover{background:#1ebe5a;transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,211,102,.25)}
+.ig-btn-wa svg{width:14px;height:14px;fill:#fff}
+
+/* MİNİ-CTA — HIM/HER ortak çerçeve, içerik farklı */
+.ig-mini-cta-wrap{padding:0 20px 40px;max-width:850px;margin:0 auto;text-align:center}
+.ig-mini-cta{
+  padding:32px 36px;
+  background:linear-gradient(135deg,#f0f8f3 0%,#e6f3ec 100%);
+  border:1.5px solid #25d366;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.ig-mini-cta-text{
+  flex:1;
+  min-width:280px;
+  font-family:'DM Sans',sans-serif;
+  font-size:17px;
+  color:#1a3a23;
+  margin:0;
+  line-height:1.5;
+  text-align:left;
+}
+.ig-mini-cta-text strong{
+  color:#0d2f1a;
+  font-weight:700;
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+}
+.ig-mini-cta-text span{color:#3a5a3d;font-size:15px}
+.ig-mini-cta-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#25d366;
+  color:#fff;
+  padding:14px 24px;
+  border-radius:50px;
+  text-decoration:none;
+  font-family:'DM Sans',sans-serif;
+  font-weight:700;
+  font-size:14px;
+  letter-spacing:.3px;
+  transition:all .3s;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.ig-mini-cta-btn:hover{background:#1ebe5a;transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,211,102,.25)}
+.ig-mini-cta-btn svg{width:14px;height:14px;fill:#fff}
+
+@media(max-width:600px){
+  .ig-mini-cta{flex-direction:column;padding:26px 22px}
+  .ig-mini-cta-text{text-align:center}
+  .ig-mini-cta-btn{width:100%;justify-content:center}
+  .ig-btn-wa{margin-left:0;margin-top:14px;display:flex;justify-content:center}
+}
+
 @media(max-width:850px){.tech-container{grid-template-columns:1fr;padding:30px 20px}}
 </style>
 <!-- Google tag (gtag.js) -->
@@ -397,7 +461,7 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
           <span class="ig-tag">HORMON İÇERMEZ</span>
           <span class="ig-tag">VEGAN &amp; DOĞAL BAZLI</span>
         </div>
-        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn" style="background:#d4af37;color:#000">SİSTEMİ KEŞFET</a>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn" style="background:#d4af37;color:#000">RESMİ SİTEDEN SATIN AL</a>
       </div>
       <div class="ig-profiles">
         <div style="text-align:center;max-width:850px;margin:0 auto 60px">
@@ -432,6 +496,19 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
           </div>
         </div>
       </div>
+      <!-- 🆕 HIM MİNİ-CTA -->
+      <div class="ig-mini-cta-wrap" style="padding-top:60px">
+        <div class="ig-mini-cta">
+          <p class="ig-mini-cta-text">
+            <strong>IGNT HIM, erkek fizyolojisi düşünülerek formüle edildi.</strong>
+          </p>
+          <a href="https://wa.me/905054549582?text=Merhaba%20Deniz%2C%20IGNT%20HIM%20benim%20i%C3%A7in%20uygun%20mu%3F" target="_blank" class="ig-mini-cta-btn">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp'tan Sor
+          </a>
+        </div>
+      </div>
+
       <div class="footer-cta">
         <h2>Daha Canlı, Daha Uyumlu Bir Yaşam</h2>
         <p style="max-width:650px;margin:0 auto 32px;color:#636e72;font-style:italic;font-size:18px">"Dengeli bir hormonal yapı, kendinizi yeniden keşfetmeniz için gereken en güçlü dayanaktır. IGNT ile içsel potansiyelinizi destekleyin ve her güne taze bir başlangıç yapın."</p>
@@ -453,7 +530,7 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
           <span class="ig-tag">HORMON İÇERMEZ</span>
           <span class="ig-tag">VEGAN &amp; DOĞAL BAZLI</span>
         </div>
-        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn" style="background:#f2a7d0;color:#2d0f1e">SİSTEMİ KEŞFET</a>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn" style="background:#f2a7d0;color:#2d0f1e">RESMİ SİTEDEN SATIN AL</a>
       </div>
       <div class="ig-profiles">
         <div style="text-align:center;max-width:850px;margin:0 auto 60px">
@@ -488,6 +565,19 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
           </div>
         </div>
       </div>
+      <!-- 🆕 HER MİNİ-CTA -->
+      <div class="ig-mini-cta-wrap" style="padding-top:60px">
+        <div class="ig-mini-cta">
+          <p class="ig-mini-cta-text">
+            <strong>IGNT HER, kadın fizyolojisi düşünülerek formüle edildi.</strong>
+          </p>
+          <a href="https://wa.me/905054549582?text=Merhaba%20Deniz%2C%20IGNT%20HER%20benim%20i%C3%A7in%20uygun%20mu%3F" target="_blank" class="ig-mini-cta-btn">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp'tan Sor
+          </a>
+        </div>
+      </div>
+
       <div class="footer-cta">
         <h2>Daha Dingin, Daha Uyumlu Bir Yaşam</h2>
         <p style="max-width:650px;margin:0 auto 32px;color:#636e72;font-style:italic;font-size:18px">"Dengeli bir hormonal yapı, kendinizi yeniden keşfetmeniz için gereken en güçlü dayanaktır. IGNT ile içsel potansiyelinizi destekleyin ve her güne taze bir başlangıç yapın."</p>
@@ -516,7 +606,7 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
           <span class="ig-tag">HORMONE-FREE</span>
           <span class="ig-tag">VEGAN &amp; NATURAL-BASED</span>
         </div>
-        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn" style="background:#d4af37;color:#000">DISCOVER THE SYSTEM</a>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn" style="background:#d4af37;color:#000">BUY ON OFFICIAL SITE</a>
       </div>
       <div class="ig-profiles">
         <div style="text-align:center;max-width:850px;margin:0 auto 60px">
@@ -551,6 +641,19 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
           </div>
         </div>
       </div>
+      <!-- 🆕 HIM MINI-CTA -->
+      <div class="ig-mini-cta-wrap" style="padding-top:60px">
+        <div class="ig-mini-cta">
+          <p class="ig-mini-cta-text">
+            <strong>IGNT HIM is formulated with men's physiology in mind.</strong>
+          </p>
+          <a href="https://wa.me/905054549582?text=Hi%20Deniz%2C%20is%20IGNT%20HIM%20right%20for%20me%3F" target="_blank" class="ig-mini-cta-btn">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Ask on WhatsApp
+          </a>
+        </div>
+      </div>
+
       <div class="footer-cta">
         <h2>A More Vibrant, More Balanced Life</h2>
         <p style="max-width:650px;margin:0 auto 32px;color:#636e72;font-style:italic;font-size:18px">"A balanced hormonal foundation is the most powerful anchor you need to rediscover yourself. Support your inner potential with IGNT and make a fresh start every day."</p>
@@ -572,7 +675,7 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
           <span class="ig-tag">HORMONE-FREE</span>
           <span class="ig-tag">VEGAN &amp; NATURAL-BASED</span>
         </div>
-        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn" style="background:#f2a7d0;color:#2d0f1e">DISCOVER THE SYSTEM</a>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn" style="background:#f2a7d0;color:#2d0f1e">BUY ON OFFICIAL SITE</a>
       </div>
       <div class="ig-profiles">
         <div style="text-align:center;max-width:850px;margin:0 auto 60px">
@@ -607,6 +710,19 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
           </div>
         </div>
       </div>
+      <!-- 🆕 HER MINI-CTA -->
+      <div class="ig-mini-cta-wrap" style="padding-top:60px">
+        <div class="ig-mini-cta">
+          <p class="ig-mini-cta-text">
+            <strong>IGNT HER is formulated with women's physiology in mind.</strong>
+          </p>
+          <a href="https://wa.me/905054549582?text=Hi%20Deniz%2C%20is%20IGNT%20HER%20right%20for%20me%3F" target="_blank" class="ig-mini-cta-btn">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Ask on WhatsApp
+          </a>
+        </div>
+      </div>
+
       <div class="footer-cta">
         <h2>A More Calm, More Balanced Life</h2>
         <p style="max-width:650px;margin:0 auto 32px;color:#636e72;font-style:italic;font-size:18px">"A balanced hormonal foundation is the most powerful anchor you need to rediscover yourself. Support your inner potential with IGNT and make a fresh start every day."</p>
@@ -635,7 +751,7 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
           <span class="ig-tag">SIN HORMONAS</span>
           <span class="ig-tag">VEGANO &amp; BASE NATURAL</span>
         </div>
-        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn" style="background:#d4af37;color:#000">DESCUBRIR EL SISTEMA</a>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn" style="background:#d4af37;color:#000">COMPRAR EN EL SITIO OFICIAL</a>
       </div>
       <div class="ig-profiles">
         <div style="text-align:center;max-width:850px;margin:0 auto 60px">
@@ -669,6 +785,19 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
           </div>
         </div>
       </div>
+      <!-- 🆕 HIM MINI-CTA -->
+      <div class="ig-mini-cta-wrap" style="padding-top:60px">
+        <div class="ig-mini-cta">
+          <p class="ig-mini-cta-text">
+            <strong>IGNT HIM está formulado pensando en la fisiología masculina.</strong>
+          </p>
+          <a href="https://wa.me/905054549582?text=Hola%20Deniz%2C%20%C2%BFIGNT%20HIM%20es%20adecuado%20para%20m%C3%AD%3F" target="_blank" class="ig-mini-cta-btn">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Pregunta por WhatsApp
+          </a>
+        </div>
+      </div>
+
       <div class="footer-cta">
         <h2>Una Vida Más Vibrante, Más Equilibrada</h2>
         <p style="max-width:650px;margin:0 auto 32px;color:#636e72;font-style:italic;font-size:18px">"Una base hormonal equilibrada es el apoyo más poderoso que necesitas para redescubrirte. Apoya tu potencial interior con IGNT y comienza cada día con energía renovada."</p>
@@ -690,7 +819,7 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
           <span class="ig-tag">SIN HORMONAS</span>
           <span class="ig-tag">VEGANO &amp; BASE NATURAL</span>
         </div>
-        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn" style="background:#f2a7d0;color:#2d0f1e">DESCUBRIR EL SISTEMA</a>
+        <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="ig-btn" style="background:#f2a7d0;color:#2d0f1e">COMPRAR EN EL SITIO OFICIAL</a>
       </div>
       <div class="ig-profiles">
         <div style="text-align:center;max-width:850px;margin:0 auto 60px">
@@ -725,6 +854,19 @@ footer{padding:40px 48px;border-top:1px solid #d6ddd7;display:flex;justify-conte
           </div>
         </div>
       </div>
+      <!-- 🆕 HER MINI-CTA -->
+      <div class="ig-mini-cta-wrap" style="padding-top:60px">
+        <div class="ig-mini-cta">
+          <p class="ig-mini-cta-text">
+            <strong>IGNT HER está formulado pensando en la fisiología femenina.</strong>
+          </p>
+          <a href="https://wa.me/905054549582?text=Hola%20Deniz%2C%20%C2%BFIGNT%20HER%20es%20adecuado%20para%20m%C3%AD%3F" target="_blank" class="ig-mini-cta-btn">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Pregunta por WhatsApp
+          </a>
+        </div>
+      </div>
+
       <div class="footer-cta">
         <h2>Una Vida Más Tranquila, Más Equilibrada</h2>
         <p style="max-width:650px;margin:0 auto 32px;color:#636e72;font-style:italic;font-size:18px">"Una base hormonal equilibrada es el apoyo más poderoso que necesitas para redescubrirte. Apoya tu potencial interior con IGNT y comienza cada día con energía renovada."</p>
