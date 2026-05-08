@@ -351,15 +351,16 @@
 /* ═══ EDGE - Bölüm 2: Çevremizde Gözlem ═══ */
 .edge-observation{background:#fafaf8;padding:80px 20px;text-align:center}
 .edge-obs-inner{max-width:780px;margin:0 auto}
-.edge-obs-tag{display:inline-block;background:#fff;color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;border:1px solid #e8e4dc}
+.edge-obs-tag{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
 .edge-obs-inner h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:#2e3d30;margin-bottom:24px;line-height:1.2;letter-spacing:-1px}
+.edge-obs-inner h2 em,.edge-sci-inner h2 em,.edge-slider-section h2 em,.edge-cta-enhanced h2 em,.edge-cta-inner h2 em,.edge-related h2 em,.edge-hero h1 em,.edge-hero h2 em,.edge-tech-panel h2 em,.edge-inclusion h2 em,.footer-cta h2 em{color:#d4af37;font-style:italic;font-weight:inherit}
 .edge-obs-inner p{font-size:17px;color:#444;line-height:1.8;margin-bottom:18px;text-align:left}
 .edge-obs-highlight{background:#fff;border-left:4px solid #d4af37;padding:20px 26px;border-radius:0 16px 16px 0;margin:28px 0;font-style:italic;color:#2e3d30;text-align:left}
 
 /* ═══ EDGE - Bölüm 7: Bilim & Araştırma ═══ */
 .edge-science{background:#fff;padding:80px 20px}
 .edge-sci-inner{max-width:1100px;margin:0 auto;text-align:center}
-.edge-sci-tag{display:inline-block;background:#f0ede6;color:#2e3d30;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.edge-sci-tag{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
 .edge-sci-inner h2{font-size:clamp(28px,4vw,40px);font-weight:800;color:#2e3d30;margin-bottom:14px;letter-spacing:-1px}
 .edge-sci-sub{color:#666;font-size:16px;font-style:italic;margin-bottom:50px}
 .edge-sci-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
@@ -373,7 +374,7 @@
 /* ═══ EDGE - Bölüm 8: Slider ═══ */
 .edge-slider-section{background:linear-gradient(135deg,#2e3d30 0%,#0f172a 100%);padding:80px 20px}
 .edge-sl-inner{max-width:1280px;margin:0 auto}
-.edge-sl-tag{display:inline-block;background:rgba(212,175,55,0.15);color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center}
+.edge-sl-tag{display:inline-block;background:#d4af37;color:#1a1a1a;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center}
 .edge-sl-center{text-align:center;margin-bottom:40px}
 .edge-sl-center h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:#fff;letter-spacing:-1px;margin-bottom:0}
 .edge-slider-wrap{position:relative;overflow:hidden;border-radius:24px;background:#000;aspect-ratio:16/9;max-width:1100px;margin:0 auto;box-shadow:0 24px 48px rgba(0,0,0,0.35)}
@@ -400,12 +401,40 @@
 .edge-btn-quiz:hover{background:#2e3d30;color:#fff}
 .edge-btn-buy{display:inline-block;background:#d4af37;color:#1a1a1a;padding:16px 32px;font-size:14px;font-weight:800;letter-spacing:.5px;text-decoration:none;border:2px solid #d4af37;border-radius:50px;transition:all .3s;text-transform:uppercase}
 .edge-btn-buy:hover{background:#c49b2a;border-color:#c49b2a;transform:translateY(-2px)}
+.edge-btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:16px 32px;font-size:14px;font-weight:800;letter-spacing:.5px;text-decoration:none;border:2px solid #25d366;border-radius:50px;transition:all .3s;text-transform:uppercase}
+.edge-btn-wa:hover{background:#1ebe5a;border-color:#1ebe5a;transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,211,102,.25)}
+.edge-btn-wa svg{width:14px;height:14px;fill:#fff;flex-shrink:0}
+
+/* SAYFA ORTASI MİNİ-CTA */
+.edge-mini-cta-wrap{padding:50px 20px;background:#fafaf8}
+.edge-mini-cta{
+  max-width:780px;
+  margin:0 auto;
+  padding:24px 28px;
+  background:linear-gradient(135deg,#f0f8f3 0%,#e6f3ec 100%);
+  border:1.5px solid #25d366;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.edge-mini-cta-text{flex:1;min-width:240px;font-family:'DM Sans',sans-serif;font-size:16px;color:#1a3a23;margin:0;line-height:1.5}
+.edge-mini-cta-text strong{color:#0d2f1a;font-weight:700}
+.edge-mini-cta-btn{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:14px 26px;border-radius:50px;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;letter-spacing:.3px;transition:all .3s;white-space:nowrap;flex-shrink:0}
+.edge-mini-cta-btn:hover{background:#1ebe5a;transform:translateY(-2px)}
+.edge-mini-cta-btn svg{width:14px;height:14px;fill:#fff}
+@media(max-width:600px){
+  .edge-mini-cta{flex-direction:column;text-align:center;padding:22px 18px}
+  .edge-mini-cta-btn{width:100%;justify-content:center}
+}
 .edge-cta-helper{margin-top:24px;font-size:13px;color:#666;font-style:italic;max-width:540px;margin-left:auto;margin-right:auto}
 
 /* ═══ EDGE - Bölüm 10: İlgili Bloglar ═══ */
 .edge-related{background:#fafaf8;padding:80px 20px;border-top:1px solid #e8e4dc}
 .edge-rel-inner{max-width:1100px;margin:0 auto}
-.edge-rel-tag{display:inline-block;background:#fff;color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center;border:1px solid #e8e4dc}
+.edge-rel-tag{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center}
 .edge-rel-center{text-align:center;margin-bottom:40px}
 .edge-rel-center h2{font-size:clamp(26px,4vw,36px);font-weight:800;color:#2e3d30;letter-spacing:-1px}
 .edge-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -422,7 +451,7 @@
   .edge-observation,.edge-science,.edge-slider-section,.edge-cta-enhanced,.edge-related{padding:60px 16px}
   .edge-sci-grid,.edge-rel-grid{grid-template-columns:1fr}
   .edge-cta-buttons{flex-direction:column;align-items:stretch}
-  .edge-btn-quiz,.edge-btn-buy{width:100%}
+  .edge-btn-quiz,.edge-btn-buy,.edge-btn-wa{width:100%;justify-content:center}
   .edge-slider-arrow{width:36px;height:36px}
 }
 
@@ -557,7 +586,7 @@
 
   <div class="edge-hero">
     <span class="edge-badge">Zihinsel Keskinlik &amp; Motivasyon</span>
-    <h1>Kafein Çöküşü Olmadan<br>Sürdürülebilir Odaklanma.</h1>
+    <h1>Kafein Çöküşü Olmadan<br><em>Sürdürülebilir Odaklanma.</em></h1>
     <p>Vücudun doğal motivasyon kaynaklarını destekleyin. 3 patentli bitkisel sinerji ile gün boyu süren zihinsel zindelik ve reaksiyon dengesi.</p>
     <div class="edge-tags">
       <span class="edge-tag">KAFEİN İÇERMEZ</span>
@@ -565,7 +594,8 @@
       <span class="edge-tag">3 PATENTLİ BİLEŞEN</span>
       <span class="edge-tag">DOĞAL KARPUZ VE MANGO</span>
     </div>
-    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn">SİSTEMİ KEŞFET</a>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn">RESMİ SİTEDEN SATIN AL</a>
+    <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px;max-width:640px;margin-left:auto;margin-right:auto">"Motivasyon bir karakter özelliği değildir;<br>doğru beslenen bir hücresel durumdur."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
   </div>
 
   <div class="edge-inclusion">
@@ -623,7 +653,7 @@
   </div>
 
   <div class="footer-cta">
-    <h2>Zihinsel Sınırlarınızı Yeniden Keşfedin</h2>
+    <h2>Zihinsel Sınırlarınızı <em>Yeniden Keşfedin</em></h2>
     <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Zihinsel sınırlarınızı genişletin ve motivasyonun en saf halini keşfedin. EDGE ile bilişsel performansınızı bir üst seviyeye taşıyın ve her güne tam odakla başlayın."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-dark">RESMİ SİTEDEN TEMİN ET</a>
     <p class="footer-note">30 Stick | Doğal Bazlı | Günlük Kullanım</p>
@@ -633,7 +663,7 @@
   <div class="edge-observation">
     <div class="edge-obs-inner">
       <span class="edge-obs-tag">Çevremizde Gözlem</span>
-      <h2>Motivasyon Bir Hata Değil, Bir İhtiyaç</h2>
+      <h2>Motivasyon Bir Hata Değil, <em>Bir İhtiyaç</em></h2>
       <p>Modern yaşamda en sık duyulan cümlelerden biri "motivasyonum yok" oldu. Sabah uyanırken, önemli bir toplantıdan önce, antrenman saatinde... Çoğu zaman bunu kendi suçumuz gibi algılıyoruz, sanki yeterince çabalamıyormuşuz gibi.</p>
       <p>Aslında durum çoğu zaman daha basit: vücudun enerji üretim sisteminde bir adım eksiktir. Yetersiz B5 vitamini, doğal polifenollerin azlığı, yorucu günlerin biriktirdiği oksidatif stres — bunların hepsi motivasyon hissini etkileyebilen biyolojik faktörler.</p>
       <div class="edge-obs-highlight">
@@ -647,7 +677,7 @@
   <div class="edge-science">
     <div class="edge-sci-inner">
       <span class="edge-sci-tag">Bilim & Araştırma</span>
-      <h2>EDGE Formülünün Bilimsel Temeli</h2>
+      <h2>EDGE Formülünün <em>Bilimsel</em> Temeli</h2>
       <p class="edge-sci-sub">B5 Vitamini'nin EFSA onaylı 3 sağlık beyanı + 3 patentli bitki ekstresi</p>
       <div class="edge-sci-grid">
         <div class="edge-sci-card">
@@ -675,7 +705,7 @@
     <div class="edge-sl-inner">
       <div class="edge-sl-center">
         <span class="edge-sl-tag">Yaşamın İçinde</span>
-        <h2>EDGE Günlük Hayatta</h2>
+        <h2>EDGE <em>Günlük Hayatta</em></h2>
       </div>
       <div class="edge-slider-wrap" id="edge-slider-tr">
         <div class="edge-slider-track">
@@ -699,9 +729,20 @@
   </div>
 
   <!-- Bölüm 9: Geliştirilmiş CTA -->
+  <!-- 🆕 SAYFA ORTASI MİNİ-CTA -->
+  <div class="edge-mini-cta-wrap">
+    <div class="edge-mini-cta">
+      <p class="edge-mini-cta-text"><strong>Sorunuz mu var?</strong> EDGE'in size uygun olup olmadığını birlikte değerlendirelim.</p>
+      <a href="https://wa.me/905054549582?text=Merhaba%20Deniz%2C%20EDGE%20benim%20i%C3%A7in%20uygun%20mu%2C%20konu%C5%9Fabilir%20miyiz%3F" target="_blank" class="edge-mini-cta-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp'tan Konuşalım
+      </a>
+    </div>
+  </div>
+
   <div class="edge-cta-enhanced">
     <div class="edge-cta-inner">
-      <h2>Aradığın Motivasyona Doğal Bir Yaklaşım</h2>
+      <h2>Aradığın Motivasyona <em>Doğal Bir Yaklaşım</em></h2>
       <p class="edge-cta-lead">3 patentli bitki ekstresi + B5 Vitamini. Karpuz ve mango aromasıyla, kafeinsiz ve doğal bazlı bir destek. Yoğun günlerin yanında.</p>
       <div class="edge-cta-features">
         <span class="edge-cta-feat">✦ 3 Patentli İçerik</span>
@@ -712,6 +753,10 @@
       </div>
       <div class="edge-cta-buttons">
         <a href="/quiz.html" class="edge-btn-quiz">Önce Quizi Tamamla</a>
+        <a href="https://wa.me/905054549582?text=Merhaba%20Deniz%2C%20EDGE%20zihinsel%20performans%20ve%20motivasyon%20deste%C4%9Fi%20hakk%C4%B1nda%20bana%20biraz%20bilgi%20verir%20misin%3F" target="_blank" class="edge-btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp'tan Sor
+        </a>
         <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-buy">EDGE Satın Al →</a>
       </div>
       <p class="edge-cta-helper">Hangi protokolün size uygun olduğundan emin değil misiniz? 2 dakikalık quizimizle başlayın. Karar verdiyseniz Amare resmi sitesinden temin edebilirsiniz.</p>
@@ -723,7 +768,7 @@
     <div class="edge-rel-inner">
       <div class="edge-rel-center">
         <span class="edge-rel-tag">Devamını Okuyun</span>
-        <h2>EDGE ile İlgili İçeriklerimiz</h2>
+        <h2>EDGE ile <em>İlgili</em> İçeriklerimiz</h2>
       </div>
       <div class="edge-rel-grid">
         <a href="/blog-kortizol.html" class="edge-rel-card">
@@ -754,6 +799,9 @@
           </div>
         </a>
       </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="/blog.html" style="display:inline-block;color:#2e3d30;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid #d4af37;padding-bottom:3px;transition:.3s">TÜM WELLNESS YAZILARI →</a>
+      </div>
     </div>
   </div>
 
@@ -764,7 +812,7 @@
 
   <div class="edge-hero">
     <span class="edge-badge">Mental Sharpness &amp; Motivation</span>
-    <h2>Sustainable Focus<br>Without the Caffeine Crash.</h2>
+    <h2><em>Sustainable Focus</em><br>Without the Caffeine Crash.</h2>
     <p>Support your body's natural sources of motivation. All-day mental vitality and reaction balance with 3 patented botanical synergies.</p>
     <div class="edge-tags">
       <span class="edge-tag">CAFFEINE-FREE</span>
@@ -772,7 +820,8 @@
       <span class="edge-tag">3 PATENTED INGREDIENTS</span>
       <span class="edge-tag">NATURAL WATERMELON &amp; MANGO</span>
     </div>
-    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn">DISCOVER THE SYSTEM</a>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn">BUY ON OFFICIAL SITE</a>
+    <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px;max-width:640px;margin-left:auto;margin-right:auto">"Motivation isn't a character trait;<br>it's a cellular state, properly nourished."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
   </div>
 
   <div class="edge-inclusion">
@@ -830,7 +879,7 @@
   </div>
 
   <div class="footer-cta">
-    <h2>Rediscover Your Mental Limits</h2>
+    <h2><em>Rediscover</em> Your Mental Limits</h2>
     <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Expand your mental boundaries and discover motivation in its purest form. Take your cognitive performance to the next level with EDGE and start every day with full focus."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-dark">GET IT FROM THE OFFICIAL SITE</a>
     <p class="footer-note">30 Sticks | Natural-Based | Daily Use</p>
@@ -840,7 +889,7 @@
   <div class="edge-observation">
     <div class="edge-obs-inner">
       <span class="edge-obs-tag">Common Observation</span>
-      <h2>Motivation Isn't a Failure — It's a Need</h2>
+      <h2>Motivation Isn't a Failure — <em>It's a Need</em></h2>
       <p>"I have no motivation" has become one of the most common phrases in modern life. When waking up in the morning, before an important meeting, at workout time... We often perceive this as our own fault, as if we're not trying hard enough.</p>
       <p>The reality is often simpler: there's a missing step in the body's energy production system. Insufficient B5 vitamin, low natural polyphenols, the oxidative stress accumulated from exhausting days — these are all biological factors that can affect the feeling of motivation.</p>
       <div class="edge-obs-highlight">
@@ -854,7 +903,7 @@
   <div class="edge-science">
     <div class="edge-sci-inner">
       <span class="edge-sci-tag">Science & Research</span>
-      <h2>The Scientific Foundation of EDGE</h2>
+      <h2>The <em>Scientific</em> Foundation of EDGE</h2>
       <p class="edge-sci-sub">Vitamin B5's 3 EFSA-approved health claims + 3 patented plant extracts</p>
       <div class="edge-sci-grid">
         <div class="edge-sci-card">
@@ -882,7 +931,7 @@
     <div class="edge-sl-inner">
       <div class="edge-sl-center">
         <span class="edge-sl-tag">In Daily Life</span>
-        <h2>EDGE in Daily Life</h2>
+        <h2>EDGE in <em>Daily Life</em></h2>
       </div>
       <div class="edge-slider-wrap" id="edge-slider-en">
         <div class="edge-slider-track">
@@ -906,9 +955,20 @@
   </div>
 
   <!-- Section 9: Enhanced CTA -->
+  <!-- 🆕 MID-PAGE MINI-CTA -->
+  <div class="edge-mini-cta-wrap">
+    <div class="edge-mini-cta">
+      <p class="edge-mini-cta-text"><strong>Have questions?</strong> Let's figure out together whether EDGE fits your needs.</p>
+      <a href="https://wa.me/905054549582?text=Hi%20Deniz%2C%20is%20EDGE%20right%20for%20me%3F%20Can%20we%20chat%3F" target="_blank" class="edge-mini-cta-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+
   <div class="edge-cta-enhanced">
     <div class="edge-cta-inner">
-      <h2>A Natural Approach to the Motivation You Seek</h2>
+      <h2>A <em>Natural Approach</em> to the Motivation You Seek</h2>
       <p class="edge-cta-lead">3 patented plant extracts + Vitamin B5. With watermelon and mango flavour, a caffeine-free and natural-based support. Alongside intense days.</p>
       <div class="edge-cta-features">
         <span class="edge-cta-feat">✦ 3 Patented Ingredients</span>
@@ -919,6 +979,10 @@
       </div>
       <div class="edge-cta-buttons">
         <a href="/quiz.html" class="edge-btn-quiz">Start with the Quiz</a>
+        <a href="https://wa.me/905054549582?text=Hi%20Deniz%2C%20could%20you%20tell%20me%20more%20about%20EDGE%20mental%20performance%3F" target="_blank" class="edge-btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Ask on WhatsApp
+        </a>
         <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-buy">Buy EDGE →</a>
       </div>
       <p class="edge-cta-helper">Not sure which protocol is right for you? Start with our 2-minute quiz. If you've decided, you can get it from the official Amare site.</p>
@@ -930,7 +994,7 @@
     <div class="edge-rel-inner">
       <div class="edge-rel-center">
         <span class="edge-rel-tag">Read More</span>
-        <h2>Related Content</h2>
+        <h2><em>Related</em> Content</h2>
       </div>
       <div class="edge-rel-grid">
         <a href="/blog-kortizol.html" class="edge-rel-card">
@@ -961,6 +1025,9 @@
           </div>
         </a>
       </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="/blog.html" style="display:inline-block;color:#2e3d30;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid #d4af37;padding-bottom:3px;transition:.3s">ALL WELLNESS ARTICLES →</a>
+      </div>
     </div>
   </div>
 
@@ -971,7 +1038,7 @@
 
   <div class="edge-hero">
     <span class="edge-badge">Agudeza Mental &amp; Motivación</span>
-    <h2>Enfoque Sostenible<br>Sin el Bajón de la Cafeína.</h2>
+    <h2><em>Enfoque Sostenible</em><br>Sin el Bajón de la Cafeína.</h2>
     <p>Apoya las fuentes naturales de motivación de tu cuerpo. Vitalidad mental durante todo el día y equilibrio de reacción con 3 sinergias botánicas patentadas.</p>
     <div class="edge-tags">
       <span class="edge-tag">SIN CAFEÍNA</span>
@@ -979,7 +1046,8 @@
       <span class="edge-tag">3 INGREDIENTES PATENTADOS</span>
       <span class="edge-tag">SANDÍA Y MANGO NATURALES</span>
     </div>
-    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn">DESCUBRIR EL SISTEMA</a>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn">COMPRAR EN EL SITIO OFICIAL</a>
+    <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px;max-width:640px;margin-left:auto;margin-right:auto">"La motivación no es un rasgo de carácter;<br>es un estado celular, bien nutrido."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
   </div>
 
   <div class="edge-inclusion">
@@ -1037,7 +1105,7 @@
   </div>
 
   <div class="footer-cta">
-    <h2>Redescubre tus Límites Mentales</h2>
+    <h2><em>Redescubre</em> tus Límites Mentales</h2>
     <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Amplía tus límites mentales y descubre la motivación en su forma más pura. Lleva tu rendimiento cognitivo al siguiente nivel con EDGE y comienza cada día con pleno enfoque."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-dark">OBTENERLO EN EL SITIO OFICIAL</a>
     <p class="footer-note">30 Sticks | Base Natural | Uso Diario</p>
@@ -1047,7 +1115,7 @@
   <div class="edge-observation">
     <div class="edge-obs-inner">
       <span class="edge-obs-tag">Observación Común</span>
-      <h2>La Motivación No Es un Fallo — Es una Necesidad</h2>
+      <h2>La Motivación No Es un Fallo — <em>Es una Necesidad</em></h2>
       <p>"No tengo motivación" se ha convertido en una de las frases más comunes en la vida moderna. Al despertar por la mañana, antes de una reunión importante, en el momento del entrenamiento... A menudo lo percibimos como nuestra propia culpa, como si no nos esforzáramos lo suficiente.</p>
       <p>La realidad suele ser más simple: hay un paso faltante en el sistema de producción de energía del cuerpo. Vitamina B5 insuficiente, polifenoles naturales bajos, el estrés oxidativo acumulado de los días agotadores — todos estos son factores biológicos que pueden afectar la sensación de motivación.</p>
       <div class="edge-obs-highlight">
@@ -1061,7 +1129,7 @@
   <div class="edge-science">
     <div class="edge-sci-inner">
       <span class="edge-sci-tag">Ciencia & Investigación</span>
-      <h2>La Base Científica de EDGE</h2>
+      <h2>La Base <em>Científica</em> de EDGE</h2>
       <p class="edge-sci-sub">3 declaraciones de salud aprobadas por EFSA de la Vitamina B5 + 3 extractos vegetales patentados</p>
       <div class="edge-sci-grid">
         <div class="edge-sci-card">
@@ -1089,7 +1157,7 @@
     <div class="edge-sl-inner">
       <div class="edge-sl-center">
         <span class="edge-sl-tag">En la Vida Diaria</span>
-        <h2>EDGE en la Vida Diaria</h2>
+        <h2>EDGE en <em>la Vida Diaria</em></h2>
       </div>
       <div class="edge-slider-wrap" id="edge-slider-es">
         <div class="edge-slider-track">
@@ -1113,9 +1181,20 @@
   </div>
 
   <!-- Sección 9: CTA Mejorado -->
+  <!-- 🆕 MINI-CTA EN MEDIO DE LA PÁGINA -->
+  <div class="edge-mini-cta-wrap">
+    <div class="edge-mini-cta">
+      <p class="edge-mini-cta-text"><strong>¿Tienes preguntas?</strong> Veamos juntos si EDGE se adapta a tus necesidades.</p>
+      <a href="https://wa.me/905054549582?text=Hola%20Deniz%2C%20%C2%BFEDGE%20es%20adecuado%20para%20m%C3%AD%3F%20%C2%BFPodemos%20hablar%3F" target="_blank" class="edge-mini-cta-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Hablar por WhatsApp
+      </a>
+    </div>
+  </div>
+
   <div class="edge-cta-enhanced">
     <div class="edge-cta-inner">
-      <h2>Un Enfoque Natural para la Motivación que Buscas</h2>
+      <h2>Un <em>Enfoque Natural</em> para la Motivación que Buscas</h2>
       <p class="edge-cta-lead">3 extractos vegetales patentados + Vitamina B5. Con sabor a sandía y mango, un apoyo sin cafeína y de base natural. Junto a los días intensos.</p>
       <div class="edge-cta-features">
         <span class="edge-cta-feat">✦ 3 Ingredientes Patentados</span>
@@ -1126,6 +1205,10 @@
       </div>
       <div class="edge-cta-buttons">
         <a href="/quiz.html" class="edge-btn-quiz">Comenzar con el Quiz</a>
+        <a href="https://wa.me/905054549582?text=Hola%20Deniz%2C%20%C2%BFpodr%C3%ADas%20contarme%20m%C3%A1s%20sobre%20EDGE%20rendimiento%20mental%3F" target="_blank" class="edge-btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Pregunta por WhatsApp
+        </a>
         <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="edge-btn-buy">Comprar EDGE →</a>
       </div>
       <p class="edge-cta-helper">¿No estás seguro de qué protocolo es adecuado para ti? Comienza con nuestro quiz de 2 minutos. Si has decidido, puedes obtenerlo en el sitio oficial de Amare.</p>
@@ -1137,7 +1220,7 @@
     <div class="edge-rel-inner">
       <div class="edge-rel-center">
         <span class="edge-rel-tag">Sigue Leyendo</span>
-        <h2>Contenido Relacionado</h2>
+        <h2>Contenido <em>Relacionado</em></h2>
       </div>
       <div class="edge-rel-grid">
         <a href="/blog-kortizol.html" class="edge-rel-card">
@@ -1167,6 +1250,9 @@
             <div class="edge-rel-meta">⏱ ~5 min · Deniz KAT →</div>
           </div>
         </a>
+      </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="/blog.html" style="display:inline-block;color:#2e3d30;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid #d4af37;padding-bottom:3px;transition:.3s">TODOS LOS ARTÍCULOS WELLNESS →</a>
       </div>
     </div>
   </div>
