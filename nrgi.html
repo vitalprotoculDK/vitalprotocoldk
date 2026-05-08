@@ -280,15 +280,16 @@
 /* ═══ NRGI - Bölüm 2: Çevremizde Gözlem ═══ */
 .nrgi-observation{background:#fafaf8;padding:80px 20px;text-align:center}
 .nrgi-obs-inner{max-width:780px;margin:0 auto}
-.nrgi-obs-tag{display:inline-block;background:#fff;color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;border:1px solid #e8e4dc}
+.nrgi-obs-tag{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
 .nrgi-obs-inner h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:#2e3d30;margin-bottom:24px;line-height:1.2;letter-spacing:-1px}
+.nrgi-obs-inner h2 em,.nrgi-sci-inner h2 em,.nrgi-slider-section h2 em,.nrgi-cta h2 em,.nrgi-cta-enhanced h2 em,.nrgi-cta-inner h2 em,.nrgi-related h2 em,.nrgi-hero h1 em,.nrgi-hero h2 em,.nrgi-tech-panel h2 em,.footer-cta h2 em{color:#d4af37;font-style:italic;font-weight:inherit}
 .nrgi-obs-inner p{font-size:17px;color:#444;line-height:1.8;margin-bottom:18px;text-align:left}
 .nrgi-obs-highlight{background:#fff;border-left:4px solid #d4af37;padding:20px 26px;border-radius:0 16px 16px 0;margin:28px 0;font-style:italic;color:#2e3d30;text-align:left}
 
 /* ═══ NRGI - Bölüm 7: Bilim & Araştırma ═══ */
 .nrgi-science{background:#fff;padding:80px 20px}
 .nrgi-sci-inner{max-width:1100px;margin:0 auto;text-align:center}
-.nrgi-sci-tag{display:inline-block;background:#f0ede6;color:#2e3d30;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.nrgi-sci-tag{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
 .nrgi-sci-inner h2{font-size:clamp(28px,4vw,40px);font-weight:800;color:#2e3d30;margin-bottom:14px;letter-spacing:-1px}
 .nrgi-sci-sub{color:#666;font-size:16px;font-style:italic;margin-bottom:50px}
 .nrgi-sci-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
@@ -302,7 +303,7 @@
 /* ═══ NRGI - Bölüm 8: Slider ═══ */
 .nrgi-slider-section{background:linear-gradient(135deg,#2e3d30 0%,#111827 100%);padding:80px 20px}
 .nrgi-sl-inner{max-width:1280px;margin:0 auto}
-.nrgi-sl-tag{display:inline-block;background:rgba(212,175,55,0.15);color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center}
+.nrgi-sl-tag{display:inline-block;background:#d4af37;color:#1a1a1a;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center}
 .nrgi-sl-center{text-align:center;margin-bottom:40px}
 .nrgi-sl-center h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:#fff;letter-spacing:-1px;margin-bottom:0}
 .nrgi-slider-wrap{position:relative;overflow:hidden;border-radius:24px;background:#000;aspect-ratio:16/9;max-width:1100px;margin:0 auto;box-shadow:0 24px 48px rgba(0,0,0,0.35)}
@@ -329,12 +330,64 @@
 .nrgi-btn-quiz:hover{background:#2e3d30;color:#fff}
 .nrgi-btn-buy{display:inline-block;background:#d4af37;color:#1a1a1a;padding:16px 32px;font-size:14px;font-weight:800;letter-spacing:.5px;text-decoration:none;border:2px solid #d4af37;border-radius:50px;transition:all .3s;text-transform:uppercase}
 .nrgi-btn-buy:hover{background:#c49b2a;border-color:#c49b2a;transform:translateY(-2px)}
+.nrgi-btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:16px 32px;font-size:14px;font-weight:800;letter-spacing:.5px;text-decoration:none;border:2px solid #25d366;border-radius:50px;transition:all .3s;text-transform:uppercase}
+.nrgi-btn-wa:hover{background:#1ebe5a;border-color:#1ebe5a;transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,211,102,.25)}
+.nrgi-btn-wa svg{width:14px;height:14px;fill:#fff;flex-shrink:0}
+
+/* SAYFA ORTASI MİNİ-CTA */
+.nrgi-mini-cta-wrap{padding:50px 20px;background:#fafaf8}
+.nrgi-mini-cta{
+  max-width:780px;
+  margin:0 auto;
+  padding:24px 28px;
+  background:linear-gradient(135deg,#f0f8f3 0%,#e6f3ec 100%);
+  border:1.5px solid #25d366;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.nrgi-mini-cta-text{
+  flex:1;
+  min-width:240px;
+  font-family:'DM Sans',sans-serif;
+  font-size:16px;
+  color:#1a3a23;
+  margin:0;
+  line-height:1.5;
+}
+.nrgi-mini-cta-text strong{color:#0d2f1a;font-weight:700}
+.nrgi-mini-cta-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#25d366;
+  color:#fff;
+  padding:14px 26px;
+  border-radius:50px;
+  text-decoration:none;
+  font-family:'DM Sans',sans-serif;
+  font-weight:600;
+  font-size:14px;
+  letter-spacing:.3px;
+  transition:all .3s;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.nrgi-mini-cta-btn:hover{background:#1ebe5a;transform:translateY(-2px)}
+.nrgi-mini-cta-btn svg{width:14px;height:14px;fill:#fff}
+@media(max-width:600px){
+  .nrgi-mini-cta{flex-direction:column;text-align:center;padding:22px 18px}
+  .nrgi-mini-cta-btn{width:100%;justify-content:center}
+}
 .nrgi-cta-helper{margin-top:24px;font-size:13px;color:#666;font-style:italic;max-width:540px;margin-left:auto;margin-right:auto}
 
 /* ═══ NRGI - Bölüm 10: İlgili Bloglar ═══ */
 .nrgi-related{background:#fafaf8;padding:80px 20px;border-top:1px solid #e8e4dc}
 .nrgi-rel-inner{max-width:1100px;margin:0 auto}
-.nrgi-rel-tag{display:inline-block;background:#fff;color:#d4af37;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center;border:1px solid #e8e4dc}
+.nrgi-rel-tag{display:inline-block;background:#2e3d30;color:#fff;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;text-align:center}
 .nrgi-rel-center{text-align:center;margin-bottom:40px}
 .nrgi-rel-center h2{font-size:clamp(26px,4vw,36px);font-weight:800;color:#2e3d30;letter-spacing:-1px}
 .nrgi-rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -351,7 +404,7 @@
   .nrgi-observation,.nrgi-science,.nrgi-slider-section,.nrgi-cta-enhanced,.nrgi-related{padding:60px 16px}
   .nrgi-sci-grid,.nrgi-rel-grid{grid-template-columns:1fr}
   .nrgi-cta-buttons{flex-direction:column;align-items:stretch}
-  .nrgi-btn-quiz,.nrgi-btn-buy{width:100%}
+  .nrgi-btn-quiz,.nrgi-btn-buy,.nrgi-btn-wa{width:100%;justify-content:center}
   .nrgi-slider-arrow{width:36px;height:36px}
 }
 
@@ -486,7 +539,7 @@
 
   <div class="nrgi-hero">
     <span class="nrgi-badge">Zihinsel Performans &amp; Enerji</span>
-    <h1>Yapay Uyarıcılar Yerine<br>Hücresel Berraklık.</h1>
+    <h1>Yapay Uyarıcılar Yerine<br>Hücresel <em>Berraklık.</em></h1>
     <p>Vücudun biyolojik enerjisini, kafein kaynaklı dalgalanmalar yaşamadan destekleyin. Doğal içeriklerle tasarlanmış yeni nesil bir odaklanma ve zindelik protokolü.</p>
     <div class="nrgi-tags">
       <span class="nrgi-tag">KAFEİN İÇERMEZ</span>
@@ -494,7 +547,8 @@
       <span class="nrgi-tag">VEGAN &amp; GLÜTENSİZ</span>
       <span class="nrgi-tag">TROPİKAL MEYVE AROMALI</span>
     </div>
-    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn">SİSTEMİ KEŞFET</a>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn">RESMİ SİTEDEN SATIN AL</a>
+    <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px;max-width:640px;margin-left:auto;margin-right:auto">"Gerçek enerji uyarmak değildir;<br>vücudun kendi kaynağına dönmesini desteklemektir."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
   </div>
 
   <div class="nrgi-profile-section">
@@ -551,7 +605,7 @@
   </div>
 
   <div class="footer-cta">
-    <h2>Daha Net Bir Zihinle Tanışın</h2>
+    <h2>Daha <em>Net</em> Bir Zihinle Tanışın</h2>
     <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Hücresel berraklığa yer açın ve gün boyu süren zindeliği deneyimleyin. NRGI ile yapay uyarıcıların gölgesinden çıkın, vücudunuzun gerçek ritmine adım atın."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn-dark">RESMİ SİTEDEN TEMİN ET</a>
     <p class="footer-note">30 Saşe | Doğal Tatlandırıcı (Stevia) | Günlük Kullanım</p>
@@ -561,7 +615,7 @@
   <div class="nrgi-observation">
     <div class="nrgi-obs-inner">
       <span class="nrgi-obs-tag">Çevremizde Gözlem</span>
-      <h2>Sahte Enerji Çağı: Kafeinin Görünmez Bedeli</h2>
+      <h2><em>Sahte Enerji</em> Çağı: Kafeinin Görünmez Bedeli</h2>
       <p>Modern yaşamda enerji eksikliğine verilen en yaygın yanıt kafein oldu. Kahve, enerji içeceği, "boost" tabletleri... Çoğumuz günde 3-4 fincan ile zorlukla ayakta duruyoruz. Ama bu ucuz bir çözüm değil.</p>
       <p>Kafein adrenal bezleri uyarır, vücudu sürekli "tehlike" modunda tutar. Sonuç: gün ortasında çöküş, gece uyku problemleri, sabahları daha çok kafein ihtiyacı. Bu döngü adrenal yorgunluğa zemin hazırlar.</p>
       <div class="nrgi-obs-highlight">
@@ -575,7 +629,7 @@
   <div class="nrgi-science">
     <div class="nrgi-sci-inner">
       <span class="nrgi-sci-tag">Bilim & Araştırma</span>
-      <h2>NRGI Formülünün Bilimsel Temeli</h2>
+      <h2>NRGI Formülünün <em>Bilimsel</em> Temeli</h2>
       <p class="nrgi-sci-sub">Bilimsel literatürün gösterdikleri</p>
       <div class="nrgi-sci-grid">
         <div class="nrgi-sci-card">
@@ -603,7 +657,7 @@
     <div class="nrgi-sl-inner">
       <div class="nrgi-sl-center">
         <span class="nrgi-sl-tag">Yaşamın İçinde</span>
-        <h2>NRGI Günlük Hayatta</h2>
+        <h2>NRGI <em>Günlük Hayatta</em></h2>
       </div>
       <div class="nrgi-slider-wrap" id="nrgi-slider-tr">
         <div class="nrgi-slider-track">
@@ -626,10 +680,21 @@
     </div>
   </div>
 
+  <!-- 🆕 SAYFA ORTASI MİNİ-CTA -->
+  <div class="nrgi-mini-cta-wrap">
+    <div class="nrgi-mini-cta">
+      <p class="nrgi-mini-cta-text"><strong>Sorunuz mu var?</strong> NRGI'nin size uygun olup olmadığını birlikte değerlendirelim.</p>
+      <a href="https://wa.me/905054549582?text=Merhaba%20Deniz%2C%20NRGI%20benim%20i%C3%A7in%20uygun%20mu%2C%20konu%C5%9Fabilir%20miyiz%3F" target="_blank" class="nrgi-mini-cta-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp'tan Konuşalım
+      </a>
+    </div>
+  </div>
+
   <!-- Bölüm 9: Geliştirilmiş CTA -->
   <div class="nrgi-cta-enhanced">
     <div class="nrgi-cta-inner">
-      <h2>Kafeinsiz Enerjinin Kapısını Aralayın</h2>
+      <h2><em>Kafeinsiz Enerjinin</em> Kapısını Aralayın</h2>
       <p class="nrgi-cta-lead">Vücudunuzun gerçek ritmine, doğal bir destek. Kafein dalgalanmaları olmadan, gün boyu sürdürülebilir bir yaklaşım.</p>
       <div class="nrgi-cta-features">
         <span class="nrgi-cta-feat">✦ Kafeinsiz</span>
@@ -640,6 +705,10 @@
       </div>
       <div class="nrgi-cta-buttons">
         <a href="/quiz.html" class="nrgi-btn-quiz">Önce Quizi Tamamla</a>
+        <a href="https://wa.me/905054549582?text=Merhaba%20Deniz%2C%20NRGI%20kafeinsiz%20enerji%20i%C3%A7ece%C4%9Fi%20hakk%C4%B1nda%20bana%20biraz%20bilgi%20verir%20misin%3F" target="_blank" class="nrgi-btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp'tan Sor
+        </a>
         <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn-buy">NRGI Satın Al →</a>
       </div>
       <p class="nrgi-cta-helper">Hangi protokolün size uygun olduğundan emin değil misiniz? 2 dakikalık quizimizle başlayın. Karar verdiyseniz Amare resmi sitesinden temin edebilirsiniz.</p>
@@ -651,7 +720,7 @@
     <div class="nrgi-rel-inner">
       <div class="nrgi-rel-center">
         <span class="nrgi-rel-tag">Devamını Okuyun</span>
-        <h2>NRGI ile İlgili İçeriklerimiz</h2>
+        <h2>NRGI ile <em>İlgili</em> İçeriklerimiz</h2>
       </div>
       <div class="nrgi-rel-grid">
         <a href="/blog-kortizol.html" class="nrgi-rel-card">
@@ -682,6 +751,9 @@
           </div>
         </a>
       </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="/blog.html" style="display:inline-block;color:#2e3d30;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid #d4af37;padding-bottom:3px;transition:.3s">TÜM WELLNESS YAZILARI →</a>
+      </div>
     </div>
   </div>
 
@@ -692,7 +764,7 @@
 
   <div class="nrgi-hero">
     <span class="nrgi-badge">Mental Performance &amp; Energy</span>
-    <h2>Cellular Clarity<br>Instead of Artificial Stimulants.</h2>
+    <h2>Cellular <em>Clarity</em><br>Instead of Artificial Stimulants.</h2>
     <p>Support your body's biological energy without the fluctuations caused by caffeine. A next-generation focus and vitality protocol designed with natural ingredients.</p>
     <div class="nrgi-tags">
       <span class="nrgi-tag">CAFFEINE-FREE</span>
@@ -700,7 +772,8 @@
       <span class="nrgi-tag">VEGAN &amp; GLUTEN-FREE</span>
       <span class="nrgi-tag">TROPICAL FRUIT FLAVOUR</span>
     </div>
-    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn">DISCOVER THE SYSTEM</a>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn">BUY ON OFFICIAL SITE</a>
+    <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px;max-width:640px;margin-left:auto;margin-right:auto">"Real energy isn't about stimulation;<br>it's about supporting the body's return to its own source."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
   </div>
 
   <div class="nrgi-profile-section">
@@ -757,7 +830,7 @@
   </div>
 
   <div class="footer-cta">
-    <h2>Meet a Clearer Mind</h2>
+    <h2>Meet a <em>Clearer</em> Mind</h2>
     <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Make room for cellular clarity and experience all-day vitality. Step out of the shadow of artificial stimulants with NRGI and step into your body's true rhythm."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn-dark">GET IT FROM THE OFFICIAL SITE</a>
     <p class="footer-note">30 Sachets | Natural Sweetener (Stevia) | Daily Use</p>
@@ -767,7 +840,7 @@
   <div class="nrgi-observation">
     <div class="nrgi-obs-inner">
       <span class="nrgi-obs-tag">Common Observation</span>
-      <h2>The Era of False Energy: The Invisible Cost of Caffeine</h2>
+      <h2>The Era of <em>False Energy</em>: The Invisible Cost of Caffeine</h2>
       <p>In modern life, the most common response to fatigue has become caffeine. Coffee, energy drinks, "boost" tablets... Most of us barely stay upright with 3-4 cups a day. But this isn't a cheap solution.</p>
       <p>Caffeine stimulates the adrenal glands and keeps the body in constant "danger" mode. The result: mid-day crashes, sleep problems at night, more caffeine needed in the morning. This cycle paves the way for adrenal fatigue.</p>
       <div class="nrgi-obs-highlight">
@@ -781,7 +854,7 @@
   <div class="nrgi-science">
     <div class="nrgi-sci-inner">
       <span class="nrgi-sci-tag">Science & Research</span>
-      <h2>The Scientific Foundation of NRGI</h2>
+      <h2>The <em>Scientific</em> Foundation of NRGI</h2>
       <p class="nrgi-sci-sub">What scientific literature shows</p>
       <div class="nrgi-sci-grid">
         <div class="nrgi-sci-card">
@@ -809,7 +882,7 @@
     <div class="nrgi-sl-inner">
       <div class="nrgi-sl-center">
         <span class="nrgi-sl-tag">In Daily Life</span>
-        <h2>NRGI in Daily Life</h2>
+        <h2>NRGI in <em>Daily Life</em></h2>
       </div>
       <div class="nrgi-slider-wrap" id="nrgi-slider-en">
         <div class="nrgi-slider-track">
@@ -833,9 +906,20 @@
   </div>
 
   <!-- Section 9: Enhanced CTA -->
+  <!-- 🆕 MID-PAGE MINI-CTA -->
+  <div class="nrgi-mini-cta-wrap">
+    <div class="nrgi-mini-cta">
+      <p class="nrgi-mini-cta-text"><strong>Have questions?</strong> Let's figure out together whether NRGI fits your needs.</p>
+      <a href="https://wa.me/905054549582?text=Hi%20Deniz%2C%20is%20NRGI%20right%20for%20me%3F%20Can%20we%20chat%3F" target="_blank" class="nrgi-mini-cta-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+
   <div class="nrgi-cta-enhanced">
     <div class="nrgi-cta-inner">
-      <h2>Open the Door to Caffeine-Free Energy</h2>
+      <h2>Open the Door to <em>Caffeine-Free Energy</em></h2>
       <p class="nrgi-cta-lead">Natural support for your body's true rhythm. A sustainable approach throughout the day, without caffeine spikes.</p>
       <div class="nrgi-cta-features">
         <span class="nrgi-cta-feat">✦ Caffeine-Free</span>
@@ -846,6 +930,10 @@
       </div>
       <div class="nrgi-cta-buttons">
         <a href="/quiz.html" class="nrgi-btn-quiz">Start with the Quiz</a>
+        <a href="https://wa.me/905054549582?text=Hi%20Deniz%2C%20could%20you%20tell%20me%20more%20about%20NRGI%20caffeine-free%20energy%3F" target="_blank" class="nrgi-btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Ask on WhatsApp
+        </a>
         <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn-buy">Buy NRGI →</a>
       </div>
       <p class="nrgi-cta-helper">Not sure which protocol is right for you? Start with our 2-minute quiz. If you've decided, you can get it from the official Amare site.</p>
@@ -857,7 +945,7 @@
     <div class="nrgi-rel-inner">
       <div class="nrgi-rel-center">
         <span class="nrgi-rel-tag">Read More</span>
-        <h2>Related Content</h2>
+        <h2><em>Related</em> Content</h2>
       </div>
       <div class="nrgi-rel-grid">
         <a href="/blog-kortizol.html" class="nrgi-rel-card">
@@ -888,6 +976,9 @@
           </div>
         </a>
       </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="/blog.html" style="display:inline-block;color:#2e3d30;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid #d4af37;padding-bottom:3px;transition:.3s">ALL WELLNESS ARTICLES →</a>
+      </div>
     </div>
   </div>
 
@@ -898,7 +989,7 @@
 
   <div class="nrgi-hero">
     <span class="nrgi-badge">Rendimiento Mental &amp; Energía</span>
-    <h2>Claridad Celular<br>en Lugar de Estimulantes Artificiales.</h2>
+    <h2><em>Claridad</em> Celular<br>en Lugar de Estimulantes Artificiales.</h2>
     <p>Apoya la energía biológica de tu cuerpo sin las fluctuaciones causadas por la cafeína. Un protocolo de enfoque y vitalidad de nueva generación diseñado con ingredientes naturales.</p>
     <div class="nrgi-tags">
       <span class="nrgi-tag">SIN CAFEÍNA</span>
@@ -906,7 +997,8 @@
       <span class="nrgi-tag">VEGANO &amp; SIN GLUTEN</span>
       <span class="nrgi-tag">SABOR FRUTA TROPICAL</span>
     </div>
-    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn">DESCUBRIR EL SISTEMA</a>
+    <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn">COMPRAR EN EL SITIO OFICIAL</a>
+    <p style="margin-top:32px;font-size:14px;color:rgba(255,255,255,0.6);font-style:italic;letter-spacing:0.5px;max-width:640px;margin-left:auto;margin-right:auto">"La energía real no es estimulación;<br>es apoyar el regreso del cuerpo a su propia fuente."<br><span style="font-size:12px;color:#d4af37;font-style:normal;font-weight:700">— Vital Protocol DK</span></p>
   </div>
 
   <div class="nrgi-profile-section">
@@ -963,7 +1055,7 @@
   </div>
 
   <div class="footer-cta">
-    <h2>Conoce una Mente más Clara</h2>
+    <h2>Conoce una Mente <em>más Clara</em></h2>
     <p style="max-width:650px;margin:0 auto 40px;color:#636e72;font-style:italic;font-size:18px;">"Dale espacio a la claridad celular y experimenta una vitalidad que dura todo el día. Sal de la sombra de los estimulantes artificiales con NRGI y entra en el ritmo real de tu cuerpo."</p>
     <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn-dark">OBTENERLO EN EL SITIO OFICIAL</a>
     <p class="footer-note">30 Sobres | Edulcorante Natural (Stevia) | Uso Diario</p>
@@ -973,7 +1065,7 @@
   <div class="nrgi-observation">
     <div class="nrgi-obs-inner">
       <span class="nrgi-obs-tag">Observación Común</span>
-      <h2>La Era de la Energía Falsa: El Costo Invisible de la Cafeína</h2>
+      <h2>La Era de la <em>Energía Falsa</em>: El Costo Invisible de la Cafeína</h2>
       <p>En la vida moderna, la respuesta más común a la fatiga se ha convertido en cafeína. Café, bebidas energéticas, tabletas "boost"... La mayoría de nosotros apenas nos mantenemos en pie con 3-4 tazas al día. Pero esta no es una solución barata.</p>
       <p>La cafeína estimula las glándulas suprarrenales y mantiene al cuerpo en modo constante de "peligro". El resultado: caídas a media jornada, problemas de sueño por la noche, más cafeína necesaria por la mañana. Este ciclo allana el camino para la fatiga suprarrenal.</p>
       <div class="nrgi-obs-highlight">
@@ -987,7 +1079,7 @@
   <div class="nrgi-science">
     <div class="nrgi-sci-inner">
       <span class="nrgi-sci-tag">Ciencia & Investigación</span>
-      <h2>La Base Científica de NRGI</h2>
+      <h2>La Base <em>Científica</em> de NRGI</h2>
       <p class="nrgi-sci-sub">Lo que muestra la literatura científica</p>
       <div class="nrgi-sci-grid">
         <div class="nrgi-sci-card">
@@ -1015,7 +1107,7 @@
     <div class="nrgi-sl-inner">
       <div class="nrgi-sl-center">
         <span class="nrgi-sl-tag">En la Vida Diaria</span>
-        <h2>NRGI en la Vida Diaria</h2>
+        <h2>NRGI en <em>la Vida Diaria</em></h2>
       </div>
       <div class="nrgi-slider-wrap" id="nrgi-slider-es">
         <div class="nrgi-slider-track">
@@ -1039,9 +1131,20 @@
   </div>
 
   <!-- Sección 9: CTA Mejorado -->
+  <!-- 🆕 MINI-CTA EN MEDIO DE LA PÁGINA -->
+  <div class="nrgi-mini-cta-wrap">
+    <div class="nrgi-mini-cta">
+      <p class="nrgi-mini-cta-text"><strong>¿Tienes preguntas?</strong> Veamos juntos si NRGI se adapta a tus necesidades.</p>
+      <a href="https://wa.me/905054549582?text=Hola%20Deniz%2C%20%C2%BFNRGI%20es%20adecuado%20para%20m%C3%AD%3F%20%C2%BFPodemos%20hablar%3F" target="_blank" class="nrgi-mini-cta-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Hablar por WhatsApp
+      </a>
+    </div>
+  </div>
+
   <div class="nrgi-cta-enhanced">
     <div class="nrgi-cta-inner">
-      <h2>Abre la Puerta a la Energía Sin Cafeína</h2>
+      <h2>Abre la Puerta a la <em>Energía Sin Cafeína</em></h2>
       <p class="nrgi-cta-lead">Apoyo natural para el ritmo verdadero de tu cuerpo. Un enfoque sostenible durante todo el día, sin picos de cafeína.</p>
       <div class="nrgi-cta-features">
         <span class="nrgi-cta-feat">✦ Sin Cafeína</span>
@@ -1052,6 +1155,10 @@
       </div>
       <div class="nrgi-cta-buttons">
         <a href="/quiz.html" class="nrgi-btn-quiz">Comenzar con el Quiz</a>
+        <a href="https://wa.me/905054549582?text=Hola%20Deniz%2C%20%C2%BFpodr%C3%ADas%20contarme%20m%C3%A1s%20sobre%20NRGI%20energ%C3%ADa%20sin%20cafe%C3%ADna%3F" target="_blank" class="nrgi-btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Pregunta por WhatsApp
+        </a>
         <a href="https://www.amare.com/2180152/en-tr/language" target="_blank" class="nrgi-btn-buy">Comprar NRGI →</a>
       </div>
       <p class="nrgi-cta-helper">¿No estás seguro de qué protocolo es adecuado para ti? Comienza con nuestro quiz de 2 minutos. Si has decidido, puedes obtenerlo en el sitio oficial de Amare.</p>
@@ -1063,7 +1170,7 @@
     <div class="nrgi-rel-inner">
       <div class="nrgi-rel-center">
         <span class="nrgi-rel-tag">Sigue Leyendo</span>
-        <h2>Contenido Relacionado</h2>
+        <h2>Contenido <em>Relacionado</em></h2>
       </div>
       <div class="nrgi-rel-grid">
         <a href="/blog-kortizol.html" class="nrgi-rel-card">
@@ -1093,6 +1200,9 @@
             <div class="nrgi-rel-meta">⏱ ~5 min · Deniz KAT →</div>
           </div>
         </a>
+      </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="/blog.html" style="display:inline-block;color:#2e3d30;font-size:14px;font-weight:700;letter-spacing:.5px;text-decoration:none;border-bottom:1.5px solid #d4af37;padding-bottom:3px;transition:.3s">TODOS LOS ARTÍCULOS WELLNESS →</a>
       </div>
     </div>
   </div>
