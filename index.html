@@ -1846,6 +1846,7 @@ document.getElementById('wlES').onclick = function(){ waSetLang('ES'); };
 .vmav{width:26px;height:26px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#2e3d30,#4a5e4c);display:flex;align-items:center;justify-content:center;font-size:11px;color:#d4ae5e;font-family:'Cormorant Garamond',serif}
 .vm.vu .vmav{background:#f0ede6;color:#2e3d30}
 .vmb{max-width:220px;padding:9px 13px;border-radius:16px;font-size:13px;line-height:1.6;color:#1e2b1f;background:#f5f2ec;white-space:pre-wrap;word-break:break-word}
+.vmb a{color:#2e3d30;font-weight:600;text-decoration:underline}
 .vm.vu .vmb{background:#2e3d30;color:#fcfcfa;border-radius:16px 16px 4px 16px}
 .vm:not(.vu) .vmb{border-radius:4px 16px 16px 16px}
 #vera-typing{display:none;gap:8px;align-items:center;padding:4px 14px}
@@ -1893,11 +1894,10 @@ var vL=localStorage.getItem('vpLang')||'tr';
 var vOpen=false;
 var vHist=[];
 var vT={
-  tr:{ph:'Sorunuzu yazın...',st:'vitalprotocolDK · Wellness Rehberi',disc:'⚠ Bu bilgiler genel rehberlik amaçlıdır, tıbbi reçete yerine geçmez.',wel:'Merhaba! Ben Vera 🌿\n\nvitalprotocolDK\'nin wellness rehberiyim. Ürünler, protokoller veya wellness hakkında sana yardımcı olmaktan mutluluk duyarım!',q:['Nitro Plus nedir?','Hangi protokol bana uyar?','Ürünleri nereden alırım?','Wellness Üçgeni nedir?']},
-  en:{ph:'Type your question...',st:'vitalprotocolDK · Wellness Guide',disc:'⚠ Information is for general guidance only, not medical advice.',wel:"Hello! I\'m Vera 🌿\n\nI\'m the wellness guide at vitalprotocolDK. I\'m happy to help you with products, protocols or wellness questions!",q:['What is Nitro Plus?','Which protocol suits me?','Where can I buy products?','What is the Wellness Triangle?']},
-  es:{ph:'Escribe tu pregunta...',st:'vitalprotocolDK · Guía de Bienestar',disc:'⚠ La información es orientativa y no reemplaza el consejo médico.',wel:'¡Hola! Soy Vera 🌿\n\nSoy la guía de bienestar de vitalprotocolDK. ¡Estoy aquí para ayudarte con productos, protocolos o preguntas de bienestar!',q:['¿Qué es Nitro Plus?','¿Qué protocolo me conviene?','¿Dónde puedo comprar?','¿Qué es el Triángulo de Bienestar?']}
+  tr:{ph:'Sorunuzu yazın...',st:'vitalprotocolDK · Wellness Rehberi',disc:'⚠ Bu bilgiler genel rehberlik amaçlıdır, tıbbi reçete yerine geçmez.',wel:'Merhaba! Ben Vera 🌿\n\nvitalprotocolDK\'nin wellness rehberiyim. Ürünler veya wellness yaklaşımı hakkında sana yardımcı olmaktan mutluluk duyarım!',q:['Nitro Plus nedir?','Hangi ürün bana uyar?','Wellness Üçgeni nedir?','İletişim']},
+  en:{ph:'Type your question...',st:'vitalprotocolDK · Wellness Guide',disc:'⚠ Information is for general guidance only, not medical advice.',wel:"Hello! I\'m Vera 🌿\n\nI\'m the wellness guide at vitalprotocolDK. I\'m happy to help you with products or our wellness approach!",q:['What is Nitro Plus?','Which product suits me?','What is the Wellness Triangle?','Contact']},
+  es:{ph:'Escribe tu pregunta...',st:'vitalprotocolDK · Guía de Bienestar',disc:'⚠ La información es orientativa y no reemplaza el consejo médico.',wel:'¡Hola! Soy Vera 🌿\n\nSoy la guía de bienestar de vitalprotocolDK. ¡Estoy aquí para ayudarte con productos o nuestro enfoque de bienestar!',q:['¿Qué es Nitro Plus?','¿Qué producto me conviene?','¿Qué es el Triángulo de Bienestar?','Contacto']}
 };
-var vSys='Sen Vera\'sın — vitalprotocolDK wellness rehberi. Deniz KAT adına çalışıyorsun. Samimi, sıcak ama profesyonel ol.\n\nÜRÜNLER: Nitro Plus (Nitrik Oksit, vasküler sağlık), Sunrise (22 süper gıda, B vitamini), Sunset (Omega-3, Astaksantin, gece onarımı), HL5 (Hidrolize Kolajen), FIT20 (fitness protokolü), ORIGIN (temel beslenme), NRGI (hücresel enerji, ATP), EDGE (zihinsel berraklık, dopamin), IGNT (hormonal denge), R-STOUR (sindirim, enzim+probiyotik), ON-SHOTS (anlık odak, adaptogen).\n\nSINIRLAR: Asla tıbbi tanı/tedavi önerme. Hamilelik/emzirme sorularında doktora yönlendir. Asla URL veya link yazma — satın alma butonunu sistem otomatik ekler.\n\nDİL: Kullanıcı hangi dilde yazarsa o dilde cevap ver. Kısa ve net ol.';
 
 window.vSetLang=function(l){
   if(!vT[l])return;
@@ -1932,31 +1932,20 @@ function vAddMsg(role,text){
   if(role==='user'){
     b.textContent=text;
   } else {
-    var html=text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    var linkTexts={tr:'🛒 Buradan satın al →',en:'🛒 Buy here →',es:'🛒 Comprar aquí →'};
-    html=html.replace(/(https?:\/\/[^\s<]+)/g,function(url){
-      var lang=localStorage.getItem('vpLang')||'tr';
-      var txt=linkTexts[lang]||linkTexts.tr;
-      return '<a href="'+url+'" target="_blank" rel="noopener" style="display:inline-block;margin:6px 0;padding:8px 16px;background:#2e3d30;color:#d4ae5e;border-radius:20px;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.04em;">'+txt+'</a>';
+    // Önce amare.com linklerini temizle (güvenlik filtresi)
+    var clean=text.replace(/https?:\/\/[^\s)]*amare\.com[^\s)]*/gi,'');
+    // İç içe markdown link bozulmasını düzelt: [metin]([metin](url).) -> [metin](url)
+    clean=clean.replace(/\[([^\]]+)\]\(\[[^\]]*\]\(([^)]+)\)\.?\)/g,'[$1]($2)');
+    // HTML escape
+    var html=clean.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    // Markdown link [metin](url) -> <a>
+    html=html.replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g,function(m,txt,url){
+      return '<a href="'+url+'" target="_blank" rel="noopener">'+txt+'</a>';
     });
-    // Satın alma kelimesi geçiyorsa otomatik buton ekle (URL olmasa da)
-    var buyWords={tr:['satın al','sipariş','nereden al','nasıl al','almak istiyorum','fiyat'],en:['buy','order','purchase','where to get','price'],es:['comprar','precio','dónde']};
-    var lang2=localStorage.getItem('vpLang')||'tr';
-    var hasBuyWord=false;
-    var wordsToCheck=(buyWords[lang2]||buyWords.tr).concat(buyWords.en);
-    wordsToCheck.forEach(function(w){if(text.toLowerCase().indexOf(w)>-1)hasBuyWord=true;});
-    var hasBuyBtn=html.indexOf('amare.com')>-1;
-    if(hasBuyWord&&!hasBuyBtn){
-      var lang3=localStorage.getItem('vpLang')||'tr';
-      var btnTxt=linkTexts[lang3]||linkTexts.tr;
-      var marketNote={
-        tr:'<div style="margin:8px 0 4px;padding:8px 12px;background:#f0ede6;border-radius:10px;font-size:11px;color:#4a5a4b;border-left:3px solid #d4af37;">ℹ️ Yönlendirileceğiniz sayfada sağ üst köşedeki <strong>bayrak/dil simgesinden</strong> Pazar ve dil seçiminizi yapabilirsiniz.</div>',
-        en:'<div style="margin:8px 0 4px;padding:8px 12px;background:#f0ede6;border-radius:10px;font-size:11px;color:#4a5a4b;border-left:3px solid #d4af37;">ℹ️ On the next page, use the <strong>flag/language icon</strong> (top right) to select your Market/Region and language.</div>',
-        es:'<div style="margin:8px 0 4px;padding:8px 12px;background:#f0ede6;border-radius:10px;font-size:11px;color:#4a5a4b;border-left:3px solid #d4af37;">ℹ️ En la siguiente página, usa el <strong>icono de idioma</strong> (arriba a la derecha) para seleccionar tu mercado/región e idioma.</div>'
-      };
-      html+='<br>'+marketNote[lang3]+
-        '<a href="https://amare.com/tr-tr/g10/2180152" target="_blank" rel="noopener" style="display:inline-block;margin:4px 0 8px;padding:8px 16px;background:#2e3d30;color:#d4ae5e;border-radius:20px;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.04em;">'+btnTxt+'</a>';
-    }
+    // Çıplak URL'leri linke çevir (markdown olmayanları)
+    html=html.replace(/(?<!["'>=\(])(https?:\/\/[^\s<]+)/g,function(url){
+      return '<a href="'+url+'" target="_blank" rel="noopener">'+url+'</a>';
+    });
     html=html.replace(/\n/g,'<br>');
     b.innerHTML=html;
   }
@@ -1983,8 +1972,9 @@ async function vSend(){
   document.getElementById('vera-typing').classList.add('vs');
   document.getElementById('vera-quick').style.display='none';
   try{
-    var ctx=vHist.slice(-6).map(function(m){return m.role+': '+m.content;}).join('\n');
-    var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:[{role:'user',content:vSys+'\n\nKullanıcı dili: '+vL+'\n\nGeçmiş:\n'+ctx}]})});
+    // Backend (chat.js) zaten V4 system prompt kullanıyor — frontend ek prompt göndermez
+    var msgsForApi=vHist.slice(-10);
+    var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:msgsForApi,lang:vL})});
     var data=await r.json();
     var reply=data.content&&data.content[0]?data.content[0].text:'...';
     vHist.push({role:'assistant',content:reply});
