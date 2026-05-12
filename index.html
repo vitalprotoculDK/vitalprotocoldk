@@ -1962,6 +1962,28 @@ function vInit(){
   if(msgs.children.length===0)vAddMsg('vera',vT[sl].wel);
 }
 
+// Basit dil algılama: kullanıcının yazdığı mesajdan dili tahmin et
+function vDetectLang(text){
+  var t=text.toLowerCase();
+  // İspanyolca ipuçları
+  var esWords=['qué','cómo','dónde','cuándo','quién','por qué','hola','gracias','sí','está','soy','tú','para','muy','también','aquí','ahora','años','dolor','salud','bienestar','producto','ayuda'];
+  // İngilizce ipuçları
+  var enWords=['what','how','where','when','who','why','hello','hi','please','thanks','the','is','are','am','you','your','my','for','with','about','can','do','does','need','help','product','health'];
+  // Türkçe ipuçları (öncelikli — varsayılan)
+  var trWords=['nedir','nasıl','nerede','ne zaman','kim','neden','merhaba','selam','teşekkür','evet','hayır','var','yok','ben','sen','için','çok','şimdi','yaş','ağrı','sağlık','wellness','ürün','yardım','olur','olabilir','mı','mi','mu','mü'];
+  var es=0,en=0,tr=0;
+  esWords.forEach(function(w){if(t.indexOf(w)>-1)es++;});
+  enWords.forEach(function(w){if(t.indexOf(w)>-1)en++;});
+  trWords.forEach(function(w){if(t.indexOf(w)>-1)tr++;});
+  // Türkçe karakterler güçlü ipucu
+  if(/[çğıöşüÇĞİÖŞÜ]/.test(text))tr+=2;
+  // İspanyolca aksanlar
+  if(/[ñáéíóúü¿¡]/.test(text))es+=2;
+  if(es>en&&es>tr)return'es';
+  if(en>tr&&en>es)return'en';
+  return'tr';
+}
+
 async function vSend(){
   var inp=document.getElementById('vera-inp');
   var txt=inp.value.trim();
@@ -1972,9 +1994,10 @@ async function vSend(){
   document.getElementById('vera-typing').classList.add('vs');
   document.getElementById('vera-quick').style.display='none';
   try{
-    // Backend (chat.js) zaten V4 system prompt kullanıyor — frontend ek prompt göndermez
+    // Dil algıla: son kullanıcı mesajından (UI dili değil, yazılan dil)
+    var detectedLang=vDetectLang(txt);
     var msgsForApi=vHist.slice(-10);
-    var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:msgsForApi,lang:vL})});
+    var r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:msgsForApi,lang:detectedLang})});
     var data=await r.json();
     var reply=data.content&&data.content[0]?data.content[0].text:'...';
     vHist.push({role:'assistant',content:reply});
