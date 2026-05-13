@@ -1,9 +1,5 @@
-// /api/chat.js - Vera V7 (Ürün listesi otoriter, training data override)
-import Anthropic from '@anthropic-ai/sdk';
-
-const client = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY
-});
+// /api/chat.js - Vera V7 Edge Runtime (Eski mimari korunmuş)
+export const config = { runtime: 'edge' };
 
 const SYSTEM_PROMPT = `# vitalprotocolDK RESMİ ÜRÜN KATALOGU (TARTIŞMASIZ)
 
@@ -12,7 +8,7 @@ Bu, vitalprotocolDK'nin Amare Global Brand Partner olarak sunduğu RESMİ ürün
 ## RESMİ ÜRÜN LİSTESİ (Hepsi Amare Global)
 
 1. **Sunrise** — 22 süper gıda + B vitaminleri içeren sabah desteği
-2. **Nitro Plus** — Nitrik Oksit + noni meyvesi, dolaşım & emilim desteği (ANA ÜRÜN, "Mükemmel Döngü"nün merkezi)
+2. **Nitro Plus** — Nitrik Oksit + noni meyvesi, dolaşım & emilim desteği (ANA ÜRÜN, "Mükemmel Döngü"nün merkezi, "Sistemin Dinamosu")
 3. **Sunset** — Omega-3, Astaksantin içeren gece desteği
 4. **HL5** — Hidrolize kolajen
 5. **FIT20** — Aktif yaşam desteği
@@ -46,8 +42,6 @@ Sen Vera'sın — vitalprotocolDK'nin wellness rehberisin. Deniz KAT'ın asistan
 **ASLA "Kyäni" veya "Kyani" kelimesini kullanma.** Tüm ürünler Amare'dir.
 
 Eğer kullanıcı "Kyani" derse: "Bizim ürünlerimiz Amare Global ailesinden" diye yönlendir.
-
-Eğer eğitim verisinden bir ürünün eski Kyani'den geldiğini biliyorsan: **bunu söyleme**. Sadece Amare olarak referans ver.
 
 # DİL KURALI (KRİTİK)
 
@@ -117,35 +111,71 @@ Kurallar:
 - Fiyat/sipariş soruları → her zaman
 - "Bana ne uygun?" gibi kişisel sorular → her zaman`;
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+export default async function handler(request) {
+  if (request.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+      status: 405,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 
   try {
-    const { messages, lang } = req.body;
+    const body = await request.json();
+    const { messages, lang } = body;
 
     if (!messages || !Array.isArray(messages)) {
-      return res.status(400).json({ error: 'Messages array required' });
+      return new Response(JSON.stringify({ error: 'Messages array required' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      });
     }
 
     const langHint = lang ? `\n\n[Sistem notu: UI dili "${lang}" — ama mesajın gerçek diline göre cevap ver.]` : '';
 
-    const response = await client.messages.create({
-      model: 'claude-haiku-4-5-20251001',
-      max_tokens: 1024,
-      system: SYSTEM_PROMPT + langHint,
-      messages: messages
+    const apiResponse = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01'
+      },
+      body: JSON.stringify({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 1024,
+        system: SYSTEM_PROMPT + langHint,
+        messages: messages
+      })
     });
 
-    return res.status(200).json({
-      content: response.content
+    if (!apiResponse.ok) {
+      const errText = await apiResponse.text();
+      console.error('Anthropic API hatası:', apiResponse.status, errText);
+      return new Response(JSON.stringify({
+        error: 'API hatası',
+        status: apiResponse.status,
+        detail: errText.substring(0, 200)
+      }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
+    const data = await apiResponse.json();
+
+    return new Response(JSON.stringify({
+      content: data.content
+    }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
     });
   } catch (error) {
-    console.error('Vera V7 hata:', error);
-    return res.status(500).json({
+    console.error('Vera V7 Edge hata:', error);
+    return new Response(JSON.stringify({
       error: 'Bağlantı hatası',
       detail: error.message
+    }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
     });
   }
 }
